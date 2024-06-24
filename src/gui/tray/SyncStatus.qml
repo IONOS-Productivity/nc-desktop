@@ -103,10 +103,7 @@ RowLayout {
         contentsFont.bold: true
         bgColor: Style.currentUserHeaderColor
 
-        visible: !activityModel.hasSyncConflicts &&
-                 !syncStatus.syncing &&
-                 NC.UserModel.currentUser.hasLocalFolder &&
-                 NC.UserModel.currentUser.isConnected
+        visible: false // SES-4 removed
         enabled: visible
         onClicked: {
             if(!syncStatus.syncing) {
