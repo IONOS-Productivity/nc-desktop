@@ -127,14 +127,15 @@ SettingsDialog::SettingsDialog(ownCloudGui *gui, QWidget *parent)
     // Connect styleChanged events to our widgets, so they can adapt (Dark-/Light-Mode switching)
     connect(this, &SettingsDialog::styleChanged, generalSettings, &GeneralSettings::slotStyleChanged);
 
-    QAction *networkAction = createColorAwareAction(QLatin1String(":/client/theme/network.svg"), tr("Network"));
-    _actionGroup->addAction(networkAction);
-    _toolBar->addAction(networkAction);
-    auto *networkSettings = new NetworkSettings;
-    _ui->stack->addWidget(networkSettings);
+    // SES-4 removed network settings
+    // QAction *networkAction = createColorAwareAction(QLatin1String(":/client/theme/network.svg"), tr("Network"));
+    // _actionGroup->addAction(networkAction);
+    // _toolBar->addAction(networkAction);
+    // auto *networkSettings = new NetworkSettings;
+    // _ui->stack->addWidget(networkSettings);
 
     _actionGroupWidgets.insert(generalAction, generalSettings);
-    _actionGroupWidgets.insert(networkAction, networkSettings);
+    // _actionGroupWidgets.insert(networkAction, networkSettings);
 
     foreach(auto ai, AccountManager::instance()->accounts()) {
         accountAdded(ai.data());
