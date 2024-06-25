@@ -684,7 +684,8 @@ void AccountSettings::slotCustomContextMenuRequested(const QPoint &pos)
     ac = menu->addAction(tr("Remove folder sync connection"));
     connect(ac, &QAction::triggered, this, &AccountSettings::slotRemoveCurrentFolder);
 
-    if (folder->virtualFilesEnabled()) {
+    // SES-4 removed virual files optiones
+    if (false && folder->virtualFilesEnabled()) {
         auto availabilityMenu = menu->addMenu(tr("Availability"));
 
         ac = availabilityMenu->addAction(Utility::vfsPinActionText());
@@ -699,7 +700,7 @@ void AccountSettings::slotCustomContextMenuRequested(const QPoint &pos)
         ac->setDisabled(Theme::instance()->enforceVirtualFilesSyncFolder());
     }
 
-    if (Theme::instance()->showVirtualFilesOption() && !folder->virtualFilesEnabled() && Vfs::checkAvailability(folder->path())) {
+    if (false && Theme::instance()->showVirtualFilesOption() && !folder->virtualFilesEnabled() && Vfs::checkAvailability(folder->path())) {
         const auto mode = bestAvailableVfsMode();
         if (mode == Vfs::WindowsCfApi || ConfigFile().showExperimentalOptions()) {
             ac = menu->addAction(tr("Enable virtual file support %1 …").arg(mode == Vfs::WindowsCfApi ? QString() : tr("(experimental)")));
