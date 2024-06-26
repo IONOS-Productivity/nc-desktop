@@ -352,9 +352,16 @@ ApplicationWindow {
 
                         MenuItem {
                             id: addAccountButton
-                            height: Systray.enableAddAccount ? Style.addAccountButtonHeight : 0
                             hoverEnabled: true
                             visible: Systray.enableAddAccount
+
+                            icon.source: Style.sesAddAccountIcon 
+                            icon.height: Style.smallIconSize
+                            icon.width: Style.smallIconSize
+                            icon.color: Style.sesIconColor 
+
+                            text: qsTr("Add account")
+                            font.pixelSize: Style.topLinePixelSize
 
                             background: Item {
                                 height: parent.height
@@ -366,28 +373,6 @@ ApplicationWindow {
                                 }
                             }
 
-                            RowLayout {
-                                anchors.fill: parent
-                                spacing: 0
-
-                                Image {
-                                    Layout.leftMargin: 12
-                                    verticalAlignment: Qt.AlignCenter
-                                    source: Theme.darkMode ? "qrc:///client/theme/white/add.svg" : "qrc:///client/theme/black/add.svg"
-                                    sourceSize.width: Style.headerButtonIconSize
-                                    sourceSize.height: Style.headerButtonIconSize
-                                }
-                                EnforcedPlainTextLabel {
-                                    Layout.leftMargin: 14
-                                    text: qsTr("Add account")
-                                    font.pixelSize: Style.topLinePixelSize
-                                }
-                                // Filler on the right
-                                Item {
-                                    Layout.fillWidth: true
-                                    Layout.fillHeight: true
-                                }
-                            }
                             onClicked: UserModel.addAccount()
 
                             Accessible.role: Accessible.MenuItem
@@ -407,6 +392,11 @@ ApplicationWindow {
                             font.pixelSize: Style.topLinePixelSize
                             hoverEnabled: true
                             onClicked: Systray.syncIsPaused = !Systray.syncIsPaused
+
+                            icon.source: Style.sesPauseSyncIcon 
+                            icon.height: Style.smallIconSize 
+                            icon.width: Style.smallIconSize  
+                            icon.color: Style.sesIconColor 
 
                             background: Item {
                                 height: parent.height
@@ -430,6 +420,11 @@ ApplicationWindow {
                             hoverEnabled: true
                             onClicked: Systray.openSettings()
 
+                            icon.source: Style.sesSettingsIcon 
+                            icon.height: Style.smallIconSize
+                            icon.width: Style.smallIconSize 
+                            icon.color: Style.sesIconColor 
+
                             background: Item {
                                 height: parent.height
                                 width: parent.menu.width
@@ -451,6 +446,11 @@ ApplicationWindow {
                             font.pixelSize: Style.topLinePixelSize
                             hoverEnabled: true
                             onClicked: Systray.shutdown()
+
+                            icon.source: Style.sesQuitIcon 
+                            icon.height: Style.smallIconSize 
+                            icon.width: Style.smallIconSize 
+                            icon.color: Style.sesIconColor 
 
                             background: Item {
                                 height: parent.height
