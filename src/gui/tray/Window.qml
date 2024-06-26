@@ -263,7 +263,7 @@ ApplicationWindow {
             anchors.right:  trayWindowMainItem.right
             anchors.top:    trayWindowMainItem.top
             height:         Style.trayWindowHeaderHeight
-            color:          Style.currentUserHeaderColor
+            color:          Style.sesWhite
             radius: 0.0
 
             RowLayout {
@@ -308,7 +308,7 @@ ApplicationWindow {
                         closePolicy: Menu.CloseOnPressOutsideParent | Menu.CloseOnEscape
 
                         background: Rectangle {
-                            border.color: palette.dark
+                            border.color: Style.sesBorderColor
                             color: palette.base
                             radius: Style.currentAccountButtonRadius
                         }
@@ -349,6 +349,13 @@ ApplicationWindow {
                             onObjectAdded: accountMenu.insertItem(index, object)
                             onObjectRemoved: accountMenu.removeItem(object)
                         }
+                        
+                        Rectangle {
+                            anchors.left: parent.left
+                            anchors.right: parent.right
+                            implicitHeight: 1
+                            color: Style.sesBorderColor
+                        }
 
                         MenuItem {
                             id: addAccountButton
@@ -384,7 +391,7 @@ ApplicationWindow {
                             anchors.left: parent.left
                             anchors.right: parent.right
                             implicitHeight: 1
-                            color: palette.dark
+                            color: Style.sesBorderColor
                         }
 
                         MenuItem {

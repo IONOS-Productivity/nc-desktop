@@ -209,4 +209,6 @@ QtObject {
     readonly property string sesPauseSyncIcon: "qrc:///client/theme/ses/ses-pauseSync.svg"
     readonly property string sesAddAccountIcon: "qrc:///client/theme/ses/ses-addAccount.svg"
     readonly property color sesIconColor: "#1474C4"
+    readonly property color sesBorderColor: "#D7D7D7"
+    readonly property color sesWhite: "#FFFFFF"
 }
