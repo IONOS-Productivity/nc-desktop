@@ -80,7 +80,7 @@ ApplicationWindow {
     }
 
     background: Rectangle {
-        radius: Systray.useNormalWindow ? 0.0 : Style.trayWindowRadius
+        radius: 0.0
         border.width: Style.trayWindowBorderWidth
         border.color: palette.dark
         color: palette.window
@@ -142,7 +142,7 @@ ApplicationWindow {
         maskSource: Rectangle {
             width: trayWindow.width
             height: trayWindow.height
-            radius: Systray.useNormalWindow ? 0.0 : Style.trayWindowRadius
+            radius: 0.0
         }
     }
 
@@ -264,6 +264,7 @@ ApplicationWindow {
             anchors.top:    trayWindowMainItem.top
             height:         Style.trayWindowHeaderHeight
             color:          Style.currentUserHeaderColor
+            radius: 0.0
 
             RowLayout {
                 id: trayWindowHeaderLayout
