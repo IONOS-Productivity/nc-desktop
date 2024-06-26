@@ -202,4 +202,10 @@ QtObject {
     function variableSize(size) {
         return size * (1 + Math.min(pixelSize / 100, 1));
     }
+
+    // SES
+    readonly property string sesSettingsIcon: "qrc:///client/theme/ses/ses-settings.svg"
+    readonly property string sesQuitIcon: "qrc:///client/theme/ses/ses-quit.svg"
+    readonly property string sesPauseSyncIcon: "qrc:///client/theme/ses/ses-pauseSync.svg"
+    readonly property string sesAddAccountIcon: "qrc:///client/theme/ses/ses-addAccount.svg"
 }

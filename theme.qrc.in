@@ -238,5 +238,9 @@
         <file>theme/delete.svg</file>
         <file>theme/send.svg</file>
         <file>theme/call-notification.wav</file>
+        <file>theme/ses/ses-quit.svg</file>
+        <file>theme/ses/ses-pauseSync.svg</file>
+        <file>theme/ses/ses-addAccount.svg</file>
+        <file>theme/ses/ses-settings.svg</file>
     </qresource>
 </RCC>
