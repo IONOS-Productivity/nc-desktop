@@ -172,7 +172,7 @@ GeneralSettings::GeneralSettings(QWidget *parent)
         _ui->autostartCheckBox->setChecked(hasSystemAutoStart);
         _ui->autostartCheckBox->setDisabled(hasSystemAutoStart);
         _ui->autostartCheckBox->setToolTip(tr("You cannot disable autostart because system-wide autostart is enabled."));
-    } else {       
+    } else {
         connect(_ui->autostartCheckBox, &QAbstractButton::toggled, this, &GeneralSettings::slotToggleLaunchOnStartup);
         _ui->autostartCheckBox->setChecked(ConfigFile().launchOnSystemStartup());
     }
@@ -552,6 +552,17 @@ void GeneralSettings::customizeStyle()
         return aboutText;
     }();
     _ui->infoAndUpdatesLabel->setText(aboutText);
+
+    // SES-4 removed
+    _ui->monoIconsCheckBox->hide();
+    _ui->callNotificationsCheckBox->hide();
+    _ui->groupBox->hide();
+    _ui->restartButton->hide();
+    _ui->updateStateLabel->hide();
+    _ui->updateChannel->hide();
+    _ui->updateChannelLabel->hide();
+    _ui->updateButton->hide();
+    _ui->usageDocumentationButton->hide();
 
 #if defined(BUILD_UPDATER)
     // updater info

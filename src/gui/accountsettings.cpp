@@ -684,7 +684,8 @@ void AccountSettings::slotCustomContextMenuRequested(const QPoint &pos)
     ac = menu->addAction(tr("Remove folder sync connection"));
     connect(ac, &QAction::triggered, this, &AccountSettings::slotRemoveCurrentFolder);
 
-    if (folder->virtualFilesEnabled()) {
+    // SES-4 removed virual files optiones
+    if (false && folder->virtualFilesEnabled()) {
         auto availabilityMenu = menu->addMenu(tr("Availability"));
 
         ac = availabilityMenu->addAction(Utility::vfsPinActionText());
@@ -699,7 +700,7 @@ void AccountSettings::slotCustomContextMenuRequested(const QPoint &pos)
         ac->setDisabled(Theme::instance()->enforceVirtualFilesSyncFolder());
     }
 
-    if (Theme::instance()->showVirtualFilesOption() && !folder->virtualFilesEnabled() && Vfs::checkAvailability(folder->path())) {
+    if (false && Theme::instance()->showVirtualFilesOption() && !folder->virtualFilesEnabled() && Vfs::checkAvailability(folder->path())) {
         const auto mode = bestAvailableVfsMode();
         if (mode == Vfs::WindowsCfApi || ConfigFile().showExperimentalOptions()) {
             ac = menu->addAction(tr("Enable virtual file support %1 …").arg(mode == Vfs::WindowsCfApi ? QString() : tr("(experimental)")));
@@ -1116,25 +1117,26 @@ void AccountSettings::disableEncryptionForAccount(const AccountPtr &account) con
 
 void AccountSettings::showConnectionLabel(const QString &message, QStringList errors)
 {
-    const auto errStyle = QLatin1String("color:#ffffff; background-color:#bb4d4d;padding:5px;"
-                                        "border-width: 1px; border-style: solid; border-color: #aaaaaa;"
-                                        "border-radius:5px;");
-    if (errors.isEmpty()) {
-        auto msg = message;
-        Theme::replaceLinkColorStringBackgroundAware(msg);
-        _ui->connectLabel->setText(msg);
-        _ui->connectLabel->setToolTip({});
-        _ui->connectLabel->setStyleSheet({});
-    } else {
-        errors.prepend(message);
-        auto userFriendlyMsg = errors.join(QLatin1String("<br>"));
-        qCDebug(lcAccountSettings) << userFriendlyMsg;
-        Theme::replaceLinkColorString(userFriendlyMsg, QColor("#c1c8e6"));
-        _ui->connectLabel->setText(userFriendlyMsg);
-        _ui->connectLabel->setToolTip({});
-        _ui->connectLabel->setStyleSheet(errStyle);
-    }
-    _ui->accountStatus->setVisible(!message.isEmpty());
+    // SES-4 Removed
+    // const auto errStyle = QLatin1String("color:#ffffff; background-color:#bb4d4d;padding:5px;"
+    //                                     "border-width: 1px; border-style: solid; border-color: #aaaaaa;"
+    //                                     "border-radius:5px;");
+    // if (errors.isEmpty()) {
+    //     auto msg = message;
+    //     Theme::replaceLinkColorStringBackgroundAware(msg);
+    //     _ui->connectLabel->setText(msg);
+    //     _ui->connectLabel->setToolTip({});
+    //     _ui->connectLabel->setStyleSheet({});
+    // } else {
+    //     errors.prepend(message);
+    //     auto userFriendlyMsg = errors.join(QLatin1String("<br>"));
+    //     qCDebug(lcAccountSettings) << userFriendlyMsg;
+    //     Theme::replaceLinkColorString(userFriendlyMsg, QColor("#c1c8e6"));
+    //     _ui->connectLabel->setText(userFriendlyMsg);
+    //     _ui->connectLabel->setToolTip({});
+    //     _ui->connectLabel->setStyleSheet(errStyle);
+    // }
+    _ui->accountStatus->setVisible(false);
 }
 
 void AccountSettings::slotEnableCurrentFolder(bool terminate)

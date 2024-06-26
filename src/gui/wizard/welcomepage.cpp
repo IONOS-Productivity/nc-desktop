@@ -77,6 +77,8 @@ void WelcomePage::styleSlideShow()
 
 void WelcomePage::setupSlideShow()
 {
+    _ui->slideShowNextButton->hide();
+    _ui->slideShowPreviousButton->hide();
     connect(_ui->slideShow, &SlideShow::clicked, _ui->slideShow, &SlideShow::stopShow);
     connect(_ui->slideShowNextButton, &QPushButton::clicked, _ui->slideShow, &SlideShow::nextSlide);
     connect(_ui->slideShowPreviousButton, &QPushButton::clicked, _ui->slideShow, &SlideShow::prevSlide);
@@ -92,6 +94,7 @@ void WelcomePage::setupLoginButton()
 
 void WelcomePage::setupCreateAccountButton()
 {
+    _ui->createAccountButton->hide();
 #ifdef WITH_WEBENGINE
     connect(_ui->createAccountButton, &QPushButton::clicked, this, [this](bool /*checked*/) {
         _ocWizard->setRegistration(true);
@@ -108,6 +111,7 @@ void WelcomePage::setupCreateAccountButton()
 
 void WelcomePage::setupHostYourOwnServerLabel()
 {
+    _ui->hostYourOwnServerLabel->hide();
     _ui->hostYourOwnServerLabel->setText(tr("Host your own server"));
     _ui->hostYourOwnServerLabel->setAlignment(Qt::AlignCenter);
     _ui->hostYourOwnServerLabel->setUrl(QUrl("https://docs.nextcloud.com/server/latest/admin_manual/installation/#installation"));

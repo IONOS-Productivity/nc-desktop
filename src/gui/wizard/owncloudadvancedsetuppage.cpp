@@ -55,6 +55,11 @@ OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage(OwncloudWizard *wizard)
     _ui.userNameLabel->setTextFormat(Qt::PlainText);
     _ui.serverAddressLabel->setTextFormat(Qt::PlainText);
     _ui.localFolderDescriptionLabel->setTextFormat(Qt::PlainText);
+    _ui.confCheckBoxSize->hide();
+    _ui.confSpinBox->hide();
+    _ui.confTraillingSizeLabel->hide();
+    _ui.wSyncStrategy->removeItem(_ui.horizontalLayout_6);
+
 
     registerField(QLatin1String("OCSyncFromScratch"), _ui.cbSyncFromScratch);
 

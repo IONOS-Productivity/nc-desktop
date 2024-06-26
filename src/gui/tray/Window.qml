@@ -639,7 +639,7 @@ ApplicationWindow {
                 HeaderButton {
                     id: trayWindowTalkButton
 
-                    visible: UserModel.currentUser.serverHasTalk
+                    visible: false //SES-4 removed  
                     icon.source: "qrc:///client/theme/white/talk-app.svg"
                     icon.color: Style.currentUserHeaderTextColor
                     onClicked: UserModel.openCurrentAccountTalk()
@@ -658,6 +658,8 @@ ApplicationWindow {
                     id: trayWindowAppsButton
                     icon.source: "qrc:///client/theme/white/more-apps.svg"
                     icon.color: Style.currentUserHeaderTextColor
+                    
+                    visible: false //SES-4 removed
 
                     onClicked: {
                         if(appsMenuListView.count <= 0) {
@@ -736,7 +738,8 @@ ApplicationWindow {
 
         UnifiedSearchInputContainer {
             id: trayWindowUnifiedSearchInputContainer
-            height: Style.trayWindowHeaderHeight * 0.65
+            height: 0
+            visible: false //SES-4 removed
 
             anchors {
                 top: trayWindowHeaderBackground.bottom
