@@ -259,7 +259,7 @@ ApplicationWindow {
         Rectangle {
             id: trayWindowLogoHeaderBackground
             height: Style.trayWindowHeaderHeight
-
+            width: parent.width
             Image{
                     id: trayWindowLogo
                     cache: false
@@ -288,9 +288,10 @@ ApplicationWindow {
             RowLayout {
                 id: trayWindowHeaderLayout
 
-                spacing:        0
                 anchors.fill:   parent
-
+                anchors.leftMargin: 20
+                anchors.rightMargin: 20
+                
                 Button {
                     id: currentAccountButton
 
@@ -636,11 +637,6 @@ ApplicationWindow {
                             }
                         }
                     }
-                }
-
-                // Add space between items
-                Item {
-                    Layout.fillWidth: true
                 }
 
                 HeaderButton {
