@@ -643,6 +643,22 @@ ApplicationWindow {
                     Layout.fillWidth: true
                 }
 
+                HeaderButton {
+                    id: trayWindowFilesButton
+
+                    icon.source: Style.sesWebsiteIcon
+                    icon.color: Style.sesIconColor 
+                    onClicked: UserModel.openCurrentAccountServer()
+
+                    Accessible.role: Accessible.Button
+                    Accessible.name: qsTr("Open Nextcloud in browser")
+                    Accessible.onPressAction: trayWindowFilesButton.clicked()
+
+                    Layout.alignment: Qt.AlignRight
+                    Layout.preferredWidth:  Style.trayWindowHeaderHeight
+                    Layout.preferredHeight: Style.trayWindowHeaderHeight
+                }
+
                 TrayFoldersMenuButton {
                     id: openLocalFolderButton
 
