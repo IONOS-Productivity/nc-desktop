@@ -779,6 +779,14 @@ ApplicationWindow {
             }
         }   // Rectangle trayWindowHeaderBackground
 
+        Rectangle {
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.top: trayWindowHeaderBackground.bottom
+            implicitHeight: 1
+            color: Style.sesBorderColor
+        }
+
         UnifiedSearchInputContainer {
             id: trayWindowUnifiedSearchInputContainer
             height: 0
