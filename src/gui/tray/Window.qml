@@ -257,11 +257,30 @@ ApplicationWindow {
         Accessible.name: qsTr("Nextcloud desktop main dialog")
 
         Rectangle {
+            id: trayWindowLogoHeaderBackground
+            height: Style.trayWindowHeaderHeight
+
+            Image{
+                    id: trayWindowLogo
+                    cache: false
+                    source: Style.sesIonosLogoIcon
+                    sourceSize: Qt.size(width, height)
+                    fillMode: Image.PreserveAspectFit
+                    anchors{
+                        top: parent.top
+                        left: parent.left
+                        topMargin: 16
+                        leftMargin: 24
+                    }
+            }
+
+        }
+        Rectangle {
             id: trayWindowHeaderBackground
 
-            anchors.left:   trayWindowMainItem.left
-            anchors.right:  trayWindowMainItem.right
-            anchors.top:    trayWindowMainItem.top
+            anchors.left:   trayWindowLogoHeaderBackground.left
+            anchors.right:  trayWindowLogoHeaderBackground.right
+            anchors.top:    trayWindowLogoHeaderBackground.bottom
             height:         Style.trayWindowHeaderHeight
             color:          Style.sesWhite
             radius: 0.0
