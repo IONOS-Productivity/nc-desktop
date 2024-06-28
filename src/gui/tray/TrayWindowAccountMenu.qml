@@ -220,6 +220,7 @@ Button {
 
     background: Rectangle {
         color: parent.hovered || parent.visualFocus ? Style.sesHover : "transparent"
+        radius: 8
     }
 
     RowLayout {
