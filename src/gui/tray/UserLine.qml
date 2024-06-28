@@ -68,7 +68,6 @@ AbstractButton {
                 text: name
                 elide: Text.ElideRight
                 font.pixelSize: Style.topLinePixelSize
-                font.bold: true
             }
 
             RowLayout {
@@ -95,16 +94,6 @@ AbstractButton {
                     font.pixelSize: Style.subLinePixelSize
                     leftPadding: Style.accountLabelsSpacing
                 }
-            }
-
-            EnforcedPlainTextLabel {
-                id: accountServer
-                Layout.fillWidth: true
-                Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-                verticalAlignment: Text.AlignTop
-                text: server
-                elide: Text.ElideRight
-                font.pixelSize: Style.subLinePixelSize
             }
         }
 
