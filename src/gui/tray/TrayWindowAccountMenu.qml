@@ -235,9 +235,7 @@ Button {
             Layout.leftMargin: Style.trayHorizontalMargin
             verticalAlignment: Qt.AlignCenter
             cache: false
-            source: UserModel.currentUser.avatar != "" ? UserModel.currentUser.avatar : "image://avatars/fallbackWhite"
-            Layout.preferredHeight: Style.accountAvatarSize
-            Layout.preferredWidth: Style.accountAvatarSize
+            source: Style.sesAccountIcon
 
             Accessible.role: Accessible.Graphic
             Accessible.name: qsTr("Current account avatar")

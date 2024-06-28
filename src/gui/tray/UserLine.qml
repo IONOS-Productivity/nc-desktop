@@ -32,7 +32,7 @@ AbstractButton {
     Accessible.role: Accessible.MenuItem
     Accessible.name: qsTr("Switch to account") + " " + model.name
 
-    height: Style.trayWindowHeaderHeight
+    height: Style.sesAccountMenuHeight
 
     background: Rectangle {
         anchors.fill: parent
@@ -51,9 +51,7 @@ AbstractButton {
             Layout.leftMargin: 7
             verticalAlignment: Qt.AlignCenter
             cache: false
-            source: model.avatar !== "" ? model.avatar : Theme.darkMode ? "image://avatars/fallbackWhite" : "image://avatars/fallbackBlack"
-            Layout.preferredHeight: Style.accountAvatarSize
-            Layout.preferredWidth: Style.accountAvatarSize
+            source: Style.sesAccountIcon
 
             Rectangle {
                 id: accountStatusIndicatorBackground
