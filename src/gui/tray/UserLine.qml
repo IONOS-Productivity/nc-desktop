@@ -39,7 +39,7 @@ AbstractButton {
         anchors.margins: 1
         color: (userLine.hovered || userLine.visualFocus) &&
                !(userMoreButton.hovered || userMoreButton.visualFocus) ?
-                   palette.highlight : palette.base
+                   Style.sesHover : "transparent"
     }
 
     contentItem: RowLayout {
@@ -152,7 +152,7 @@ AbstractButton {
             background: Rectangle {
                 anchors.fill: parent
                 anchors.margins: 1
-                color: userMoreButton.hovered || userMoreButton.visualFocus ? palette.highlight : "transparent"
+                color: userMoreButton.hovered || userMoreButton.visualFocus ? Style.sesHover : "transparent"
             }
 
             AutoSizingMenu {
@@ -185,7 +185,7 @@ AbstractButton {
                         Rectangle {
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: parent.parent.hovered ? palette.highlight : "transparent"
+                            color: parent.parent.hovered ? Style.sesHover : "transparent"
                         }
                     }
 
@@ -219,7 +219,7 @@ AbstractButton {
                         Rectangle {
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: parent.parent.hovered ? palette.highlight : "transparent"
+                            color: parent.parent.hovered ? Style.sesHover : "transparent"
                         }
                     }
 

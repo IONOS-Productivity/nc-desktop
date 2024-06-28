@@ -219,8 +219,7 @@ Button {
     }
 
     background: Rectangle {
-        color: parent.hovered || parent.visualFocus ? Style.currentUserHeaderTextColor : "transparent"
-        opacity: 0.2
+        color: parent.hovered || parent.visualFocus ? Style.sesHover : "transparent"
     }
 
     RowLayout {
