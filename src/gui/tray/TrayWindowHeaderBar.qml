@@ -66,7 +66,7 @@ Rectangle {
 
                 background: Rectangle {
                     border.color: Style.sesBorderColor
-                    color: palette.base
+                    color: Style.sesWhite
                     radius: 8 //Style.currentAccountButtonRadius
                 }
 
@@ -133,7 +133,7 @@ Rectangle {
                         Rectangle {
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: parent.parent.hovered || parent.parent.visualFocus ? palette.highlight : "transparent"
+                            color: parent.parent.hovered || parent.parent.visualFocus ? Style.sesHover : "transparent"
                         }
                     }
 
@@ -168,7 +168,7 @@ Rectangle {
                         Rectangle {
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: parent.parent.hovered || parent.parent.visualFocus ? palette.highlight : "transparent"
+                            color: parent.parent.hovered || parent.parent.visualFocus ? Style.sesHover : "transparent"
                         }
                     }
 
@@ -195,7 +195,7 @@ Rectangle {
                         Rectangle {
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: parent.parent.hovered || parent.parent.visualFocus ? palette.highlight : "transparent"
+                            color: parent.parent.hovered || parent.parent.visualFocus ? Style.sesHover : "transparent"
                         }
                     }
 
@@ -222,7 +222,7 @@ Rectangle {
                         Rectangle {
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: parent.parent.hovered || parent.parent.visualFocus ? palette.highlight : "transparent"
+                            color: parent.parent.hovered || parent.parent.visualFocus ? Style.sesHover : "transparent"
                         }
                     }
 
@@ -277,7 +277,7 @@ Rectangle {
                         height: width
                         anchors.bottom: currentAccountAvatar.bottom
                         anchors.right: currentAccountAvatar.right
-                        color: currentAccountButton.hovered ? Style.currentUserHeaderTextColor : "transparent"
+                        color: currentAccountButton.hovered ? Style.sesHover : "transparent"
                         opacity: Style.trayFolderStatusIndicatorMouseHoverOpacityFactor
                         radius: width * Style.trayFolderStatusIndicatorRadiusFactor
                     }
@@ -460,8 +460,8 @@ Rectangle {
                 closePolicy: Menu.CloseOnPressOutsideParent | Menu.CloseOnEscape
 
                 background: Rectangle {
-                    border.color: palette.dark
-                    color: palette.base
+                    border.color: Style.sesBorderColor
+                    color: Style.sesWhite
                     radius: 2
                 }
 
@@ -487,7 +487,7 @@ Rectangle {
                             text: model.appName
                             font.pixelSize: Style.topLinePixelSize
                             icon.source: model.appIconUrl
-                            icon.color: palette.buttonText
+                            icon.color: Style.ncTextColor
                             onTriggered: UserAppsModel.openAppUrl(appUrl)
                             hoverEnabled: true
 
@@ -497,7 +497,7 @@ Rectangle {
                                 Rectangle {
                                     anchors.fill: parent
                                     anchors.margins: 1
-                                    color: parent.parent.hovered || parent.parent.visualFocus ? palette.highlight : "transparent"
+                                    color: parent.parent.hovered || parent.parent.visualFocus ? Style.sesHover : "transparent"
                                 }
                             }
 
