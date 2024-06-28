@@ -77,7 +77,7 @@ HeaderButton {
                 cache: false
 
                 anchors.bottom: openLocalFolderButtonIcon.bottom
-                anchors.bottomMargin: Style.trayFoldersMenuButtonStateIndicatorBottomOffset
+                anchors.bottomMargin: -5
                 anchors.right: openLocalFolderButtonIcon.right
                 sourceSize.width: Style.folderStateIndicatorSize
                 sourceSize.height: Style.folderStateIndicatorSize
@@ -85,16 +85,6 @@ HeaderButton {
                 Accessible.role: Accessible.Indicator
                 Accessible.name: root.currentUser.isConnected ? qsTr("Connected") : qsTr("Disconnected")
                 z: 1
-
-                Rectangle {
-                    id: folderStateIndicatorBackground
-                    width: Style.folderStateIndicatorSize + Style.trayFolderStatusIndicatorSizeOffset
-                    height: width
-                    anchors.centerIn: parent
-                    color: Style.currentUserHeaderColor
-                    radius: width * Style.trayFolderStatusIndicatorRadiusFactor
-                    z: -2
-                }
 
                 Rectangle {
                     id: folderStateIndicatorBackgroundMouseHover
