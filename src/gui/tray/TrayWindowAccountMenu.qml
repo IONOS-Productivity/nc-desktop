@@ -240,31 +240,6 @@ Button {
             Accessible.role: Accessible.Graphic
             Accessible.name: qsTr("Current account avatar")
 
-            Rectangle {
-                id: currentAccountStatusIndicatorBackground
-                visible: UserModel.currentUser.isConnected
-                            && UserModel.currentUser.serverHasUserStatus
-                width: Style.accountAvatarStateIndicatorSize +  + Style.trayFolderStatusIndicatorSizeOffset
-                height: width
-                anchors.bottom: currentAccountAvatar.bottom
-                anchors.right: currentAccountAvatar.right
-                color: Style.currentUserHeaderColor
-                radius: width * Style.trayFolderStatusIndicatorRadiusFactor
-            }
-
-            Rectangle {
-                id: currentAccountStatusIndicatorMouseHover
-                visible: UserModel.currentUser.isConnected
-                            && UserModel.currentUser.serverHasUserStatus
-                width: Style.accountAvatarStateIndicatorSize +  + Style.trayFolderStatusIndicatorSizeOffset
-                height: width
-                anchors.bottom: currentAccountAvatar.bottom
-                anchors.right: currentAccountAvatar.right
-                color: currentAccountButton.hovered ? Style.sesHover : "transparent"
-                opacity: Style.trayFolderStatusIndicatorMouseHoverOpacityFactor
-                radius: width * Style.trayFolderStatusIndicatorRadiusFactor
-            }
-
             Image {
                 id: currentAccountStatusIndicator
                 visible: UserModel.currentUser.isConnected

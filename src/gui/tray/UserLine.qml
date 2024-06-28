@@ -52,31 +52,6 @@ AbstractButton {
             verticalAlignment: Qt.AlignCenter
             cache: false
             source: Style.sesAccountIcon
-
-            Rectangle {
-                id: accountStatusIndicatorBackground
-                visible: model.isConnected && model.serverHasUserStatus
-                width: accountStatusIndicator.sourceSize.width + 2
-                height: width
-                anchors.bottom: accountAvatar.bottom
-                anchors.right: accountAvatar.right
-                color: userLine.hovered || userLine.visualFocus ? "#f6f6f6" : "white"
-                radius: width*0.5
-            }
-
-            Image {
-                id: accountStatusIndicator
-                visible: model.isConnected && model.serverHasUserStatus
-                source: model.statusIcon
-                cache: false
-                x: accountStatusIndicatorBackground.x + 1
-                y: accountStatusIndicatorBackground.y + 1
-                sourceSize.width: Style.accountAvatarStateIndicatorSize
-                sourceSize.height: Style.accountAvatarStateIndicatorSize
-
-                Accessible.role: Accessible.Indicator
-                Accessible.name: model.desktopNotificationsAllowed ? qsTr("Current account status is online") : qsTr("Current account status is do not disturb")
-            }
         }
 
         ColumnLayout {
