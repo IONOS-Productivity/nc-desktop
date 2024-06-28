@@ -377,7 +377,7 @@ Rectangle {
         }
 
         HeaderButton {
-            id: trayWindowFilesButton
+            id: trayWindowWebsiteButton
 
             icon.source: Style.sesWebsiteIcon
             icon.color: Style.sesIconColor 
@@ -385,7 +385,7 @@ Rectangle {
 
             Accessible.role: Accessible.Button
             Accessible.name: qsTr("Open Nextcloud in browser")
-            Accessible.onPressAction: trayWindowFilesButton.clicked()
+            Accessible.onPressAction: trayWindowWebsiteButton.clicked()
 
             Layout.alignment: Qt.AlignRight
             Layout.preferredWidth:  Style.trayWindowHeaderHeight
