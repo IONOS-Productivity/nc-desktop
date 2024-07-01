@@ -55,6 +55,7 @@
         <file>src/gui/tray/EnforcedPlainTextLabel.qml</file>
         <file>src/gui/tray/TrayWindowHeaderBar.qml</file>
         <file>src/gui/tray/TrayWindowAccountMenu.qml</file>
+        <file>src/gui/tray/HeaderLogo.qml</file>
         <file>theme/Style/Style.qml</file>
         <file>theme/Style/qmldir</file>
         <file>src/gui/filedetails/NCRadioButton.qml</file>

@@ -256,23 +256,10 @@ ApplicationWindow {
         Accessible.role: Accessible.Grouping
         Accessible.name: qsTr("Nextcloud desktop main dialog")
 
-        Rectangle {
+        HeaderLogo {
             id: trayWindowLogoHeaderBackground
-            height: Style.trayWindowHeaderHeight
+            height: Style.sesHeaderLogoHeigth
             width: parent.width
-            Image{
-                    id: trayWindowLogo
-                    cache: false
-                    source: Style.sesIonosLogoIcon
-                    sourceSize: Qt.size(width, height)
-                    fillMode: Image.PreserveAspectFit
-                    anchors{
-                        top: parent.top
-                        left: parent.left
-                        topMargin: 16
-                        leftMargin: 24
-                    }
-            }
         }
 
         TrayWindowHeaderBar {
