@@ -135,7 +135,7 @@ SettingsDialog::SettingsDialog(ownCloudGui *gui, QWidget *parent)
 
     _actionGroupWidgets.insert(generalAction, generalSettings);
     // _actionGroupWidgets.insert(networkAction, networkSettings);
-
+    _toolBar->addSeparator();
     foreach(auto ai, AccountManager::instance()->accounts()) {
         accountAdded(ai.data());
     }
