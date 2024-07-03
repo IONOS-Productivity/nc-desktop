@@ -44,10 +44,11 @@
 namespace {
 const QString TOOLBAR_CSS()
 {
-    return QStringLiteral("QToolBar { background: %1; margin: 0; padding: 0; border: none; border-bottom: 1px solid %2; spacing: 0; } "
-                          "QToolBar QToolButton { background: %1; border: none; border-bottom: 1px solid %2; margin: 0; padding: 5px; } "
-                          "QToolBar QToolBarExtension { padding:0; } "
-                          "QToolBar QToolButton:checked { background: %3; color: %4; }");
+    return QStringLiteral("QToolBar { background: %1; margin: 0; padding: 0; border: none; border-bottom: 1px solid %2; spacing: 3; padding: 3; } "
+                        "QToolBar QToolButton { background: %1; border: none; margin: 0; padding: 5px; border-radius: 5px; } " // Added border-radius here
+                        "QToolBar::separator { height: 10px; width: 1px; background: %2; margin: 0 5px; } " // Style for the separator
+                        "QToolBar QToolBarExtension { padding:0; } "
+                        "QToolBar QToolButton:checked { background: %3; color: %4; border-radius: 5px; }");
 }
 
 const float buttonSizeRatio = 1.618f; // golden ratio
