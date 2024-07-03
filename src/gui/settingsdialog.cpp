@@ -116,7 +116,6 @@ SettingsDialog::SettingsDialog(ownCloudGui *gui, QWidget *parent)
     auto *spacer = new QWidget();
     spacer->setMinimumWidth(10);
     spacer->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
-    _toolBar->addWidget(spacer);
 
     QAction *generalAction = createColorAwareAction(QLatin1String(":/client/theme/settings.svg"), tr("General"));
     _actionGroup->addAction(generalAction);
