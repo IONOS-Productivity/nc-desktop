@@ -1082,14 +1082,6 @@ void ProcessDirectoryJob::processFileAnalyzeLocalInfo(
                 qCWarning(lcDisco) << "Failed to delete a file record from the local DB" << path._original;
             }
             return;
-        } else if (dbEntry._type == ItemTypeVirtualFile && isVfsWithSuffix()) {
-            // If the virtual file is removed, recreate it.
-            // This is a precaution since the suffix files don't look like the real ones
-            // and we don't want users to accidentally delete server data because they
-            // might not expect that deleting the placeholder will have a remote effect.
-            item->_instruction = CSYNC_INSTRUCTION_NEW;
-            item->_direction = SyncFileItem::Down;
-            item->_type = ItemTypeVirtualFile;
         } else if (!serverModified) {
             // Removed locally: also remove on the server.
             if (!dbEntry._serverHasIgnoredFiles) {
@@ -1661,6 +1653,13 @@ void ProcessDirectoryJob::processFileFinalize(
     const SyncFileItemPtr &item, PathTuple path, bool recurse,
     QueryMode recurseQueryLocal, QueryMode recurseQueryServer)
 {
+    if (item->isEncrypted() && !_discoveryData->_account->capabilities().clientSideEncryptionAvailable()) {
+        item->_instruction = CSyncEnums::CSYNC_INSTRUCTION_IGNORE;
+        item->_direction = SyncFileItem::None;
+        emit _discoveryData->itemDiscovered(item);
+        return;
+    }
+
     // Adjust target path for virtual-suffix files
     if (isVfsWithSuffix()) {
         if (item->_type == ItemTypeVirtualFile) {
