@@ -337,14 +337,18 @@ void SettingsDialog::accountRemoved(AccountState *s)
 
 void SettingsDialog::customizeStyle()
 {
-    QString highlightColor(palette().highlight().color().name());
-    QString highlightTextColor(palette().highlightedText().color().name());
-    QString dark(palette().dark().color().name());
-    QString background(palette().base().color().name());
-    _toolBar->setStyleSheet(TOOLBAR_CSS().arg(background, dark, highlightColor, highlightTextColor));
+    QPalette palette = Theme::instance()->systemPalette();
+    
+    QString white(palette.window().color().name());
+    QString highlightColor(palette.highlight().color().name());
+    QString borderColor(palette.shadow().color().name());
+    QString highlightTextColor(palette.highlightedText().color().name());
+    
+    QString background(palette.base().color().name());
+    _toolBar->setStyleSheet(TOOLBAR_CSS().arg(white, borderColor, highlightColor, highlightTextColor));
 
     Q_FOREACH (QAction *a, _actionGroup->actions()) {
-        QIcon icon = Theme::createColorAwareIcon(a->property("iconPath").toString(), palette());
+        QIcon icon = Theme::createColorAwareIcon(a->property("iconPath").toString(), palette);
         a->setIcon(icon);
         auto *btn = qobject_cast<QToolButton *>(_toolBar->widgetForAction(a));
         if (btn)
