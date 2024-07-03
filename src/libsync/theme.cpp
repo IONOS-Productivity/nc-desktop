@@ -372,6 +372,27 @@ Theme::Theme()
                                 QColor(127, 127, 127));
 #endif
 
+    IONOSPalette.setColor(QPalette::Window, QColor("#ffffff"));
+    IONOSPalette.setColor(QPalette::WindowText, QColor("#001B40"));
+    IONOSPalette.setColor(QPalette::Disabled, QPalette::WindowText, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::Base, QColor( "#FAFAFA"));
+    IONOSPalette.setColor(QPalette::AlternateBase, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::ToolTipBase, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::ToolTipText, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::Text, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::Disabled, QPalette::Text, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::Dark, QColor("#e1e1e1"));
+    IONOSPalette.setColor(QPalette::Shadow, QColor("#D1D1D1"));
+    IONOSPalette.setColor(QPalette::Button, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::ButtonText, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::Disabled, QPalette::ButtonText, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::BrightText,  QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::Link, QColor("#1474c4"));
+    IONOSPalette.setColor(QPalette::Highlight, QColor("#F2F5F8"));
+    IONOSPalette.setColor(QPalette::Disabled, QPalette::Highlight, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::HighlightedText, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::Disabled, QPalette::HighlightedText, QColor(0,0,0));
+
 #ifdef APPLICATION_SERVER_URL_ENFORCE
     _forceOverrideServerUrl = true;
 #endif
@@ -932,12 +953,7 @@ void Theme::connectToPaletteSignal()
 QPalette Theme::systemPalette()
 {
     connectToPaletteSignal();
-#if defined(Q_OS_WIN)
-    if(darkMode()) {
-        return reserveDarkPalette;
-    }
-#endif
-    return QGuiApplication::palette();
+    return IONOSPalette;
 }
 
 bool Theme::darkMode()

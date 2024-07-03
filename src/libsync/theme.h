@@ -634,6 +634,8 @@ private:
     QPalette reserveDarkPalette; // Windows 11 button and window dark colours
 #endif
 
+    QPalette IONOSPalette;
+
     static Theme *_instance;
     bool _mono = false;
     bool _paletteSignalsConnected = false;
