@@ -118,7 +118,12 @@ SettingsDialog::SettingsDialog(ownCloudGui *gui, QWidget *parent)
     spacer->setMinimumWidth(10);
     spacer->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
 
-    QAction *generalAction = createColorAwareAction(QLatin1String(":/client/theme/settings.svg"), tr("General"));
+    QAction *newAccountAction = createColorAwareAction(QLatin1String(":/client/theme/ses/ses-accountPlus.svg"), tr("New Account"));
+    _actionGroup->addAction(newAccountAction);
+    _toolBar->addAction(newAccountAction);
+    connect(newAccountAction, &QAction::triggered, _gui, &ownCloudGui::slotNewAccountWizard);
+
+        QAction *generalAction = createColorAwareAction(QLatin1String(":/client/theme/ses/ses-settings.svg"), tr("General"));
     _actionGroup->addAction(generalAction);
     _toolBar->addAction(generalAction);
     auto *generalSettings = new GeneralSettings;
@@ -217,7 +222,7 @@ void SettingsDialog::showFirstPage()
 {
     QList<QAction *> actions = _toolBar->actions();
     if (!actions.empty()) {
-        actions.first()->trigger();
+        actions.at(1)->trigger();
     }
 }
 
