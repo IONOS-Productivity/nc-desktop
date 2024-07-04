@@ -242,5 +242,6 @@
         <file>theme/ses/ses-pauseSync.svg</file>
         <file>theme/ses/ses-addAccount.svg</file>
         <file>theme/ses/ses-settings.svg</file>
+        <file>theme/ses/ses-INONS-Logo.svg</file>
     </qresource>
 </RCC>
