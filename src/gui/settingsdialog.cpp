@@ -235,7 +235,7 @@ void SettingsDialog::accountAdded(AccountState *s)
     bool brandingSingleAccount = !Theme::instance()->multiAccount();
 
     const auto actionText = brandingSingleAccount ? tr("Account") : s->account()->displayName();
-    const auto accountAction = createColorAwareAction(QLatin1String(":/client/theme/account.svg"), actionText);
+    const auto accountAction = createColorAwareAction(QLatin1String(":/client/theme/ses/ses-accountIcon.svg"), actionText);
 
     if (!brandingSingleAccount) {
         accountAction->setToolTip(s->account()->displayName());
@@ -276,16 +276,7 @@ void SettingsDialog::accountAdded(AccountState *s)
 
 void SettingsDialog::slotAccountAvatarChanged()
 {
-    auto *account = dynamic_cast<Account *>(sender());
-    if (account && _actionForAccount.contains(account)) {
-        QAction *action = _actionForAccount[account];
-        if (action) {
-            QImage pix = account->avatar();
-            if (!pix.isNull()) {
-                action->setIcon(QPixmap::fromImage(AvatarJob::makeCircularAvatar(pix)));
-            }
-        }
-    }
+
 }
 
 void SettingsDialog::slotAccountDisplayNameChanged()
