@@ -579,6 +579,7 @@ void ownCloudGui::slotShowSettings()
     if (_settingsDialog.isNull()) {
         _settingsDialog = new SettingsDialog(this);
         _settingsDialog->setAttribute(Qt::WA_DeleteOnClose, true);
+        _settingsDialog->setStyleSheet(QStringLiteral("QDialog { background-color: white; }"));
         _settingsDialog->show();
     }
     raiseDialog(_settingsDialog.data());
