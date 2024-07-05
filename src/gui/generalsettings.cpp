@@ -43,6 +43,7 @@
 #include <QDir>
 #include <QScopedValueRollback>
 #include <QMessageBox>
+#include <QDesktopServices>
 
 #include <KZip>
 
@@ -240,6 +241,7 @@ GeneralSettings::GeneralSettings(QWidget *parent)
 
     // accountAdded means the wizard was finished and the wizard might change some options.
     connect(AccountManager::instance(), &AccountManager::accountAdded, this, &GeneralSettings::loadMiscSettings);
+    connect(_ui->moreInfoLabel, &QLabel::linkActivated, this, &GeneralSettings::openMoreInformation);
 
     customizeStyle();
 }
@@ -248,6 +250,12 @@ GeneralSettings::~GeneralSettings()
 {
     delete _ui;
 }
+
+void GeneralSettings::openMoreInformation()
+{
+    QDesktopServices::openUrl(QUrl("https://www.nextcloud.com"));
+}
+
 
 QSize GeneralSettings::sizeHint() const
 {
