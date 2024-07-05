@@ -110,7 +110,8 @@
                                         <item>
                                             <widget class="QCheckBox" name="newFolderLimitCheckBox">
                                                 <property name="text">
-             <string>Ask for confirmation before synchronizing new folders larger than</string>
+                                                    <string>Ask for confirmation before
+                                                        synchronizing new folders larger than</string>
                                                 </property>
                                                 <property name="checked">
                                                     <bool>true</bool>
@@ -146,7 +147,9 @@
                                         <item>
                                             <widget class="QLabel" name="label">
                                                 <property name="text">
-             <string extracomment="Trailing part of &quot;Ask confirmation before syncing folder larger than&quot; ">MB</string>
+                                                    <string
+                                                        extracomment="Trailing part of &quot;Ask confirmation before syncing folder larger than&quot; ">
+                                                        MB</string>
                                                 </property>
                                             </widget>
                                         </item>
@@ -171,9 +174,11 @@
                                             </spacer>
                                         </item>
                                         <item>
-           <widget class="QCheckBox" name="existingFolderLimitCheckBox">
+                                            <widget class="QCheckBox"
+                                                name="existingFolderLimitCheckBox">
                                                 <property name="text">
-             <string>Notify when synchronised folders grow larger than specified limit</string>
+                                                    <string>Notify when synchronised folders grow
+                                                        larger than specified limit</string>
                                                 </property>
                                             </widget>
                                         </item>
@@ -198,9 +203,11 @@
                                             </spacer>
                                         </item>
                                         <item>
-           <widget class="QCheckBox" name="stopExistingFolderNowBigSyncCheckBox">
+                                            <widget class="QCheckBox"
+                                                name="stopExistingFolderNowBigSyncCheckBox">
                                                 <property name="text">
-             <string>Automatically disable synchronisation of folders that overcome limit</string>
+                                                    <string>Automatically disable synchronisation of
+                                                        folders that overcome limit</string>
                                                 </property>
                                             </widget>
                                         </item>
@@ -213,7 +220,8 @@
                                 <item>
                                     <widget class="QCheckBox" name="newExternalStorage">
                                         <property name="text">
-           <string>Ask for confirmation before synchronizing external storages</string>
+                                            <string>Ask for confirmation before synchronizing
+                                                external storages</string>
                                         </property>
                                     </widget>
                                 </item>
@@ -233,9 +241,11 @@
                         <item>
                             <layout class="QHBoxLayout" name="horizontalLayout_10">
                                 <item>
-         <widget class="QCheckBox" name="showInExplorerNavigationPaneCheckBox">
+                                    <widget class="QCheckBox"
+                                        name="showInExplorerNavigationPaneCheckBox">
                                         <property name="text">
-           <string>Show sync folders in &amp;Explorer's navigation pane</string>
+                                            <string>Show sync folders in &amp;Explorer's navigation
+                                                pane</string>
                                         </property>
                                     </widget>
                                 </item>
@@ -246,7 +256,8 @@
                                 <item>
                                     <widget class="QCheckBox" name="crashreporterCheckBox">
                                         <property name="sizePolicy">
-           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                                            <sizepolicy hsizetype="MinimumExpanding"
+                                                vsizetype="Fixed">
                                                 <horstretch>0</horstretch>
                                                 <verstretch>0</verstretch>
                                             </sizepolicy>
@@ -321,34 +332,36 @@
                                                 <verstretch>0</verstretch>
                                             </sizepolicy>
                                         </property>
-                                        <property name="text">                                            
+                                        <property name="text">
                                             <string>Desktop client x.x.x</string>
-                                        </property>  
+                                        </property>
                                         <property name="font">
                                             <font>
                                                 <weight>63</weight>
                                                 <family>Segoe UI</family>
                                                 <pointsize>12</pointsize>
                                             </font>
-                                        </property>  
+                                        </property>
                                     </widget>
                                 </item>
                                 <item>
-                                    <widget class="QLabel" name="moreInfoLabel">                                        
+                                    <widget class="QLabel" name="moreInfoLabel">
                                         <property name="text">
-                                            <string>&lt;a href="https://example.com"&gt;More Information&lt;/a&gt;</string>
+                                            <string>&lt;a href="https://example.com"&gt;More
+                                                Information&lt;/a&gt;</string>
                                         </property>
                                         <property name="openExternalLinks">
                                             <bool>false</bool>
                                         </property>
                                         <property name="font">
                                             <font>
-                                                <weight>75</weight> <!-- 75 corresponds to QFont::Bold -->
+                                                <weight>75</weight> <!-- 75 corresponds to
+                                                QFont::Bold -->
                                                 <family>Segoe UI</family>
                                                 <pointsize>12</pointsize>
-                                                 <underline>true</underline>
+                                                <underline>true</underline>
                                             </font>
-                                        </property> 
+                                        </property>
                                         <property name="styleSheet">
                                             <string>QLabel a { color: #02306A; }</string>
                                         </property>
@@ -390,7 +403,8 @@
                                             <item>
                                                 <widget class="QLabel" name="updateChannelLabel">
                                                     <property name="sizePolicy">
-              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                                                        <sizepolicy hsizetype="Maximum"
+                                                            vsizetype="Preferred">
                                                             <horstretch>0</horstretch>
                                                             <verstretch>0</verstretch>
                                                         </sizepolicy>
@@ -403,7 +417,8 @@
                                             <item>
                                                 <widget class="QComboBox" name="updateChannel">
                                                     <property name="sizePolicy">
-              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                                                        <sizepolicy hsizetype="Maximum"
+                                                            vsizetype="Fixed">
                                                             <horstretch>0</horstretch>
                                                             <verstretch>0</verstretch>
                                                         </sizepolicy>
@@ -423,7 +438,7 @@
                                             <item>
                                                 <widget class="QLabel" name="updateStateLabel">
                                                     <property name="text">
-              <string/>
+                                                        <string />
                                                     </property>
                                                     <property name="wordWrap">
                                                         <bool>true</bool>
@@ -436,7 +451,8 @@
                                             <item>
                                                 <widget class="QPushButton" name="restartButton">
                                                     <property name="sizePolicy">
-              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                                                        <sizepolicy hsizetype="Maximum"
+                                                            vsizetype="Fixed">
                                                             <horstretch>0</horstretch>
                                                             <verstretch>0</verstretch>
                                                         </sizepolicy>
@@ -453,7 +469,8 @@
                                             <item>
                                                 <widget class="QPushButton" name="updateButton">
                                                     <property name="sizePolicy">
-              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                                                        <sizepolicy hsizetype="Maximum"
+                                                            vsizetype="Fixed">
                                                             <horstretch>0</horstretch>
                                                             <verstretch>0</verstretch>
                                                         </sizepolicy>
@@ -481,7 +498,8 @@
                                     <item>
                                         <layout class="QHBoxLayout" name="horizontalLayout_6">
                                             <item>
-            <widget class="QPushButton" name="usageDocumentationButton">
+                                                <widget class="QPushButton"
+                                                    name="usageDocumentationButton">
                                                     <property name="text">
                                                         <string>Usage Documentation</string>
                                                     </property>
@@ -520,14 +538,14 @@
     <tabstops>
         <tabstop>autostartCheckBox</tabstop>
         <tabstop>serverNotificationsCheckBox</tabstop>
-  <tabstop>monoIconsCheckBox</tabstop>
+        <tabstop>monoIconsCheckBox</tabstop>
         <tabstop>ignoredFilesButton</tabstop>
         <tabstop>newFolderLimitCheckBox</tabstop>
         <tabstop>newFolderLimitSpinBox</tabstop>
         <tabstop>crashreporterCheckBox</tabstop>
         <tabstop>restartButton</tabstop>
     </tabstops>
- <resources/>
+    <resources />
     <connections>
         <connection>
             <sender>newFolderLimitCheckBox</sender>
