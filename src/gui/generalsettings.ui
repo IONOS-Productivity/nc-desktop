@@ -335,13 +335,6 @@
                                         <property name="text">
                                             <string>Desktop client x.x.x</string>
                                         </property>
-                                        <property name="font">
-                                            <font>
-                                                <weight>63</weight>
-                                                <family>Segoe UI</family>
-                                                <pointsize>12</pointsize>
-                                            </font>
-                                        </property>
                                     </widget>
                                 </item>
                                 <item>
@@ -352,18 +345,6 @@
                                         </property>
                                         <property name="openExternalLinks">
                                             <bool>false</bool>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <weight>75</weight> <!-- 75 corresponds to
-                                                QFont::Bold -->
-                                                <family>Segoe UI</family>
-                                                <pointsize>12</pointsize>
-                                                <underline>true</underline>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string>QLabel a { color: #02306A; }</string>
                                         </property>
                                     </widget>
                                 </item>
