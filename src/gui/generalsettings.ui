@@ -72,13 +72,22 @@
                                 </font>
                             </property>
                             <layout class="QVBoxLayout">
-                                <!-- <item>
-                            <widget class="QCheckBox" name="qtToggleCheckBox">
-                                <property name="text">
-                                    <string>Enable Qt Toggle</string>
-                                </property>
-                            </widget>
-                        </item> -->
+                                <item>
+                                    <widget class="QCheckBox" name="autoCheckForUpdatesCheckBox">
+                                        <property name="sizePolicy">
+                                            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                                                <horstretch>0</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                        <property name="text">
+                                            <string>&amp;Automatically check for updates</string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                </item>
                             </layout>
                         </widget>
                     </item>
@@ -315,6 +324,34 @@
                                         <property name="text">                                            
                                             <string>Desktop client x.x.x</string>
                                         </property>  
+                                        <property name="font">
+                                            <font>
+                                                <weight>63</weight>
+                                                <family>Segoe UI</family>
+                                                <pointsize>12</pointsize>
+                                            </font>
+                                        </property>  
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QLabel" name="moreInfoLabel">                                        
+                                        <property name="text">
+                                            <string>&lt;a href="https://example.com"&gt;More Information&lt;/a&gt;</string>
+                                        </property>
+                                        <property name="openExternalLinks">
+                                            <bool>false</bool>
+                                        </property>
+                                        <property name="font">
+                                            <font>
+                                                <weight>75</weight> <!-- 75 corresponds to QFont::Bold -->
+                                                <family>Segoe UI</family>
+                                                <pointsize>12</pointsize>
+                                                 <underline>true</underline>
+                                            </font>
+                                        </property> 
+                                        <property name="styleSheet">
+                                            <string>QLabel a { color: #02306A; }</string>
+                                        </property>
                                     </widget>
                                 </item>
                                 <item>
@@ -413,22 +450,6 @@
                                     </item>
                                     <item>
                                         <layout class="QHBoxLayout" name="horizontalLayout_7">
-                                            <item>
-                                                <widget class="QCheckBox" name="autoCheckForUpdatesCheckBox">
-                                                    <property name="sizePolicy">
-                                                        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                                                            <horstretch>0</horstretch>
-                                                            <verstretch>0</verstretch>
-                                                        </sizepolicy>
-                                                    </property>
-                                                    <property name="text">
-                                                        <string>&amp;Automatically check for updates</string>
-                                                    </property>
-                                                    <property name="checked">
-                                                        <bool>true</bool>
-                                                    </property>
-                                                </widget>
-                                            </item>
                                             <item>
                                                 <widget class="QPushButton" name="updateButton">
                                                     <property name="sizePolicy">
