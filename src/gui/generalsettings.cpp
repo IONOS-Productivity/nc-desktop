@@ -561,6 +561,10 @@ void GeneralSettings::customizeStyle()
     }();
     _ui->infoAndUpdatesLabel->setText(aboutText);
 
+    this->setStyleSheet(
+        "QGroupBox {border: white; padding: 15px; }"
+    );
+
     // SES-4 removed
     _ui->monoIconsCheckBox->hide();
     _ui->callNotificationsCheckBox->hide();
