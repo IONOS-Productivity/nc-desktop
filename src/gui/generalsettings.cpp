@@ -562,7 +562,8 @@ void GeneralSettings::customizeStyle()
     _ui->infoAndUpdatesLabel->setText(aboutText);
 
     this->setStyleSheet(
-        "QGroupBox {border: white; padding: 15px; }"
+        "QGroupBox {border: white; padding: 15px; font-size: 20px; font-weight: demibold; font-family: 'Segoe UI'}"
+        "QCheckBox { font-family: 'Segoe UI'; font-weight: normal; font-size: 16px; }"
     );
 
     // SES-4 removed
