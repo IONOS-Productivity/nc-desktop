@@ -64,8 +64,9 @@ HeaderButton {
 
         Item {
             id: contentContainer
-            anchors.centerIn: parent
-
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            anchors.topMargin: 10
             implicitWidth: openLocalFolderButtonCaretIconLoader.active ? openLocalFolderButtonIcon.width + openLocalFolderButtonCaretIconLoader.width : openLocalFolderButtonIcon.width
             implicitHeight: openLocalFolderButtonIcon.height
 
@@ -76,7 +77,7 @@ HeaderButton {
                 cache: false
 
                 anchors.bottom: openLocalFolderButtonIcon.bottom
-                anchors.bottomMargin: Style.trayFoldersMenuButtonStateIndicatorBottomOffset
+                anchors.bottomMargin: -5
                 anchors.right: openLocalFolderButtonIcon.right
                 sourceSize.width: Style.folderStateIndicatorSize
                 sourceSize.height: Style.folderStateIndicatorSize
@@ -84,16 +85,6 @@ HeaderButton {
                 Accessible.role: Accessible.Indicator
                 Accessible.name: root.currentUser.isConnected ? qsTr("Connected") : qsTr("Disconnected")
                 z: 1
-
-                Rectangle {
-                    id: folderStateIndicatorBackground
-                    width: Style.folderStateIndicatorSize + Style.trayFolderStatusIndicatorSizeOffset
-                    height: width
-                    anchors.centerIn: parent
-                    color: Style.currentUserHeaderColor
-                    radius: width * Style.trayFolderStatusIndicatorRadiusFactor
-                    z: -2
-                }
 
                 Rectangle {
                     id: folderStateIndicatorBackgroundMouseHover
@@ -110,12 +101,12 @@ HeaderButton {
             Image {
                 id: openLocalFolderButtonIcon
 
-                property int imageWidth: rootContent.width * Style.trayFoldersMenuButtonMainIconSizeFraction
-                property int imageHeight: rootContent.width * Style.trayFoldersMenuButtonMainIconSizeFraction
+                property int imageWidth: rootContent.width * 0.5
+                property int imageHeight: rootContent.width * 0.5
 
                 cache: true
 
-                source: "image://svgimage-custom-color/folder.svg/" + Style.currentUserHeaderTextColor
+                source: Style.sesFilesIcon
                 sourceSize {
                     width: imageWidth
                     height: imageHeight
@@ -127,6 +118,14 @@ HeaderButton {
                 anchors.verticalCenter: parent
             }
 
+            Text {
+                anchors.horizontalCenter: openLocalFolderButtonIcon.horizontalCenter
+                anchors.top: openLocalFolderButtonIcon.bottom
+                anchors.topMargin: 2
+                text: qsTr("Files")
+                font.family: "Open Sans"
+                font.pointSize: Style.defaultFontPtSize
+            }
 
             Loader {
                 id: openLocalFolderButtonCaretIconLoader

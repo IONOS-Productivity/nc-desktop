@@ -244,5 +244,8 @@
         <file>theme/ses/ses-settings.svg</file>
         <file>theme/ses/ses-INONS-Logo.svg</file>
         <file>theme/ses/ses-accountIcon.svg</file>
+        <file>theme/ses/ses-website.svg</file>
+        <file>theme/ses/ses-filesIcon.svg</file>
+        <file>theme/ses/ses-accountIcon.svg</file>
     </qresource>
 </RCC>

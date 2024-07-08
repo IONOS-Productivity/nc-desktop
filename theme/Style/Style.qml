@@ -208,4 +208,20 @@ QtObject {
     readonly property string sesQuitIcon: "qrc:///client/theme/ses/ses-quit.svg"
     readonly property string sesPauseSyncIcon: "qrc:///client/theme/ses/ses-pauseSync.svg"
     readonly property string sesAddAccountIcon: "qrc:///client/theme/ses/ses-addAccount.svg"
+    readonly property string sesIonosLogoIcon: "qrc:///client/theme/ses/ses-INONS-Logo.svg"
+    readonly property string sesWebsiteIcon: "qrc:///client/theme/ses/ses-website.svg"
+    readonly property string sesFilesIcon: "qrc:///client/theme/ses/ses-filesIcon.svg"
+    readonly property string sesAccountIcon: "qrc:///client/theme/ses/ses-accountIcon.svg"
+
+    readonly property color sesIconColor: "#1474C4"
+    readonly property color sesBorderColor: "#D7D7D7"
+    readonly property color sesWhite: "#FFFFFF"
+    readonly property color sesHover: "#F2F5F8"
+    readonly property color sesHoverAction: "#1474C4"
+    readonly property color sesHeaderLogoBackgroundColor: "#F4F7FA"
+    
+    property int sesAccountMenuHeight: variableSize(40)
+    property int sesHeaderLogoHeigth: variableSize(40)
+    property int sesHeaderLogoTopMargin: variableSize(16)
+    property int sesHeaderLogoLeftMargin: variableSize(24)
 }

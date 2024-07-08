@@ -174,7 +174,7 @@ RowLayout {
                 display: Button.IconOnly
                 leftPadding: 0
                 rightPadding: 0
-                bgColor: palette.mid
+                bgColor: Style.sesHoverAction
                 bgNormalOpacity:  0
 
                 visible: model.showFileDetails

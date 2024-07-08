@@ -32,14 +32,14 @@ AbstractButton {
     Accessible.role: Accessible.MenuItem
     Accessible.name: qsTr("Switch to account") + " " + model.name
 
-    height: Style.trayWindowHeaderHeight
+    height: Style.sesAccountMenuHeight
 
     background: Rectangle {
         anchors.fill: parent
         anchors.margins: 1
         color: (userLine.hovered || userLine.visualFocus) &&
                !(userMoreButton.hovered || userMoreButton.visualFocus) ?
-                   palette.highlight : palette.base
+                   Style.sesHover : "transparent"
     }
 
     contentItem: RowLayout {
@@ -51,34 +51,7 @@ AbstractButton {
             Layout.leftMargin: 7
             verticalAlignment: Qt.AlignCenter
             cache: false
-            source: model.avatar !== "" ? model.avatar : Theme.darkMode ? "image://avatars/fallbackWhite" : "image://avatars/fallbackBlack"
-            Layout.preferredHeight: Style.accountAvatarSize
-            Layout.preferredWidth: Style.accountAvatarSize
-
-            Rectangle {
-                id: accountStatusIndicatorBackground
-                visible: model.isConnected && model.serverHasUserStatus
-                width: accountStatusIndicator.sourceSize.width + 2
-                height: width
-                anchors.bottom: accountAvatar.bottom
-                anchors.right: accountAvatar.right
-                color: userLine.hovered || userLine.visualFocus ? "#f6f6f6" : "white"
-                radius: width*0.5
-            }
-
-            Image {
-                id: accountStatusIndicator
-                visible: model.isConnected && model.serverHasUserStatus
-                source: model.statusIcon
-                cache: false
-                x: accountStatusIndicatorBackground.x + 1
-                y: accountStatusIndicatorBackground.y + 1
-                sourceSize.width: Style.accountAvatarStateIndicatorSize
-                sourceSize.height: Style.accountAvatarStateIndicatorSize
-
-                Accessible.role: Accessible.Indicator
-                Accessible.name: model.desktopNotificationsAllowed ? qsTr("Current account status is online") : qsTr("Current account status is do not disturb")
-            }
+            source: Style.sesAccountIcon
         }
 
         ColumnLayout {
@@ -95,7 +68,6 @@ AbstractButton {
                 text: name
                 elide: Text.ElideRight
                 font.pixelSize: Style.topLinePixelSize
-                font.bold: true
             }
 
             RowLayout {
@@ -123,16 +95,6 @@ AbstractButton {
                     leftPadding: Style.accountLabelsSpacing
                 }
             }
-
-            EnforcedPlainTextLabel {
-                id: accountServer
-                Layout.fillWidth: true
-                Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-                verticalAlignment: Text.AlignTop
-                text: server
-                elide: Text.ElideRight
-                font.pixelSize: Style.subLinePixelSize
-            }
         }
 
         Button {
@@ -152,7 +114,8 @@ AbstractButton {
             background: Rectangle {
                 anchors.fill: parent
                 anchors.margins: 1
-                color: userMoreButton.hovered || userMoreButton.visualFocus ? palette.highlight : "transparent"
+                color: userMoreButton.hovered || userMoreButton.visualFocus ? Style.sesHoverAction : "transparent"
+                radius: 8
             }
 
             AutoSizingMenu {
@@ -185,7 +148,7 @@ AbstractButton {
                         Rectangle {
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: parent.parent.hovered ? palette.highlight : "transparent"
+                            color: parent.parent.hovered ? Style.sesHover : "transparent"
                         }
                     }
 
@@ -219,7 +182,7 @@ AbstractButton {
                         Rectangle {
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: parent.parent.hovered ? palette.highlight : "transparent"
+                            color: parent.parent.hovered ? Style.sesHover : "transparent"
                         }
                     }
 
