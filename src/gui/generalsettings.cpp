@@ -242,6 +242,7 @@ GeneralSettings::GeneralSettings(QWidget *parent)
     connect(_ui->moreInfoLabel, &QLabel::linkActivated, this, &GeneralSettings::openMoreInformation);
     
     connect(_ui->legalNoticeLink, &QLabel::linkActivated, this, &GeneralSettings::slotShowLegalNotice);
+    connect(_ui->sendData_checkbox, &QAbstractButton::toggled, this, &GeneralSettings::slotToggleOptionalServerNotifications);
 
     customizeStyle();
 }
@@ -544,6 +545,11 @@ void GeneralSettings::slotShowLegalNotice()
     auto notice = new LegalNotice();
     notice->exec();
     delete notice;
+}
+
+void GeneralSettings::slotToggleSendData()
+{
+
 }
 
 void GeneralSettings::slotStyleChanged()
