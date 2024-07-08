@@ -577,12 +577,7 @@ void GeneralSettings::customizeStyle()
     _ui->monoIconsCheckBox->hide();
     _ui->callNotificationsCheckBox->hide();
     _ui->advanced_groupBox->hide();
-    _ui->restartButton->hide();
-    _ui->updateStateLabel->hide();
-    _ui->updateChannel->hide();
-    _ui->updateChannelLabel->hide();
-    _ui->updateButton->hide();
-    _ui->usageDocumentationButton->hide();
+    _ui->updates_frame->hide();
 
 #if defined(BUILD_UPDATER)
     // updater info
