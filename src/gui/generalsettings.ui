@@ -320,49 +320,8 @@
             </item>
             <!-- About and Updates -->
             <item>
-                <widget class="QFrame" name="aboutAndUpdatesGroupBox">
+                <widget class="QFrame" name="updates_frame">
                     <layout class="QVBoxLayout" name="verticalLayout_3">
-                        <item>
-                            <layout class="QHBoxLayout">
-                                <item>
-                                    <widget class="QLabel" name="infoAndUpdatesLabel">
-                                        <property name="sizePolicy">
-                                            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-                                                <horstretch>0</horstretch>
-                                                <verstretch>0</verstretch>
-                                            </sizepolicy>
-                                        </property>
-                                        <property name="text">
-                                            <string>Desktop client x.x.x</string>
-                                        </property>
-                                    </widget>
-                                </item>
-                                <item>
-                                    <widget class="QLabel" name="moreInfoLabel">
-                                        <property name="text">
-                                            <string>&lt;a href="https://example.com"&gt;More
-                                                Information&lt;/a&gt;</string>
-                                        </property>
-                                        <property name="openExternalLinks">
-                                            <bool>false</bool>
-                                        </property>
-                                    </widget>
-                                </item>
-                                <item>
-                                    <spacer name="horizontalSpacer">
-                                        <property name="orientation">
-                                            <enum>Qt::Horizontal</enum>
-                                        </property>
-                                        <property name="sizeHint" stdset="0">
-                                            <size>
-                                                <width>20</width>
-                                                <height>0</height>
-                                            </size>
-                                        </property>
-                                    </spacer>
-                                </item>
-                            </layout>
-                        </item>
                         <item>
                             <widget class="QFrame" name="updatesContainer">
                                 <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -509,6 +468,50 @@
                                     </item>
                                 </layout>
                             </widget>
+                        </item>
+                    </layout>
+                </widget>
+            </item>
+            <!-- Footer -->
+            <item>
+                <widget class="QFrame" name="footer_frame">
+                    <layout class="QHBoxLayout">
+                        <item>
+                            <widget class="QLabel" name="infoAndUpdatesLabel">
+                                <property name="sizePolicy">
+                                    <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="text">
+                                    <string>Desktop client x.x.x</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>
+                            <widget class="QLabel" name="moreInfoLabel">
+                                <property name="text">
+                                    <string>&lt;a href="https://example.com"&gt;More
+                                        Information&lt;/a&gt;</string>
+                                </property>
+                                <property name="openExternalLinks">
+                                    <bool>false</bool>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>
+                            <spacer name="horizontalSpacer">
+                                <property name="orientation">
+                                    <enum>Qt::Horizontal</enum>
+                                </property>
+                                <property name="sizeHint" stdset="0">
+                                    <size>
+                                        <width>20</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                            </spacer>
                         </item>
                     </layout>
                 </widget>
