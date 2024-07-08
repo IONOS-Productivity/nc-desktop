@@ -183,9 +183,6 @@ GeneralSettings::GeneralSettings(QWidget *parent)
     _ui->infoAndUpdatesLabel->setText(Theme::instance()->about());
     _ui->infoAndUpdatesLabel->setOpenExternalLinks(true);
 
-    // About legal notice
-    connect(_ui->legalNoticeButton, &QPushButton::clicked, this, &GeneralSettings::slotShowLegalNotice);
-
     connect(_ui->usageDocumentationButton, &QPushButton::clicked, this, []() {
         Utility::openBrowser(QUrl(Theme::instance()->helpUrl()));
     });
@@ -241,7 +238,10 @@ GeneralSettings::GeneralSettings(QWidget *parent)
 
     // accountAdded means the wizard was finished and the wizard might change some options.
     connect(AccountManager::instance(), &AccountManager::accountAdded, this, &GeneralSettings::loadMiscSettings);
+    
     connect(_ui->moreInfoLabel, &QLabel::linkActivated, this, &GeneralSettings::openMoreInformation);
+    
+    connect(_ui->legalNoticeLink, &QLabel::linkActivated, this, &GeneralSettings::slotShowLegalNotice);
 
     customizeStyle();
 }
