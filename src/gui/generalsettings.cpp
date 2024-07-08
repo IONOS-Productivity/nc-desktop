@@ -238,9 +238,9 @@ GeneralSettings::GeneralSettings(QWidget *parent)
 
     // accountAdded means the wizard was finished and the wizard might change some options.
     connect(AccountManager::instance(), &AccountManager::accountAdded, this, &GeneralSettings::loadMiscSettings);
-    
+
     connect(_ui->moreInfoLabel, &QLabel::linkActivated, this, &GeneralSettings::openMoreInformation);
-    
+
     connect(_ui->legalNoticeLink, &QLabel::linkActivated, this, &GeneralSettings::slotShowLegalNotice);
     connect(_ui->sendData_checkbox, &QAbstractButton::toggled, this, &GeneralSettings::slotToggleOptionalServerNotifications);
 
@@ -568,9 +568,10 @@ void GeneralSettings::customizeStyle()
     _ui->infoAndUpdatesLabel->setText(aboutText);
 
     this->setStyleSheet(
-        "QGroupBox {border: white; padding: 15px; font-size: 20px; font-weight: 500; font-family: 'Segoe UI'}"
-        "QCheckBox { font-family: 'Segoe UI'; font-weight: normal; font-size: 16px; }"     
-         "QLabel { font-family: 'Segoe UI'; font-size: 16px; font-weight: 500; }"   
+        QStringLiteral("QGroupBox {border: %1; padding: 15px; font-size: 20px; font-weight: 500; font-family: 'Segoe UI'}"
+        "QCheckBox { font-family: 'Segoe UI'; font-weight: normal; font-size: 16px; }"
+         "QLabel { font-family: 'Segoe UI'; font-size: 16px; font-weight: 500; }"
+         ).arg(Theme::instance()->systemPalette().base().color().name())
     );
 
     // SES-4 removed
