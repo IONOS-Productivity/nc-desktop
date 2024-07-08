@@ -113,11 +113,6 @@ SettingsDialog::SettingsDialog(ownCloudGui *gui, QWidget *parent)
     _actionGroup->setExclusive(true);
     connect(_actionGroup, &QActionGroup::triggered, this, &SettingsDialog::slotSwitchPage);
 
-    // Adds space between users + activities and general + network actions
-    auto *spacer = new QWidget();
-    spacer->setMinimumWidth(10);
-    spacer->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
-
     QAction *newAccountAction = createColorAwareAction(QLatin1String(":/client/theme/ses/ses-accountPlus.svg"), tr("New Account"));
     _actionGroup->addAction(newAccountAction);
     _toolBar->addAction(newAccountAction);
