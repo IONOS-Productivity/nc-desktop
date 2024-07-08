@@ -95,7 +95,7 @@
             </item>
             <!-- Advanced -->
             <item>
-                <widget class="QGroupBox" name="groupBox">
+                <widget class="QGroupBox" name="advanced_groupBox">
                     <property name="title">
                         <string>Advanced</string>
                     </property>
@@ -363,7 +363,6 @@
                                 </item>
                             </layout>
                         </item>
-
                         <item>
                             <widget class="QFrame" name="updatesContainer">
                                 <layout class="QVBoxLayout" name="verticalLayout_5">

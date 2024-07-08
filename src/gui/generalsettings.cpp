@@ -570,7 +570,7 @@ void GeneralSettings::customizeStyle()
     // SES-4 removed
     _ui->monoIconsCheckBox->hide();
     _ui->callNotificationsCheckBox->hide();
-    _ui->groupBox->hide();
+    _ui->advanced_groupBox->hide();
     _ui->restartButton->hide();
     _ui->updateStateLabel->hide();
     _ui->updateChannel->hide();
