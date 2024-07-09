@@ -91,7 +91,7 @@ SettingsDialog::SettingsDialog(ownCloudGui *gui, QWidget *parent)
 
     _ui->setupUi(this);
     _toolBar = new QToolBar;
-    _toolBar->setIconSize(QSize(24, 24));
+    _toolBar->setIconSize(QSize(IonosTheme::toolbarIconSize(), IonosTheme::toolbarIconSize()));
     _toolBar->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     layout()->setMenuBar(_toolBar);
 

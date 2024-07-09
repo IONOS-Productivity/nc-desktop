@@ -22,6 +22,10 @@ public:
         return "10px";
     }
 
+    static int toolbarIconSize(){
+        return 24;
+    }
+
 
     // Add more methods for different elements and their colors
 
