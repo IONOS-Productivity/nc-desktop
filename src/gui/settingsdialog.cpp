@@ -17,6 +17,7 @@
 
 #include "folderman.h"
 #include "theme.h"
+#include "ionostheme.h"
 #include "generalsettings.h"
 #include "networksettings.h"
 #include "accountsettings.h"
@@ -45,10 +46,10 @@ namespace {
 const QString TOOLBAR_CSS()
 {
     return QStringLiteral("QToolBar { background: %1; margin: 0; padding: 0; border: none; border-bottom: 1px solid %2; spacing: 3; padding: 3; } "
-                        "QToolBar QToolButton { background: %1; border: none; margin: 0; padding: 5px; border-radius: 5px; } " // Added border-radius here
-                        "QToolBar::separator { height: 10px; width: 1px; background: %2; margin: 0 5px; } " // Style for the separator
+                        "QToolBar QToolButton { background: %1; border: none; margin: 0; padding: 5px; border-radius: %5; } " // Added border-radius here
+                        "QToolBar::separator { height: 100%; width: 1px; background: %2; margin: 0 %6; } " // Style for the separator
                         "QToolBar QToolBarExtension { padding:0; } "
-                        "QToolBar QToolButton:checked { background: %3; color: %4; border-radius: 5px; }");
+                        "QToolBar QToolButton:checked { background: %3; color: %4; border-radius: %5; }"
 }
 
 const float buttonSizeRatio = 1.618f; // golden ratio
@@ -334,9 +335,12 @@ void SettingsDialog::customizeStyle()
     QString highlightColor(palette.highlight().color().name());
     QString borderColor(palette.shadow().color().name());
     QString highlightTextColor(palette.highlightedText().color().name());
+
+     QString toolbarActionBorderRadius(IonosTheme::toolbarActionBorderRadius());
+     QString toolbarSideMargin (IonosTheme::toolbarSideMargin());
     
     QString background(palette.base().color().name());
-    _toolBar->setStyleSheet(TOOLBAR_CSS().arg(white, borderColor, highlightColor, highlightTextColor));
+    _toolBar->setStyleSheet(TOOLBAR_CSS().arg(white, borderColor, highlightColor, highlightTextColor, toolbarActionBorderRadius, toolbarSideMargin));
 
     Q_FOREACH (QAction *a, _actionGroup->actions()) {
         QIcon icon = Theme::createColorAwareIcon(a->property("iconPath").toString(), palette);
