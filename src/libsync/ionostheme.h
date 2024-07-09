@@ -2,17 +2,6 @@
 
 class IonosTheme {
 public:
-    static QString getBackgroundColor() {
-        return "#FFFFFF"; // Example color for background
-    }
-
-    static QString getTextColor() {
-        return "#000000"; // Example color for text
-    }
-
-    static QString getButtonColor() {
-        return "#FF0000"; // Example color for buttons
-    }
 
     static QString toolbarActionBorderRadius() {
         return "8px";
@@ -24,6 +13,26 @@ public:
 
     static int toolbarIconSize(){
         return 24;
+    }
+
+    static QString settingsFont() {
+        return "'Segoe UI'"; // Example color for button text
+    }
+
+    static QString settingsTitleSize() {
+        return "20px"; // Example color for button text
+    }
+
+    static QString settingsTitleWeigth() {
+        return "500"; // Example color for button text
+    }
+
+    static QString settingsTextSize() {
+        return "16px"; // Example color for button text
+    }
+
+    static QString settingsTextWeigth() {
+        return "normal"; // Example color for button text
     }
 
 

@@ -16,6 +16,7 @@
 #include "ui_generalsettings.h"
 
 #include "theme.h"
+#include "ionostheme.h"
 #include "configfile.h"
 #include "application.h"
 #include "owncloudsetupwizard.h"
@@ -568,10 +569,15 @@ void GeneralSettings::customizeStyle()
     _ui->infoAndUpdatesLabel->setText(aboutText);
 
     this->setStyleSheet(
-        QStringLiteral("QGroupBox {border: %1; padding: 15px; font-size: 20px; font-weight: 500; font-family: 'Segoe UI'}"
-        "QCheckBox { font-family: 'Segoe UI'; font-weight: normal; font-size: 16px; }"
-         "QLabel { font-family: 'Segoe UI'; font-size: 16px; font-weight: 500; }"
-         ).arg(Theme::instance()->systemPalette().base().color().name())
+        QStringLiteral("QGroupBox {border: %1; padding: 15px; font-size: %2; font-weight: %3; font-family: %4}"
+        "QCheckBox { font-family: %4; font-weight: %5; font-size: %6; }"
+         "QLabel { font-family: %4; font-size: %6; font-weight: %3; }"
+         ).arg(Theme::instance()->systemPalette().base().color().name(), IonosTheme::settingsTitleSize(),
+          IonosTheme::settingsTitleWeigth(),
+          IonosTheme::settingsFont(),
+          IonosTheme::settingsTextWeigth(),
+          IonosTheme::settingsTextSize()
+        )    
     );
 
     // SES-4 removed
