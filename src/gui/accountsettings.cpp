@@ -38,6 +38,7 @@
 #include "owncloudsetupwizard.h"
 #include "syncresult.h"
 #include "theme.h"
+#include "IonosTheme.h"
 #include "tooltipupdater.h"
 #include "ui_mnemonicdialog.h"
 #include "userinfo.h"
@@ -85,14 +86,16 @@ Q_LOGGING_CATEGORY(lcAccountSettings, "nextcloud.gui.account.settings", QtInfoMs
 const QString progressBarStyle()
 {
     return QStringLiteral(
-        "QProgressBar {"
-        "border: 1px solid grey;"
-        "border-radius: 5px;"
-        "text-align: center;"
-        "}"
-        "QProgressBar::chunk {"
-        "background-color: %1; width: 1px;"
-        "}");
+        "QProgressBar { border: 1px solid grey;  border-radius: 5px; text-align: center; }"
+        "QProgressBar::chunk { background-color: %1; width: 1px; }"
+    );
+}
+
+const QString progressBarTitleStyle()
+{
+    return QStringLiteral(
+        "QLabel { font-family: %1; font-size: %2; font-weight: %3; }"
+    );
 }
 
 void showEnableE2eeWithVirtualFilesWarningDialog(std::function<void(void)> onAccept)
@@ -1234,6 +1237,7 @@ void AccountSettings::slotUpdateQuota(qint64 total, qint64 used)
         _ui->quotaInfoLabel->setText(tr("%1 of %2 in use").arg(usedStr, totalStr));
         _ui->quotaInfoLabel->setToolTip(toolTip);
         _ui->quotaProgressBar->setToolTip(toolTip);
+        _ui->quotaInfo2Label->setText(tr("Storage space %1% occupied").arg(percentStr));
     } else {
         _ui->quotaProgressBar->setVisible(false);
         _ui->quotaInfoLabel->setToolTip({});
@@ -1629,6 +1633,8 @@ void AccountSettings::customizeStyle()
 
     const auto color = palette().highlight().color();
     _ui->quotaProgressBar->setStyleSheet(progressBarStyle().arg(color.name()));
+
+    _ui->quotaInfoLabel->setStyleSheet(progressBarTitleStyle().arg(IonosTheme::settingsFont(), IonosTheme::settingsTitleSize(), IonosTheme::settingsTitleWeigth()));
 }
 
 void AccountSettings::initializeE2eEncryption()
