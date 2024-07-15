@@ -13,7 +13,19 @@
         <property name="windowTitle">
             <string notr="true">Form</string>
         </property>
-        <layout class="QGridLayout" name="gridLayout">
+        <property name="leftMargin">
+            <number>32</number>
+        </property>        
+        <property name="rightMargin">
+            <number>32</number>
+        </property>        
+        <property name="topMargin">
+            <number>32</number>
+        </property>        
+        <property name="bottomMargin">
+            <number>32</number>
+        </property>        
+        <layout class="QGridLayout" name="account_gridLayout">
             <item row="2" column="0">
                 <layout class="QVBoxLayout" name="storageGroupBox">
                     <item>
