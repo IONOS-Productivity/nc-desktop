@@ -70,6 +70,7 @@ public slots:
 
 private:
     void customizeStyle();
+    void drawAddButton(QPainter *,const QStyleOptionViewItem &, const QModelIndex &) const;
 
     static QString addFolderText();
     QPersistentModelIndex _pressedIndex;
