@@ -199,7 +199,7 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     localPathRect.setTop(remotePathRect.bottom() + margin);
     localPathRect.setBottom(localPathRect.top() + subFm.height());
 
-    iconRect.setBottom(localPathRect.bottom());
+    iconRect.setBottom(remotePathRect.top());
     iconRect.setWidth(iconRect.height());
 
     const auto nextToIcon = iconRect.right() + aliasMargin;
