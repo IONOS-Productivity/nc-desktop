@@ -16,6 +16,7 @@
 #include "ui_generalsettings.h"
 
 #include "theme.h"
+#include "ionostheme.h"
 #include "configfile.h"
 #include "application.h"
 #include "owncloudsetupwizard.h"
@@ -43,6 +44,7 @@
 #include <QDir>
 #include <QScopedValueRollback>
 #include <QMessageBox>
+#include <QDesktopServices>
 
 #include <KZip>
 
@@ -182,9 +184,6 @@ GeneralSettings::GeneralSettings(QWidget *parent)
     _ui->infoAndUpdatesLabel->setText(Theme::instance()->about());
     _ui->infoAndUpdatesLabel->setOpenExternalLinks(true);
 
-    // About legal notice
-    connect(_ui->legalNoticeButton, &QPushButton::clicked, this, &GeneralSettings::slotShowLegalNotice);
-
     connect(_ui->usageDocumentationButton, &QPushButton::clicked, this, []() {
         Utility::openBrowser(QUrl(Theme::instance()->helpUrl()));
     });
@@ -241,6 +240,11 @@ GeneralSettings::GeneralSettings(QWidget *parent)
     // accountAdded means the wizard was finished and the wizard might change some options.
     connect(AccountManager::instance(), &AccountManager::accountAdded, this, &GeneralSettings::loadMiscSettings);
 
+    connect(_ui->moreInfoLabel, &QLabel::linkActivated, this, &GeneralSettings::openMoreInformation);
+
+    connect(_ui->legalNoticeLink, &QLabel::linkActivated, this, &GeneralSettings::slotShowLegalNotice);
+    connect(_ui->sendData_checkbox, &QAbstractButton::toggled, this, &GeneralSettings::slotToggleOptionalServerNotifications);
+
     customizeStyle();
 }
 
@@ -248,6 +252,12 @@ GeneralSettings::~GeneralSettings()
 {
     delete _ui;
 }
+
+void GeneralSettings::openMoreInformation()
+{
+    QDesktopServices::openUrl(QUrl("https://www.nextcloud.com"));
+}
+
 
 QSize GeneralSettings::sizeHint() const
 {
@@ -538,6 +548,11 @@ void GeneralSettings::slotShowLegalNotice()
     delete notice;
 }
 
+void GeneralSettings::slotToggleSendData()
+{
+
+}
+
 void GeneralSettings::slotStyleChanged()
 {
     customizeStyle();
@@ -553,16 +568,23 @@ void GeneralSettings::customizeStyle()
     }();
     _ui->infoAndUpdatesLabel->setText(aboutText);
 
+    this->setStyleSheet(
+        QStringLiteral("QGroupBox {border: %1; padding: 15px; font-size: %2; font-weight: %3; font-family: %4}"
+        "QCheckBox { font-family: %4; font-weight: %5; font-size: %6; }"
+         "QLabel { font-family: %4; font-size: %6; font-weight: %3; }"
+         ).arg(Theme::instance()->systemPalette().base().color().name(), IonosTheme::settingsTitleSize(),
+          IonosTheme::settingsTitleWeigth(),
+          IonosTheme::settingsFont(),
+          IonosTheme::settingsTextWeigth(),
+          IonosTheme::settingsTextSize()
+        )    
+    );
+
     // SES-4 removed
     _ui->monoIconsCheckBox->hide();
     _ui->callNotificationsCheckBox->hide();
-    _ui->groupBox->hide();
-    _ui->restartButton->hide();
-    _ui->updateStateLabel->hide();
-    _ui->updateChannel->hide();
-    _ui->updateChannelLabel->hide();
-    _ui->updateButton->hide();
-    _ui->usageDocumentationButton->hide();
+    _ui->advanced_groupBox->hide();
+    _ui->updates_frame->hide();
 
 #if defined(BUILD_UPDATER)
     // updater info

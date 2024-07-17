@@ -113,6 +113,23 @@ int FolderStatusDelegate::rootFolderHeightWithoutErrors(const QFontMetrics &fm, 
     return h;
 }
 
+void FolderStatusDelegate::drawAddButton(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
+{
+    QStyleOptionButton opt;
+    static_cast<QStyleOption &>(opt) = option;
+    if (opt.state & QStyle::State_Enabled && opt.state & QStyle::State_MouseOver && index == _pressedIndex) {
+        opt.state |= QStyle::State_Sunken;
+    } else {
+        opt.state |= QStyle::State_Raised;
+    }
+    opt.text = addFolderText();
+    opt.rect = addButtonRect(option.rect, option.direction);
+    painter->save();
+    painter->setFont(qApp->font("QPushButton"));
+    QApplication::style()->drawControl(QStyle::CE_PushButton, &opt, painter, option.widget);
+    painter->restore();
+}
+
 void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     if (index.data(AddButton).toBool()) {
@@ -137,19 +154,7 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     const auto margin = subFm.height() / 4;
 
     if (index.data(AddButton).toBool()) {
-        QStyleOptionButton opt;
-        static_cast<QStyleOption &>(opt) = option;
-        if (opt.state & QStyle::State_Enabled && opt.state & QStyle::State_MouseOver && index == _pressedIndex) {
-            opt.state |= QStyle::State_Sunken;
-        } else {
-            opt.state |= QStyle::State_Raised;
-        }
-        opt.text = addFolderText();
-        opt.rect = addButtonRect(option.rect, option.direction);
-        painter->save();
-        painter->setFont(qApp->font("QPushButton"));
-        QApplication::style()->drawControl(QStyle::CE_PushButton, &opt, painter, option.widget);
-        painter->restore();
+        drawAddButton(painter, option, index);
         return;
     }
 
@@ -194,7 +199,7 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     localPathRect.setTop(remotePathRect.bottom() + margin);
     localPathRect.setBottom(localPathRect.top() + subFm.height());
 
-    iconRect.setBottom(localPathRect.bottom());
+    iconRect.setBottom(remotePathRect.top());
     iconRect.setWidth(iconRect.height());
 
     const auto nextToIcon = iconRect.right() + aliasMargin;
