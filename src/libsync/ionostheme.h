@@ -24,7 +24,7 @@ public:
     }
 
     static QString settingsTitleWeigth() {
-        return "500"; // Example color for button text
+        return "600";
     }
 
     static QString settingsTextSize() {
@@ -35,8 +35,9 @@ public:
         return "normal"; // Example color for button text
     }
 
-
-    // Add more methods for different elements and their colors
+    static QString settingsLinkColor() {
+        return "#02306A"; 
+    }
 
 private:
     IonosTheme() {} // Private constructor to prevent instantiation
