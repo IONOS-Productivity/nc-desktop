@@ -258,22 +258,22 @@ GeneralSettings::~GeneralSettings()
 
 void GeneralSettings::slotOpenMoreInformationLink()
 {
-    QDesktopServices::openUrl(QUrl("https://wl.hidrive.com/ionos/windows/00015/"));
+    QDesktopServices::openUrl(QUrl("https://wl.hidrive.com/easy/0007/"));
 }
 
 void GeneralSettings::slotOpenLegalNoticeLink()
 {
-    QDesktopServices::openUrl(QUrl("https://wl.hidrive.com/ionos/windows/00015/"));
+    QDesktopServices::openUrl(QUrl("https://wl.hidrive.com/easy/0004/"));
 }
 
 void GeneralSettings::slotOpenOpenSourceLink()
 {
-    QDesktopServices::openUrl(QUrl("https://wl.hidrive.com/ionos/windows/00015/"));
+    QDesktopServices::openUrl(QUrl("https://wl.hidrive.com/easy/0006"));
 }
 
 void GeneralSettings::slotOpenPrivacyLink()
 {
-    QDesktopServices::openUrl(QUrl("https://www.nextcloud.com"));
+    QDesktopServices::openUrl(QUrl("https://wl.hidrive.com/easy/0005/"));
 }
 
 QSize GeneralSettings::sizeHint() const
