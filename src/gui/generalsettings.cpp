@@ -22,6 +22,7 @@
 #include "owncloudsetupwizard.h"
 #include "accountmanager.h"
 #include "guiutility.h"
+#include "linkButton.h"
 
 #if defined(BUILD_UPDATER)
 #include "updater/updater.h"
@@ -240,9 +241,11 @@ GeneralSettings::GeneralSettings(QWidget *parent)
     // accountAdded means the wizard was finished and the wizard might change some options.
     connect(AccountManager::instance(), &AccountManager::accountAdded, this, &GeneralSettings::loadMiscSettings);
 
-    connect(_ui->moreInfoLabel, &QLabel::linkActivated, this, &GeneralSettings::openMoreInformation);
-
-    connect(_ui->legalNoticeLink, &QLabel::linkActivated, this, &GeneralSettings::slotShowLegalNotice);
+    connect(_ui->moreInfoLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenMoreInformationLink);
+    connect(_ui->legalNoticeLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenLegalNoticeLink);
+    connect(_ui->openSourceLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenOpenSourceLink);
+    connect(_ui->privacyLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenPrivacyLink);
+    
     connect(_ui->sendData_checkbox, &QAbstractButton::toggled, this, &GeneralSettings::slotToggleOptionalServerNotifications);
 
     customizeStyle();
@@ -253,11 +256,25 @@ GeneralSettings::~GeneralSettings()
     delete _ui;
 }
 
-void GeneralSettings::openMoreInformation()
+void GeneralSettings::slotOpenMoreInformationLink()
+{
+    QDesktopServices::openUrl(QUrl("https://wl.hidrive.com/ionos/windows/00015/"));
+}
+
+void GeneralSettings::slotOpenLegalNoticeLink()
+{
+    QDesktopServices::openUrl(QUrl("https://wl.hidrive.com/ionos/windows/00015/"));
+}
+
+void GeneralSettings::slotOpenOpenSourceLink()
+{
+    QDesktopServices::openUrl(QUrl("https://wl.hidrive.com/ionos/windows/00015/"));
+}
+
+void GeneralSettings::slotOpenPrivacyLink()
 {
     QDesktopServices::openUrl(QUrl("https://www.nextcloud.com"));
 }
-
 
 QSize GeneralSettings::sizeHint() const
 {
