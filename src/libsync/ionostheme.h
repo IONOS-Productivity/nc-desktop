@@ -16,11 +16,11 @@ public:
     }
 
     static QString settingsFont() {
-        return "'Segoe UI'"; // Example color for button text
+        return "'Segoe UI'";
     }
 
     static QString settingsTitleSize() {
-        return "20px"; // Example color for button text
+        return "20px";
     }
 
     static QString settingsTitleWeigth() {
@@ -28,11 +28,11 @@ public:
     }
 
     static QString settingsTextSize() {
-        return "16px"; // Example color for button text
+        return "16px"; 
     }
 
     static QString settingsTextWeigth() {
-        return "normal"; // Example color for button text
+        return "normal"; 
     }
 
     static QString settingsLinkColor() {
@@ -40,5 +40,5 @@ public:
     }
 
 private:
-    IonosTheme() {} // Private constructor to prevent instantiation
+    IonosTheme() {} 
 };
