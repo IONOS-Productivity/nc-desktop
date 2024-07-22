@@ -27,6 +27,10 @@ HeaderButton {
     required property var currentUser
     property bool userHasGroupFolders: currentUser.groupFolders.length > 0
 
+    icon.source: Style.sesFilesIcon
+    icon.color: Style.sesIconColor 
+
+
     function openMenu() {
         foldersMenuLoader.openMenu()
     }
@@ -60,19 +64,9 @@ HeaderButton {
     contentItem: Item {
         id: rootContent
 
-        anchors.fill: parent
-
-        Item {
-            id: contentContainer
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: parent.top
-            anchors.topMargin: 10
-            implicitWidth: openLocalFolderButtonCaretIconLoader.active ? openLocalFolderButtonIcon.width + openLocalFolderButtonCaretIconLoader.width : openLocalFolderButtonIcon.width
-            implicitHeight: openLocalFolderButtonIcon.height
-
             Image {
                 id: folderStateIndicator
-                visible: root.currentUser.hasLocalFolder
+                visible: root.currentUser.hasLocalFolder && false // Hide Indicator till we have a proper implementation
                 source: root.currentUser.isConnected ? Style.stateOnlineImageSource : Style.stateOfflineImageSource
                 cache: false
 
@@ -101,12 +95,15 @@ HeaderButton {
             Image {
                 id: openLocalFolderButtonIcon
 
-                property int imageWidth: rootContent.width * 0.5
-                property int imageHeight: rootContent.width * 0.5
+                anchors.horizontalCenter: rootContent.horizontalCenter
+                anchors.top: rootContent.top
+                anchors.topMargin: 10
 
+                property int imageWidth: root.icon.width
+                property int imageHeight: root.icon.height
                 cache: true
 
-                source: Style.sesFilesIcon
+                source: root.icon.source
                 sourceSize {
                     width: imageWidth
                     height: imageHeight
@@ -122,7 +119,7 @@ HeaderButton {
                 anchors.horizontalCenter: openLocalFolderButtonIcon.horizontalCenter
                 anchors.top: openLocalFolderButtonIcon.bottom
                 anchors.topMargin: 2
-                text: qsTr("Files")
+                text: root.text
                 font.family: "Open Sans"
                 font.pointSize: Style.defaultFontPtSize
             }
@@ -153,9 +150,7 @@ HeaderButton {
 
                 width: openLocalFolderButtonCaretIconLoader.imageWidth
                 height: openLocalFolderButtonCaretIconLoader.imageHeight
-
             }
-        }
     }
 
     Loader {
