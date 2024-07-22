@@ -30,6 +30,7 @@ HeaderButton {
     icon.source: Style.sesFilesIcon
     icon.color: Style.sesIconColor 
 
+    text: qsTr("Files")
 
     function openMenu() {
         foldersMenuLoader.openMenu()

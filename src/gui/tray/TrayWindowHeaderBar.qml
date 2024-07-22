@@ -27,7 +27,7 @@ Rectangle {
         anchors.leftMargin: 20
         anchors.rightMargin: 20
 
-        TrayWindowAccountMenu{
+        TrayWindowAccountMenu{   
             Layout.preferredWidth:  Style.currentAccountButtonWidth
             Layout.preferredHeight: Style.trayWindowHeaderHeight
         }
@@ -39,13 +39,15 @@ Rectangle {
             icon.color: Style.sesIconColor 
             onClicked: UserModel.openCurrentAccountServer()
 
+            text: qsTr("Website")
+
             Accessible.role: Accessible.Button
             Accessible.name: qsTr("Open Nextcloud in browser")
             Accessible.onPressAction: trayWindowWebsiteButton.clicked()
 
             Layout.alignment: Qt.AlignRight
             Layout.preferredWidth:  Style.trayWindowHeaderHeight
-            Layout.preferredHeight: Style.trayWindowHeaderHeight
+            Layout.preferredHeight: Style.trayWindowHeaderHeight 
         }
 
         TrayFoldersMenuButton {
