@@ -100,34 +100,12 @@ Button {
             color: Style.sesBorderColor
         }
 
-        MenuItem {
+        AccountMenuItem{
             id: addAccountButton
-            hoverEnabled: true
-            visible: Systray.enableAddAccount
-
             icon.source: Style.sesAccountPlus 
-            icon.height: Style.smallIconSize
-            icon.width: Style.smallIconSize
-            icon.color: Style.sesIconColor 
-
             text: qsTr("Add account")
-            font.pixelSize: Style.topLinePixelSize
-
-            background: Item {
-                height: parent.height
-                width: parent.menu.width
-                Rectangle {
-                    anchors.fill: parent
-                    anchors.margins: 1
-                    color: parent.parent.hovered || parent.parent.visualFocus ? Style.sesHover : "transparent"
-                }
-            }
-
             onClicked: UserModel.addAccount()
-
-            Accessible.role: Accessible.MenuItem
-            Accessible.name: qsTr("Add new account")
-            Accessible.onPressAction: addAccountButton.clicked()
+            visible: Systray.enableAddAccount
         }
 
         Rectangle {
@@ -137,85 +115,25 @@ Button {
             color: Style.sesBorderColor
         }
 
-        MenuItem {
+        AccountMenuItem{
             id: syncPauseButton
-            font.pixelSize: Style.topLinePixelSize
-            hoverEnabled: true
             onClicked: Systray.syncIsPaused = !Systray.syncIsPaused
-
             icon.source: Systray.syncIsPaused ? Style.sesAccountResume : Style.sesAccountPause 
-            icon.height: Style.smallIconSize 
-            icon.width: Style.smallIconSize  
-            icon.color: Style.sesIconColor 
-
-            background: Item {
-                height: parent.height
-                width: parent.menu.width
-                Rectangle {
-                    anchors.fill: parent
-                    anchors.margins: 1
-                    color: parent.parent.hovered || parent.parent.visualFocus ? Style.sesHover : "transparent"
-                }
-            }
-
-            Accessible.role: Accessible.MenuItem
-            Accessible.name: Systray.syncIsPaused ? qsTr("Resume sync for all") : qsTr("Pause sync for all")
-            Accessible.onPressAction: syncPauseButton.clicked()
         }
 
-        MenuItem {
+        AccountMenuItem{
             id: settingsButton
             text: qsTr("Settings")
-            font.pixelSize: Style.topLinePixelSize
-            hoverEnabled: true
             onClicked: Systray.openSettings()
-
             icon.source: Style.sesAccountSettings 
-            icon.height: Style.smallIconSize
-            icon.width: Style.smallIconSize 
-            icon.color: Style.sesIconColor 
-
-            background: Item {
-                height: parent.height
-                width: parent.menu.width
-                Rectangle {
-                    anchors.fill: parent
-                    anchors.margins: 1
-                    color: parent.parent.hovered || parent.parent.visualFocus ? Style.sesHover : "transparent"
-                }
-            }
-
-            Accessible.role: Accessible.MenuItem
-            Accessible.name: text
-            Accessible.onPressAction: settingsButton.clicked()
         }
 
-        MenuItem {
+        AccountMenuItem{
             id: exitButton
-            text: qsTr("Exit");
-            font.pixelSize: Style.topLinePixelSize
-            hoverEnabled: true
+            text: qsTr("Exit")
             onClicked: Systray.shutdown()
-
             icon.source: Style.sesAccountQuit 
-            icon.height: Style.smallIconSize 
-            icon.width: Style.smallIconSize 
-            icon.color: Style.sesIconColor 
-
-            background: Item {
-                height: parent.height
-                width: parent.menu.width
-                Rectangle {
-                    anchors.fill: parent
-                    anchors.margins: 1
-                    color: parent.parent.hovered || parent.parent.visualFocus ? Style.sesHover : "transparent"
-                }
-            }
-
-            Accessible.role: Accessible.MenuItem
-            Accessible.name: text
-            Accessible.onPressAction: exitButton.clicked()
-        }
+        } 
     }
 
     background: Rectangle {
@@ -237,7 +155,6 @@ Button {
             verticalAlignment: Qt.AlignCenter
             cache: false
             source: Style.sesAccountIconBig
-
             Accessible.role: Accessible.Graphic
             Accessible.name: qsTr("Current account avatar")
 

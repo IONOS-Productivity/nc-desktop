@@ -1,0 +1,42 @@
+import QtQuick 2.15
+import QtQuick.Window 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
+
+// Custom qml modules are in /theme (and included by resources.qrc)
+import Style 1.0
+import com.nextcloud.desktopclient 1.0
+
+MenuItem {
+    id: accountMenuItem
+
+
+    property bool isHovered: accountMenuItem.hovered || accountMenuItem.visualFocus
+    property bool isActive: accountMenuItem.pressed
+
+    font.pixelSize: Style.topLinePixelSize
+    hoverEnabled: true
+
+    // onClicked: Systray.openSettings()
+    // text: qsTr("Settings")
+    // icon.source: Style.sesAccountSettings 
+
+    icon.height: Style.smallIconSize
+    icon.width: Style.smallIconSize 
+    icon.color: accountMenuItem.isActive ? Style.sesIconActive : Style.sesIconColor 
+
+    background: Item {
+        height: parent.height
+        width: parent.menu.width
+        Rectangle {
+            radius: Style.sesCornerRadius
+            anchors.fill: parent
+            anchors.margins: 1
+            color: accountMenuItem.isActive ? Style.sesButtonPressed : accountMenuItem.isHovered ? Style.sesAccountMenuHover : "transparent"
+        }
+    }
+
+    Accessible.role: Accessible.MenuItem
+    Accessible.name: text
+    Accessible.onPressAction: accountMenuItem.clicked()
+}
