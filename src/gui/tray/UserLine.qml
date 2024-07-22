@@ -115,7 +115,7 @@ AbstractButton {
             background: Rectangle {
                 anchors.fill: parent
                 anchors.margins: 1
-                color: userMoreButton.hovered || userMoreButton.visualFocus ? Style.sesHoverAction : "transparent"
+                color: userMoreButton.hovered || userMoreButton.visualFocus ? Style.sesActionHover : "transparent" 
                 radius: 8
             }
 
