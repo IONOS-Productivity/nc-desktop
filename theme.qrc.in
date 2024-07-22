@@ -249,7 +249,5 @@
         <file>theme/ses/ses-accountIcon24.svg</file>
         <file>theme/ses/ses-website.svg</file>
         <file>theme/ses/ses-filesIcon.svg</file>
-        <file>theme/ses/ses-accountIcon.svg</file>
-        <file>theme/ses/ses-accountPlus.svg</file>
     </qresource>
 </RCC>

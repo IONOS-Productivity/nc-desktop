@@ -204,15 +204,15 @@ QtObject {
     }
 
     // SES
-    readonly property string sesSettingsIcon: "qrc:///client/theme/ses/ses-settings.svg"
-    readonly property string sesQuitIcon: "qrc:///client/theme/ses/ses-quit.svg"
-    readonly property string sesPauseSyncIcon: "qrc:///client/theme/ses/ses-pauseSync.svg"
-    readonly property string sesAddAccountIcon: "qrc:///client/theme/ses/ses-addAccount.svg"
-    readonly property string sesIonosLogoIcon: "qrc:///client/theme/ses/ses-INONS-Logo.svg"
     readonly property string sesWebsiteIcon: "qrc:///client/theme/ses/ses-website.svg"
-    readonly property string sesFilesIcon: "qrc:///client/theme/ses/ses-filesIcon.svg"
+    readonly property string sesFilesIcon: "qrc:///client/theme/ses/ses-filesIcon.svg"    
+    readonly property string sesIonosLogoIcon: "qrc:///client/theme/ses/ses-INONS-Logo.svg"
+
+    readonly property string sesSettingsIcon: "qrc:///client/theme/ses/ses-settings.svg"
+    readonly property string sesAddAccountIcon: "qrc:///client/theme/ses/ses-addAccount.svg"
     readonly property string sesAccountIcon: "qrc:///client/theme/ses/ses-accountIcon.svg"
     readonly property string sesAccountIconBig: "qrc:///client/theme/ses/ses-accountIcon24.svg"
+
     readonly property string sesAccountQuit: "qrc:///client/theme/ses/ses-accountQuit.svg"
     readonly property string sesAccountPause: "qrc:///client/theme/ses/ses-accountPause.svg"
     readonly property string sesAccountPlus: "qrc:///client/theme/ses/ses-accountPlus.svg"
@@ -221,6 +221,7 @@ QtObject {
 
     readonly property color sesIconColor: "#1474C4"
     readonly property color sesIconActive: "#095BB1"
+    
     readonly property color sesBorderColor: "#D7D7D7"
     readonly property color sesWhite: "#FFFFFF"
     readonly property color sesHover: "#F2F5F8"
@@ -229,6 +230,7 @@ QtObject {
     readonly property color sesHeaderLogoBackgroundColor: "#F4F7FA"
     readonly property color sesButtonPressed: "#95CAEB"
     readonly property color sesAccountMenuHover: "#EBF5FB"
+    
     
     property int sesAccountMenuHeight: variableSize(40)
     property int sesHeaderLogoHeigth: variableSize(40)
