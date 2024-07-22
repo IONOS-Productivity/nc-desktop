@@ -28,7 +28,8 @@ Rectangle {
         anchors.rightMargin: 20
 
         TrayWindowAccountMenu{
-            
+            Layout.preferredWidth:  Style.currentAccountButtonWidth
+            Layout.preferredHeight: Style.trayWindowHeaderHeight
         }
 
         HeaderButton {
