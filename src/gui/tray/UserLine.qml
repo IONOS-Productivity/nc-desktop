@@ -52,7 +52,7 @@ AbstractButton {
             Layout.leftMargin: 7
             verticalAlignment: Qt.AlignCenter
             cache: false
-            source: Style.sesAccountIcon
+            source: Style.sesAccountIconBig            
         }
 
         ColumnLayout {

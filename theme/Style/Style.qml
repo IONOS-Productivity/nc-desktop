@@ -212,6 +212,12 @@ QtObject {
     readonly property string sesWebsiteIcon: "qrc:///client/theme/ses/ses-website.svg"
     readonly property string sesFilesIcon: "qrc:///client/theme/ses/ses-filesIcon.svg"
     readonly property string sesAccountIcon: "qrc:///client/theme/ses/ses-accountIcon.svg"
+    readonly property string sesAccountIconBig: "qrc:///client/theme/ses/ses-accountIcon24.svg"
+    readonly property string sesAccountQuit: "qrc:///client/theme/ses/ses-accountQuit.svg"
+    readonly property string sesAccountPause: "qrc:///client/theme/ses/ses-accountPause.svg"
+    readonly property string sesAccountPlus: "qrc:///client/theme/ses/ses-accountPlus.svg"
+    readonly property string sesAccountSettings: "qrc:///client/theme/ses/ses-accountSettings.svg"
+    readonly property string sesAccountResume: "qrc:///client/theme/ses/ses-accountResume.svg"
 
     readonly property color sesIconColor: "#1474C4"
     readonly property color sesBorderColor: "#D7D7D7"

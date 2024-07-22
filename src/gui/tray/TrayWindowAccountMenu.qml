@@ -105,7 +105,7 @@ Button {
             hoverEnabled: true
             visible: Systray.enableAddAccount
 
-            icon.source: Style.sesAddAccountIcon 
+            icon.source: Style.sesAccountPlus 
             icon.height: Style.smallIconSize
             icon.width: Style.smallIconSize
             icon.color: Style.sesIconColor 
@@ -143,7 +143,7 @@ Button {
             hoverEnabled: true
             onClicked: Systray.syncIsPaused = !Systray.syncIsPaused
 
-            icon.source: Style.sesPauseSyncIcon 
+            icon.source: Systray.syncIsPaused ? Style.sesAccountResume : Style.sesAccountPause 
             icon.height: Style.smallIconSize 
             icon.width: Style.smallIconSize  
             icon.color: Style.sesIconColor 
@@ -170,7 +170,7 @@ Button {
             hoverEnabled: true
             onClicked: Systray.openSettings()
 
-            icon.source: Style.sesSettingsIcon 
+            icon.source: Style.sesAccountSettings 
             icon.height: Style.smallIconSize
             icon.width: Style.smallIconSize 
             icon.color: Style.sesIconColor 
@@ -197,7 +197,7 @@ Button {
             hoverEnabled: true
             onClicked: Systray.shutdown()
 
-            icon.source: Style.sesQuitIcon 
+            icon.source: Style.sesAccountQuit 
             icon.height: Style.smallIconSize 
             icon.width: Style.smallIconSize 
             icon.color: Style.sesIconColor 
@@ -236,7 +236,7 @@ Button {
             Layout.leftMargin: Style.trayHorizontalMargin
             verticalAlignment: Qt.AlignCenter
             cache: false
-            source: Style.sesAccountIcon
+            source: Style.sesAccountIconBig
 
             Accessible.role: Accessible.Graphic
             Accessible.name: qsTr("Current account avatar")
