@@ -24,6 +24,9 @@ import com.nextcloud.desktopclient 1.0
 AbstractButton {
     id: userLine
 
+    property bool isHovered: userLine.hovered || userLine.visualFocus
+    property bool isActive: userLine.pressed 
+
     signal showUserStatusSelector(int id)
 
     property variant dialog;
@@ -38,9 +41,9 @@ AbstractButton {
         radius: Style.sesCornerRadius
         anchors.fill: parent
         anchors.margins: 1
-        color: (userLine.hovered || userLine.visualFocus) &&
-               !(userMoreButton.hovered || userMoreButton.visualFocus) ?
-                   Style.sesHover : "transparent"
+        color: userLine.isActive ? Style.sesButtonPressed : userLine.isHovered &&
+               !userMoreButton.isHovered ?
+                   Style.sesAccountMenuHover : "transparent"
     }
 
     contentItem: RowLayout {
@@ -101,11 +104,14 @@ AbstractButton {
         Button {
             id: userMoreButton
             Layout.preferredWidth: Style.headerButtonIconSize
-            Layout.fillHeight: true
+            Layout.preferredHeight: Layout.preferredWidth
             flat: true
 
+            property bool isHovered: userMoreButton.hovered || userMoreButton.visualFocus
+            property bool isActive: userMoreButton.pressed || userMoreButtonMenu.visible
+
             icon.source: "qrc:///client/theme/more.svg"
-            icon.color: palette.buttonText
+            icon.color: userMoreButton.isActive || userMoreButton.isHovered ? Style.sesWhite : Style.sesIconColor
 
             Accessible.role: Accessible.ButtonMenu
             Accessible.name: qsTr("Account actions")
@@ -115,8 +121,8 @@ AbstractButton {
             background: Rectangle {
                 anchors.fill: parent
                 anchors.margins: 1
-                color: userMoreButton.hovered || userMoreButton.visualFocus ? Style.sesActionHover : "transparent" 
-                radius: 8
+                color: userMoreButton.isActive ? Style.sesActionPressed : userMoreButton.isHovered ? Style.sesActionHover : "transparent"
+                radius: width / 2
             }
 
             AutoSizingMenu {
