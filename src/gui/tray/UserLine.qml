@@ -35,6 +35,7 @@ AbstractButton {
     height: Style.sesAccountMenuHeight
 
     background: Rectangle {
+        radius: Style.sesCornerRadius
         anchors.fill: parent
         anchors.margins: 1
         color: (userLine.hovered || userLine.visualFocus) &&

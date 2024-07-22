@@ -41,6 +41,6 @@ Button {
 
     background: Rectangle {
         color: root.hovered || root.visualFocus ? Style.sesHover : "transparent"
-        radius: 8
+        radius: Style.sesCornerRadius
     }
 }

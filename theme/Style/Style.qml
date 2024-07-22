@@ -224,4 +224,5 @@ QtObject {
     property int sesHeaderLogoHeigth: variableSize(40)
     property int sesHeaderLogoTopMargin: variableSize(16)
     property int sesHeaderLogoLeftMargin: variableSize(24)
+    property int sesCornerRadius: 8
 }

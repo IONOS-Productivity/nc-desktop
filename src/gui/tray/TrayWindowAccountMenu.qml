@@ -53,7 +53,7 @@ Button {
         background: Rectangle {
             border.color: Style.sesBorderColor
             color: Style.sesWhite
-            radius: 8 //Style.currentAccountButtonRadius
+            radius: Style.sesCornerRadius
         }
 
         contentItem: ScrollView {
@@ -220,7 +220,7 @@ Button {
 
     background: Rectangle {
         color: parent.hovered || parent.visualFocus ? Style.sesHover : "transparent"
-        radius: 8
+        radius: Style.sesCornerRadius
     }
 
     RowLayout {
