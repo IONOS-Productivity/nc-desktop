@@ -27,7 +27,7 @@ import com.nextcloud.desktopclient 1.0
 Button {
     id: root
 
-    display: AbstractButton.IconOnly
+    display: AbstractButton.TextUnderIcon
     flat: true
     hoverEnabled: Style.hoverEffectsEnabled
 
@@ -42,5 +42,40 @@ Button {
     background: Rectangle {
         color: root.hovered || root.visualFocus ? Style.sesHover : "transparent"
         radius: Style.sesCornerRadius
+    }
+
+    contentItem: Item {
+        id: rootContent
+
+        Image {
+            id: buttonIcon
+            anchors.horizontalCenter: rootContent.horizontalCenter
+            anchors.top: rootContent.top
+            anchors.topMargin: 10
+
+            property int imageWidth: root.icon.width
+            property int imageHeight: root.icon.height
+            cache: true
+
+            source: root.icon.source
+            sourceSize {
+                width: imageWidth
+                height: imageHeight
+            }
+
+            width: imageWidth
+            height: imageHeight
+
+            anchors.verticalCenter: parent
+        }
+
+        Text {
+            anchors.horizontalCenter: buttonIcon.horizontalCenter
+            anchors.top: buttonIcon.bottom
+            anchors.topMargin: 2
+            text: qsTr("Files")
+            font.family: "Open Sans"
+            font.pointSize: Style.defaultFontPtSize
+        }        
     }
 }
