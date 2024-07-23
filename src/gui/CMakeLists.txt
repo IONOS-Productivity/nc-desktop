@@ -190,6 +190,8 @@ set(client_SRCS
     emojimodel.cpp
     syncconflictsmodel.h
     syncconflictsmodel.cpp
+    linkButton.h
+    linkButton.cpp
     fileactivitylistmodel.h
     fileactivitylistmodel.cpp
     filedetails/datefieldbackend.h

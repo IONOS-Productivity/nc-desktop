@@ -319,34 +319,23 @@
                         <item>
                             <layout class="QHBoxLayout">
                                 <item>
-                                    <widget class="QLabel" name="legalNoticeLink">
+                                    <widget class="OCC::LinkButton" name="legalNoticeLinkButton">
                                         <property name="text">
-                                            <string>&lt;a href="https://example.com"&gt;Legal Notice&lt;/a&gt;</string>
-                                        </property>
-                                        <property name="openExternalLinks">
-                                            <bool>false</bool>
+                                            <string>Legal Notice</string>
                                         </property>
                                     </widget>
                                 </item>
                                 <item>
-                                    <widget class="QLabel" name="privacyLink">
+                                    <widget class="OCC::LinkButton" name="privacyLinkButton">
                                         <property name="text">
-                                            <string>&lt;a href="https://example.com"&gt;Pirvacy
-                                                Policy&lt;/a&gt;</string>
-                                        </property>
-                                        <property name="openExternalLinks">
-                                            <bool>false</bool>
+                                            <string>Privacy Policy</string>
                                         </property>
                                     </widget>
                                 </item>
                                 <item>
-                                    <widget class="QLabel" name="openSourceLink">
+                                    <widget class="OCC::LinkButton" name="openSourceLinkButton">
                                         <property name="text">
-                                            <string>&lt;a href="https://example.com"&gt;Open Source
-                                                Software&lt;/a&gt;</string>
-                                        </property>
-                                        <property name="openExternalLinks">
-                                            <bool>false</bool>
+                                            <string>Open Source Software</string>
                                         </property>
                                     </widget>
                                 </item>
@@ -547,13 +536,9 @@
                             </widget>
                         </item>
                         <item>
-                            <widget class="QLabel" name="moreInfoLabel">
+                            <widget class="OCC::LinkButton" name="moreInfoLinkButton">
                                 <property name="text">
-                                    <string>&lt;a href="https://example.com"&gt;More
-                                        Information&lt;/a&gt;</string>
-                                </property>
-                                <property name="openExternalLinks">
-                                    <bool>false</bool>
+                                    <string>More Information</string>
                                 </property>
                             </widget>
                         </item>
