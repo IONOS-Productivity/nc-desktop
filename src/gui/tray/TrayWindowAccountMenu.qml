@@ -16,8 +16,7 @@ import com.nextcloud.desktopclient 1.0
 Button {
     id: currentAccountButton
 
-    Layout.preferredWidth:  Style.currentAccountButtonWidth
-    Layout.preferredHeight: Style.trayWindowHeaderHeight
+
     display:                AbstractButton.IconOnly
     flat:                   true
 

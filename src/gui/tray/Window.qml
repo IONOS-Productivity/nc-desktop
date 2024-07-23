@@ -267,12 +267,14 @@ ApplicationWindow {
             anchors.left:   trayWindowLogoHeaderBackground.left
             anchors.right:  trayWindowLogoHeaderBackground.right
             anchors.top:    trayWindowLogoHeaderBackground.bottom
+            anchors.topMargin: Style.sesHeaderTopMargin
         }
 
         Rectangle {
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.top: trayWindowHeaderBackground.bottom
+            anchors.topMargin: Style.sesHeaderTopMargin
             implicitHeight: 1
             color: Style.sesBorderColor
         }
