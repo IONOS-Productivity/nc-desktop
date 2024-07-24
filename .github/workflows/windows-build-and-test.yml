@@ -34,7 +34,7 @@ jobs:
               if($LASTEXITCODE -ne 0) {exit $LASTEXITCODE}
           }
           
-          craft --add-blueprint-repository [git]-b qt5-lts --single-branch https://github.com/nextcloud/desktop-client-blueprints.git
+          craft --add-blueprint-repository [git]"-b qt5-lts --single-branch https://github.com/nextcloud/desktop-client-blueprints.git"
           craft craft
           craft --install-deps nextcloud-client
           
