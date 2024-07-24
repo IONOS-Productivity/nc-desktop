@@ -3,8 +3,10 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
   workflow_dispatch:
-  # schedule:
-    # - cron: '0 0 * * *'
+  push:
+    branches:
+      - master
+      - develop
 jobs:
   build:
     name: Windows Build and Test
