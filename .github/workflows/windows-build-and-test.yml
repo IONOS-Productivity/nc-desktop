@@ -35,7 +35,7 @@ jobs:
           }
           
           craft --add-blueprint-repository [git]https://github.com/nextcloud/desktop-client-blueprints.git
-          cd ${{ github.workspace }}\Craft64\etc\blueprints\locations\desktop-client-blueprints
+          cd ${{ github.workspace }}\craft-clone\etc\blueprints\locations\desktop-client-blueprints
           git checkout qt5-lts
           craft craft
           craft --install-deps nextcloud-client
