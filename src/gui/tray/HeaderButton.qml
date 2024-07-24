@@ -71,9 +71,9 @@ Button {
             anchors.horizontalCenter: buttonIcon.horizontalCenter
             anchors.top: buttonIcon.bottom
             anchors.topMargin: 2
-            text: qsTr("Files")
             font.family: "Open Sans"
             font.pointSize: Style.defaultFontPtSize
+            text: root.text
         }        
     }
 }
