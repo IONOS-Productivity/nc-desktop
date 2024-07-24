@@ -35,6 +35,8 @@ jobs:
           }
           
           craft --add-blueprint-repository [git]https://github.com/nextcloud/desktop-client-blueprints.git
+          cd ${{ github.workspace }}\Craft64\etc\blueprints\locations\desktop-client-blueprints
+          git checkout qt5-lts
           craft craft
           craft --install-deps nextcloud-client
           
@@ -50,7 +52,6 @@ jobs:
         shell: pwsh
         run: |
           choco install opencppcoverage
-
       - name: Cache Install inkscape
         id: cache-install-inkscape
         uses: actions/cache@v4
@@ -63,7 +64,6 @@ jobs:
         shell: pwsh
         run: |
           choco install inkscape
-
       - name: Setup PATH
         shell: pwsh
         run: |
@@ -85,11 +85,8 @@ jobs:
         run: |
           function runTests() {
               $buildFolder = "${{ github.workspace }}\${{ env.CRAFT_TARGET }}\build\nextcloud-client\work\build"
-
               cd $buildFolder
-
               $binFolder = "$buildFolder\bin"
-
               & ctest --output-on-failure --timeout 300
           }
           
