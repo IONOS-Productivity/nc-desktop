@@ -113,7 +113,7 @@ HeaderButton {
                 width: imageWidth
                 height: imageHeight
 
-                anchors.verticalCenter: parent
+                anchors.verticalCenter: parent.verticalCenter
             }
 
             Text {
@@ -143,7 +143,7 @@ HeaderButton {
                     cache: true
 
                     source: "image://svgimage-custom-color/caret-down.svg/" + Style.currentUserHeaderTextColor
-                    sourceSize: {
+                    sourceSize {
                         width: openLocalFolderButtonCaretIconLoader.imageWidth
                         height: openLocalFolderButtonCaretIconLoader.imageHeight
                     }
