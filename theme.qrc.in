@@ -238,6 +238,8 @@
         <file>theme/delete.svg</file>
         <file>theme/send.svg</file>
         <file>theme/call-notification.wav</file>
+        <file>theme/more-apps.svg</file>
+        <file>theme/talk-app.svg</file>
         <file>theme/ses/ses-accountQuit.svg</file>
         <file>theme/ses/ses-accountPause.svg</file>
         <file>theme/ses/ses-accountPlus.svg</file>
