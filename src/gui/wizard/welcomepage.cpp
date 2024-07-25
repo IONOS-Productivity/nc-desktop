@@ -18,6 +18,7 @@
 #include "wizard/owncloudwizard.h"
 #include "wizard/slideshow.h"
 #include "ui_welcomepage.h"
+#include "sesButton.h"
 
 namespace OCC {
 

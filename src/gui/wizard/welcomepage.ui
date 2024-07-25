@@ -138,7 +138,10 @@
                                 </spacer>
                             </item>
                             <item>
-                                <widget class="QPushButton" name="loginButton">
+                                <widget class="OCC::SesButton" name="loginButton">
+                                    <property name="buttonStyle">
+                                        <enum>OCC::ButtonStyle::Primary</enum>
+                                    </property>
                                     <property name="text">
                                         <string>Log in</string>
                                     </property>
