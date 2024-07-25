@@ -1,6 +1,6 @@
-set( APPLICATION_NAME       "IONOS Easystorage" )
+set( APPLICATION_NAME       "IONOS EasyStorage" )
 set( APPLICATION_SHORTNAME  "Easystorage" )
-set( APPLICATION_EXECUTABLE "ionos-easystorage" )
+set( APPLICATION_EXECUTABLE "ionoseasystorage" )
 set( APPLICATION_CONFIG_NAME "${APPLICATION_EXECUTABLE}" )
 set( APPLICATION_DOMAIN     "nextcloud.com" )
 set( APPLICATION_VENDOR     "IONOS Group SE" )
