@@ -39,6 +39,46 @@ public:
         return "#02306A"; 
     }
 
+    static QString buttonFontSize() {
+        return "16px"; 
+    }
+
+    static QString buttonFontWeight() {
+        return "550";
+    }
+
+    static QString buttonColor() {
+        return "#0F6CBD"; 
+    }
+
+    static QString buttonRadius() {
+        return "4px";
+    }
+
+    static QString buttonPadding() {
+        return "16px";
+    }
+    
+    static QString buttonBorderColor() {
+        return "#D1D1D1";
+    }
+
+    static QString buttonDisabledColor() {
+        return "#F0F0F0";
+    }
+        
+    static QString buttonDisabledFontColor() {
+        return "#BDBDBD";
+    }
+
+    static QString white() {
+        return "#FFFFFF"; 
+    }
+
+    static QString black() {
+        return "#000000"; 
+    }
+
 private:
     IonosTheme() {} 
 };
