@@ -44,7 +44,7 @@ namespace OCC {
                         "QPushButton {"
                         "background-color: %1; color: %2;"
                         "font-family: %3; font-size: %4; font-weight: %5;"
-                        "border-radius: %6; border-color: %7;"
+                        "border-radius: %6; border: 1px solid %7;"
                         "padding: %8; }")
                     .arg(
                         IonosTheme::white()
