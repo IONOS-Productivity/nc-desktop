@@ -1,0 +1,27 @@
+name: IONOS Windows Build
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feature/SES-42_pipeline
+
+defaults:
+  run:
+    shell: pwsh
+jobs:
+  env:
+    HOME: ${{ github.workspace }}
+    CRAFT_TARGET: windows-msvc2019_64-cl
+  build:
+    name: IONOS Windows Build
+    runs-on: windows-2019
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Clone CraftMaster
+      run: git clone --depth=1 https://invent.kde.org/kde/craftmaster.git "${ env:HOME }/craft/CraftMaster/CraftMaster"
+
+    - name: Craft setup
+      run: |
+        & "${ env:HOME }/.github/workflows/craft_setup.ps1" --setup
