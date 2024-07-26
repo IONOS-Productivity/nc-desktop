@@ -38,3 +38,7 @@ jobs:
     - name: Install dependencies
       run: |
         & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c --install-deps nextcloud-client
+
+    - name: print Debug filesystem
+      run: |
+        $ Get-ChildItem -Recurse "D:\a\nc-desktop\nc-desktop\craft\CraftMaster\windows-msvc2019_64-cl\etc\blueprints\locations\craft-blueprints-kde"
