@@ -20,12 +20,12 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Clone CraftMaster
-      run: git clone --depth=1 https://invent.kde.org/kde/craftmaster.git "${{ github.workspace }}/craft/CraftMaster/CraftMaster"
+      run: git clone --depth=1 https://invent.kde.org/kde/craftmaster.git "${{ github.workspace }}\craft\CraftMaster\CraftMaster"
 
     - name: Craft setup
       run: |
-        & "${{ github.workspace }}/.github/workflows/craft_setup.ps1" --setup
+        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" --setup
 
     - name: Craft unshelve
       run: |
-        & "${{ github.workspace }}/.github/workflows/craft_setup.ps1" -c --unshelve "${{ github.workspace }}/.github/workflows/craft.shelf"
+        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c --unshelve "${{ github.workspace }}\craft.shelf"
