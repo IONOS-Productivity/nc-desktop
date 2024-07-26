@@ -37,7 +37,7 @@
                 </spacer>
             </item>
             <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_2">
+                <layout class="QHBoxLayout" name="slideShow_hLayout">
                     <property name="topMargin">
                         <number>0</number>
                     </property>
@@ -99,7 +99,7 @@
                 </layout>
             </item>
             <item>
-                <layout class="QHBoxLayout" name="horizontalLayout">
+                <layout class="QHBoxLayout" name="buttonArea_hLayout">
                     <property name="leftMargin">
                         <number>0</number>
                     </property>
