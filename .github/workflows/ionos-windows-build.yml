@@ -29,8 +29,11 @@ jobs:
     - name: Craft unshelve
       run: |
         & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c --unshelve "${{ github.workspace }}\craft.shelf"
+
+    - name: Switch Craft to qt5-lts
+      run: |
         & cd "${{ github.workspace }}\craft\CraftMaster\${{ env.CRAFT_TARGET}}\etc\blueprints\locations\craft-blueprints-kde"
-        & git checkout qt5-lts
+        git checkout qt5-lts
 
     - name: Install dependencies
       run: |
