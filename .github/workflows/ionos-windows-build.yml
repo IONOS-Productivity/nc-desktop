@@ -34,10 +34,14 @@ jobs:
       run: |
         & cd "${{ github.workspace }}\craft\CraftMaster\${{ env.CRAFT_TARGET}}\etc\blueprints\locations\craft-blueprints-kde"
         git checkout qt5-lts
-
-    - name: print Debug filesystem
+    
+    - name: craft
       run: |
-        Get-ChildItem -Recurse "D:\a\nc-desktop\nc-desktop\craft\CraftMaster\windows-msvc2019_64-cl\etc\blueprints\locations\craft-blueprints-kde"
+        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c craft
+
+    # - name: print Debug filesystem
+    #   run: |
+    #     Get-ChildItem -Recurse "D:\a\nc-desktop\nc-desktop\craft\CraftMaster\windows-msvc2019_64-cl\etc\blueprints\locations\craft-blueprints-kde"
 
     - name: Install dependencies
       run: |
