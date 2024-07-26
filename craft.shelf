@@ -1,3 +1,3 @@
 [General]
 version = 2
-blueprintrepositories = https://github.com/EmilBohleber/nc-desktop-client-blueprints.git|master|
+blueprintrepositories = https://github.com/EmilBohleber/nc-desktop-client-blueprints.git|qt5-lts|
