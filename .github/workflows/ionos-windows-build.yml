@@ -9,10 +9,10 @@ defaults:
   run:
     shell: pwsh
 jobs:
-  env:
-    HOME: ${{ github.workspace }}
-    CRAFT_TARGET: windows-msvc2019_64-cl
   build:
+    env:
+      HOME: ${{ github.workspace }}
+      CRAFT_TARGET: windows-msvc2019_64-cl
     name: IONOS Windows Build
     runs-on: windows-2019
     steps:
