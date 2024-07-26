@@ -20,8 +20,8 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Clone CraftMaster
-      run: git clone --depth=1 https://invent.kde.org/kde/craftmaster.git "${ env:HOME }/craft/CraftMaster/CraftMaster"
+      run: git clone --depth=1 https://invent.kde.org/kde/craftmaster.git "${{ env:HOME }}/craft/CraftMaster/CraftMaster"
 
     - name: Craft setup
       run: |
-        & "${ env:HOME }/.github/workflows/craft_setup.ps1" --setup
+        & "${{ env:HOME }}/.github/workflows/craft_setup.ps1" --setup
