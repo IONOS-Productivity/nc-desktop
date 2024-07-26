@@ -14,7 +14,7 @@ jobs:
       HOME: ${{ github.workspace }}
       CRAFT_TARGET: windows-msvc2019_64-cl
     name: IONOS Windows Build
-    runs-on: windows-2019
+    runs-on: windows-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -29,6 +29,8 @@ jobs:
     - name: Craft unshelve
       run: |
         & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c --unshelve "${{ github.workspace }}\craft.shelf"
+        & cd "${{ github.workspace }}\craft\CraftMaster\${{ env.CRAFT_TARGET}}\etc\blueprints\locations\craft-blueprints-kde"
+        & git checkout qt5-lts
 
     - name: Install dependencies
       run: |
