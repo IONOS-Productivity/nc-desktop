@@ -25,3 +25,7 @@ jobs:
     - name: Craft setup
       run: |
         & "${{ github.workspace }}/.github/workflows/craft_setup.ps1" --setup
+
+    - name: Craft unshelve
+      run: |
+        & "${{ github.workspace }}/.github/workflows/craft_setup.ps1" -c --unshelve "${{ github.workspace }}/.github/workflows/craft.shelf"
