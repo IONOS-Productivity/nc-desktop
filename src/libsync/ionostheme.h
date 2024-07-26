@@ -79,6 +79,10 @@ public:
         return "#000000"; 
     }
 
+    static QString welcomeBackgroundColor() {
+        return "#FAFAFA"; 
+    }
+
 private:
     IonosTheme() {} 
 };

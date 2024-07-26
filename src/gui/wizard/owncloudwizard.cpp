@@ -26,6 +26,7 @@
 #include "wizard/owncloudadvancedsetuppage.h"
 #include "wizard/webviewpage.h"
 #include "wizard/flow2authcredspage.h"
+#include "ionostheme.h"
 
 #include "common/vfs.h"
 
@@ -406,8 +407,14 @@ void OwncloudWizard::customizeStyle()
 
     // Set background colors
     auto wizardPalette = palette();
-    const auto backgroundColor = wizardPalette.color(QPalette::Window);
+    const auto backgroundColor = QColor(IonosTheme::welcomeBackgroundColor());
+    
+    // Set Color of upper part
     wizardPalette.setColor(QPalette::Base, backgroundColor);
+
+    // Set Color of lower part
+    wizardPalette.setColor(backgroundRole(), backgroundColor);
+
     // Set separator color
     wizardPalette.setColor(QPalette::Mid, backgroundColor);
 
