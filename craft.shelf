@@ -6,11 +6,11 @@ blueprintrepositories = https://invent.kde.org/packaging/craft-blueprints-kde.gi
 version = 2023-12-12
 
 [craft/craft-blueprints-kde]
-version = qt5-lts-2024.06.24
+version = qt5-lts
 revision = lts-ae4f899e
 
 [craft/craft-core]
-version = qt5-lts-2024.06.24
+version = qt5-lts
 revision = lts-50c2476c0
 
 [dev-utils/cmake]
