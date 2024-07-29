@@ -8,6 +8,10 @@ Start-Sleep -m 3000
 [System.Windows.Forms.SendKeys]::SendWait("${env:HOME}\Craft64")
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
 
+Start-Sleep -m 1000
+[System.Windows.Forms.SendKeys]::SendWait("Y")
+[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+
 Start-Sleep -m 20000
 
 [System.Windows.Forms.SendKeys]::SendWait("0")
