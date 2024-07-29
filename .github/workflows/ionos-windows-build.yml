@@ -41,8 +41,7 @@ jobs:
 
     - name: Setup Craft Environment
       run: |
-        & cd ${{ github.workspace }}\Craft64\craft
-        & .\craftenv.ps1
+        & "${{ github.workspace }}\Craft64\craft\craftenv.ps1"
 
     - name: Add blueprint repository
       run: |
