@@ -176,7 +176,7 @@ version = kde/5.15
 revision = c78ad28
 
 [libs/qt5/qtwebengine]
-version = 5.15.16.4
+version = 5.15.16
 revision = lts-224806a70
 
 [libs/qt5/qtwebsockets]
