@@ -145,6 +145,7 @@ AbstractButton {
                 }
 
                 MenuItem {
+                    id: logInOutButton
                     icon.source: Style.sesLogout
                     text: model.isConnected ? qsTr("Log out") : qsTr("Log in")
                     font.pixelSize: Style.topLinePixelSize
@@ -162,7 +163,7 @@ AbstractButton {
                             radius: Style.sesCornerRadius
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: parent.parent.hovered ? Style.sesHover : "transparent"
+                            color: logInOutButton.pressed ? Style.sesButtonPressed : logInOutButton.hovered ? Style.sesAccountMenuHover : "transparent"
                         }
                     }
 
@@ -189,7 +190,7 @@ AbstractButton {
                             radius: Style.sesCornerRadius
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: parent.parent.hovered ? Style.sesHover : "transparent"
+                            color: removeAccountButton.pressed ? Style.sesButtonPressed : removeAccountButton.hovered ? Style.sesAccountMenuHover : "transparent"
                         }
                     }
 
