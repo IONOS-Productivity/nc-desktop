@@ -25,12 +25,13 @@ jobs:
         python-version: '3.12'
 
     - name: Remove old Craft64 Directory
+      continue-on-error: true
       run: Remove-Item -Recurse -Force "${{ github.workspace }}\Craft64"
 
     - name: Install Craft with Autobuild script
       run: |
         & "${{ github.workspace }}\.github\workflows\autobuild.ps1" 
-        
+
     # - name: Clone CraftMaster
     #   run: git clone -q --depth=1 https://invent.kde.org/kde/craftmaster.git "${{ github.workspace }}\craft\CraftMaster"
 
