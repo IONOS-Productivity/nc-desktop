@@ -130,7 +130,7 @@ AbstractButton {
                 closePolicy: Menu.CloseOnPressOutsideParent | Menu.CloseOnEscape
 
                 MenuItem {
-                    visible: model.isConnected && model.serverHasUserStatus
+                    visible: false
                     height: visible ? implicitHeight : 0
                     text: qsTr("Set status")
                     font.pixelSize: Style.topLinePixelSize
