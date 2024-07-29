@@ -131,6 +131,7 @@ AbstractButton {
 
                 background: Rectangle {
                     radius: Style.sesCornerRadius
+                    border.color: Style.sesBorderColor 
                 }
 
                 MenuItem {
