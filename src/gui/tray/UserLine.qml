@@ -168,15 +168,6 @@ AbstractButton {
 
                     Accessible.role: Accessible.Button
                     Accessible.name: model.isConnected ? qsTr("Log out") : qsTr("Log in")
-
-                    onPressed: {
-                        if (model.isConnected) {
-                            UserModel.logout(index)
-                        } else {
-                            UserModel.login(index)
-                        }
-                        accountMenu.close()
-                    }
                 }
 
                 MenuItem {
