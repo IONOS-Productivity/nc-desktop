@@ -146,8 +146,12 @@ AbstractButton {
 
                 MenuItem {
                     id: logInOutButton
+
+                    property bool isHovered: logInOutButton.hovered || logInOutButton.visualFocus
+                    property bool isActive: logInOutButton.pressed
+
                     icon.source: Style.sesLogout
-                    icon.color: logInOutButton.pressed ? Style.sesIconActive : Style.sesIconColor
+                    icon.color: logInOutButton.isActive ? Style.sesIconActive : Style.sesIconColor
                     text: model.isConnected ? qsTr("Log out") : qsTr("Log in")
                     font.pixelSize: Style.topLinePixelSize
                     palette.windowText: Style.ncTextColor
@@ -164,18 +168,22 @@ AbstractButton {
                             radius: Style.sesCornerRadius
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: logInOutButton.pressed ? Style.sesButtonPressed : logInOutButton.hovered ? Style.sesAccountMenuHover : "transparent"
+                            color: logInOutButton.isActive ? Style.isHovered : logInOutButton.isHovered ? Style.sesAccountMenuHover : "transparent"
                         }
                     }
 
-                    Accessible.role: Accessible.Button
+                    Accessible.role: Accessible.MenuItem
                     Accessible.name: model.isConnected ? qsTr("Log out") : qsTr("Log in")
                 }
 
                 MenuItem {
+
+                    property bool isHovered: removeAccountButton.hovered || removeAccountButton.visualFocus
+                    property bool isActive: removeAccountButton.pressed
+
                     id: removeAccountButton
                     icon.source: Style.sesDelete
-                    icon.color: removeAccountButton.pressed ? Style.sesIconActive : Style.sesIconColor
+                    icon.color: removeAccountButton.isActive ? Style.sesIconActive : Style.sesIconColor
                     text: qsTr("Remove account")
                     font.pixelSize: Style.topLinePixelSize
                     palette.windowText: Style.ncTextColor
@@ -192,11 +200,11 @@ AbstractButton {
                             radius: Style.sesCornerRadius
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: removeAccountButton.pressed ? Style.sesButtonPressed : removeAccountButton.hovered ? Style.sesAccountMenuHover : "transparent"
+                            color: removeAccountButton.isActive ? Style.sesButtonPressed : removeAccountButton.isHovered ? Style.sesAccountMenuHover : "transparent"
                         }
                     }
 
-                    Accessible.role: Accessible.Button
+                    Accessible.role: Accessible.MenuItem
                     Accessible.name: text
                     Accessible.onPressAction: removeAccountButton.clicked()
                 }
