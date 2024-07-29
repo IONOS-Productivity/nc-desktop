@@ -323,6 +323,10 @@ void OwncloudWizard::slotCurrentPageChanged(int id)
 #endif // WITH_WEBENGINE
         id == WizardCommon::Page_Flow2AuthCreds) {
         setButtonLayout({ QWizard::BackButton, QWizard::Stretch });
+        #ifdef APPLICATION_SERVER_URL_ENFORCE
+        button(QWizard::BackButton)->setHidden(true);
+        #endif
+
     } else if (id == WizardCommon::Page_AdvancedSetup) {
         setButtonLayout({ QWizard::CustomButton2, QWizard::Stretch, QWizard::CustomButton1, QWizard::FinishButton });
         setNextButtonAsDefault();
