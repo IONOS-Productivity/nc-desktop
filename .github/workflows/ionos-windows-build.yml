@@ -36,12 +36,12 @@ jobs:
 
     - name: Setup Craft Environment
       run: |
-        $ cd ${{ github.workspace }}\Craft64\craft
-        $ .\craftenv.ps1
+        & cd ${{ github.workspace }}\Craft64\craft
+        & .\craftenv.ps1
 
     - name: Add blueprint repository
       run: |
-        & "craft --add-blueprint-repository [git]https://github.com/EmilBohleber/nc-desktop-client-blueprints.git
+        & craft --add-blueprint-repository [git]https://github.com/EmilBohleber/nc-desktop-client-blueprints.git
 
     # - name: Craft unshelve
     #   continue-on-error: true
