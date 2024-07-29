@@ -140,6 +140,7 @@ AbstractButton {
                 }
 
                 MenuItem {
+                    icon.source: Style.sesLogout
                     text: model.isConnected ? qsTr("Log out") : qsTr("Log in")
                     font.pixelSize: Style.topLinePixelSize
                     palette.windowText: Style.ncTextColor
@@ -174,6 +175,7 @@ AbstractButton {
 
                 MenuItem {
                     id: removeAccountButton
+                    icon.source: Style.sesDelete
                     text: qsTr("Remove account")
                     font.pixelSize: Style.topLinePixelSize
                     palette.windowText: Style.ncTextColor
