@@ -129,8 +129,13 @@ AbstractButton {
                 id: userMoreButtonMenu
                 closePolicy: Menu.CloseOnPressOutsideParent | Menu.CloseOnEscape
 
+                background: Rectangle {
+                    radius: Style.sesCornerRadius
+                    border.color: Style.sesBorderColor 
+                }
+
                 MenuItem {
-                    visible: model.isConnected && model.serverHasUserStatus
+                    visible: false
                     height: visible ? implicitHeight : 0
                     text: qsTr("Set status")
                     font.pixelSize: Style.topLinePixelSize
@@ -140,6 +145,9 @@ AbstractButton {
                 }
 
                 MenuItem {
+                    id: logInOutButton
+                    icon.source: Style.sesLogout
+                    icon.color: logInOutButton.pressed ? Style.sesIconActive : Style.sesIconColor
                     text: model.isConnected ? qsTr("Log out") : qsTr("Log in")
                     font.pixelSize: Style.topLinePixelSize
                     palette.windowText: Style.ncTextColor
@@ -153,27 +161,21 @@ AbstractButton {
                         height: parent.height
                         width: parent.menu.width
                         Rectangle {
+                            radius: Style.sesCornerRadius
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: parent.parent.hovered ? Style.sesHover : "transparent"
+                            color: logInOutButton.pressed ? Style.sesButtonPressed : logInOutButton.hovered ? Style.sesAccountMenuHover : "transparent"
                         }
                     }
 
                     Accessible.role: Accessible.Button
                     Accessible.name: model.isConnected ? qsTr("Log out") : qsTr("Log in")
-
-                    onPressed: {
-                        if (model.isConnected) {
-                            UserModel.logout(index)
-                        } else {
-                            UserModel.login(index)
-                        }
-                        accountMenu.close()
-                    }
                 }
 
                 MenuItem {
                     id: removeAccountButton
+                    icon.source: Style.sesDelete
+                    icon.color: removeAccountButton.pressed ? Style.sesIconActive : Style.sesIconColor
                     text: qsTr("Remove account")
                     font.pixelSize: Style.topLinePixelSize
                     palette.windowText: Style.ncTextColor
@@ -187,9 +189,10 @@ AbstractButton {
                         height: parent.height
                         width: parent.menu.width
                         Rectangle {
+                            radius: Style.sesCornerRadius
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: parent.parent.hovered ? Style.sesHover : "transparent"
+                            color: removeAccountButton.pressed ? Style.sesButtonPressed : removeAccountButton.hovered ? Style.sesAccountMenuHover : "transparent"
                         }
                     }
 
