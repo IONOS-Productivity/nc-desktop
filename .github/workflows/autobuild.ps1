@@ -1,7 +1,7 @@
 Write-Output ${env:HOME}
 
 [void] [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
-$proc =  Start-Process powershell.exe -ArgumentList "-file ${env:HOME}\.github\workflows\runcraft.ps1" -NoNewWindow -PassThru
+$proc =  Start-Process powershell.exe -ArgumentList "-file ${env:HOME}\.github\workflows\runcraft.ps1" -PassThru
 
 Start-Sleep -m 3000
 
