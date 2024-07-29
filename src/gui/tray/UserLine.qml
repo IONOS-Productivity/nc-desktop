@@ -158,6 +158,7 @@ AbstractButton {
                         height: parent.height
                         width: parent.menu.width
                         Rectangle {
+                            radius: Style.sesCornerRadius
                             anchors.fill: parent
                             anchors.margins: 1
                             color: parent.parent.hovered ? Style.sesHover : "transparent"
@@ -193,6 +194,7 @@ AbstractButton {
                         height: parent.height
                         width: parent.menu.width
                         Rectangle {
+                            radius: Style.sesCornerRadius
                             anchors.fill: parent
                             anchors.margins: 1
                             color: parent.parent.hovered ? Style.sesHover : "transparent"
