@@ -1,3 +1,211 @@
 [General]
 version = 2
-blueprintrepositories = https://github.com/EmilBohleber/nc-desktop-client-blueprints.git|qt5-lts|;https://invent.kde.org/packaging/craft-blueprints-kde.git|qt5-lts|
+blueprintrepositories = https://invent.kde.org/packaging/craft-blueprints-kde.git|qt5-lts|;https://github.com/EmilBohleber/nc-desktop-client-blueprints.git|qt5-lts|
+
+[core/cacert]
+version = 2023-12-12
+
+[craft/craft-blueprints-kde]
+version = qt5-lts-2024.06.24
+revision = lts-ae4f899e
+
+[craft/craft-core]
+version = qt5-lts-2024.06.24
+revision = lts-50c2476c0
+
+[dev-utils/cmake]
+version = latest
+
+[dev-utils/cmake-base]
+version = 3.23.3
+
+[dev-utils/craft-startmenu-entry]
+version = 3
+
+[dev-utils/gperf]
+version = 3.0.1
+
+[dev-utils/icoutils]
+version = 0.32.3
+
+[dev-utils/jom]
+version = 1_1_3
+
+[dev-utils/kshimgen]
+version = 0.6.0
+
+[dev-utils/msys]
+version = latest
+
+[dev-utils/nasm]
+version = 2.15.05
+
+[dev-utils/ninja]
+version = 1.11.1
+
+[dev-utils/nodejs]
+version = 16.15.1
+
+[dev-utils/patch]
+version = 2.7.6
+
+[dev-utils/perl]
+version = 5.36.0
+
+[dev-utils/pkg-config]
+version = 0.29.2
+
+[dev-utils/python3]
+version = 3
+
+[dev-utils/qtbinpatcher]
+version = 2.2.0
+
+[dev-utils/snoretoast]
+version = 0.9.0
+
+[kde/frameworks/extra-cmake-modules]
+version = 5.115.0
+
+[kde/frameworks/tier1/karchive]
+version = 5.115.0
+
+[libs/brotli]
+version = 1.1.0
+
+[libs/d3dcompiler]
+version = master
+
+[libs/dbus]
+version = 1.14.8
+
+[libs/expat]
+version = 2.2.10
+
+[libs/freetype]
+version = 2.12.1
+
+[libs/gettext]
+version = 0.22.3
+
+[libs/harfbuzz]
+version = 2.7.2
+
+[libs/icu]
+version = 74.1
+
+[libs/libarchive]
+version = 3.7.2
+
+[libs/libbzip2]
+version = 1.0.6
+
+[libs/libffi]
+version = 3.3
+
+[libs/libjpeg-turbo]
+version = 2.1.5.1
+
+[libs/liblzma]
+version = 5.2.3
+
+[libs/libp11]
+version = libp11-0.4.12
+
+[libs/libpng]
+version = 1.6.40
+
+[libs/libxml2]
+version = 2.10.3
+
+[libs/libzstd]
+version = 1.5.5
+
+[libs/openssl]
+version = 3.2.1
+
+[libs/pcre]
+version = 8.45
+
+[libs/pcre2]
+version = 10.42
+
+[libs/python]
+version = 3.11.7
+
+[libs/qt5/qtbase]
+version = kde/5.15
+revision = e148944c21
+
+[libs/qt5/qtdeclarative]
+version = kde/5.15
+revision = b99568135a
+
+[libs/qt5/qtgraphicaleffects]
+version = kde/5.15-4
+revision = 895f975
+
+[libs/qt5/qtlocation]
+version = kde/5.15-4
+revision = a97ab17b
+
+[libs/qt5/qtmultimedia]
+version = kde/5.15-4
+revision = 751435253
+
+[libs/qt5/qtquickcontrols]
+version = kde/5.15-4
+revision = 77fbfa8d
+
+[libs/qt5/qtquickcontrols2]
+version = kde/5.15
+revision = 1fc981605
+
+[libs/qt5/qtsvg]
+version = kde/5.15-4
+revision = 080fed6
+
+[libs/qt5/qttools]
+version = kde/5.15-4
+revision = ba4c633c4
+
+[libs/qt5/qttranslations]
+version = kde/5.15-4
+revision = 40aabeb
+
+[libs/qt5/qtwebchannel]
+version = kde/5.15-4
+revision = c78ad28
+
+[libs/qt5/qtwebengine]
+version = 5.15.16-4
+revision = lts-224806a70
+
+[libs/qt5/qtwebsockets]
+version = kde/5.15-4
+revision = 2c2b769
+
+[libs/runtime]
+version = 16
+
+[libs/sqlite]
+version = 3.42.0
+
+[libs/zlib]
+version = 1.3.1
+
+[python-modules/coloredlogs]
+version = master
+
+[python-modules/pip]
+version = master
+
+[python-modules/pip-system]
+version = master
+
+[python-modules/virtualenv]
+version = master
+
+[qt-libs/qtkeychain]
+version = 0.14.1
+

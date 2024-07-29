@@ -24,47 +24,39 @@ jobs:
       with:
         python-version: '3.12'
 
-    # - name: Remove old Craft64 Directory
-    #   continue-on-error: true
-    #   run: Remove-Item -Recurse -Force "${{ github.workspace }}\Craft64"
-
-    - name: Install Craft with Autobuild script
-      run: |
-        & "${{ github.workspace }}\.github\workflows\autobuild.ps1" 
-
-    - name: Print Filesystem for Debug
-      run: |
-        Get-ChildItem -Recurse "${{ github.workspace }}\Craft64\"
-
-    # - name: Clone CraftMaster
-    #   run: git clone -q --depth=1 https://invent.kde.org/kde/craftmaster.git "${{ github.workspace }}\craft\CraftMaster"
-
-    # - name: Craft setup
+    # - name: Print Filesystem for Debug
     #   run: |
-    #     & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" --setup
+    #     Get-ChildItem -Recurse "${{ github.workspace }}\Craft64\"
 
-    - name: Setup Craft Environment
+    - name: Clone CraftMaster
+      run: git clone -q --depth=1 https://invent.kde.org/kde/craftmaster.git "${{ github.workspace }}\craft\CraftMaster"
+
+    - name: Craftmaster setup
       run: |
-        cd "${{ github.workspace }}\Craft64\craft\"
-        $ ".\craftenv.ps1"
+        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" --setup
 
-    - name: Add blueprint repository
-      run: |
-        craft --add-blueprint-repository [git]https://github.com/EmilBohleber/nc-desktop-client-blueprints.git
-
-    # - name: Craft unshelve
-    #   continue-on-error: true
+    # - name: Setup Craft Environment
     #   run: |
-    #     & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c --unshelve "${{ github.workspace }}\craft.shelf"
+    #     cd "${{ github.workspace }}\Craft64\craft\"
+    #     $ ".\craftenv.ps1"
+
+    # - name: Add blueprint repository
+    #   run: |
+    #     "${{ github.workspace }}\.github\workflows\craft_setup.ps1" --add-blueprint-repository [git]https://github.com/EmilBohleber/nc-desktop-client-blueprints.git
+
+    - name: Craft unshelve
+      continue-on-error: true
+      run: |
+        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c --unshelve "${{ github.workspace }}\craft.shelf"
 
     # - name: Switch Craft to qt5-lts
     #   run: |
     #     & cd "${{ github.workspace }}\craft\${{ env.CRAFT_TARGET}}\etc\blueprints\locations\craft-blueprints-kde"
     #     git checkout qt5-lts
     
-    - name: craft
-      run: |
-        craft craft
+    # - name: craft
+    #   run: |
+    #     craft craft
 
     # - name: print Debug filesystem
     #   run: |
@@ -72,5 +64,5 @@ jobs:
 
     - name: Install dependencies
       run: |
-        craft --install-deps nextcloud-client
+        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" --install-deps nextcloud-client
 
