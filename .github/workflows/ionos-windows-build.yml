@@ -19,8 +19,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
     - name: Clone CraftMaster
-      run: git clone --depth=1 https://invent.kde.org/kde/craftmaster.git "${{ github.workspace }}\craft\CraftMaster\CraftMaster"
+      run: git clone -q --depth=1 https://invent.kde.org/kde/craftmaster.git "${{ github.workspace }}\craft\CraftMaster"
 
     - name: Craft setup
       run: |
@@ -35,9 +40,9 @@ jobs:
         & cd "${{ github.workspace }}\craft\CraftMaster\${{ env.CRAFT_TARGET}}\etc\blueprints\locations\craft-blueprints-kde"
         git checkout qt5-lts
     
-    # - name: craft
-    #   run: |
-    #     & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c craft
+    - name: craft
+      run: |
+        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c craft
 
     # - name: print Debug filesystem
     #   run: |
