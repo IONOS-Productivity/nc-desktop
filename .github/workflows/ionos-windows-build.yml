@@ -32,6 +32,10 @@ jobs:
       run: |
         & "${{ github.workspace }}\.github\workflows\autobuild.ps1" 
 
+    - name: Print Filesystem for Debug
+      run: |
+        Get-ChildItem -Recurse "${{ github.workspace }}\Craft64\"
+
     # - name: Clone CraftMaster
     #   run: git clone -q --depth=1 https://invent.kde.org/kde/craftmaster.git "${{ github.workspace }}\craft\CraftMaster"
 
@@ -41,11 +45,12 @@ jobs:
 
     - name: Setup Craft Environment
       run: |
-        & "${{ github.workspace }}\Craft64\craft\craftenv.ps1"
+        cd "${{ github.workspace }}\Craft64\craft\"
+        $ ".\craftenv.ps1"
 
     - name: Add blueprint repository
       run: |
-        & craft --add-blueprint-repository [git]https://github.com/EmilBohleber/nc-desktop-client-blueprints.git
+        craft --add-blueprint-repository [git]https://github.com/EmilBohleber/nc-desktop-client-blueprints.git
 
     # - name: Craft unshelve
     #   continue-on-error: true
@@ -59,7 +64,7 @@ jobs:
     
     - name: craft
       run: |
-        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c craft
+        craft craft
 
     # - name: print Debug filesystem
     #   run: |
@@ -67,5 +72,5 @@ jobs:
 
     - name: Install dependencies
       run: |
-        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c --install-deps nextcloud-client
+        craft --install-deps nextcloud-client
 
