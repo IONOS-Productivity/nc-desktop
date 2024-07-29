@@ -129,6 +129,10 @@ AbstractButton {
                 id: userMoreButtonMenu
                 closePolicy: Menu.CloseOnPressOutsideParent | Menu.CloseOnEscape
 
+                background: Rectangle {
+                    radius: Style.sesCornerRadius
+                }
+
                 MenuItem {
                     visible: false
                     height: visible ? implicitHeight : 0
