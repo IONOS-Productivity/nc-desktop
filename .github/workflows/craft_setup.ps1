@@ -9,8 +9,9 @@ $RepoRoot = "{0}\..\.." -f ([System.IO.Path]::GetDirectoryName($myInvocation.MyC
 $command = @("${env:HOME}\craft\CraftMaster\CraftMaster\CraftMaster.py",
              "--config", "${RepoRoot}\craftmaster.ini",
             #  "--config-override", "${RepoRoot}/.github/workflows/craft_override.ini",
-             "--target", "${env:CRAFT_TARGET}",
-             "--variables", "WORKSPACE=${env:HOME}\craft") + $args
+             "--target", "${env:CRAFT_TARGET}") + $args
+            #  "--variables", "WORKSPACE=${env:HOME}\craft")
+            #   + $args
 
 Write-Host "Exec: ${python} ${command}"
 
