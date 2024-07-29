@@ -64,5 +64,5 @@ jobs:
 
     - name: Install dependencies
       run: |
-        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" --install-deps nextcloud-client
+        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c --install-deps nextcloud-client
 
