@@ -51,6 +51,11 @@ jobs:
       if: steps.cache-install-inkscape.outputs.cache-hit != 'true'
       run: |
         choco install inkscape
+
+    - name: Setup PATH
+      run: |
+        echo "${{ github.workspace }}\${{ env.CRAFT_TARGET }}\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+
     - name: Build
       run: |
-        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c nextcloud-client
+        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c --src-dir ${{ github.workspace }} nextcloud-client
