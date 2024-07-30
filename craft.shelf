@@ -133,55 +133,42 @@ version = 3.11.7
 
 [libs/qt5/qtbase]
 version = kde/5.15
-revision = e148944c21
 
 [libs/qt5/qtdeclarative]
 version = kde/5.15
-revision = b99568135a
 
 [libs/qt5/qtgraphicaleffects]
 version = kde/5.15
-revision = 895f975
 
 [libs/qt5/qtlocation]
 version = kde/5.15
-revision = a97ab17b
 
 [libs/qt5/qtmultimedia]
 version = kde/5.15
-revision = 751435253
 
 [libs/qt5/qtquickcontrols]
 version = kde/5.15
-revision = 77fbfa8d
 
 [libs/qt5/qtquickcontrols2]
 version = kde/5.15
-revision = 1fc981605
 
 [libs/qt5/qtsvg]
 version = kde/5.15
-revision = 080fed6
 
 [libs/qt5/qttools]
 version = kde/5.15
-revision = ba4c633c4
 
 [libs/qt5/qttranslations]
 version = kde/5.15
-revision = 40aabeb
 
 [libs/qt5/qtwebchannel]
 version = kde/5.15
-revision = c78ad28
 
 [libs/qt5/qtwebengine]
 version = 5.15.16
-revision = lts-224806a70
 
 [libs/qt5/qtwebsockets]
 version = kde/5.15
-revision = 2c2b769
 
 [libs/runtime]
 version = 16
