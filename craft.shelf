@@ -1,6 +1,6 @@
 [General]
 version = 2
-blueprintrepositories = https://invent.kde.org/packaging/craft-blueprints-kde.git|qt5-lts|;https://github.com/EmilBohleber/nc-desktop-client-blueprints.git|qt5-lts|
+blueprintrepositories = https://invent.kde.org/packaging/craft-blueprints-kde.git|qt5-lts|;https://github.com/EmilBohleber/nc-desktop-client-blueprints.git|master|
 
 [core/cacert]
 version = 2023-12-12
