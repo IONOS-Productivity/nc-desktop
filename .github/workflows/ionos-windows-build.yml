@@ -24,10 +24,6 @@ jobs:
       with:
         python-version: '3.12'
 
-    # - name: Print Filesystem for Debug
-    #   run: |
-    #     Get-ChildItem -Recurse "${{ github.workspace }}\Craft64\"
-
     - name: Clone CraftMaster
       run: git clone -q --depth=1 https://invent.kde.org/kde/craftmaster.git "${{ github.workspace }}\craft\CraftMaster"
 
@@ -35,34 +31,15 @@ jobs:
       run: |
         & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" --setup
 
-    # - name: Setup Craft Environment
-    #   run: |
-    #     cd "${{ github.workspace }}\Craft64\craft\"
-    #     $ ".\craftenv.ps1"
-
-    # - name: Add blueprint repository
-    #   run: |
-    #     "${{ github.workspace }}\.github\workflows\craft_setup.ps1" --add-blueprint-repository [git]https://github.com/EmilBohleber/nc-desktop-client-blueprints.git
-
     - name: Craft unshelve
       continue-on-error: true
       run: |
         & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c --unshelve "${{ github.workspace }}\craft.shelf"
 
-    # - name: Switch Craft to qt5-lts
-    #   run: |
-    #     & cd "${{ github.workspace }}\craft\${{ env.CRAFT_TARGET}}\etc\blueprints\locations\craft-blueprints-kde"
-    #     git checkout qt5-lts
-    
-    # - name: craft
-    #   run: |
-    #     craft craft
-
-    # - name: print Debug filesystem
-    #   run: |
-    #     Get-ChildItem -Recurse "D:\a\nc-desktop\nc-desktop\craft\CraftMaster\windows-msvc2019_64-cl\etc\blueprints\locations\craft-blueprints-kde"
-
     - name: Install dependencies
       run: |
         & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c --install-deps nextcloud-client
 
+    - name: Build
+      run: |
+        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c --no-cache nextcloud-client
