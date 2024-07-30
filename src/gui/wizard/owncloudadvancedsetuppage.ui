@@ -307,8 +307,7 @@
                                                         <widget class="QRadioButton"
                                                             name="rSyncEverything">
                                                             <property name="text">
-                                                                <string>Synchronize everything from
-                                                                    server</string>
+                                                                <string>Synchronize everything from server</string>
                                                             </property>
                                                             <property name="checked">
                                                                 <bool>true</bool>
@@ -367,8 +366,7 @@
                                                         <widget class="QCheckBox"
                                                             name="confCheckBoxSize">
                                                             <property name="text">
-                                                                <string>Ask before syncing folders
-                                                                    larger than</string>
+                                                                <string>Ask before syncing folders larger than</string>
                                                             </property>
                                                         </widget>
                                                     </item>
@@ -396,9 +394,7 @@
                                                         <widget class="QLabel"
                                                             name="confTraillingSizeLabel">
                                                             <property name="text">
-                                                                <string
-                                                                    extracomment="Trailing part of &quot;Ask confirmation before syncing folder larger than&quot; ">
-                                                                    MB</string>
+                                                                <string extracomment="Trailing part of &quot;Ask confirmation before syncing folder larger than&quot; ">MB</string>
                                                             </property>
                                                             <property name="textFormat">
                                                                 <enum>Qt::PlainText</enum>
@@ -446,8 +442,7 @@
                                                         <widget class="QCheckBox"
                                                             name="confCheckBoxExternal">
                                                             <property name="text">
-                                                                <string>Ask before syncing external
-                                                                    storages</string>
+                                                                <string>Ask before syncing external storages</string>
                                                             </property>
                                                         </widget>
                                                     </item>
@@ -543,8 +538,7 @@
                                                                 </sizepolicy>
                                                             </property>
                                                             <property name="text">
-                                                                <string notr="true">Use virtual
-                                                                    files !PLACEHOLDER!</string>
+                                                                <string notr="true">Use virtual files !PLACEHOLDER!</string>
                                                             </property>
                                                             <property name="checkable">
                                                                 <bool>false</bool>
@@ -657,19 +651,10 @@
                                                             </sizepolicy>
                                                         </property>
                                                         <property name="toolTip">
-                                                            <string>
-                                                                &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If
-                                                                this box is checked, existing
-                                                                content in the local folder will be
-                                                                erased to start a clean sync from
-                                                                the server.&lt;/p&gt;&lt;p&gt;Do not
-                                                                check this if the local content
-                                                                should be uploaded to the servers
-                                                                folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                                            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                                         </property>
                                                         <property name="text">
-                                                            <string>Erase local folder and start a
-                                                                clean sync</string>
+                                                            <string>Erase local folder and start a clean sync</string>
                                                         </property>
                                                         <property name="checkable">
                                                             <bool>true</bool>
