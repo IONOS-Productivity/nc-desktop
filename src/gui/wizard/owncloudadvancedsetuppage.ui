@@ -125,12 +125,15 @@
                                 </widget>
                             </item>
                             <item row="5" column="3">
-                                <widget class="QPushButton" name="pbSelectLocalFolder">
+                                <widget class="OCC::SesButton" name="pbSelectLocalFolder">
                                     <property name="sizePolicy">
                                         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                                             <horstretch>0</horstretch>
                                             <verstretch>0</verstretch>
                                         </sizepolicy>
+                                    </property>
+                                    <property name="buttonStyle">
+                                        <enum>OCC::ButtonStyle::Secondary</enum>
                                     </property>
                                     <property name="text">
                                         <string>Choose different folder</string>
