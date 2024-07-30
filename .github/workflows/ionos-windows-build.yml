@@ -42,4 +42,4 @@ jobs:
 
     - name: Build
       run: |
-        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c --no-cache nextcloud-client
+        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c nextcloud-client
