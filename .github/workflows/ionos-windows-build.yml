@@ -40,6 +40,17 @@ jobs:
       run: |
         & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c --install-deps nextcloud-client
 
+    - name: Cache Install inkscape
+      id: cache-install-inkscape
+      uses: actions/cache@v4
+      with:
+        path: C:\Program Files\inkscape
+        key: ${{ runner.os }}-cache-install-inkscape
+
+    - name: Install inkscape
+      if: steps.cache-install-inkscape.outputs.cache-hit != 'true'
+      run: |
+        choco install inkscape
     - name: Build
       run: |
         & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c nextcloud-client
