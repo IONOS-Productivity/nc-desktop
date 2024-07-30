@@ -1,4 +1,8 @@
+#ifndef _IONOSTHEME_H
+#define _IONOSTHEME_H
+
 #include <QString>
+namespace OCC {
 
 class IonosTheme {
 public:
@@ -86,3 +90,5 @@ public:
 private:
     IonosTheme() {} 
 };
+}
+#endif // _IONOSTHEME_H
