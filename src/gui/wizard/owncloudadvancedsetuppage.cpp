@@ -34,6 +34,7 @@
 #include "creds/abstractcredentials.h"
 #include "networkjobs.h"
 #include "wizard/owncloudwizard.h"
+#include "ionostheme.h"
 
 namespace OCC {
 
@@ -196,7 +197,7 @@ void OwncloudAdvancedSetupPage::initializePage()
     _ui.confSpinBox->setValue(newFolderLimit.second);
     _ui.confCheckBoxExternal->setChecked(cfgFile.confirmExternalStorage());
 
-    fetchUserAvatar();
+    SetAvatarIcon();
     setUserInformation();
 
     customizeStyle();
@@ -217,6 +218,12 @@ void OwncloudAdvancedSetupPage::initializePage()
             }
         });
     }
+}
+
+void OwncloudAdvancedSetupPage::SetAvatarIcon()
+{
+    const auto icon = QIcon(IonosTheme::avatarIcon());
+     _ui.lServerIcon->setPixmap(icon.pixmap(32));
 }
 
 void OwncloudAdvancedSetupPage::fetchUserAvatar()
@@ -586,10 +593,8 @@ void OwncloudAdvancedSetupPage::customizeStyle()
 
 void OwncloudAdvancedSetupPage::styleLocalFolderLabel()
 {
-    const auto backgroundColor = palette().window().color();
-    const auto folderIconFileName = Theme::instance()->isBranded() ? Theme::hidpiFileName("folder.png", backgroundColor)
-                                                                   : Theme::hidpiFileName(":/client/theme/colored/folder.png");
-    _ui.lLocal->setPixmap(folderIconFileName);
+    const auto icon = QIcon(IonosTheme::folderIcon());
+     _ui.lLocal->setPixmap(icon.pixmap(32));
 }
 
 void OwncloudAdvancedSetupPage::setRadioChecked(QRadioButton *radio)
@@ -608,8 +613,9 @@ void OwncloudAdvancedSetupPage::setRadioChecked(QRadioButton *radio)
 
 void OwncloudAdvancedSetupPage::styleSyncLogo()
 {
-    const auto syncArrowIcon = Theme::createColorAwareIcon(QLatin1String(":/client/theme/sync-arrow.svg"), palette());
-    _ui.syncLogoLabel->setPixmap(syncArrowIcon.pixmap(QSize(50, 50)));
+    const auto syncArrowIcon = QIcon(IonosTheme::syncArrows());
+    // const auto syncArrowIcon = Theme::createColorAwareIcon(QLatin1String(":/client/theme/sync-arrow.svg"), palette());
+    _ui.syncLogoLabel->setPixmap(syncArrowIcon.pixmap(QSize(32,32)));
 }
 
 void OwncloudAdvancedSetupPage::setupResoultionWidget()

@@ -2,10 +2,24 @@
 #define _IONOSTHEME_H
 
 #include <QString>
+#include "theme.h"
+
 namespace OCC {
 
 class IonosTheme {
 public:
+
+    static QString avatarIcon() {
+        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-setupAvatar.svg");
+    }
+
+    static QString folderIcon() {
+        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-folder32.svg");
+    }
+
+    static QString syncArrows() {
+        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-syncArrows.svg");
+    }
 
     static QString toolbarActionBorderRadius() {
         return "8px";
