@@ -19,7 +19,9 @@ namespace OCC {
 
     public:
         explicit SesButton(QWidget* parent = nullptr);
-
+        static QString rawPrimaryStyle();
+        static QString rawSecondaryStyle();
+        static QString rawDisabledStyle();
         ButtonStyle buttonStyle() const;
 
     public slots:

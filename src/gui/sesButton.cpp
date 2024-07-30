@@ -20,12 +20,9 @@ namespace OCC {
         }
     }
 
-    void SesButton::updateStyleSheet() {
-        QString styleSheet;
-        switch (m_buttonStyle) {
-            case ButtonStyle::Primary:
-                styleSheet = QStringLiteral(
-                        "QPushButton {"
+    QString SesButton::rawPrimaryStyle(){
+        return QStringLiteral(
+                        "{"
                         "background-color: %1; color: %2;"
                         "font-family: %3; font-size: %4; font-weight: %5;"
                         "border-radius: %6; padding: %7; }")
@@ -38,10 +35,11 @@ namespace OCC {
                         , IonosTheme::buttonRadius()
                         , IonosTheme::buttonPadding()
                     );
-            break;
-            case ButtonStyle::Secondary:
-                styleSheet = QStringLiteral(
-                        "QPushButton {"
+    }
+
+    QString SesButton::rawSecondaryStyle(){
+        return QStringLiteral(
+                        "{"
                         "background-color: %1; color: %2;"
                         "font-family: %3; font-size: %4; font-weight: %5;"
                         "border-radius: %6; border: 1px solid %7;"
@@ -56,10 +54,11 @@ namespace OCC {
                         , IonosTheme::buttonBorderColor()
                         , IonosTheme::buttonPadding()
                     );
-            break;
-            case ButtonStyle::Disabled:
-                styleSheet = QStringLiteral(
-                        "QPushButton {"
+    }
+
+    QString SesButton::rawDisabledStyle(){
+        return QStringLiteral(
+                        "{"
                         "background-color: %1; color: %2;"
                         "font-family: %3; font-size: %4; font-weight: %5;"
                         "border-radius: %6;"
@@ -73,6 +72,19 @@ namespace OCC {
                         , IonosTheme::buttonRadius()
                         , IonosTheme::buttonPadding()
                     );
+    }
+
+    void SesButton::updateStyleSheet() {
+        QString styleSheet;
+        switch (m_buttonStyle) {
+            case ButtonStyle::Primary:
+                styleSheet = QStringLiteral("QPushButton") + rawPrimaryStyle();
+            break;
+            case ButtonStyle::Secondary:
+                styleSheet = QStringLiteral("QPushButton") + rawSecondaryStyle();
+            break;
+            case ButtonStyle::Disabled:
+                styleSheet = QStringLiteral("QPushButton") + rawDisabledStyle();
                 setEnabled(false);
                 break;
         }
