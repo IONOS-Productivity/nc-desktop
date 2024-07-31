@@ -17,10 +17,6 @@ MenuItem {
     font.pixelSize: Style.topLinePixelSize
     hoverEnabled: true
 
-    // onClicked: Systray.openSettings()
-    // text: qsTr("Settings")
-    // icon.source: Style.sesAccountSettings 
-
     icon.height: Style.smallIconSize
     icon.width: Style.smallIconSize 
     icon.color: accountMenuItem.isActive ? Style.sesIconActive : Style.sesIconColor 
