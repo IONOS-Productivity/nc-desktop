@@ -259,11 +259,8 @@
                     </item>
                     <item>
                         <layout class="QVBoxLayout" name="verticalLayout_7">
-                            <property name="rightMargin">
-                                <number>0</number>
-                            </property>
-                            <property name="bottomMargin">
-                                <number>0</number>
+                            <property name="leftMargin">
+                                <number>32</number>
                             </property>
                             <item>
                                 <layout class="QVBoxLayout" name="wSyncStrategy">
