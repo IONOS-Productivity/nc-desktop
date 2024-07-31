@@ -441,8 +441,8 @@ void OwncloudWizard::customizeStyle()
             + SesButton::rawSecondaryStyle() +
             //CustomButton2
             QStringLiteral("QWizard QPushButton#__qt__passive_wizardbutton7") 
-            + SesButton::rawSecondaryStyle() +
-    ));
+            + SesButton::rawSecondaryStyle()
+    );
 }
 
 void OwncloudWizard::bringToTop()
