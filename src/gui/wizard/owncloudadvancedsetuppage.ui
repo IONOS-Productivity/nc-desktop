@@ -258,22 +258,14 @@
                         </layout>
                     </item>
                     <item>
-                        <layout class="QVBoxLayout" name="verticalLayout_7">
+                        <layout class="QVBoxLayout" name="wSyncStrategy">
                             <property name="leftMargin">
                                 <number>32</number>
                             </property>
                             <item>
-                                <layout class="QVBoxLayout" name="wSyncStrategy">
+                                <layout class="QHBoxLayout" name="wSyncStrategySynchronizeEverything">
                                     <property name="topMargin">
                                         <number>0</number>
-                                    </property>
-                                    <property name="bottomMargin">
-                                        <number>0</number>
-                                    </property>
-                                    <item>
-                                        <layout class="QHBoxLayout" name="wSyncStrategySynchronizeEverything">
-                                            <property name="topMargin">
-                                                <number>0</number>
                                             </property>
                                             <item>
                                                 <widget class="QRadioButton"
@@ -523,11 +515,9 @@
                                                         <size>
                                                             <width>40</width>
                                                             <height>20</height>
-                                                        </size>
-                                                    </property>
-                                                </spacer>
-                                            </item>
-                                        </layout>
+                                                </size>
+                                            </property>
+                                        </spacer>
                                     </item>
                                 </layout>
                             </item>
