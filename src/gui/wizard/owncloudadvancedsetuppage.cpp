@@ -78,7 +78,6 @@ OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage(OwncloudWizard *wizard)
     if (Theme::instance()->enforceVirtualFilesSyncFolder()) {
         _ui.rSyncEverything->setDisabled(true);
         _ui.rSelectiveSync->setDisabled(true);
-        _ui.bSelectiveSync->setDisabled(true);
     }
 
     connect(_ui.rSyncEverything, &QAbstractButton::clicked, this, &OwncloudAdvancedSetupPage::slotSyncEverythingClicked);
@@ -90,7 +89,6 @@ OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage(OwncloudWizard *wizard)
             _selectiveSyncBlacklist.clear();
         }
     });
-    connect(_ui.bSelectiveSync, &QAbstractButton::clicked, this, &OwncloudAdvancedSetupPage::slotSelectiveSyncClicked);
 
     const auto theme = Theme::instance();
     const auto appIcon = theme->applicationIcon();

@@ -443,23 +443,9 @@
                                                         </sizepolicy>
                                                     </property>
                                                     <property name="text">
-                                                        <string />
+                                                <string>Choose what to sync</string>
                                                     </property>
                                                     <property name="checkable">
-                                                        <bool>false</bool>
-                                                    </property>
-                                                </widget>
-                                            </item>
-                                            <item>
-                                                <widget class="QPushButton"
-                                                    name="bSelectiveSync">
-                                                    <property name="text">
-                                                        <string>Choose what to sync</string>
-                                                    </property>
-                                                    <property name="autoDefault">
-                                                        <bool>true</bool>
-                                                    </property>
-                                                    <property name="default">
                                                         <bool>false</bool>
                                                     </property>
                                                 </widget>
