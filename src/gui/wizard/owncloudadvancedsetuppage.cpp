@@ -50,7 +50,7 @@ OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage(OwncloudWizard *wizard)
     _filePathLabel->setElideMode(Qt::ElideMiddle);
     _filePathLabel->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     _filePathLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    _ui.locationsGridLayout->addWidget(_filePathLabel.data(), 3, 3);
+    _ui.locationsVBox->insertWidget(2, _filePathLabel.data());
 
     _filePathLabel->setTextFormat(Qt::PlainText);
     _ui.userNameLabel->setTextFormat(Qt::PlainText);
@@ -586,6 +586,26 @@ void OwncloudAdvancedSetupPage::customizeStyle()
             _progressIndi->setColor(Qt::black);
         }
     }
+
+    _ui.wSyncStrategySynchronizeEverything->setContentsMargins(0, 0, 0, 0);
+    _ui.lVirtualFileSync->setContentsMargins(0, 0, 0, 0);
+    _ui.horizontalLayout_8->setContentsMargins(32, 0, 0, 0);
+    _ui.horizontalLayout_10->setContentsMargins(0, 8, 0, 0);
+    _ui.horizontalLayout_10->setMargin(1);
+    _ui.gridLayout_2->setContentsMargins(0, 0, 0, 0);
+    _ui.wSyncStrategy->setSpacing(16);
+    _ui.verticalLayout->setSpacing(0);
+    _ui.topAreaHBox->setContentsMargins(32, 32, 32, 0);
+    _ui.serverVBox->setAlignment(Qt::AlignTop);
+    _ui.serverVBox->setSpacing(0);
+    _ui.serverVBox->setContentsMargins(0, 0, 0, 0);
+    _ui.arrowVBox->setSpacing(0);
+    _ui.arrowVBox->setContentsMargins(0, 0, 0, 0);
+    _ui.arrowVBox->setAlignment(Qt::AlignTop);
+    _ui.locationsVBox->setAlignment(Qt::AlignTop);
+    _ui.locationsVBox->setContentsMargins(0, 0, 0, 0);
+    _ui.locationsVBox->setSpacing(0);
+
 
     styleSyncLogo();
     styleLocalFolderLabel();
