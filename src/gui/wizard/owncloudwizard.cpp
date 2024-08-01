@@ -337,6 +337,10 @@ void OwncloudWizard::slotCurrentPageChanged(int id)
 
     if (id == WizardCommon::Page_ServerSetup) {
         emit clearPendingRequests();
+        #ifdef APPLICATION_SERVER_URL_ENFORCE
+            _setupPage->setServerUrl(APPLICATION_SERVER_URL);
+            _setupPage->initializePage();
+        #endif
     }
 
     if (id == WizardCommon::Page_AdvancedSetup && _credentialsPage == _flow2CredsPage) {
