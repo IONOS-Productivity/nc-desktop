@@ -74,7 +74,7 @@ public:
     }
 
     static QString buttonPadding() {
-        return "16px";
+        return "10px";
     }
     
     static QString buttonBorderColor() {
