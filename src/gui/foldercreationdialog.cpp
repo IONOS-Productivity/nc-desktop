@@ -14,6 +14,8 @@
 
 #include "foldercreationdialog.h"
 #include "ui_foldercreationdialog.h"
+#include "ionostheme.h"
+#include "sesButton.h"
 
 #include <limits>
 
@@ -31,6 +33,8 @@ FolderCreationDialog::FolderCreationDialog(const QString &destination, QWidget *
     , _destination(destination)
 {
     ui->setupUi(this);
+
+    customizeStyle();
 
     ui->labelErrorMessage->setVisible(false);
 
@@ -93,4 +97,27 @@ void FolderCreationDialog::slotNewFolderNameEditTextEdited()
     }
 }
 
+void FolderCreationDialog::customizeStyle()
+{
+    ui->buttonBox->setLayoutDirection(Qt::RightToLeft);
+
+    QPushButton *okButton = ui->buttonBox->button(QDialogButtonBox::Ok);
+    QPushButton *cancelButton = ui->buttonBox->button(QDialogButtonBox::Cancel);
+    QHBoxLayout* buttonlayout = qobject_cast<QHBoxLayout*>(ui->buttonBox->layout());
+
+    if(buttonlayout){
+        buttonlayout->setSpacing(16);
+    }
+
+    if(okButton){
+        okButton->setMinimumWidth(80);
+        okButton->setMinimumHeight(40);
+        okButton->setStyleSheet(QStringLiteral("QPushButton") + SesButton::rawPrimaryStyle());
+    }
+    
+    if(cancelButton){ 
+        cancelButton->setMinimumWidth(80);
+        cancelButton->setMinimumHeight(40);
+        cancelButton->setStyleSheet(QStringLiteral("QPushButton") + SesButton::rawSecondaryStyle());
+    }
 }
