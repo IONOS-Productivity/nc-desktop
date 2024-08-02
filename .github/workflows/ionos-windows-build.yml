@@ -29,16 +29,16 @@ jobs:
 
     - name: Craftmaster setup
       run: |
-        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" --setup
+        & "${{ github.workspace }}\.github\workflows\craftmaster.ps1" --setup
 
     - name: Craft unshelve
       continue-on-error: true
       run: |
-        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c --unshelve "${{ github.workspace }}\craft.shelf"
+        & "${{ github.workspace }}\.github\workflows\craftmaster.ps1" -c --unshelve "${{ github.workspace }}\craft.shelf"
 
     - name: Install dependencies
       run: |
-        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c --install-deps nextcloud-client
+        & "${{ github.workspace }}\.github\workflows\craftmaster.ps1" -c --install-deps nextcloud-client
 
     - name: Cache Install inkscape
       id: cache-install-inkscape
