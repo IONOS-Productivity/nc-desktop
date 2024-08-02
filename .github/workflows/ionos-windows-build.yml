@@ -56,6 +56,14 @@ jobs:
       run: |
         echo "${{ github.workspace }}\${{ env.CRAFT_TARGET }}\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
 
+    - name: Clone Client Building
+      run: git clone -b develop --single-branch https://github.com/IONOS-Productivity/nc-client-building.git "${{ github.workspace }}\nc-client-building"
+
     - name: Build
       run: |
-        & "${{ github.workspace }}\.github\workflows\craft_setup.ps1" -c --src-dir ${{ github.workspace }} nextcloud-client
+        cd "${{ github.workspace }}\nc-client-building"
+        $ ./build.bat Release
+
+    # - name: Build
+    #   run: |
+    #     & "${{ github.workspace }}\.github\workflows\craftmaster.ps1" -c --src-dir ${{ github.workspace }} nextcloud-client
