@@ -35,6 +35,7 @@ FolderCreationDialog::FolderCreationDialog(const QString &destination, QWidget *
     ui->labelErrorMessage->setVisible(false);
 
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowFlags(windowFlags() | Qt::Dialog | Qt::WindowMinMaxButtonsHint);
 
     connect(ui->newFolderNameEdit, &QLineEdit::textChanged, this, &FolderCreationDialog::slotNewFolderNameEditTextEdited);
 
