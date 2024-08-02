@@ -22,6 +22,7 @@
 #include <QDir>
 #include <QMessageBox>
 #include <QLoggingCategory>
+#include <QHBoxLayout>
 
 namespace OCC {
 
@@ -101,9 +102,14 @@ void FolderCreationDialog::customizeStyle()
 {
     ui->buttonBox->setLayoutDirection(Qt::RightToLeft);
 
+    QDialog *dialog = qobject_cast<QDialog*>(this);
     QPushButton *okButton = ui->buttonBox->button(QDialogButtonBox::Ok);
     QPushButton *cancelButton = ui->buttonBox->button(QDialogButtonBox::Cancel);
     QHBoxLayout* buttonlayout = qobject_cast<QHBoxLayout*>(ui->buttonBox->layout());
+
+    if(dialog){
+        dialog->setFixedSize(626, 156);
+    }
 
     if(buttonlayout){
         buttonlayout->setSpacing(16);
@@ -120,4 +126,5 @@ void FolderCreationDialog::customizeStyle()
         cancelButton->setMinimumHeight(40);
         cancelButton->setStyleSheet(QStringLiteral("QPushButton") + SesButton::rawSecondaryStyle());
     }
+}
 }
