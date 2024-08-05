@@ -4,6 +4,34 @@
 #include <QPushButton>
 #include <QWidget>
 #include <QMouseEvent>
+#include <QPainter>
+#include <QStylePainter>
+#include <QStyleOptionButton>
+
+class CustomStyleOption : public QStyleOptionButton {
+public:
+    enum StyleOptionType {
+        Primary 
+        , Secondary
+        , Disabled
+    };
+
+    CustomStyleOption(CustomStyleOption::StyleOptionType type = StyleOptionType::Primary)
+        : QStyleOptionButton(Version)
+    {
+        customData = type;
+    }
+
+    CustomStyleOption(const CustomStyleOption &other)
+        : QStyleOptionButton(other)
+        , customData(other.customData)
+    {
+    }
+
+    StyleOptionType customData;
+
+    enum { Version = 1 }; // Custom version value
+};
 namespace OCC {
 
     enum class ButtonStyle {
