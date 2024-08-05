@@ -71,7 +71,7 @@ jobs:
         echo "Png2Ico_EXECUTABLE=C:\ProgramData\chocolatey\lib\png2ico\tools\png2ico\png2ico.exe" >> $GITHUB_ENV
 
     - name: Build
-      shell: git-bash
+      shell: bash
       run: |
         cd "${{ env.BUILDING_ROOT }}"
         ./build.bat Release
