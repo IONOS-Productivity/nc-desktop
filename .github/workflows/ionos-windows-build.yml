@@ -16,6 +16,7 @@ jobs:
       BUILDING_ROOT: ${{ github.workspace }}\nc-client-building
       DESKTOP_ROOT: ${{ github.workspace }}\nc-client-desktop\desktop
       CRAFTMASTER_PS1: ${{ github.workspace }}\nc-client-desktop\desktop\.github\workflows\craftmaster.ps1
+      Png2Ico_EXECUTABLE: ${{ github.workspace }}\png2ico\png2ico.exe
     name: IONOS Windows Build
     runs-on: windows-2019
     steps:
@@ -61,14 +62,16 @@ jobs:
       run: |
         choco install inkscape
 
-    - name: Install png2ico
-      run: |
-        choco install png2ico
+    - name: Load png2ico
+      run: wget https://github.com/hiiamok/png2ImageMagickICO/releases/download/v1.0/x64.zip -O ${{ env.HOME }}\png2ico.zip
+
+    - name: Unzip png2ico
+      run: Expand-Archive -Path ${{ env.HOME }}\png2ico.zip -DestinationPath ${{ env.HOME }}\png2ico
 
     - name: Setup Variables
       run: |
         echo "PROJECT_PATH=${{ env.BUILDING_ROOT }}" >> $GITHUB_ENV
-        echo "Png2Ico_EXECUTABLE=C:\ProgramData\chocolatey\lib\png2ico\tools\png2ico\png2ico.exe" >> $GITHUB_ENV
+        echo "Png2Ico_EXECUTABLE=${{ env.HOME }}\png2ico\png2ico.exe" >> $GITHUB_ENV
 
     - name: Build
       run: |
