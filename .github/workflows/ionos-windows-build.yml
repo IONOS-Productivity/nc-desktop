@@ -21,11 +21,7 @@ jobs:
     runs-on: windows-2019
     steps:
 
-    - name: Load png2ico
-      run: Invoke-WebRequest https://github.com/hiiamok/png2ImageMagickICO/releases/download/v1.0/x64.zip -OutFile ${{ env.HOME }}\png2ico.zip
 
-    - name: Unzip png2ico
-      run: Expand-Archive -Path ${{ env.HOME }}\png2ico.zip -DestinationPath ${{ env.HOME }}\png2ico
 
     - name: Clone Client Building
       run: git clone -b develop --single-branch https://github.com/IONOS-Productivity/nc-client-building.git "${{ env.BUILDING_ROOT }}"
@@ -68,7 +64,11 @@ jobs:
       run: |
         choco install inkscape
 
+    - name: Load png2ico
+      run: Invoke-WebRequest https://github.com/hiiamok/png2ImageMagickICO/releases/download/v1.0/x64.zip -OutFile ${{ env.HOME }}\png2ico.zip
 
+    - name: Unzip png2ico
+      run: Expand-Archive -Path ${{ env.HOME }}\png2ico.zip -DestinationPath ${{ env.HOME }}\png2ico
 
     - name: Setup Variables
       run: |
@@ -78,6 +78,15 @@ jobs:
     - name: Build
       run: |
         & "${{env.CRAFTMASTER_PS1}}" -c --src-dir ${{ env.DESKTOP_ROOT }} nextcloud-client
+
+    - name: Zip Output Dir
+      run: Compress-Archive -Path ${{ env.DESKTOP_ROOT }}\build\ -DestinationPath ${{ env.HOME }}\build.zip
+
+    - name: Upload Build
+      uses: actions/upload-artifact@v2
+      with:
+        name: build.zip
+        path: ${{ env.HOME }}\build.zip
 
     # - name: Build
     #   shell: bash
