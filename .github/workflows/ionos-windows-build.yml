@@ -71,11 +71,11 @@ jobs:
         echo "Png2Ico_EXECUTABLE=C:\ProgramData\chocolatey\lib\png2ico\tools\png2ico\png2ico.exe" >> $GITHUB_ENV
 
     - name: Build
-      shell: bash
       run: |
-        cd "${{ env.BUILDING_ROOT }}"
-        ./build.bat Release
+        & "${{env.CRAFTMASTER_PS1}}" -c --src-dir ${{ env.DESKTOP_ROOT }} nextcloud-client
 
     # - name: Build
+    #   shell: bash
     #   run: |
-    #     & "${{ github.workspace }}\.github\workflows\craftmaster.ps1" -c --src-dir ${{ github.workspace }} nextcloud-client
+    #     cd "${{ env.BUILDING_ROOT }}"
+    #     ./build.bat Release
