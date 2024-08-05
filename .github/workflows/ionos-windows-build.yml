@@ -80,7 +80,7 @@ jobs:
         & "${{env.CRAFTMASTER_PS1}}" -c --src-dir ${{ env.DESKTOP_ROOT }} nextcloud-client
 
     - name: Zip Output Dir
-      run: Compress-Archive -Path ${{ env.DESKTOP_ROOT }}\build\ -DestinationPath ${{ env.HOME }}\build.zip
+      run: Compress-Archive -Path ${{ env.HOME }}\craft\${{ env.CRAFT_TARGET }}\build\ -DestinationPath ${{ env.HOME }}\build.zip
 
     - name: Upload Build
       uses: actions/upload-artifact@v2
