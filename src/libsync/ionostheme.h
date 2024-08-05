@@ -62,10 +62,10 @@ public:
     }
 
     static QString buttonFontWeight() {
-        return "550";
+        return "500";
     }
 
-    static QString buttonColor() {
+    static QString buttonPrimaryColor() {
         return "#0F6CBD"; 
     }
 
@@ -73,18 +73,38 @@ public:
         return "4px";
     }
 
+    static int buttonRadiusInt() {
+        return 4;
+    }
+
     static QString buttonPadding() {
         return "10px";
     }
     
-    static QString buttonBorderColor() {
+    static QString buttonSecondaryBorderColor() {
         return "#D1D1D1";
     }
 
     static QString buttonDisabledColor() {
         return "#F0F0F0";
     }
+
+    static QString buttonPrimaryHoverColor() {
+        return "#115EA3";
+    }
+    
+    static QString buttonSecondaryHoverColor() {
+        return "#F5F5F5";
+    }
+
+    static QString buttonPrimaryPressedColor() {
+        return "#0C3B5E";
+    }
         
+    static QString buttonSecondaryPressedColor() {
+        return "#E0E0E0";
+    }
+
     static QString buttonDisabledFontColor() {
         return "#BDBDBD";
     }
