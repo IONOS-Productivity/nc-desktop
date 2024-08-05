@@ -428,21 +428,6 @@ void OwncloudWizard::customizeStyle()
     wizardPalette.setColor(QPalette::Mid, backgroundColor);
 
     setPalette(wizardPalette);
-
-    setStyleSheet(
-            //FinishButton
-            QStringLiteral("QWizard QPushButton#qt_wizard_finish") 
-            + SesButton::rawPrimaryStyle() + 
-            //NextButton
-            QStringLiteral("QWizard QPushButton#__qt__passive_wizardbutton0") 
-            + SesButton::rawSecondaryStyle() +
-            //CustomButton1
-            QStringLiteral("QWizard QPushButton#__qt__passive_wizardbutton6") 
-            + SesButton::rawSecondaryStyle() +
-            //CustomButton2
-            QStringLiteral("QWizard QPushButton#__qt__passive_wizardbutton7") 
-            + SesButton::rawSecondaryStyle()
-    );
 }
 
 void OwncloudWizard::bringToTop()
