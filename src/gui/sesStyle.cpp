@@ -1,0 +1,161 @@
+/****************************************************************************
+**
+** This file is part of the Oxygen2 project.
+**
+** SPDX-FileCopyrightText: 2022 Klarälvdalens Datakonsult AB, a KDAB Group company <info@kdab.com>
+**
+** SPDX-License-Identifier: MIT
+**
+****************************************************************************/
+
+/*************************************************************************
+ *
+ * Copyright (c) 2013-2019, Klaralvdalens Datakonsult AB (KDAB)
+ * All rights reserved.
+ *
+ * See the LICENSE.txt file shipped along with this file for the license.
+ *
+ *************************************************************************/
+
+#include "sesStyle.h"
+// #include "progressbarstylehelper.h"
+#include "pushButtonStyleHelper.h"
+#include "sesButton.h"
+
+#include <QCheckBox>
+#include <QPushButton>
+#include <QStyleOptionButton>
+
+sesStyle::sesStyle()
+    : super()
+    , mPushButtonStyleHelper(new PushButtonStyleHelper)
+{
+}
+
+void sesStyle::drawPrimitive(PrimitiveElement pe, const QStyleOption *option, QPainter *painter, const QWidget *widget) const
+{
+    switch (pe) {
+    case PE_FrameFocusRect:
+        // nothing, we don't want focus rects
+        break;
+    default:
+        super::drawPrimitive(pe, option, painter, widget);
+        break;
+    }
+}
+
+int sesStyle::pixelMetric(PixelMetric metric, const QStyleOption *option, const QWidget *widget) const
+{
+    switch (metric) {
+    case PM_ButtonShiftHorizontal:
+    case PM_ButtonShiftVertical:
+        return 0; // no shift
+
+    default:
+        return super::pixelMetric(metric, option, widget);
+    }
+}
+
+void sesStyle::drawControl(ControlElement element, const QStyleOption *option, QPainter *painter, const QWidget *widget) const
+{
+    switch (element) {
+    case CE_PushButton:
+        if (const CustomStyleOption *btn = qstyleoption_cast<const CustomStyleOption *>(option)) {
+            proxy()->drawControl(CE_PushButtonBevel, btn, painter, widget);
+                CustomStyleOption subopt = *btn;
+                subopt.rect = subElementRect(SE_PushButtonContents, btn, widget);
+                proxy()->drawControl(CE_PushButtonLabel, &subopt, painter, widget);
+                if (btn->state & State_HasFocus) {
+                    QStyleOptionFocusRect fropt;
+                    fropt.QStyleOption::operator=(*btn);
+                    fropt.rect = subElementRect(SE_PushButtonFocusRect, btn, widget);
+                    proxy()->drawPrimitive(PE_FrameFocusRect, &fropt, painter, widget);
+                }
+        }
+        return;
+    case CE_PushButtonBevel:
+        // Draw button shape (background and border). This one we'll fully implement ourselves.
+        // if (const auto *optionButton = qstyleoption_cast<const QStyleOptionButton *>(option)) {
+        if (const auto *optionButton = qstyleoption_cast<const CustomStyleOption *>(option)) {
+            mPushButtonStyleHelper->drawButtonShape(optionButton, painter, widget);
+        }
+        return;
+    case CE_PushButtonLabel:
+        // Draw button text, icon (and menu indicator)
+        // We just want to call the base class, with an adjusted palette
+        if (const auto *optionButton = qstyleoption_cast<const CustomStyleOption *>(option)) {
+
+                CustomStyleOption copy = *optionButton;
+                bool isPrimary = mPushButtonStyleHelper->isPrimary(widget, optionButton);
+                mPushButtonStyleHelper->adjustTextPalette(&copy, isPrimary);
+                QCommonStyle::drawControl(element, &copy, painter, widget);
+        }
+        return;
+    default:
+        super::drawControl(element, option, painter, widget);
+    }
+}
+
+void sesStyle::polish(QWidget *w)
+{
+    if (qobject_cast<QPushButton *>(w) || qobject_cast<QCheckBox *>(w)) {
+        w->setAttribute(Qt::WA_Hover);
+    }
+    super::polish(w);
+}
+
+bool sesStyle::eventFilter(QObject *obj, QEvent *event)
+{
+    return super::eventFilter(obj, event);
+}
+
+PushButtonStyleHelper *sesStyle::pushButtonStyleHelper() const
+{
+    return mPushButtonStyleHelper.get();
+}
+
+int sesStyle::styleHint(StyleHint stylehint, const QStyleOption *option, const QWidget *widget,
+                         QStyleHintReturn *returnData) const
+{
+    switch (stylehint) {
+    case SH_DialogButtonBox_ButtonsHaveIcons:
+        return 0;
+    default:
+        break;
+    }
+
+    return super::styleHint(stylehint, option, widget, returnData);
+}
+
+QSize sesStyle::sizeFromContents(ContentsType type, const QStyleOption *option, const QSize &contentsSize,
+                                  const QWidget *widget) const
+{
+    switch (type) {
+    case CT_PushButton:
+        if (const auto *buttonOption = qstyleoption_cast<const QStyleOptionButton *>(option)) {
+            return mPushButtonStyleHelper->sizeFromContents(buttonOption, contentsSize, widget);
+        }
+        break;
+    default:
+        break;
+    }
+    return super::sizeFromContents(type, option, contentsSize, widget);
+}
+
+QRect sesStyle::subElementRect(SubElement subElement, const QStyleOption *option, const QWidget *widget) const
+{
+    switch (subElement) {
+    default:
+        break;
+    }
+    return super::subElementRect(subElement, option, widget);
+}
+
+void sesStyle::drawComplexControl(ComplexControl complexControl, const QStyleOptionComplex *option, QPainter *painter,
+                                   const QWidget *widget) const
+{
+    switch (complexControl) {
+    default:
+        super::drawComplexControl(complexControl, option, painter, widget);
+    }
+}

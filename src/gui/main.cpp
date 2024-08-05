@@ -37,6 +37,7 @@
 #include <QQuickStyle>
 #include <QQuickWindow>
 #include <QSurfaceFormat>
+#include "sesStyle.h"
 
 using namespace OCC;
 
@@ -86,6 +87,8 @@ int main(int argc, char **argv)
     // constructed.
     if (app.devicePixelRatio() > 1)
         QApplication::setStyle(QStringLiteral("fusion"));
+    // Set the style to Windows 10
+    QApplication::setStyle(new sesStyle);
 #endif // Q_OS_WIN
 
 #ifndef Q_OS_WIN
