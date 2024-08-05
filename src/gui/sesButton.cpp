@@ -27,7 +27,7 @@ namespace OCC {
                         "font-family: %3; font-size: %4; font-weight: %5;"
                         "border-radius: %6; padding: %7; }")
                     .arg(
-                        IonosTheme::buttonColor()
+                        IonosTheme::buttonPrimaryColor()
                         , IonosTheme::white()
                         , IonosTheme::settingsFont()
                         , IonosTheme::buttonFontSize()
@@ -51,7 +51,7 @@ namespace OCC {
                         , IonosTheme::buttonFontSize()
                         , IonosTheme::buttonFontWeight()
                         , IonosTheme::buttonRadius()
-                        , IonosTheme::buttonBorderColor()
+                        , IonosTheme::buttonSecondaryBorderColor()
                         , IonosTheme::buttonPadding()
                     );
     }
