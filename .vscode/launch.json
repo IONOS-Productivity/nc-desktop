@@ -9,7 +9,7 @@
             "name": "(RelWithDebInfo) Launch Easystorage",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/win32-MSVC-x64/RelWithDebInfo/bin/ionos-easystorage.exe",
+            "program": "${workspaceFolder}/build/win32-MSVC-x64/RelWithDebInfo/bin/ionoseasystorage.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

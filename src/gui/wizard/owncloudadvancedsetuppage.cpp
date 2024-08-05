@@ -34,6 +34,7 @@
 #include "creds/abstractcredentials.h"
 #include "networkjobs.h"
 #include "wizard/owncloudwizard.h"
+#include "ionostheme.h"
 
 namespace OCC {
 
@@ -49,7 +50,7 @@ OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage(OwncloudWizard *wizard)
     _filePathLabel->setElideMode(Qt::ElideMiddle);
     _filePathLabel->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     _filePathLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    _ui.locationsGridLayout->addWidget(_filePathLabel.data(), 3, 3);
+    _ui.locationsVBox->insertWidget(2, _filePathLabel.data());
 
     _filePathLabel->setTextFormat(Qt::PlainText);
     _ui.userNameLabel->setTextFormat(Qt::PlainText);
@@ -77,7 +78,6 @@ OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage(OwncloudWizard *wizard)
     if (Theme::instance()->enforceVirtualFilesSyncFolder()) {
         _ui.rSyncEverything->setDisabled(true);
         _ui.rSelectiveSync->setDisabled(true);
-        _ui.bSelectiveSync->setDisabled(true);
     }
 
     connect(_ui.rSyncEverything, &QAbstractButton::clicked, this, &OwncloudAdvancedSetupPage::slotSyncEverythingClicked);
@@ -89,7 +89,6 @@ OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage(OwncloudWizard *wizard)
             _selectiveSyncBlacklist.clear();
         }
     });
-    connect(_ui.bSelectiveSync, &QAbstractButton::clicked, this, &OwncloudAdvancedSetupPage::slotSelectiveSyncClicked);
 
     const auto theme = Theme::instance();
     const auto appIcon = theme->applicationIcon();
@@ -196,7 +195,7 @@ void OwncloudAdvancedSetupPage::initializePage()
     _ui.confSpinBox->setValue(newFolderLimit.second);
     _ui.confCheckBoxExternal->setChecked(cfgFile.confirmExternalStorage());
 
-    fetchUserAvatar();
+    SetAvatarIcon();
     setUserInformation();
 
     customizeStyle();
@@ -217,6 +216,12 @@ void OwncloudAdvancedSetupPage::initializePage()
             }
         });
     }
+}
+
+void OwncloudAdvancedSetupPage::SetAvatarIcon()
+{
+    const auto icon = QIcon(IonosTheme::avatarIcon());
+     _ui.lServerIcon->setPixmap(icon.pixmap(32));
 }
 
 void OwncloudAdvancedSetupPage::fetchUserAvatar()
@@ -580,16 +585,34 @@ void OwncloudAdvancedSetupPage::customizeStyle()
         }
     }
 
+    _ui.wSyncStrategySynchronizeEverything->setContentsMargins(0, 0, 0, 0);
+    _ui.lVirtualFileSync->setContentsMargins(0, 0, 0, 0);
+    _ui.horizontalLayout_8->setContentsMargins(32, 0, 0, 0);
+    _ui.horizontalLayout_10->setContentsMargins(0, 8, 0, 0);
+    _ui.horizontalLayout_10->setMargin(1);
+    _ui.gridLayout_2->setContentsMargins(0, 0, 0, 0);
+    _ui.wSyncStrategy->setSpacing(16);
+    _ui.verticalLayout->setSpacing(0);
+    _ui.topAreaHBox->setContentsMargins(32, 32, 32, 0);
+    _ui.serverVBox->setAlignment(Qt::AlignTop);
+    _ui.serverVBox->setSpacing(0);
+    _ui.serverVBox->setContentsMargins(0, 0, 0, 0);
+    _ui.arrowVBox->setSpacing(0);
+    _ui.arrowVBox->setContentsMargins(0, 0, 0, 0);
+    _ui.arrowVBox->setAlignment(Qt::AlignTop);
+    _ui.locationsVBox->setAlignment(Qt::AlignTop);
+    _ui.locationsVBox->setContentsMargins(0, 0, 0, 0);
+    _ui.locationsVBox->setSpacing(0);
+
+
     styleSyncLogo();
     styleLocalFolderLabel();
 }
 
 void OwncloudAdvancedSetupPage::styleLocalFolderLabel()
 {
-    const auto backgroundColor = palette().window().color();
-    const auto folderIconFileName = Theme::instance()->isBranded() ? Theme::hidpiFileName("folder.png", backgroundColor)
-                                                                   : Theme::hidpiFileName(":/client/theme/colored/folder.png");
-    _ui.lLocal->setPixmap(folderIconFileName);
+    const auto icon = QIcon(IonosTheme::folderIcon());
+     _ui.lLocal->setPixmap(icon.pixmap(32));
 }
 
 void OwncloudAdvancedSetupPage::setRadioChecked(QRadioButton *radio)
@@ -608,8 +631,9 @@ void OwncloudAdvancedSetupPage::setRadioChecked(QRadioButton *radio)
 
 void OwncloudAdvancedSetupPage::styleSyncLogo()
 {
-    const auto syncArrowIcon = Theme::createColorAwareIcon(QLatin1String(":/client/theme/sync-arrow.svg"), palette());
-    _ui.syncLogoLabel->setPixmap(syncArrowIcon.pixmap(QSize(50, 50)));
+    const auto syncArrowIcon = QIcon(IonosTheme::syncArrows());
+    // const auto syncArrowIcon = Theme::createColorAwareIcon(QLatin1String(":/client/theme/sync-arrow.svg"), palette());
+    _ui.syncLogoLabel->setPixmap(syncArrowIcon.pixmap(QSize(32,32)));
 }
 
 void OwncloudAdvancedSetupPage::setupResoultionWidget()

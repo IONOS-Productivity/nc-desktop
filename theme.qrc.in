@@ -245,11 +245,16 @@
         <file>theme/ses/ses-accountPlus.svg</file>
         <file>theme/ses/ses-accountSettings.svg</file>        
         <file>theme/ses/ses-accountResume.svg</file>
+        <file>theme/ses/ses-logout.svg</file>
+        <file>theme/ses/ses-delete.svg</file>
         <file>theme/ses/ses-settings.svg</file>
         <file>theme/ses/ses-INONS-Logo.svg</file>
         <file>theme/ses/ses-accountIcon.svg</file>
         <file>theme/ses/ses-accountIcon24.svg</file>
         <file>theme/ses/ses-website.svg</file>
         <file>theme/ses/ses-filesIcon.svg</file>
+        <file>theme/ses/ses-setupAvatar.svg</file>
+        <file>theme/ses/ses-folder32.svg</file>
+        <file>theme/ses/ses-syncArrows.svg</file>
     </qresource>
 </RCC>

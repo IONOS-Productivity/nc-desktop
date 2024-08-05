@@ -14,12 +14,15 @@
 
 #include "foldercreationdialog.h"
 #include "ui_foldercreationdialog.h"
+#include "ionostheme.h"
+#include "sesButton.h"
 
 #include <limits>
 
 #include <QDir>
 #include <QMessageBox>
 #include <QLoggingCategory>
+#include <QHBoxLayout>
 
 namespace OCC {
 
@@ -32,9 +35,12 @@ FolderCreationDialog::FolderCreationDialog(const QString &destination, QWidget *
 {
     ui->setupUi(this);
 
+    customizeStyle();
+
     ui->labelErrorMessage->setVisible(false);
 
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowFlags(windowFlags() | Qt::Dialog | Qt::WindowMinMaxButtonsHint);
 
     connect(ui->newFolderNameEdit, &QLineEdit::textChanged, this, &FolderCreationDialog::slotNewFolderNameEditTextEdited);
 
@@ -92,4 +98,33 @@ void FolderCreationDialog::slotNewFolderNameEditTextEdited()
     }
 }
 
+void FolderCreationDialog::customizeStyle()
+{
+    ui->buttonBox->setLayoutDirection(Qt::RightToLeft);
+
+    QDialog *dialog = qobject_cast<QDialog*>(this);
+    QPushButton *okButton = ui->buttonBox->button(QDialogButtonBox::Ok);
+    QPushButton *cancelButton = ui->buttonBox->button(QDialogButtonBox::Cancel);
+    QHBoxLayout* buttonlayout = qobject_cast<QHBoxLayout*>(ui->buttonBox->layout());
+
+    if(dialog){
+        dialog->setFixedSize(626, 156);
+    }
+
+    if(buttonlayout){
+        buttonlayout->setSpacing(16);
+    }
+
+    if(okButton){
+        okButton->setMinimumWidth(80);
+        okButton->setMinimumHeight(40);
+        okButton->setStyleSheet(QStringLiteral("QPushButton") + SesButton::rawPrimaryStyle());
+    }
+    
+    if(cancelButton){ 
+        cancelButton->setMinimumWidth(80);
+        cancelButton->setMinimumHeight(40);
+        cancelButton->setStyleSheet(QStringLiteral("QPushButton") + SesButton::rawSecondaryStyle());
+    }
+}
 }

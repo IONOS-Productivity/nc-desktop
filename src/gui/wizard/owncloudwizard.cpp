@@ -26,6 +26,8 @@
 #include "wizard/owncloudadvancedsetuppage.h"
 #include "wizard/webviewpage.h"
 #include "wizard/flow2authcredspage.h"
+#include "ionostheme.h"
+#include "sesButton.h"
 
 #include "common/vfs.h"
 
@@ -322,6 +324,10 @@ void OwncloudWizard::slotCurrentPageChanged(int id)
 #endif // WITH_WEBENGINE
         id == WizardCommon::Page_Flow2AuthCreds) {
         setButtonLayout({ QWizard::BackButton, QWizard::Stretch });
+        #ifdef APPLICATION_SERVER_URL_ENFORCE
+        button(QWizard::BackButton)->setHidden(true);
+        #endif
+
     } else if (id == WizardCommon::Page_AdvancedSetup) {
         setButtonLayout({ QWizard::CustomButton2, QWizard::Stretch, QWizard::CustomButton1, QWizard::FinishButton });
         setNextButtonAsDefault();
@@ -332,6 +338,10 @@ void OwncloudWizard::slotCurrentPageChanged(int id)
 
     if (id == WizardCommon::Page_ServerSetup) {
         emit clearPendingRequests();
+        #ifdef APPLICATION_SERVER_URL_ENFORCE
+            _setupPage->setServerUrl(APPLICATION_SERVER_URL);
+            _setupPage->initializePage();
+        #endif
     }
 
     if (id == WizardCommon::Page_AdvancedSetup && _credentialsPage == _flow2CredsPage) {
@@ -406,12 +416,33 @@ void OwncloudWizard::customizeStyle()
 
     // Set background colors
     auto wizardPalette = palette();
-    const auto backgroundColor = wizardPalette.color(QPalette::Window);
+    const auto backgroundColor = QColor(IonosTheme::welcomeBackgroundColor());
+    
+    // Set Color of upper part
     wizardPalette.setColor(QPalette::Base, backgroundColor);
+
+    // Set Color of lower part
+    wizardPalette.setColor(backgroundRole(), backgroundColor);
+
     // Set separator color
     wizardPalette.setColor(QPalette::Mid, backgroundColor);
 
     setPalette(wizardPalette);
+
+    setStyleSheet(
+            //FinishButton
+            QStringLiteral("QWizard QPushButton#qt_wizard_finish") 
+            + SesButton::rawPrimaryStyle() + 
+            //NextButton
+            QStringLiteral("QWizard QPushButton#__qt__passive_wizardbutton0") 
+            + SesButton::rawSecondaryStyle() +
+            //CustomButton1
+            QStringLiteral("QWizard QPushButton#__qt__passive_wizardbutton6") 
+            + SesButton::rawSecondaryStyle() +
+            //CustomButton2
+            QStringLiteral("QWizard QPushButton#__qt__passive_wizardbutton7") 
+            + SesButton::rawSecondaryStyle()
+    );
 }
 
 void OwncloudWizard::bringToTop()

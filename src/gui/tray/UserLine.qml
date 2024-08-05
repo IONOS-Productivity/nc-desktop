@@ -129,8 +129,13 @@ AbstractButton {
                 id: userMoreButtonMenu
                 closePolicy: Menu.CloseOnPressOutsideParent | Menu.CloseOnEscape
 
+                background: Rectangle {
+                    radius: Style.sesCornerRadius
+                    border.color: Style.sesBorderColor 
+                }
+
                 MenuItem {
-                    visible: model.isConnected && model.serverHasUserStatus
+                    visible: false
                     height: visible ? implicitHeight : 0
                     text: qsTr("Set status")
                     font.pixelSize: Style.topLinePixelSize
@@ -140,6 +145,13 @@ AbstractButton {
                 }
 
                 MenuItem {
+                    id: logInOutButton
+
+                    property bool isHovered: logInOutButton.hovered || logInOutButton.visualFocus
+                    property bool isActive: logInOutButton.pressed
+
+                    icon.source: Style.sesLogout
+                    icon.color: logInOutButton.isActive ? Style.sesIconActive : Style.sesIconColor
                     text: model.isConnected ? qsTr("Log out") : qsTr("Log in")
                     font.pixelSize: Style.topLinePixelSize
                     palette.windowText: Style.ncTextColor
@@ -153,27 +165,25 @@ AbstractButton {
                         height: parent.height
                         width: parent.menu.width
                         Rectangle {
+                            radius: Style.sesCornerRadius
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: parent.parent.hovered ? Style.sesHover : "transparent"
+                            color: logInOutButton.isActive ? Style.isHovered : logInOutButton.isHovered ? Style.sesAccountMenuHover : "transparent"
                         }
                     }
 
-                    Accessible.role: Accessible.Button
+                    Accessible.role: Accessible.MenuItem
                     Accessible.name: model.isConnected ? qsTr("Log out") : qsTr("Log in")
-
-                    onPressed: {
-                        if (model.isConnected) {
-                            UserModel.logout(index)
-                        } else {
-                            UserModel.login(index)
-                        }
-                        accountMenu.close()
-                    }
                 }
 
                 MenuItem {
+
+                    property bool isHovered: removeAccountButton.hovered || removeAccountButton.visualFocus
+                    property bool isActive: removeAccountButton.pressed
+
                     id: removeAccountButton
+                    icon.source: Style.sesDelete
+                    icon.color: removeAccountButton.isActive ? Style.sesIconActive : Style.sesIconColor
                     text: qsTr("Remove account")
                     font.pixelSize: Style.topLinePixelSize
                     palette.windowText: Style.ncTextColor
@@ -187,13 +197,14 @@ AbstractButton {
                         height: parent.height
                         width: parent.menu.width
                         Rectangle {
+                            radius: Style.sesCornerRadius
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: parent.parent.hovered ? Style.sesHover : "transparent"
+                            color: removeAccountButton.isActive ? Style.sesButtonPressed : removeAccountButton.isHovered ? Style.sesAccountMenuHover : "transparent"
                         }
                     }
 
-                    Accessible.role: Accessible.Button
+                    Accessible.role: Accessible.MenuItem
                     Accessible.name: text
                     Accessible.onPressAction: removeAccountButton.clicked()
                 }

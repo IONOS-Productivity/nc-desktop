@@ -192,6 +192,8 @@ set(client_SRCS
     syncconflictsmodel.cpp
     linkButton.h
     linkButton.cpp
+    sesButton.h
+    sesButton.cpp
     fileactivitylistmodel.h
     fileactivitylistmodel.cpp
     filedetails/datefieldbackend.h
