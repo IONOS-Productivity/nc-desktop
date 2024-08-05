@@ -6,7 +6,7 @@ if ($IsWindows) {
 }
 
 $command = @("${env:HOME}\craft\CraftMaster\CraftMaster.py",
-             "--config", "${env:HOME}\craftmaster.ini",
+             "--config", "${env:DESKTOP_ROOT}\craftmaster.ini",
              "--target", "${env:CRAFT_TARGET}") + $args
 
 Write-Host "Exec: ${python} ${command}"

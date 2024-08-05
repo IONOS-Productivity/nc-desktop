@@ -13,11 +13,20 @@ jobs:
     env:
       HOME: ${{ github.workspace }}
       CRAFT_TARGET: windows-msvc2019_64-cl
+      BUILDING_ROOT: ${{ github.workspace }}\nc-client-building
+      DESKTOP_ROOT: ${{ github.workspace }}\nc-client-desktop\desktop
+      CRAFTMASTER_PS1: ${{ github.workspace }}\nc-client-desktop\desktop\.github\workflows\craftmaster.ps1
     name: IONOS Windows Build
     runs-on: windows-2019
     steps:
+
+    - name: Clone Client Building
+      run: git clone -b develop --single-branch https://github.com/IONOS-Productivity/nc-client-building.git "${{ env.BUILDING_ROOT }}"
+    
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        path: ${{ env.DESKTOP_ROOT }}
 
     - name: Setup Python
       uses: actions/setup-python@v5
@@ -25,20 +34,20 @@ jobs:
         python-version: '3.12'
 
     - name: Clone CraftMaster
-      run: git clone -q --depth=1 https://invent.kde.org/kde/craftmaster.git "${{ github.workspace }}\craft\CraftMaster"
+      run: git clone -q --depth=1 https://invent.kde.org/kde/craftmaster.git "${{ env.HOME }}\craft\CraftMaster"
 
     - name: Craftmaster setup
       run: |
-        & "${{ github.workspace }}\.github\workflows\craftmaster.ps1" --setup
+        & "${{env.CRAFTMASTER_PS1}}" --setup
 
     - name: Craft unshelve
       continue-on-error: true
       run: |
-        & "${{ github.workspace }}\.github\workflows\craftmaster.ps1" -c --unshelve "${{ github.workspace }}\craft.shelf"
+        & "${{env.CRAFTMASTER_PS1}}" -c --unshelve "${{ env.DESKTOP_ROOT }}\craft.shelf"
 
     - name: Install dependencies
       run: |
-        & "${{ github.workspace }}\.github\workflows\craftmaster.ps1" -c --install-deps nextcloud-client
+        & "${{env.CRAFTMASTER_PS1}}" -c --install-deps nextcloud-client
 
     - name: Cache Install inkscape
       id: cache-install-inkscape
@@ -52,17 +61,20 @@ jobs:
       run: |
         choco install inkscape
 
-    - name: Setup PATH
+    - name: Install png2ico
       run: |
-        echo "${{ github.workspace }}\${{ env.CRAFT_TARGET }}\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+        choco install png2ico
 
-    - name: Clone Client Building
-      run: git clone -b develop --single-branch https://github.com/IONOS-Productivity/nc-client-building.git "${{ github.workspace }}\nc-client-building"
+    - name: Setup Variables
+      run: |
+        echo "PROJECT_PATH=${{ env.BUILDING_ROOT }}" >> $GITHUB_ENV
+        echo "Png2Ico_EXECUTABLE=C:\ProgramData\chocolatey\lib\png2ico\tools\png2ico\png2ico.exe" >> $GITHUB_ENV
 
     - name: Build
+      shell: git-bash
       run: |
-        cd "${{ github.workspace }}\nc-client-building"
-        $ ./build.bat Release
+        cd "${{ env.BUILDING_ROOT }}"
+        ./build.bat Release
 
     # - name: Build
     #   run: |
