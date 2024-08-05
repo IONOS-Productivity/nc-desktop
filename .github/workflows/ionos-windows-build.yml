@@ -21,6 +21,14 @@ jobs:
     runs-on: windows-2019
     steps:
 
+    - name: Load png2ico
+      uses: wei/wget@v1
+      with:
+        args: -O ${{ env.HOME }}\png2ico.zip https://github.com/hiiamok/png2ImageMagickICO/releases/download/v1.0/x64.zip
+
+    - name: Unzip png2ico
+      run: Expand-Archive -Path ${{ env.HOME }}\png2ico.zip -DestinationPath ${{ env.HOME }}\png2ico
+
     - name: Clone Client Building
       run: git clone -b develop --single-branch https://github.com/IONOS-Productivity/nc-client-building.git "${{ env.BUILDING_ROOT }}"
     
@@ -62,11 +70,7 @@ jobs:
       run: |
         choco install inkscape
 
-    - name: Load png2ico
-      run: wget https://github.com/hiiamok/png2ImageMagickICO/releases/download/v1.0/x64.zip -O ${{ env.HOME }}\png2ico.zip
 
-    - name: Unzip png2ico
-      run: Expand-Archive -Path ${{ env.HOME }}\png2ico.zip -DestinationPath ${{ env.HOME }}\png2ico
 
     - name: Setup Variables
       run: |
