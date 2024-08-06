@@ -51,6 +51,20 @@ namespace OCC {
         static QString rawSecondaryStyle();
         static QString rawDisabledStyle();
         ButtonStyle buttonStyle() const;
+    protected:
+        void paintEvent(QPaintEvent *event) override {
+            QStylePainter  painter(this);
+
+            CustomStyleOption::StyleOptionType type = m_buttonStyle == OCC::ButtonStyle::Primary ? CustomStyleOption::Primary : CustomStyleOption::Secondary;
+            CustomStyleOption option(type);
+            option.initFrom(this);
+            option.state |= isDown() ? QStyle::State_Sunken : QStyle::State_Raised;
+            option.rect = rect();
+            option.text = text();
+            option.icon = icon();
+
+            style()->drawControl(QStyle::CE_PushButton, &option, &painter, this);
+        }
 
     public slots:
         void setButtonStyle(ButtonStyle style);
