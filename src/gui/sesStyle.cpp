@@ -18,7 +18,6 @@
  *************************************************************************/
 
 #include "sesStyle.h"
-// #include "progressbarstylehelper.h"
 #include "pushButtonStyleHelper.h"
 #include "sesButton.h"
 
@@ -86,8 +85,7 @@ void sesStyle::drawControl(ControlElement element, const QStyleOption *option, Q
         if (const auto *optionButton = qstyleoption_cast<const CustomStyleOption *>(option)) {
 
                 CustomStyleOption copy = *optionButton;
-                bool isPrimary = mPushButtonStyleHelper->isPrimary(widget, optionButton);
-                mPushButtonStyleHelper->adjustTextPalette(&copy, isPrimary);
+                mPushButtonStyleHelper->adjustTextPalette(&copy, widget);
                 QCommonStyle::drawControl(element, &copy, painter, widget);
         }
         return;

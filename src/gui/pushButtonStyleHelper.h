@@ -24,7 +24,7 @@ public:
     void setupPainterForShape(const QStyleOptionButton *option, QPainter *painter, const QWidget *widget);
     void drawButtonShape(const QStyleOptionButton *option, QPainter *painter, const QWidget *widget);
     QSize sizeFromContents(const QStyleOptionButton *option, QSize contentsSize, const QWidget *widget) const;
-    void adjustTextPalette(QStyleOptionButton *option, bool isPrimary) const;
+    void adjustTextPalette(QStyleOptionButton *option, const QWidget *widget) const;
     bool isPrimary(const QWidget *widget, const QStyleOptionButton *option) const;
 };
 #endif // PUSHBUTTONSTYLEHELPER_H

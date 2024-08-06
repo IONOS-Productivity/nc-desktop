@@ -46,74 +46,35 @@ void PushButtonStyleHelper::setupPainterForShape(const QStyleOptionButton *optio
 {
     Q_UNUSED(widget)
 
-        if(isPrimary(widget, option)){
+    OCC::ButtonStyle& style = ButtonStyleStrategy::getButtonStyle(widget, option);
 
-            // Disabled
-            if (!(option->state & QStyle::State_Enabled)) {
-                painter->setPen(QColor(OCC::IonosTheme::buttonDisabledColor()));
-                painter->setBrush(QColor(OCC::IonosTheme::buttonDisabledColor()));
-            }
-            //Pressed 
-            else if (option->state & QStyle::State_Sunken) {
-                painter->setPen(QColor(OCC::IonosTheme::buttonPrimaryPressedColor()));
-                painter->setBrush(QColor(OCC::IonosTheme::buttonPrimaryPressedColor()));
-            } 
-            // Hover
-            else if(option->state & QStyle::State_MouseOver)
-            {
-                painter->setPen(QColor(OCC::IonosTheme::buttonPrimaryHoverColor()));
-                painter->setBrush(QColor(OCC::IonosTheme::buttonPrimaryHoverColor()));
-            }
-            // Focused
-            else if (option->state & QStyle::State_HasFocus) {
-                painter->setPen(QColor(OCC::IonosTheme::black()));
-                painter->setBrush(QColor(OCC::IonosTheme::buttonPrimaryColor()));
-            } 
-            // Else - Just beeing there
-            else {
-                painter->setPen(QColor(OCC::IonosTheme::buttonPrimaryColor()));
-                painter->setBrush(QColor(OCC::IonosTheme::buttonPrimaryColor()));
-            }
-        }
-        else 
-        {
-            // Disabled
-            if (!(option->state & QStyle::State_Enabled)) {
-                painter->setPen(QColor(OCC::IonosTheme::buttonDisabledColor()));
-                painter->setBrush(QColor(OCC::IonosTheme::buttonDisabledColor()));
-            }
-            //Pressed 
-            else if (option->state & QStyle::State_Sunken) {
-                painter->setPen(QColor(OCC::IonosTheme::buttonSecondaryBorderColor()));
-                painter->setBrush(QColor(OCC::IonosTheme::buttonSecondaryPressedColor()));
-            } 
-            // Hover
-            else if(option->state & QStyle::State_MouseOver)
-            {
-                painter->setPen(QColor(OCC::IonosTheme::buttonSecondaryBorderColor()));
-                painter->setBrush(QColor(OCC::IonosTheme::buttonSecondaryHoverColor()));
-            }
-            // Focused
-            else if (option->state & QStyle::State_HasFocus) {
-                painter->setPen(QColor(OCC::IonosTheme::buttonSecondaryBorderColor()));
-                painter->setBrush(QColor(OCC::IonosTheme::white()));
-            } 
-            // Else - Just beeing there
-            else {
-                painter->setPen(QColor(OCC::IonosTheme::buttonSecondaryBorderColor()));
-                painter->setBrush(QColor(OCC::IonosTheme::white()));
-            }
-        }
-}
-
-bool PushButtonStyleHelper::isPrimary(const QWidget *widget, const QStyleOptionButton *option) const
-{
-    if (const auto *customOption = qstyleoption_cast<const CustomStyleOption *>(option)) {
-
-        QString buttonName = widget->objectName();
-        return buttonName == "qt_wizard_finish" || customOption->customData == CustomStyleOption::StyleOptionType::Primary;
+    // Disabled
+    if (!(option->state & QStyle::State_Enabled)) {
+        painter->setPen(QColor(style.buttonDisabledBorderColor()));
+        painter->setBrush(QColor(style.buttonDisabledColor()));
     }
-    return false;
+    //Pressed 
+    else if (option->state & QStyle::State_Sunken) {
+
+        painter->setPen(QColor(style.buttonPressedBorderColor()));
+        painter->setBrush(QColor(style.buttonPressedColor()));
+    } 
+    // Hover
+    else if(option->state & QStyle::State_MouseOver)
+    {
+        painter->setPen(QColor(style.buttonHoverBorderColor()));
+        painter->setBrush(QColor(style.buttonHoverColor()));
+    }
+    // Focused
+    else if (option->state & QStyle::State_HasFocus) {
+        painter->setPen(QColor(style.buttonFocusedBorderColor()));
+        painter->setBrush(QColor(style.buttonFocusedColor()));
+    } 
+    // Else - Just beeing there
+    else {
+        painter->setPen(QColor(style.buttonDefaultBorderColor()));
+        painter->setBrush(QColor(style.buttonDefaultColor()));
+    }
 }
 
 void PushButtonStyleHelper::drawButtonShape(const QStyleOptionButton *option, QPainter *painter, const QWidget *widget)
@@ -135,21 +96,18 @@ QSize PushButtonStyleHelper::sizeFromContents(const QStyleOptionButton *option, 
     return QSize(qMax(60, contentsSize.width() + 2 * margin + frameWidth), contentsSize.height() + 2 * margin + frameWidth);
 }
 
-void PushButtonStyleHelper::adjustTextPalette(QStyleOptionButton *option, bool isPrimary) const
+void PushButtonStyleHelper::adjustTextPalette(QStyleOptionButton *option, const QWidget *widget) const
 {
     QColor textColor;
+    OCC::ButtonStyle& style = ButtonStyleStrategy::getButtonStyle(widget, option);
 
     // Disabled
     if (!(option->state & QStyle::State_Enabled)) {
-        textColor = QColor(OCC::IonosTheme::buttonDisabledFontColor());
+        textColor = style.buttonDisabledFontColor();
     }    
-    else if(isPrimary)
-    {
-        textColor = QColor(OCC::IonosTheme::white());
-    }
     else 
     {
-        textColor = QColor(OCC::IonosTheme::black());
+        textColor = style.buttonFontColor();
 
     }
     option->palette.setColor(QPalette::ButtonText, textColor);
