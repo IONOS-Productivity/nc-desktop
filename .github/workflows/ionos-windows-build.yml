@@ -24,7 +24,7 @@ jobs:
       run: git clone -b develop --single-branch https://github.com/IONOS-Productivity/nc-client-building.git "${{ env.BUILDING_ROOT }}"
     
     - name: print directory recursively
-      run: ls -R "C:\Program Files (x86)\Microsoft Visual Studio\2019\"
+      run: ls -R "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\"
 
     - name: Checkout
       uses: actions/checkout@v4
