@@ -2,20 +2,21 @@
 #include "IonosTheme.h"
 #include "Theme.h"
 
+
 namespace OCC {
+
     SesButton::SesButton(QWidget* parent)
         : QPushButton(parent)
     {
-        updateStyleSheet();
-        setCursor(Qt::PointingHandCursor);
     }
+
+
 
     ButtonStyle SesButton::buttonStyle() const { return m_buttonStyle; }
 
     void SesButton::setButtonStyle(ButtonStyle style) {
         if (m_buttonStyle != style) {
             m_buttonStyle = style;
-            updateStyleSheet();
             emit buttonStyleChanged(m_buttonStyle);
         }
     }
