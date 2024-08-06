@@ -28,6 +28,9 @@ jobs:
       with:
         path: ${{ env.DESKTOP_ROOT }}
 
+    - name: Print DESKTOP_ROOT children
+      run: ls ${{ env.DESKTOP_ROOT }}
+
     - name: Setup Python
       uses: actions/setup-python@v5
       with:
@@ -49,23 +52,23 @@ jobs:
       run: |
         & "${{env.CRAFTMASTER_PS1}}" -c --install-deps nextcloud-client
 
-    - name: Cache Install inkscape
-      id: cache-install-inkscape
-      uses: actions/cache@v4
-      with:
-        path: C:\Program Files\inkscape
-        key: ${{ runner.os }}-cache-install-inkscape
+    # - name: Cache Install inkscape
+    #   id: cache-install-inkscape
+    #   uses: actions/cache@v4
+    #   with:
+    #     path: C:\Program Files\inkscape
+    #     key: ${{ runner.os }}-cache-install-inkscape
 
-    - name: Install inkscape
-      if: steps.cache-install-inkscape.outputs.cache-hit != 'true'
-      run: |
-        choco install inkscape
+    # - name: Install inkscape
+    #   if: steps.cache-install-inkscape.outputs.cache-hit != 'true'
+    #   run: |
+    #     choco install inkscape
 
-    - name: Load png2ico
-      run: Invoke-WebRequest https://github.com/hiiamok/png2ImageMagickICO/releases/download/v1.0/x64.zip -OutFile ${{ env.HOME }}\png2ico.zip
+    # - name: Load png2ico
+    #   run: Invoke-WebRequest https://github.com/hiiamok/png2ImageMagickICO/releases/download/v1.0/x64.zip -OutFile ${{ env.HOME }}\png2ico.zip
 
-    - name: Unzip png2ico
-      run: Expand-Archive -Path ${{ env.HOME }}\png2ico.zip -DestinationPath ${{ env.HOME }}\png2ico
+    # - name: Unzip png2ico
+    #   run: Expand-Archive -Path ${{ env.HOME }}\png2ico.zip -DestinationPath ${{ env.HOME }}\png2ico
 
     # - name: Setup Variables
     #   run: |
@@ -83,6 +86,9 @@ jobs:
     #   with:
     #     name: build
     #     path: ${{ env.HOME }}\build.zip
+
+    - name: Print DESKTOP_ROOT children before build
+      run: ls ${{ env.DESKTOP_ROOT }}
 
     - name: Build
       env:
