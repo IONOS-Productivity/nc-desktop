@@ -10,11 +10,9 @@ namespace OCC {
     {
     }
 
+    ButtonStyleName SesButton::buttonStyle() const { return m_buttonStyle; }
 
-
-    ButtonStyle SesButton::buttonStyle() const { return m_buttonStyle; }
-
-    void SesButton::setButtonStyle(ButtonStyle style) {
+    void SesButton::setButtonStyle(ButtonStyleName style) {
         if (m_buttonStyle != style) {
             m_buttonStyle = style;
             emit buttonStyleChanged(m_buttonStyle);
@@ -78,16 +76,12 @@ namespace OCC {
     void SesButton::updateStyleSheet() {
         QString styleSheet;
         switch (m_buttonStyle) {
-            case ButtonStyle::Primary:
+            case ButtonStyleName::Primary:
                 styleSheet = QStringLiteral("QPushButton") + rawPrimaryStyle();
             break;
-            case ButtonStyle::Secondary:
+            case ButtonStyleName::Secondary:
                 styleSheet = QStringLiteral("QPushButton") + rawSecondaryStyle();
             break;
-            case ButtonStyle::Disabled:
-                styleSheet = QStringLiteral("QPushButton") + rawDisabledStyle();
-                setEnabled(false);
-                break;
         }
         setStyleSheet(styleSheet);
     }

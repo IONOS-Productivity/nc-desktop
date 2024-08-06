@@ -240,7 +240,7 @@
                                                 </sizepolicy>
                                             </property>
                                             <property name="buttonStyle">
-                                                <enum>OCC::ButtonStyle::Secondary</enum>
+                                                <enum>OCC::ButtonStyleName::Secondary</enum>
                                             </property>
                                             <property name="text">
                                                 <string>Choose different folder</string>

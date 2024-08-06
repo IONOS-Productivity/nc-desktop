@@ -8,15 +8,12 @@
 #include <QStylePainter>
 #include <QStyleOptionButton>
 
+#include "buttonStyle.h"
+
 class CustomStyleOption : public QStyleOptionButton {
 public:
-    enum StyleOptionType {
-        Primary 
-        , Secondary
-        , Disabled
-    };
 
-    CustomStyleOption(CustomStyleOption::StyleOptionType type = StyleOptionType::Primary)
+    CustomStyleOption(OCC::ButtonStyleName type = OCC::ButtonStyleName::Primary)
         : QStyleOptionButton(Version)
     {
         customData = type;
@@ -28,35 +25,28 @@ public:
     {
     }
 
-    StyleOptionType customData;
+    OCC::ButtonStyleName customData;
 
     enum { Version = 1 }; // Custom version value
 };
 namespace OCC {
 
-    enum class ButtonStyle {
-        Primary,
-        Secondary,
-        Disabled
-    };
-
     class SesButton : public QPushButton
     {
         Q_OBJECT
-        Q_PROPERTY(ButtonStyle buttonStyle READ buttonStyle WRITE setButtonStyle NOTIFY buttonStyleChanged)
+        Q_PROPERTY(ButtonStyleName buttonStyle READ buttonStyle WRITE setButtonStyle NOTIFY buttonStyleChanged)
 
     public:
         explicit SesButton(QWidget* parent = nullptr);
         static QString rawPrimaryStyle();
         static QString rawSecondaryStyle();
         static QString rawDisabledStyle();
-        ButtonStyle buttonStyle() const;
+        ButtonStyleName buttonStyle() const;
     protected:
         void paintEvent(QPaintEvent *event) override {
             QStylePainter  painter(this);
 
-            CustomStyleOption::StyleOptionType type = m_buttonStyle == OCC::ButtonStyle::Primary ? CustomStyleOption::Primary : CustomStyleOption::Secondary;
-            CustomStyleOption option(type);
+            CustomStyleOption option(m_buttonStyle);
             option.initFrom(this);
             option.state |= isDown() ? QStyle::State_Sunken : QStyle::State_Raised;
             option.rect = rect();
@@ -67,13 +57,13 @@ namespace OCC {
         }
 
     public slots:
-        void setButtonStyle(ButtonStyle style);
+        void setButtonStyle(ButtonStyleName style);
     
     signals:
-        void buttonStyleChanged(ButtonStyle newStyle);
+        void buttonStyleChanged(ButtonStyleName newStyle);
 
     private:
-        ButtonStyle m_buttonStyle;
+        ButtonStyleName m_buttonStyle;
 
         void updateStyleSheet();
     };
