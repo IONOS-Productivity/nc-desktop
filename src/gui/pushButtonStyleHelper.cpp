@@ -14,8 +14,33 @@
 #include <QStyleOptionButton>
 #include "ionostheme.h"
 #include "sesButton.h"
+#include "buttonStyle.h"
 
 static const int s_radius = 6;
+
+
+class ButtonStyleStrategy
+{
+public:
+    virtual ~ButtonStyleStrategy() = default;
+
+    static OCC::ButtonStyle& getButtonStyle(const QWidget *widget, const QStyleOptionButton *option)
+    {
+        if(isPrimary(widget, option))
+            return OCC::PrimaryButtonStyle::GetInstance();
+        return OCC::SecondaryButtonStyle::GetInstance();
+    }
+
+    static bool isPrimary(const QWidget *widget, const QStyleOptionButton *option)
+    {
+        if (const auto *customOption = qstyleoption_cast<const CustomStyleOption *>(option)) {
+
+            QString buttonName = widget->objectName();
+            return buttonName == "qt_wizard_finish" || customOption->customData == OCC::ButtonStyleName::Primary;
+        }
+        return false;
+    }
+};
 
 void PushButtonStyleHelper::setupPainterForShape(const QStyleOptionButton *option, QPainter *painter, const QWidget *widget)
 {
