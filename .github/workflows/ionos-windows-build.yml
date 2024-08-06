@@ -96,7 +96,9 @@ jobs:
         Png2Ico_EXECUTABLE: ${{ github.workspace }}\png2ico\png2ico.exe
         PULL_DESKTOP: 0
         CHECKOUT_DESKTOP: 0
+        SKIP_CLEANUP: 1
       shell: bash
       run: |
         cd "${{ env.BUILDING_ROOT }}"
         ./build.bat Release
+        
