@@ -114,17 +114,5 @@ void FolderCreationDialog::customizeStyle()
     if(buttonlayout){
         buttonlayout->setSpacing(16);
     }
-
-    if(okButton){
-        okButton->setMinimumWidth(80);
-        okButton->setMinimumHeight(40);
-        okButton->setStyleSheet(QStringLiteral("QPushButton") + SesButton::rawPrimaryStyle());
-    }
-    
-    if(cancelButton){ 
-        cancelButton->setMinimumWidth(80);
-        cancelButton->setMinimumHeight(40);
-        cancelButton->setStyleSheet(QStringLiteral("QPushButton") + SesButton::rawSecondaryStyle());
-    }
 }
 }
