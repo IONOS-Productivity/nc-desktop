@@ -160,6 +160,7 @@ set(client_SRCS
     sesStyle.cpp
     pushButtonStyleHelper.h
     pushButtonStyleHelper.cpp
+    buttonStyle.h
     thumbnailjob.h
     thumbnailjob.cpp
     userinfo.h
