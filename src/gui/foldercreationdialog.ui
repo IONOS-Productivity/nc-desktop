@@ -3,7 +3,7 @@
     <class>OCC::FolderCreationDialog</class>
     <widget class="QDialog" name="OCC::FolderCreationDialog">
         <property name="windowTitle">
-            <string>IONOS EASYSTORAGE Create new folder</string>
+            <string>Create new folder</string>
         </property>
         <widget class="QDialogButtonBox" name="buttonBox">
             <property name="geometry">

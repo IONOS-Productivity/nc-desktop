@@ -34,7 +34,7 @@ FolderCreationDialog::FolderCreationDialog(const QString &destination, QWidget *
     , _destination(destination)
 {
     ui->setupUi(this);
-
+    setWindowTitle(tr("%1 Create new folder").arg(Theme::instance()->appNameGUI()));
     customizeStyle();
 
     ui->labelErrorMessage->setVisible(false);
