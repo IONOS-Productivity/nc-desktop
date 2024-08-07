@@ -110,7 +110,7 @@ void FolderCreationDialog::customizeStyle()
     okButton->setProperty("buttonStyle", "primary");
 
     if(dialog){
-        dialog->setFixedSize(626, 156);
+        dialog->setMinimumSize(626, 156);
     }
 
     if(buttonlayout){
