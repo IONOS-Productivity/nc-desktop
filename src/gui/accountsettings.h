@@ -20,6 +20,7 @@
 #include <QPointer>
 #include <QHash>
 #include <QTimer>
+#include <QDialogButtonBox>
 
 #include "folder.h"
 #include "userinfo.h"
@@ -142,6 +143,8 @@ private:
     [[nodiscard]] QString selectedFolderAlias() const;
 
     void disguiseTabWidget() const;
+
+    void customizeButtonBox(QDialogButtonBox *buttonBox);
 
     Ui::AccountSettings *_ui;
 

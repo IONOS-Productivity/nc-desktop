@@ -39,6 +39,7 @@
 #include "syncresult.h"
 #include "theme.h"
 #include "IonosTheme.h"
+#include "sesButton.h"
 #include "tooltipupdater.h"
 #include "ui_mnemonicdialog.h"
 #include "userinfo.h"
@@ -538,6 +539,7 @@ void AccountSettings::openIgnoredFilesDialog(const QString &absFolderPath)
     layout->addWidget(ignoreListWidget);
 
     const auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    customizeButtonBox(buttonBox);
     layout->addWidget(buttonBox);
 
     const auto dialog = new QDialog();
@@ -551,7 +553,21 @@ void AccountSettings::openIgnoredFilesDialog(const QString &absFolderPath)
     });
     connect(buttonBox, &QDialogButtonBox::rejected, dialog, &QDialog::close);
 
+    dialog->setPalette(QPalette(QPalette::Window, IonosTheme::white()));
+
     dialog->open();
+}
+
+void AccountSettings::customizeButtonBox(QDialogButtonBox *buttonBox){
+    buttonBox->setContentsMargins(0, 0, 19, 0);
+    buttonBox->layout()->setSpacing(16);
+
+    const auto okButton = buttonBox->button(QDialogButtonBox::Ok);
+    const auto cancelButton = buttonBox->button(QDialogButtonBox::Cancel);
+    okButton->setStyleSheet(QStringLiteral("QPushButton") + SesButton::rawPrimaryStyle());
+    okButton->setMinimumSize(80, 40);
+    cancelButton->setStyleSheet(QStringLiteral("QPushButton") + SesButton::rawSecondaryStyle());
+    cancelButton->setMinimumSize(80, 40);
 }
 
 void AccountSettings::slotSubfolderContextMenuRequested(const QModelIndex &index, const QPoint &pos)
