@@ -1,5 +1,6 @@
 #include "ignorelisttablewidget.h"
 #include "ui_ignorelisttablewidget.h"
+#include "sesButton.h"
 
 #include "folderman.h"
 
@@ -18,15 +19,18 @@ IgnoreListTableWidget::IgnoreListTableWidget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::IgnoreListTableWidget)
 {
-    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowFlags(windowFlags() & Qt::WindowTitleHint | Qt::WindowCloseButtonHint);
     ui->setupUi(this);
 
-    ui->descriptionLabel->setText(tr("Files or folders matching a pattern will not be synchronized.\n\n"
-                                     "Items where deletion is allowed will be deleted if they prevent a "
-                                     "directory from being removed. "
-                                     "This is useful for meta data."));
+    customizeStyle();
+
+    ui->descriptionLabel->setText(tr("Files or folders that match this pattern will not be synchronized.\n\n"
+                                     "Objects that are allowed to be deleted will be deleted if they would"
+                                     "prevent a folder from being deleted. "
+                                     "This is useful for metadata."));
 
     ui->removePushButton->setEnabled(false);
+
     connect(ui->tableWidget,         &QTableWidget::itemSelectionChanged,
             this, &IgnoreListTableWidget::slotItemSelectionChanged);
     connect(ui->removePushButton,    &QAbstractButton::clicked,
@@ -109,12 +113,17 @@ void IgnoreListTableWidget::slotWriteIgnoreFile(const QString & file)
 void IgnoreListTableWidget::slotAddPattern()
 {
     bool okClicked = false;
-    QString pattern = QInputDialog::getText(this, tr("Add Ignore Pattern"),
-        tr("Add a new ignore pattern:"),
+    QInputDialog inputDialog = QInputDialog(this);
+    QString pattern = QInputDialog::getText(this, tr("Ignore Pattern"),
+        tr("Add New ignore pattern:"),
         QLineEdit::Normal, QString(), &okClicked);
 
     if (!okClicked || pattern.isEmpty())
         return;
+
+    inputDialog.setMinimumHeight(156);
+    inputDialog.setMinimumWidth(626);
+    inputDialog.setStyleSheet("QInputDialog {background-color: #FFFFFF;}");
 
     addPattern(pattern, false, false);
     ui->tableWidget->scrollToBottom();
@@ -162,6 +171,12 @@ int IgnoreListTableWidget::addPattern(const QString &pattern, bool deletable, bo
     ui->removeAllPushButton->setEnabled(true);
 
     return newRow;
+}
+
+void IgnoreListTableWidget::customizeStyle(){
+    ui->tableWidget->setFixedSize(374, 424);
+    ui->tableWidget->horizontalHeader()->setStyleSheet(
+            "QHeaderView::section { background-color: #FFFFFF; border-bottom: none;}");
 }
 
 } // namespace OCC
