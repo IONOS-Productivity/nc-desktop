@@ -42,14 +42,7 @@
                             <property name="sizeType">
                                 <enum>QSizePolicy::Expanding</enum>
                             </property>
-                            <property name="sizeHint" stdset="0">
-                                <size>
-                                    <width>0</width>
-                                    <height>0</height>
-                                </size>
-                            </property>
                         </spacer>
-
                     </item>
                     <item>
                         <widget class="QDialogButtonBox" name="buttonBox">
@@ -59,10 +52,12 @@
                             <property name="standardButtons">
                                 <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
                             </property>
+                            <property name="sizePolicy">
+                                <sizepolicy hsizetype="Maximum" vsizetype="Maximum" />
+                            </property>
                         </widget>
                     </item>
                 </layout>
-
             </item>
         </layout>
     </widget>

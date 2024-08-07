@@ -107,6 +107,8 @@ void FolderCreationDialog::customizeStyle()
     QPushButton *cancelButton = ui->buttonBox->button(QDialogButtonBox::Cancel);
     QHBoxLayout* buttonlayout = qobject_cast<QHBoxLayout*>(ui->buttonBox->layout());
 
+    okButton->setProperty("buttonStyle", "primary");
+
     if(dialog){
         dialog->setFixedSize(626, 156);
     }

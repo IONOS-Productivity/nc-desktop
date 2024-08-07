@@ -33,6 +33,15 @@ public:
 
     static bool isPrimary(const QWidget *widget, const QStyleOptionButton *option)
     {
+        QVariant propertyValue = widget->property("buttonStyle");        
+        if(propertyValue.isValid()){             
+            QString buttonType = propertyValue.toString(); 
+                      
+            if(buttonType =="primary") {
+                return true;
+            }
+        }
+
         if (const auto *customOption = qstyleoption_cast<const CustomStyleOption *>(option)) {
 
             QString buttonName = widget->objectName();
@@ -93,7 +102,7 @@ QSize PushButtonStyleHelper::sizeFromContents(const QStyleOptionButton *option, 
     Q_UNUSED(widget)
     const int margin = 11; // usually this comes from PM_ButtonMargin
     const int frameWidth = 2; // due to pen width 1 in drawButtonBevel, on each side
-    return QSize(qMax(60, contentsSize.width() + 2 * margin + frameWidth), contentsSize.height() + 2 * margin + frameWidth);
+    return QSize(qMax(80, contentsSize.width() + 2 * margin + frameWidth), contentsSize.height() + 2 * margin + frameWidth);
 }
 
 void PushButtonStyleHelper::adjustTextPalette(QStyleOptionButton *option, const QWidget *widget) const
