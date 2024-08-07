@@ -94,7 +94,7 @@ jobs:
       shell: bash
       run: |
         cd "${{ env.BUILDING_ROOT }}"
-        ./single-build-installer-collect.bat Release
+        ./single-build-installer-collect.bat Release Win64
 
     # - name: Zip Output Dir
     #   run: Compress-Archive -Path ${{ env.HOME }}\craft\${{ env.CRAFT_TARGET }}\build\ -DestinationPath ${{ env.HOME }}\build.zip
@@ -115,4 +115,4 @@ jobs:
     #   shell: bash
     #   run: |
     #     cd "${{ env.BUILDING_ROOT }}"
-    #     ./build.bat Release
+    #     ./build.bat Release 
