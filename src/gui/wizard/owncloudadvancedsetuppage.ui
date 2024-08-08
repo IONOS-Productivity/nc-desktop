@@ -265,12 +265,6 @@
                     <!-- Checkbox Area -->
                     <item>
                         <layout class="QVBoxLayout" name="wSyncStrategy">
-                            <property name="leftMargin">
-                                <number>32</number>
-                            </property>
-                            <property name="topMargin">
-                                <number>32</number>
-                            </property>
                             <item>
                                 <layout class="QHBoxLayout" name="wSyncStrategySynchronizeEverything">
                                     <property name="topMargin">
