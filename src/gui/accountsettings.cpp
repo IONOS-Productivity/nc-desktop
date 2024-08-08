@@ -544,6 +544,7 @@ void AccountSettings::openIgnoredFilesDialog(const QString &absFolderPath)
 
     const auto dialog = new QDialog();
     dialog->setLayout(layout);
+    dialog->setStyleSheet(QStringLiteral("QDialog { background-color: %1; }").arg(IonosTheme::welcomeBackgroundColor()));
 
     connect(buttonBox, &QDialogButtonBox::clicked, [=](QAbstractButton *button) {
         if (buttonBox->buttonRole(button) == QDialogButtonBox::AcceptRole) {
