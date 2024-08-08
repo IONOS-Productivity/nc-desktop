@@ -55,38 +55,60 @@ int sesStyle::pixelMetric(PixelMetric metric, const QStyleOption *option, const 
     }
 }
 
+template <typename T>
+void sesStyle::drawButton(const T *btn, QPainter *painter, const QWidget *widget) const {
+        proxy()->drawControl(CE_PushButtonBevel, btn, painter, widget);
+        T subopt = *btn;
+        subopt.rect = subElementRect(SE_PushButtonContents, btn, widget);
+        proxy()->drawControl(CE_PushButtonLabel, &subopt, painter, widget);
+        if (btn->state & State_HasFocus) {
+            QStyleOptionFocusRect fropt;
+            fropt.QStyleOption::operator=(*btn);
+            fropt.rect = subElementRect(SE_PushButtonFocusRect, btn, widget);
+            proxy()->drawPrimitive(PE_FrameFocusRect, &fropt, painter, widget);
+        }
+}
+
+
 void sesStyle::drawControl(ControlElement element, const QStyleOption *option, QPainter *painter, const QWidget *widget) const
 {
     switch (element) {
     case CE_PushButton:
-        if (const CustomStyleOption *btn = qstyleoption_cast<const CustomStyleOption *>(option)) {
-            proxy()->drawControl(CE_PushButtonBevel, btn, painter, widget);
-                CustomStyleOption subopt = *btn;
-                subopt.rect = subElementRect(SE_PushButtonContents, btn, widget);
-                proxy()->drawControl(CE_PushButtonLabel, &subopt, painter, widget);
-                if (btn->state & State_HasFocus) {
-                    QStyleOptionFocusRect fropt;
-                    fropt.QStyleOption::operator=(*btn);
-                    fropt.rect = subElementRect(SE_PushButtonFocusRect, btn, widget);
-                    proxy()->drawPrimitive(PE_FrameFocusRect, &fropt, painter, widget);
-                }
+    {
+        if (const CustomStyleOption *customOption = qstyleoption_cast<const CustomStyleOption *>(option)) 
+        {
+            drawButton(customOption, painter, widget);
+        } 
+        else if (const QStyleOptionButton *btn = qstyleoption_cast<const QStyleOptionButton *>(option)) 
+        {
+             drawButton(btn, painter, widget);
         }
         return;
+    }
     case CE_PushButtonBevel:
-        // Draw button shape (background and border). This one we'll fully implement ourselves.
-        // if (const auto *optionButton = qstyleoption_cast<const QStyleOptionButton *>(option)) {
-        if (const auto *optionButton = qstyleoption_cast<const CustomStyleOption *>(option)) {
+        if (const CustomStyleOption *optionButton = qstyleoption_cast<const CustomStyleOption *>(option)) 
+        {
             mPushButtonStyleHelper->drawButtonShape(optionButton, painter, widget);
+        } 
+        else if (const QStyleOptionButton *optionButton = qstyleoption_cast<const QStyleOptionButton *>(option)) 
+        {
+             mPushButtonStyleHelper->drawButtonShape(optionButton, painter, widget);
         }
         return;
     case CE_PushButtonLabel:
-        // Draw button text, icon (and menu indicator)
-        // We just want to call the base class, with an adjusted palette
-        if (const auto *optionButton = qstyleoption_cast<const CustomStyleOption *>(option)) {
+        if (const CustomStyleOption *optionButton = qstyleoption_cast<const CustomStyleOption *>(option)) {
 
-                CustomStyleOption copy = *optionButton;
-                mPushButtonStyleHelper->adjustTextPalette(&copy, widget);
-                QCommonStyle::drawControl(element, &copy, painter, widget);
+            CustomStyleOption customStyleCopy = *optionButton;
+            mPushButtonStyleHelper->adjustTextPalette(&customStyleCopy, widget);
+            QStyleOptionButton buttonStyleCopy = customStyleCopy;
+            QCommonStyle::drawControl(element, &buttonStyleCopy, painter, widget);
+
+        } 
+        else if (const QStyleOptionButton *optionButton = qstyleoption_cast<const QStyleOptionButton *>(option)) 
+        {
+            QStyleOptionButton customStyleCopy = *optionButton;
+            mPushButtonStyleHelper->adjustTextPalette(&customStyleCopy, widget);
+            QCommonStyle::drawControl(element, &customStyleCopy, painter, widget);
         }
         return;
     default:

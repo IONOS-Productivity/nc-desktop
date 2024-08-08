@@ -37,6 +37,9 @@ public:
     int pixelMetric(PixelMetric pm, const QStyleOption *option = nullptr,
                     const QWidget *widget = nullptr) const override;
 
+    template <typename T>
+    void drawButton(const T *btn, QPainter *painter, const QWidget *widget) const;
+
     void drawControl(ControlElement element, const QStyleOption *option, QPainter *painter,
                      const QWidget *widget = nullptr) const override;
 
