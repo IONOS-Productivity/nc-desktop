@@ -134,8 +134,7 @@ PushButtonStyleHelper *sesStyle::pushButtonStyleHelper() const
     return mPushButtonStyleHelper.get();
 }
 
-int sesStyle::styleHint(StyleHint stylehint, const QStyleOption *option, const QWidget *widget,
-                         QStyleHintReturn *returnData) const
+int sesStyle::styleHint(StyleHint stylehint, const QStyleOption *option, const QWidget *widget, QStyleHintReturn *returnData) const
 {
     switch (stylehint) {
     case SH_DialogButtonBox_ButtonsHaveIcons:
@@ -147,8 +146,7 @@ int sesStyle::styleHint(StyleHint stylehint, const QStyleOption *option, const Q
     return super::styleHint(stylehint, option, widget, returnData);
 }
 
-QSize sesStyle::sizeFromContents(ContentsType type, const QStyleOption *option, const QSize &contentsSize,
-                                  const QWidget *widget) const
+QSize sesStyle::sizeFromContents(ContentsType type, const QStyleOption *option, const QSize &contentsSize, const QWidget *widget) const
 {
     switch (type) {
     case CT_PushButton:
@@ -171,8 +169,7 @@ QRect sesStyle::subElementRect(SubElement subElement, const QStyleOption *option
     return super::subElementRect(subElement, option, widget);
 }
 
-void sesStyle::drawComplexControl(ComplexControl complexControl, const QStyleOptionComplex *option, QPainter *painter,
-                                   const QWidget *widget) const
+void sesStyle::drawComplexControl(ComplexControl complexControl, const QStyleOptionComplex *option, QPainter *painter, const QWidget *widget) const
 {
     switch (complexControl) {
     default:
