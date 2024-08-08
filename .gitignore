@@ -190,3 +190,5 @@ convert.exe
 *-w10startmenu.png
 *state-*.png
 theme.qrc
+
+.idea/
