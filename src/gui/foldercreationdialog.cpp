@@ -107,18 +107,12 @@ void FolderCreationDialog::customizeStyle()
     ui->buttonBox->setLayoutDirection(Qt::RightToLeft);
 
     QDialog *dialog = qobject_cast<QDialog*>(this);
+    dialog->setMinimumSize(626, 156);
+
     QPushButton *okButton = ui->buttonBox->button(QDialogButtonBox::Ok);
-    QPushButton *cancelButton = ui->buttonBox->button(QDialogButtonBox::Cancel);
+    okButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
+
     QHBoxLayout* buttonlayout = qobject_cast<QHBoxLayout*>(ui->buttonBox->layout());
-
-    okButton->setProperty("buttonStyle", "primary");
-
-    if(dialog){
-        dialog->setMinimumSize(626, 156);
-    }
-
-    if(buttonlayout){
-        buttonlayout->setSpacing(16);
-    }
+    buttonlayout->setSpacing(16);
 }
 }
