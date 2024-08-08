@@ -47,11 +47,13 @@ OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage(OwncloudWizard *wizard)
     setupResoultionWidget();
 
     _filePathLabel.reset(new ElidedLabel);
+    _filePathLabel->setObjectName("filePathLabel");
+    _filePathLabel->setWordWrap(true);
     _filePathLabel->setElideMode(Qt::ElideMiddle);
     _filePathLabel->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     _filePathLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    _ui.locationsVBox->insertWidget(2, _filePathLabel.data());
-
+    _ui.locationsVBox->insertWidget(3, _filePathLabel.data());
+    
     _filePathLabel->setTextFormat(Qt::PlainText);
     _ui.userNameLabel->setTextFormat(Qt::PlainText);
     _ui.serverAddressLabel->setTextFormat(Qt::PlainText);
@@ -595,15 +597,19 @@ void OwncloudAdvancedSetupPage::customizeStyle()
     _ui.wSyncStrategy->setContentsMargins(32, 32, 0, 0);
     _ui.verticalLayout->setSpacing(0);
     _ui.topAreaHBox->setContentsMargins(32, 32, 32, 0);
+    _ui.topAreaHBox->setSpacing(56);
+
     _ui.serverVBox->setAlignment(Qt::AlignTop);
-    _ui.serverVBox->setSpacing(0);
+    _ui.serverVBox->setSpacing(5);
     _ui.serverVBox->setContentsMargins(0, 0, 0, 0);
+
     _ui.arrowVBox->setSpacing(0);
     _ui.arrowVBox->setContentsMargins(0, 0, 0, 0);
     _ui.arrowVBox->setAlignment(Qt::AlignTop);
+
     _ui.locationsVBox->setAlignment(Qt::AlignTop);
     _ui.locationsVBox->setContentsMargins(0, 0, 0, 0);
-    _ui.locationsVBox->setSpacing(0);
+    _ui.locationsVBox->setSpacing(5);
 
     _ui.resolutionWidgetLayout->setContentsMargins(32, 16, 0, 0);
 

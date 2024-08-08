@@ -73,17 +73,27 @@
                                         </widget>
                                     </item>
                                     <item>
+                                        <spacer>
+                                            <property name="orientation">
+                                                <enum>Qt::Vertical</enum>
+                                            </property>
+                                            <property name="sizeHint" stdset="0">
+                                                <size>
+                                                    <height>8</height>
+                                                </size>
+                                            </property>
+                                            <property name="sizeType">
+                                                <enum>QSizePolicy::Fixed</enum>
+                                            </property>
+                                        </spacer>
+                                    </item>
+                                    <item>
                                         <widget class="QLabel" name="userNameLabel">
                                             <property name="sizePolicy">
                                                 <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
                                                     <horstretch>0</horstretch>
                                                     <verstretch>0</verstretch>
                                                 </sizepolicy>
-                                            </property>
-                                            <property name="font">
-                                                <font>
-                                                    <bold>true</bold>
-                                                </font>
                                             </property>
                                             <property name="text">
                                                 <string>Username</string>
@@ -168,6 +178,21 @@
                                                 <cstring>pbSelectLocalFolder</cstring>
                                             </property>
                                         </widget>
+                                    </item>   
+                                    <item>
+                                        <spacer>
+                                            <property name="orientation">
+                                                <enum>Qt::Vertical</enum>
+                                            </property>
+                                            <property name="sizeHint" stdset="0">
+                                                <size>
+                                                    <height>8</height>
+                                                </size>
+                                            </property>
+                                            <property name="sizeType">
+                                                <enum>QSizePolicy::Fixed</enum>
+                                            </property>
+                                        </spacer>
                                     </item>   
                                     <item>
                                         <widget class="QLabel" name="localFolderDescriptionLabel">
