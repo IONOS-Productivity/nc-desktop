@@ -35,9 +35,8 @@ public:
     {
         QVariant propertyValue = widget->property("buttonStyle");        
         if(propertyValue.isValid()){             
-            QString buttonType = propertyValue.toString(); 
                       
-            if(buttonType =="primary") {
+            if(propertyValue.value<OCC::ButtonStyleName>() == OCC::ButtonStyleName::Primary) {
                 return true;
             }
         }
@@ -117,7 +116,6 @@ void PushButtonStyleHelper::adjustTextPalette(QStyleOptionButton *option, const 
     else 
     {
         textColor = style.buttonFontColor();
-
     }
     option->palette.setColor(QPalette::ButtonText, textColor);
 }
