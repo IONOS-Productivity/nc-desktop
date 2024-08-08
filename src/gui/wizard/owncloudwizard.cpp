@@ -341,6 +341,7 @@ void OwncloudWizard::slotCurrentPageChanged(int id)
         #ifdef APPLICATION_SERVER_URL_ENFORCE
             _setupPage->setServerUrl(APPLICATION_SERVER_URL);
             _setupPage->initializePage();
+            button(QWizard::BackButton)->setHidden(true);
         #endif
     }
 
