@@ -89,6 +89,11 @@ int main(int argc, char **argv)
         QApplication::setStyle(QStringLiteral("fusion"));
     // Set the style to Windows 10
     QApplication::setStyle(new sesStyle);
+    QFont defaultFont("Open Sans");
+    defaultFont.setPointSize(9);
+    defaultFont.setWeight(QFont::Normal);
+    
+    QApplication::setFont(defaultFont);
 #endif // Q_OS_WIN
 
 #ifndef Q_OS_WIN
