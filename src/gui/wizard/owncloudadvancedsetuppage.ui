@@ -475,22 +475,16 @@
                                     </item>
                                 </layout>
                             </item>
-                            <item>
-                                <widget class="QWidget" name="resolutionWidget"
-                                    native="true">
-                                    <property name="sizePolicy">
-                                        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                                            <horstretch>0</horstretch>
-                                            <verstretch>0</verstretch>
-                                        </sizepolicy>
-                                    </property>
-                                    <layout class="QVBoxLayout"
-                                        name="resolutionWidgetLayout" stretch="0,0,0">
-                                        <property name="spacing">
-                                            <number>6</number>
-                                        </property>
-                                        <property name="sizeConstraint">
-                                            <enum>QLayout::SetMinimumSize</enum>
+                        </layout>
+                    </item>
+                    <!-- Resolution Area -->
+                    <item>
+                        <layout class="QVBoxLayout" name="resolutionWidgetLayout" stretch="0,0,0">
+                            <property name="spacing">
+                                <number>6</number>
+                            </property>
+                            <property name="sizeConstraint">
+                                <enum>QLayout::SetMinimumSize</enum>
                                         </property>
                                         <property name="leftMargin">
                                             <number>0</number>
@@ -570,11 +564,8 @@
                                                     <string>Erase local folder and start a clean sync</string>
                                                 </property>
                                                 <property name="checkable">
-                                                    <bool>true</bool>
-                                                </property>
-                                            </widget>
-                                        </item>
-                                    </layout>
+                                        <bool>true</bool>
+                                    </property>
                                 </widget>
                             </item>
                         </layout>
