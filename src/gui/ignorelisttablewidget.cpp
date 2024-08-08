@@ -6,6 +6,7 @@
 
 #include <QFile>
 #include <QInputDialog>
+#include <QDialogButtonBox>
 #include <QLineEdit>
 #include <QMessageBox>
 
@@ -112,18 +113,16 @@ void IgnoreListTableWidget::slotWriteIgnoreFile(const QString & file)
 
 void IgnoreListTableWidget::slotAddPattern()
 {
-    bool okClicked = false;
-    QInputDialog inputDialog = QInputDialog(this);
-    QString pattern = QInputDialog::getText(this, tr("Ignore Pattern"),
-        tr("Add New ignore pattern:"),
-        QLineEdit::Normal, QString(), &okClicked);
+    QInputDialog inputDialog(this);
+
+    customizeAddIgnorePatternDialogStyle(inputDialog);
+
+    bool okClicked = inputDialog.exec() == QDialog::Accepted;
+
+    QString pattern = inputDialog.textValue();
 
     if (!okClicked || pattern.isEmpty())
         return;
-
-    inputDialog.setMinimumHeight(156);
-    inputDialog.setMinimumWidth(626);
-    inputDialog.setStyleSheet("QInputDialog {background-color: #FFFFFF;}");
 
     addPattern(pattern, false, false);
     ui->tableWidget->scrollToBottom();
@@ -177,6 +176,26 @@ void IgnoreListTableWidget::customizeIgnoreListDialogStyle(){
     ui->tableWidget->setMinimumSize(374, 424);
     ui->tableWidget->horizontalHeader()->setStyleSheet(
             QStringLiteral("QHeaderView::section { background-color: %1; border-bottom: none;}").arg(IonosTheme::white()));
+}
+
+void IgnoreListTableWidget::customizeAddIgnorePatternDialogStyle(QInputDialog &inputDialog){
+    inputDialog.setWindowTitle(tr("Ignore Pattern"));
+    inputDialog.setLabelText(tr("Add New Ignore Pattern"));
+    inputDialog.setTextValue(QString());
+    inputDialog.resize(626, 196);
+    inputDialog.setVisible(true);
+    inputDialog.setContentsMargins(12,0,12,12);
+
+    QLabel *label = inputDialog.findChild<QLabel*>();
+    label->setAlignment(Qt::AlignCenter);
+
+    QDialogButtonBox *buttonBox = inputDialog.findChild<QDialogButtonBox*>();
+    buttonBox->setLayoutDirection(Qt::RightToLeft);
+    buttonBox->layout()->setSpacing(16);
+    buttonBox->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Fixed);
+
+    QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
+    okButton->setProperty("buttonStyle", QVariant::fromValue(ButtonStyleName::Primary)); 
 }
 
 } // namespace OCC
