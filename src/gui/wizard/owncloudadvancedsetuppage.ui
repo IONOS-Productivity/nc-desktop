@@ -478,7 +478,7 @@
                     </item>
                     <!-- Resolution Area -->
                     <item>
-                        <layout class="QVBoxLayout" name="resolutionWidgetLayout" stretch="0,0,0">
+                        <layout class="QVBoxLayout" name="resolutionWidgetLayout">
                             <property name="spacing">
                                 <number>6</number>
                             </property>
@@ -522,10 +522,10 @@
                                                     <enum>Qt::AutoText</enum>
                                                 </property>
                                                 <property name="alignment">
-                                                    <set>Qt::AlignCenter</set>
+                                        <set>Qt::AlignLeft</set>
                                                 </property>
                                                 <property name="wordWrap">
-                                                    <bool>false</bool>
+                                        <bool>true</bool>
                                                 </property>
                                             </widget>
                                         </item>
@@ -569,6 +569,7 @@
                             </item>
                         </layout>
                     </item>
+                    <!-- Error Area -->
                     <item>
                         <widget class="QLabel" name="errorLabel">
                             <property name="text">
