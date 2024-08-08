@@ -12,6 +12,7 @@
 
 #include <QPainter>
 #include <QStyleOptionButton>
+#include <QMap>
 #include "ionostheme.h"
 #include "sesButton.h"
 #include "buttonStyle.h"
@@ -26,12 +27,27 @@ public:
 
     static OCC::ButtonStyle& getButtonStyle(const QWidget *widget, const QStyleOptionButton *option)
     {
-        if(isPrimary(widget, option))
-            return OCC::PrimaryButtonStyle::GetInstance();
-        return OCC::SecondaryButtonStyle::GetInstance();
+        OCC::ButtonStyleName buttonStyleName;
+        if (const CustomStyleOption *optionButton = qstyleoption_cast<const CustomStyleOption *>(option)) 
+        {
+            buttonStyleName = determineButtonStyleName(widget, optionButton);
+        } 
+        else 
+        {
+            buttonStyleName = determineButtonStyleName(widget, option);
+        }
+
+        switch (buttonStyleName)
+        {
+            case OCC::ButtonStyleName::Primary:
+                return OCC::PrimaryButtonStyle::GetInstance();
+            case OCC::ButtonStyleName::Secondary:
+            default:
+                return OCC::SecondaryButtonStyle::GetInstance();
+        }
     }
 
-    static bool isPrimary(const QWidget *widget, const QStyleOptionButton *option)
+    static OCC::ButtonStyleName determineButtonStyleName(const QWidget *widget, const QStyleOptionButton *option)
     {
         QVariant propertyValue = widget->property("buttonStyle");        
         if(propertyValue.isValid()){             
@@ -41,13 +57,34 @@ public:
             }
         }
 
-        if (const auto *customOption = qstyleoption_cast<const CustomStyleOption *>(option)) {
-
-            QString buttonName = widget->objectName();
-            return buttonName == "qt_wizard_finish" || customOption->customData == OCC::ButtonStyleName::Primary;
-        }
-        return false;
+        return getButtonStyleNameByObjectName(widget);
     }
+
+    static OCC::ButtonStyleName determineButtonStyleName(const QWidget *widget, const CustomStyleOption *option)
+    {
+        return option->customData;
+    }
+
+    static OCC::ButtonStyleName getButtonStyleNameByProperty(const QVariant propertyValue)
+    {
+        QString buttonType = propertyValue.toString();
+        
+        if (buttonType == "primary") {
+            return OCC::ButtonStyleName::Primary;
+        } else {
+            return OCC::ButtonStyleName::Secondary;
+        }
+    }
+
+static OCC::ButtonStyleName getButtonStyleNameByObjectName(const QWidget *widget)
+{
+    static const QMap<QString, OCC::ButtonStyleName> buttonStyleMap = {
+        {"qt_wizard_finish", OCC::ButtonStyleName::Primary}
+    };
+
+    QString buttonName = widget->objectName();
+    return buttonStyleMap.value(buttonName, OCC::ButtonStyleName::Secondary);
+}
 };
 
 void PushButtonStyleHelper::setupPainterForShape(const QStyleOptionButton *option, QPainter *painter, const QWidget *widget)
