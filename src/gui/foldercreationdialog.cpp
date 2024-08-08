@@ -16,6 +16,7 @@
 #include "ui_foldercreationdialog.h"
 #include "ionostheme.h"
 #include "sesButton.h"
+#include "buttonStyle.h"
 
 #include <limits>
 
@@ -23,6 +24,7 @@
 #include <QMessageBox>
 #include <QLoggingCategory>
 #include <QHBoxLayout>
+#include <QMetaType>
 
 namespace OCC {
 
@@ -33,6 +35,8 @@ FolderCreationDialog::FolderCreationDialog(const QString &destination, QWidget *
     , ui(new Ui::FolderCreationDialog)
     , _destination(destination)
 {
+    qRegisterMetaType<OCC::ButtonStyleName>("OCC::ButtonStyleName");
+
     ui->setupUi(this);
     setWindowTitle(tr("%1 Create new folder").arg(Theme::instance()->appNameGUI()));
     customizeStyle();

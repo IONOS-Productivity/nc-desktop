@@ -3,6 +3,7 @@
 #define _BUTTONSTYLE_H
 
 #include <QString>
+#include <QMetaType>
 #include "ionostheme.h"
 #include "sesButton.h"
 
@@ -12,6 +13,9 @@ enum class ButtonStyleName {
     Primary,
     Secondary,
 };
+OCSYNC_EXPORT Q_NAMESPACE;
+Q_ENUM_NS(ButtonStyleName); 
+Q_DECLARE_METATYPE(OCC::ButtonStyleName);
 
 class ButtonStyle 
 {
@@ -208,7 +212,5 @@ public:
         return OCC::IonosTheme::black();
     }
 };
-
-
 }
 #endif // _BUTTONSTYLE_H
