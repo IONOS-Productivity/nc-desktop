@@ -32,7 +32,7 @@ private slots:
 
 private:
     void setupTableReadOnlyItems();
-    void customizeStyle();
+    void customizeIgnoreListDialogStyle();
     QString readOnlyTooltip;
     Ui::IgnoreListTableWidget *ui;
 };

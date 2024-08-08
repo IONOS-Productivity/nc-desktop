@@ -22,7 +22,7 @@ IgnoreListTableWidget::IgnoreListTableWidget(QWidget *parent)
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     ui->setupUi(this);
 
-    customizeStyle();
+    customizeIgnoreListDialogStyle();
 
     ui->descriptionLabel->setText(tr("Files or folders that match this pattern will not be synchronized.\n\n"
                                      "Objects that are allowed to be deleted will be deleted if they would"
@@ -173,7 +173,7 @@ int IgnoreListTableWidget::addPattern(const QString &pattern, bool deletable, bo
     return newRow;
 }
 
-void IgnoreListTableWidget::customizeStyle(){
+void IgnoreListTableWidget::customizeIgnoreListDialogStyle(){
     ui->tableWidget->setMinimumSize(374, 424);
     ui->tableWidget->horizontalHeader()->setStyleSheet(
             QStringLiteral("QHeaderView::section { background-color: %1; border-bottom: none;}").arg(IonosTheme::white()));
