@@ -13,21 +13,29 @@
 class CustomStyleOption : public QStyleOptionButton {
 public:
 
-    CustomStyleOption(OCC::ButtonStyleName type = OCC::ButtonStyleName::Primary)
-        : QStyleOptionButton(Version)
+    CustomStyleOption(OCC::ButtonStyleName name = OCC::ButtonStyleName::Primary)
+        : QStyleOptionButton(Version), customData(name)
     {
-        customData = type;
+        this->init(Type, Version);
     }
 
     CustomStyleOption(const CustomStyleOption &other)
         : QStyleOptionButton(other)
         , customData(other.customData)
     {
+        this->init(Type, Version);
     }
 
     OCC::ButtonStyleName customData;
 
+    enum { Type = SO_CustomBase + 1 }; // Unique type
     enum { Version = 1 }; // Custom version value
+
+    private:
+    void init(int type, int version) {
+        this->type = type;
+        this->version = version;
+    }
 };
 namespace OCC {
 
