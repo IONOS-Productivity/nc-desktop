@@ -19,7 +19,7 @@ IgnoreListTableWidget::IgnoreListTableWidget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::IgnoreListTableWidget)
 {
-    setWindowFlags(windowFlags() & Qt::WindowTitleHint | Qt::WindowCloseButtonHint);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     ui->setupUi(this);
 
     customizeStyle();
