@@ -560,15 +560,14 @@ void AccountSettings::openIgnoredFilesDialog(const QString &absFolderPath)
 }
 
 void AccountSettings::customizeButtonBox(QDialogButtonBox *buttonBox){
-    buttonBox->setContentsMargins(0, 0, 19, 0);
     buttonBox->layout()->setSpacing(16);
+    buttonBox->setContentsMargins(0,0,11,10);
 
     const auto okButton = buttonBox->button(QDialogButtonBox::Ok);
-    const auto cancelButton = buttonBox->button(QDialogButtonBox::Cancel);
     okButton->setStyleSheet(QStringLiteral("QPushButton") + SesButton::rawPrimaryStyle());
     okButton->setMinimumSize(80, 40);
-    cancelButton->setStyleSheet(QStringLiteral("QPushButton") + SesButton::rawSecondaryStyle());
-    cancelButton->setMinimumSize(80, 40);
+
+    buttonBox->button(QDialogButtonBox::Cancel)->setMinimumSize(80, 40);
 }
 
 void AccountSettings::slotSubfolderContextMenuRequested(const QModelIndex &index, const QPoint &pos)

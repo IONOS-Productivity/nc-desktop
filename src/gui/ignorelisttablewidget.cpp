@@ -174,7 +174,7 @@ int IgnoreListTableWidget::addPattern(const QString &pattern, bool deletable, bo
 }
 
 void IgnoreListTableWidget::customizeStyle(){
-    ui->tableWidget->setFixedSize(374, 424);
+    ui->tableWidget->setMinimumSize(374, 424);
     ui->tableWidget->horizontalHeader()->setStyleSheet(
             QStringLiteral("QHeaderView::section { background-color: %1; border-bottom: none;}").arg(IonosTheme::white()));
 }
