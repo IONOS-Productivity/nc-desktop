@@ -49,7 +49,9 @@ int sesStyle::pixelMetric(PixelMetric metric, const QStyleOption *option, const 
     case PM_ButtonShiftHorizontal:
     case PM_ButtonShiftVertical:
         return 0; // no shift
-
+    case PM_ButtonMargin:
+        return int(10);
+        break;
     default:
         return super::pixelMetric(metric, option, widget);
     }
@@ -147,11 +149,11 @@ int sesStyle::styleHint(StyleHint stylehint, const QStyleOption *option, const Q
 }
 
 QSize sesStyle::sizeFromContents(ContentsType type, const QStyleOption *option, const QSize &contentsSize, const QWidget *widget) const
-{
+{ 
     switch (type) {
     case CT_PushButton:
         if (const auto *buttonOption = qstyleoption_cast<const QStyleOptionButton *>(option)) {
-            return mPushButtonStyleHelper->sizeFromContents(buttonOption, contentsSize, widget);
+            return mPushButtonStyleHelper->sizeFromContents(buttonOption, contentsSize, widget, pixelMetric(PM_ButtonMargin, buttonOption, widget));
         }
         break;
     default:

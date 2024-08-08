@@ -119,13 +119,12 @@ void PushButtonStyleHelper::drawButtonShape(const QStyleOptionButton *option, QP
     painter->restore();
 }
 
-QSize PushButtonStyleHelper::sizeFromContents(const QStyleOptionButton *option, QSize contentsSize, const QWidget *widget) const
+QSize PushButtonStyleHelper::sizeFromContents(const QStyleOptionButton *option, QSize contentsSize, const QWidget *widget, int margin) const
 {
     Q_UNUSED(option)
     Q_UNUSED(widget)
-    const int margin = 11; // usually this comes from PM_ButtonMargin
     const int frameWidth = 2; // due to pen width 1 in drawButtonBevel, on each side
-    return QSize(qMax(80, contentsSize.width() + 2 * margin + frameWidth), contentsSize.height() + 2 * margin + frameWidth);
+    return QSize(qMax(80, contentsSize.width() + 2 * margin + frameWidth), qMax(40, contentsSize.height() + 2 * margin + frameWidth));
 }
 
 void PushButtonStyleHelper::adjustTextPalette(QStyleOptionButton *option, const QWidget *widget) const
