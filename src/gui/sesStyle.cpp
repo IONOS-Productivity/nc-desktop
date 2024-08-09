@@ -50,8 +50,7 @@ int sesStyle::pixelMetric(PixelMetric metric, const QStyleOption *option, const 
     case PM_ButtonShiftVertical:
         return 0; // no shift
     case PM_ButtonMargin:
-        return int(10);
-        break;
+        return 16;
     default:
         return super::pixelMetric(metric, option, widget);
     }
