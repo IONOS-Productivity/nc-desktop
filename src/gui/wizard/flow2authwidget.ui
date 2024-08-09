@@ -131,17 +131,18 @@
                                 </spacer>
                             </item>
                             <item>
-                                <layout class="QVBoxLayout" name="verticalLayout_2">
-                                    <property name="topMargin">
-                                        <number>0</number>
+                                <widget class="QPushButton" name="copyLinkButton">
+                                    <property name="text">
+                                        <string>Copy Link</string>
                                     </property>
-                                    <item>
-                                        <widget class="OCC::LinkLabel" name="copyLinkLabel" native="true" />
-                                    </item>
-                                    <item>
-                                        <widget class="OCC::LinkLabel" name="openLinkLabel" native="true" />
-                                    </item>
-                                </layout>
+                                </widget>
+                            </item>
+                            <item>
+                                <widget class="QPushButton" name="openLinkButton">
+                                    <property name="text">
+                                        <string>Reopen Browser</string>
+                                    </property>
+                                </widget>
                             </item>
                             <item>
                                 <spacer name="horizontalSpacer">
