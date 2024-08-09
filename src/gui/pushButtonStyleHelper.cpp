@@ -124,7 +124,7 @@ QSize PushButtonStyleHelper::sizeFromContents(const QStyleOptionButton *option, 
     Q_UNUSED(option)
     Q_UNUSED(widget)
     const int frameWidth = 2; // due to pen width 1 in drawButtonBevel, on each side
-    return QSize(qMax(80, contentsSize.width() + 2 * margin + frameWidth), qMax(40, contentsSize.height() + 2 * margin + frameWidth));
+    return QSize(qMax(80, contentsSize.width() + 2 * margin + frameWidth), qMin(40, contentsSize.height() + 2 * margin + frameWidth));
 }
 
 void PushButtonStyleHelper::adjustTextPalette(QStyleOptionButton *option, const QWidget *widget) const
