@@ -52,38 +52,29 @@
                                 <enum>Qt::AlignTop</enum>
                             </property>
                             <item>
-                                <widget class="OCC::SesButton" name="addPushButton">
+                                <widget class="QPushButton" name="addPushButton">
                                     <property name="enabled">
                                         <bool>true</bool>
                                     </property>
                                     <property name="text">
                                         <string>Add</string>
                                     </property>
-                                    <property name="buttonStyle">
-                                        <enum>OCC::ButtonStyleName::Primary</enum>
-                                    </property>
                                 </widget>
                             </item>
                             <item>
-                                <widget class="OCC::SesButton" name="removePushButton">
+                                <widget class="QPushButton" name="removePushButton">
                                     <property name="enabled">
                                         <bool>true</bool>
                                     </property>
                                     <property name="text">
                                         <string>Remove</string>
                                     </property>
-                                    <property name="buttonStyle">
-                                        <enum>OCC::ButtonStyleName::Secondary</enum>
-                                    </property>
                                 </widget>
                             </item>
                             <item>
-                                <widget class="OCC::SesButton" name="removeAllPushButton">
+                                <widget class="QPushButton" name="removeAllPushButton">
                                     <property name="text">
                                         <string>Remove all</string>
-                                    </property>
-                                    <property name="buttonStyle">
-                                        <enum>OCC::ButtonStyleName::Primary</enum>
                                     </property>
                                 </widget>
                             </item>

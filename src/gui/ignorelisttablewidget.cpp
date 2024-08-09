@@ -30,14 +30,21 @@ IgnoreListTableWidget::IgnoreListTableWidget(QWidget *parent)
                                      "prevent a folder from being deleted. "
                                      "This is useful for metadata."));
 
-    ui->removePushButton->setEnabled(false);
+
 
     connect(ui->tableWidget,         &QTableWidget::itemSelectionChanged,
             this, &IgnoreListTableWidget::slotItemSelectionChanged);
+
+    ui->removePushButton->setEnabled(false);
+    ui->removePushButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Secondary));
     connect(ui->removePushButton,    &QAbstractButton::clicked,
             this, &IgnoreListTableWidget::slotRemoveCurrentItem);
+
+    ui->addPushButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
     connect(ui->addPushButton,       &QAbstractButton::clicked,
             this, &IgnoreListTableWidget::slotAddPattern);
+
+    ui->removeAllPushButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
     connect(ui->removeAllPushButton, &QAbstractButton::clicked,
             this, &IgnoreListTableWidget::slotRemoveAllItems);
 
