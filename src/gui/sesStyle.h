@@ -16,6 +16,7 @@
  * See the LICENSE.txt file shipped along with this file for the license.
  *
  *************************************************************************/
+#pragma once
 
 #include <QProxyStyle>
 #include <memory>
