@@ -564,7 +564,11 @@ void AccountSettings::customizeButtonBox(QDialogButtonBox *buttonBox){
     buttonBox->setContentsMargins(0,0,11,10);
 
     const auto okButton = buttonBox->button(QDialogButtonBox::Ok);
-    okButton->setStyleSheet(QStringLiteral("QPushButton") + SesButton::rawPrimaryStyle());
+    okButton->setStyleSheet(
+        QStringLiteral("QPushButton:hover {background-color: %1;} QPushButton:pressed {background-color: %2;}")
+        .arg(IonosTheme::buttonPrimaryHoverColor(), IonosTheme::buttonPrimaryPressedColor()) +
+        "QPushButton" + SesButton::rawPrimaryStyle()
+    );
     okButton->setMinimumSize(80, 40);
 
     buttonBox->button(QDialogButtonBox::Cancel)->setMinimumSize(80, 40);
