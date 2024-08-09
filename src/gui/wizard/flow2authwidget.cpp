@@ -224,6 +224,9 @@ void Flow2AuthWidget::customizeStyle()
     _ui.openLinkButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary)); 
     
     _ui.copyLinkButton->setText(tr("Copy Link"));
+
+    _ui.mainLayoutVBox->setContentsMargins(32, 0, 32, 0);
+    _ui.innerLayoutVBox->setSpacing(16);
 }
 
 } // namespace OCC

@@ -25,9 +25,9 @@
         <property name="windowTitle">
             <string>Browser Authentication</string>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout">
+        <layout class="QVBoxLayout" name="mainLayoutVBox">
             <item>
-                <spacer name="verticalSpacer_3">
+                <spacer name="topMarginSpacer">
                     <property name="orientation">
                         <enum>Qt::Vertical</enum>
                     </property>
@@ -37,13 +37,13 @@
                     <property name="sizeHint" stdset="0">
                         <size>
                             <width>20</width>
-                            <height>80</height>
+                            <height>85</height>
                         </size>
                     </property>
                 </spacer>
             </item>
             <item>
-                <layout class="QVBoxLayout" name="verticalLayout_3">
+                <layout class="QVBoxLayout" name="innerLayoutVBox">
                     <property name="topMargin">
                         <number>0</number>
                     </property>
@@ -102,7 +102,7 @@
                     <item>
                         <layout class="QHBoxLayout" name="progressLayout" />
                     </item>
-                    <item>
+                <item>
                         <layout class="QHBoxLayout" name="horizontalLayout">
                             <property name="leftMargin">
                                 <number>0</number>
