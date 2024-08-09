@@ -225,8 +225,6 @@ void Flow2AuthWidget::customizeStyle()
     _ui.openLinkButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary)); 
     
     _ui.copyLinkButton->setText(tr("Copy Link"));
-
-    WizardCommon::customizeHintLabel(_ui.statusLabel);
 }
 
 } // namespace OCC

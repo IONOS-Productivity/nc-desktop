@@ -62,13 +62,6 @@
                     </item>
                     <item>
                         <widget class="QLabel" name="label">
-                            <property name="font">
-                                <font>
-                                    <pointsize>12</pointsize>
-                                    <weight>75</weight>
-                                    <bold>true</bold>
-                                </font>
-                            </property>
                             <property name="text">
                                 <string>Switch to your browser to connect your account</string>
                             </property>
