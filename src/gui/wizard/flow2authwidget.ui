@@ -87,15 +87,12 @@
                         </widget>
                     </item>
                     <item>
-                        <widget class="QLabel" name="errorLabel">
-                            <property name="text">
+                        <widget class="OCC::sesSnackBar" name="errorSnackbar" >
+                            <property name="caption">
+                                <string>Error</string>
+                            </property>
+                            <property name="message">
                                 <string>An error occurred while connecting. Please try again.</string>
-                            </property>
-                            <property name="textFormat">
-                                <enum>Qt::PlainText</enum>
-                            </property>
-                            <property name="alignment">
-                                <set>Qt::AlignCenter</set>
                             </property>
                         </widget>
                     </item>

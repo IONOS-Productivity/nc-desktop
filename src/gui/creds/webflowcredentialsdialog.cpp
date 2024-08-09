@@ -113,7 +113,7 @@ void WebFlowCredentialsDialog::setError(const QString &error) {
     slotShowSettingsDialog();
 
     if (_useFlow2 && _flow2AuthWidget) {
-        _flow2AuthWidget->setError(error);
+        _flow2AuthWidget->setError("Error", error);
         return;
     }
 

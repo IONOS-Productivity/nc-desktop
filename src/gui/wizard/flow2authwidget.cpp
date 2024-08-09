@@ -42,7 +42,6 @@ Flow2AuthWidget::Flow2AuthWidget(QWidget *parent)
     _ui.setupUi(this);
 
     WizardCommon::initErrorLabel(_ui.errorLabel);
-    _ui.errorLabel->setTextFormat(Qt::RichText);
     qRegisterMetaType<OCC::ButtonStyleName>("OCC::ButtonStyleName");
 
     connect(_ui.copyLinkButton, &QPushButton::clicked, this, &Flow2AuthWidget::slotCopyLinkToClipboard);
@@ -96,16 +95,14 @@ void Flow2AuthWidget::slotAuthResult(Flow2Auth::Result r, const QString &errorSt
     switch (r) {
     case Flow2Auth::NotSupported:
         /* Flow2Auth can't open browser */
-        _ui.errorLabel->setText(tr("Unable to open the Browser, please copy the link to your Browser."));
-        _ui.errorLabel->show();
+        setError(tr("Error"),tr("Unable to open the Browser, please copy the link to your Browser."));
         break;
     case Flow2Auth::Error:
         /* Error while getting the access token.  (Timeout, or the server did not accept our client credentials */
-        _ui.errorLabel->setText(errorString);
-        _ui.errorLabel->show();
+        setError(tr("Error"), errorString);
         break;
     case Flow2Auth::LoggedIn: {
-        _ui.errorLabel->hide();
+        _ui.errorSnackbar->hide();
         break;
     }
     }
@@ -113,12 +110,13 @@ void Flow2AuthWidget::slotAuthResult(Flow2Auth::Result r, const QString &errorSt
     emit authResult(r, errorString, user, appPassword);
 }
 
-void Flow2AuthWidget::setError(const QString &error) {
-    if (error.isEmpty()) {
-        _ui.errorLabel->hide();
+void Flow2AuthWidget::setError(const QString &caption, const QString &message) {
+    if (message.isEmpty()) {
+        _ui.errorSnackbar->hide();
     } else {
-        _ui.errorLabel->setText(error);
-        _ui.errorLabel->show();
+        _ui.errorSnackbar->setCaption(caption);
+        _ui.errorSnackbar->setMessage(message);
+        _ui.errorSnackbar->show();
     }
 }
 
@@ -129,8 +127,8 @@ Flow2AuthWidget::~Flow2AuthWidget() {
 
 void Flow2AuthWidget::slotOpenBrowser()
 {
-    if (_ui.errorLabel)
-        _ui.errorLabel->hide();
+    if (_ui.errorSnackbar)
+        _ui.errorSnackbar->hide();
 
     if (_asyncAuth)
         _asyncAuth->openBrowser();
@@ -138,8 +136,8 @@ void Flow2AuthWidget::slotOpenBrowser()
 
 void Flow2AuthWidget::slotCopyLinkToClipboard()
 {
-    if (_ui.errorLabel)
-        _ui.errorLabel->hide();
+    if (_ui.errorSnackbar)
+        _ui.errorSnackbar->hide();
 
     if (_asyncAuth)
         _asyncAuth->copyLinkToClipboard();
