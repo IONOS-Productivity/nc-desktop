@@ -72,6 +72,9 @@
                                     <property name="text">
                                         <string>Remove</string>
                                     </property>
+                                    <property name="buttonStyle">
+                                        <enum>OCC::ButtonStyleName::Secondary</enum>
+                                    </property>
                                 </widget>
                             </item>
                             <item>
