@@ -88,6 +88,7 @@ void WelcomePage::setupSlideShow()
 
 void WelcomePage::setupLoginButton()
 {
+    _ui->loginButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
     connect(_ui->loginButton, &QPushButton::clicked, this, [this](bool /*checked*/) {
         _nextPage = WizardCommon::Page_ServerSetup;
         _ocWizard->next();
