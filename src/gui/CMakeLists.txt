@@ -199,6 +199,8 @@ set(client_SRCS
     linkButton.cpp
     sesButton.h
     sesButton.cpp
+    sesSnackBar.h
+    sesSnackBar.cpp
     fileactivitylistmodel.h
     fileactivitylistmodel.cpp
     filedetails/datefieldbackend.h
