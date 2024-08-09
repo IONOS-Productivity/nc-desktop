@@ -94,6 +94,22 @@
                         </widget>
                     </item>
                     <item>
+                        <widget class="QLabel" name="errorLabel">
+                            <property name="text">
+                                <string>An error occurred while connecting. Please try again.</string>
+                            </property>
+                            <property name="textFormat">
+                                <enum>Qt::PlainText</enum>
+                            </property>
+                            <property name="alignment">
+                                <set>Qt::AlignCenter</set>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <layout class="QHBoxLayout" name="progressLayout" />
+                    </item>
+                    <item>
                         <layout class="QHBoxLayout" name="horizontalLayout">
                             <property name="leftMargin">
                                 <number>0</number>
@@ -141,22 +157,6 @@
                                 </spacer>
                             </item>
                         </layout>
-                    </item>
-                    <item>
-                        <widget class="QLabel" name="errorLabel">
-                            <property name="text">
-                                <string>An error occurred while connecting. Please try again.</string>
-                            </property>
-                            <property name="textFormat">
-                                <enum>Qt::PlainText</enum>
-                            </property>
-                            <property name="alignment">
-                                <set>Qt::AlignCenter</set>
-                            </property>
-                        </widget>
-                    </item>
-                    <item>
-                        <layout class="QHBoxLayout" name="progressLayout" />
                     </item>
                 </layout>
             </item>
