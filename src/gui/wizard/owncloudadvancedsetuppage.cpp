@@ -615,7 +615,7 @@ void OwncloudAdvancedSetupPage::customizeStyle()
     _ui.locationsVBox->setContentsMargins(0, 0, 0, 0);
     _ui.locationsVBox->setSpacing(5);
 
-    _ui.resolutionWidgetLayout->setContentsMargins(32, 16, 0, 0);
+    _ui.resolutionWidgetLayout->setContentsMargins(0, 0, 0, 0);
 
     styleSyncLogo();
     styleLocalFolderLabel();
