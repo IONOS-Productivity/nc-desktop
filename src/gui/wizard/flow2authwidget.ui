@@ -61,6 +61,22 @@
                         </widget>
                     </item>
                     <item>
+                        <spacer name="topMarginSpacer">
+                            <property name="orientation">
+                                <enum>Qt::Vertical</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>QSizePolicy::Fixed</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                                <size>
+                                    <width>0</width>
+                                    <height>8</height>
+                                </size>
+                            </property>
+                        </spacer>
+                    </item>
+                    <item>
                         <widget class="QLabel" name="label">
                             <property name="text">
                                 <string>Switch to your browser to connect your account</string>
@@ -99,7 +115,7 @@
                     <item>
                         <layout class="QHBoxLayout" name="progressLayout" />
                     </item>
-                <item>
+                    <item>
                         <layout class="QHBoxLayout" name="horizontalLayout">
                             <property name="leftMargin">
                                 <number>0</number>
@@ -152,27 +168,17 @@
                 </layout>
             </item>
             <item>
-                <spacer name="verticalSpacer_2">
+                <spacer name="bottomMarginSpacer">
                     <property name="orientation">
                         <enum>Qt::Vertical</enum>
                     </property>
-                    <property name="sizeHint" stdset="0">
-                        <size>
-                            <width>20</width>
-                            <height>20</height>
-                        </size>
-                    </property>
-                </spacer>
-            </item>
-            <item>
-                <spacer name="verticalSpacer">
-                    <property name="orientation">
-                        <enum>Qt::Vertical</enum>
+                    <property name="sizeType">
+                        <enum>QSizePolicy::Fixed</enum>
                     </property>
                     <property name="sizeHint" stdset="0">
                         <size>
-                            <width>20</width>
-                            <height>80</height>
+                            <width>0</width>
+                            <height>32</height>
                         </size>
                     </property>
                 </spacer>
