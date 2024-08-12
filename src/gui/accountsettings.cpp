@@ -19,7 +19,7 @@
 #include "ui_accountsettings.h"
 
 #include "IonosTheme.h"
-#include "SesButtonStyle.h"
+#include "buttonStyle.h"
 #include "account.h"
 #include "accountmanager.h"
 #include "accountstate.h"
@@ -60,6 +60,7 @@
 #include <QTreeView>
 #include <QVBoxLayout>
 #include <QVariant>
+#include <QMetaType>
 
 #ifdef BUILD_FILE_PROVIDER_MODULE
 #include "macOS/fileprovider.h"
@@ -564,11 +565,8 @@ void AccountSettings::customizeButtonBox(QDialogButtonBox *buttonBox){
     buttonBox->setContentsMargins(0,0,11,10);
 
     const auto okButton = buttonBox->button(QDialogButtonBox::Ok);
-    okButton->setStyleSheet(
-        QStringLiteral("QPushButton:hover {background-color: %1;} QPushButton:pressed {background-color: %2;}")
-        .arg(IonosTheme::buttonPrimaryHoverColor(), IonosTheme::buttonPrimaryPressedColor()) +
-        "QPushButton" + SesButtonStyle::rawPrimaryStyle()
-    );
+
+    okButton->setProperty("buttonStyle", QVariant::fromValue(ButtonStyleName::Primary));    
     okButton->setMinimumSize(80, 40);
 
     buttonBox->button(QDialogButtonBox::Cancel)->setMinimumSize(80, 40);
