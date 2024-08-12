@@ -326,7 +326,6 @@ void OwncloudAdvancedSetupPage::updateStatus()
     _ui.lFreeSpace->setText(QString(tr("%1 free space", "%1 gets replaced with the size and a matching unit. Example: 3 MB or 5 GB")).arg(lfreeSpaceStr));
 
     _ui.syncModeLabel->setText(t);
-    _ui.syncModeLabel->setFixedHeight(_ui.syncModeLabel->sizeHint().height());
 
     qint64 rSpace = _ui.rSyncEverything->isChecked() ? _rSize : _rSelectedSize;
 
