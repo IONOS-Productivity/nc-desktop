@@ -13,7 +13,7 @@
  */
 
 #include "foldercreationdialog.h"
-#include "SesButtonStyle.h"
+ 
 #include "buttonStyle.h"
 #include "ionostheme.h"
 #include "ui_foldercreationdialog.h"
@@ -25,6 +25,7 @@
 #include <QLoggingCategory>
 #include <QHBoxLayout>
 #include <QMetaType>
+#include <QPushButton>
 
 namespace OCC {
 

@@ -14,7 +14,7 @@
 
 #include "flow2authwidget.h"
 
-#include "SesButtonStyle.h"
+ 
 #include "account.h"
 #include "buttonStyle.h"
 #include "common/utility.h"
@@ -44,7 +44,7 @@ Flow2AuthWidget::Flow2AuthWidget(QWidget *parent)
     qRegisterMetaType<OCC::ButtonStyleName>("OCC::ButtonStyleName");
 
     _ui.errorSnackbar->setVisible(false);
-    
+
     connect(_ui.copyLinkButton, &QPushButton::clicked, this, &Flow2AuthWidget::slotCopyLinkToClipboard);
     connect(_ui.openLinkButton, &QPushButton::clicked, this, &Flow2AuthWidget::slotOpenBrowser);
 

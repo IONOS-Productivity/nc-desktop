@@ -10,7 +10,7 @@
 
 #include "pushButtonStyleHelper.h"
 
-#include "SesButtonStyle.h"
+ 
 #include "buttonStyle.h"
 #include "ionostheme.h"
 #include <QMap>
@@ -25,14 +25,7 @@ public:
     static OCC::ButtonStyle& getButtonStyle(const QWidget *widget, const QStyleOptionButton *option)
     {
         OCC::ButtonStyleName buttonStyleName;
-        if (const CustomStyleOption *optionButton = qstyleoption_cast<const CustomStyleOption *>(option)) 
-        {
-            buttonStyleName = determineButtonStyleName(widget, optionButton);
-        } 
-        else 
-        {
-            buttonStyleName = determineButtonStyleName(widget, option);
-        }
+        buttonStyleName = determineButtonStyleName(widget, option);
 
         switch (buttonStyleName)
         {
@@ -53,11 +46,6 @@ public:
         }
 
         return getButtonStyleNameByObjectName(widget);
-    }
-
-    static OCC::ButtonStyleName determineButtonStyleName(const QWidget *widget, const CustomStyleOption *option)
-    {
-        return option->customData;
     }
 
     static OCC::ButtonStyleName getButtonStyleNameByObjectName(const QWidget *widget)

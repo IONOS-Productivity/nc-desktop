@@ -1,9 +1,10 @@
 #include "ignorelisttablewidget.h"
-#include "SesButtonStyle.h"
+ 
 #include "ui_ignorelisttablewidget.h"
 
 #include "folderman.h"
 
+#include "buttonStyle.h"
 #include <QFile>
 #include <QInputDialog>
 #include <QDialogButtonBox>

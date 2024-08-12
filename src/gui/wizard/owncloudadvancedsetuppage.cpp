@@ -23,7 +23,7 @@
 
 #include "QProgressIndicator.h"
 
-#include "SesButtonStyle.h"
+ #include "buttonStyle.h"
 #include "account.h"
 #include "configfile.h"
 #include "creds/abstractcredentials.h"

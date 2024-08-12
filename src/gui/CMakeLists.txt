@@ -197,8 +197,6 @@ set(client_SRCS
     syncconflictsmodel.cpp
     linkButton.h
     linkButton.cpp
-    SesButtonStyle.h
-    SesButtonStyle.cpp
     sesSnackBar.h
     sesSnackBar.cpp
     fileactivitylistmodel.h

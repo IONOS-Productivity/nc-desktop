@@ -19,7 +19,7 @@
 #include "theme.h"
 #include "owncloudgui.h"
 
-#include "SesButtonStyle.h"
+ 
 #include "ionostheme.h"
 #include "wizard/flow2authcredspage.h"
 #include "wizard/owncloudadvancedsetuppage.h"

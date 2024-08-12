@@ -2,7 +2,7 @@
 #ifndef _BUTTONSTYLE_H
 #define _BUTTONSTYLE_H
 
-#include "SesButtonStyle.h"
+ 
 #include "ionostheme.h"
 #include <QMetaType>
 #include <QString>

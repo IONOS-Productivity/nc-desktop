@@ -13,7 +13,7 @@
  */
 
 #include "welcomepage.h"
-#include "SesButtonStyle.h"
+#include "buttonStyle.h"
 #include "guiutility.h"
 #include "theme.h"
 #include "ui_welcomepage.h"
