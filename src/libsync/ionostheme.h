@@ -21,6 +21,10 @@ public:
         return QString(Theme::themePrefix) + QStringLiteral("ses/ses-syncArrows.svg");
     }
 
+    static QString questionCircleIcon() {
+        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-questionCircle.svg");
+    }
+
     static QString toolbarActionBorderRadius() {
         return "8px";
     }

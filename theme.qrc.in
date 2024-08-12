@@ -258,5 +258,6 @@
         <file>theme/ses/ses-syncArrows.svg</file>
         <file>theme/ses/ses-external.svg</file>
         <file>theme/ses/ses-snackBarErrorIcon.svg</file>
+        <file>theme/ses/ses-questionCircle.svg</file>
     </qresource>
 </RCC>
