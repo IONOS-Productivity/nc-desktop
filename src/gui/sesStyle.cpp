@@ -76,36 +76,20 @@ void sesStyle::drawControl(ControlElement element, const QStyleOption *option, Q
     switch (element) {
     case CE_PushButton:
     {
-        if (const CustomStyleOption *customOption = qstyleoption_cast<const CustomStyleOption *>(option)) 
-        {
-            drawButton(customOption, painter, widget);
-        } 
-        else if (const QStyleOptionButton *btn = qstyleoption_cast<const QStyleOptionButton *>(option)) 
+        if (const auto *btn = qstyleoption_cast<const QStyleOptionButton *>(option))
         {
              drawButton(btn, painter, widget);
         }
         return;
     }
     case CE_PushButtonBevel:
-        if (const CustomStyleOption *optionButton = qstyleoption_cast<const CustomStyleOption *>(option)) 
-        {
-            mPushButtonStyleHelper->drawButtonShape(optionButton, painter, widget);
-        } 
-        else if (const QStyleOptionButton *optionButton = qstyleoption_cast<const QStyleOptionButton *>(option)) 
+        if (const auto *optionButton = qstyleoption_cast<const QStyleOptionButton *>(option))
         {
              mPushButtonStyleHelper->drawButtonShape(optionButton, painter, widget);
         }
         return;
     case CE_PushButtonLabel:
-        if (const CustomStyleOption *optionButton = qstyleoption_cast<const CustomStyleOption *>(option)) {
-
-            CustomStyleOption customStyleCopy = *optionButton;
-            mPushButtonStyleHelper->adjustTextPalette(&customStyleCopy, widget);
-            QStyleOptionButton buttonStyleCopy = customStyleCopy;
-            QCommonStyle::drawControl(element, &buttonStyleCopy, painter, widget);
-
-        } 
-        else if (const QStyleOptionButton *optionButton = qstyleoption_cast<const QStyleOptionButton *>(option)) 
+        if (const auto *optionButton = qstyleoption_cast<const QStyleOptionButton *>(option))
         {
             QStyleOptionButton customStyleCopy = *optionButton;
             mPushButtonStyleHelper->adjustTextPalette(&customStyleCopy, widget);
