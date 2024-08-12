@@ -117,7 +117,7 @@ public:
         return "#000000"; 
     }
 
-    static QString welcomeBackgroundColor() {
+    static QString dialogBackgroundColor() {
         return "#FAFAFA"; 
     }
 

@@ -417,7 +417,7 @@ void OwncloudWizard::customizeStyle()
 
     // Set background colors
     auto wizardPalette = palette();
-    const auto backgroundColor = QColor(IonosTheme::welcomeBackgroundColor());
+    const auto backgroundColor = QColor(IonosTheme::dialogBackgroundColor());
     
     // Set Color of upper part
     wizardPalette.setColor(QPalette::Base, backgroundColor);
