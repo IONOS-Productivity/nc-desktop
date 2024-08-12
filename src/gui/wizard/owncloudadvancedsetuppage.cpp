@@ -590,6 +590,9 @@ void OwncloudAdvancedSetupPage::customizeStyle()
         }
     }
 
+    _ocWizard->setMinimumSize(QSize(626, 515));
+    _ocWizard->setMaximumSize(QSize(626, 600));
+
     _ui.mainHBox->setContentsMargins(0, 0, 0, 0);
     _ui.wSyncStrategySynchronizeEverything->setContentsMargins(0, 0, 0, 0);
     _ui.lVirtualFileSync->setContentsMargins(0, 0, 0, 0);
