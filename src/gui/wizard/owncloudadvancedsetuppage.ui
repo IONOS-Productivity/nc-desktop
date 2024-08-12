@@ -170,6 +170,9 @@
                             <!-- Locations -->
                             <item> 
                                 <layout class="QVBoxLayout" name="locationsVBox">
+                                    <property name="sizeConstraint">
+                                        <enum>QLayout::SetMinimumSize</enum>
+                                    </property>
                                     <item>
                                         <widget class="QLabel" name="lLocal">
                                             <property name="sizePolicy">
@@ -177,6 +180,11 @@
                                                     <horstretch>0</horstretch>
                                                     <verstretch>0</verstretch>
                                                 </sizepolicy>
+                                            </property>
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <height>32</height>
+                                                </size>
                                             </property>
                                             <property name="text">
                                                 <string>&amp;Local Folder</string>
@@ -265,7 +273,12 @@
                                                 </size>
                                             </property>
                                             <property name="sizeType">
-                                                <enum>QSizePolicy::Fixed</enum>
+                                                <enum>QSizePolicy::Preferred</enum>
+                                            </property>
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <height>4</height>
+                                                </size>
                                             </property>
                                         </spacer>
                                     </item>
@@ -276,12 +289,7 @@
                                                     <horstretch>0</horstretch>
                                                     <verstretch>0</verstretch>
                                                 </sizepolicy>
-                                            </property>
-                                            <property name="minimumSize">
-                                                <size>
-                                                    <height>40</height>
-                                                </size>
-                                            </property>
+                                            </property>                                       
                                             <property name="text">
                                                 <string>Choose different folder</string>
                                             </property>
@@ -335,6 +343,9 @@
                                             </property>
                                             <property name="checked">
                                                 <bool>true</bool>
+                                            </property>
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Minimum" vsizetype="Minimum"/>
                                             </property>
                                         </widget>
                                     </item>
