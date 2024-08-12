@@ -344,6 +344,7 @@ void OwncloudAdvancedSetupPage::setResolutionGuiVisible(bool value)
     _ui.syncModeLabel->setVisible(value);
     _ui.rKeepLocal->setVisible(value);
     _ui.cbSyncFromScratch->setVisible(value);
+    _ocWizard->adjustSize();
 }
 
 /* obsolete */
@@ -447,6 +448,7 @@ void OwncloudAdvancedSetupPage::setErrorString(const QString &err)
         _ui.errorLabel->setVisible(true);
         _ui.errorLabel->setText(err);
     }
+    _ocWizard->adjustSize();
     _checking = false;
     emit completeChanged();
 }
