@@ -22,6 +22,7 @@ class ButtonStyle
 protected:
     ButtonStyle()
     {
+        qRegisterMetaType<OCC::ButtonStyleName>("OCC::ButtonStyleName");
     }
     ~ButtonStyle() {}
 

@@ -35,8 +35,6 @@ FolderCreationDialog::FolderCreationDialog(const QString &destination, QWidget *
     , ui(new Ui::FolderCreationDialog)
     , _destination(destination)
 {
-    qRegisterMetaType<OCC::ButtonStyleName>("OCC::ButtonStyleName");
-
     ui->setupUi(this);
     setWindowTitle(tr("%1 Create new folder").arg(Theme::instance()->appNameGUI()));
     customizeStyle();
