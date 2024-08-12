@@ -23,18 +23,18 @@
 
 #include "QProgressIndicator.h"
 
+#include "account.h"
+#include "sesButton.h"
+#include "configfile.h"
+#include "creds/abstractcredentials.h"
+#include "ionostheme.h"
+#include "networkjobs.h"
+#include "selectivesyncdialog.h"
+#include "theme.h"
+#include "wizard/owncloudadvancedsetuppage.h"
 #include "wizard/owncloudwizard.h"
 #include "wizard/owncloudwizardcommon.h"
-#include "wizard/owncloudadvancedsetuppage.h"
-#include "account.h"
-#include "theme.h"
-#include "configfile.h"
-#include "selectivesyncdialog.h"
 #include <folderman.h>
-#include "creds/abstractcredentials.h"
-#include "networkjobs.h"
-#include "wizard/owncloudwizard.h"
-#include "ionostheme.h"
 
 namespace OCC {
 
@@ -75,6 +75,7 @@ OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage(OwncloudWizard *wizard)
     setupCustomization();
 
     connect(_ui.pbSelectLocalFolder, &QAbstractButton::clicked, this, &OwncloudAdvancedSetupPage::slotSelectFolder);
+    _ui.pbSelectLocalFolder->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Secondary));
     setButtonText(QWizard::FinishButton, tr("Connect"));
 
     if (Theme::instance()->enforceVirtualFilesSyncFolder()) {

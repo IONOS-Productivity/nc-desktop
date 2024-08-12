@@ -257,7 +257,7 @@
                                         </spacer>
                                     </item>
                                     <item>
-                                        <widget class="OCC::SesButton" name="pbSelectLocalFolder">                                            
+                                        <widget class="QPushButton" name="pbSelectLocalFolder">
                                             <property name="sizePolicy">
                                                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
                                                     <horstretch>0</horstretch>
@@ -268,9 +268,6 @@
                                                 <size>
                                                     <height>40</height>
                                                 </size>
-                                            </property>
-                                            <property name="buttonStyle">
-                                                <enum>OCC::ButtonStyleName::Secondary</enum>
                                             </property>
                                             <property name="text">
                                                 <string>Choose different folder</string>
