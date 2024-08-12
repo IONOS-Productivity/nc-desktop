@@ -39,13 +39,13 @@ public:
 };
 namespace OCC {
 
-    class SesButton : public QPushButton
+    class SesButtonStyle : public QPushButton
     {
         Q_OBJECT
         Q_PROPERTY(ButtonStyleName buttonStyle READ buttonStyle WRITE setButtonStyle NOTIFY buttonStyleChanged)
 
     public:
-        explicit SesButton(QWidget* parent = nullptr);
+        explicit SesButtonStyle(QWidget* parent = nullptr);
         static QString rawPrimaryStyle();
         static QString rawSecondaryStyle();
         static QString rawDisabledStyle();

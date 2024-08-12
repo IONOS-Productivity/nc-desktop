@@ -1,25 +1,24 @@
-#include "sesButton.h"
 #include "IonosTheme.h"
+#include "SesButtonStyle.h"
 #include "Theme.h"
-
 
 namespace OCC {
 
-    SesButton::SesButton(QWidget* parent)
+    SesButtonStyle::SesButtonStyle(QWidget* parent)
         : QPushButton(parent)
     {
     }
 
-    ButtonStyleName SesButton::buttonStyle() const { return m_buttonStyle; }
+    ButtonStyleName SesButtonStyle::buttonStyle() const { return m_buttonStyle; }
 
-    void SesButton::setButtonStyle(ButtonStyleName style) {
+    void SesButtonStyle::setButtonStyle(ButtonStyleName style) {
         if (m_buttonStyle != style) {
             m_buttonStyle = style;
             emit buttonStyleChanged(m_buttonStyle);
         }
     }
 
-    QString SesButton::rawPrimaryStyle(){
+    QString SesButtonStyle::rawPrimaryStyle(){
         return QStringLiteral(
                         "{"
                         "background-color: %1; color: %2;"
@@ -36,7 +35,7 @@ namespace OCC {
                     );
     }
 
-    QString SesButton::rawSecondaryStyle(){
+    QString SesButtonStyle::rawSecondaryStyle(){
         return QStringLiteral(
                         "{"
                         "background-color: %1; color: %2;"
@@ -55,7 +54,7 @@ namespace OCC {
                     );
     }
 
-    QString SesButton::rawDisabledStyle(){
+    QString SesButtonStyle::rawDisabledStyle(){
         return QStringLiteral(
                         "{"
                         "background-color: %1; color: %2;"
@@ -73,7 +72,7 @@ namespace OCC {
                     );
     }
 
-    void SesButton::updateStyleSheet() {
+    void SesButtonStyle::updateStyleSheet() {
         QString styleSheet;
         switch (m_buttonStyle) {
             case ButtonStyleName::Primary:

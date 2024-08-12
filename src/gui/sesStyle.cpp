@@ -18,8 +18,8 @@
  *************************************************************************/
 
 #include "sesStyle.h"
+#include "SesButtonStyle.h"
 #include "pushButtonStyleHelper.h"
-#include "sesButton.h"
 
 #include <QCheckBox>
 #include <QPushButton>

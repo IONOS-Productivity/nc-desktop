@@ -23,8 +23,8 @@
 
 #include "QProgressIndicator.h"
 
+#include "SesButtonStyle.h"
 #include "account.h"
-#include "sesButton.h"
 #include "configfile.h"
 #include "creds/abstractcredentials.h"
 #include "ionostheme.h"

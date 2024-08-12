@@ -1,6 +1,6 @@
 #include "ignorelisttablewidget.h"
+#include "SesButtonStyle.h"
 #include "ui_ignorelisttablewidget.h"
-#include "sesButton.h"
 
 #include "folderman.h"
 

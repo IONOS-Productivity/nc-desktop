@@ -19,15 +19,15 @@
 #include "theme.h"
 #include "owncloudgui.h"
 
-#include "wizard/owncloudwizard.h"
-#include "wizard/welcomepage.h"
-#include "wizard/owncloudsetuppage.h"
-#include "wizard/owncloudhttpcredspage.h"
-#include "wizard/owncloudadvancedsetuppage.h"
-#include "wizard/webviewpage.h"
-#include "wizard/flow2authcredspage.h"
+#include "SesButtonStyle.h"
 #include "ionostheme.h"
-#include "sesButton.h"
+#include "wizard/flow2authcredspage.h"
+#include "wizard/owncloudadvancedsetuppage.h"
+#include "wizard/owncloudhttpcredspage.h"
+#include "wizard/owncloudsetuppage.h"
+#include "wizard/owncloudwizard.h"
+#include "wizard/webviewpage.h"
+#include "wizard/welcomepage.h"
 
 #include "common/vfs.h"
 

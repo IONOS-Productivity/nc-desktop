@@ -13,10 +13,10 @@
  */
 
 #include "foldercreationdialog.h"
-#include "ui_foldercreationdialog.h"
-#include "ionostheme.h"
-#include "sesButton.h"
+#include "SesButtonStyle.h"
 #include "buttonStyle.h"
+#include "ionostheme.h"
+#include "ui_foldercreationdialog.h"
 
 #include <limits>
 

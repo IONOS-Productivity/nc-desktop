@@ -13,12 +13,12 @@
  */
 
 #include "welcomepage.h"
+#include "SesButtonStyle.h"
 #include "guiutility.h"
 #include "theme.h"
+#include "ui_welcomepage.h"
 #include "wizard/owncloudwizard.h"
 #include "wizard/slideshow.h"
-#include "ui_welcomepage.h"
-#include "sesButton.h"
 
 namespace OCC {
 

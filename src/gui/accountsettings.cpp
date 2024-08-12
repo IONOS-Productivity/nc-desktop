@@ -18,6 +18,8 @@
 #include "qmessagebox.h"
 #include "ui_accountsettings.h"
 
+#include "IonosTheme.h"
+#include "SesButtonStyle.h"
 #include "account.h"
 #include "accountmanager.h"
 #include "accountstate.h"
@@ -38,8 +40,6 @@
 #include "owncloudsetupwizard.h"
 #include "syncresult.h"
 #include "theme.h"
-#include "IonosTheme.h"
-#include "sesButton.h"
 #include "tooltipupdater.h"
 #include "ui_mnemonicdialog.h"
 #include "userinfo.h"
@@ -567,7 +567,7 @@ void AccountSettings::customizeButtonBox(QDialogButtonBox *buttonBox){
     okButton->setStyleSheet(
         QStringLiteral("QPushButton:hover {background-color: %1;} QPushButton:pressed {background-color: %2;}")
         .arg(IonosTheme::buttonPrimaryHoverColor(), IonosTheme::buttonPrimaryPressedColor()) +
-        "QPushButton" + SesButton::rawPrimaryStyle()
+        "QPushButton" + SesButtonStyle::rawPrimaryStyle()
     );
     okButton->setMinimumSize(80, 40);
 

@@ -14,15 +14,15 @@
 
 #include "flow2authwidget.h"
 
-#include "common/utility.h"
+#include "SesButtonStyle.h"
 #include "account.h"
-#include "creds/webflowcredentials.h"
-#include "networkjobs.h"
-#include "wizard/owncloudwizardcommon.h"
-#include "theme.h"
-#include "linklabel.h"
-#include "sesButton.h"
 #include "buttonStyle.h"
+#include "common/utility.h"
+#include "creds/webflowcredentials.h"
+#include "linklabel.h"
+#include "networkjobs.h"
+#include "theme.h"
+#include "wizard/owncloudwizardcommon.h"
 
 #include "QProgressIndicator.h"
 

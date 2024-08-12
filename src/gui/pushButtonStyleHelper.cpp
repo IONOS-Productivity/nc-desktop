@@ -10,15 +10,12 @@
 
 #include "pushButtonStyleHelper.h"
 
+#include "SesButtonStyle.h"
+#include "buttonStyle.h"
+#include "ionostheme.h"
+#include <QMap>
 #include <QPainter>
 #include <QStyleOptionButton>
-#include <QMap>
-#include "ionostheme.h"
-#include "sesButton.h"
-#include "buttonStyle.h"
-
-static const int s_radius = 6;
-
 
 class ButtonStyleStrategy
 {

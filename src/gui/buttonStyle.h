@@ -2,10 +2,10 @@
 #ifndef _BUTTONSTYLE_H
 #define _BUTTONSTYLE_H
 
-#include <QString>
-#include <QMetaType>
+#include "SesButtonStyle.h"
 #include "ionostheme.h"
-#include "sesButton.h"
+#include <QMetaType>
+#include <QString>
 
 namespace OCC{
 
