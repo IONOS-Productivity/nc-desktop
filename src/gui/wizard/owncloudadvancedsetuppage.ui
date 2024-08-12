@@ -297,6 +297,28 @@
                             </item>
                         </layout>
                     </item>
+                    <!-- Spacer  -->
+                    <item>
+                        <spacer name="verticalSpacer">
+                            <property name="orientation">
+                                <enum>Qt::Vertical</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>QSizePolicy::Preferred</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                                <size>
+                                    <width>0</width>
+                                    <height>32</height>
+                                </size>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <height>4</height>
+                                </size>
+                            </property>
+                        </spacer>
+                    </item>
                     <!-- Checkbox Area -->
                     <item>
                         <layout class="QVBoxLayout" name="wSyncStrategy">
@@ -513,6 +535,27 @@
                     </item>
                     <!-- Resolution Area -->
                     <item>
+                        <spacer>
+                            <property name="orientation">
+                                <enum>Qt::Vertical</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>QSizePolicy::Preferred</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                                <size>
+                                    <width>0</width>
+                                    <height>16</height>
+                                </size>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <height>4</height>
+                                </size>
+                            </property>
+                        </spacer>
+                    </item>
+                    <item>
                         <layout class="QVBoxLayout" name="resolutionWidgetLayout">
                             <property name="spacing">
                                 <number>6</number>
@@ -605,6 +648,27 @@
                         </layout>
                     </item>
                     <!-- Error Area -->
+                    <item>
+                        <spacer>
+                            <property name="orientation">
+                                <enum>Qt::Vertical</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>QSizePolicy::Preferred</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                                <size>
+                                    <width>0</width>
+                                    <height>16</height>
+                                </size>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <height>4</height>
+                                </size>
+                            </property>
+                        </spacer>
+                    </item>
                     <item>
                         <widget class="QLabel" name="errorLabel">
                             <property name="text">
