@@ -56,10 +56,9 @@ int sesStyle::pixelMetric(PixelMetric metric, const QStyleOption *option, const 
     }
 }
 
-template <typename T>
-void sesStyle::drawButton(const T *btn, QPainter *painter, const QWidget *widget) const {
+void sesStyle::drawButton(const QStyleOptionButton *btn, QPainter *painter, const QWidget *widget) const {
         proxy()->drawControl(CE_PushButtonBevel, btn, painter, widget);
-        T subopt = *btn;
+        QStyleOptionButton subopt = *btn;
         subopt.rect = subElementRect(SE_PushButtonContents, btn, widget);
         proxy()->drawControl(CE_PushButtonLabel, &subopt, painter, widget);
         if (btn->state & State_HasFocus) {
