@@ -78,11 +78,6 @@ void FolderCreationDialog::accept()
 
     const auto fullPath = QString(_destination + "/" + ui->newFolderNameEdit->text());
 
-    if (QDir(fullPath).exists()) {
-        ui->errorSnackbar->setVisible(true);
-        return;
-    }
-
     if (QDir(_destination).mkdir(ui->newFolderNameEdit->text())) {
         Q_EMIT folderCreated(fullPath);
     } else {
@@ -96,8 +91,10 @@ void FolderCreationDialog::slotNewFolderNameEditTextEdited()
 {
     if (!ui->newFolderNameEdit->text().isEmpty() && QDir(_destination + "/" + ui->newFolderNameEdit->text()).exists()) {
         ui->errorSnackbar->setVisible(true);
+        ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
     } else {
         ui->errorSnackbar->setVisible(false);
+        ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
     }
 }
 
