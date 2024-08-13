@@ -16,6 +16,7 @@ namespace OCC {
         Q_OBJECT
         Q_PROPERTY(QString caption READ caption WRITE setCaption NOTIFY captionChanged)
         Q_PROPERTY(QString message READ message WRITE setMessage NOTIFY messageChanged)
+        Q_PROPERTY(bool wordWrap READ wordWrap WRITE setWordWrap)
 
     public:
         explicit sesSnackBar(QWidget* parent = nullptr);
@@ -25,6 +26,9 @@ namespace OCC {
     public slots:
         void setCaption(QString captionText);
         void setMessage(QString messageText);
+
+        void setWordWrap(bool on);
+        bool wordWrap() const;
     
     signals:
         void captionChanged(QString captionText);

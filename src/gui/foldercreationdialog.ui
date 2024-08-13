@@ -21,6 +21,9 @@
                     <property name="message">
                         <string>Folder already exists</string>
                     </property>
+                    <property name="wordWrap">
+                        <bool>false</bool>
+                    </property>
                 </widget>
             </item>
             <item>

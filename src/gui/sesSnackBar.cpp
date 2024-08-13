@@ -80,6 +80,16 @@ namespace OCC {
         }
     }
 
+    void sesSnackBar::setWordWrap(bool on)
+    {
+        m_messageLabel.setWordWrap(on);
+    }
+
+    bool sesSnackBar::wordWrap() const
+    {
+        return m_messageLabel.wordWrap();
+    }
+
     void sesSnackBar::updateStyleSheet()
     {
     }
