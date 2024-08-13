@@ -41,8 +41,6 @@ Flow2AuthWidget::Flow2AuthWidget(QWidget *parent)
 {
     _ui.setupUi(this);
 
-    qRegisterMetaType<OCC::ButtonStyleName>("OCC::ButtonStyleName");
-
     _ui.errorSnackbar->setVisible(false);
 
     connect(_ui.copyLinkButton, &QPushButton::clicked, this, &Flow2AuthWidget::slotCopyLinkToClipboard);
