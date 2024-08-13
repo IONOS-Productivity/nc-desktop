@@ -1421,13 +1421,13 @@ void UserModel::removeAccount(const int id)
     }
 
     QMessageBox messageBox(QMessageBox::Question,
-                           tr("Remove account"), 
-                           tr("<p>Do you really want to remove the connection to the %1 account?</p>"
-                              "<p><b>Note:</b> No files will be deleted.</p>")
+                           tr("Confirm Account Removal"), 
+                           tr("<p>Do you really want to remove the connection to the account <i>%1</i>?</p>"
+                              "<p><b>Note:</b> This will <b>not</b> delete any files.</p>")
                                .arg(_users[id]->name()));
 
     messageBox.addButton(tr("Cancel"), QMessageBox::NoRole);
-    QPushButton *yesButton = messageBox.addButton(tr("Remove"), QMessageBox::YesRole);
+    QPushButton *yesButton = messageBox.addButton(tr("Remove connection"), QMessageBox::YesRole);
 
     styleMessageBox(messageBox, yesButton);
 
