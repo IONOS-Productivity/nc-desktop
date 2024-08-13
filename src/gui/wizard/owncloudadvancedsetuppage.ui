@@ -79,13 +79,30 @@
                             </property>
                         </widget>
                     </item>
-                    <!-- TopArea     -->
                     <item>
-                        <layout class="QHBoxLayout" name="topAreaHBox">
-                            <!-- Account -->
-                            <item>  
+                        <layout class="QHBoxLayout" name="topAreaHBox" stretch="3,4,1,4,3">
+                            <property name="leftMargin">
+                                <number>0</number>
+                            </property>
+                            <property name="rightMargin">
+                                <number>0</number>
+                            </property>
+                            <item>
+                                <spacer name="horizontalSpacer_4">
+                                    <property name="orientation">
+                                        <enum>Qt::Horizontal</enum>
+                                    </property>
+                                    <property name="sizeHint" stdset="0">
+                                        <size>
+                                            <width>40</width>
+                                            <height>20</height>
+                                        </size>
+                                    </property>
+                                </spacer>
+                            </item>
+                            <item>
                                 <layout class="QVBoxLayout" name="serverVBox">
-                                    <item>                                        
+                                    <item>
                                         <widget class="QLabel" name="lServerIcon">
                                             <property name="sizePolicy">
                                                 <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
@@ -109,13 +126,14 @@
                                             <property name="orientation">
                                                 <enum>Qt::Vertical</enum>
                                             </property>
-                                            <property name="sizeHint" stdset="0">
-                                                <size>
-                                                    <height>8</height>
-                                                </size>
-                                            </property>
                                             <property name="sizeType">
                                                 <enum>QSizePolicy::Fixed</enum>
+                                            </property>
+                                            <property name="sizeHint" stdset="0">
+                                                <size>
+                                                    <width>0</width>
+                                                    <height>8</height>
+                                                </size>
                                             </property>
                                         </spacer>
                                     </item>
@@ -160,9 +178,8 @@
                                             </property>
                                         </widget>
                                     </item>
-                                </layout>                              
-                            </item>                            
-                            <!-- Arrows -->
+                                </layout>
+                            </item>
                             <item>
                                 <layout class="QVBoxLayout" name="arrowVBox">
                                     <item>
@@ -180,14 +197,13 @@
                                                 <enum>Qt::PlainText</enum>
                                             </property>
                                             <property name="alignment">
-                                                <set>Qt::AlignTop|Qt::AlignHCenter</set>
+                                                <set>Qt::AlignHCenter|Qt::AlignTop</set>
                                             </property>
                                         </widget>
-                                    </item>    
-                                </layout>                            
+                                    </item>
+                                </layout>
                             </item>
-                            <!-- Locations -->
-                            <item> 
+                            <item>
                                 <layout class="QVBoxLayout" name="locationsVBox">
                                     <property name="sizeConstraint">
                                         <enum>QLayout::SetMinimumSize</enum>
@@ -202,6 +218,7 @@
                                             </property>
                                             <property name="minimumSize">
                                                 <size>
+                                                    <width>0</width>
                                                     <height>32</height>
                                                 </size>
                                             </property>
@@ -218,19 +235,20 @@
                                                 <cstring>pbSelectLocalFolder</cstring>
                                             </property>
                                         </widget>
-                                    </item>   
+                                    </item>
                                     <item>
                                         <spacer>
                                             <property name="orientation">
                                                 <enum>Qt::Vertical</enum>
                                             </property>
-                                            <property name="sizeHint" stdset="0">
-                                                <size>
-                                                    <height>8</height>
-                                                </size>
-                                            </property>
                                             <property name="sizeType">
                                                 <enum>QSizePolicy::Fixed</enum>
+                                            </property>
+                                            <property name="sizeHint" stdset="0">
+                                                <size>
+                                                    <width>0</width>
+                                                    <height>8</height>
+                                                </size>
                                             </property>
                                         </spacer>
                                     </item>
@@ -244,6 +262,7 @@
                                             </property>
                                             <property name="font">
                                                 <font>
+                                                    <weight>75</weight>
                                                     <bold>true</bold>
                                                 </font>
                                             </property>
@@ -279,24 +298,25 @@
                                                 <bool>true</bool>
                                             </property>
                                         </widget>
-                                    </item>  
+                                    </item>
                                     <item>
                                         <spacer name="buttonSpacer">
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <width>0</width>
+                                                    <height>4</height>
+                                                </size>
+                                            </property>
                                             <property name="orientation">
                                                 <enum>Qt::Vertical</enum>
+                                            </property>
+                                            <property name="sizeType">
+                                                <enum>QSizePolicy::Preferred</enum>
                                             </property>
                                             <property name="sizeHint" stdset="0">
                                                 <size>
                                                     <width>40</width>
                                                     <height>16</height>
-                                                </size>
-                                            </property>
-                                            <property name="sizeType">
-                                                <enum>QSizePolicy::Preferred</enum>
-                                            </property>
-                                            <property name="minimumSize">
-                                                <size>
-                                                    <height>4</height>
                                                 </size>
                                             </property>
                                         </spacer>
@@ -308,7 +328,7 @@
                                                     <horstretch>0</horstretch>
                                                     <verstretch>0</verstretch>
                                                 </sizepolicy>
-                                            </property>                                       
+                                            </property>
                                             <property name="text">
                                                 <string>Choose different folder</string>
                                             </property>
@@ -320,13 +340,31 @@
                                             </property>
                                         </widget>
                                     </item>
-                                </layout>                          
+                                </layout>
+                            </item>
+                            <item>
+                                <spacer name="horizontalSpacer_3">
+                                    <property name="orientation">
+                                        <enum>Qt::Horizontal</enum>
+                                    </property>
+                                    <property name="sizeHint" stdset="0">
+                                        <size>
+                                            <width>40</width>
+                                            <height>20</height>
+                                        </size>
+                                    </property>
+                                </spacer>
                             </item>
                         </layout>
                     </item>
-                    <!-- Spacer  -->
                     <item>
                         <spacer name="verticalSpacer">
+                            <property name="minimumSize">
+                                <size>
+                                    <width>0</width>
+                                    <height>4</height>
+                                </size>
+                            </property>
                             <property name="orientation">
                                 <enum>Qt::Vertical</enum>
                             </property>
@@ -339,35 +377,30 @@
                                     <height>32</height>
                                 </size>
                             </property>
-                            <property name="minimumSize">
-                                <size>
-                                    <height>4</height>
-                                </size>
-                            </property>
                         </spacer>
                     </item>
-                    <!-- Checkbox Area -->
                     <item>
                         <layout class="QVBoxLayout" name="wSyncStrategy">
                             <item>
                                 <layout class="QHBoxLayout" name="wSyncStrategySynchronizeEverything">
                                     <item>
-                                        <widget class="QRadioButton"
-                                            name="rSyncEverything">
+                                        <widget class="QRadioButton" name="rSyncEverything">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
                                             <property name="text">
                                                 <string>Synchronize everything from server</string>
                                             </property>
                                             <property name="checked">
                                                 <bool>true</bool>
                                             </property>
-                                            <property name="sizePolicy">
-                                                <sizepolicy hsizetype="Minimum" vsizetype="Minimum"/>
-                                            </property>
                                         </widget>
                                     </item>
                                     <item>
-                                        <widget class="QLabel"
-                                            name="lSyncEverythingSizeLabel">
+                                        <widget class="QLabel" name="lSyncEverythingSizeLabel">
                                             <property name="text">
                                                 <string notr="true">Size</string>
                                             </property>
@@ -392,7 +425,6 @@
                                 </layout>
                             </item>
                             <item>
-                                <!-- SES-4 Hidden -->
                                 <layout class="QHBoxLayout" name="horizontalLayout_6">
                                     <item>
                                         <spacer name="horizontalSpacer_8">
@@ -420,8 +452,7 @@
                                     <item>
                                         <widget class="QSpinBox" name="confSpinBox">
                                             <property name="sizePolicy">
-                                                <sizepolicy hsizetype="Preferred"
-                                                    vsizetype="Fixed">
+                                                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                                                     <horstretch>0</horstretch>
                                                     <verstretch>0</verstretch>
                                                 </sizepolicy>
@@ -440,7 +471,9 @@
                                     <item>
                                         <widget class="QLabel" name="confTraillingSizeLabel">
                                             <property name="text">
-                                                <string extracomment="Trailing part of &quot;Ask confirmation before syncing folder larger than&quot; ">MB</string>
+                                                <string extracomment="Trailing part of &quot;Ask confirmation before syncing folder larger than&quot; ">
+                                                    MB
+                                                </string>
                                             </property>
                                             <property name="textFormat">
                                                 <enum>Qt::PlainText</enum>
@@ -469,7 +502,7 @@
                                             <property name="text">
                                                 <string>Ask before syncing external storages</string>
                                             </property>
-                                            <property name="leftMargin">
+                                            <property name="leftMargin" stdset="0">
                                                 <number>32</number>
                                             </property>
                                         </widget>
@@ -498,8 +531,7 @@
                                         </widget>
                                     </item>
                                     <item>
-                                        <widget class="QLabel"
-                                            name="lSelectiveSyncSizeLabel">
+                                        <widget class="QLabel" name="lSelectiveSyncSizeLabel">
                                             <property name="text">
                                                 <string notr="true">TextLabel</string>
                                             </property>
@@ -526,11 +558,9 @@
                             <item>
                                 <layout class="QHBoxLayout" name="lVirtualFileSync">
                                     <item>
-                                        <widget class="QRadioButton"
-                                            name="rVirtualFileSync">
+                                        <widget class="QRadioButton" name="rVirtualFileSync">
                                             <property name="sizePolicy">
-                                                <sizepolicy hsizetype="Minimum"
-                                                    vsizetype="Minimum">
+                                                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
                                                     <horstretch>0</horstretch>
                                                     <verstretch>0</verstretch>
                                                 </sizepolicy>
@@ -560,9 +590,14 @@
                             </item>
                         </layout>
                     </item>
-                    <!-- Resolution Area -->
                     <item>
                         <spacer>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>0</width>
+                                    <height>4</height>
+                                </size>
+                            </property>
                             <property name="orientation">
                                 <enum>Qt::Vertical</enum>
                             </property>
@@ -573,11 +608,6 @@
                                 <size>
                                     <width>0</width>
                                     <height>16</height>
-                                </size>
-                            </property>
-                            <property name="minimumSize">
-                                <size>
-                                    <height>4</height>
                                 </size>
                             </property>
                         </spacer>
@@ -613,6 +643,7 @@
                                     <property name="font">
                                         <font>
                                             <pointsize>9</pointsize>
+                                            <weight>75</weight>
                                             <bold>true</bold>
                                         </font>
                                     </property>
@@ -626,7 +657,7 @@
                                         <enum>Qt::AutoText</enum>
                                     </property>
                                     <property name="alignment">
-                                        <set>Qt::AlignLeft</set>
+                                        <set>Qt::AlignLeading</set>
                                     </property>
                                     <property name="wordWrap">
                                         <bool>true</bool>
@@ -650,17 +681,19 @@
                                 </widget>
                             </item>
                             <item>
-                                <widget class="QRadioButton"
-                                    name="cbSyncFromScratch">
+                                <widget class="QRadioButton" name="cbSyncFromScratch">
                                     <property name="sizePolicy">
-                                        <sizepolicy hsizetype="Preferred"
-                                            vsizetype="Fixed">
+                                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                                             <horstretch>0</horstretch>
                                             <verstretch>0</verstretch>
                                         </sizepolicy>
                                     </property>
                                     <property name="toolTip">
-                                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked,
+                                            existing content in the local folder will be erased to start a clean sync
+                                            from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content
+                                            should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                        </string>
                                     </property>
                                     <property name="text">
                                         <string>Erase local folder and start a clean sync</string>
@@ -672,9 +705,14 @@
                             </item>
                         </layout>
                     </item>
-                    <!-- Error Area -->
                     <item>
                         <spacer>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>0</width>
+                                    <height>4</height>
+                                </size>
+                            </property>
                             <property name="orientation">
                                 <enum>Qt::Vertical</enum>
                             </property>
@@ -685,11 +723,6 @@
                                 <size>
                                     <width>0</width>
                                     <height>16</height>
-                                </size>
-                            </property>
-                            <property name="minimumSize">
-                                <size>
-                                    <height>4</height>
                                 </size>
                             </property>
                         </spacer>
@@ -734,7 +767,7 @@
             </item>
         </layout>
     </widget>
-    <resources />
+    <resources/>
     <connections>
         <connection>
             <sender>rSyncEverything</sender>
