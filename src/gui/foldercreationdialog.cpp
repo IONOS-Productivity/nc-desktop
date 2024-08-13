@@ -40,7 +40,7 @@ FolderCreationDialog::FolderCreationDialog(const QString &destination, QWidget *
     setWindowTitle(tr("%1 Create new folder").arg(Theme::instance()->appNameGUI()));
     customizeStyle();
 
-    ui->labelErrorMessage->setVisible(false);
+    ui->errorSnackbar->setVisible(false);
 
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowFlags(windowFlags() | Qt::Dialog | Qt::WindowMinMaxButtonsHint);
@@ -79,7 +79,7 @@ void FolderCreationDialog::accept()
     const auto fullPath = QString(_destination + "/" + ui->newFolderNameEdit->text());
 
     if (QDir(fullPath).exists()) {
-        ui->labelErrorMessage->setVisible(true);
+        ui->errorSnackbar->setVisible(true);
         return;
     }
 
@@ -95,9 +95,9 @@ void FolderCreationDialog::accept()
 void FolderCreationDialog::slotNewFolderNameEditTextEdited()
 {
     if (!ui->newFolderNameEdit->text().isEmpty() && QDir(_destination + "/" + ui->newFolderNameEdit->text()).exists()) {
-        ui->labelErrorMessage->setVisible(true);
+        ui->errorSnackbar->setVisible(true);
     } else {
-        ui->labelErrorMessage->setVisible(false);
+        ui->errorSnackbar->setVisible(false);
     }
 }
 
@@ -113,5 +113,7 @@ void FolderCreationDialog::customizeStyle()
 
     QHBoxLayout* buttonlayout = qobject_cast<QHBoxLayout*>(ui->buttonBox->layout());
     buttonlayout->setSpacing(16);
+
+    ui->errorSnackbar->setFixedHeight(30);
 }
 }
