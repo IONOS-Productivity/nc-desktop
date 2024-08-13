@@ -127,6 +127,8 @@ int WelcomePage::nextId() const
 
 void WelcomePage::customizeStyle()
 {
+    _ocWizard->setFixedSize(626, 400);
+    _ui->mainHbox->setContentsMargins(0, 0, 0, 0);   
     styleSlideShow();
 }
 }
