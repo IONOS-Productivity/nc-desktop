@@ -31,8 +31,10 @@ WebFlowCredentialsDialog::WebFlowCredentialsDialog(Account *account, bool useFlo
     _containerLayout->setMargin(margin);
 
     _infoLabel = new QLabel();
-    _infoLabel->setTextFormat(Qt::PlainText);
+    _infoLabel->setTextFormat(Qt::RichText);
     _infoLabel->setAlignment(Qt::AlignCenter);
+    _infoLabel->setWordWrap(true);
+    _infoLabel->setContentsMargins(0, 32, 0, 0);    
     _containerLayout->addWidget(_infoLabel);
 
     if (_useFlow2) {
