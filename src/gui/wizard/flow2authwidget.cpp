@@ -58,7 +58,6 @@ Flow2AuthWidget::Flow2AuthWidget(QWidget *parent)
 
 void Flow2AuthWidget::setLogo()
 {
-    const auto backgroundColor = palette().window().color();
     const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-external.svg");
     _ui.logoLabel->setPixmap(logoIconFileName);
 }

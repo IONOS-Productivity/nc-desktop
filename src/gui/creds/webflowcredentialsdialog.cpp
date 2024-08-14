@@ -7,6 +7,7 @@
 #include "application.h"
 #include "owncloudgui.h"
 #include "wizard/owncloudwizardcommon.h"
+#include "ionostheme.h"
 #ifdef WITH_WEBENGINE
 #include "wizard/webview.h"
 #endif // WITH_WEBENGINE
@@ -19,6 +20,11 @@ WebFlowCredentialsDialog::WebFlowCredentialsDialog(Account *account, bool useFlo
     , _useFlow2(useFlow2)
 {
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    
+    setStyleSheet(QStringLiteral("QDialog { background-color: %1; }").arg(IonosTheme::dialogBackgroundColor()));
+
+    setMinimumSize(626, 500);
+    setSizePolicy(QSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum));
 
     _layout = new QVBoxLayout(this);
     int spacing = _layout->spacing();
