@@ -67,7 +67,7 @@ HeaderButton {
 
             Image {
                 id: folderStateIndicator
-                visible: root.currentUser.hasLocalFolder && false // Hide Indicator till we have a proper implementation
+                visible: root.currentUser.hasLocalFolder && false // SES-50 Hide Indicator till we have a proper implementation
                 source: root.currentUser.isConnected ? Style.stateOnlineImageSource : Style.stateOfflineImageSource
                 cache: false
 

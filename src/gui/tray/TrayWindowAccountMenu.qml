@@ -156,11 +156,46 @@ Button {
             source: Style.sesAccountIconBig
             Accessible.role: Accessible.Graphic
             Accessible.name: qsTr("Current account avatar")
+            
+            Rectangle {
+                id: currentAccountStatusIndicatorBackground
+                // SES-50 Remove Inidcator
+                // visible: UserModel.currentUser.isConnected
+                //             && UserModel.currentUser.serverHasUserStatus
+                visible: false
+                width: Style.accountAvatarStateIndicatorSize +  + Style.trayFolderStatusIndicatorSizeOffset
+                height: width
+                anchors.bottom: currentAccountAvatar.bottom
+                anchors.right: currentAccountAvatar.right
+                anchors.bottomMargin: -5
+                anchors.rightMargin: -5
+                color: Style.currentUserHeaderColor
+                radius: width * Style.trayFolderStatusIndicatorRadiusFactor
+            }
+
+            Rectangle {
+                id: currentAccountStatusIndicatorMouseHover
+                // SES-50 Remove Inidcator
+                // visible: UserModel.currentUser.isConnected
+                //             && UserModel.currentUser.serverHasUserStatus
+                visible: false
+                width: Style.accountAvatarStateIndicatorSize +  + Style.trayFolderStatusIndicatorSizeOffset
+                height: width
+                anchors.bottom: currentAccountAvatar.bottom
+                anchors.right: currentAccountAvatar.right
+                anchors.bottomMargin: -5
+                anchors.rightMargin: -5
+                color: currentAccountButton.hovered ? Style.sesHover : "transparent"
+                opacity: Style.trayFolderStatusIndicatorMouseHoverOpacityFactor
+                radius: width * Style.trayFolderStatusIndicatorRadiusFactor
+            }
 
             Image {
                 id: currentAccountStatusIndicator
-                visible: UserModel.currentUser.isConnected
-                            && UserModel.currentUser.serverHasUserStatus
+                // SES-50 Remove Inidcator
+                // visible: UserModel.currentUser.isConnected
+                //             && UserModel.currentUser.serverHasUserStatus
+                visible: false
                 source: UserModel.currentUser.statusIcon
                 cache: false
                 x: currentAccountStatusIndicatorBackground.x + 1
