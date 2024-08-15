@@ -874,26 +874,13 @@ QIcon Theme::createColorAwareIcon(const QString &name, const QPalette &palette)
     QImage img(64, 64, QImage::Format_ARGB32);
     img.fill(Qt::GlobalColor::transparent);
     QPainter imgPainter(&img);
-    QImage inverted(64, 64, QImage::Format_ARGB32);
-    inverted.fill(Qt::GlobalColor::transparent);
-    QPainter invPainter(&inverted);
 
     renderer.render(&imgPainter);
-    renderer.render(&invPainter);
-
-    inverted.invertPixels(QImage::InvertRgb);
 
     QIcon icon;
-    if (Theme::isDarkColor(palette.color(QPalette::Base))) {
-        icon.addPixmap(QPixmap::fromImage(inverted));
-    } else {
-        icon.addPixmap(QPixmap::fromImage(img));
-    }
-    if (Theme::isDarkColor(palette.color(QPalette::HighlightedText))) {
-        icon.addPixmap(QPixmap::fromImage(img), QIcon::Normal, QIcon::On);
-    } else {
-        icon.addPixmap(QPixmap::fromImage(inverted), QIcon::Normal, QIcon::On);
-    }
+    icon.addPixmap(QPixmap::fromImage(img));
+    icon.addPixmap(QPixmap::fromImage(img), QIcon::Normal, QIcon::On);
+
     return icon;
 }
 
