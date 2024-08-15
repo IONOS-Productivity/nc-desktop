@@ -200,7 +200,8 @@ QString Account::prettyName() const
 
 QColor Account::serverColor() const
 {
-    return _serverColor;
+    // SES-50 Hardcoded. Old value was _serverColor;
+    return QColor("#718095");
 }
 
 QColor Account::headerColor() const
@@ -223,7 +224,8 @@ QColor Account::accentColor() const
     darknessAdjustment *= darknessAdjustment; // Square the value to pronounce the darkness more in lighter colours
     const auto baseAdjustment = 125;
     const auto adjusted = Theme::isDarkColor(accentColor) ? accentColor : accentColor.darker(baseAdjustment + darknessAdjustment);
-    return adjusted;
+    // SES-50 Hardcoded. Old value was adjusted;
+    return QColor("#718095");
 }
 
 QString Account::id() const
