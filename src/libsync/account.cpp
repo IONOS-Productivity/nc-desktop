@@ -210,7 +210,8 @@ QColor Account::headerColor() const
 
 QColor Account::headerTextColor() const
 {
-    return _serverTextColor;
+    // SES-50 Hardcoded to Black. Old value was _serverTextColor;
+    return QColor("black");
 }
 
 QColor Account::accentColor() const
