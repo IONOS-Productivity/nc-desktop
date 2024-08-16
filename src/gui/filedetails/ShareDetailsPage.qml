@@ -106,8 +106,8 @@ Page {
     }
 
     function resetLinkShareLabelField() {
-        linkShareLabelTextField.text = linkShareLabel;
-        waitingForLinkShareLabelChange = false;
+        // linkShareLabelTextField.text = linkShareLabel;
+        // waitingForLinkShareLabelChange = false;
     }
 
     function resetPasswordField() {
@@ -263,12 +263,67 @@ Page {
 
             width: parent.width
 
+            CheckBox {
+                id: passwordProtectEnabledMenuItem
+                Layout.fillWidth: true
+
+                // TODO: Rather than setting all these palette colours manually,
+                // create a custom style and do it for all components globally.
+                //
+                // Additionally, we need to override the entire palette when we
+                // set one palette property, as otherwise we default back to the
+                // theme palette -- not the parent palette
+                palette {
+                    text: Style.ncTextColor
+                    windowText: Style.ncTextColor
+                    buttonText: Style.ncTextColor
+                    brightText: Style.ncTextBrightColor
+                    highlight: Style.lightHover
+                    highlightedText: Style.ncTextColor
+                    light: Style.lightHover
+                    midlight: Style.ncSecondaryTextColor
+                    mid: Style.darkerHover
+                    dark: Style.menuBorder
+                    button: Style.buttonBackgroundColor
+                    window: Style.menuBorder
+                    base: Style.backgroundColor
+                    toolTipBase: Style.backgroundColor
+                    toolTipText: Style.ncTextColor
+                }
+
+                spacing: scrollContentsColumn.indicatorSpacing
+                padding: scrollContentsColumn.itemPadding
+                indicator.width: scrollContentsColumn.indicatorItemWidth
+                indicator.height: scrollContentsColumn.indicatorItemWidth
+
+                checkable: true
+                checked: root.passwordProtectEnabled
+                text: qsTr("Password protect")
+                visible: root.shareSupportsPassword
+                enabled: visible && 
+                         !root.waitingForPasswordProtectEnabledChange && 
+                         !root.passwordEnforced
+
+                onClicked: {
+                    root.togglePasswordProtect(checked);
+                    root.waitingForPasswordProtectEnabledChange = true;
+                }
+
+                NCBusyIndicator {
+                    anchors.fill: parent
+                    visible: root.waitingForPasswordProtectEnabledChange
+                    running: visible
+                    z: 1
+                }
+            }
+
             RowLayout {
                 Layout.fillWidth: true
+
                 height: visible ? implicitHeight : 0
                 spacing: scrollContentsColumn.indicatorSpacing
 
-                visible: root.isLinkShare
+                visible: root.shareSupportsPassword && root.passwordProtectEnabled
 
                 Image {
                     Layout.preferredWidth: scrollContentsColumn.indicatorItemWidth
@@ -278,31 +333,170 @@ Page {
                     horizontalAlignment: Image.AlignHCenter
                     fillMode: Image.Pad
 
-                    source: "image://svgimage-custom-color/edit.svg/" + palette.dark
+                    source: "image://svgimage-custom-color/lock-https.svg/" + Style.sesIconColor
                     sourceSize.width: scrollContentsColumn.rowIconWidth
                     sourceSize.height: scrollContentsColumn.rowIconWidth
                 }
 
                 NCInputTextField {
-                    id: linkShareLabelTextField
+                    id: passwordTextField
 
                     Layout.fillWidth: true
                     height: visible ? implicitHeight : 0
 
-                    text: root.linkShareLabel
-                    placeholderText: qsTr("Share label")
+                    text: root.password !== "" ? root.password : root.passwordPlaceholder
+                    enabled: visible &&
+                             root.passwordProtectEnabled &&
+                             !root.waitingForPasswordChange &&
+                             !root.waitingForPasswordProtectEnabledChange
 
-                    enabled: root.isLinkShare &&
-                             !root.waitingForLinkShareLabelChange
-
-                    onAccepted: if(text !== root.linkShareLabel) {
-                        root.setLinkShareLabel(text);
-                        root.waitingForLinkShareLabelChange = true;
+                    onAccepted: if(text !== root.password && text !== root.passwordPlaceholder) {
+                        passwordErrorBoxLoader.message = "";
+                        root.setPassword(text);
+                        root.waitingForPasswordChange = true;
                     }
 
                     NCBusyIndicator {
                         anchors.fill: parent
-                        visible: root.waitingForLinkShareLabelChange
+                        visible: root.waitingForPasswordChange ||
+                                 root.waitingForPasswordProtectEnabledChange
+                        running: visible
+                        z: 1
+                    }
+                }
+            }
+
+            Loader {
+                id: passwordErrorBoxLoader
+
+                property string message: ""
+
+                Layout.fillWidth: true
+                height: message !== "" ? implicitHeight : 0
+
+                active: message !== ""
+                visible: active
+
+                sourceComponent: Item {
+                    anchors.top: parent.top
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    // Artificially add vertical padding
+                    implicitHeight: passwordErrorBox.implicitHeight + (Style.smallSpacing * 2)
+
+                    ErrorBox {
+                        id: passwordErrorBox
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        anchors.verticalCenter: parent.verticalCenter
+
+                        text: passwordErrorBoxLoader.message
+                    }
+                }
+            }
+
+            CheckBox {
+                id: expireDateEnabledMenuItem
+
+                Layout.fillWidth: true
+
+                // TODO: Rather than setting all these palette colours manually,
+                // create a custom style and do it for all components globally.
+                //
+                // Additionally, we need to override the entire palette when we
+                // set one palette property, as otherwise we default back to the
+                // theme palette -- not the parent palette
+                palette {
+                    text: Style.ncTextColor
+                    windowText: Style.ncTextColor
+                    buttonText: Style.ncTextColor
+                    brightText: Style.ncTextBrightColor
+                    highlight: Style.lightHover
+                    highlightedText: Style.ncTextColor
+                    light: Style.lightHover
+                    midlight: Style.ncSecondaryTextColor
+                    mid: Style.darkerHover
+                    dark: Style.menuBorder
+                    button: Style.buttonBackgroundColor
+                    window: Style.menuBorder
+                    base: Style.backgroundColor
+                    toolTipBase: Style.backgroundColor
+                    toolTipText: Style.ncTextColor
+                }
+
+                spacing: scrollContentsColumn.indicatorSpacing
+                padding: scrollContentsColumn.itemPadding
+                indicator.width: scrollContentsColumn.indicatorItemWidth
+                indicator.height: scrollContentsColumn.indicatorItemWidth
+
+                checkable: true
+                checked: root.expireDateEnabled
+                text: qsTr("Set expiration date")
+                enabled: !root.waitingForExpireDateEnabledChange && !root.expireDateEnforced
+
+                onClicked: {
+                    root.toggleExpirationDate(checked);
+                    root.waitingForExpireDateEnabledChange = true;
+                }
+
+                NCBusyIndicator {
+                    anchors.fill: parent
+                    visible: root.waitingForExpireDateEnabledChange
+                    running: visible
+                    z: 1
+                }
+            }
+
+            RowLayout {
+                Layout.fillWidth: true
+                height: visible ? implicitHeight : 0
+                spacing: scrollContentsColumn.indicatorSpacing
+
+                visible: root.expireDateEnabled
+
+                Image {
+                    Layout.preferredWidth: scrollContentsColumn.indicatorItemWidth
+                    Layout.fillHeight: true
+
+                    verticalAlignment: Image.AlignVCenter
+                    horizontalAlignment: Image.AlignHCenter
+                    fillMode: Image.Pad
+
+                    source: "image://svgimage-custom-color/calendar.svg/" + palette.dark
+                    sourceSize.width: scrollContentsColumn.rowIconWidth
+                    sourceSize.height: scrollContentsColumn.rowIconWidth
+                }
+
+                NCInputDateField {
+                    id: expireDateField
+
+                    Layout.fillWidth: true
+                    height: visible ? implicitHeight : 0
+
+                    dateInMs: root.expireDate
+                    maximumDateMs: root.maximumExpireDate
+                    minimumDateMs: {
+                        const currentDate = new Date();
+                        const currentYear = currentDate.getFullYear();
+                        const currentMonth = currentDate.getMonth();
+                        const currentMonthDay = currentDate.getDate();
+                        // Start of day at 00:00:0000 UTC
+                        return Date.UTC(currentYear, currentMonth, currentMonthDay + 1);
+                    }
+
+                    enabled: root.expireDateEnabled &&
+                             !root.waitingForExpireDateChange &&
+                             !root.waitingForExpireDateEnabledChange
+
+                    onUserAcceptedDate: {
+                        root.setExpireDate(dateInMs);
+                        root.waitingForExpireDateChange = true;
+                    }
+
+                    NCBusyIndicator {
+                        anchors.fill: parent
+                        visible: root.waitingForExpireDateEnabledChange ||
+                                 root.waitingForExpireDateChange
                         running: visible
                         z: 1
                     }
@@ -522,247 +716,6 @@ Page {
                             running: visible
                             z: 1
                         }
-                    }
-                }
-            }
-
-            CheckBox {
-                id: passwordProtectEnabledMenuItem
-
-                Layout.fillWidth: true
-
-                // TODO: Rather than setting all these palette colours manually,
-                // create a custom style and do it for all components globally.
-                //
-                // Additionally, we need to override the entire palette when we
-                // set one palette property, as otherwise we default back to the
-                // theme palette -- not the parent palette
-                palette {
-                    text: Style.ncTextColor
-                    windowText: Style.ncTextColor
-                    buttonText: Style.ncTextColor
-                    brightText: Style.ncTextBrightColor
-                    highlight: Style.lightHover
-                    highlightedText: Style.ncTextColor
-                    light: Style.lightHover
-                    midlight: Style.ncSecondaryTextColor
-                    mid: Style.darkerHover
-                    dark: Style.menuBorder
-                    button: Style.buttonBackgroundColor
-                    window: Style.menuBorder
-                    base: Style.backgroundColor
-                    toolTipBase: Style.backgroundColor
-                    toolTipText: Style.ncTextColor
-                }
-
-                spacing: scrollContentsColumn.indicatorSpacing
-                padding: scrollContentsColumn.itemPadding
-                indicator.width: scrollContentsColumn.indicatorItemWidth
-                indicator.height: scrollContentsColumn.indicatorItemWidth
-
-                checkable: true
-                checked: root.passwordProtectEnabled
-                text: qsTr("Password protect")
-                visible: root.shareSupportsPassword
-                enabled: visible && 
-                         !root.waitingForPasswordProtectEnabledChange && 
-                         !root.passwordEnforced
-
-                onClicked: {
-                    root.togglePasswordProtect(checked);
-                    root.waitingForPasswordProtectEnabledChange = true;
-                }
-
-                NCBusyIndicator {
-                    anchors.fill: parent
-                    visible: root.waitingForPasswordProtectEnabledChange
-                    running: visible
-                    z: 1
-                }
-            }
-
-            RowLayout {
-                Layout.fillWidth: true
-
-                height: visible ? implicitHeight : 0
-                spacing: scrollContentsColumn.indicatorSpacing
-
-                visible: root.shareSupportsPassword && root.passwordProtectEnabled
-
-                Image {
-                    Layout.preferredWidth: scrollContentsColumn.indicatorItemWidth
-                    Layout.fillHeight: true
-
-                    verticalAlignment: Image.AlignVCenter
-                    horizontalAlignment: Image.AlignHCenter
-                    fillMode: Image.Pad
-
-                    source: "image://svgimage-custom-color/lock-https.svg/" + palette.dark
-                    sourceSize.width: scrollContentsColumn.rowIconWidth
-                    sourceSize.height: scrollContentsColumn.rowIconWidth
-                }
-
-                NCInputTextField {
-                    id: passwordTextField
-
-                    Layout.fillWidth: true
-                    height: visible ? implicitHeight : 0
-
-                    text: root.password !== "" ? root.password : root.passwordPlaceholder
-                    enabled: visible &&
-                             root.passwordProtectEnabled &&
-                             !root.waitingForPasswordChange &&
-                             !root.waitingForPasswordProtectEnabledChange
-
-                    onAccepted: if(text !== root.password && text !== root.passwordPlaceholder) {
-                        passwordErrorBoxLoader.message = "";
-                        root.setPassword(text);
-                        root.waitingForPasswordChange = true;
-                    }
-
-                    NCBusyIndicator {
-                        anchors.fill: parent
-                        visible: root.waitingForPasswordChange ||
-                                 root.waitingForPasswordProtectEnabledChange
-                        running: visible
-                        z: 1
-                    }
-                }
-            }
-
-            Loader {
-                id: passwordErrorBoxLoader
-
-                property string message: ""
-
-                Layout.fillWidth: true
-                height: message !== "" ? implicitHeight : 0
-
-                active: message !== ""
-                visible: active
-
-                sourceComponent: Item {
-                    anchors.top: parent.top
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    // Artificially add vertical padding
-                    implicitHeight: passwordErrorBox.implicitHeight + (Style.smallSpacing * 2)
-
-                    ErrorBox {
-                        id: passwordErrorBox
-                        anchors.left: parent.left
-                        anchors.right: parent.right
-                        anchors.verticalCenter: parent.verticalCenter
-
-                        text: passwordErrorBoxLoader.message
-                    }
-                }
-            }
-
-            CheckBox {
-                id: expireDateEnabledMenuItem
-
-                Layout.fillWidth: true
-
-                // TODO: Rather than setting all these palette colours manually,
-                // create a custom style and do it for all components globally.
-                //
-                // Additionally, we need to override the entire palette when we
-                // set one palette property, as otherwise we default back to the
-                // theme palette -- not the parent palette
-                palette {
-                    text: Style.ncTextColor
-                    windowText: Style.ncTextColor
-                    buttonText: Style.ncTextColor
-                    brightText: Style.ncTextBrightColor
-                    highlight: Style.lightHover
-                    highlightedText: Style.ncTextColor
-                    light: Style.lightHover
-                    midlight: Style.ncSecondaryTextColor
-                    mid: Style.darkerHover
-                    dark: Style.menuBorder
-                    button: Style.buttonBackgroundColor
-                    window: Style.menuBorder
-                    base: Style.backgroundColor
-                    toolTipBase: Style.backgroundColor
-                    toolTipText: Style.ncTextColor
-                }
-
-                spacing: scrollContentsColumn.indicatorSpacing
-                padding: scrollContentsColumn.itemPadding
-                indicator.width: scrollContentsColumn.indicatorItemWidth
-                indicator.height: scrollContentsColumn.indicatorItemWidth
-
-                checkable: true
-                checked: root.expireDateEnabled
-                text: qsTr("Set expiration date")
-                enabled: !root.waitingForExpireDateEnabledChange && !root.expireDateEnforced
-
-                onClicked: {
-                    root.toggleExpirationDate(checked);
-                    root.waitingForExpireDateEnabledChange = true;
-                }
-
-                NCBusyIndicator {
-                    anchors.fill: parent
-                    visible: root.waitingForExpireDateEnabledChange
-                    running: visible
-                    z: 1
-                }
-            }
-
-            RowLayout {
-                Layout.fillWidth: true
-                height: visible ? implicitHeight : 0
-                spacing: scrollContentsColumn.indicatorSpacing
-
-                visible: root.expireDateEnabled
-
-                Image {
-                    Layout.preferredWidth: scrollContentsColumn.indicatorItemWidth
-                    Layout.fillHeight: true
-
-                    verticalAlignment: Image.AlignVCenter
-                    horizontalAlignment: Image.AlignHCenter
-                    fillMode: Image.Pad
-
-                    source: "image://svgimage-custom-color/calendar.svg/" + palette.dark
-                    sourceSize.width: scrollContentsColumn.rowIconWidth
-                    sourceSize.height: scrollContentsColumn.rowIconWidth
-                }
-
-                NCInputDateField {
-                    id: expireDateField
-
-                    Layout.fillWidth: true
-                    height: visible ? implicitHeight : 0
-
-                    dateInMs: root.expireDate
-                    maximumDateMs: root.maximumExpireDate
-                    minimumDateMs: {
-                        const currentDate = new Date();
-                        const currentYear = currentDate.getFullYear();
-                        const currentMonth = currentDate.getMonth();
-                        const currentMonthDay = currentDate.getDate();
-                        // Start of day at 00:00:0000 UTC
-                        return Date.UTC(currentYear, currentMonth, currentMonthDay + 1);
-                    }
-
-                    enabled: root.expireDateEnabled &&
-                             !root.waitingForExpireDateChange &&
-                             !root.waitingForExpireDateEnabledChange
-
-                    onUserAcceptedDate: {
-                        root.setExpireDate(dateInMs);
-                        root.waitingForExpireDateChange = true;
-                    }
-
-                    NCBusyIndicator {
-                        anchors.fill: parent
-                        visible: root.waitingForExpireDateEnabledChange ||
-                                 root.waitingForExpireDateChange
-                        running: visible
-                        z: 1
                     }
                 }
             }
