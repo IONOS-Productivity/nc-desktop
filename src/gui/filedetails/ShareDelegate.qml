@@ -50,7 +50,7 @@ GridLayout {
     property FileDetails fileDetails: FileDetails {}
     property StackView rootStackView: StackView {}
     property bool backgroundsVisible: true
-    property color accentColor: Style.ncBlue
+    property color accentColor: Style.sesIconColor
 
     property bool canCreateLinkShares: true
     property bool serverAllowsResharing: true
@@ -165,7 +165,7 @@ GridLayout {
             bgColor: palette.highlight
             bgNormalOpacity: 0
 
-            icon.source: "image://svgimage-custom-color/add.svg/" + palette.buttonText
+            icon.source: Style.sesAccountPlus + palette.buttonText
             icon.width: Style.smallIconSize
             icon.height: Style.smallIconSize
 
@@ -202,8 +202,8 @@ GridLayout {
             bgColor: shareLinkCopied ? Style.positiveColor : palette.highlight
             bgNormalOpacity: shareLinkCopied ? 1 : 0
 
-            icon.source: shareLinkCopied ? "image://svgimage-custom-color/copy.svg/" + palette.brightText :
-                                           "image://svgimage-custom-color/copy.svg/" + palette.buttonText
+            icon.source: shareLinkCopied ? Style.sesClipboard + palette.brightText :
+                                           Style.sesClipboard + palette.buttonText
             icon.width: Style.smallIconSize
             icon.height: Style.smallIconSize
 
@@ -239,6 +239,9 @@ GridLayout {
         CustomButton {
             id: moreButton
 
+            property bool isHovered: moreButton.hovered || moreButton.visualFocus
+            property bool isActive: moreButton.pressed
+
             Layout.alignment: Qt.AlignCenter
             Layout.preferredWidth: Style.iconButtonWidth
             Layout.preferredHeight: width
@@ -248,12 +251,19 @@ GridLayout {
             bgColor: palette.highlight
             bgNormalOpacity: 0
 
-            icon.source: "image://svgimage-custom-color/more.svg/" + palette.buttonText
+            icon.source: "image://svgimage-custom-color/more.svg/" + (moreButton.isActive || moreButton.isHovered ? Style.sesWhite : Style.sesIconColor)
             icon.width: Style.smallIconSize
             icon.height: Style.smallIconSize
 
             visible: !root.isPlaceholderLinkShare && !root.isSecureFileDropPlaceholderLinkShare && !root.isInternalLinkShare
             enabled: visible
+
+            background: Rectangle {
+                anchors.fill: parent
+                anchors.margins: 1
+                color: moreButton.isActive ? Style.sesActionPressed : moreButton.isHovered ? Style.sesActionHover : "transparent"
+                radius: width / 2
+            }
 
             onClicked: root.rootStackView.push(shareDetailsPageComponent, {}, StackView.PushTransition)
 
