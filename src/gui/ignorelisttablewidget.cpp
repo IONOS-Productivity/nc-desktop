@@ -38,14 +38,17 @@ IgnoreListTableWidget::IgnoreListTableWidget(QWidget *parent)
 
     ui->removePushButton->setEnabled(false);
     ui->removePushButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Secondary));
+    ui->removePushButton->setMinimumSize(QSize(114, 40));
     connect(ui->removePushButton,    &QAbstractButton::clicked,
             this, &IgnoreListTableWidget::slotRemoveCurrentItem);
 
     ui->addPushButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
+    ui->addPushButton->setMinimumSize(QSize(114, 40));
     connect(ui->addPushButton,       &QAbstractButton::clicked,
             this, &IgnoreListTableWidget::slotAddPattern);
 
     ui->removeAllPushButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
+    ui->removeAllPushButton->setMinimumSize(QSize(114, 40));
     connect(ui->removeAllPushButton, &QAbstractButton::clicked,
             this, &IgnoreListTableWidget::slotRemoveAllItems);
 
