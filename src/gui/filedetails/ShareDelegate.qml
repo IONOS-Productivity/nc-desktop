@@ -197,28 +197,22 @@ GridLayout {
             toolTipText: qsTr("Copy share link location")
 
             text: shareLinkCopied ? qsTr("Copied!") : ""
-            textColor: palette.brightText
+            textColor: Style.positiveColor
             contentsFont.bold: true
-            bgColor: shareLinkCopied ? Style.positiveColor : palette.highlight
-            bgNormalOpacity: shareLinkCopied ? 1 : 0
+            bgColor: palette.highlight
+            bgNormalOpacity: 0
 
-            icon.source: shareLinkCopied ? Style.sesClipboard + palette.brightText :
-                                           Style.sesClipboard + palette.buttonText
-            icon.width: Style.smallIconSize
-            icon.height: Style.smallIconSize
+            icon.source: shareLinkCopied ? Style.sesGreenCheckmark + Style.positiveColor :
+                                           Style.sesClipboard + palette.brightText
+
+            icon.width: shareLinkCopied ? Style.bigIconSize : Style.smallIconSize
+
+            icon.height: shareLinkCopied ? Style.bigIconSize : Style.smallIconSize
 
             visible: root.isLinkShare || root.isInternalLinkShare
             enabled: visible
 
             onClicked: copyShareLink()
-
-            Behavior on bgColor {
-                ColorAnimation { duration: Style.shortAnimationDuration }
-            }
-
-            Behavior on bgNormalOpacity {
-                NumberAnimation { duration: Style.shortAnimationDuration }
-            }
 
             Behavior on Layout.preferredWidth {
                 SmoothedAnimation { duration: Style.shortAnimationDuration }

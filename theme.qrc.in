@@ -262,5 +262,6 @@
         <file>theme/ses/ses-snackBarErrorIcon.svg</file>
         <file>theme/ses/ses-questionCircle.svg</file>
         <file>theme/ses/ses-clipboard.svg</file>
+        <file>theme/ses/ses-green-Checkmark.svg</file>
     </qresource>
 </RCC>

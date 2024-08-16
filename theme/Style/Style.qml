@@ -67,6 +67,8 @@ QtObject {
 
     property int iconButtonWidth: 36
     property int standardPrimaryButtonHeight: 40
+
+    readonly property int bigIconSize: 32
     readonly property int smallIconSize: 16
 
     property int minActivityHeight: variableSize(32)
@@ -221,6 +223,7 @@ QtObject {
     readonly property string sesLogout: "qrc:///client/theme/ses/ses-logout.svg"
     readonly property string sesDelete: "qrc:///client/theme/ses/ses-delete.svg"
     readonly property string sesClipboard: "qrc:///client/theme/ses/ses-clipboard.svg"
+    readonly property string sesGreenCheckmark: "qrc:///client/theme/ses/ses-green-Checkmark.svg"
 
     readonly property color sesIconColor: "#1474C4"
     readonly property color sesIconActive: "#095BB1"
