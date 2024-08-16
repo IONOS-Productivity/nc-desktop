@@ -214,35 +214,6 @@ Page {
                 }
             }
         }
-
-        TabBar {
-            id: viewBar
-
-            Layout.leftMargin: root.intendedPadding
-            Layout.rightMargin: root.intendedPadding
-
-            padding: 0
-            background: null
-
-            NCTabButton {
-                svgCustomColorSource: "image://svgimage-custom-color/activity.svg"
-                text: qsTr("Activity")
-                accentColor: root.accentColor
-                checked: swipeView.currentIndex === fileActivityView.swipeIndex
-                onClicked: swipeView.currentIndex = fileActivityView.swipeIndex
-            }
-
-            NCTabButton {
-                width: visible ? implicitWidth : 0
-                height: visible ? implicitHeight : 0
-                svgCustomColorSource: "image://svgimage-custom-color/share.svg"
-                text: qsTr("Sharing")
-                accentColor: root.accentColor
-                checked: swipeView.currentIndex === shareViewLoader.swipeIndex
-                onClicked: swipeView.currentIndex = shareViewLoader.swipeIndex
-                visible: root.fileDetails.sharingAvailable
-            }
-        }
     }
 
     SwipeView {
@@ -250,18 +221,6 @@ Page {
 
         anchors.fill: parent
         clip: true
-
-        FileActivityView {
-            id: fileActivityView
-
-            readonly property int swipeIndex: SwipeView.index
-
-            delegateHorizontalPadding: root.intendedPadding
-
-            accountState: root.accountState
-            localPath: root.localPath
-            iconSize: root.iconSize
-        }
 
         Loader {
             id: shareViewLoader
