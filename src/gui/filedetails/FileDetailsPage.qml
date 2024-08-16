@@ -154,8 +154,7 @@ Page {
                 Layout.fillWidth: true
                 Layout.rightMargin: headerGridLayout.textRightMargin
 
-                text: `${root.fileDetails.sizeString} · ${root.fileDetails.lastChangedString}`
-                color: palette.midlight
+                text: `${root.fileDetails.sizeString}, ${root.fileDetails.lastChangedString}`
                 wrapMode: Text.Wrap
             }
 
