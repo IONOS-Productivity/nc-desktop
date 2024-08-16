@@ -206,6 +206,7 @@
         <file>theme/white/close.svg</file>
         <file>theme/files.svg</file>
         <file>theme/public.svg</file>
+        <file>theme/link.svg</file>
         <file>theme/settings.svg</file>
         <file>theme/confirm.svg</file>
         <file>theme/copy.svg</file>
@@ -229,6 +230,7 @@
         <file>theme/reply.svg</file>
         <file>theme/magnifying-glass.svg</file>
         <file>theme/external.svg</file>
+        <file>theme/externalLink.svg</file>
         <file>theme/colored/user-status-online.svg</file>
         <file>theme/colored/user-status-invisible.svg</file>
         <file>theme/colored/user-status-away.svg</file>
@@ -259,5 +261,6 @@
         <file>theme/ses/ses-external.svg</file>
         <file>theme/ses/ses-snackBarErrorIcon.svg</file>
         <file>theme/ses/ses-questionCircle.svg</file>
+        <file>theme/ses/ses-clipboard.svg</file>
     </qresource>
 </RCC>

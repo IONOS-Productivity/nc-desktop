@@ -220,6 +220,7 @@ QtObject {
     readonly property string sesAccountResume: "qrc:///client/theme/ses/ses-accountResume.svg"
     readonly property string sesLogout: "qrc:///client/theme/ses/ses-logout.svg"
     readonly property string sesDelete: "qrc:///client/theme/ses/ses-delete.svg"
+    readonly property string sesClipboard: "qrc:///client/theme/ses/ses-clipboard.svg"
 
     readonly property color sesIconColor: "#1474C4"
     readonly property color sesIconActive: "#095BB1"
@@ -232,7 +233,6 @@ QtObject {
     readonly property color sesHeaderLogoBackgroundColor: "#F4F7FA"
     readonly property color sesButtonPressed: "#95CAEB"
     readonly property color sesAccountMenuHover: "#EBF5FB"
-    
     
     property int sesAccountMenuHeight: variableSize(40)
     property int sesHeaderLogoHeigth: variableSize(40)
