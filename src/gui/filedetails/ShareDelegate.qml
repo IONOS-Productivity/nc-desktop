@@ -197,7 +197,7 @@ GridLayout {
             toolTipText: qsTr("Copy share link location")
 
             text: shareLinkCopied ? qsTr("Copied!") : ""
-            textColor: Style.positiveColor
+            textColor: Style.sesDarkGreen
             contentsFont.bold: true
             bgColor: palette.highlight
             bgNormalOpacity: 0
@@ -205,8 +205,8 @@ GridLayout {
             icon.source: shareLinkCopied ? Style.sesGreenCheckmark + Style.positiveColor :
                                            Style.sesClipboard + palette.brightText
 
-            icon.width: shareLinkCopied ? Style.bigIconSize : Style.smallIconSize
-
+            icon.width: Style.smallIconSize
+            icon.height: Style.smallIconSize
             icon.height: shareLinkCopied ? Style.bigIconSize : Style.smallIconSize
 
             visible: root.isLinkShare || root.isInternalLinkShare
