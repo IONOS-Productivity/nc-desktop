@@ -234,6 +234,7 @@ QtObject {
     readonly property color sesHeaderLogoBackgroundColor: "#F4F7FA"
     readonly property color sesButtonPressed: "#95CAEB"
     readonly property color sesAccountMenuHover: "#EBF5FB"
+    readonly property color sesDarkGreen: "#096B35"
     
     property int sesAccountMenuHeight: variableSize(40)
     property int sesHeaderLogoHeigth: variableSize(40)

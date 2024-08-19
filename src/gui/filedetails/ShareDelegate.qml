@@ -207,7 +207,6 @@ GridLayout {
 
             icon.width: Style.smallIconSize
             icon.height: Style.smallIconSize
-            icon.height: shareLinkCopied ? Style.bigIconSize : Style.smallIconSize
 
             visible: root.isLinkShare || root.isInternalLinkShare
             enabled: visible
