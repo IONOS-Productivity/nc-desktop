@@ -39,7 +39,9 @@
         <file>src/gui/tray/UnifiedSearchResultNothingFound.qml</file>
         <file>src/gui/tray/UnifiedSearchResultSectionItem.qml</file>
         <file>src/gui/tray/CustomButton.qml</file>
+        <file>src/gui/tray/SesCustomButton.qml</file>
         <file>src/gui/tray/NCButtonContents.qml</file>
+        <file>src/gui/tray/SesButtonContents.qml</file>
         <file>src/gui/tray/NCButtonBackground.qml</file>
         <file>src/gui/tray/TextButtonContents.qml</file>
         <file>src/gui/tray/ActivityItemContextMenu.qml</file>
