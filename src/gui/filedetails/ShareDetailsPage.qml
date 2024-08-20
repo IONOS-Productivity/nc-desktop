@@ -732,93 +732,94 @@ Page {
                 }
             }
 
-            CheckBox {
-                id: noteEnabledMenuItem
-
+            ColumnLayout {
                 Layout.fillWidth: true
+                height: visible ? implicitHeight : 0       
+                spacing: Style.extraSmallSpacing
 
-                // TODO: Rather than setting all these palette colours manually,
-                // create a custom style and do it for all components globally.
-                //
-                // Additionally, we need to override the entire palette when we
-                // set one palette property, as otherwise we default back to the
-                // theme palette -- not the parent palette
-                palette {
-                    text: Style.ncTextColor
-                    windowText: Style.ncTextColor
-                    buttonText: Style.ncTextColor
-                    brightText: Style.ncTextBrightColor
-                    highlight: Style.lightHover
-                    highlightedText: Style.ncTextColor
-                    light: Style.lightHover
-                    midlight: Style.ncSecondaryTextColor
-                    mid: Style.darkerHover
-                    dark: Style.menuBorder
-                    button: Style.buttonBackgroundColor
-                    window: Style.menuBorder
-                    base: Style.backgroundColor
-                    toolTipBase: Style.backgroundColor
-                    toolTipText: Style.ncTextColor
-                }
-
-                spacing: scrollContentsColumn.indicatorSpacing
-                padding: scrollContentsColumn.itemPadding
-                indicator.width: scrollContentsColumn.indicatorItemWidth
-                indicator.height: scrollContentsColumn.indicatorItemWidth
-
-                checkable: true
-                checked: root.noteEnabled
-                text: qsTr("Note to recipient")
-                enabled: !root.waitingForNoteEnabledChange
-
-                onClicked: {
-                    root.toggleNoteToRecipient(checked);
-                    root.waitingForNoteEnabledChange = true;
-                }
-
-                NCBusyIndicator {
-                    anchors.fill: parent
-                    visible: root.waitingForNoteEnabledChange
-                    running: visible
-                    z: 1
-                }
-            }
-
-            RowLayout {
-                Layout.fillWidth: true
-                height: visible ? implicitHeight : 0
-                spacing: scrollContentsColumn.indicatorSpacing
-
-                visible: root.noteEnabled
-
-                Image {
-                    Layout.preferredWidth: scrollContentsColumn.indicatorItemWidth
-                    Layout.fillHeight: true
-
-                    verticalAlignment: Image.AlignVCenter
-                    horizontalAlignment: Image.AlignHCenter
-                    fillMode: Image.Pad
-
-                    source: "image://svgimage-custom-color/edit.svg/" + palette.dark
-                    sourceSize.width: scrollContentsColumn.rowIconWidth
-                    sourceSize.height: scrollContentsColumn.rowIconWidth
-                }
-
-                NCInputTextEdit {
-                    id: noteTextEdit
+                CheckBox {
+                    id: noteEnabledMenuItem
 
                     Layout.fillWidth: true
-                    height: visible ? Math.max(Style.talkReplyTextFieldPreferredHeight, contentHeight) : 0
-                    submitButton.height: Math.min(Style.talkReplyTextFieldPreferredHeight, height - 2)
 
-                    text: root.note
+                    // TODO: Rather than setting all these palette colours manually,
+                    // create a custom style and do it for all components globally.
+                    //
+                    // Additionally, we need to override the entire palette when we
+                    // set one palette property, as otherwise we default back to the
+                    // theme palette -- not the parent palette
+                    palette {
+                        text: Style.ncTextColor
+                        windowText: Style.ncTextColor
+                        buttonText: Style.ncTextColor
+                        brightText: Style.ncTextBrightColor
+                        highlight: Style.lightHover
+                        highlightedText: Style.ncTextColor
+                        light: Style.lightHover
+                        midlight: Style.ncSecondaryTextColor
+                        mid: Style.darkerHover
+                        dark: Style.menuBorder
+                        button: Style.buttonBackgroundColor
+                        window: Style.menuBorder
+                        base: Style.backgroundColor
+                        toolTipBase: Style.backgroundColor
+                        toolTipText: Style.ncTextColor
+                    }
+
+                    spacing: scrollContentsColumn.indicatorSpacing
+                    padding: scrollContentsColumn.itemPadding
+                    indicator.width: scrollContentsColumn.indicatorItemWidth
+                    indicator.height: scrollContentsColumn.indicatorItemWidth
+
+                    checkable: true
+                    checked: root.noteEnabled
+                    text: qsTr("Note to recipient")
+                    enabled: !root.waitingForNoteEnabledChange
+
+                    onClicked: {
+                        root.toggleNoteToRecipient(checked);
+                        root.waitingForNoteEnabledChange = true;
+                    }
+
+                    NCBusyIndicator {
+                        anchors.fill: parent
+                        visible: root.waitingForNoteEnabledChange
+                        running: visible
+                        z: 1
+                    }
+                }
+
+                Text{
+                    text: qsTr("Enter the note to recipient")
+                    color: Style.sesGray
+                    padding: scrollContentsColumn.itemPadding
+                    visible: root.noteEnabled
+                }
+
+                TextEdit {
+                    id: noteTextEdit
+                    visible: root.noteEnabled
+                    Layout.fillWidth: true
+                    height: visible ? 64 : 0
+                    wrapMode: TextEdit.Wrap
+                    padding: scrollContentsColumn.itemPadding
                     enabled: root.noteEnabled &&
                              !root.waitingForNoteChange &&
                              !root.waitingForNoteEnabledChange
 
-                    onEditingFinished: if(text !== root.note) {
+                    onEditingFinished: if(text !== "") {
                         root.setNote(text);
                         root.waitingForNoteChange = true;
+                    }
+
+                    Rectangle {
+                        id: textFieldBorder
+                        anchors.fill: parent
+                        radius: Style.slightlyRoundedButtonRadius
+                        border.width: Style.thickBorderWidth
+                        border.color: Style.sesTrayInputField
+                        color: palette.base
+                        z: -1
                     }
 
                     NCBusyIndicator {

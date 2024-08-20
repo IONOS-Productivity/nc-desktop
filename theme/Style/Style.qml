@@ -228,6 +228,8 @@ QtObject {
     
     readonly property color sesBorderColor: "#D7D7D7"
     readonly property color sesWhite: "#FFFFFF"
+    readonly property color sesGray: "#465A75"
+    readonly property color sesTrayInputField: "#718095"
     readonly property color sesHover: "#F2F5F8"
     readonly property color sesActionHover: "#1474C4"
     readonly property color sesActionPressed: "#0B2A63"
