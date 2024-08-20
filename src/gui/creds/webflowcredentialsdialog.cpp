@@ -23,8 +23,8 @@ WebFlowCredentialsDialog::WebFlowCredentialsDialog(Account *account, bool useFlo
     
     setStyleSheet(QStringLiteral("QDialog { background-color: %1; }").arg(IonosTheme::dialogBackgroundColor()));
 
-    setMinimumSize(626, 500);
-    setSizePolicy(QSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum));
+    setFixedWidth(646);
+    setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum));
 
     _layout = new QVBoxLayout(this);
     int spacing = _layout->spacing();
