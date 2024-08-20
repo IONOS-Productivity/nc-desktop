@@ -1,6 +1,6 @@
 include( InstallRequiredSystemLibraries )
 
-set( CPACK_PACKAGE_CONTACT  "Dominik Schmidt <domme@tomahawk-player.org>" )
+# set( CPACK_PACKAGE_CONTACT  "Dominik Schmidt <domme@tomahawk-player.org>" )
 
 include("${CMAKE_SOURCE_DIR}/IONOS.cmake")
 
