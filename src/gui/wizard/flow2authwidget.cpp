@@ -203,6 +203,12 @@ void Flow2AuthWidget::slotStyleChanged()
     customizeStyle();
 }
 
+void Flow2AuthWidget::shrinkTopMarginForText()
+{
+    _ui.topMarginSpacer->changeSize(20, 30);
+    _ui.topMarginSpacer->invalidate();
+}
+
 void Flow2AuthWidget::customizeStyle()
 {
     setLogo();
