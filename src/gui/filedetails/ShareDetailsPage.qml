@@ -566,46 +566,65 @@ Page {
                         id: permissionModeRadioButtonsGroup
                     }
 
-                    NCRadioButton {
+                    CheckBox {
+                        id: customPermissionsCheckBox
+                        Layout.fillWidth: true
+                        enabled: !root.isSharePermissionChangeInProgress
+                        checked: root.currentPermissionMode === permissionMode
+                        text: qsTr("Custom Permissions")
+                        spacing: scrollContentsColumn.indicatorSpacing
+                        padding: scrollContentsColumn.itemPadding
+                        indicator.width: scrollContentsColumn.indicatorItemWidth
+                        indicator.height: scrollContentsColumn.indicatorItemWidth
+                        onClicked: root.permissionModeChanged(permissionMode)
+                    }
+
+                    CheckBox {
                         readonly property int permissionMode: ShareModel.ModeViewOnly
                         Layout.fillWidth: true
+                        Layout.leftMargin: 30
                         ButtonGroup.group: permissionModeRadioButtonsGroup
                         enabled: !root.isSharePermissionChangeInProgress
                         checked: root.currentPermissionMode === permissionMode
                         text: qsTr("View only")
-                        indicatorItemWidth: scrollContentsColumn.indicatorItemWidth
-                        indicatorItemHeight: scrollContentsColumn.indicatorItemWidth
+                        indicator.width: scrollContentsColumn.indicatorItemWidth
+                        indicator.height: scrollContentsColumn.indicatorItemWidth
                         spacing: scrollContentsColumn.indicatorSpacing
                         padding: scrollContentsColumn.itemPadding
                         onClicked: root.permissionModeChanged(permissionMode)
+                        visible: customPermissionsCheckBox.checked
                     }
 
-                    NCRadioButton {
+                    CheckBox {
                         readonly property int permissionMode: ShareModel.ModeUploadAndEditing
                         Layout.fillWidth: true
+                        Layout.leftMargin: 30
                         ButtonGroup.group: permissionModeRadioButtonsGroup
                         enabled: !root.isSharePermissionChangeInProgress
                         checked: root.currentPermissionMode === permissionMode
                         text: qsTr("Allow upload and editing")
-                        indicatorItemWidth: scrollContentsColumn.indicatorItemWidth
-                        indicatorItemHeight: scrollContentsColumn.indicatorItemWidth
+                        indicator.width: scrollContentsColumn.indicatorItemWidth
+                        indicator.height: scrollContentsColumn.indicatorItemWidth
                         spacing: scrollContentsColumn.indicatorSpacing
                         padding: scrollContentsColumn.itemPadding
                         onClicked: root.permissionModeChanged(permissionMode)
+                        visible: customPermissionsCheckBox.checked
                     }
 
-                    NCRadioButton {
+                    CheckBox {
                         readonly property int permissionMode: ShareModel.ModeFileDropOnly
                         Layout.fillWidth: true
+                        Layout.leftMargin: 30
                         ButtonGroup.group: permissionModeRadioButtonsGroup
                         enabled: !root.isSharePermissionChangeInProgress
                         checked: root.currentPermissionMode === permissionMode
                         text: qsTr("File drop (upload only)")
-                        indicatorItemWidth: scrollContentsColumn.indicatorItemWidth
-                        indicatorItemHeight: scrollContentsColumn.indicatorItemWidth
+                        indicator.width: scrollContentsColumn.indicatorItemWidth
+                        indicator.height: scrollContentsColumn.indicatorItemWidth
                         spacing: scrollContentsColumn.indicatorSpacing
                         padding: scrollContentsColumn.itemPadding
                         onClicked: root.permissionModeChanged(permissionMode)
+                        visible: customPermissionsCheckBox.checked
                     }
 
                     CheckBox {
