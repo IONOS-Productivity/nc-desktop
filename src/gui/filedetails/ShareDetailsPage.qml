@@ -220,13 +220,20 @@ Page {
                 elide: Text.ElideRight
             }
 
-            Item {
+            CustomButton {
                 id: placeholder
 
                 Layout.rowSpan: headerGridLayout.rows
                 Layout.preferredWidth: Style.iconButtonWidth
                 Layout.preferredHeight: width
                 Layout.rightMargin: root.padding
+
+                icon.source: "image://svgimage-custom-color/clear.svg" + "/" + palette.buttonText
+                bgColor: palette.highlight
+                bgNormalOpacity: 0
+                toolTipText: qsTr("Dismiss")
+
+                onClicked: root.closeShareDetails()
             }
 
             EnforcedPlainTextLabel {
