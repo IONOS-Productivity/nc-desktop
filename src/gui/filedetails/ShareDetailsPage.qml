@@ -847,27 +847,37 @@ Page {
 
                 onClicked: root.deleteShare()
             }
-
-            CustomButton {
-                height: Style.standardPrimaryButtonHeight
-
-                icon.source: "image://svgimage-custom-color/add.svg/" + root.accentColor
-                imageSourceHover: "image://svgimage-custom-color/add.svg/" + palette.brightText
-                text: qsTr("Add another link")
-                textColor: root.accentColor
-                textColorHovered: palette.brightText
-                contentsFont.bold: true
-                bgNormalColor: palette.button
-                bgHoverColor: root.accentColor
-                bgNormalOpacity: 1.0
-                bgHoverOpacity: 1.0
-
-                visible: root.isLinkShare && root.canCreateLinkShares
-                enabled: visible
-
-                onClicked: root.createNewLinkShare()
-            }
         }
+    }
+
+    footer: GridLayout {
+        id: buttonGrid
+
+        columns: 2
+        rows: 2
+
+        SesCustomButton {
+            height: 36
+
+            Layout.columnSpan: buttonGrid.columns 
+
+            icon.source: Style.sesAccountPlus
+            text: qsTr("Add another link")
+            textColor: palette.brightText
+            contentsFont.bold: true
+            bgNormalColor: Style.sesActionPressed
+            bgNormalOpacity: 1.0
+            bgHoverOpacity: 1.0
+
+            visible: root.isLinkShare && root.canCreateLinkShares
+            enabled: visible
+
+            Layout.leftMargin: 16
+            Layout.bottomMargin: 16
+
+            onClicked: root.createNewLinkShare()
+        }
+
         SesCustomButton {
             id: cancelButton
 
@@ -889,6 +899,7 @@ Page {
             Layout.rightMargin: 60
         }
 
+        SesCustomButton {
             id: copyShareLinkButton
 
             function copyShareLink() {
@@ -903,13 +914,14 @@ Page {
 
             property bool shareLinkCopied: false
 
-            height: Style.standardPrimaryButtonHeight
+            height: 36
 
-            icon.source: "image://svgimage-custom-color/copy.svg/" + palette.brightText
+            icon.source: Style.sesClipboard
             text: shareLinkCopied ? qsTr("Share link copied!") : qsTr("Copy share link")
             textColor: palette.brightText
             contentsFont.bold: true
-            bgColor: shareLinkCopied ? Style.positiveColor : root.accentColor
+
+            bgColor: Style.sesActionPressed
             bgNormalOpacity: 1.0
             bgHoverOpacity: shareLinkCopied ? 1.0 : Style.hoverOpacity
 
@@ -917,6 +929,10 @@ Page {
             enabled: visible
 
             onClicked: copyShareLink()
+
+            Layout.bottomMargin: 16
+            Layout.leftMargin: 60
+            Layout.rightMargin: 16
 
             Behavior on bgColor {
                 ColorAnimation { duration: Style.shortAnimationDuration }
