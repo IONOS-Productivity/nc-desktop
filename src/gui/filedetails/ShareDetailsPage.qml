@@ -887,24 +887,23 @@ Page {
         }
 
         SesCustomButton {
-            id: cancelButton
+            id: unshareButton
+            height: Style.standardPrimaryButtonHeight
 
+            text: qsTr("Unshare")
+            textColor: Style.sesActionPressed
+            contentsFont.bold: true
             bgColor: palette.highlight
             bgNormalOpacity: 1.0
 
             bgBorderWidth: 2
             bgBorderColor: Style.sesActionPressed
 
-            text: qsTr("Cancel")
-            contentsFont.bold: true
-            textColor: Style.sesActionPressed
-            toolTipText: qsTr("Cancel")
-
-            onClicked: root.closeShareDetails()
-
             Layout.bottomMargin: 16
             Layout.leftMargin: 16
             Layout.rightMargin: 60
+
+            onClicked: root.deleteShare()
         }
 
         SesCustomButton {
