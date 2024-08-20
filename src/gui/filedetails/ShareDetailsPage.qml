@@ -308,13 +308,6 @@ Page {
                     root.togglePasswordProtect(checked);
                     root.waitingForPasswordProtectEnabledChange = true;
                 }
-
-                NCBusyIndicator {
-                    anchors.fill: parent
-                    visible: root.waitingForPasswordProtectEnabledChange
-                    running: visible
-                    z: 1
-                }
             }
 
             RowLayout {
@@ -354,14 +347,6 @@ Page {
                         passwordErrorBoxLoader.message = "";
                         root.setPassword(text);
                         root.waitingForPasswordChange = true;
-                    }
-
-                    NCBusyIndicator {
-                        anchors.fill: parent
-                        visible: root.waitingForPasswordChange ||
-                                 root.waitingForPasswordProtectEnabledChange
-                        running: visible
-                        z: 1
                     }
                 }
             }
@@ -492,14 +477,6 @@ Page {
                         root.setExpireDate(dateInMs);
                         root.waitingForExpireDateChange = true;
                     }
-
-                    NCBusyIndicator {
-                        anchors.fill: parent
-                        visible: root.waitingForExpireDateEnabledChange ||
-                                 root.waitingForExpireDateChange
-                        running: visible
-                        z: 1
-                    }
                 }
             }
 
@@ -543,13 +520,6 @@ Page {
                     enabled: !root.isSharePermissionChangeInProgress
 
                     onClicked: root.toggleAllowEditing(checked)
-
-                    NCBusyIndicator {
-                        anchors.fill: parent
-                        visible: root.isSharePermissionChangeInProgress
-                        running: visible
-                        z: 1
-                    }
                 }
             }
 
@@ -674,13 +644,6 @@ Page {
                         }
                     }
                 }
-
-                NCBusyIndicator {
-                    anchors.fill: parent
-                    visible: root.isSharePermissionChangeInProgress
-                    running: visible
-                    z: 1
-                }
             }
 
             Loader {
@@ -728,13 +691,6 @@ Page {
                         text: qsTr("Hide download")
                         enabled: !root.isHideDownloadInProgress
                         onClicked: root.toggleHideDownload(checked);
-
-                        NCBusyIndicator {
-                            anchors.fill: parent
-                            visible: root.isHideDownloadInProgress
-                            running: visible
-                            z: 1
-                        }
                     }
                 }
             }
@@ -787,13 +743,6 @@ Page {
                         root.toggleNoteToRecipient(checked);
                         root.waitingForNoteEnabledChange = true;
                     }
-
-                    NCBusyIndicator {
-                        anchors.fill: parent
-                        visible: root.waitingForNoteEnabledChange
-                        running: visible
-                        z: 1
-                    }
                 }
 
                 Text{
@@ -827,14 +776,6 @@ Page {
                         border.color: Style.sesTrayInputField
                         color: palette.base
                         z: -1
-                    }
-
-                    NCBusyIndicator {
-                        anchors.fill: parent
-                        visible: root.waitingForNoteChange ||
-                                 root.waitingForNoteEnabledChange
-                        running: visible
-                        z: 1
                     }
                 }
             }
