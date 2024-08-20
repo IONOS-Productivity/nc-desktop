@@ -45,6 +45,8 @@ WebFlowCredentialsDialog::WebFlowCredentialsDialog(Account *account, bool useFlo
 
     if (_useFlow2) {
         _flow2AuthWidget = new Flow2AuthWidget();
+        _flow2AuthWidget->shrinkTopMarginForText();
+
         _containerLayout->addWidget(_flow2AuthWidget);
 
         connect(_flow2AuthWidget, &Flow2AuthWidget::authResult, this, &WebFlowCredentialsDialog::slotFlow2AuthResult);
