@@ -220,20 +220,13 @@ Page {
                 elide: Text.ElideRight
             }
 
-            CustomButton {
-                id: closeButton
+            Item {
+                id: placeholder
 
                 Layout.rowSpan: headerGridLayout.rows
                 Layout.preferredWidth: Style.iconButtonWidth
                 Layout.preferredHeight: width
                 Layout.rightMargin: root.padding
-
-                icon.source: "image://svgimage-custom-color/clear.svg" + "/" + palette.buttonText
-                bgColor: palette.highlight
-                bgNormalOpacity: 0
-                toolTipText: qsTr("Dismiss")
-
-                onClicked: root.closeShareDetails()
             }
 
             EnforcedPlainTextLabel {
@@ -875,18 +868,27 @@ Page {
                 onClicked: root.createNewLinkShare()
             }
         }
-    }
+        SesCustomButton {
+            id: cancelButton
 
-    footer: DialogButtonBox {
-        topPadding: 0
-        bottomPadding: root.padding
-        rightPadding: root.padding
-        leftPadding: root.padding
-        alignment: Qt.AlignRight | Qt.AlignVCenter
-        contentWidth: (contentItem as ListView).contentWidth
-        visible: copyShareLinkButton.visible
+            bgColor: palette.highlight
+            bgNormalOpacity: 1.0
 
-        CustomButton {
+            bgBorderWidth: 2
+            bgBorderColor: Style.sesActionPressed
+
+            text: qsTr("Cancel")
+            contentsFont.bold: true
+            textColor: Style.sesActionPressed
+            toolTipText: qsTr("Cancel")
+
+            onClicked: root.closeShareDetails()
+
+            Layout.bottomMargin: 16
+            Layout.leftMargin: 16
+            Layout.rightMargin: 60
+        }
+
             id: copyShareLinkButton
 
             function copyShareLink() {
