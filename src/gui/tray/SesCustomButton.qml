@@ -44,6 +44,7 @@ Button {
     background: NCButtonBackground {
         id: bgRectangle
         hovered: root.hovered
+        height: 36
         border.width: root.bgBorderWidth
         border.color: root.bgBorderColor
     }

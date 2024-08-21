@@ -789,17 +789,15 @@ Page {
         rows: 2
 
         SesCustomButton {
-            height: 36
-
             Layout.columnSpan: buttonGrid.columns 
 
             icon.source: Style.sesAccountPlus
             text: qsTr("Add another link")
             textColor: palette.brightText
             contentsFont.bold: true
-            bgNormalColor: Style.sesActionPressed
+            bgColor: Style.sesActionPressed
             bgNormalOpacity: 1.0
-            bgHoverOpacity: 1.0
+            bgHoverOpacity: Style.hoverOpacity
 
             visible: root.isLinkShare && root.canCreateLinkShares
             enabled: visible
@@ -812,7 +810,6 @@ Page {
 
         SesCustomButton {
             id: unshareButton
-            height: Style.standardPrimaryButtonHeight
 
             text: qsTr("Unshare")
             textColor: Style.sesActionPressed
@@ -822,6 +819,7 @@ Page {
 
             bgBorderWidth: 2
             bgBorderColor: Style.sesActionPressed
+            bgHoverOpacity: Style.hoverOpacity
 
             Layout.bottomMargin: 16
             Layout.leftMargin: 16
@@ -845,8 +843,6 @@ Page {
 
             property bool shareLinkCopied: false
 
-            height: 36
-
             icon.source: Style.sesClipboard
             text: shareLinkCopied ? qsTr("Share link copied!") : qsTr("Copy share link")
             textColor: palette.brightText
@@ -861,9 +857,9 @@ Page {
 
             onClicked: copyShareLink()
 
+            Layout.alignment: Qt.AlignRight
             Layout.bottomMargin: 16
-            Layout.leftMargin: 60
-            Layout.rightMargin: 16
+            Layout.rightMargin: 20
 
             Behavior on bgColor {
                 ColorAnimation { duration: Style.shortAnimationDuration }
