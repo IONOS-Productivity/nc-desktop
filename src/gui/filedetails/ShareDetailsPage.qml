@@ -211,13 +211,14 @@ Page {
             }
 
             EnforcedPlainTextLabel {
-                id: headLabel
+                id: fileNameLabel
 
                 Layout.fillWidth: true
+                Layout.rightMargin: headerGridLayout.textRightMargin
 
-                text: qsTr("Edit share")
+                text: root.fileDetails.name
                 font.bold: true
-                elide: Text.ElideRight
+                wrapMode: Text.Wrap
             }
 
             CustomButton {
@@ -237,13 +238,12 @@ Page {
             }
 
             EnforcedPlainTextLabel {
-                id: secondaryLabel
+                id: fileDetailsLabel
 
                 Layout.fillWidth: true
-                Layout.rightMargin: root.padding
+                Layout.rightMargin: headerGridLayout.textRightMargin
 
-                text: root.fileDetails.name
-                color: palette.midlight
+                text: `${root.fileDetails.sizeString}, ${root.fileDetails.lastChangedString}`
                 wrapMode: Text.Wrap
             }
         }
