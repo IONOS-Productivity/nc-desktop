@@ -43,6 +43,8 @@ WebFlowCredentialsDialog::WebFlowCredentialsDialog(Account *account, bool useFlo
     _infoLabel->setContentsMargins(0, 32, 0, 0);    
     _containerLayout->addWidget(_infoLabel);
 
+    layout()->setSizeConstraint(QLayout::SetFixedSize);
+
     if (_useFlow2) {
         _flow2AuthWidget = new Flow2AuthWidget();
         _flow2AuthWidget->shrinkTopMarginForText();
