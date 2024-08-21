@@ -164,7 +164,7 @@ void WebFlowCredentials::askFromUser() {
         }
 
         QString msg = tr("<b>You have been logged out of your account %1 at %2. Please login again.</b>")
-                          .arg(_account->prettyName(), _account->url().toDisplayString());
+                          .arg(_account->eliedName(200), _account->url().toDisplayString());
         _askDialog->setInfo(msg);
 
         _askDialog->show();
