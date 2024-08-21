@@ -650,6 +650,7 @@ void OwncloudAdvancedSetupPage::styleSyncLogo()
     const auto syncArrowIcon = QIcon(IonosTheme::syncArrows());
     // const auto syncArrowIcon = Theme::createColorAwareIcon(QLatin1String(":/client/theme/sync-arrow.svg"), palette());
     _ui.syncLogoLabel->setPixmap(syncArrowIcon.pixmap(QSize(32,32)));
+    _ui.syncLogoLabel->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
 }
 
 void OwncloudAdvancedSetupPage::setupResoultionWidget()
