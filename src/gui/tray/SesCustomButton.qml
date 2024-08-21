@@ -23,8 +23,6 @@ Button {
     property string imageSourceHover: root.icon.source
     property var iconItem: icon
 
-    property int margin: 35
-
     property string toolTipText: ""
 
     property color textColor: palette.buttonText
@@ -52,6 +50,7 @@ Button {
     leftPadding: root.text === "" ? Style.smallSpacing : Style.standardSpacing
     rightPadding: root.text === "" ? Style.smallSpacing : Style.standardSpacing
     
+    implicitHeight: 36
     implicitWidth: contentItem.implicitWidth + leftPadding + rightPadding
 
     hoverEnabled: true

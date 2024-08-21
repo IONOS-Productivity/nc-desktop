@@ -34,11 +34,12 @@ RowLayout {
     property color textColorHovered: textColor
     property alias font: buttonLabel.font
 
+    height: parent.height
+
     EnforcedPlainTextLabel {
         id: buttonLabel
 
-        Layout.fillWidth: true
-        Layout.topMargin: 4
+        Layout.alignment: Qt.AlignVCenter
 
         text: root.text
 
@@ -46,21 +47,15 @@ RowLayout {
 
         color: root.hovered ? root.textColorHovered : root.textColor
 
-        horizontalAlignment: icon.visible ? Text.AlignLeft : Text.AlignHCenter
-
         elide: Text.ElideRight
     }
 
     Image {
         id: icon
 
-        Layout.maximumWidth: root.height
-        Layout.maximumHeight: root.height
-        Layout.topMargin: 3
+        Layout.alignment: Qt.AlignVCenter
 
         source: root.hovered ? root.imageSourceHover : root.imageSource
-
-        
 
         sourceSize {
             width: root.imageSourceWidth
@@ -68,7 +63,6 @@ RowLayout {
         }
 
         fillMode: Image.PreserveAspectFit
-        horizontalAlignment: Image.AlignHCenter
         visible: root.display === Button.TextOnly ? false : root.hovered ? root.imageSourceHover !== "" : root.imageSource !== ""
 
         layer.enabled: true
