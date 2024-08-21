@@ -347,6 +347,7 @@ Page {
                 Layout.rightMargin: 3
                 height: visible ? 64 : 0
                 wrapMode: TextEdit.Wrap
+                selectByMouse: true
                 text: root.password !== "" ? root.password : root.passwordPlaceholder
                 padding: scrollContentsColumn.itemPadding
                 enabled: visible &&
@@ -436,6 +437,8 @@ Page {
                 height: visible ? implicitHeight : 0
 
                 visible: root.expireDateEnabled
+
+                selectByMouse: true
 
                 dateInMs: root.expireDate
                 maximumDateMs: root.maximumExpireDate
@@ -533,6 +536,7 @@ Page {
                     Layout.rightMargin: 3
                     height: visible ? 64 : 0
                     wrapMode: TextEdit.Wrap
+                    selectByMouse: true
                     padding: scrollContentsColumn.itemPadding
                     enabled: root.noteEnabled &&
                              !root.waitingForNoteChange &&
