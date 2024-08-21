@@ -361,10 +361,6 @@ Page {
                     root.waitingForPasswordChange = true;
                 }
 
-                onFocusChanged: {
-                    passwordTextEdit.editingFinished();
-                }
-
                 Rectangle {
                     id: passwordTextBorder
                     anchors.fill: parent
