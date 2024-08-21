@@ -29,7 +29,6 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QStringLiteral>
-#include <iostream>
 
 namespace OCC {
 
@@ -209,7 +208,7 @@ void Flow2AuthWidget::shrinkTopMarginForText()
     _ui.topMarginSpacer->changeSize(20, 30);
     _ui.topMarginSpacer->invalidate();
     setMinimumHeight(340);
-    setMaximumHeight(340);
+    setMaximumHeight(400);
 }
 
 void Flow2AuthWidget::customizeStyle()
