@@ -244,4 +244,5 @@ QtObject {
     property int sesHeaderLogoLeftMargin: variableSize(24)
     property int sesCornerRadius: 8
     property int sesHeaderTopMargin: variableSize(10)
+    property int sesTrayIconSize: 16
 }

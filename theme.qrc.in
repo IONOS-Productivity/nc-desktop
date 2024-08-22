@@ -245,10 +245,12 @@
         <file>theme/ses/ses-accountQuit.svg</file>
         <file>theme/ses/ses-accountPause.svg</file>
         <file>theme/ses/ses-accountPlus.svg</file>
+        <file>theme/ses/ses-plus-dark.svg</file>
         <file>theme/ses/ses-accountSettings.svg</file>        
         <file>theme/ses/ses-accountResume.svg</file>
         <file>theme/ses/ses-logout.svg</file>
         <file>theme/ses/ses-delete.svg</file>
+        <file>theme/ses/ses-delete-dark.svg</file>
         <file>theme/ses/ses-settings.svg</file>
         <file>theme/ses/ses-INONS-Logo.svg</file>
         <file>theme/ses/ses-accountIcon.svg</file>
@@ -259,6 +261,9 @@
         <file>theme/ses/ses-folder32.svg</file>
         <file>theme/ses/ses-syncArrows.svg</file>
         <file>theme/ses/ses-external.svg</file>
+        <file>theme/ses/ses-refresh.svg</file>
+        <file>theme/ses/ses-info.svg</file>
+        <file>theme/ses/ses-warning.svg</file>
         <file>theme/ses/ses-snackBarErrorIcon.svg</file>
         <file>theme/ses/ses-questionCircle.svg</file>
         <file>theme/ses/ses-clipboard.svg</file>

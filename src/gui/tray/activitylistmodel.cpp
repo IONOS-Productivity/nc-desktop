@@ -226,18 +226,18 @@ QVariant ActivityListModel::data(const QModelIndex &index, int role) const
     };
 
     const auto generateIconPath = [&]() {
-        auto colorIconPath = role == DarkIconRole ? QStringLiteral("qrc:///client/theme/white/") : QStringLiteral("qrc:///client/theme/black/");
+        auto colorIconPath = QStringLiteral("qrc:///client/theme/ses/");
         if (a._type == Activity::NotificationType && !a._talkNotificationData.userAvatar.isEmpty()) {
             return QStringLiteral("qrc:///client/theme/colored/talk-bordered.svg");
         } else if (a._type == Activity::SyncResultType) {
-            colorIconPath.append("state-error.svg");
+            colorIconPath.append("ses-snackBarErrorIcon.svg");
             return colorIconPath;
         } else if (a._type == Activity::SyncFileItemType) {
             if (a._syncFileItemStatus == SyncFileItem::NormalError
                 || a._syncFileItemStatus == SyncFileItem::FatalError
                 || a._syncFileItemStatus == SyncFileItem::DetailError
                 || a._syncFileItemStatus == SyncFileItem::BlacklistedError) {
-                colorIconPath.append("state-error.svg");
+                colorIconPath.append("ses-snackBarErrorIcon.svg");
                 return colorIconPath;
             } else if (a._syncFileItemStatus == SyncFileItem::SoftError
                 || a._syncFileItemStatus == SyncFileItem::Conflict
@@ -246,22 +246,19 @@ QVariant ActivityListModel::data(const QModelIndex &index, int role) const
                 || a._syncFileItemStatus == SyncFileItem::FileNameInvalid
                 || a._syncFileItemStatus == SyncFileItem::FileNameInvalidOnServer
                 || a._syncFileItemStatus == SyncFileItem::FileNameClash) {
-                colorIconPath.append("state-warning.svg");
+                colorIconPath.append("ses-warning.svg");
                 return colorIconPath;
             } else if (a._syncFileItemStatus == SyncFileItem::FileIgnored) {
-                colorIconPath.append("state-info.svg");
+                colorIconPath.append("ses-info.svg");
                 return colorIconPath;
             } else {
                 // File sync successful
                 if (a._fileAction == "file_created") {
-                    return a._previews.empty() ? QStringLiteral("qrc:///client/theme/colored/add.svg")
-                                               : QStringLiteral("qrc:///client/theme/colored/add-bordered.svg");
+                    return QStringLiteral("qrc:///client/theme/ses/ses-plus-dark.svg");
                 } else if (a._fileAction == "file_deleted") {
-                    return a._previews.empty() ? QStringLiteral("qrc:///client/theme/colored/delete.svg")
-                                               : QStringLiteral("qrc:///client/theme/colored/delete-bordered.svg");
+                    return QStringLiteral("qrc:///client/theme/colored/ses-delete-dark.svg");
                 } else {
-                    return a._previews.empty() ? colorIconPath % QStringLiteral("change.svg")
-                                               : QStringLiteral("qrc:///client/theme/colored/change-bordered.svg");
+                    return QStringLiteral("qrc:///client/theme/ses/ses-refresh.svg");                      
                 }
             }
         } else {
