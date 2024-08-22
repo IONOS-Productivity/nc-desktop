@@ -47,9 +47,9 @@ Button {
         border.color: root.bgBorderColor
     }
 
-    leftPadding: root.text === "" ? Style.smallSpacing : Style.standardSpacing
-    rightPadding: root.text === "" ? Style.smallSpacing : Style.standardSpacing
-    
+    leftPadding: root.text === "" ? Style.smallSpacing : 20
+    rightPadding: root.text === "" ? Style.smallSpacing : 20
+
     implicitHeight: 36
     implicitWidth: contentItem.implicitWidth + leftPadding + rightPadding
 
