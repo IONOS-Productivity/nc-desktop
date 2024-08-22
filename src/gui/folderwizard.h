@@ -174,6 +174,8 @@ private:
     FolderWizardLocalPath *_folderWizardSourcePage;
     FolderWizardRemotePath *_folderWizardTargetPage = nullptr;
     FolderWizardSelectiveSync *_folderWizardSelectiveSyncPage;
+
+    void customizeStyle();
 };
 
 

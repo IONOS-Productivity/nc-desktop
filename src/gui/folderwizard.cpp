@@ -13,16 +13,17 @@
  */
 
 #include "folderwizard.h"
-#include "folderman.h"
-#include "configfile.h"
-#include "theme.h"
-#include "networkjobs.h"
 #include "account.h"
-#include "selectivesyncdialog.h"
 #include "accountstate.h"
-#include "creds/abstractcredentials.h"
-#include "wizard/owncloudwizard.h"
+#include "buttonStyle.h"
 #include "common/asserts.h"
+#include "configfile.h"
+#include "creds/abstractcredentials.h"
+#include "folderman.h"
+#include "networkjobs.h"
+#include "selectivesyncdialog.h"
+#include "theme.h"
+#include "wizard/owncloudwizard.h"
 
 #include <QDesktopServices>
 #include <QDir>
@@ -92,6 +93,8 @@ FolderWizardLocalPath::FolderWizardLocalPath(const AccountPtr &account)
 
     _ui.warnLabel->setTextFormat(Qt::RichText);
     _ui.warnLabel->hide();
+
+    _ui.localFolderChooseBtn->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
 
     changeStyle();
 }
@@ -670,6 +673,9 @@ FolderWizard::FolderWizard(AccountPtr account, QWidget *parent)
     , _folderWizardSelectiveSyncPage(new FolderWizardSelectiveSync(account))
 {
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWizardStyle(QWizard::ModernStyle);
+    customizeStyle();
+
     setPage(Page_Source, _folderWizardSourcePage);
     _folderWizardSourcePage->installEventFilter(this);
     if (!Theme::instance()->singleSyncFolder()) {
@@ -707,6 +713,26 @@ void FolderWizard::resizeEvent(QResizeEvent *event)
             setTitleFormat(titleFormat()); // And another workaround for QTBUG-3396
         }
     }
+}
+
+void FolderWizard::customizeStyle()
+{
+    // HINT: Customize wizard's own style here, if necessary in the future (Dark-/Light-Mode switching)
+
+    // Set background colors
+    auto wizardPalette = palette();
+    const auto backgroundColor = QColor(IonosTheme::dialogBackgroundColor());
+
+    // Set Color of upper part
+    wizardPalette.setColor(QPalette::Base, backgroundColor);
+
+    // Set Color of lower part
+    wizardPalette.setColor(backgroundRole(), backgroundColor);
+
+    // Set separator color
+    wizardPalette.setColor(QPalette::Mid, backgroundColor);
+
+    setPalette(wizardPalette);
 }
 
 } // end namespace
