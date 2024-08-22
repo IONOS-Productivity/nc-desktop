@@ -431,6 +431,7 @@ Page {
                 Layout.leftMargin: 3
                 Layout.rightMargin: 3
                 height: visible ? implicitHeight : 0
+                leftPadding: 15
 
                 visible: root.expireDateEnabled
 
