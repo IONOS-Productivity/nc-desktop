@@ -674,7 +674,6 @@ FolderWizard::FolderWizard(AccountPtr account, QWidget *parent)
 {
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWizardStyle(QWizard::ModernStyle);
-    customizeStyle();
 
     setPage(Page_Source, _folderWizardSourcePage);
     _folderWizardSourcePage->installEventFilter(this);
@@ -688,6 +687,9 @@ FolderWizard::FolderWizard(AccountPtr account, QWidget *parent)
     setWindowTitle(tr("Add Folder Sync Connection"));
     setOptions(QWizard::CancelButtonOnLeft);
     setButtonText(QWizard::FinishButton, tr("Add Sync Connection"));
+
+    adjustWizardSize();
+    customizeStyle();
 }
 
 FolderWizard::~FolderWizard() = default;
@@ -733,6 +735,11 @@ void FolderWizard::customizeStyle()
     wizardPalette.setColor(QPalette::Mid, backgroundColor);
 
     setPalette(wizardPalette);
+}
+
+void FolderWizard::adjustWizardSize()
+{
+    setFixedSize(QSize(576, 704));
 }
 
 } // end namespace

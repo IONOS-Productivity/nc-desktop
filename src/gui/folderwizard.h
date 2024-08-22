@@ -176,6 +176,7 @@ private:
     FolderWizardSelectiveSync *_folderWizardSelectiveSyncPage;
 
     void customizeStyle();
+    void adjustWizardSize();
 };
 
 
