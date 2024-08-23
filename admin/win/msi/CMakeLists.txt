@@ -31,4 +31,5 @@ install(FILES
         RegistryCleanupCustomAction.wxs
         gui/banner.bmp
         gui/dialog.bmp
+        License.rtf
     DESTINATION msi/)

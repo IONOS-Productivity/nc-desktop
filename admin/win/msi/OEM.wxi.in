@@ -31,10 +31,8 @@
 	
 	<?define AppCommandOpenUrlScheme = "@APPLICATION_URI_HANDLER_SCHEME@" ?>
 
-    <!-- Custom license: To use it, also remove the "Skip the license page" stuff in the <UI> section
-                         and uncomment <WixVariable Id="WixUILicenseRtf"...
-    <?define AppLicenseRtf = "path\License.rtf" ?>
-    -->
+    <!-- Custom license -->
+    <?define AppLicenseRtf = "$(sys.CURRENTDIR)\License.rtf" ?>
 
     <!-- App Version -->
     <?define VerMajor = "@MIRALL_VERSION_MAJOR@" ?>

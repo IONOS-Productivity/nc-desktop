@@ -103,18 +103,11 @@
     -->
 
     <!-- Custom license -->
-    <!--
     <WixVariable Id="WixUILicenseRtf" Value="$(var.AppLicenseRtf)" />
-    -->
 
     <UI>
         <UIRef Id="WixUI_FeatureTree" />
         <UIRef Id="WixUI_ErrorProgressText" />
-
-        <!-- Skip the license page -->
-        <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="CustomizeDlg" Order="3">1</Publish>
-        <!-- Skip the page on the way back too -->
-        <Publish Dialog="CustomizeDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" Order="3">1</Publish>
 
         <!-- https://wixtoolset.org/documentation/manual/v3/howtos/ui_and_localization/run_program_after_install.html -->        
         <Publish Dialog="ExitDialog" 
