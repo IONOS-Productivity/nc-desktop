@@ -111,6 +111,6 @@ void FolderCreationDialog::customizeStyle()
     QHBoxLayout* buttonlayout = qobject_cast<QHBoxLayout*>(ui->buttonBox->layout());
     buttonlayout->setSpacing(16);
 
-    ui->errorSnackbar->setFixedHeight(30);
+    ui->errorSnackbar->setFixedHeight(46);
 }
 }
