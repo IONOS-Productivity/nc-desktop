@@ -256,7 +256,7 @@ QVariant ActivityListModel::data(const QModelIndex &index, int role) const
                 if (a._fileAction == "file_created") {
                     return QStringLiteral("qrc:///client/theme/ses/ses-plus-dark.svg");
                 } else if (a._fileAction == "file_deleted") {
-                    return QStringLiteral("qrc:///client/theme/colored/ses-delete-dark.svg");
+                    return QStringLiteral("qrc:///client/theme/ses/ses-delete-dark.svg");
                 } else {
                     return QStringLiteral("qrc:///client/theme/ses/ses-refresh.svg");                      
                 }
