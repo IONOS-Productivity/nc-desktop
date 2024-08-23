@@ -11,17 +11,16 @@ namespace OCC {
         : QFrame(parent)
     {
         setObjectName("sesSnackBar");
-        setMinimumHeight(40);
         setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         setContentsMargins(0, 0, 0, 0);
 
         auto policy = sizePolicy();
-        policy.setRetainSizeWhenHidden(true);
+        policy.setRetainSizeWhenHidden(false);
         setSizePolicy(policy);
         
         const auto layout = new QHBoxLayout();
         layout->setObjectName("sesSnackBarLayout");
-        layout->setContentsMargins(0, 0, 0, 0);
+        layout->setContentsMargins(16, 10, 16, 10);
         layout->setSpacing(0);
 
         m_captionLabel.setObjectName("sesSnackBarCaption");
@@ -30,7 +29,7 @@ namespace OCC {
 
         m_messageLabel.setObjectName("sesSnackBarMessage");
         m_messageLabel.setText(m_message);
-        m_messageLabel.setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
+        m_messageLabel.setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
         m_messageLabel.setWordWrap(true);
 
         const auto iconLabel = new QLabel();
@@ -40,13 +39,11 @@ namespace OCC {
         const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-snackBarErrorIcon.svg");
         iconLabel->setPixmap(logoIconFileName);
 
-        layout->addSpacerItem(new QSpacerItem(16, 0, QSizePolicy::Fixed, QSizePolicy::Fixed));
         layout->addWidget(&m_captionLabel);
         layout->addSpacerItem(new QSpacerItem(8, 0, QSizePolicy::Fixed, QSizePolicy::Fixed));
         layout->addWidget(&m_messageLabel);
         layout->addSpacerItem(new QSpacerItem(8, 0, QSizePolicy::Fixed, QSizePolicy::Fixed));
         layout->addWidget(iconLabel);
-        layout->addSpacerItem(new QSpacerItem(16, 0, QSizePolicy::MinimumExpanding, QSizePolicy::Fixed));
         setLayout(layout);
 
         QString style = QLatin1String("QFrame {border: 1px solid #EEACB2; border-radius: 4px;"
