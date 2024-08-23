@@ -132,6 +132,22 @@ font: 12pt &quot;Segoe UI&quot; bold;</string>
       </widget>
      </item>
      <item>
+      <widget class="OCC::sesSnackBar" name="sesSnackBar">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QLabel" name="warnLabel">
        <property name="palette">
         <palette>
@@ -234,6 +250,14 @@ font: 12pt &quot;Segoe UI&quot; bold;</string>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>OCC::sesSnackBar</class>
+   <extends>QFrame</extends>
+   <header>sesSnackBar.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
