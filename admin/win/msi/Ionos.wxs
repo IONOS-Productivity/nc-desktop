@@ -54,13 +54,6 @@
         <RegistrySearch Id="RegistryInstallDir" Type="raw" Root="HKLM" Key="Software\$(var.AppVendor)\$(var.AppName)" Win64="no" />
     </Property>
 
-    <!-- Detect legacy NSIS installation -->
-    <Property Id="NSIS_UNINSTALLEXE">
-        <RegistrySearch Id="RegistryLegacyUninstallString" Type="file" Root="HKLM" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\$(var.AppName)" Name="UninstallString" Win64="no">
-		    <FileSearch Id="LegacyUninstallFileName" Name="Uninstall.exe"/>
-	    </RegistrySearch>
-    </Property>
-
     <!-- Property to disable update checks -->
     <Property Id="SKIPAUTOUPDATE" Value="0" />
 
@@ -68,13 +61,9 @@
     <util:RestartResource ProcessName="$(var.AppExe)" />
 
     <!-- Helper DLL Custom Actions -->
-    <SetProperty Id="ExecNsisUninstaller" Value="&quot;$(var.AppShortName)&quot; &quot;[NSIS_UNINSTALLEXE]&quot;" Before="ExecNsisUninstaller" Sequence="execute" />
     <SetProperty Id="RemoveNavigationPaneEntries" Value="&quot;$(var.AppName)&quot;" Before="RemoveNavigationPaneEntries" Sequence="execute" />
 
     <InstallExecuteSequence>
-        <!-- Install: Remove previous NSIS installation, if detected -->
-        <Custom Action="ExecNsisUninstaller" Before="ProcessComponents">NSIS_UNINSTALLEXE AND NOT Installed</Custom>
-
         <!-- Uninstall: Remove sync folders from Explorer's Navigation Pane, only effective for the current user (home users) -->
         <Custom Action="RemoveNavigationPaneEntries" After="RemoveFiles">(NOT UPGRADINGPRODUCTCODE) AND (REMOVE="ALL")</Custom>
 		
