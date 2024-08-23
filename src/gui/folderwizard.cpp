@@ -91,8 +91,8 @@ FolderWizardLocalPath::FolderWizardLocalPath(const AccountPtr &account)
     _ui.localFolderLineEdit->setText(QDir::toNativeSeparators(defaultPath));
     _ui.localFolderLineEdit->setToolTip(tr("Enter the path to the local folder."));
 
-    _ui.warnLabel->setTextFormat(Qt::RichText);
-    _ui.warnLabel->hide();
+    _ui.sesSnackBar->setWordWrap(true);
+    _ui.sesSnackBar->hide();
 
     _ui.localFolderChooseBtn->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
 
@@ -103,12 +103,12 @@ FolderWizardLocalPath::~FolderWizardLocalPath() = default;
 
 void FolderWizardLocalPath::initializePage()
 {
-    _ui.warnLabel->hide();
+    _ui.sesSnackBar->hide();
 }
 
 void FolderWizardLocalPath::cleanupPage()
 {
-    _ui.warnLabel->hide();
+    _ui.sesSnackBar->hide();
 }
 
 bool FolderWizardLocalPath::isComplete() const
@@ -126,14 +126,13 @@ bool FolderWizardLocalPath::isComplete() const
         warnStrings << errorStr;
     }
 
-    _ui.warnLabel->setWordWrap(true);
     if (isOk) {
-        _ui.warnLabel->hide();
-        _ui.warnLabel->clear();
+        _ui.sesSnackBar->hide();
+        _ui.sesSnackBar->setMessage("");
     } else {
-        _ui.warnLabel->show();
+        _ui.sesSnackBar->show();
         QString warnings = formatWarnings(warnStrings);
-        _ui.warnLabel->setText(warnings);
+        _ui.sesSnackBar->setMessage(warnings);
     }
     return isOk;
 }
@@ -180,8 +179,8 @@ void FolderWizardLocalPath::changeEvent(QEvent *e)
 
 void FolderWizardLocalPath::changeStyle()
 {
-    const auto yellowWarnPalette = yellowWarnWidgetPalette(_ui.warnLabel->palette());
-    _ui.warnLabel->setPalette(yellowWarnPalette);
+    // const auto yellowWarnPalette = yellowWarnWidgetPalette(_ui.sesSnackBar->palette());
+    // _ui.sesSnackBar->setPalette(yellowWarnPalette);
 }
 
 // =================================================================================
