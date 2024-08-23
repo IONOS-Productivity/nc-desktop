@@ -20,7 +20,7 @@ namespace OCC {
         
         const auto layout = new QHBoxLayout();
         layout->setObjectName("sesSnackBarLayout");
-        layout->setContentsMargins(16, 10, 16, 10);
+        layout->setContentsMargins(16, 15, 16, 15);
         layout->setSpacing(0);
 
         m_captionLabel.setObjectName("sesSnackBarCaption");
