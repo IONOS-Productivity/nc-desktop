@@ -85,12 +85,16 @@ int main(int argc, char **argv)
     // though it looks slightly less native. Check here after the
     // QApplication was constructed, but before any QWidget is
     // constructed.
-    if (app.devicePixelRatio() > 1)
-        QApplication::setStyle(QStringLiteral("fusion"));
-    // Set the style to Windows 10
+    // if (app.devicePixelRatio() > 1)
+    //     QApplication::setStyle(QStringLiteral("fusion"));
+
     QApplication::setStyle(new sesStyle);
-    QFont defaultFont("Open Sans");
-    defaultFont.setPointSize(9);
+
+    int fontId = QFontDatabase::addApplicationFont(":/client/fonts/OpenSans-Regular.ttf");
+    QString fontFamily = QFontDatabase::applicationFontFamilies(fontId).at(0);
+
+    QFont defaultFont(fontFamily);
+    defaultFont.setPointSize(12);
     defaultFont.setWeight(QFont::Normal);
     
     QApplication::setFont(defaultFont);
