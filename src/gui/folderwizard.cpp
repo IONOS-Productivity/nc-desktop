@@ -189,7 +189,7 @@ FolderWizardRemotePath::FolderWizardRemotePath(const AccountPtr &account)
     , _account(account)
 {
     _ui.setupUi(this);
-    _ui.warnFrame->hide();
+    _ui.sesSnackBar->hide();
 
     _ui.folderTreeWidget->setSortingEnabled(true);
     _ui.folderTreeWidget->sortByColumn(0, Qt::AscendingOrder);
@@ -530,11 +530,11 @@ void FolderWizardRemotePath::initializePage()
 void FolderWizardRemotePath::showWarn(const QString &msg) const
 {
     if (msg.isEmpty()) {
-        _ui.warnFrame->hide();
+        _ui.sesSnackBar->hide();
 
     } else {
-        _ui.warnFrame->show();
-        _ui.warnLabel->setText(msg);
+        _ui.sesSnackBar->show();
+        _ui.sesSnackBar->setMessage(msg);
     }
 }
 
@@ -556,8 +556,8 @@ void FolderWizardRemotePath::changeEvent(QEvent *e)
 
 void FolderWizardRemotePath::changeStyle()
 {
-    const auto yellowWarnPalette = yellowWarnWidgetPalette(_ui.warnLabel->palette());
-    _ui.warnLabel->setPalette(yellowWarnPalette);
+    const auto yellowWarnPalette = yellowWarnWidgetPalette(_ui.sesSnackBar->palette());
+    _ui.sesSnackBar->setPalette(yellowWarnPalette);
 }
 
 // ====================================================================================
