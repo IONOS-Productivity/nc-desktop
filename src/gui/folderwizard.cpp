@@ -200,6 +200,11 @@ FolderWizardRemotePath::FolderWizardRemotePath(const AccountPtr &account)
     connect(_ui.folderTreeWidget, &QTreeWidget::currentItemChanged, this, &FolderWizardRemotePath::slotCurrentItemChanged);
     connect(_ui.folderEntry, &QLineEdit::textEdited, this, &FolderWizardRemotePath::slotFolderEntryEdited);
 
+    _ui.refreshButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
+    _ui.addFolderButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
+
+    _ui.buttonLayout->setAlignment(Qt::AlignLeft);
+
     _lscolTimer.setInterval(500);
     _lscolTimer.setSingleShot(true);
     connect(&_lscolTimer, &QTimer::timeout, this, &FolderWizardRemotePath::slotLsColFolderEntry);
