@@ -29,7 +29,7 @@
             <item>
                 <widget class="QLabel" name="title">
                     <property name="styleSheet">
-                        <string notr="true">font: 18pt &quot;Segoe UI&quot; bold;</string>
+                        <string notr="true">font: 18pt bold;</string>
                     </property>
                     <property name="text">
                         <string>Add Folder Sync</string>
@@ -45,7 +45,7 @@
             <item alignment="Qt::AlignTop">
                 <widget class="QLabel" name="subTitle">
                     <property name="styleSheet">
-                        <string notr="true">color: rgb(16,73, 150);font: 12pt &quot;SegoeUI&quot; bold;</string>
+                        <string notr="true">color: rgb(16,73, 150);font: 12pt bold;</string>
                     </property>
                     <property name="text">
                         <string>Step 2 of 2: Directory in your IONOS EASYSTORAGE</string>
@@ -84,7 +84,7 @@
                         </sizepolicy>
                     </property>
                     <property name="styleSheet">
-                        <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+                        <string notr="true">font: 12pt;</string>
                     </property>
                     <property name="text">
                         <string>Please now select or create a target folder in your IONOS EASYSTORAGE where the content should be uploaded and synchronized.</string>
