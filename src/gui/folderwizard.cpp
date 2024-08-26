@@ -690,6 +690,7 @@ FolderWizard::FolderWizard(AccountPtr account, QWidget *parent)
     setWindowTitle(tr("Add Folder Sync Connection"));
     setOptions(QWizard::CancelButtonOnLeft);
     setButtonText(QWizard::FinishButton, tr("Add Sync Connection"));
+    button(QWizard::NextButton)->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
 
     adjustWizardSize();
     setWizardStyle(QWizard::ClassicStyle);
