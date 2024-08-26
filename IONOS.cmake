@@ -3,7 +3,7 @@ set( APPLICATION_SHORTNAME  "Easystorage" )
 set( APPLICATION_EXECUTABLE "ionoseasystorage" )
 set( APPLICATION_CONFIG_NAME "${APPLICATION_EXECUTABLE}" )
 set( APPLICATION_DOMAIN     "ionos.com" )
-set( APPLICATION_VENDOR     "IONOS Group SE" )
+set( APPLICATION_VENDOR     "IONOS SE" )
 set( APPLICATION_UPDATE_URL "https://updates.nextcloud.org/client/" CACHE STRING "URL for updater" )
 set( APPLICATION_HELP_URL   "" CACHE STRING "URL for the help menu" )
 
