@@ -561,8 +561,8 @@ void FolderWizardRemotePath::changeEvent(QEvent *e)
 
 void FolderWizardRemotePath::changeStyle()
 {
-    const auto yellowWarnPalette = yellowWarnWidgetPalette(_ui.sesSnackBar->palette());
-    _ui.sesSnackBar->setPalette(yellowWarnPalette);
+    //const auto yellowWarnPalette = yellowWarnWidgetPalette(_ui.sesSnackBar->palette());
+    //_ui.sesSnackBar->setPalette(yellowWarnPalette);
 }
 
 // ====================================================================================
