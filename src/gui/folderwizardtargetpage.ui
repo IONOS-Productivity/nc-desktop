@@ -1,128 +1,256 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>FolderWizardTargetPage</class>
- <widget class="QWidget" name="FolderWizardTargetPage">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>520</width>
-    <height>350</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string notr="true">Form</string>
-  </property>
-  <layout class="QGridLayout" name="gridLayout_6">
-   <item row="1" column="0">
-    <widget class="QLineEdit" name="folderEntry">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>0</width>
-       <height>0</height>
-      </size>
-     </property>
+    <class>FolderWizardTargetPage</class>
+    <widget class="QWidget" name="FolderWizardTargetPage">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>520</width>
+                <height>350</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string notr="true">Form</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_6">
+            <item row="0" column="0">
+                <layout class="QVBoxLayout" name="verticalLayout">
+                    <property name="leftMargin">
+                        <number>20</number>
+                    </property>
+                    <property name="topMargin">
+                        <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                        <number>20</number>
+                    </property>
+                    <property name="bottomMargin">
+                        <number>0</number>
+                    </property>
+                    <item>
+                        <widget class="QLabel" name="title">
+                            <property name="styleSheet">
+                                <string notr="true">font: 18pt &quot;Segoe UI&quot; bold;</string>
+                            </property>
+                            <property name="text">
+                                <string>Add Folder Sync</string>
+                            </property>
+                            <property name="textFormat">
+                                <enum>Qt::PlainText</enum>
+                            </property>
+                            <property name="scaledContents">
+                                <bool>false</bool>
+                            </property>
+                        </widget>
+                    </item>
+                    <item alignment="Qt::AlignTop">
+                        <widget class="QLabel" name="subTitle">
+                            <property name="styleSheet">
+                                <string notr="true">color: rgb(16,73, 150);font: 12pt &quot;SegoeUI&quot; bold;</string>
+                            </property>
+                            <property name="text">
+                                <string>Step 2 of 2: Directory in your IONOS EASYSTORAGE</string>
+                            </property>
+                            <property name="textFormat">
+                                <enum>Qt::PlainText</enum>
+                            </property>
+                            <property name="scaledContents">
+                                <bool>false</bool>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <spacer name="verticalSpacer_2">
+                            <property name="orientation">
+                                <enum>Qt::Vertical</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>QSizePolicy::Preferred</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                                <size>
+                                    <width>20</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                    </item>
+                    <item>
+                        <widget class="QLabel" name="description1">
+                            <property name="sizePolicy">
+                                <sizepolicy hsizetype="Preferred"
+                                    vsizetype="Preferred">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="styleSheet">
+                                <string notr="true">font: 12pt
+                                    &quot;Segoe UI&quot;;</string>
+                            </property>
+                            <property name="text">
+                                <string>Please now select or create a target folder in your IONOS EASYSTORAGE where the content should be uploaded and synchronized Both folders are permanently linked and the respective contents are automatically synchronized and updated.</string>
+                            </property>
+                            <property name="textFormat">
+                                <enum>Qt::PlainText</enum>
+                            </property>
+                            <property name="wordWrap">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QLabel" name="description2">
+                            <property name="sizePolicy">
+                                <sizepolicy hsizetype="Preferred"
+                                    vsizetype="Preferred">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="styleSheet">
+                                <string notr="true">font: 12pt
+                                    &quot;Segoe UI&quot;;</string>
+                            </property>
+                            <property name="text">
+                                <string>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</string>
+                            </property>
+                            <property name="textFormat">
+                                <enum>Qt::PlainText</enum>
+                            </property>
+                            <property name="wordWrap">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <spacer name="verticalSpacer_3">
+                            <property name="orientation">
+                                <enum>Qt::Vertical</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>QSizePolicy::Preferred</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                                <size>
+                                    <width>20</width>
+                                    <height>15</height>
+                                </size>
+                            </property>
+                        </spacer>
+                    </item>
+                </layout>
+            </item>
+            <item row="2" column="0">
+                <widget class="QLineEdit" name="folderEntry">
+                    <property name="sizePolicy">
+                        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>0</width>
+                            <height>0</height>
+                        </size>
+                    </property>
+                </widget>
+            </item>
+            <item row="3" column="0">
+                <widget class="OCC::sesSnackBar" name="sesSnackBar">
+                    <property name="caption">
+                        <string>Error:</string>
+                    </property>
+                    <property name="message">
+                        <string> </string>
+                    </property>
+                    <property name="wordWrap">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </item>
+            <item row="1" column="0">
+                <widget class="QGroupBox" name="groupBox">
+                    <property name="flat">
+                        <bool>true</bool>
+                    </property>
+                    <property name="checkable">
+                        <bool>false</bool>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout">
+                        <item row="1" column="0">
+                            <widget class="QTreeWidget" name="folderTreeWidget">
+                                <property name="sizePolicy">
+                                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="sortingEnabled">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="headerHidden">
+                                    <bool>true</bool>
+                                </property>
+                                <column>
+                                    <property name="text">
+                                        <string>Folders</string>
+                                    </property>
+                                </column>
+                            </widget>
+                        </item>
+                        <item row="2" column="0">
+                            <layout class="QHBoxLayout" name="buttonLayout">
+                                <property name="sizeConstraint">
+                                    <enum>QLayout::SetMaximumSize</enum>
+                                </property>
+                                <item>
+                                    <widget class="QPushButton" name="addFolderButton">
+                                        <property name="sizePolicy">
+                                            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                                                <horstretch>0</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                        <property name="minimumSize">
+                                            <size>
+                                                <width>167</width>
+                                                <height>40</height>
+                                            </size>
+                                        </property>
+                                        <property name="text">
+                                            <string>Create folder</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QPushButton" name="refreshButton">
+                                        <property name="sizePolicy">
+                                            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                                                <horstretch>0</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                        <property name="minimumSize">
+                                            <size>
+                                                <width>86</width>
+                                                <height>40</height>
+                                            </size>
+                                        </property>
+                                        <property name="text">
+                                            <string>Refresh</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                            </layout>
+                        </item>
+                    </layout>
+                </widget>
+            </item>
+        </layout>
     </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="OCC::sesSnackBar" name="sesSnackBar">
-        <property name="caption">
-         <string>Error:</string>
-        </property>
-        <property name="message">
-         <string> </string>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
-        </property>
-       </widget>
-   </item>
-   <item row="0" column="0">
-    <widget class="QGroupBox" name="groupBox">
-     <property name="flat">
-      <bool>true</bool>
-     </property>
-     <property name="checkable">
-      <bool>false</bool>
-     </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="1" column="0">
-       <widget class="QTreeWidget" name="folderTreeWidget">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="sortingEnabled">
-         <bool>true</bool>
-        </property>
-        <property name="headerHidden">
-         <bool>true</bool>
-        </property>
-        <column>
-         <property name="text">
-          <string>Folders</string>
-         </property>
-        </column>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <layout class="QHBoxLayout" name="buttonLayout">
-        <property name="sizeConstraint">
-         <enum>QLayout::SetMaximumSize</enum>
-        </property>
-        <item>
-         <widget class="QPushButton" name="addFolderButton">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>167</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Create folder</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="refreshButton">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>86</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Refresh</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
-   </item>
-  </layout>
- </widget>
- <resources/>
- <connections/>
+    <resources />
+    <connections />
 </ui>
