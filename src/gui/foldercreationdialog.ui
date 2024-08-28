@@ -15,10 +15,7 @@
             </item>
             <item>
                 <widget class="OCC::sesSnackBar" name="errorSnackbar">
-                    <property name="caption">
-                        <string>Error</string>
-                    </property>
-                    <property name="message">
+                    <property name="error">
                         <string>Folder already exists</string>
                     </property>
                     <property name="wordWrap">

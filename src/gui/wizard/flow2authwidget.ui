@@ -104,10 +104,7 @@
                     </item>
                     <item>
                         <widget class="OCC::sesSnackBar" name="errorSnackbar" native="true">
-                            <property name="caption" stdset="0">
-                                <string>Error</string>
-                            </property>
-                            <property name="message" stdset="0">
+                            <property name="error" stdset="0">
                                 <string>An error occurred while connecting. Please try again.</string>
                             </property>
                         </widget>

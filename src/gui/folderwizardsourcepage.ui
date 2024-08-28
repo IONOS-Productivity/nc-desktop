@@ -129,12 +129,6 @@
      </item>
      <item>
       <widget class="OCC::sesSnackBar" name="sesSnackBar">
-       <property name="caption">
-        <string>Error:</string>
-       </property>
-       <property name="message">
-        <string> </string>
-       </property>
        <property name="wordWrap">
         <bool>true</bool>
        </property>

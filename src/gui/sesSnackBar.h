@@ -15,24 +15,26 @@ namespace OCC {
     {
         Q_OBJECT
         Q_PROPERTY(QString caption READ caption WRITE setCaption NOTIFY captionChanged)
-        Q_PROPERTY(QString message READ message WRITE setMessage NOTIFY messageChanged)
+        Q_PROPERTY(QString message READ message)
+        Q_PROPERTY(QString error WRITE setError NOTIFY errorChanged)
         Q_PROPERTY(bool wordWrap READ wordWrap WRITE setWordWrap)
 
     public:
         explicit sesSnackBar(QWidget* parent = nullptr);
         QString caption() const;
         QString message() const;
+        bool wordWrap() const;
+        void clearMessage();
        
     public slots:
         void setCaption(QString captionText);
-        void setMessage(QString messageText);
+        void setError(QString errorMessage);
 
         void setWordWrap(bool on);
-        bool wordWrap() const;
     
     signals:
         void captionChanged(QString captionText);
-        void messageChanged(QString messageText);
+        void errorChanged(QString errorText);
 
     private:
         QString m_caption;
@@ -43,7 +45,8 @@ namespace OCC {
         
         QLabel m_iconLabel;
 
-        void updateStyleSheet();
+        void updateStyleSheet(QColor frameBorderColor, QColor frameBackgroundColor, QColor frameColor, QColor labelColor);
+        void setMessage(QString messageText);
 
         void errorStyle();
     };

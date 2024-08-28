@@ -46,6 +46,11 @@ namespace OCC {
         errorStyle();
     }
 
+    void sesSnackBar::clearMessage(){
+        m_captionLabel.clear();
+        m_messageLabel.clear();
+    }
+
     QString sesSnackBar::caption() const { return m_caption; }
     QString sesSnackBar::message() const { return m_message; }
 
@@ -58,12 +63,16 @@ namespace OCC {
         }
     }
 
+    void sesSnackBar::setError(QString errorMessage){
+        errorStyle();
+        setMessage(errorMessage);
+        setCaption("Error");
+        emit errorChanged(m_message);
+    }
+
     void sesSnackBar::setMessage(QString messageText) {
-        if (m_message != messageText) {
-            m_message = messageText;
-            m_messageLabel.setText(m_message);
-            emit messageChanged(m_message);
-        }
+        m_message = messageText;
+        m_messageLabel.setText(m_message);
     }
 
     void sesSnackBar::setWordWrap(bool on)
@@ -81,17 +90,21 @@ namespace OCC {
         const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-snackBarErrorIcon.svg");
         m_iconLabel.setPixmap(logoIconFileName);
 
-        QString style = QLatin1String("QFrame {border: 1px solid #EEACB2; border-radius: 4px;"
-                                      "background-color: #FDF3F4; color: #000000;}"
-                                      "QLabel {border: 0px none; padding 0px; background-color: transparent; color: #000000;}"
-                                      "QLabel#sesSnackBarCaption {font-weight: bold;}"
-                                      );
-
-
-        setStyleSheet(style);
+        updateStyleSheet(QColor("#EEACB2"), QColor("#FDF3F4"), QColor("#000000"), QColor("#000000"));
     }
 
-    void sesSnackBar::updateStyleSheet()
+    void sesSnackBar::updateStyleSheet(QColor frameBorderColor, QColor frameBackgroundColor, QColor frameColor, QColor labelColor) 
     {
+        QString style = QString::fromLatin1("QFrame {border: 1px solid %1; border-radius: 4px;"
+                                "background-color: %2; color: %3;}"
+                                "QLabel {border: 0px none; padding 0px; background-color: transparent; color: %4;}"
+                                "QLabel#sesSnackBarCaption {font-weight: bold;}"
+                                ).arg(frameBorderColor.name()
+                                , frameBackgroundColor.name()
+                                , frameColor.name()
+                                , labelColor.name());
+
+        setStyleSheet(style);
+
     }
 }

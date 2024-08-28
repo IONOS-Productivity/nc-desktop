@@ -112,8 +112,7 @@ void Flow2AuthWidget::setError(const QString &caption, const QString &message) {
     if (message.isEmpty()) {
         _ui.errorSnackbar->hide();
     } else {
-        _ui.errorSnackbar->setCaption(caption);
-        _ui.errorSnackbar->setMessage(message);
+        _ui.errorSnackbar->setError(message);
         _ui.errorSnackbar->show();
     }
 }

@@ -129,11 +129,11 @@ bool FolderWizardLocalPath::isComplete() const
 
     if (isOk) {
         _ui.sesSnackBar->hide();
-        _ui.sesSnackBar->setMessage("");
+        _ui.sesSnackBar->clearMessage();
     } else {
         _ui.sesSnackBar->show();
         QString warnings = formatWarnings(warnStrings);
-        _ui.sesSnackBar->setMessage(warnings);
+        _ui.sesSnackBar->setError(warnings);
     }
     return isOk;
 }
@@ -546,7 +546,7 @@ void FolderWizardRemotePath::showWarn(const QString &msg) const
 
     } else {
         _ui.sesSnackBar->show();
-        _ui.sesSnackBar->setMessage(msg);
+        _ui.sesSnackBar->setError(msg);
     }
 }
 
