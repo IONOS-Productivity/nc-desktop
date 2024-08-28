@@ -120,22 +120,18 @@ bool FolderWizardLocalPath::isComplete() const
     const auto errorStr = FolderMan::instance()->checkPathValidityForNewFolder(
         QDir::fromNativeSeparators(_ui.localFolderLineEdit->text()), serverUrl).second;
 
-
-    bool isOk = errorStr.isEmpty();
-    QStringList warnStrings;
-    if (!isOk) {
-        warnStrings << errorStr;
-    }
-
-    if (isOk) {
+    if(errorStr.isEmpty())
+    {
         _ui.sesSnackBar->hide();
         _ui.sesSnackBar->clearMessage();
-    } else {
-        _ui.sesSnackBar->show();
-        QString warnings = formatWarnings(warnStrings);
-        _ui.sesSnackBar->setWarning(warnings);
+        return true;
     }
-    return isOk;
+    else 
+    {
+         _ui.sesSnackBar->show();
+        _ui.sesSnackBar->setWarning(formatWarnings(QStringList(errorStr))); 
+        return false;
+    }
 }
 
 void FolderWizardLocalPath::slotChooseLocalFolder()
