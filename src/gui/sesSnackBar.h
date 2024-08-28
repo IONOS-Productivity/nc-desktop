@@ -17,6 +17,7 @@ namespace OCC {
         Q_PROPERTY(QString caption READ caption WRITE setCaption NOTIFY captionChanged)
         Q_PROPERTY(QString message READ message)
         Q_PROPERTY(QString error WRITE setError NOTIFY errorChanged)
+        Q_PROPERTY(QString warning WRITE setWarning NOTIFY warningChanged)
         Q_PROPERTY(bool wordWrap READ wordWrap WRITE setWordWrap)
 
     public:
@@ -29,12 +30,14 @@ namespace OCC {
     public slots:
         void setCaption(QString captionText);
         void setError(QString errorMessage);
+        void setWarning(QString warningMessage);
 
         void setWordWrap(bool on);
     
     signals:
         void captionChanged(QString captionText);
         void errorChanged(QString errorText);
+        void warningChanged(QString warningText);
 
     private:
         QString m_caption;
@@ -42,13 +45,14 @@ namespace OCC {
 
         QLabel m_messageLabel;
         QLabel m_captionLabel;
-        
         QLabel m_iconLabel;
 
         void updateStyleSheet(QColor frameBorderColor, QColor frameBackgroundColor, QColor frameColor, QColor labelColor);
         void setMessage(QString messageText);
 
         void errorStyle();
+        void warningStyle();
+
     };
 }
 #endif // SESSNACKBAR_H
