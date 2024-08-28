@@ -24,6 +24,7 @@
 
 #include "ui_folderwizardsourcepage.h"
 #include "ui_folderwizardtargetpage.h"
+#include "ui_folderwizardselectivesync.h"
 
 class QCheckBox;
 
@@ -146,6 +147,7 @@ private slots:
     void virtualFilesCheckboxClicked();
 
 private:
+    Ui_FolderWizardSelectiveSync _uiSelectiveSync{};
     SelectiveSyncWidget *_selectiveSync;
     QCheckBox *_virtualFilesCheckBox = nullptr;
 };

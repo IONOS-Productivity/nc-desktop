@@ -569,7 +569,8 @@ void FolderWizardRemotePath::changeStyle()
 
 FolderWizardSelectiveSync::FolderWizardSelectiveSync(const AccountPtr &account)
 {
-    auto *layout = new QVBoxLayout(this);
+    _uiSelectiveSync.setupUi(this);
+    auto *layout = _uiSelectiveSync.verticalLayout;
     _selectiveSync = new SelectiveSyncWidget(account, this);
     layout->addWidget(_selectiveSync);
 
