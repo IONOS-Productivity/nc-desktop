@@ -18,6 +18,7 @@ namespace OCC {
         Q_PROPERTY(QString message READ message)
         Q_PROPERTY(QString error WRITE setError NOTIFY errorChanged)
         Q_PROPERTY(QString warning WRITE setWarning NOTIFY warningChanged)
+        Q_PROPERTY(QString success WRITE setSuccess NOTIFY successChanged)
         Q_PROPERTY(bool wordWrap READ wordWrap WRITE setWordWrap)
 
     public:
@@ -31,6 +32,7 @@ namespace OCC {
         void setCaption(QString captionText);
         void setError(QString errorMessage);
         void setWarning(QString warningMessage);
+        void setSuccess(QString successMessage);
 
         void setWordWrap(bool on);
     
@@ -38,6 +40,7 @@ namespace OCC {
         void captionChanged(QString captionText);
         void errorChanged(QString errorText);
         void warningChanged(QString warningText);
+        void successChanged(QString successText);
 
     private:
         QString m_caption;
@@ -52,6 +55,7 @@ namespace OCC {
 
         void errorStyle();
         void warningStyle();
+        void successStyle();
 
     };
 }

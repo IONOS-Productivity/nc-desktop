@@ -267,6 +267,7 @@
         <file>theme/ses/ses-warning.svg</file>
         <file>theme/ses/ses-snackBarErrorIcon.svg</file>
         <file>theme/ses/ses-snackBarWarningIcon.svg</file>
+        <file>theme/ses/ses-snackBarSuccessIcon.svg</file>
         <file>theme/ses/ses-questionCircle.svg</file>
         <file>theme/ses/ses-clipboard.svg</file>
         <file>theme/ses/ses-green-Checkmark.svg</file>

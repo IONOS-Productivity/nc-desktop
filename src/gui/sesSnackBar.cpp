@@ -77,6 +77,12 @@ namespace OCC {
         emit warningChanged(m_message);
     }
 
+    void sesSnackBar::setSuccess(QString successMessage){
+        successStyle();
+        setMessage(successMessage);
+        setCaption(tr("Success"));
+        emit successChanged(m_message);
+    }
 
     void sesSnackBar::setMessage(QString messageText) {
         m_message = messageText;
@@ -93,6 +99,14 @@ namespace OCC {
         return m_messageLabel.wordWrap();
     }
 
+    void sesSnackBar::successStyle()
+    {
+        const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-snackBarSuccessIcon.svg");
+        m_iconLabel.setPixmap(logoIconFileName);
+
+        updateStyleSheet(QColor("#9FD89F"), QColor("#F1FAF1"), QColor("#000000"), QColor("#000000"));
+    }
+
     void sesSnackBar::warningStyle()
     {
         const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-snackBarWarningIcon.svg");
@@ -106,7 +120,7 @@ namespace OCC {
         const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-snackBarErrorIcon.svg");
         m_iconLabel.setPixmap(logoIconFileName);
 
-        updateStyleSheet(QColor("#EEACB2"), QColor("#FDF3F4"), QColor("#00FF00"), QColor("#000000"));
+        updateStyleSheet(QColor("#EEACB2"), QColor("#FDF3F4"), QColor("#000000"), QColor("#000000"));
     }
 
     void sesSnackBar::updateStyleSheet(QColor frameBorderColor, QColor frameBackgroundColor, QColor frameColor, QColor labelColor) 
