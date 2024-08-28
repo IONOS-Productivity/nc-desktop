@@ -31,6 +31,7 @@
 #include <QFileInfo>
 #include <QFileIconProvider>
 #include <QInputDialog>
+#include <QDialogButtonBox>
 #include <QUrl>
 #include <QValidator>
 #include <QWizardPage>
@@ -231,6 +232,12 @@ void FolderWizardRemotePath::slotAddRemoteFolder()
     dlg->setLabelText(tr("Enter the name of the new folder to be created below \"%1\":")
                           .arg(parent));
     dlg->open(this, SLOT(slotCreateRemoteFolder(QString)));
+    
+    QDialogButtonBox *buttonBox = dlg->findChild<QDialogButtonBox*>();
+    buttonBox->setLayoutDirection(Qt::RightToLeft);
+    buttonBox->layout()->setSpacing(16);
+    buttonBox->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Fixed);
+    buttonBox->button(QDialogButtonBox::Ok)->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
     dlg->setAttribute(Qt::WA_DeleteOnClose);
 }
 
