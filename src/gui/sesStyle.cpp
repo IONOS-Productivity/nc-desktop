@@ -24,6 +24,7 @@
 #include <QCheckBox>
 #include <QPushButton>
 #include <QStyleOptionButton>
+#include <QPainter>
 
 sesStyle::sesStyle()
     : super()
@@ -92,7 +93,14 @@ void sesStyle::drawControl(ControlElement element, const QStyleOption *option, Q
         {
             QStyleOptionButton customStyleCopy = *optionButton;
             mPushButtonStyleHelper->adjustTextPalette(&customStyleCopy, widget);
+
+            painter->save(); 
+            QFont font = painter->font(); 
+            font.setWeight(QFont::DemiBold); 
+            painter->setFont(font); 
+
             QCommonStyle::drawControl(element, &customStyleCopy, painter, widget);
+            painter->restore(); 
         }
         return;
     default:
@@ -148,9 +156,8 @@ QRect sesStyle::subElementRect(SubElement subElement, const QStyleOption *option
 {
     switch (subElement) {
     default:
-        break;
+        return super::subElementRect(subElement, option, widget);
     }
-    return super::subElementRect(subElement, option, widget);
 }
 
 void sesStyle::drawComplexControl(ComplexControl complexControl, const QStyleOptionComplex *option, QPainter *painter, const QWidget *widget) const

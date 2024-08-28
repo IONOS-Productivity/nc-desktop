@@ -26,5 +26,7 @@ public:
     QSize sizeFromContents(const QStyleOptionButton *option, QSize contentsSize, const QWidget *widget, int margin) const;
     void adjustTextPalette(QStyleOptionButton *option, const QWidget *widget) const;
     bool isPrimary(const QWidget *widget, const QStyleOptionButton *option) const;
+private:
+    void recalculateContentSize(QSize &contentsSize, const QWidget *widget) const;
 };
 #endif // PUSHBUTTONSTYLEHELPER_H
