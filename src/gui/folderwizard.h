@@ -96,6 +96,8 @@ public:
 
 protected slots:
     void showWarn(const QString & = QString()) const;
+    void showSuccess(const QString & = QString()) const;
+    void showError(const QString & = QString()) const;
     void slotAddRemoteFolder();
     void slotCreateRemoteFolder(const QString &);
     void slotCreateRemoteFolderFinished();

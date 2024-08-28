@@ -64,9 +64,9 @@ QString FormatWarningsWizardPage::formatWarnings(const QStringList &warnings) co
 {
     QString ret;
     if (warnings.count() == 1) {
-        ret = tr("<b>Warning:</b> %1").arg(warnings.first());
+        ret = tr("%1").arg(warnings.first());
     } else if (warnings.count() > 1) {
-        ret = tr("<b>Warning:</b>") + " <ul>";
+        ret = tr("") + " <ul>";
         Q_FOREACH (QString warning, warnings) {
             ret += QString::fromLatin1("<li>%1</li>").arg(warning);
         }
@@ -260,7 +260,7 @@ void FolderWizardRemotePath::slotCreateRemoteFolder(const QString &folder)
 void FolderWizardRemotePath::slotCreateRemoteFolderFinished()
 {
     qCDebug(lcWizard) << "webdav mkdir request finished";
-    showWarn(tr("Folder was successfully created on %1.").arg(Theme::instance()->appNameGUI()));
+    showSuccess(tr("Folder was successfully created on %1.").arg(Theme::instance()->appNameGUI()));
     slotRefreshFolders();
     _ui.folderEntry->setText(dynamic_cast<MkColJob *>(sender())->path());
     slotLsColFolderEntry();
@@ -270,9 +270,9 @@ void FolderWizardRemotePath::slotHandleMkdirNetworkError(QNetworkReply *reply)
 {
     qCWarning(lcWizard) << "webdav mkdir request failed:" << reply->error();
     if (!_account->credentials()->stillValid(reply)) {
-        showWarn(tr("Authentication failed accessing %1").arg(Theme::instance()->appNameGUI()));
+        showError(tr("Authentication failed accessing %1").arg(Theme::instance()->appNameGUI()));
     } else {
-        showWarn(tr("Failed to create the folder on %1. Please check manually.")
+        showError(tr("Failed to create the folder on %1. Please check manually.")
                      .arg(Theme::instance()->appNameGUI()));
     }
 }
@@ -290,7 +290,7 @@ void FolderWizardRemotePath::slotHandleLsColNetworkError(QNetworkReply *reply)
     }
     auto job = qobject_cast<LsColJob *>(sender());
     ASSERT(job);
-    showWarn(tr("Failed to list a folder. Error: %1")
+    showError(tr("Failed to list a folder. Error: %1")
                  .arg(job->errorStringParsingBody()));
 }
 
@@ -543,6 +543,28 @@ void FolderWizardRemotePath::showWarn(const QString &msg) const
     } else {
         _ui.sesSnackBar->show();
         _ui.sesSnackBar->setWarning(msg);
+    }
+}
+
+void FolderWizardRemotePath::showSuccess(const QString &msg) const
+{
+    if (msg.isEmpty()) {
+        _ui.sesSnackBar->hide();
+
+    } else {
+        _ui.sesSnackBar->show();
+        _ui.sesSnackBar->setSuccess(msg);
+    }
+}
+
+void FolderWizardRemotePath::showError(const QString &msg) const
+{
+    if (msg.isEmpty()) {
+        _ui.sesSnackBar->hide();
+
+    } else {
+        _ui.sesSnackBar->show();
+        _ui.sesSnackBar->setError(msg);
     }
 }
 
