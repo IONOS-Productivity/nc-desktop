@@ -48,7 +48,7 @@
                         <string notr="true">color: rgb(16,73, 150);font: bold;</string>
                     </property>
                     <property name="text">
-                        <string>Step 2 of 2: Directory in your IONOS EASYSTORAGE</string>
+                        <string>Step 2 of 3: Directory in your IONOS EASYSTORAGE</string>
                     </property>
                     <property name="textFormat">
                         <enum>Qt::PlainText</enum>
