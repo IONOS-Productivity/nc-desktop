@@ -32,29 +32,18 @@ namespace OCC {
         m_messageLabel.setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
         m_messageLabel.setWordWrap(true);
 
-        const auto iconLabel = new QLabel();
-        iconLabel->setObjectName("sesSnackBarIcon");
-        iconLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        iconLabel->setFixedSize(16, 16);
-        const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-snackBarErrorIcon.svg");
-        iconLabel->setPixmap(logoIconFileName);
+        m_iconLabel.setObjectName("sesSnackBarIcon");
+        m_iconLabel.setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        m_iconLabel.setFixedSize(16, 16);
 
         layout->addWidget(&m_captionLabel);
         layout->addSpacerItem(new QSpacerItem(8, 0, QSizePolicy::Fixed, QSizePolicy::Fixed));
         layout->addWidget(&m_messageLabel);
         layout->addSpacerItem(new QSpacerItem(8, 0, QSizePolicy::Fixed, QSizePolicy::Fixed));
-        layout->addWidget(iconLabel);
+        layout->addWidget(&m_iconLabel);
         setLayout(layout);
 
-        QString style = QLatin1String("QFrame {border: 1px solid #EEACB2; border-radius: 4px;"
-                                      "background-color: #FDF3F4; color: #000000;}"
-                                      "QLabel {border: 0px none; padding 0px; background-color: transparent; color: #000000;}"
-                                      "QLabel#sesSnackBarCaption {font-weight: bold;}"
-                                      );
-
-
-
-        setStyleSheet(style);
+        errorStyle();
     }
 
     QString sesSnackBar::caption() const { return m_caption; }
@@ -85,6 +74,21 @@ namespace OCC {
     bool sesSnackBar::wordWrap() const
     {
         return m_messageLabel.wordWrap();
+    }
+
+    void sesSnackBar::errorStyle()
+    {
+        const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-snackBarErrorIcon.svg");
+        m_iconLabel.setPixmap(logoIconFileName);
+
+        QString style = QLatin1String("QFrame {border: 1px solid #EEACB2; border-radius: 4px;"
+                                      "background-color: #FDF3F4; color: #000000;}"
+                                      "QLabel {border: 0px none; padding 0px; background-color: transparent; color: #000000;}"
+                                      "QLabel#sesSnackBarCaption {font-weight: bold;}"
+                                      );
+
+
+        setStyleSheet(style);
     }
 
     void sesSnackBar::updateStyleSheet()

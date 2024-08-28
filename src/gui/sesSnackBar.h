@@ -40,8 +40,12 @@ namespace OCC {
 
         QLabel m_messageLabel;
         QLabel m_captionLabel;
+        
+        QLabel m_iconLabel;
 
         void updateStyleSheet();
+
+        void errorStyle();
     };
 }
 #endif // SESSNACKBAR_H
