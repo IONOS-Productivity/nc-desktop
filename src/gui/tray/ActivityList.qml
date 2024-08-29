@@ -126,13 +126,15 @@ ScrollView {
                 verticalAlignment: Image.AlignVCenter
                 horizontalAlignment: Image.AlignHCenter
                 fillMode: Image.PreserveAspectFit
-                source: "image://svgimage-custom-color/activity.svg/" + palette.midlight
+                source: "image://svgimage-custom-color/activity.svg/" 
+                sourceSize.height: 32
+                sourceSize.width: 22
             }
 
             EnforcedPlainTextLabel {
                width: parent.width
                text: qsTr("No activities yet")
-               color: palette.midlight
+               color: Style.sesBlack
                font.bold: true
                wrapMode: Text.Wrap
                horizontalAlignment: Text.AlignHCenter
