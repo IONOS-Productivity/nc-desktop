@@ -223,8 +223,6 @@ Button {
                 text: UserModel.currentUser.name
                 elide: Text.ElideRight
                 color: Style.currentUserHeaderTextColor
-
-                font.pixelSize: Style.topLinePixelSize
             }
 
             RowLayout {
@@ -251,7 +249,6 @@ Button {
                             : UserModel.currentUser.server
                     elide: Text.ElideRight
                     color: Style.currentUserHeaderTextColor
-                    font.pixelSize: Style.subLinePixelSize
                 }
             }
         }

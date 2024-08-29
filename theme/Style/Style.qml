@@ -222,6 +222,7 @@ QtObject {
     readonly property string sesDelete: "qrc:///client/theme/ses/ses-delete.svg"
     readonly property string sesClipboard: "qrc:///client/theme/ses/ses-clipboard.svg"
     readonly property string sesGreenCheckmark: "qrc:///client/theme/ses/ses-green-Checkmark.svg"
+    readonly property string sesOpenSansRegular: "qrc:///client/fonts/OpenSans-Regular.ttf"
 
     readonly property color sesIconColor: "#1474C4"
     readonly property color sesIconActive: "#095BB1"
@@ -246,4 +247,5 @@ QtObject {
     property int sesCornerRadius: 8
     property int sesHeaderTopMargin: variableSize(10)
     property int sesTrayIconSize: 16
+    property int sesFontPointSize: 9
 }

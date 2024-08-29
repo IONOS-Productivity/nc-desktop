@@ -121,8 +121,8 @@ HeaderButton {
                 anchors.top: openLocalFolderButtonIcon.bottom
                 anchors.topMargin: 2
                 text: root.text
-                font.family: "Open Sans"
-                font.pointSize: Style.defaultFontPtSize
+                font.family: Style.openSansFontRegular
+                font.pointSize: Style.sesFontPointSize
             }
 
             Loader {
