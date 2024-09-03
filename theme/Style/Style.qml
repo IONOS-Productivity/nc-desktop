@@ -214,7 +214,7 @@ QtObject {
 
     readonly property string sesAccountQuit: "qrc:///client/theme/ses/ses-accountQuit.svg"
     readonly property string sesAccountPause: "qrc:///client/theme/ses/ses-accountPause.svg"
-    readonly property string sesAccountPlus: "qrc:///client/theme/ses/ses-accountPlus.svg"
+    readonly property string sesAccountPlus: "qrc:///client/theme/ses/ses-plus16.svg"
     readonly property string sesAccountSettings: "qrc:///client/theme/ses/ses-accountSettings.svg"
     readonly property string sesAccountResume: "qrc:///client/theme/ses/ses-accountResume.svg"
     readonly property string sesLogout: "qrc:///client/theme/ses/ses-logout.svg"
