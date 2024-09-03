@@ -244,8 +244,8 @@
         <file>theme/talk-app.svg</file>
         <file>theme/ses/ses-accountQuit.svg</file>
         <file>theme/ses/ses-accountPause.svg</file>
-        <file>theme/ses/ses-plus16.svg</file>
-        <file>theme/ses/ses-plus24.svg</file>
+        <file>theme/ses/ses-darkPlus16.svg</file>
+        <file>theme/ses/ses-darkPlus24.svg</file>
         <file>theme/ses/ses-settings16.svg</file>        
         <file>theme/ses/ses-accountResume.svg</file>
         <file>theme/ses/ses-accountLogout.svg</file>

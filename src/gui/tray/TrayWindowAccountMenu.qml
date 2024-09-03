@@ -101,7 +101,7 @@ Button {
 
         AccountMenuItem{
             id: addAccountButton
-            icon.source: Style.sesAccountPlus 
+            icon.source: Style.sesDarkPlus 
             text: qsTr("Add account")
             onClicked: UserModel.addAccount()
             visible: Systray.enableAddAccount

@@ -165,7 +165,7 @@ GridLayout {
             bgColor: palette.highlight
             bgNormalOpacity: 0
 
-            icon.source: Style.sesAccountPlus + palette.buttonText
+            icon.source: Style.sesDarkPlus + palette.buttonText
             icon.width: Style.smallIconSize
             icon.height: Style.smallIconSize
 

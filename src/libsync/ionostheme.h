@@ -26,7 +26,7 @@ public:
     }
 
     static QString plusIcon() {
-        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-plus24.svg");
+        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-darkPlus24.svg");
     }
 
     static QString deleteIcon() {
