@@ -153,7 +153,7 @@ Button {
             Layout.leftMargin: Style.trayHorizontalMargin
             verticalAlignment: Qt.AlignCenter
             cache: false
-            source: Style.sesAccountIconBig
+            source: Style.sesAvatar
             Accessible.role: Accessible.Graphic
             Accessible.name: qsTr("Current account avatar")
             
