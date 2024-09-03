@@ -121,7 +121,7 @@ SettingsDialog::SettingsDialog(ownCloudGui *gui, QWidget *parent)
     _toolBar->addAction(newAccountAction);
     connect(newAccountAction, &QAction::triggered, _gui, &ownCloudGui::slotNewAccountWizard);
 
-        QAction *generalAction = createColorAwareAction(QLatin1String(":/client/theme/ses/ses-settings.svg"), tr("General"));
+    QAction *generalAction = createColorAwareAction(QLatin1String(":/client/theme/ses/ses-settings24.svg"), tr("General"));
     _actionGroup->addAction(generalAction);
     _toolBar->addAction(generalAction);
     auto *generalSettings = new GeneralSettings;

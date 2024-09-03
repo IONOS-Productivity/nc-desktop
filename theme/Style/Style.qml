@@ -209,13 +209,12 @@ QtObject {
     readonly property string sesIonosLogoIcon: "qrc:///client/theme/ses/ses-INONS-Logo.svg"
 
     readonly property string sesAvatar: "qrc:///client/theme/ses/ses-settingsAvatar.svg"
-    readonly property string sesSettingsIcon: "qrc:///client/theme/ses/ses-settings.svg"
     readonly property string sesAddAccountIcon: "qrc:///client/theme/ses/ses-addAccount.svg"
 
     readonly property string sesAccountQuit: "qrc:///client/theme/ses/ses-accountQuit.svg"
     readonly property string sesAccountPause: "qrc:///client/theme/ses/ses-accountPause.svg"
     readonly property string sesAccountPlus: "qrc:///client/theme/ses/ses-plus16.svg"
-    readonly property string sesAccountSettings: "qrc:///client/theme/ses/ses-accountSettings.svg"
+    readonly property string sesAccountSettings: "qrc:///client/theme/ses/ses-settings16.svg"
     readonly property string sesAccountResume: "qrc:///client/theme/ses/ses-accountResume.svg"
     readonly property string sesLogout: "qrc:///client/theme/ses/ses-logout.svg"
     readonly property string sesDelete: "qrc:///client/theme/ses/ses-delete.svg"
