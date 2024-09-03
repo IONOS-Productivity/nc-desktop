@@ -111,7 +111,7 @@ AbstractButton {
             property bool isActive: userMoreButton.pressed || userMoreButtonMenu.visible
 
             icon.source: "qrc:///client/theme/more.svg"
-            icon.color: userMoreButton.isActive || userMoreButton.isHovered ? Style.sesWhite : Style.sesIconColor
+            icon.color: userMoreButton.isActive || userMoreButton.isHovered ? Style.sesWhite : Style.sesIconDarkColor
 
             Accessible.role: Accessible.ButtonMenu
             Accessible.name: qsTr("Account actions")
@@ -151,7 +151,7 @@ AbstractButton {
                     property bool isActive: logInOutButton.pressed
 
                     icon.source: Style.sesLogout
-                    icon.color: logInOutButton.isActive ? Style.sesIconActive : Style.sesIconColor
+                    icon.color: Style.sesIconDarkColor
                     text: model.isConnected ? qsTr("Log out") : qsTr("Log in")
                     font.pixelSize: Style.topLinePixelSize
                     palette.windowText: Style.ncTextColor
@@ -183,7 +183,7 @@ AbstractButton {
 
                     id: removeAccountButton
                     icon.source: Style.sesDelete
-                    icon.color: removeAccountButton.isActive ? Style.sesIconActive : Style.sesIconColor
+                    icon.color: Style.sesIconDarkColor
                     text: qsTr("Remove account")
                     font.pixelSize: Style.topLinePixelSize
                     palette.windowText: Style.ncTextColor

@@ -224,6 +224,7 @@ QtObject {
     readonly property string sesGreenCheckmark: "qrc:///client/theme/ses/ses-green-Checkmark.svg"
     readonly property string sesOpenSansRegular: "qrc:///client/fonts/OpenSans-Regular.ttf"
 
+    readonly property color sesIconDarkColor: "#001B41"
     readonly property color sesIconColor: "#1474C4"
     readonly property color sesIconActive: "#095BB1"
     

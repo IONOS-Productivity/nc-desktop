@@ -19,7 +19,7 @@ MenuItem {
 
     icon.height: Style.smallIconSize
     icon.width: Style.smallIconSize 
-    icon.color: accountMenuItem.isActive ? Style.sesIconActive : Style.sesIconColor 
+    icon.color: Style.sesIconDarkColor
 
     background: Item {
         height: parent.height
