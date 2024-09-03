@@ -238,7 +238,7 @@ void SettingsDialog::accountAdded(AccountState *s)
     bool brandingSingleAccount = !Theme::instance()->multiAccount();
 
     const auto actionText = brandingSingleAccount ? tr("Account") : s->account()->displayName();
-    const auto accountAction = createColorAwareAction(QLatin1String(":/client/theme/ses/ses-accountIcon.svg"), actionText);
+    const auto accountAction = createColorAwareAction(QLatin1String(":/client/theme/ses/ses-settingsAvatar.svg"), actionText);
 
     if (!brandingSingleAccount) {
         accountAction->setToolTip(s->account()->displayName());
