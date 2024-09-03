@@ -256,11 +256,11 @@ QVariant ActivityListModel::data(const QModelIndex &index, int role) const
             } else {
                 // File sync successful
                 if (a._fileAction == "file_created") {
-                    return IonosTheme::plusIcon();
+                    return QStringLiteral("qrc:///client/theme/ses/ses-darkPlus24.svg");
                 } else if (a._fileAction == "file_deleted") {
-                    return IonosTheme::deleteIcon();
+                    return QStringLiteral("qrc:///client/theme/ses/ses-activityDelete.svg");
                 } else {
-                    return IonosTheme::refreshIcon();
+                    return QStringLiteral("qrc:///client/theme/ses/ses-refresh.svg");
                 }
             }
         } else {
