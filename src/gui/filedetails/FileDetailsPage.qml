@@ -114,8 +114,8 @@ Page {
                 verticalAlignment: Image.AlignVCenter
                 horizontalAlignment: Image.AlignHCenter
                 source: root.fileDetails.iconUrl
-                sourceSize.width: Style.sesTrayIconSize
-                sourceSize.height: Style.sesTrayIconSize
+                sourceSize.width: Style.trayListItemIconSize
+                sourceSize.height: Style.trayListItemIconSize
                 fillMode: Image.PreserveAspectFit
             }
 
