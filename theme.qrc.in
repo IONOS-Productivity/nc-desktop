@@ -248,9 +248,9 @@
         <file>theme/ses/ses-plus24.svg</file>
         <file>theme/ses/ses-settings16.svg</file>        
         <file>theme/ses/ses-accountResume.svg</file>
-        <file>theme/ses/ses-logout.svg</file>
-        <file>theme/ses/ses-delete.svg</file>
-        <file>theme/ses/ses-delete-dark.svg</file>
+        <file>theme/ses/ses-accountLogout.svg</file>
+        <file>theme/ses/ses-accountDelete.svg</file>
+        <file>theme/ses/ses-activityDelete.svg</file>
         <file>theme/ses/ses-settings24.svg</file>
         <file>theme/ses/ses-INONS-Logo.svg</file>
         <file>theme/ses/ses-settingsAvatar.svg</file>
