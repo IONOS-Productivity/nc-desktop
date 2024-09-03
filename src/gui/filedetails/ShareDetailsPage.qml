@@ -782,7 +782,7 @@ Page {
         SesCustomButton {
             Layout.columnSpan: buttonGrid.columns 
 
-            icon.source: Style.sesDarkPlus
+            icon.source: Style.sesLightPlus
             text: qsTr("Add another link")
             textColor: palette.brightText
             contentsFont.bold: true
