@@ -127,10 +127,6 @@ QString FileDetails::lastChangedString() const
 
 QString FileDetails::iconUrl() const
 {
-    if(_fileInfo.isDir()) {
-        return QStringLiteral("qrc:///client/theme/ses/ses-filesIcon.svg");
-    }
-
     return QStringLiteral("image://tray-image-provider/:/fileicon") + _localPath;
 }
 
