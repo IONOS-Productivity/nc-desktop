@@ -223,6 +223,7 @@ Button {
                 text: UserModel.currentUser.name
                 elide: Text.ElideRight
                 color: Style.currentUserHeaderTextColor
+                font.pointSize: Style.sesFontPointSize
             }
 
             RowLayout {

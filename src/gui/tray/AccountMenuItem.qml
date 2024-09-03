@@ -14,7 +14,7 @@ MenuItem {
     property bool isHovered: accountMenuItem.hovered || accountMenuItem.visualFocus
     property bool isActive: accountMenuItem.pressed
 
-    font.pixelSize: Style.topLinePixelSize
+    font.pointSize: Style.sesFontPointSize
     hoverEnabled: true
 
     icon.height: Style.smallIconSize

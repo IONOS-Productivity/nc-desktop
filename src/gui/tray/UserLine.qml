@@ -69,9 +69,9 @@ AbstractButton {
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
                 verticalAlignment: Text.AlignBottom
-                text: name
+                text: name 
                 elide: Text.ElideRight
-                font.pixelSize: Style.topLinePixelSize
+                font.pointSize: Style.sesFontPointSize
             }
 
             RowLayout {
