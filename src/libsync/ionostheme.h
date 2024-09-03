@@ -25,6 +25,18 @@ public:
         return QString(Theme::themePrefix) + QStringLiteral("ses/ses-questionCircle.svg");
     }
 
+    static QString plusIcon() {
+        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-plus24.svg");
+    }
+
+    static QString deleteIcon() {
+        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-activityDelete.svg");
+    }
+
+    static QString refreshIcon() {
+        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-refresh.svg");
+    }
+
     static QString toolbarActionBorderRadius() {
         return "8px";
     }

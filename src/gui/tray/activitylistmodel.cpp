@@ -26,6 +26,8 @@
 #include "activitydata.h"
 #include "systray.h"
 
+#include "IonosTheme.h"
+
 #include <QtCore>
 #include <QAbstractListModel>
 #include <QDesktopServices>
@@ -254,11 +256,11 @@ QVariant ActivityListModel::data(const QModelIndex &index, int role) const
             } else {
                 // File sync successful
                 if (a._fileAction == "file_created") {
-                    return QStringLiteral("qrc:///client/theme/ses/ses-plus-dark.svg");
+                    return IonosTheme::plusIcon();
                 } else if (a._fileAction == "file_deleted") {
-                    return QStringLiteral("qrc:///client/theme/ses/ses-delete-dark.svg");
+                    return IonosTheme::deleteIcon();
                 } else {
-                    return QStringLiteral("qrc:///client/theme/ses/ses-refresh.svg");                      
+                    return IonosTheme::refreshIcon();
                 }
             }
         } else {
