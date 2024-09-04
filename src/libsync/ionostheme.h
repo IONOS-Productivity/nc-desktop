@@ -26,15 +26,15 @@ public:
     }
 
     static QString plusIcon() {
-        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-darkPlus24.svg");
+        return QStringLiteral("qrc:///client/theme/ses/ses-darkPlus24.svg");
     }
 
     static QString deleteIcon() {
-        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-activityDelete.svg");
+        return QStringLiteral("qrc:///client/theme/ses/ses-activityDelete.svg");
     }
 
     static QString refreshIcon() {
-        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-refresh.svg");
+        return QStringLiteral("qrc:///client/theme/ses/ses-refresh.svg");
     }
 
     static QString toolbarActionBorderRadius() {
