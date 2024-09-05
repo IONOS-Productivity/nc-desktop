@@ -1,7 +1,6 @@
 
 #ifndef _BUTTONSTYLE_H
 #define _BUTTONSTYLE_H
-
  
 #include "ionostheme.h"
 #include <QMetaType>
@@ -15,8 +14,10 @@ enum class ButtonStyleName {
 };
 OCSYNC_EXPORT Q_NAMESPACE;
 Q_ENUM_NS(ButtonStyleName); 
+}
 Q_DECLARE_METATYPE(OCC::ButtonStyleName);
 
+namespace OCC{
 class ButtonStyle 
 {
 protected:

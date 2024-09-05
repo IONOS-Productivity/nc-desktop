@@ -1,6 +1,6 @@
 // linkButton.cpp
 #include "linkButton.h"
-#include "IonosTheme.h"
+#include "Ionostheme.h"
 #include "Theme.h"
 
 namespace OCC {

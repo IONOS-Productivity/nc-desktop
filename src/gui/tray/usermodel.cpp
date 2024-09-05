@@ -18,7 +18,7 @@
 #include "tray/talkreply.h"
 #include "userstatusconnector.h"
 #include "thumbnailjob.h"
-#include "buttonStyle.h"
+#include "buttonstyle.h"
 
 #include <QDesktopServices>
 #include <QIcon>

@@ -4,7 +4,7 @@
 
 #include "folderman.h"
 
-#include "buttonStyle.h"
+#include "buttonstyle.h"
 #include <QFile>
 #include <QInputDialog>
 #include <QDialogButtonBox>

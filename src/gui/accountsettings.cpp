@@ -18,8 +18,8 @@
 #include "qmessagebox.h"
 #include "ui_accountsettings.h"
 
-#include "IonosTheme.h"
-#include "buttonStyle.h"
+#include "ionostheme.h"
+#include "buttonstyle.h"
 #include "account.h"
 #include "accountmanager.h"
 #include "accountstate.h"

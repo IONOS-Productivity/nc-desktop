@@ -14,7 +14,7 @@
 
 #include "foldercreationdialog.h"
  
-#include "buttonStyle.h"
+#include "buttonstyle.h"
 #include "ionostheme.h"
 #include "ui_foldercreationdialog.h"
 

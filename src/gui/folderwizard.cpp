@@ -15,7 +15,7 @@
 #include "folderwizard.h"
 #include "account.h"
 #include "accountstate.h"
-#include "buttonStyle.h"
+#include "buttonstyle.h"
 #include "common/asserts.h"
 #include "configfile.h"
 #include "creds/abstractcredentials.h"

@@ -11,7 +11,7 @@
 #include "pushButtonStyleHelper.h"
 
  
-#include "buttonStyle.h"
+#include "buttonstyle.h"
 #include "ionostheme.h"
 #include <QMap>
 #include <QPainter>

@@ -162,7 +162,7 @@ set(client_SRCS
     sesFileIconProvider.cpp
     pushButtonStyleHelper.h
     pushButtonStyleHelper.cpp
-    buttonStyle.h
+    buttonstyle.h
     thumbnailjob.h
     thumbnailjob.cpp
     userinfo.h

@@ -1,5 +1,4 @@
-#include "sesFileIconProvider.h"
-#include "Windows.h"
+#include "sesfileiconprovider.h"
 
 #include <QFileIconProvider>
 #include <QIcon>
