@@ -16,7 +16,7 @@
 
  
 #include "account.h"
-#include "buttonStyle.h"
+#include "buttonstyle.h"
 #include "common/utility.h"
 #include "creds/webflowcredentials.h"
 #include "linklabel.h"
