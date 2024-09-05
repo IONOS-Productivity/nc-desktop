@@ -737,7 +737,34 @@ void AccountSettings::slotCustomContextMenuRequested(const QPoint &pos)
         }
     }
 
+    #ifdef Q_OS_WINDOWS
+        menu->setWindowFlags(menu->windowFlags() | Qt::FramelessWindowHint |Qt::NoDropShadowWindowHint);
+    #endif
+    menu->setAttribute(Qt::WA_TranslucentBackground);
+
     menu->popup(treeView->mapToGlobal(pos));
+
+    menu->setStyleSheet(QStringLiteral(
+        "QMenu {" 
+            "background-color: %1;"
+            "border: 1px solid %2;"
+            "padding: 15px;"
+            "border-radius: %5;"   
+        "}"
+        "QMenu::item  {" 
+            "background-color: transparent;"
+            "padding: 16px 18px; "
+            "color: %3; "
+            "border-radius: 8px; "
+        "}"
+        "QMenu::item:selected  {"
+            "background-color: %4;"
+            "color: %3; "
+            "border-radius: 8px; "
+        "}"
+    )
+     .arg(IonosTheme::white(), IonosTheme::menuBorderColor(), IonosTheme::menuTextColor(), IonosTheme::menuSelectedItemColor(), IonosTheme::menuBorderRarius())
+    );
 }
 
 void AccountSettings::slotFolderListClicked(const QModelIndex &indx)

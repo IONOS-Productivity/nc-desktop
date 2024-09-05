@@ -137,6 +137,22 @@ public:
         return "#FAFAFA"; 
     }
 
+    static QString menuBorderColor() {
+        return "#2E4360"; 
+    }
+
+    static QString menuTextColor() {
+        return "#001B41"; 
+    }
+
+    static QString menuSelectedItemColor() {
+        return "#F4F7FA"; 
+    }
+
+    static QString menuBorderRarius() {
+        return "16px"; 
+    }
+
 private:
     IonosTheme() {} 
 };
