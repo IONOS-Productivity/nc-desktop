@@ -176,8 +176,6 @@ void FolderWizardLocalPath::changeEvent(QEvent *e)
 
 void FolderWizardLocalPath::changeStyle()
 {
-    // const auto yellowWarnPalette = yellowWarnWidgetPalette(_ui.sesSnackBar->palette());
-    // _ui.sesSnackBar->setPalette(yellowWarnPalette);
 }
 
 // =================================================================================
@@ -586,8 +584,6 @@ void FolderWizardRemotePath::changeEvent(QEvent *e)
 
 void FolderWizardRemotePath::changeStyle()
 {
-    //const auto yellowWarnPalette = yellowWarnWidgetPalette(_ui.sesSnackBar->palette());
-    //_ui.sesSnackBar->setPalette(yellowWarnPalette);
 }
 
 // ====================================================================================
