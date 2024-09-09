@@ -19,6 +19,7 @@
 #include "folderstatusview.h"
 #include "folderman.h"
 #include "accountstate.h"
+#include "sesStyle.h"
 #include <theme.h>
 #include <account.h>
 
@@ -343,17 +344,17 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     painter->restore();
 
     {
-        QStyleOptionToolButton btnOpt;
+        QStyleOptionButton btnOpt;
         btnOpt.state = option.state;
         btnOpt.state &= ~(QStyle::State_Selected | QStyle::State_HasFocus);
         btnOpt.state |= QStyle::State_Raised;
-        btnOpt.arrowType = Qt::NoArrow;
-        btnOpt.subControls = QStyle::SC_ToolButton;
         btnOpt.rect = optionsButtonVisualRect;
         btnOpt.icon = _iconMore;
         const auto buttonSize = QApplication::style()->pixelMetric(QStyle::PM_ButtonIconSize);
         btnOpt.iconSize = QSize(buttonSize, buttonSize);
-        QApplication::style()->drawComplexControl(QStyle::CC_ToolButton, &btnOpt, painter);
+        QApplication::style()->
+            drawControl(
+                static_cast<QStyle::ControlElement>(sesStyle::CE_TreeViewMoreOptions), &btnOpt, painter);
     }
 }
 
@@ -392,10 +393,11 @@ QRect FolderStatusDelegate::optionsButtonRect(QRect within, Qt::LayoutDirection 
     QFontMetrics aliasFm(aliasFont);
     within.setHeight(FolderStatusDelegate::rootFolderHeightWithoutErrors(fm, aliasFm));
 
-    QStyleOptionToolButton opt;
+    QStyleOptionButton opt;
     int e = QApplication::style()->pixelMetric(QStyle::PM_ButtonIconSize);
     opt.rect.setSize(QSize(e,e));
-    QSize size = QApplication::style()->sizeFromContents(QStyle::CT_ToolButton, &opt, opt.rect.size()).expandedTo(QApplication::globalStrut());
+     QSize size = QApplication::style()->sizeFromContents(
+        static_cast<QStyle::ContentsType>(sesStyle::CT_TreeViewMoreOptions), &opt, opt.rect.size()).expandedTo(QApplication::globalStrut());
 
     int margin = QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing);
     QRect r(QPoint(within.right() - size.width() - margin,
