@@ -27,8 +27,15 @@ public:
     static OCC::ButtonStyle& getButtonStyle(const QWidget *widget, const QStyleOptionButton *option)
     {
         OCC::ButtonStyleName buttonStyleName;
-        buttonStyleName = determineButtonStyleName(widget, option);
-
+        if(widget != nullptr)
+        {
+            buttonStyleName = determineButtonStyleName(widget, option);
+        }
+        else
+        {
+            buttonStyleName = OCC::ButtonStyleName::Secondary;
+        }
+        
         switch (buttonStyleName)
         {
             case OCC::ButtonStyleName::Primary:
