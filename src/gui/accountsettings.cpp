@@ -670,8 +670,14 @@ void AccountSettings::slotCustomContextMenuRequested(const QPoint &pos)
     if (!folder) {
         return;
     }
-
     const auto menu = new QMenu(treeView);
+
+    connect(menu, &QMenu::aboutToHide, [treeView, index]() {
+        auto* delegate = qobject_cast<FolderStatusDelegate*>(treeView->itemDelegate(index));
+        delegate->MousePos = QPoint(-1, -1);
+        treeView->update();
+    });
+
 
     menu->setAttribute(Qt::WA_DeleteOnClose);
 
