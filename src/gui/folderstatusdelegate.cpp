@@ -378,12 +378,12 @@ bool FolderStatusDelegate::editorEvent(QEvent *event, QAbstractItemModel *model,
     case QEvent::MouseMove:
         if (const auto *view = qobject_cast<const QAbstractItemView *>(option.widget)) {
             auto *me = dynamic_cast<QMouseEvent *>(event);
-            QModelIndex index;
+            QModelIndex pressedIndex;
             if (me->buttons()) {
-                index = view->indexAt(me->pos());
+                pressedIndex = view->indexAt(me->pos());
             }
-            if (_pressedIndex != index) {
-                _pressedIndex = index;
+            if (_pressedIndex != pressedIndex) {
+                _pressedIndex = pressedIndex;
                 view->viewport()->update();
             }
             auto optionsButtonVisualRect = optionsButtonRect(option.rect, option.direction);
@@ -393,7 +393,7 @@ bool FolderStatusDelegate::editorEvent(QEvent *event, QAbstractItemModel *model,
             {
                 _hoveredIndex = index;
                 view->viewport()->update(); 
-            } else if(_hoveredIndex.isValid())
+            } else if(_hoveredIndex.isValid() || _hoveredIndex == index)
             {
                 _hoveredIndex = QModelIndex();
                 view->viewport()->update();
