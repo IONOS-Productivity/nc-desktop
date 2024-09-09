@@ -98,8 +98,8 @@ void PushButtonStyleHelper::setupPainterForToolButtonShape(const QStyleOptionBut
     } 
     // Else - Just beeing there
     else {
-        painter->setPen(QColor(style.buttonDefaultBorderColor()));
-        painter->setBrush(QColor(style.buttonDefaultColor()));
+        painter->setPen(QColor("#FFFFFF"));
+        painter->setBrush(QColor("#FFFFFF"));
     }
 }
 
