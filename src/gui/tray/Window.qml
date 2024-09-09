@@ -70,13 +70,11 @@ ApplicationWindow {
             hide();
             Systray.isOpen = false;
         }
-        syncStatus.model.load();
     }
 
     onClosing: Systray.isOpen = false
 
     onVisibleChanged: syncStatus.model.load()
-        syncStatus.model.load();
 
     background: Rectangle {
         radius: 0.0
