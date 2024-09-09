@@ -346,8 +346,20 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     {
         QStyleOptionButton btnOpt;
         btnOpt.state = option.state;
-        btnOpt.state &= ~(QStyle::State_Selected | QStyle::State_HasFocus);
+        btnOpt.state &= ~(QStyle::State_Selected | QStyle::State_HasFocus | QStyle::State_MouseOver);
         btnOpt.state |= QStyle::State_Raised;
+
+        if(optionsButtonVisualRect.contains(MousePos)  )
+        {
+            btnOpt.state |= QStyle::State_MouseOver;
+        }
+
+        if (btnOpt.state & QStyle::State_Enabled && btnOpt.state & QStyle::State_MouseOver && index == _pressedIndex) {
+            btnOpt.state |= QStyle::State_Sunken;
+        } else {
+            btnOpt.state |= QStyle::State_Raised;
+        }
+
         btnOpt.rect = optionsButtonVisualRect;
         btnOpt.icon = _iconMore;
         const auto buttonSize = QApplication::style()->pixelMetric(QStyle::PM_ButtonIconSize);
@@ -372,6 +384,18 @@ bool FolderStatusDelegate::editorEvent(QEvent *event, QAbstractItemModel *model,
             }
             if (_pressedIndex != index) {
                 _pressedIndex = index;
+                view->viewport()->update();
+            }
+            auto optionsButtonVisualRect = optionsButtonRect(option.rect, option.direction);
+
+            MousePos = me->pos();
+            if(optionsButtonVisualRect.contains(MousePos))
+            {
+                _hoveredIndex = index;
+                view->viewport()->update(); 
+            } else if(_hoveredIndex.isValid())
+            {
+                _hoveredIndex = QModelIndex();
                 view->viewport()->update();
             }
         }
