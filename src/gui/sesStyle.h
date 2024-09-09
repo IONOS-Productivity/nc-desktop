@@ -31,6 +31,14 @@ using super = QProxyStyle;
 class sesStyle : public super
 {
 public:
+    enum CustomControlElement {
+        CE_TreeViewMoreOptions = QStyle::CE_CustomBase + 1,  // Custom element for a button
+    };
+
+    enum CustomContentsType {
+        CT_TreeViewMoreOptions = QStyle::CT_CustomBase + 1,  // Custom element for a button
+    };
+
     sesStyle();
 
     void drawPrimitive(PrimitiveElement pe, const QStyleOption *option, QPainter *painter,

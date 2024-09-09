@@ -74,6 +74,10 @@ void sesStyle::drawButton(const QStyleOptionButton *btn, QPainter *painter, cons
 void sesStyle::drawControl(ControlElement element, const QStyleOption *option, QPainter *painter, const QWidget *widget) const
 {
     switch (element) {
+    case CE_TreeViewMoreOptions:
+    {
+        return;
+    }
     case CE_PushButton:
     {
         if (const auto *btn = qstyleoption_cast<const QStyleOptionButton *>(option))
@@ -146,6 +150,10 @@ QSize sesStyle::sizeFromContents(ContentsType type, const QStyleOption *option, 
             return mPushButtonStyleHelper->sizeFromContents(buttonOption, contentsSize, widget, pixelMetric(PM_ButtonMargin, buttonOption, widget));
         }
         break;
+    case CT_TreeViewMoreOptions:
+    {
+        break;
+    }
     default:
         break;
     }
