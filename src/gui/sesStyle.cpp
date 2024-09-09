@@ -25,6 +25,7 @@
 #include <QPushButton>
 #include <QStyleOptionButton>
 #include <QPainter>
+#include <QStyleOption>
 
 sesStyle::sesStyle()
     : super()
@@ -58,16 +59,16 @@ int sesStyle::pixelMetric(PixelMetric metric, const QStyleOption *option, const 
 }
 
 void sesStyle::drawButton(const QStyleOptionButton *btn, QPainter *painter, const QWidget *widget) const {
-        proxy()->drawControl(CE_PushButtonBevel, btn, painter, widget);
-        QStyleOptionButton subopt = *btn;
-        subopt.rect = subElementRect(SE_PushButtonContents, btn, widget);
-        proxy()->drawControl(CE_PushButtonLabel, &subopt, painter, widget);
-        if (btn->state & State_HasFocus) {
-            QStyleOptionFocusRect fropt;
-            fropt.QStyleOption::operator=(*btn);
-            fropt.rect = subElementRect(SE_PushButtonFocusRect, btn, widget);
-            proxy()->drawPrimitive(PE_FrameFocusRect, &fropt, painter, widget);
-        }
+    proxy()->drawControl(CE_PushButtonBevel, btn, painter, widget);
+    QStyleOptionButton subopt = *btn;
+    subopt.rect = subElementRect(SE_PushButtonContents, btn, widget);
+    proxy()->drawControl(CE_PushButtonLabel, &subopt, painter, widget);
+    if (btn->state & State_HasFocus) {
+        QStyleOptionFocusRect fropt;
+        fropt.QStyleOption::operator=(*btn);
+        fropt.rect = subElementRect(SE_PushButtonFocusRect, btn, widget);
+        proxy()->drawPrimitive(PE_FrameFocusRect, &fropt, painter, widget);
+    }
 }
 
 
@@ -76,6 +77,17 @@ void sesStyle::drawControl(ControlElement element, const QStyleOption *option, Q
     switch (element) {
     case CE_TreeViewMoreOptions:
     {
+        if (const auto *btn = qstyleoption_cast<const QStyleOptionButton *>(option))
+        {
+            // Bevel
+            mPushButtonStyleHelper->drawToolButtonShape(btn, painter, widget);
+            
+            // Label / Icon
+            QStyleOptionButton subopt = *btn;
+            subopt.rect = subElementRect(SE_PushButtonContents, btn, widget);
+            mPushButtonStyleHelper->adjustIconColor(&subopt, widget);
+            QCommonStyle::drawControl(CE_PushButtonLabel, &subopt, painter, widget);
+        }
         return;
     }
     case CE_PushButton:
@@ -152,6 +164,9 @@ QSize sesStyle::sizeFromContents(ContentsType type, const QStyleOption *option, 
         break;
     case CT_TreeViewMoreOptions:
     {
+        if (const auto *buttonOption = qstyleoption_cast<const QStyleOptionButton *>(option)) {
+            return super::sizeFromContents(CT_PushButton, option, contentsSize, widget);
+        }
         break;
     }
     default:
