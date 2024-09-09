@@ -35,6 +35,13 @@ Button {
         }
     }
 
+    onVisibleChanged: {
+        // HACK: reload account Instantiator immediately by restting it - could be done better I guess
+        // see also id:accountMenu below
+        userLineInstantiator.active = false;
+        userLineInstantiator.active = true;
+    }
+
     Menu {
         id: accountMenu
 

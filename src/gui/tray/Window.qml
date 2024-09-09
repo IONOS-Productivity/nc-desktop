@@ -75,13 +75,8 @@ ApplicationWindow {
 
     onClosing: Systray.isOpen = false
 
-    onVisibleChanged: {
-        // HACK: reload account Instantiator immediately by restting it - could be done better I guess
-        // see also id:accountMenu below
-        userLineInstantiator.active = false;
-        userLineInstantiator.active = true;
+    onVisibleChanged: syncStatus.model.load()
         syncStatus.model.load();
-    }
 
     background: Rectangle {
         radius: 0.0
