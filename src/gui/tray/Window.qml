@@ -70,6 +70,7 @@ ApplicationWindow {
             hide();
             Systray.isOpen = false;
         }
+        syncStatus.model.load();
     }
 
     onClosing: Systray.isOpen = false
