@@ -158,6 +158,7 @@ set(client_SRCS
     systray.cpp
     sesStyle.h
     sesStyle.cpp
+    buttonStyleStrategy.h
     sesFileIconProvider.h
     sesFileIconProvider.cpp
     pushButtonStyleHelper.h
