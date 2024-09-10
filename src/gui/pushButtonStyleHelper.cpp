@@ -22,8 +22,6 @@
 
 void PushButtonStyleHelper::setupPainterForShape(const QStyleOptionButton *option, QPainter *painter, const QWidget *widget)
 {
-    Q_UNUSED(widget)
-
     OCC::ButtonStyle& style = ButtonStyleStrategy::getButtonStyle(widget, option);
 
     // Disabled
