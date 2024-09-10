@@ -70,5 +70,6 @@ public:
 
 private:
     std::unique_ptr<class PushButtonStyleHelper> mPushButtonStyleHelper;
+    std::unique_ptr<class MoreOptionsButtonStyleHelper> mMoreOptionsButtonStyleHelper;
 
 };

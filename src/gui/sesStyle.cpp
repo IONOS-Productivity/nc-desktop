@@ -20,6 +20,7 @@
 #include "sesStyle.h"
  
 #include "pushButtonStyleHelper.h"
+#include "moreOptionsButtonStyleHelper.h"
 
 #include <QCheckBox>
 #include <QPushButton>
@@ -30,6 +31,7 @@
 sesStyle::sesStyle()
     : super()
     , mPushButtonStyleHelper(new PushButtonStyleHelper)
+    , mMoreOptionsButtonStyleHelper(new MoreOptionsButtonStyleHelper)
 {
 }
 
@@ -80,12 +82,12 @@ void sesStyle::drawControl(ControlElement element, const QStyleOption *option, Q
         if (const auto *btn = qstyleoption_cast<const QStyleOptionButton *>(option))
         {
             // Bevel
-            mPushButtonStyleHelper->drawToolButtonShape(btn, painter, widget);
+            mMoreOptionsButtonStyleHelper->drawToolButtonShape(btn, painter, widget);
             
             // Label / Icon
             QStyleOptionButton subopt = *btn;
             subopt.rect = subElementRect(SE_PushButtonContents, btn, widget);
-            mPushButtonStyleHelper->adjustIconColor(&subopt, widget);
+            mMoreOptionsButtonStyleHelper->adjustIconColor(&subopt, widget);
             QCommonStyle::drawControl(CE_PushButtonLabel, &subopt, painter, widget);
         }
         return;
