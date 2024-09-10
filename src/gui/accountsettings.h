@@ -134,6 +134,7 @@ private slots:
     void removeActionFromEncryptionMessage(const QString &actionId);
 
 private:
+    void styleCustomContextMenu(QMenu *menu) const;
     bool event(QEvent *) override;
     QAction *addActionToEncryptionMessage(const QString &actionTitle, const QString &actionId);
 
