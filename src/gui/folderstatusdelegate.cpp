@@ -20,6 +20,8 @@
 #include "folderman.h"
 #include "accountstate.h"
 #include "sesStyle.h"
+#include "buttonstyle.h"
+
 #include <theme.h>
 #include <account.h>
 
@@ -364,9 +366,11 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
         btnOpt.icon = _iconMore;
         const auto buttonSize = QApplication::style()->pixelMetric(QStyle::PM_ButtonIconSize);
         btnOpt.iconSize = QSize(buttonSize, buttonSize);
+        QWidget buttonWidget;
+        buttonWidget.setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::MoreOptions));
         QApplication::style()->
             drawControl(
-                static_cast<QStyle::ControlElement>(sesStyle::CE_TreeViewMoreOptions), &btnOpt, painter);
+                static_cast<QStyle::ControlElement>(sesStyle::CE_TreeViewMoreOptions), &btnOpt, painter, &buttonWidget);
     }
 }
 

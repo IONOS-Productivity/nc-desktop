@@ -10,8 +10,6 @@
 
 void MoreOptionsButtonStyleHelper::setupPainterForToolButtonShape(const QStyleOptionButton *option, QPainter *painter, const QWidget *widget)
 {
-    Q_UNUSED(widget)
-
     OCC::ButtonStyle& style = ButtonStyleStrategy::getButtonStyle(widget, option);
 
     // Disabled
@@ -22,14 +20,14 @@ void MoreOptionsButtonStyleHelper::setupPainterForToolButtonShape(const QStyleOp
     //Pressed 
     else if (option->state & QStyle::State_Sunken) 
     {
-        painter->setPen(QColor("#0B2A63"));
-        painter->setBrush(QColor("#0B2A63"));
+        painter->setPen(QColor(style.buttonPressedBorderColor()));
+        painter->setBrush(QColor(style.buttonPressedColor()));
     } 
     // Hover
     else if(option->state & QStyle::State_MouseOver)
     {
-        painter->setPen(QColor("#1474C4"));
-        painter->setBrush(QColor("#1474C4"));
+        painter->setPen(QColor(style.buttonHoverBorderColor()));
+        painter->setBrush(QColor(style.buttonHoverColor()));
     }
     // Focused
     else if (option->state & QStyle::State_HasFocus) {
@@ -38,8 +36,8 @@ void MoreOptionsButtonStyleHelper::setupPainterForToolButtonShape(const QStyleOp
     } 
     // Else - Just beeing there
     else {
-        painter->setPen(QColor("#FFFFFF"));
-        painter->setBrush(QColor("#FFFFFF"));
+        painter->setPen(QColor(style.buttonDefaultBorderColor()));
+        painter->setBrush(QColor(style.buttonDefaultColor()));
     }
 }
 
@@ -59,7 +57,7 @@ QPixmap MoreOptionsButtonStyleHelper::tintPixmap(const QPixmap &src, const QColo
 
     QPainter painter(&result);
     painter.setCompositionMode(QPainter::CompositionMode_Source);
-    painter.drawPixmap(0, 0, src);  // Draw the original pixmap
+    painter.drawPixmap(0, 0, src); 
 
     painter.setCompositionMode(QPainter::CompositionMode_SourceIn);
     painter.fillRect(result.rect(), color);
@@ -78,11 +76,11 @@ void MoreOptionsButtonStyleHelper::adjustIconColor(QStyleOptionButton *option, c
     }    
     else if(option->state & QStyle::State_MouseOver)
     {
-        iconColor = QColor("#FFFFFF");
+        iconColor = QColor(QColor(style.buttonDefaultColor()));
     }
     else 
     {
-        iconColor = QColor("#1474C4");
+        iconColor = QColor(QColor(style.buttonHoverColor()));
     }
 
     QIcon icon = option->icon;
@@ -91,5 +89,5 @@ void MoreOptionsButtonStyleHelper::adjustIconColor(QStyleOptionButton *option, c
 
     QPixmap coloredPixmap = tintPixmap(pixmap, iconColor);
 
-    option->icon = (QIcon(coloredPixmap) );
+    option->icon = (QIcon(coloredPixmap));
 }

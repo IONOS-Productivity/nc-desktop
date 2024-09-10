@@ -25,6 +25,8 @@ public:
         
         switch (buttonStyleName)
         {
+            case OCC::ButtonStyleName::MoreOptions:
+                return OCC::MoreOptionsButtonStyle::GetInstance();
             case OCC::ButtonStyleName::Primary:
                 return OCC::PrimaryButtonStyle::GetInstance();
             case OCC::ButtonStyleName::Secondary:

@@ -11,6 +11,7 @@ namespace OCC{
 enum class ButtonStyleName {
     Primary,
     Secondary,
+    MoreOptions,
 };
 OCSYNC_EXPORT Q_NAMESPACE;
 Q_ENUM_NS(ButtonStyleName); 
@@ -214,5 +215,89 @@ public:
         return OCC::IonosTheme::black();
     }
 };
+
+class MoreOptionsButtonStyle : public ButtonStyle {
+protected: 
+    MoreOptionsButtonStyle()
+    {
+    }
+    ~MoreOptionsButtonStyle() {}
+public:
+
+    MoreOptionsButtonStyle(MoreOptionsButtonStyle &other) = delete;
+    void operator=(const MoreOptionsButtonStyle &) = delete;
+
+    static MoreOptionsButtonStyle& GetInstance() {
+        static MoreOptionsButtonStyle instance; 
+        return instance;
+    }
+
+    // Default
+    QString buttonDefaultColor() const override 
+    {
+        return OCC::IonosTheme::white();
+    }
+
+    QString buttonDefaultBorderColor() const override 
+    {
+        return OCC::IonosTheme::white();
+    }
+
+    // Hover
+    QString buttonHoverColor() const override 
+    {
+        return OCC::IonosTheme::toolButtonHoveredColor();
+    }
+
+    QString buttonHoverBorderColor() const override 
+    {
+        return OCC::IonosTheme::toolButtonHoveredColor();
+    }
+
+    // Pressed
+    QString buttonPressedColor() const override 
+    {
+        return OCC::IonosTheme::toolButtonPressedColor();
+    }
+
+    QString buttonPressedBorderColor() const override 
+    {
+        return OCC::IonosTheme::toolButtonPressedColor();
+    }
+
+    // Disabled
+    QString buttonDisabledColor() const override 
+    {
+        return OCC::IonosTheme::buttonDisabledColor();
+    }
+
+    QString buttonDisabledBorderColor() const override 
+    {
+        return OCC::IonosTheme::buttonDisabledColor();
+    }
+
+    // Focused 
+    QString buttonFocusedColor() const override 
+    {
+        return OCC::IonosTheme::white();
+    }
+
+    QString buttonFocusedBorderColor() const override 
+    { 
+        return OCC::IonosTheme::black();
+    }
+
+    // Font
+    QString buttonDisabledFontColor() const override 
+    {
+        return OCC::IonosTheme::buttonDisabledFontColor();
+    }
+
+    QString buttonFontColor() const override 
+    {
+        return OCC::IonosTheme::black();
+    }
+};
 }
+
 #endif // _BUTTONSTYLE_H

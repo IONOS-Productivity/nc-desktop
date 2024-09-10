@@ -153,6 +153,16 @@ public:
         return "16px"; 
     }
 
+    static QString toolButtonPressedColor() {
+        return "#0B2A63";
+    }
+
+    static QString toolButtonHoveredColor() {
+        return "#1474C4";
+    }
+
+    
+
 private:
     IonosTheme() {} 
 };
