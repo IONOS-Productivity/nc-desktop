@@ -868,10 +868,10 @@ void Theme::replaceLinkColorString(QString &linkString, const QColor &newColor)
     linkString.replace(linkRegularExpression, QString::fromLatin1("<a style='color:%1;' href").arg(newColor.name()));
 }
 
-QIcon Theme::createColorAwareIcon(const QString &name, const QPalette &palette)
+QIcon Theme::createColorAwareIcon(const QString &name, const QPalette &palette, const QSize &size)
 {
     QSvgRenderer renderer(name);
-    QImage img(64, 64, QImage::Format_ARGB32);
+    QImage img(size, QImage::Format_ARGB32);
     img.fill(Qt::GlobalColor::transparent);
     QPainter imgPainter(&img);
 
@@ -884,9 +884,9 @@ QIcon Theme::createColorAwareIcon(const QString &name, const QPalette &palette)
     return icon;
 }
 
-QIcon Theme::createColorAwareIcon(const QString &name)
+QIcon Theme::createColorAwareIcon(const QString &name, const QSize &size)
 {
-    return createColorAwareIcon(name, QGuiApplication::palette());
+    return createColorAwareIcon(name, QGuiApplication::palette(), size);
 }
 
 QPixmap Theme::createColorAwarePixmap(const QString &name, const QPalette &palette)
