@@ -4,11 +4,11 @@
 #include <QSize>
 
 class QPainter;
-class QPushButton;
 class QStyleOptionButton;
 class QWidget;
 class QPixmap;
 class QColor;
+class QIcon;
 
 class MoreOptionsButtonStyleHelper
 {
