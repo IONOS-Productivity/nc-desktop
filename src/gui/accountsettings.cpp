@@ -566,7 +566,7 @@ void AccountSettings::customizeButtonBox(QDialogButtonBox *buttonBox){
 
     const auto okButton = buttonBox->button(QDialogButtonBox::Ok);
 
-    okButton->setProperty("buttonStyle", QVariant::fromValue(ButtonStyleName::Primary));    
+    okButton->setProperty("buttonStyle", QVariant::fromValue(ButtonStyleName::Primary));
     okButton->setMinimumSize(80, 40);
 
     buttonBox->button(QDialogButtonBox::Cancel)->setMinimumSize(80, 40);
@@ -655,13 +655,13 @@ void AccountSettings::styleCustomContextMenu(QMenu *menu) const
     menu->setAttribute(Qt::WA_TranslucentBackground);
 
     menu->setStyleSheet(QStringLiteral(
-        "QMenu {" 
+        "QMenu {"
             "background-color: %1;"
             "border: 1px solid %2;"
             "padding: 15px;"
-            "border-radius: %5;"   
+            "border-radius: %5;"
         "}"
-        "QMenu::item  {" 
+        "QMenu::item  {"
             "background-color: transparent;"
             "padding: 16px 18px; "
             "color: %3; "
@@ -673,7 +673,7 @@ void AccountSettings::styleCustomContextMenu(QMenu *menu) const
             "border-radius: 8px; "
         "}"
     )
-     .arg(IonosTheme::white(), IonosTheme::menuBorderColor(), IonosTheme::menuTextColor(), IonosTheme::menuSelectedItemColor(), IonosTheme::menuBorderRarius())
+     .arg(IonosTheme::white(), IonosTheme::menuBorderColor(), IonosTheme::menuTextColor(), IonosTheme::menuSelectedItemColor(), IonosTheme::menuBorderRadius())
     );
 }
 

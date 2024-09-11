@@ -62,19 +62,19 @@ public:
     }
 
     static QString settingsTextSize() {
-        return "16px"; 
+        return "16px";
     }
 
     static QString settingsTextWeigth() {
-        return "normal"; 
+        return "normal";
     }
 
     static QString settingsLinkColor() {
-        return "#02306A"; 
+        return "#02306A";
     }
 
     static QString buttonFontSize() {
-        return "16px"; 
+        return "16px";
     }
 
     static QString buttonFontWeight() {
@@ -82,7 +82,7 @@ public:
     }
 
     static QString buttonPrimaryColor() {
-        return "#0F6CBD"; 
+        return "#0F6CBD";
     }
 
     static QString buttonRadius() {
@@ -96,7 +96,7 @@ public:
     static QString buttonPadding() {
         return "10px";
     }
-    
+
     static QString buttonSecondaryBorderColor() {
         return "#D1D1D1";
     }
@@ -108,7 +108,7 @@ public:
     static QString buttonPrimaryHoverColor() {
         return "#115EA3";
     }
-    
+
     static QString buttonSecondaryHoverColor() {
         return "#F5F5F5";
     }
@@ -116,7 +116,7 @@ public:
     static QString buttonPrimaryPressedColor() {
         return "#0C3B5E";
     }
-        
+
     static QString buttonSecondaryPressedColor() {
         return "#E0E0E0";
     }
@@ -126,31 +126,31 @@ public:
     }
 
     static QString white() {
-        return "#FFFFFF"; 
+        return "#FFFFFF";
     }
 
     static QString black() {
-        return "#000000"; 
+        return "#000000";
     }
 
     static QString dialogBackgroundColor() {
-        return "#FAFAFA"; 
+        return "#FAFAFA";
     }
 
     static QString menuBorderColor() {
-        return "#2E4360"; 
+        return "#2E4360";
     }
 
     static QString menuTextColor() {
-        return "#001B41"; 
+        return "#001B41";
     }
 
     static QString menuSelectedItemColor() {
-        return "#F4F7FA"; 
+        return "#F4F7FA";
     }
 
-    static QString menuBorderRarius() {
-        return "16px"; 
+    static QString menuBorderRadius() {
+        return "16px";
     }
 
     static QString toolButtonPressedColor() {
@@ -161,10 +161,10 @@ public:
         return "#1474C4";
     }
 
-    
+
 
 private:
-    IonosTheme() {} 
+    IonosTheme() {}
 };
 }
 #endif // _IONOSTHEME_H
