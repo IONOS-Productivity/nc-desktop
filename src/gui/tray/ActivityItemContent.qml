@@ -160,25 +160,33 @@ RowLayout {
             CustomButton {
                 id: fileDetailsButton
 
+                property bool isHovered: fileDetailsButton.hovered || fileDetailsButton.visualFocus
+                property bool isActive: fileDetailsButton.pressed
+
                 Layout.preferredWidth: Style.dismissButtonSize
                 Layout.preferredHeight: Style.dismissButtonSize
                 Layout.alignment: Qt.AlignTop | Qt.AlignRight
 
-                icon.source: "image://svgimage-custom-color/more.svg/" + palette.buttonText
+                icon.source: "image://svgimage-custom-color/more.svg/" + (hovered ? Style.sesWhite : Style.sesActionHover)
 
                 NCToolTip {
                     text: qsTr("Open file details")
                     visible: parent.hovered
                 }
 
+                background: Rectangle {
+                    anchors.fill: parent
+                    anchors.margins: 1
+                    color: parent.isActive ? Style.sesActionPressed : parent.isHovered ? Style.sesActionHover : "transparent"
+                    radius: width / 2
+                }   
+
                 display: Button.IconOnly
                 leftPadding: 0
                 rightPadding: 0
-                bgColor: Style.sesActionHover
-                bgNormalOpacity:  0
 
                 visible: model.showFileDetails
-
+                
                 onClicked: Systray.presentShareViewInTray(model.openablePath)
             }
 
