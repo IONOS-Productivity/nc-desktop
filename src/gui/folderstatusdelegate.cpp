@@ -364,7 +364,7 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
 
         btnOpt.rect = optionsButtonVisualRect;
         btnOpt.icon = _iconMore;
-        const auto buttonSize = QApplication::style()->pixelMetric(QStyle::PM_ButtonIconSize);
+        const auto buttonSize = QApplication::style()->pixelMetric(QStyle::PM_LargeIconSize);
         btnOpt.iconSize = QSize(buttonSize, buttonSize);
         QWidget buttonWidget;
         buttonWidget.setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::MoreOptions));
@@ -461,7 +461,7 @@ void FolderStatusDelegate::slotStyleChanged()
 
 void FolderStatusDelegate::customizeStyle()
 {
-    _iconMore = Theme::createColorAwareIcon(QLatin1String(":/client/theme/more.svg"), QSize(128, 128));
+    _iconMore = Theme::createColorAwareIcon(QLatin1String(":/client/theme/ses/ses-more.svg"), QSize(128, 128));
 }
 
 } // namespace OCC
