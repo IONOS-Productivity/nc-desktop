@@ -397,7 +397,7 @@ bool FolderStatusDelegate::editorEvent(QEvent *event, QAbstractItemModel *model,
             {
                 _hoveredIndex = index;
                 view->viewport()->update(); 
-            } else if(_hoveredIndex.isValid() || _hoveredIndex == index)
+            } else if(_hoveredIndex.isValid())
             {
                 _hoveredIndex = QModelIndex();
                 view->viewport()->update();
