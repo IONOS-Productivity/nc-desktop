@@ -167,7 +167,7 @@ QSize sesStyle::sizeFromContents(ContentsType type, const QStyleOption *option, 
     case CT_TreeViewMoreOptions:
     {
         if (const auto *buttonOption = qstyleoption_cast<const QStyleOptionButton *>(option)) {
-            return super::sizeFromContents(CT_PushButton, option, contentsSize, widget);
+            return super::sizeFromContents(CT_ToolButton, option, contentsSize, widget);
         }
         break;
     }
