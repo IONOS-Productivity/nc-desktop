@@ -427,7 +427,7 @@ QRect FolderStatusDelegate::optionsButtonRect(QRect within, Qt::LayoutDirection 
      QSize size = QApplication::style()->sizeFromContents(
         static_cast<QStyle::ContentsType>(sesStyle::CT_TreeViewMoreOptions), &opt, opt.rect.size()).expandedTo(QApplication::globalStrut());
 
-    int margin = QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing);
+    int margin = QApplication::style()->pixelMetric(QStyle::PM_LargeIconSize);
     QRect r(QPoint(within.right() - size.width() - margin,
                 within.top() + within.height() / 2 - size.height() / 2),
         size);
