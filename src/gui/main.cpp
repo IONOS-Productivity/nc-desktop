@@ -88,17 +88,17 @@ int main(int argc, char **argv)
     // if (app.devicePixelRatio() > 1)
     //     QApplication::setStyle(QStringLiteral("fusion"));
 
-    QApplication::setStyle(new sesStyle);
 
+#endif // Q_OS_WIN
+
+    QApplication::setStyle(new sesStyle);
+    
     int fontId = QFontDatabase::addApplicationFont(":/client/fonts/OpenSans-Regular.ttf");
     QString fontFamily = QFontDatabase::applicationFontFamilies(fontId).at(0);
-
     QFont defaultFont(fontFamily);
-    defaultFont.setPointSize(12);
+    defaultFont.setPointSize(9);
     defaultFont.setWeight(QFont::Normal);
-    
     QApplication::setFont(defaultFont);
-#endif // Q_OS_WIN
 
 #ifndef Q_OS_WIN
     signal(SIGPIPE, SIG_IGN);
