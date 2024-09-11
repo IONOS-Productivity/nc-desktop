@@ -19,6 +19,7 @@ public:
 
 private:
     QPixmap tintPixmap(const QPixmap &src, const QColor &color) const;
+    QSize getLargestIconSize(const QIcon &icon) const;
 
 };
 #endif // MOREOPTIONSBUTTONSTYLEHELPER_H

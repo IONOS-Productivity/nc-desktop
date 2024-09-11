@@ -66,6 +66,26 @@ QPixmap MoreOptionsButtonStyleHelper::tintPixmap(const QPixmap &src, const QColo
     return result;
 }
 
+QSize MoreOptionsButtonStyleHelper::getLargestIconSize(const QIcon &icon) const{
+    QList<QSize> availableSizes = icon.availableSizes();
+    
+    if (availableSizes.isEmpty()) {
+        return QSize();  
+    }
+
+    QSize largestSize;
+    int maxDimension = 0;
+
+    for (const QSize &size : availableSizes) {
+        if (size.width() > maxDimension) {
+            maxDimension = size.width();
+            largestSize = size;
+        }
+    }
+
+    return largestSize;
+}
+
 void MoreOptionsButtonStyleHelper::adjustIconColor(QStyleOptionButton *option, const QWidget *widget)
 {
     QColor iconColor;
@@ -84,7 +104,7 @@ void MoreOptionsButtonStyleHelper::adjustIconColor(QStyleOptionButton *option, c
     }
 
     QIcon icon = option->icon;
-    QSize iconSize = option->iconSize.isValid() ? option->iconSize : QSize(16, 16);
+    QSize iconSize = getLargestIconSize(icon);
     QPixmap pixmap = icon.pixmap(iconSize);
 
     QPixmap coloredPixmap = tintPixmap(pixmap, iconColor);
