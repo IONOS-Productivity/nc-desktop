@@ -62,7 +62,6 @@ public:
      * return the position of the option button within the item
      */
     static QRect optionsButtonRect(QRect within, Qt::LayoutDirection direction);
-    static QRect addButtonRect(QRect within, Qt::LayoutDirection direction);
     static QRect errorsListRect(QRect within);
     static int rootFolderHeightWithoutErrors(const QFontMetrics &fm, const QFontMetrics &aliasFm);
 
@@ -72,6 +71,7 @@ public slots:
 private:
     void customizeStyle();
     void drawAddButton(QPainter *,const QStyleOptionViewItem &, const QModelIndex &) const;
+    void drawElidedText(QPainter *painter, QStyleOptionViewItem option, QFontMetrics fontMetric, QFont font, QString text, QRect rect) const;
     static int optionsButtonIconSize();
 
     static QString addFolderText();

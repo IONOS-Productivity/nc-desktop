@@ -32,11 +32,7 @@ QModelIndex FolderStatusView::indexAt(const QPoint &point) const
 
 QRect FolderStatusView::visualRect(const QModelIndex &index) const
 {
-    QRect rect = QTreeView::visualRect(index);
-    if (index.data(FolderStatusDelegate::AddButton).toBool()) {
-        return FolderStatusDelegate::addButtonRect(rect, layoutDirection());
-    }
-    return rect;
+    return QTreeView::visualRect(index);
 }
 
 } // namespace OCC

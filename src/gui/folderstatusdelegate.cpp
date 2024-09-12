@@ -493,16 +493,6 @@ QRect FolderStatusDelegate::optionsButtonRect(QRect within, Qt::LayoutDirection 
     return QStyle::visualRect(direction, within, r);
 }
 
-QRect FolderStatusDelegate::addButtonRect(QRect within, Qt::LayoutDirection direction)
-{
-    QFontMetrics fm(qApp->font("QPushButton"));
-    QStyleOptionButton opt;
-    opt.text = addInfoText();
-    QSize size = QApplication::style()->sizeFromContents(QStyle::CT_PushButton, &opt, fm.size(Qt::TextSingleLine, opt.text)).expandedTo(QApplication::globalStrut());
-    QRect r(QPoint(within.left(), within.top() + within.height() / 2 - size.height() / 2), size);
-    return QStyle::visualRect(direction, within, r);
-}
-
 QRect FolderStatusDelegate::errorsListRect(QRect within)
 {
     QFont font = QFont();
