@@ -23,6 +23,7 @@
 #include "buttonstyle.h"
 
 #include <theme.h>
+#include "ionostheme.h"
 #include <account.h>
 
 #include <QFileIconProvider>
@@ -55,7 +56,12 @@ FolderStatusDelegate::FolderStatusDelegate()
 
 QString FolderStatusDelegate::addFolderText()
 {
-    return tr("Add Folder Sync Connection");
+    return QString("Add live backup");
+}
+
+QString FolderStatusDelegate::addInfoText()
+{
+    return QString("Synchronize any other local folder with your IONOS EASY STORAGE");
 }
 
 // allocate each item size in listview.
@@ -74,7 +80,7 @@ QSize FolderStatusDelegate::sizeHint(const QStyleOptionViewItem &option,
         QFontMetrics fm(qApp->font("QPushButton"));
         QStyleOptionButton opt;
         static_cast<QStyleOption &>(opt) = option;
-        opt.text = addFolderText();
+        opt.text = addInfoText();
         return QApplication::style()->sizeFromContents(
                                         QStyle::CT_PushButton, &opt, fm.size(Qt::TextSingleLine, opt.text))
                    .expandedTo(QApplication::globalStrut())
@@ -97,7 +103,7 @@ QSize FolderStatusDelegate::sizeHint(const QStyleOptionViewItem &option,
             h += margin + 2 * margin + msgs.count() * fm.height();
         }
     }
-
+    
     return {0, h};
 }
 
@@ -118,28 +124,81 @@ int FolderStatusDelegate::rootFolderHeightWithoutErrors(const QFontMetrics &fm, 
 
 void FolderStatusDelegate::drawAddButton(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    QStyleOptionButton opt;
-    static_cast<QStyleOption &>(opt) = option;
-    if (opt.state & QStyle::State_Enabled && opt.state & QStyle::State_MouseOver && index == _pressedIndex) {
-        opt.state |= QStyle::State_Sunken;
-    } else {
-        opt.state |= QStyle::State_Raised;
-    }
-    opt.text = addFolderText();
-    opt.rect = addButtonRect(option.rect, option.direction);
     painter->save();
-    painter->setFont(qApp->font("QPushButton"));
-    QApplication::style()->drawControl(QStyle::CE_PushButton, &opt, painter, option.widget);
+
+    auto textAlign = Qt::AlignLeft;
+
+    const auto headerFont = makeAliasFont(option.font);
+    const auto subFont = option.font;
+
+    QFontMetrics subFm(subFont);
+    QFontMetrics headerFm(headerFont);
+
+    const auto headerMargin = headerFm.height() / 2;
+    const auto margin = subFm.height() / 4;
+
+    auto icon = QIcon(IonosTheme::liveBackupPlusIcon());
+    auto headerText = addFolderText();
+    auto infoText = addInfoText();
+
+    auto iconRect = option.rect;
+    auto buttonRect = option.rect;
+
+    iconRect.setLeft(option.rect.left() + headerMargin);
+    iconRect.setTop(iconRect.top() + headerMargin); // (iconRect.height()-iconsize.height())/2);
+
+    // button box
+    buttonRect.setTop(buttonRect.top() + headerMargin);
+    buttonRect.setBottom(buttonRect.top() + headerFm.height());
+    buttonRect.setRight(buttonRect.right() - headerMargin);
+
+    // info box
+    auto infoRect = buttonRect;
+    infoRect.setTop(buttonRect.bottom() + margin);
+    infoRect.setBottom(infoRect.top() + subFm.height());
+
+    // headline box
+    auto headlineRect = infoRect;
+    headlineRect.setTop(infoRect.bottom() + margin);
+    headlineRect.setBottom(headlineRect.top() + subFm.height());
+
+    iconRect.setBottom(infoRect.top());
+    iconRect.setWidth(iconRect.height());
+
+    const auto nextToIcon = iconRect.right() + headerMargin;
+    buttonRect.setLeft(nextToIcon);
+    headlineRect.setLeft(nextToIcon);
+    infoRect.setLeft(nextToIcon);
+
+    const auto iconSize = iconRect.width();
+
+    const auto pixmap = icon.pixmap(iconSize, iconSize, QIcon::Normal);
+    painter->drawPixmap(QStyle::visualRect(option.direction, option.rect, iconRect).left(), iconRect.top(), pixmap);
+
+    const auto elidedHeadline = headerFm.elidedText(headerText, Qt::ElideRight, headlineRect.width());
+    painter->setFont(headerFont);
+    painter->drawText(QStyle::visualRect(option.direction, option.rect, buttonRect), textAlign, elidedHeadline);
+
+    const auto elidedInfo = subFm.elidedText(infoText, Qt::ElideRight, infoRect.width());
+    painter->setBrush(QColor(0x4d, 0x4d, 0xba));
+    painter->setFont(subFont);
+    painter->drawText(QStyle::visualRect(option.direction, option.rect, infoRect), textAlign, elidedInfo);
+    
     painter->restore();
 }
 
 void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    if (index.data(AddButton).toBool()) {
-        const_cast<QStyleOptionViewItem &>(option).showDecorationSelected = false;
-    }
+    // if (index.data(AddButton).toBool()) {
+    //     const_cast<QStyleOptionViewItem &>(option).showDecorationSelected = false;
+    // }
 
     QStyledItemDelegate::paint(painter, option, index);
+
+    if (index.data(AddButton).toBool()) {
+        drawAddButton(painter, option, index);
+        return;
+    }
 
     auto textAlign = Qt::AlignLeft;
 
@@ -155,11 +214,6 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
 
     const auto aliasMargin = aliasFm.height() / 2;
     const auto margin = subFm.height() / 4;
-
-    if (index.data(AddButton).toBool()) {
-        drawAddButton(painter, option, index);
-        return;
-    }
 
     if (dynamic_cast<const FolderStatusModel *>(index.model())->classify(index) != FolderStatusModel::RootFolder) {
         return;
@@ -330,7 +384,6 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
         QApplication::style()->drawControl(QStyle::CE_ProgressBar, &progressBarOpt, painter, option.widget);
 #endif
 
-
         // Overall Progress Text
         QRect overallProgressRect;
         overallProgressRect.setTop(progressBarRect.bottom() + margin);
@@ -444,7 +497,7 @@ QRect FolderStatusDelegate::addButtonRect(QRect within, Qt::LayoutDirection dire
 {
     QFontMetrics fm(qApp->font("QPushButton"));
     QStyleOptionButton opt;
-    opt.text = addFolderText();
+    opt.text = addInfoText();
     QSize size = QApplication::style()->sizeFromContents(QStyle::CT_PushButton, &opt, fm.size(Qt::TextSingleLine, opt.text)).expandedTo(QApplication::globalStrut());
     QRect r(QPoint(within.left(), within.top() + within.height() / 2 - size.height() / 2), size);
     return QStyle::visualRect(direction, within, r);

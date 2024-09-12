@@ -75,6 +75,7 @@ private:
     static int optionsButtonIconSize();
 
     static QString addFolderText();
+    static QString addInfoText();
     QPersistentModelIndex _pressedIndex;
     QPersistentModelIndex _hoveredIndex;
 
