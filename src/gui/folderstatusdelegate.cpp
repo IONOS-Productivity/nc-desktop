@@ -364,14 +364,19 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
 
         btnOpt.rect = optionsButtonVisualRect;
         btnOpt.icon = _iconMore;
-        const auto buttonSize = QApplication::style()->pixelMetric(QStyle::PM_LargeIconSize);
-        btnOpt.iconSize = QSize(buttonSize, buttonSize);
+        const auto iconSize = optionsButtonIconSize();
+        btnOpt.iconSize = QSize(iconSize, iconSize);
         QWidget buttonWidget;
         buttonWidget.setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::MoreOptions));
         QApplication::style()->
             drawControl(
                 static_cast<QStyle::ControlElement>(sesStyle::CE_TreeViewMoreOptions), &btnOpt, painter, &buttonWidget);
     }
+}
+
+int FolderStatusDelegate::optionsButtonIconSize() {
+    //Using this calculation to use the DPI-Scaled values. The QStyleHelper::dpiScaled is not accessible from here. 
+    return QApplication::style()->pixelMetric(QStyle::PM_LargeIconSize) - QApplication::style()->pixelMetric(QStyle::PM_MenuScrollerHeight);
 }
 
 bool FolderStatusDelegate::editorEvent(QEvent *event, QAbstractItemModel *model,
@@ -422,11 +427,12 @@ QRect FolderStatusDelegate::optionsButtonRect(QRect within, Qt::LayoutDirection 
     within.setHeight(FolderStatusDelegate::rootFolderHeightWithoutErrors(fm, aliasFm));
 
     QStyleOptionButton opt;
-    int e = QApplication::style()->pixelMetric(QStyle::PM_ButtonIconSize);
-    opt.rect.setSize(QSize(e,e));
+    int iconSize = optionsButtonIconSize();
+    opt.rect.setSize(QSize(iconSize,iconSize));
      QSize size = QApplication::style()->sizeFromContents(
         static_cast<QStyle::ContentsType>(sesStyle::CT_TreeViewMoreOptions), &opt, opt.rect.size()).expandedTo(QApplication::globalStrut());
 
+    // Using PM_LargeIconSize as margin because it get DPI Scaled, which I canot access from here
     int margin = QApplication::style()->pixelMetric(QStyle::PM_LargeIconSize);
     QRect r(QPoint(within.right() - size.width() - margin,
                 within.top() + within.height() / 2 - size.height() / 2),
