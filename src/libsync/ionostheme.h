@@ -25,6 +25,10 @@ public:
         return QString(Theme::themePrefix) + QStringLiteral("ses/ses-questionCircle.svg");
     }
 
+    static QString liveBackupPlusIcon() {
+        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-addLiveBackupPlus.svg");
+    }
+
     static QString plusIcon() {
         return QStringLiteral("qrc:///client/theme/ses/ses-darkPlus24.svg");
     }
