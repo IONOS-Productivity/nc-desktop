@@ -124,75 +124,56 @@ int FolderStatusDelegate::rootFolderHeightWithoutErrors(const QFontMetrics &fm, 
 
 void FolderStatusDelegate::drawAddButton(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
+    const auto titleFont = makeAliasFont(option.font);
+    const auto subtitleFont = option.font;
+
+    QFontMetrics subtitleFm(subtitleFont);
+    QFontMetrics titleFm(titleFont);
+
+    const auto titleMargin = titleFm.height() / 2;
+    const auto subtitleMargin = subtitleFm.height() / 4;
+    
     painter->save();
 
-    auto textAlign = Qt::AlignLeft;
-
-    const auto headerFont = makeAliasFont(option.font);
-    const auto subFont = option.font;
-
-    QFontMetrics subFm(subFont);
-    QFontMetrics headerFm(headerFont);
-
-    const auto headerMargin = headerFm.height() / 2;
-    const auto margin = subFm.height() / 4;
-
-    auto icon = QIcon(IonosTheme::liveBackupPlusIcon());
-    auto headerText = addFolderText();
-    auto infoText = addInfoText();
+    auto addIcon = QIcon(IonosTheme::liveBackupPlusIcon());
+    auto titleText = addFolderText();
+    auto subtitleText = addInfoText();
 
     auto iconRect = option.rect;
-    auto buttonRect = option.rect;
+    auto titleRect = option.rect;
 
-    iconRect.setLeft(option.rect.left() + headerMargin);
-    iconRect.setTop(iconRect.top() + headerMargin); // (iconRect.height()-iconsize.height())/2);
+    iconRect.setLeft(option.rect.left() + titleMargin);
+    iconRect.setTop(iconRect.top() + titleMargin);
 
-    // button box
-    buttonRect.setTop(buttonRect.top() + headerMargin);
-    buttonRect.setBottom(buttonRect.top() + headerFm.height());
-    buttonRect.setRight(buttonRect.right() - headerMargin);
+    // title box
+    titleRect.setTop(titleRect.top() + titleMargin);
+    titleRect.setBottom(titleRect.top() + titleFm.height());
+    titleRect.setRight(titleRect.right() - titleMargin);
 
-    // info box
-    auto infoRect = buttonRect;
-    infoRect.setTop(buttonRect.bottom() + margin);
-    infoRect.setBottom(infoRect.top() + subFm.height());
+    // subtitle box
+    auto subtitleRect = titleRect;
+    subtitleRect.setTop(titleRect.bottom() + subtitleMargin);
+    subtitleRect.setBottom(subtitleRect.top() + subtitleFm.height());
 
-    // headline box
-    auto headlineRect = infoRect;
-    headlineRect.setTop(infoRect.bottom() + margin);
-    headlineRect.setBottom(headlineRect.top() + subFm.height());
-
-    iconRect.setBottom(infoRect.top());
+    iconRect.setBottom(subtitleRect.top());
     iconRect.setWidth(iconRect.height());
 
-    const auto nextToIcon = iconRect.right() + headerMargin;
-    buttonRect.setLeft(nextToIcon);
-    headlineRect.setLeft(nextToIcon);
-    infoRect.setLeft(nextToIcon);
+    const auto nextToIcon = iconRect.right() + titleMargin;
+    titleRect.setLeft(nextToIcon);
+    subtitleRect.setLeft(nextToIcon);
 
-    const auto iconSize = iconRect.width();
+    const auto addPixmap = addIcon.pixmap(iconRect.size(), QIcon::Normal);
+    painter->drawPixmap(QStyle::visualRect(option.direction, option.rect, iconRect).left(), iconRect.top(), addPixmap);
 
-    const auto pixmap = icon.pixmap(iconSize, iconSize, QIcon::Normal);
-    painter->drawPixmap(QStyle::visualRect(option.direction, option.rect, iconRect).left(), iconRect.top(), pixmap);
+    drawElidedText(painter, option, titleFm, titleFont, titleText, titleRect);
 
-    const auto elidedHeadline = headerFm.elidedText(headerText, Qt::ElideRight, headlineRect.width());
-    painter->setFont(headerFont);
-    painter->drawText(QStyle::visualRect(option.direction, option.rect, buttonRect), textAlign, elidedHeadline);
+    drawElidedText(painter, option, subtitleFm, subtitleFont, subtitleText, subtitleRect);
 
-    const auto elidedInfo = subFm.elidedText(infoText, Qt::ElideRight, infoRect.width());
-    painter->setBrush(QColor(0x4d, 0x4d, 0xba));
-    painter->setFont(subFont);
-    painter->drawText(QStyle::visualRect(option.direction, option.rect, infoRect), textAlign, elidedInfo);
-    
     painter->restore();
 }
 
 void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    // if (index.data(AddButton).toBool()) {
-    //     const_cast<QStyleOptionViewItem &>(option).showDecorationSelected = false;
-    // }
-
     QStyledItemDelegate::paint(painter, option, index);
 
     if (index.data(AddButton).toBool()) {
@@ -218,6 +199,7 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     if (dynamic_cast<const FolderStatusModel *>(index.model())->classify(index) != FolderStatusModel::RootFolder) {
         return;
     }
+    
     painter->save();
 
     auto statusIcon = qvariant_cast<QIcon>(index.data(FolderStatusIconRole));
@@ -299,18 +281,13 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
         painter->setPen(palette.color(colourGroup, QPalette::Text));
     }
 
-    const auto elidedAlias = aliasFm.elidedText(aliasText, Qt::ElideRight, aliasRect.width());
-    painter->setFont(aliasFont);
-    painter->drawText(QStyle::visualRect(option.direction, option.rect, aliasRect), textAlign, elidedAlias);
+    drawElidedText(painter, option, aliasFm, aliasFont, aliasText, aliasRect);
 
     const auto showProgess = !overallString.isEmpty() || !itemString.isEmpty();
     if (!showProgess) {
-        painter->setFont(subFont);
-        const auto elidedRemotePathText = subFm.elidedText(syncText, Qt::ElideRight, remotePathRect.width());
-        painter->drawText(QStyle::visualRect(option.direction, option.rect, remotePathRect), textAlign, elidedRemotePathText);
+        drawElidedText(painter, option, subFm, subFont, syncText, remotePathRect);
 
-        const auto elidedPathText = subFm.elidedText(pathText, Qt::ElideMiddle, localPathRect.width());
-        painter->drawText(QStyle::visualRect(option.direction, option.rect, localPathRect), textAlign, elidedPathText);
+        drawElidedText(painter, option, subFm, subFont, pathText, localPathRect);
     }
 
     auto textBoxTop = iconRect.bottom() + margin;
@@ -393,6 +370,7 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
         painter->setFont(progressFont);
 
         painter->drawText(QStyle::visualRect(option.direction, option.rect, overallProgressRect), Qt::AlignLeft | Qt::AlignVCenter, overallString);
+
         painter->restore();
     }
 
@@ -421,10 +399,17 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
         btnOpt.iconSize = QSize(iconSize, iconSize);
         QWidget buttonWidget;
         buttonWidget.setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::MoreOptions));
+    
         QApplication::style()->
             drawControl(
                 static_cast<QStyle::ControlElement>(sesStyle::CE_TreeViewMoreOptions), &btnOpt, painter, &buttonWidget);
     }
+}
+
+void FolderStatusDelegate::drawElidedText(QPainter *painter, QStyleOptionViewItem option, QFontMetrics fontMetric, QFont font, QString text, QRect rect) const{
+    const auto elidedText = fontMetric.elidedText(text, Qt::ElideRight, rect.width());
+    painter->setFont(font);
+    painter->drawText(QStyle::visualRect(option.direction, option.rect, rect), Qt::AlignLeft, elidedText);
 }
 
 int FolderStatusDelegate::optionsButtonIconSize() {
