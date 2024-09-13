@@ -75,7 +75,7 @@ private:
     void drawAddButton(QPainter *,const QStyleOptionViewItem &, const QModelIndex &) const;
     void drawElidedText(QPainter *painter, QStyleOptionViewItem option, QFontMetrics fontMetric, QFont font, QString text, QRect rect) const;
     void drawSyncProgressBar(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index, const QFontMetrics &subFm, const int aliasMargin, const QRect &remotePathRect, const int margin, const int nextToIcon) const;
-    void MakeMoreOptionsButton(const QStyleOptionViewItem &option, QRect &optionsButtonVisualRect, const QModelIndex &index, QPainter *painter) const;
+    void drawMoreOptionsButton(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
 
     static int optionsButtonIconSize();
 

@@ -245,7 +245,6 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
 
     const auto iconSize = iconRect.width();
 
-    auto optionsButtonVisualRect = optionsButtonRect(option.rect, option.direction);
 
     const auto statusPixmap = statusIcon.pixmap(iconSize, iconSize, syncEnabled ? QIcon::Normal : QIcon::Disabled);
     painter->drawPixmap(QStyle::visualRect(option.direction, option.rect, iconRect).left(), iconRect.top(), statusPixmap);
@@ -335,9 +334,7 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
         drawSyncProgressBar(painter, option, index, subFm, aliasMargin, remotePathRect, margin, nextToIcon);
     }
 
-    painter->restore();
-
-    MakeMoreOptionsButton(option, optionsButtonVisualRect, index, painter);
+    drawMoreOptionsButton(painter, option, index);
 }
 
 void FolderStatusDelegate::drawSyncProgressBar(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index, const QFontMetrics &subFm, const int aliasMargin, const QRect &remotePathRect, const int margin, const int nextToIcon) const
@@ -395,34 +392,36 @@ void FolderStatusDelegate::drawElidedText(QPainter *painter, QStyleOptionViewIte
     painter->drawText(QStyle::visualRect(option.direction, option.rect, rect), Qt::AlignLeft, elidedText);
 }
 
-void FolderStatusDelegate::MakeMoreOptionsButton(const QStyleOptionViewItem & option, QRect &optionsButtonVisualRect, const QModelIndex & index, QPainter * painter) const
+void FolderStatusDelegate::drawMoreOptionsButton(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
+    auto optionsButtonVisualRect = optionsButtonRect(option.rect, option.direction);
+
     QStyleOptionButton btnOpt;
-        btnOpt.state = option.state;
-        btnOpt.state &= ~(QStyle::State_Selected | QStyle::State_HasFocus | QStyle::State_MouseOver);
+    btnOpt.state = option.state;
+    btnOpt.state &= ~(QStyle::State_Selected | QStyle::State_HasFocus | QStyle::State_MouseOver);
+    btnOpt.state |= QStyle::State_Raised;
+
+    if(optionsButtonVisualRect.contains(MousePos)  )
+    {
+        btnOpt.state |= QStyle::State_MouseOver;
+    }
+
+    if (btnOpt.state & QStyle::State_Enabled && btnOpt.state & QStyle::State_MouseOver && index == _pressedIndex) {
+        btnOpt.state |= QStyle::State_Sunken;
+    } else {
         btnOpt.state |= QStyle::State_Raised;
+    }
 
-        if(optionsButtonVisualRect.contains(MousePos)  )
-        {
-            btnOpt.state |= QStyle::State_MouseOver;
-        }
+    btnOpt.rect = optionsButtonVisualRect;
+    btnOpt.icon = _iconMore;
+    const auto iconSize = optionsButtonIconSize();
+    btnOpt.iconSize = QSize(iconSize, iconSize);
+    QWidget buttonWidget;
+    buttonWidget.setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::MoreOptions));
 
-        if (btnOpt.state & QStyle::State_Enabled && btnOpt.state & QStyle::State_MouseOver && index == _pressedIndex) {
-            btnOpt.state |= QStyle::State_Sunken;
-        } else {
-            btnOpt.state |= QStyle::State_Raised;
-        }
-
-        btnOpt.rect = optionsButtonVisualRect;
-        btnOpt.icon = _iconMore;
-        const auto iconSize = optionsButtonIconSize();
-        btnOpt.iconSize = QSize(iconSize, iconSize);
-        QWidget buttonWidget;
-        buttonWidget.setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::MoreOptions));
-
-        QApplication::style()->
-            drawControl(
-                static_cast<QStyle::ControlElement>(sesStyle::CE_TreeViewMoreOptions), &btnOpt, painter, &buttonWidget);
+    QApplication::style()->
+        drawControl(
+            static_cast<QStyle::ControlElement>(sesStyle::CE_TreeViewMoreOptions), &btnOpt, painter, &buttonWidget);
 }
 
 int FolderStatusDelegate::optionsButtonIconSize() {
