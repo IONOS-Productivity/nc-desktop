@@ -103,7 +103,7 @@ QSize FolderStatusDelegate::sizeHint(const QStyleOptionViewItem &option,
             h += margin + 2 * margin + msgs.count() * fm.height();
         }
     }
-    
+
     return {0, h};
 }
 
@@ -132,7 +132,7 @@ void FolderStatusDelegate::drawAddButton(QPainter *painter, const QStyleOptionVi
 
     const auto titleMargin = titleFm.height() / 2;
     const auto subtitleMargin = subtitleFm.height() / 4;
-    
+
     painter->save();
 
     auto addIcon = QIcon(IonosTheme::liveBackupPlusIcon());
@@ -199,7 +199,7 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     if (dynamic_cast<const FolderStatusModel *>(index.model())->classify(index) != FolderStatusModel::RootFolder) {
         return;
     }
-    
+
     painter->save();
 
     auto statusIcon = qvariant_cast<QIcon>(index.data(FolderStatusIconRole));
@@ -376,8 +376,18 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
 
     painter->restore();
 
-    {
-        QStyleOptionButton btnOpt;
+    MakeMoreOptionsButton(option, optionsButtonVisualRect, index, painter);
+}
+
+void FolderStatusDelegate::drawElidedText(QPainter *painter, QStyleOptionViewItem option, QFontMetrics fontMetric, QFont font, QString text, QRect rect) const{
+    const auto elidedText = fontMetric.elidedText(text, Qt::ElideRight, rect.width());
+    painter->setFont(font);
+    painter->drawText(QStyle::visualRect(option.direction, option.rect, rect), Qt::AlignLeft, elidedText);
+}
+
+void FolderStatusDelegate::MakeMoreOptionsButton(const QStyleOptionViewItem & option, QRect &optionsButtonVisualRect, const QModelIndex & index, QPainter * painter) const
+{
+    QStyleOptionButton btnOpt;
         btnOpt.state = option.state;
         btnOpt.state &= ~(QStyle::State_Selected | QStyle::State_HasFocus | QStyle::State_MouseOver);
         btnOpt.state |= QStyle::State_Raised;
@@ -399,21 +409,14 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
         btnOpt.iconSize = QSize(iconSize, iconSize);
         QWidget buttonWidget;
         buttonWidget.setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::MoreOptions));
-    
+
         QApplication::style()->
             drawControl(
                 static_cast<QStyle::ControlElement>(sesStyle::CE_TreeViewMoreOptions), &btnOpt, painter, &buttonWidget);
-    }
-}
-
-void FolderStatusDelegate::drawElidedText(QPainter *painter, QStyleOptionViewItem option, QFontMetrics fontMetric, QFont font, QString text, QRect rect) const{
-    const auto elidedText = fontMetric.elidedText(text, Qt::ElideRight, rect.width());
-    painter->setFont(font);
-    painter->drawText(QStyle::visualRect(option.direction, option.rect, rect), Qt::AlignLeft, elidedText);
 }
 
 int FolderStatusDelegate::optionsButtonIconSize() {
-    //Using this calculation to use the DPI-Scaled values. The QStyleHelper::dpiScaled is not accessible from here. 
+    // Using this calculation to use the DPI-Scaled values. The QStyleHelper::dpiScaled is not accessible from here.
     return QApplication::style()->pixelMetric(QStyle::PM_LargeIconSize) - QApplication::style()->pixelMetric(QStyle::PM_MenuScrollerHeight);
 }
 
@@ -439,7 +442,7 @@ bool FolderStatusDelegate::editorEvent(QEvent *event, QAbstractItemModel *model,
             if(optionsButtonVisualRect.contains(MousePos))
             {
                 _hoveredIndex = index;
-                view->viewport()->update(); 
+                view->viewport()->update();
             } else if(_hoveredIndex.isValid())
             {
                 _hoveredIndex = QModelIndex();
