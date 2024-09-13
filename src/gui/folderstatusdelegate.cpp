@@ -31,6 +31,7 @@
 #include <QApplication>
 #include <QMouseEvent>
 #include <QStyleFactory>
+#include <iostream>
 
 inline static QFont makeAliasFont(const QFont &normalFont)
 {
@@ -125,41 +126,40 @@ int FolderStatusDelegate::rootFolderHeightWithoutErrors(const QFontMetrics &fm, 
 void FolderStatusDelegate::drawAddButton(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     const auto titleFont = makeAliasFont(option.font);
-    QFontMetrics titleFm(titleFont);
-    const auto titleMargin = titleFm.height() / 2;
-    auto titleText = addFolderText();
-    auto titleRect = option.rect;
-    titleRect.setTop(titleRect.top() + titleMargin);
-    titleRect.setBottom(titleRect.top() + titleFm.height());
-    titleRect.setRight(titleRect.right() - titleMargin);
+    QFontMetrics titleTextFm(titleFont);
+    const auto baseDistanceForCalculus = titleTextFm.height() / 2;
+
+    auto iconBox = option.rect;
+    iconBox.setTop(iconBox.top() + baseDistanceForCalculus);
+    iconBox.setBottom(iconBox.top() + 2 * baseDistanceForCalculus);
+    iconBox.setLeft(iconBox.left() + baseDistanceForCalculus);
+    iconBox.setRight(iconBox.left() + 2 * baseDistanceForCalculus);
+
+    auto titleBox = option.rect;
+    titleBox.setTop(iconBox.top());
+    titleBox.setBottom(iconBox.bottom());
+    titleBox.setRight(titleBox.right() - baseDistanceForCalculus);
+    titleBox.setLeft(iconBox.right() + baseDistanceForCalculus);
 
     const auto subtitleFont = option.font;
-    QFontMetrics subtitleFm(subtitleFont);
-    const auto subtitleMargin = subtitleFm.height() / 4;
+    QFontMetrics subtitleTextFm(subtitleFont);
+    auto subtitleBox = option.rect;
+    subtitleBox.setTop(titleBox.bottom()+ subtitleTextFm.height() / 4);
+    subtitleBox.setBottom(subtitleBox.top() + subtitleTextFm.height());
+    subtitleBox.setLeft(iconBox.right() + baseDistanceForCalculus);
+    subtitleBox.setRight(subtitleBox.right() - baseDistanceForCalculus);
+
+    auto titleText = addFolderText();
     auto subtitleText = addInfoText();
-    auto subtitleRect = titleRect;
-    subtitleRect.setTop(titleRect.bottom() + subtitleMargin);
-    subtitleRect.setBottom(subtitleRect.top() + subtitleFm.height());
-
-    auto iconRect = option.rect;
-    iconRect.setLeft(iconRect.left() + titleMargin);
-    iconRect.setTop(iconRect.top() + titleMargin);
-    iconRect.setBottom(subtitleRect.top());
-    iconRect.setWidth(iconRect.height());
-
-    const auto nextToIcon = iconRect.right() + titleMargin;
-    titleRect.setLeft(nextToIcon);
-    subtitleRect.setLeft(nextToIcon);
-
     auto addIcon = QIcon(IonosTheme::liveBackupPlusIcon());
-    const auto addPixmap = addIcon.pixmap(iconRect.size(), QIcon::Normal);
+    const auto addPixmap = addIcon.pixmap(iconBox.size(), QIcon::Normal);
 
     painter->save();
-    painter->drawPixmap(QStyle::visualRect(option.direction, option.rect, iconRect).left(), iconRect.top(), addPixmap);
+    painter->drawPixmap(QStyle::visualRect(option.direction, option.rect, iconBox).left(), iconBox.top(), addPixmap);
 
-    drawElidedText(painter, option, titleFm, titleFont, titleText, titleRect);
+    drawElidedText(painter, option, titleTextFm, titleFont, titleText, titleBox);
 
-    drawElidedText(painter, option, subtitleFm, subtitleFont, subtitleText, subtitleRect);
+    drawElidedText(painter, option, subtitleTextFm, subtitleFont, subtitleText, subtitleBox);
 
     painter->restore();
 }
