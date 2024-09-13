@@ -5,7 +5,7 @@
 #include "ionostheme.h"
 #include <QPainter>
 #include <QStyleOptionButton>
-#include <QWidget> 
+#include <QWidget>
 
 
 void MoreOptionsButtonStyleHelper::setupPainterForToolButtonShape(const QStyleOptionButton *option, QPainter *painter, const QWidget *widget)
@@ -17,12 +17,12 @@ void MoreOptionsButtonStyleHelper::setupPainterForToolButtonShape(const QStyleOp
         painter->setPen(QColor(style.buttonDisabledBorderColor()));
         painter->setBrush(QColor(style.buttonDisabledColor()));
     }
-    //Pressed 
-    else if (option->state & QStyle::State_Sunken) 
+    //Pressed
+    else if (option->state & QStyle::State_Sunken)
     {
         painter->setPen(QColor(style.buttonPressedBorderColor()));
         painter->setBrush(QColor(style.buttonPressedColor()));
-    } 
+    }
     // Hover
     else if(option->state & QStyle::State_MouseOver)
     {
@@ -33,7 +33,7 @@ void MoreOptionsButtonStyleHelper::setupPainterForToolButtonShape(const QStyleOp
     else if (option->state & QStyle::State_HasFocus) {
         painter->setPen(QColor(style.buttonFocusedBorderColor()));
         painter->setBrush(QColor(style.buttonFocusedColor()));
-    } 
+    }
     // Else - Just beeing there
     else {
         painter->setPen(QColor(style.buttonDefaultBorderColor()));
@@ -53,11 +53,11 @@ void MoreOptionsButtonStyleHelper::drawToolButtonShape(const QStyleOptionButton 
 
 QPixmap MoreOptionsButtonStyleHelper::tintPixmap(const QPixmap &src, const QColor &color) const{
     QPixmap result(src.size());
-    result.fill(Qt::transparent);  
+    result.fill(Qt::transparent);
 
     QPainter painter(&result);
     painter.setCompositionMode(QPainter::CompositionMode_Source);
-    painter.drawPixmap(0, 0, src); 
+    painter.drawPixmap(0, 0, src);
 
     painter.setCompositionMode(QPainter::CompositionMode_SourceIn);
     painter.fillRect(result.rect(), color);
@@ -68,9 +68,9 @@ QPixmap MoreOptionsButtonStyleHelper::tintPixmap(const QPixmap &src, const QColo
 
 QSize MoreOptionsButtonStyleHelper::getLargestIconSize(const QIcon &icon) const{
     QList<QSize> availableSizes = icon.availableSizes();
-    
+
     if (availableSizes.isEmpty()) {
-        return QSize();  
+        return QSize();
     }
 
     QSize largestSize;
@@ -90,17 +90,17 @@ void MoreOptionsButtonStyleHelper::adjustIconColor(QStyleOptionButton *option, c
 {
     QColor iconColor;
     OCC::ButtonStyle& style = ButtonStyleStrategy::getButtonStyle(widget, option);
-    
+
     if (!(option->state & QStyle::State_Enabled)) {
         iconColor = style.buttonDisabledFontColor();
-    }    
+    }
     else if(option->state & QStyle::State_MouseOver)
     {
-        iconColor = QColor(QColor(style.buttonDefaultColor()));
+        iconColor = QColor(style.buttonDefaultColor());
     }
-    else 
+    else
     {
-        iconColor = QColor(QColor(style.buttonHoverColor()));
+        iconColor = QColor(style.buttonHoverColor());
     }
 
     QIcon icon = option->icon;
