@@ -142,13 +142,12 @@ void FolderStatusDelegate::drawAddButton(QPainter *painter, const QStyleOptionVi
     subtitleRect.setBottom(subtitleRect.top() + subtitleFm.height());
 
     auto iconRect = option.rect;
-    iconRect.setLeft(option.rect.left() + titleMargin);
+    iconRect.setLeft(iconRect.left() + titleMargin);
     iconRect.setTop(iconRect.top() + titleMargin);
     iconRect.setBottom(subtitleRect.top());
     iconRect.setWidth(iconRect.height());
 
     const auto nextToIcon = iconRect.right() + titleMargin;
-
     titleRect.setLeft(nextToIcon);
     subtitleRect.setLeft(nextToIcon);
 
