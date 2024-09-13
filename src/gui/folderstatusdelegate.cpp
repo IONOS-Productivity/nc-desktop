@@ -186,9 +186,7 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     const auto aliasFont = makeAliasFont(option.font);
     const auto subFont = option.font;
     const auto errorFont = subFont;
-    auto progressFont = subFont;
 
-    progressFont.setPointSize(subFont.pointSize() - 2);
 
     QFontMetrics subFm(subFont);
     QFontMetrics aliasFm(aliasFont);
@@ -209,7 +207,6 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     auto errorTexts = qvariant_cast<QStringList>(index.data(FolderErrorMsg));
     auto infoTexts = qvariant_cast<QStringList>(index.data(FolderInfoMsg));
 
-    auto overallPercent = qvariant_cast<int>(index.data(SyncProgressOverallPercent));
     auto overallString = qvariant_cast<QString>(index.data(SyncProgressOverallString));
     auto itemString = qvariant_cast<QString>(index.data(SyncProgressItemString));
     auto warningCount = qvariant_cast<int>(index.data(WarningCount));
@@ -335,48 +332,61 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
 
     // Sync File Progress Bar: Show it if syncFile is not empty.
     if (showProgess) {
-        const auto fileNameTextHeight = subFm.boundingRect(tr("File")).height();
-        constexpr auto barHeight = 7; // same height as quota bar
-        const auto overallWidth = option.rect.right() - aliasMargin - optionsButtonVisualRect.width() - nextToIcon;
-
-        painter->save();
-
-        // Overall Progress Bar.
-        const auto progressBarRect = QRect(nextToIcon,
-                                           remotePathRect.top(),
-                                           overallWidth - 2 * margin,
-                                           barHeight);
-
-        QStyleOptionProgressBar progressBarOpt;
-
-        progressBarOpt.state = option.state | QStyle::State_Horizontal;
-        progressBarOpt.minimum = 0;
-        progressBarOpt.maximum = 100;
-        progressBarOpt.progress = overallPercent;
-        progressBarOpt.orientation = Qt::Horizontal;
-        progressBarOpt.rect = QStyle::visualRect(option.direction, option.rect, progressBarRect);
-#ifdef Q_OS_MACOS
-        backupStyle->drawControl(QStyle::CE_ProgressBar, &progressBarOpt, painter, option.widget);
-#else
-        QApplication::style()->drawControl(QStyle::CE_ProgressBar, &progressBarOpt, painter, option.widget);
-#endif
-
-        // Overall Progress Text
-        QRect overallProgressRect;
-        overallProgressRect.setTop(progressBarRect.bottom() + margin);
-        overallProgressRect.setHeight(fileNameTextHeight);
-        overallProgressRect.setLeft(progressBarRect.left());
-        overallProgressRect.setWidth(progressBarRect.width());
-        painter->setFont(progressFont);
-
-        painter->drawText(QStyle::visualRect(option.direction, option.rect, overallProgressRect), Qt::AlignLeft | Qt::AlignVCenter, overallString);
-
-        painter->restore();
+        drawSyncProgressBar(painter, option, index, subFm, aliasMargin, remotePathRect, margin, nextToIcon);
     }
 
     painter->restore();
 
     MakeMoreOptionsButton(option, optionsButtonVisualRect, index, painter);
+}
+
+void FolderStatusDelegate::drawSyncProgressBar(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index, const QFontMetrics &subFm, const int aliasMargin, const QRect &remotePathRect, const int margin, const int nextToIcon) const
+{
+    auto overallPercent = qvariant_cast<int>(index.data(SyncProgressOverallPercent));
+    auto overallString = qvariant_cast<QString>(index.data(SyncProgressOverallString));
+    auto optionsButtonVisualRect = optionsButtonRect(option.rect, option.direction);
+
+    const auto fileNameTextHeight = subFm.boundingRect(tr("File")).height();
+    constexpr auto barHeight = 7; // same height as quota bar
+    const auto overallWidth = option.rect.right() - aliasMargin - optionsButtonVisualRect.width() - nextToIcon;
+
+    auto progressFont = option.font;
+    progressFont.setPointSize(progressFont.pointSize() - 2);
+
+    painter->save();
+
+    // Overall Progress Bar.
+    const auto progressBarRect = QRect(nextToIcon,
+                                        remotePathRect.top(),
+                                        overallWidth - 2 * margin,
+                                        barHeight);
+
+    QStyleOptionProgressBar progressBarOpt;
+
+    progressBarOpt.state = option.state | QStyle::State_Horizontal;
+    progressBarOpt.minimum = 0;
+    progressBarOpt.maximum = 100;
+    progressBarOpt.progress = overallPercent;
+    progressBarOpt.orientation = Qt::Horizontal;
+    progressBarOpt.rect = QStyle::visualRect(option.direction, option.rect, progressBarRect);
+#ifdef Q_OS_MACOS
+    backupStyle->drawControl(QStyle::CE_ProgressBar, &progressBarOpt, painter, option.widget);
+#else
+    QApplication::style()->drawControl(QStyle::CE_ProgressBar, &progressBarOpt, painter, option.widget);
+#endif
+
+    // Overall Progress Text
+    QRect overallProgressRect;
+    overallProgressRect.setTop(progressBarRect.bottom() + margin);
+    overallProgressRect.setHeight(fileNameTextHeight);
+    overallProgressRect.setLeft(progressBarRect.left());
+    overallProgressRect.setWidth(progressBarRect.width());
+    painter->setFont(progressFont);
+
+    painter->drawText(QStyle::visualRect(option.direction, option.rect, overallProgressRect), Qt::AlignLeft | Qt::AlignVCenter, overallString);
+
+    painter->restore();
+
 }
 
 void FolderStatusDelegate::drawElidedText(QPainter *painter, QStyleOptionViewItem option, QFontMetrics fontMetric, QFont font, QString text, QRect rect) const{
