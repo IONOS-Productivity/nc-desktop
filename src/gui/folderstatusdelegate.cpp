@@ -56,12 +56,12 @@ FolderStatusDelegate::FolderStatusDelegate()
 
 QString FolderStatusDelegate::addFolderText()
 {
-    return QString("Add live backup");
+    return tr("Add live backup");
 }
 
 QString FolderStatusDelegate::addInfoText()
 {
-    return QString("Synchronize any other local folder with your IONOS EASY STORAGE");
+    return tr("Synchronize any other local folder with your IONOS EASY STORAGE");
 }
 
 // allocate each item size in listview.
