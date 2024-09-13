@@ -125,44 +125,37 @@ int FolderStatusDelegate::rootFolderHeightWithoutErrors(const QFontMetrics &fm, 
 void FolderStatusDelegate::drawAddButton(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     const auto titleFont = makeAliasFont(option.font);
-    const auto subtitleFont = option.font;
-
-    QFontMetrics subtitleFm(subtitleFont);
     QFontMetrics titleFm(titleFont);
-
     const auto titleMargin = titleFm.height() / 2;
-    const auto subtitleMargin = subtitleFm.height() / 4;
-
-    painter->save();
-
-    auto addIcon = QIcon(IonosTheme::liveBackupPlusIcon());
     auto titleText = addFolderText();
-    auto subtitleText = addInfoText();
-
-    auto iconRect = option.rect;
     auto titleRect = option.rect;
-
-    iconRect.setLeft(option.rect.left() + titleMargin);
-    iconRect.setTop(iconRect.top() + titleMargin);
-
-    // title box
     titleRect.setTop(titleRect.top() + titleMargin);
     titleRect.setBottom(titleRect.top() + titleFm.height());
     titleRect.setRight(titleRect.right() - titleMargin);
 
-    // subtitle box
+    const auto subtitleFont = option.font;
+    QFontMetrics subtitleFm(subtitleFont);
+    const auto subtitleMargin = subtitleFm.height() / 4;
+    auto subtitleText = addInfoText();
     auto subtitleRect = titleRect;
     subtitleRect.setTop(titleRect.bottom() + subtitleMargin);
     subtitleRect.setBottom(subtitleRect.top() + subtitleFm.height());
 
+    auto iconRect = option.rect;
+    iconRect.setLeft(option.rect.left() + titleMargin);
+    iconRect.setTop(iconRect.top() + titleMargin);
     iconRect.setBottom(subtitleRect.top());
     iconRect.setWidth(iconRect.height());
 
     const auto nextToIcon = iconRect.right() + titleMargin;
+
     titleRect.setLeft(nextToIcon);
     subtitleRect.setLeft(nextToIcon);
 
+    auto addIcon = QIcon(IonosTheme::liveBackupPlusIcon());
     const auto addPixmap = addIcon.pixmap(iconRect.size(), QIcon::Normal);
+
+    painter->save();
     painter->drawPixmap(QStyle::visualRect(option.direction, option.rect, iconRect).left(), iconRect.top(), addPixmap);
 
     drawElidedText(painter, option, titleFm, titleFont, titleText, titleRect);
