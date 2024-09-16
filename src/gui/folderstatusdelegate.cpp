@@ -129,23 +129,25 @@ void FolderStatusDelegate::drawAddButton(QPainter *painter, const QStyleOptionVi
     QFontMetrics titleTextFm(titleFont);
     const auto baseDistanceForCalculus = titleTextFm.height() / 2;
 
+    const auto subtitleFont = option.font;
+    QFontMetrics subtitleTextFm(subtitleFont);
+    const auto distanceToSubline = subtitleTextFm.height() / 4;
+
     auto iconBox = option.rect;
     iconBox.setTop(iconBox.top() + baseDistanceForCalculus);
-    iconBox.setBottom(iconBox.top() + 2 * baseDistanceForCalculus);
+    iconBox.setBottom(iconBox.top() + 2 * baseDistanceForCalculus + distanceToSubline);
     iconBox.setLeft(iconBox.left() + baseDistanceForCalculus);
-    iconBox.setRight(iconBox.left() + 2 * baseDistanceForCalculus);
+    iconBox.setWidth(iconBox.height());
 
     auto titleBox = option.rect;
     titleBox.setTop(iconBox.top());
-    titleBox.setBottom(iconBox.bottom());
+    titleBox.setBottom(iconBox.bottom() - distanceToSubline);
     titleBox.setRight(titleBox.right() - baseDistanceForCalculus);
     titleBox.setLeft(iconBox.right() + baseDistanceForCalculus);
 
-    const auto subtitleFont = option.font;
-    QFontMetrics subtitleTextFm(subtitleFont);
     auto subtitleBox = option.rect;
-    subtitleBox.setTop(titleBox.bottom()+ subtitleTextFm.height() / 4);
-    subtitleBox.setBottom(subtitleBox.top() + subtitleTextFm.height());
+    subtitleBox.setTop(titleBox.bottom() + distanceToSubline);
+    subtitleBox.setBottom(subtitleBox.top() + 4 * distanceToSubline);
     subtitleBox.setLeft(iconBox.right() + baseDistanceForCalculus);
     subtitleBox.setRight(subtitleBox.right() - baseDistanceForCalculus);
 
