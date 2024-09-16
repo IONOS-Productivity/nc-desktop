@@ -288,7 +288,7 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
         rect.setLeft(iconRect.left());
         rect.setTop(textBoxTop);
         rect.setHeight(texts.count() * subFm.height() + 2 * margin);
-        rect.setRight(option.rect.right() - margin);
+        rect.setRight(option.rect.right() - aliasMargin);
 
         // save previous state to not mess up colours with the background (fixes issue: https://github.com/nextcloud/desktop/issues/1237)
         painter->save();
