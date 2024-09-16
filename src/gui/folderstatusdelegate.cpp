@@ -422,8 +422,11 @@ int FolderStatusDelegate::optionsButtonIconSize() {
     return QApplication::style()->pixelMetric(QStyle::PM_LargeIconSize) - QApplication::style()->pixelMetric(QStyle::PM_MenuScrollerHeight);
 }
 
-bool FolderStatusDelegate::editorEvent(QEvent *event, QAbstractItemModel *model,
-    const QStyleOptionViewItem &option, const QModelIndex &index)
+bool FolderStatusDelegate::editorEvent(
+    QEvent *event,
+    QAbstractItemModel *model,
+    const QStyleOptionViewItem &option,
+    const QModelIndex &index)
 {
     switch (event->type()) {
     case QEvent::MouseButtonPress:
@@ -477,7 +480,7 @@ QRect FolderStatusDelegate::optionsButtonRect(QRect within, Qt::LayoutDirection 
 
     // Using PM_LargeIconSize as margin because it get DPI Scaled, which I canot access from here
     int margin = QApplication::style()->pixelMetric(QStyle::PM_LargeIconSize);
-    QRect r(QPoint(within.right() - size.width() - margin,
+    QRect r(QPoint(within.right() - size.width() - aliasFm.height() / 2,
                 within.top() + within.height() / 2 - size.height() / 2),
         size);
     return QStyle::visualRect(direction, within, r);
