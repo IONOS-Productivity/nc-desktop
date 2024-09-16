@@ -293,10 +293,9 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
         // save previous state to not mess up colours with the background (fixes issue: https://github.com/nextcloud/desktop/issues/1237)
         painter->save();
         painter->setBrush(color);
-        painter->setPen(QColor(0xaa, 0xaa, 0xaa));
-        painter->drawRoundedRect(QStyle::visualRect(option.direction, option.rect, rect),
-            4, 4);
-        painter->setPen(Qt::white);
+        painter->setPen(QColor(color.red(), color.green(), color.blue(), 200));
+        painter->drawRoundedRect(QStyle::visualRect(option.direction, option.rect, rect), 4, 4);
+        painter->setPen(Qt::black);
         painter->setFont(errorFont);
         QRect textRect(rect.left() + margin,
             rect.top() + margin,
@@ -314,13 +313,13 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     };
 
     if (!conflictTexts.isEmpty()) {
-        drawTextBox(conflictTexts, QColor(0xba, 0xba, 0x4d));
+        drawTextBox(conflictTexts, QColor(0xba, 0xba, 0x4d, 100));
     }
     if (!errorTexts.isEmpty()) {
-        drawTextBox(errorTexts, QColor(0xbb, 0x4d, 0x4d));
+        drawTextBox(errorTexts, QColor(0xbb, 0x4d, 0x4d, 100));
     }
     if (!infoTexts.isEmpty()) {
-        drawTextBox(infoTexts, QColor(0x4d, 0x4d, 0xba));
+        drawTextBox(infoTexts, QColor(0x4d, 0x4d, 0xba, 100));
     }
 
     // Sync File Progress Bar: Show it if syncFile is not empty.
