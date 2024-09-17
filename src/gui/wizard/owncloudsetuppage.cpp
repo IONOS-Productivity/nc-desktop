@@ -77,7 +77,7 @@ OwncloudSetupPage::OwncloudSetupPage(QWidget *parent)
 
 void OwncloudSetupPage::setLogo()
 {
-    _ui.logoLabel->setPixmap(Theme::instance()->wizardApplicationLogo());
+    //_ui.logoLabel->setPixmap(Theme::instance()->wizardApplicationLogo());
 }
 
 void OwncloudSetupPage::setupServerAddressDescriptionLabel()
@@ -366,7 +366,7 @@ void OwncloudSetupPage::slotStyleChanged()
 
 void OwncloudSetupPage::customizeStyle()
 {
-    setLogo();
+    //setLogo();
 
     if (_progressIndi) {
         const auto isDarkBackground = Theme::isDarkColor(palette().window().color());
