@@ -132,6 +132,7 @@ private slots:
     void resetE2eEncryption();
     void checkClientSideEncryptionState();
     void removeActionFromEncryptionMessage(const QString &actionId);
+    void slotExpandMemoryClicked();
 
 private:
     void styleCustomContextMenu(QMenu *menu) const;

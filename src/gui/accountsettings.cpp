@@ -279,6 +279,8 @@ AccountSettings::AccountSettings(AccountState *accountState, QWidget *parent)
 
     connect(&_userInfo, &UserInfo::quotaUpdated, this, &AccountSettings::slotUpdateQuota);
 
+    connect(_ui->expandMemoryButton, &QAbstractButton::clicked, this, &AccountSettings::slotExpandMemoryClicked);
+
     customizeStyle();
 }
 
@@ -1452,6 +1454,11 @@ void AccountSettings::slotHideSelectiveSyncWidget()
     _ui->selectiveSyncStatus->setVisible(false);
     _ui->selectiveSyncButtons->setVisible(false);
     _ui->selectiveSyncLabel->hide();
+}
+
+void AccountSettings::slotExpandMemoryClicked()
+{
+     QDesktopServices::openUrl(QUrl("https://wl.hidrive.com/easy/0057"));
 }
 
 void AccountSettings::slotSelectiveSyncChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QVector<int> &roles)
