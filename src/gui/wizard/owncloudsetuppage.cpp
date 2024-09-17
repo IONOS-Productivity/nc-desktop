@@ -269,36 +269,38 @@ void OwncloudSetupPage::setErrorString(const QString &err, bool retryHTTPonly)
     if (err.isEmpty()) {
         _ui.errorLabel->setVisible(false);
     } else {
-        if (retryHTTPonly) {
-            QUrl url(_ui.leUrl->fullText());
-            if (url.scheme() == "https") {
-                // Ask the user how to proceed when connecting to a https:// URL fails.
-                // It is possible that the server is secured with client-side TLS certificates,
-                // but that it has no way of informing the owncloud client that this is the case.
+        //SES-84: Should only be shown in the Managed Cloud Client
 
-                OwncloudConnectionMethodDialog dialog;
-                dialog.setUrl(url);
-                // FIXME: Synchronous dialogs are not so nice because of event loop recursion
-                int retVal = dialog.exec();
+        // if (retryHTTPonly) {
+        //     QUrl url(_ui.leUrl->fullText());
+        //     if (url.scheme() == "https") {
+        //         // Ask the user how to proceed when connecting to a https:// URL fails.
+        //         // It is possible that the server is secured with client-side TLS certificates,
+        //         // but that it has no way of informing the owncloud client that this is the case.
 
-                switch (retVal) {
-                case OwncloudConnectionMethodDialog::No_TLS: {
-                    url.setScheme("http");
-                    _ui.leUrl->setFullText(url.toString());
-                    // skip ahead to next page, since the user would expect us to retry automatically
-                    wizard()->next();
-                } break;
-                case OwncloudConnectionMethodDialog::Client_Side_TLS:
-                    addCertDial->show();
-                    break;
-                case OwncloudConnectionMethodDialog::Closed:
-                case OwncloudConnectionMethodDialog::Back:
-                default:
-                    // No-op.
-                    break;
-                }
-            }
-        }
+        //         OwncloudConnectionMethodDialog dialog;
+        //         dialog.setUrl(url);
+        //         // FIXME: Synchronous dialogs are not so nice because of event loop recursion
+        //         int retVal = dialog.exec();
+
+        //         switch (retVal) {
+        //         case OwncloudConnectionMethodDialog::No_TLS: {
+        //             url.setScheme("http");
+        //             _ui.leUrl->setFullText(url.toString());
+        //             // skip ahead to next page, since the user would expect us to retry automatically
+        //             wizard()->next();
+        //         } break;
+        //         case OwncloudConnectionMethodDialog::Client_Side_TLS:
+        //             addCertDial->show();
+        //             break;
+        //         case OwncloudConnectionMethodDialog::Closed:
+        //         case OwncloudConnectionMethodDialog::Back:
+        //         default:
+        //             // No-op.
+        //             break;
+        //         }
+        //     }
+        // }
 
         this->setVisible(true);
         _ocWizard->button(QWizard::BackButton)->setHidden(false);
