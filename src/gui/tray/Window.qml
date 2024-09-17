@@ -21,7 +21,6 @@ import Qt.labs.platform 1.1 as NativeDialogs
 
 import "../"
 import "../filedetails/"
-import "../SesComponents/"
 
 // Custom qml modules are in /theme (and included by resources.qrc)
 import Style 1.0
@@ -299,7 +298,7 @@ ApplicationWindow {
             onClearText: { UserModel.currentUser.unifiedSearchResultsListModel.searchTerm = "" }
         }
 
-        SesErrorBox {
+        ErrorBox {
             id: unifiedSearchResultsErrorLabel
             visible:  UserModel.currentUser.unifiedSearchResultsListModel.errorString && !unifiedSearchResultsListView.visible && ! UserModel.currentUser.unifiedSearchResultsListModel.isSearchInProgress && ! UserModel.currentUser.unifiedSearchResultsListModel.currentFetchMoreInProgressProviderId
             text:  UserModel.currentUser.unifiedSearchResultsListModel.errorString
