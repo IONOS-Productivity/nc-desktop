@@ -283,7 +283,7 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     auto textBoxTop = qMax(localPathRect.bottom(), remotePathRect.bottom()) +  margin;
 
     // paint an error overlay if there is an error string or conflict string
-    auto drawTextBox = [&](const QStringList &texts, QColor color) {
+    auto drawTextBox = [&](const QStringList &texts, QColor color, QColor borderColor) {
         auto rect = localPathRect;
         rect.setLeft(iconRect.left());
         rect.setTop(textBoxTop);
@@ -293,7 +293,7 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
         // save previous state to not mess up colours with the background (fixes issue: https://github.com/nextcloud/desktop/issues/1237)
         painter->save();
         painter->setBrush(color);
-        painter->setPen(QColor(color.red(), color.green(), color.blue(), 200));
+        painter->setPen(borderColor);
         painter->drawRoundedRect(QStyle::visualRect(option.direction, option.rect, rect), 4, 4);
         painter->setPen(Qt::black);
         painter->setFont(errorFont);
@@ -313,13 +313,13 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     };
 
     if (!conflictTexts.isEmpty()) {
-        drawTextBox(conflictTexts, QColor(0xba, 0xba, 0x4d, 100));
+        drawTextBox(conflictTexts, QColor(IonosTheme::warningColor()), QColor(IonosTheme::warningBorderColor()));
     }
     if (!errorTexts.isEmpty()) {
-        drawTextBox(errorTexts, QColor(0xbb, 0x4d, 0x4d, 100));
+        drawTextBox(errorTexts, QColor(IonosTheme::errorColor()), QColor(IonosTheme::errorBorderColor()));
     }
     if (!infoTexts.isEmpty()) {
-        drawTextBox(infoTexts, QColor(0x4d, 0x4d, 0xba, 100));
+        drawTextBox(infoTexts, QColor(IonosTheme::infoColor()), QColor(IonosTheme::infoBorderColor()));
     }
 
     // Sync File Progress Bar: Show it if syncFile is not empty.
