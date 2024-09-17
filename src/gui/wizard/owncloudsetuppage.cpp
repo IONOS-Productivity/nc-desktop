@@ -300,6 +300,8 @@ void OwncloudSetupPage::setErrorString(const QString &err, bool retryHTTPonly)
             }
         }
 
+        this->setVisible(true);
+        _ocWizard->button(QWizard::BackButton)->setHidden(false);
         _ui.errorLabel->setVisible(true);
         _ui.errorLabel->setText(err);
     }
