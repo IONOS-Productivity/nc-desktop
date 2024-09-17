@@ -205,7 +205,7 @@ QtObject {
 
     // SES
     readonly property string sesWebsiteIcon: "qrc:///client/theme/ses/ses-website.svg"
-    readonly property string sesFilesIcon: "qrc:///client/theme/ses/ses-filesIcon.svg"    
+    readonly property string sesFilesIcon: "qrc:///client/theme/ses/ses-filesIcon.svg"
     readonly property string sesIonosLogoIcon: "qrc:///client/theme/ses/ses-INONS-Logo.svg"
 
     readonly property string sesAvatar: "qrc:///client/theme/ses/ses-settingsAvatar.svg"
@@ -219,13 +219,15 @@ QtObject {
     readonly property string sesLogout: "qrc:///client/theme/ses/ses-accountLogout.svg"
     readonly property string sesDelete: "qrc:///client/theme/ses/ses-accountDelete.svg"
     readonly property string sesClipboard: "qrc:///client/theme/ses/ses-clipboard.svg"
+    readonly property string sesErrorIcon: "qrc:///client/theme/colored/state-error.svg"
+    readonly property string sesErrorBoxIcon: "qrc:///client/theme/ses/ses-snackBarErrorIcon.svg"
     readonly property string sesGreenCheckmark: "qrc:///client/theme/ses/ses-green-Checkmark.svg"
     readonly property string sesOpenSansRegular: "qrc:///client/fonts/OpenSans-Regular.ttf"
 
     readonly property color sesIconDarkColor: "#001B41"
     readonly property color sesIconColor: "#1474C4"
     readonly property color sesIconActive: "#095BB1"
-    
+
     readonly property color sesBorderColor: "#D7D7D7"
     readonly property color sesWhite: "#FFFFFF"
     readonly property color sesGray: "#465A75"
@@ -239,7 +241,9 @@ QtObject {
     readonly property color sesDarkGreen: "#096B35"
     readonly property color sesDarkBlue: "#001B41"
     readonly property color sesBlack: "#000000"
-    
+    readonly property color sesErrorBoxBorder: "#F50C00"
+    readonly property color sesErrorBoxText: "#C80A00"
+
     property int sesAccountMenuHeight: variableSize(40)
     property int sesHeaderLogoHeigth: variableSize(40)
     property int sesHeaderLogoTopMargin: variableSize(16)
