@@ -22,11 +22,7 @@ import "../tray/"
 Item {
     id: errorBox
 
-    signal closeButtonClicked
-
     property string text: ""
-
-    property bool showCloseButton: false
 
     implicitHeight: errorMessageLayout.implicitHeight + (2 * Style.standardSpacing)
 
@@ -46,13 +42,10 @@ Item {
 
         columns: 2
 
-
         Image {
             source: Style.sesErrorIcon
             width: 24
             height: 24
-            // fillMode: Image.PreserveAspectFit
-            visible: true
             Layout.rightMargin: Style.standardSpacing
         }
 
@@ -61,7 +54,6 @@ Item {
             font.bold: true
             font.pixelSize: 16
             text: qsTr("Error")
-            visible: true
             color: Style.sesErrorBoxText
         }
 
@@ -75,7 +67,6 @@ Item {
             wrapMode: Text.WordWrap
             text: errorBox.text
             font.pixelSize: 14
-
         }
     }
 }

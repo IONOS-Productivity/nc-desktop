@@ -131,13 +131,7 @@ ColumnLayout {
         Layout.leftMargin: root.horizontalPadding
         Layout.rightMargin: root.horizontalPadding
 
-        showCloseButton: true
         visible: false
-
-        onCloseButtonClicked: {
-            text = "";
-            visible = false;
-        }
     }
 
     ShareeSearchField {
