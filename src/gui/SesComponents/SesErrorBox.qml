@@ -17,7 +17,7 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15
 
 import Style 1.0
-import "./tray"
+import "../tray/"
 
 Item {
     id: errorBox

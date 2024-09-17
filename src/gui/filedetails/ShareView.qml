@@ -20,6 +20,7 @@ import QtQuick.Controls 2.15
 import com.nextcloud.desktopclient 1.0
 import Style 1.0
 import "../tray"
+import "../SesComponents"
 import "../"
 
 ColumnLayout {
@@ -123,7 +124,7 @@ ColumnLayout {
         }
     }
 
-    ErrorBox {
+    SesErrorBox {
         id: errorBox
 
         Layout.fillWidth: true
@@ -242,8 +243,8 @@ ColumnLayout {
                         onSetLinkShareLabel: shareModel.setLinkShareLabelFromQml(model.share, label)
                         onSetExpireDate: shareModel.setShareExpireDateFromQml(model.share, milliseconds)
                         onSetPassword: shareModel.setSharePasswordFromQml(model.share, password)
-                        onSetNote: shareModel.setShareNoteFromQml(model.share, note)        
-                        width: parent.width           
+                        onSetNote: shareModel.setShareNoteFromQml(model.share, note)
+                        width: parent.width
                     }
 
                     Rectangle{
