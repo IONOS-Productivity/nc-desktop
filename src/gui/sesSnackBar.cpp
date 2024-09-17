@@ -104,7 +104,7 @@ namespace OCC {
         const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-snackBarSuccessIcon.svg");
         m_iconLabel.setPixmap(logoIconFileName);
 
-        updateStyleSheet(QColor("#9FD89F"), QColor("#F1FAF1"), QColor("#000000"), QColor("#000000"));
+        updateStyleSheet(IonosTheme::successBorderColor(), IonosTheme::successColor(), IonosTheme::black(), IonosTheme::black());
     }
 
     void sesSnackBar::warningStyle()
@@ -112,7 +112,7 @@ namespace OCC {
         const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-snackBarWarningIcon.svg");
         m_iconLabel.setPixmap(logoIconFileName);
 
-        updateStyleSheet(QColor("#F4BFAB"), QColor("#FDF6F3"), QColor("#000000"), QColor("#000000"));
+        updateStyleSheet(IonosTheme::warningBorderColor(), IonosTheme::warningColor(), IonosTheme::black(), IonosTheme::black());
     }
 
     void sesSnackBar::errorStyle()
@@ -120,7 +120,7 @@ namespace OCC {
         const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-snackBarErrorIcon.svg");
         m_iconLabel.setPixmap(logoIconFileName);
 
-        updateStyleSheet(QColor("#EEACB2"), QColor("#FDF3F4"), QColor("#000000"), QColor("#000000"));
+        updateStyleSheet(IonosTheme::errorBorderColor(), IonosTheme::errorColor(), IonosTheme::black(), IonosTheme::black());
     }
 
     void sesSnackBar::updateStyleSheet(QColor frameBorderColor, QColor frameBackgroundColor, QColor frameColor, QColor labelColor) 

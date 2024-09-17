@@ -164,8 +164,38 @@ public:
     static QString toolButtonHoveredColor() {
         return "#1474C4";
     }
+    
+    static QString errorBorderColor() {
+        return "#EEACB2";
+    }
 
+    static QString errorColor() {
+        return "#FDF3F4";
+    }
 
+    static QString warningBorderColor() {
+        return "#F4BFAB";
+    }
+
+    static QString warningColor() {
+        return "#FDF6F3";
+    }
+
+    static QString successBorderColor() {
+        return "#9FD89F";
+    }
+
+    static QString successColor() {
+        return "#F1FAF1";
+    }
+
+    static QString infoBorderColor() {
+        return "#11C7E6";
+    }
+
+    static QString infoColor() {
+        return "#E6F9FC";
+    }
 
 private:
     IonosTheme() {}
