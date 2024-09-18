@@ -9,6 +9,7 @@ namespace OCC {
 class IonosTheme {
 public:
 
+    //Icons
     static QString avatarIcon() {
         return QString(Theme::themePrefix) + QStringLiteral("ses/ses-setupAvatar.svg");
     }
@@ -41,6 +42,7 @@ public:
         return QStringLiteral("qrc:///client/theme/ses/ses-refresh.svg");
     }
 
+    //Control Configuration: Sizes
     static QString toolbarActionBorderRadius() {
         return "8px";
     }
@@ -53,6 +55,19 @@ public:
         return 24;
     }
 
+    static QString buttonRadius() {
+        return "4px";
+    }
+
+    static int buttonRadiusInt() {
+        return 4;
+    }
+
+    static QString buttonPadding() {
+        return "10px";
+    }
+
+    //Font Configuration
     static QString settingsFont() {
         return "'Segoe UI'";
     }
@@ -73,10 +88,6 @@ public:
         return "normal";
     }
 
-    static QString settingsLinkColor() {
-        return "#02306A";
-    }
-
     static QString buttonFontSize() {
         return "16px";
     }
@@ -85,20 +96,14 @@ public:
         return "500";
     }
 
+    //Colors
+
+    static QString settingsLinkColor() {
+        return "#02306A";
+    }
+
     static QString buttonPrimaryColor() {
         return "#0F6CBD";
-    }
-
-    static QString buttonRadius() {
-        return "4px";
-    }
-
-    static int buttonRadiusInt() {
-        return 4;
-    }
-
-    static QString buttonPadding() {
-        return "10px";
     }
 
     static QString buttonSecondaryBorderColor() {
@@ -164,7 +169,7 @@ public:
     static QString toolButtonHoveredColor() {
         return "#1474C4";
     }
-    
+
     static QString errorBorderColor() {
         return "#EEACB2";
     }
