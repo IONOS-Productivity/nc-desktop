@@ -788,7 +788,7 @@ void AccountSettings::slotFolderListClicked(const QModelIndex &indx)
 {
     if (indx.data(FolderStatusDelegate::AddButton).toBool()) {
         // "Add Folder Sync Connection"
-        
+
         if (indx.flags() & Qt::ItemIsEnabled) {
             slotAddFolder();
         } else {
@@ -1458,7 +1458,7 @@ void AccountSettings::slotHideSelectiveSyncWidget()
 
 void AccountSettings::slotExpandMemoryClicked()
 {
-     QDesktopServices::openUrl(QUrl("https://wl.hidrive.com/easy/0057"));
+     QDesktopServices::openUrl(QUrl(tr("https://wl.hidrive.com/easy/0057")));
 }
 
 void AccountSettings::slotSelectiveSyncChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QVector<int> &roles)
