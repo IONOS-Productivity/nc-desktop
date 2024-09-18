@@ -237,7 +237,7 @@ bool OwncloudSetupPage::validatePage()
         QString u = url();
         QUrl qurl(u);
         if (!qurl.isValid() || qurl.host().isEmpty()) {
-            setErrorString(tr("Server address does not seem to be valid"), false);
+            setConnectionError(tr("Server address does not seem to be valid"), false);
             return false;
         }
 
@@ -262,6 +262,13 @@ void OwncloudSetupPage::setAuthType(DetermineAuthTypeJob::AuthType type)
     _authTypeKnown = true;
     _authType = type;
     stopSpinner();
+}
+
+void OwncloudSetupPage::setConnectionError(const QString &err, bool retryHTTPonly)
+{
+    this->setVisible(true);
+    _ocWizard->button(QWizard::BackButton)->setHidden(false);
+    setErrorString(err, retryHTTPonly);
 }
 
 void OwncloudSetupPage::setErrorString(const QString &err, bool retryHTTPonly)
@@ -302,8 +309,6 @@ void OwncloudSetupPage::setErrorString(const QString &err, bool retryHTTPonly)
         //     }
         // }
 
-        this->setVisible(true);
-        _ocWizard->button(QWizard::BackButton)->setHidden(false);
         _ui.errorLabel->setVisible(true);
         _ui.errorLabel->setText(err);
     }

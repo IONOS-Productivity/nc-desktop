@@ -345,7 +345,7 @@ void OwncloudWizard::displayError(const QString &msg, bool retryHTTPonly)
 {
     switch (currentId()) {
     case WizardCommon::Page_ServerSetup:
-        _setupPage->setErrorString(msg, retryHTTPonly);
+        _setupPage->setConnectionError(msg, retryHTTPonly);
         break;
 
     case WizardCommon::Page_HttpCreds:
