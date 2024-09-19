@@ -37,7 +37,7 @@ ApplicationWindow {
     color:      "transparent"
     flags:      Systray.useNormalWindow ? Qt.Window : Qt.Dialog | Qt.FramelessWindowHint
 
-    font.family: Style.openSansFontRegular
+    font.family: Style.sesOpenSansRegular
     font.pointSize: Style.sesFontPointSize
 
     // TODO: Rather than setting all these palette colours manually,

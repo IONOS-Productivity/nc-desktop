@@ -71,9 +71,9 @@ Button {
             anchors.horizontalCenter: buttonIcon.horizontalCenter
             anchors.top: buttonIcon.bottom
             anchors.topMargin: 2
-            font.family: Style.openSansFontRegular
+            font.family: root.font.family
             font.pointSize: Style.sesFontPointSize
             text: root.text
-        }        
+        }
     }
 }

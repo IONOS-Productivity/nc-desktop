@@ -300,8 +300,8 @@ Page {
                 checked: root.passwordProtectEnabled
                 text: qsTr("Password protect")
                 visible: root.shareSupportsPassword
-                enabled: visible && 
-                         !root.waitingForPasswordProtectEnabledChange && 
+                enabled: visible &&
+                         !root.waitingForPasswordProtectEnabledChange &&
                          !root.passwordEnforced
 
                 onClicked: {
@@ -349,6 +349,8 @@ Page {
                 wrapMode: TextEdit.Wrap
                 selectByMouse: true
                 text: root.password !== "" ? root.password : root.passwordPlaceholder
+                font.family: root.font.family
+
                 padding: scrollContentsColumn.itemPadding
                 enabled: visible &&
                          root.passwordProtectEnabled &&
@@ -470,7 +472,7 @@ Page {
 
             ColumnLayout {
                 Layout.fillWidth: true
-                height: visible ? implicitHeight : 0       
+                height: visible ? implicitHeight : 0
                 spacing: Style.extraSmallSpacing
 
                 CheckBox {
@@ -523,11 +525,13 @@ Page {
                     color: Style.sesGray
                     padding: scrollContentsColumn.itemPadding
                     visible: root.noteEnabled
+                    font.family: root.font.family
                 }
 
                 TextEdit {
                     id: noteTextEdit
                     visible: root.noteEnabled
+                    font.family: root.font.family
                     Layout.fillWidth: true
                     Layout.leftMargin: 3
                     Layout.rightMargin: 3
@@ -555,7 +559,7 @@ Page {
                     }
                 }
             }
-            
+
             Loader {
                 Layout.fillWidth: true
                 active: !root.isFolderItem && !root.isEncryptedItem
@@ -780,7 +784,7 @@ Page {
         rows: 2
 
         SesCustomButton {
-            Layout.columnSpan: buttonGrid.columns 
+            Layout.columnSpan: buttonGrid.columns
 
             icon.source: Style.sesLightPlus
             text: qsTr("Add another link")

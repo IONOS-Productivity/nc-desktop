@@ -28,7 +28,7 @@ HeaderButton {
     property bool userHasGroupFolders: currentUser.groupFolders.length > 0
 
     icon.source: Style.sesFilesIcon
-    icon.color: Style.sesIconColor 
+    icon.color: Style.sesIconColor
 
     text: qsTr("Files")
 
@@ -121,7 +121,7 @@ HeaderButton {
                 anchors.top: openLocalFolderButtonIcon.bottom
                 anchors.topMargin: 2
                 text: root.text
-                font.family: Style.openSansFontRegular
+                font.family: root.font.family
                 font.pointSize: Style.sesFontPointSize
             }
 
