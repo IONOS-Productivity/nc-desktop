@@ -197,6 +197,7 @@ AccountSettings::AccountSettings(AccountState *accountState, QWidget *parent)
     // Connect styleChanged events to our widgets, so they can adapt (Dark-/Light-Mode switching)
     connect(this, &AccountSettings::styleChanged, delegate, &FolderStatusDelegate::slotStyleChanged);
 
+    _ui->_folderList->setFont(IonosTheme::settingsFont());
     _ui->_folderList->header()->hide();
     _ui->_folderList->setItemDelegate(delegate);
     _ui->_folderList->setModel(_model);

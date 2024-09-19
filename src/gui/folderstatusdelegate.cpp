@@ -23,7 +23,7 @@
 #include "buttonstyle.h"
 
 #include <theme.h>
-#include "ionostheme.h"
+#include <ionostheme.h>
 #include <account.h>
 
 #include <QFileIconProvider>
@@ -69,8 +69,8 @@ QString FolderStatusDelegate::addInfoText()
 QSize FolderStatusDelegate::sizeHint(const QStyleOptionViewItem &option,
     const QModelIndex &index) const
 {
-    QFont aliasFont = makeAliasFont(option.font);
-    QFont font = option.font;
+    QFont font = QFont(IonosTheme::settingsFont());
+    QFont aliasFont = makeAliasFont(font);
 
     QFontMetrics fm(font);
     QFontMetrics aliasFm(aliasFont);
@@ -125,11 +125,11 @@ int FolderStatusDelegate::rootFolderHeightWithoutErrors(const QFontMetrics &fm, 
 
 void FolderStatusDelegate::drawAddButton(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    const auto titleFont = makeAliasFont(option.font);
+    const auto titleFont = makeAliasFont(QFont(IonosTheme::settingsFont()));
     QFontMetrics titleTextFm(titleFont);
     const auto baseDistanceForCalculus = titleTextFm.height() / 2;
 
-    const auto subtitleFont = option.font;
+    const auto subtitleFont = QFont(IonosTheme::settingsFont());
     QFontMetrics subtitleTextFm(subtitleFont);
     const auto distanceToSubline = subtitleTextFm.height() / 4;
 
@@ -177,8 +177,8 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
 
     auto textAlign = Qt::AlignLeft;
 
-    const auto aliasFont = makeAliasFont(option.font);
-    const auto subFont = option.font;
+    const auto aliasFont = makeAliasFont(QFont(IonosTheme::settingsFont()));
+    const auto subFont = QFont(IonosTheme::settingsFont());
     const auto errorFont = subFont;
 
 
@@ -340,7 +340,7 @@ void FolderStatusDelegate::drawSyncProgressBar(QPainter *painter, const QStyleOp
     constexpr auto barHeight = 7; // same height as quota bar
     const auto overallWidth = option.rect.right() - aliasMargin - optionsButtonVisualRect.width() - nextToIcon;
 
-    auto progressFont = option.font;
+    auto progressFont = QFont(IonosTheme::settingsFont());
     progressFont.setPointSize(progressFont.pointSize() - 2);
 
     painter->save();
@@ -466,7 +466,7 @@ bool FolderStatusDelegate::editorEvent(
 
 QRect FolderStatusDelegate::optionsButtonRect(QRect within, Qt::LayoutDirection direction)
 {
-    QFont font = QFont();
+    QFont font = QFont(IonosTheme::settingsFont());
     QFont aliasFont = makeAliasFont(font);
     QFontMetrics fm(font);
     QFontMetrics aliasFm(aliasFont);
@@ -488,7 +488,7 @@ QRect FolderStatusDelegate::optionsButtonRect(QRect within, Qt::LayoutDirection 
 
 QRect FolderStatusDelegate::errorsListRect(QRect within)
 {
-    QFont font = QFont();
+    QFont font = QFont(IonosTheme::settingsFont());
     QFont aliasFont = makeAliasFont(font);
     QFontMetrics fm(font);
     QFontMetrics aliasFm(aliasFont);
