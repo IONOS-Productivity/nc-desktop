@@ -243,6 +243,8 @@ QtObject {
     readonly property color sesBlack: "#000000"
     readonly property color sesErrorBoxBorder: "#F50C00"
     readonly property color sesErrorBoxText: "#C80A00"
+    readonly property color sesMenuBorder: "#2E4360"
+    readonly property color sesSearchFieldContent: "#97A3B4"
 
     property int sesAccountMenuHeight: variableSize(40)
     property int sesHeaderLogoHeigth: variableSize(40)

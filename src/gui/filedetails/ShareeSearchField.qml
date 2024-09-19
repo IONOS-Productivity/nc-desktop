@@ -38,7 +38,7 @@ TextField {
     }
 
     readonly property int horizontalPaddingOffset: Style.trayHorizontalMargin
-    readonly property color placeholderColor: palette.dark
+    readonly property color placeholderColor: Style.sesSearchFieldContent
     readonly property double iconsScaleFactor: 0.6
 
     function triggerSuggestionsVisibility() {
@@ -92,9 +92,8 @@ TextField {
 
     background: Rectangle {
         radius: 5
-        border.color: parent.activeFocus ? UserModel.currentUser.accentColor : palette.dark
+        border.color: Style.sesMenuBorder
         border.width: 1
-        color: palette.base
     }
 
     Image {
@@ -114,7 +113,7 @@ TextField {
         fillMode: Image.PreserveAspectFit
         horizontalAlignment: Image.AlignLeft
 
-        source: "image://svgimage-custom-color/search.svg" + "/" + root.placeholderColor
+        source: "image://svgimage-custom-color/search.svg" + "/" + Style.sesSearchFieldContent
         sourceSize: Qt.size(parent.height * root.iconsScaleFactor, parent.height * root.iconsScaleFactor)
 
         visible: !root.shareeModel.fetchOngoing
