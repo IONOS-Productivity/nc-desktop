@@ -25,6 +25,7 @@
 #include "application.h"
 #include "cocoainitializer.h"
 #include "theme.h"
+#include "ionostheme.h"
 #include "common/utility.h"
 
 #if defined(BUILD_UPDATER)
@@ -88,12 +89,12 @@ int main(int argc, char **argv)
     // if (app.devicePixelRatio() > 1)
     //     QApplication::setStyle(QStringLiteral("fusion"));
 
-    // int fontId = QFontDatabase::addApplicationFont(":/client/fonts/OpenSans-Regular.ttf");
-    // QString fontFamily = QFontDatabase::applicationFontFamilies(fontId).at(0);
-    // QFont defaultFont(fontFamily);
-    // defaultFont.setPointSize(9);
-    // defaultFont.setWeight(QFont::Normal);
-    // QApplication::setFont(defaultFont);
+    //int fontId = QFontDatabase::addApplicationFont(":/client/fonts/OpenSans-Regular.ttf");
+    QString fontFamily = IonosTheme::settingsFont();
+    QFont defaultFont(fontFamily);
+    defaultFont.setPointSize(9);
+    defaultFont.setWeight(QFont::Normal);
+    QApplication::setFont(defaultFont);
 
 #endif // Q_OS_WIN
 

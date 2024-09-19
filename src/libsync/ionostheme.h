@@ -69,7 +69,7 @@ public:
 
     //Font Configuration
     static QString settingsFont() {
-        return "'Segoe UI'";
+        return "Segoe UI";
     }
 
     static QString settingsTitleSize() {
