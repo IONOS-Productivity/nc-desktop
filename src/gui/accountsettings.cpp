@@ -539,6 +539,7 @@ void AccountSettings::openIgnoredFilesDialog(const QString &absFolderPath)
     const QString ignoreFile{absFolderPath + ".sync-exclude.lst"};
     const auto layout = new QVBoxLayout();
     const auto ignoreListWidget = new IgnoreListTableWidget(this);
+    ignoreListWidget->setFont(IonosTheme::settingsFont());
     ignoreListWidget->readIgnoreFile(ignoreFile);
     layout->addWidget(ignoreListWidget);
 

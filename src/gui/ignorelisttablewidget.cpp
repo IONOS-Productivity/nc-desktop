@@ -52,6 +52,8 @@ IgnoreListTableWidget::IgnoreListTableWidget(QWidget *parent)
     connect(ui->removeAllPushButton, &QAbstractButton::clicked,
             this, &IgnoreListTableWidget::slotRemoveAllItems);
 
+    ui->tableWidget->setFont(IonosTheme::settingsFont());
+    ui->tableWidget->horizontalHeader()->setFont(IonosTheme::settingsFont());
     ui->tableWidget->resizeColumnsToContents();
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(patternCol, QHeaderView::Stretch);
     ui->tableWidget->verticalHeader()->setVisible(false);
