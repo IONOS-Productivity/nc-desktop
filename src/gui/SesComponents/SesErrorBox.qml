@@ -52,7 +52,9 @@ Item {
         EnforcedPlainTextLabel {
             Layout.fillWidth: true
 
-            font.pixelSize: 16
+            font.pixelSize: Style.sesFontPixelSize
+            font.weight: Style.sesFontBoldWeight
+
             text: qsTr("Error")
             color: Style.sesErrorBoxText
         }
@@ -66,7 +68,9 @@ Item {
 
             wrapMode: Text.WordWrap
             text: errorBox.text
-            font.pixelSize: 14
+
+            font.pixelSize: Style.sesFontErrortextPixelSize
+            font.weight: Style.sesFontNormalWeight
         }
     }
 }

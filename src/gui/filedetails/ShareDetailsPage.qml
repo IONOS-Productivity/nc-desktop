@@ -95,6 +95,16 @@ Page {
     property bool waitingForPasswordChange: false
     property bool waitingForNoteChange: false
 
+    readonly property int titlePixelSize: Style.sesFontPixelSizeTitle
+    readonly property int titleFontWeight: Style.sesFontNormalWeight
+
+    readonly property int hintPixelSize: Style.sesFontHintPixelSize
+    readonly property int hintFontWeight: Style.sesFontNormalWeight
+
+
+    readonly property int pixelSize: Style.sesFontPixelSize
+    readonly property int fontWeight: Style.sesFontNormalWeight
+
     function showPasswordSetError(message) {
         passwordErrorBoxLoader.message = message !== "" ?
                                          message : qsTr("An error occurred setting the share password.");
@@ -218,6 +228,9 @@ Page {
 
                 text: root.fileDetails.name
 
+                font.pixelSize: titlePixelSize
+                font.weight: titleFontWeight
+
                 wrapMode: Text.Wrap
             }
 
@@ -234,6 +247,10 @@ Page {
                 bgNormalOpacity: 0
                 toolTipText: qsTr("Dismiss")
 
+                font.pixelSize: pixelSize
+                font.weight: fontWeight
+
+
                 onClicked: root.closeShareDetails()
             }
 
@@ -245,6 +262,9 @@ Page {
 
                 text: `${root.fileDetails.sizeString}, ${root.fileDetails.lastChangedString}`
                 wrapMode: Text.Wrap
+
+                font.pixelSize: hintPixelSize
+                font.weight: hintFontWeight
             }
         }
     }
@@ -290,6 +310,9 @@ Page {
                     toolTipBase: Style.backgroundColor
                     toolTipText: Style.ncTextColor
                 }
+
+                font.pixelSize: pixelSize
+                font.weight: fontWeight
 
                 spacing: scrollContentsColumn.indicatorSpacing
                 padding: scrollContentsColumn.itemPadding
@@ -349,7 +372,10 @@ Page {
                 wrapMode: TextEdit.Wrap
                 selectByMouse: true
                 text: root.password !== "" ? root.password : root.passwordPlaceholder
+
                 font.family: root.font.family
+                font.pixelSize: pixelSize
+                font.weight: fontWeight
 
                 padding: scrollContentsColumn.itemPadding
                 enabled: visible &&
@@ -403,6 +429,9 @@ Page {
                     toolTipText: Style.ncTextColor
                 }
 
+                font.pixelSize: pixelSize
+                font.weight: fontWeight
+
                 spacing: scrollContentsColumn.indicatorSpacing
                 padding: scrollContentsColumn.itemPadding
                 indicator.width: scrollContentsColumn.indicatorItemWidth
@@ -429,6 +458,9 @@ Page {
             NCInputDateField {
                 id: expireDateField
 
+                font.pixelSize: pixelSize
+                font.weight: fontWeight
+
                 Layout.fillWidth: true
                 Layout.leftMargin: 3
                 Layout.rightMargin: 3
@@ -449,6 +481,7 @@ Page {
                     // Start of day at 00:00:0000
                     return Date.UTC(currentYear, currentMonth, currentMonthDay + 1);
                 }
+
 
                 enabled: root.expireDateEnabled &&
                             !root.waitingForExpireDateChange &&
@@ -504,6 +537,10 @@ Page {
                         toolTipText: Style.ncTextColor
                     }
 
+                    font.pixelSize: pixelSize
+                    font.weight: fontWeight
+
+
                     spacing: scrollContentsColumn.indicatorSpacing
                     padding: scrollContentsColumn.itemPadding
                     indicator.width: scrollContentsColumn.indicatorItemWidth
@@ -526,12 +563,16 @@ Page {
                     padding: scrollContentsColumn.itemPadding
                     visible: root.noteEnabled
                     font.family: root.font.family
+                    font.pixelSize: pixelSize
+                    font.weight: fontWeight
                 }
 
                 TextEdit {
                     id: noteTextEdit
                     visible: root.noteEnabled
                     font.family: root.font.family
+                    font.pixelSize: pixelSize
+                    font.weight: fontWeight
                     Layout.fillWidth: true
                     Layout.leftMargin: 3
                     Layout.rightMargin: 3
@@ -589,6 +630,9 @@ Page {
                         toolTipText: Style.ncTextColor
                     }
 
+                    font.pixelSize: pixelSize
+                    font.weight: fontWeight
+
                     spacing: scrollContentsColumn.indicatorSpacing
                     padding: scrollContentsColumn.itemPadding
                     indicator.width: scrollContentsColumn.indicatorItemWidth
@@ -627,6 +671,8 @@ Page {
                         indicator.width: scrollContentsColumn.indicatorItemWidth
                         indicator.height: scrollContentsColumn.indicatorItemWidth
                         onClicked: root.permissionModeChanged(permissionMode)
+                        font.pixelSize: pixelSize
+                        font.weight: fontWeight
                     }
 
                     CheckBox {
@@ -643,6 +689,8 @@ Page {
                         padding: scrollContentsColumn.itemPadding
                         onClicked: root.permissionModeChanged(permissionMode)
                         visible: customPermissionsCheckBox.checked
+                        font.pixelSize: pixelSize
+                        font.weight: fontWeight
                     }
 
                     CheckBox {
@@ -659,6 +707,8 @@ Page {
                         padding: scrollContentsColumn.itemPadding
                         onClicked: root.permissionModeChanged(permissionMode)
                         visible: customPermissionsCheckBox.checked
+                        font.pixelSize: pixelSize
+                        font.weight: fontWeight
                     }
 
                     CheckBox {
@@ -675,6 +725,8 @@ Page {
                         padding: scrollContentsColumn.itemPadding
                         onClicked: root.permissionModeChanged(permissionMode)
                         visible: customPermissionsCheckBox.checked
+                        font.pixelSize: pixelSize
+                        font.weight: fontWeight
                     }
                 }
             }
@@ -707,6 +759,9 @@ Page {
                     toolTipBase: Style.backgroundColor
                     toolTipText: Style.ncTextColor
                 }
+
+                font.pixelSize: pixelSize
+                font.weight: fontWeight
 
                 spacing: scrollContentsColumn.indicatorSpacing
                 padding: scrollContentsColumn.itemPadding
@@ -762,6 +817,9 @@ Page {
                             toolTipText: Style.ncTextColor
                         }
 
+                        font.pixelSize: pixelSize
+                        font.weight: fontWeight
+
                         spacing: scrollContentsColumn.indicatorSpacing
                         padding: scrollContentsColumn.itemPadding
                         indicator.width: scrollContentsColumn.indicatorItemWidth
@@ -787,6 +845,9 @@ Page {
             Layout.columnSpan: buttonGrid.columns
 
             icon.source: Style.sesLightPlus
+
+            font.pixelSize: pixelSize
+            font.weight: fontWeight
             text: qsTr("Add another link")
             textColor: palette.brightText
 
@@ -806,6 +867,8 @@ Page {
         SesCustomButton {
             id: unshareButton
 
+            font.pixelSize: pixelSize
+            font.weight: fontWeight
             text: qsTr("Unshare")
             textColor: Style.sesActionPressed
 
@@ -839,6 +902,9 @@ Page {
             property bool shareLinkCopied: false
 
             icon.source: Style.sesClipboard
+
+            font.pixelSize: pixelSize
+            font.weight: fontWeight
             text: shareLinkCopied ? qsTr("Share link copied!") : qsTr("Copy share link")
             textColor: palette.brightText
 

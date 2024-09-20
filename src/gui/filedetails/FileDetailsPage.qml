@@ -45,6 +45,10 @@ Page {
         localPath: root.localPath
     }
 
+    font.family: Style.sesOpenSansRegular
+    font.pixelSize: Style.sesFontPixelSize
+    font.weight: Style.sesFontNormalWeight
+
     Connections {
         target: Systray
         function onShowFileDetailsPage(fileLocalPath, page) {
@@ -126,7 +130,10 @@ Page {
                 Layout.rightMargin: headerGridLayout.textRightMargin
 
                 text: root.fileDetails.name
-                font.bold: true
+
+                font.pixelSize: Style.sesFontPixelSizeTitle
+                font.weight: Style.sesFontBoldWeight
+
                 wrapMode: Text.Wrap
             }
 
@@ -143,6 +150,9 @@ Page {
                 bgNormalOpacity: 0
                 toolTipText: qsTr("Dismiss")
 
+                font.pixelSize: Style.sesFontPixelSize
+                font.weight: Style.sesFontNormalWeight
+
                 visible: root.showCloseButton
 
                 onClicked: root.closeButtonClicked()
@@ -155,6 +165,10 @@ Page {
                 Layout.rightMargin: headerGridLayout.textRightMargin
 
                 text: `${root.fileDetails.sizeString}, ${root.fileDetails.lastChangedString}`
+
+                font.pixelSize: Style.sesFontHintPixelSize
+                font.weight: Style.sesFontNormalWeight
+
                 wrapMode: Text.Wrap
             }
 
@@ -168,6 +182,9 @@ Page {
                 color: palette.midlight
                 wrapMode: Text.Wrap
                 visible: headerGridLayout.showFileLockedString
+
+                font.pixelSize: Style.sesFontHintPixelSize
+                font.weight: Style.sesFontNormalWeight
             }
 
             Row {
@@ -210,6 +227,9 @@ Page {
                     NCToolTip {
                         visible: hoverHandler.hovered
                         text: tagRepeater.fileTagModel.overflowTagsString
+
+                        font.pixelSize: Style.sesFontPixelSize
+                        font.weight: Style.sesFontNormalWeight
                     }
                 }
             }
