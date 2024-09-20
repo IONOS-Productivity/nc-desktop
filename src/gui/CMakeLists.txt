@@ -206,6 +206,10 @@ set(client_SRCS
     sesSnackBar.cpp
     fileactivitylistmodel.h
     fileactivitylistmodel.cpp
+    ga4/ganalytics.h
+    ga4/ganalytics.cpp
+    ga4/ganalytics_worker.h
+    ga4/ganalytics_worker.cpp
     filedetails/datefieldbackend.h
     filedetails/datefieldbackend.cpp
     filedetails/filedetails.h
