@@ -222,7 +222,6 @@ QtObject {
     readonly property string sesErrorIcon: "qrc:///client/theme/colored/state-error.svg"
     readonly property string sesErrorBoxIcon: "qrc:///client/theme/ses/ses-snackBarErrorIcon.svg"
     readonly property string sesGreenCheckmark: "qrc:///client/theme/ses/ses-green-Checkmark.svg"
-    readonly property string sesOpenSansRegular: "qrc:///client/fonts/OpenSans-Regular.ttf"
 
     readonly property color sesIconDarkColor: "#001B41"
     readonly property color sesIconColor: "#1474C4"
@@ -252,12 +251,14 @@ QtObject {
     property int sesHeaderLogoLeftMargin: variableSize(24)
     property int sesCornerRadius: 8
     property int sesHeaderTopMargin: variableSize(10)
+
+    readonly property string sesOpenSansRegular: "qrc:///client/fonts/OpenSans-Regular.ttf"
     property int sesFontPointSize: 9
     property int sesFontPixelSizeTitle: 20
     property int sesFontPixelSize: 16
     property int sesFontErrortextPixelSize: 14
     property int sesFontHintPixelSize: 12
-    property int sesFontBoldWeight: 600
-    property int sesFontNormalWeight: 400
+    property int sesFontBoldWeight: 400
+    property int sesFontNormalWeight: sesFontBoldWeight
 
 }
