@@ -39,6 +39,10 @@
 #include <QQuickWindow>
 #include <QSurfaceFormat>
 #include "sesStyle.h"
+#include "ga4/ganalytics.h"
+
+#define GA_MEASUREMENT_ID "G-**********"            // "YOUR_MEASUREMENT_ID"
+#define GA_API_SECRET     "**********************"  // "YOUR_API_SECRET"
 
 using namespace OCC;
 
@@ -198,6 +202,21 @@ int main(int argc, char **argv)
             }
         }
     }
+
+    QString clientID;
+    if (clientID.isEmpty()) {
+        clientID = QUuid::createUuid().toString();
+    }
+    ga->setClientID(clientID);
+    ga->setMeasurementId(GA_MEASUREMENT_ID);
+    ga->setApiSecret(GA_API_SECRET);
+    ga->enable(true);
+    ga->setSendInterval(3000);
+    ga->setLogLevel(GAnalytics::Debug);
+    ga->enableValidation(true);
+
+    // ga->clicked(GAnalytics::TrackPage::GeneralSetting, GAnalytics::TrackElement::Save);
+
 
     return app.exec();
 }
