@@ -21,6 +21,7 @@ import Qt.labs.platform 1.1 as NativeDialogs
 
 import "../"
 import "../filedetails/"
+import "../SesComponents/"
 
 // Custom qml modules are in /theme (and included by resources.qrc)
 import Style 1.0
@@ -260,7 +261,7 @@ ApplicationWindow {
             width: parent.width
         }
 
-        TrayWindowHeaderBar {
+        SesTrayHeader {
             id: trayWindowHeaderBackground
             anchors.left:   trayWindowLogoHeaderBackground.left
             anchors.right:  trayWindowLogoHeaderBackground.right
