@@ -72,6 +72,10 @@ public:
         return "Segoe UI";
     }
 
+    static QString settingsSmallTextSize() {
+        return "14px";
+    }
+
     static QString settingsTextSize() {
         return "16px";
     }
@@ -80,24 +84,19 @@ public:
         return "20px";
     }
 
+    static QString settingsBigTitleSize() {
+        return "24px";
+    }
+
+    static QString settingsTextWeight() {
+        return "400";
+    }
+
     static QString settingsTitleWeight() {
         return "600";
     }
 
-    static QString settingsTextWeight() {
-        return "normal";
-    }
-
-    static QString buttonFontSize() {
-        return "16px";
-    }
-
-    static QString buttonFontWeight() {
-        return "500";
-    }
-
     //Colors
-
     static QString settingsLinkColor() {
         return "#02306A";
     }
