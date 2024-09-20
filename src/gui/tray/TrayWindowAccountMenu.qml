@@ -53,7 +53,7 @@ Button {
         width: (Style.currentAccountButtonWidth - 2)
         height: Math.min(implicitHeight, maxMenuHeight)
         closePolicy: Menu.CloseOnPressOutsideParent | Menu.CloseOnEscape
-        
+
         clip: true
 
         background: Rectangle {
@@ -108,7 +108,7 @@ Button {
 
         AccountMenuItem{
             id: addAccountButton
-            icon.source: Style.sesDarkPlus 
+            icon.source: Style.sesDarkPlus
             text: qsTr("Add account")
             onClicked: UserModel.addAccount()
             visible: Systray.enableAddAccount
@@ -124,22 +124,22 @@ Button {
         AccountMenuItem{
             id: syncPauseButton
             onClicked: Systray.syncIsPaused = !Systray.syncIsPaused
-            icon.source: Systray.syncIsPaused ? Style.sesAccountResume : Style.sesAccountPause 
+            icon.source: Systray.syncIsPaused ? Style.sesAccountResume : Style.sesAccountPause
         }
 
         AccountMenuItem{
             id: settingsButton
             text: qsTr("Settings")
             onClicked: Systray.openSettings()
-            icon.source: Style.sesAccountSettings 
+            icon.source: Style.sesAccountSettings
         }
 
         AccountMenuItem{
             id: exitButton
             text: qsTr("Exit")
             onClicked: Systray.shutdown()
-            icon.source: Style.sesAccountQuit 
-        } 
+            icon.source: Style.sesAccountQuit
+        }
     }
 
     background: Rectangle {
@@ -163,7 +163,7 @@ Button {
             source: Style.sesAvatar
             Accessible.role: Accessible.Graphic
             Accessible.name: qsTr("Current account avatar")
-            
+
             Rectangle {
                 id: currentAccountStatusIndicatorBackground
                 // SES-50 Remove Inidcator
@@ -230,7 +230,7 @@ Button {
                 text: UserModel.currentUser.name
                 elide: Text.ElideRight
                 color: Style.currentUserHeaderTextColor
-                font.pointSize: Style.sesFontPointSize
+                font: root.font
             }
 
             RowLayout {

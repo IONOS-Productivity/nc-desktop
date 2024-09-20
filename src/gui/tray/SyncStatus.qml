@@ -54,7 +54,7 @@ RowLayout {
 
             text: syncStatus.syncStatusString
             verticalAlignment: Text.AlignVCenter
-            font.pixelSize: Style.topLinePixelSize
+            font: root.font
             wrapMode: Text.Wrap
         }
 
@@ -79,7 +79,7 @@ RowLayout {
             text: syncStatus.syncStatusDetailString
             visible: syncStatus.syncStatusDetailString !== ""
             color: palette.midlight
-            font.pixelSize: Style.subLinePixelSize
+            font: root.font
             wrapMode: Text.Wrap
         }
     }
