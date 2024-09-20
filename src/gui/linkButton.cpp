@@ -10,7 +10,7 @@ namespace OCC {
         setStyleSheet(QStringLiteral("QLabel { color: %1; text-decoration: underline; font-size: %2; font-weight: %3; }")
             .arg(IonosTheme::settingsLinkColor()
                 , IonosTheme::settingsTextSize()
-                , IonosTheme::settingsTitleWeigth()
+                , IonosTheme::settingsTitleWeight()
             ));
 
         setCursor(Qt::PointingHandCursor);

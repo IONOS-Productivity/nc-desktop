@@ -590,9 +590,9 @@ void GeneralSettings::customizeStyle()
         "QCheckBox { font-family: %4; font-weight: %5; font-size: %6; }"
          "QLabel { font-family: %4; font-size: %6; font-weight: %3; }"
          ).arg(Theme::instance()->systemPalette().base().color().name(), IonosTheme::settingsTitleSize(),
-          IonosTheme::settingsTitleWeigth(),
+          IonosTheme::settingsTitleWeight(),
           IonosTheme::settingsFont(),
-          IonosTheme::settingsTextWeigth(),
+          IonosTheme::settingsTextWeight(),
           IonosTheme::settingsTextSize()
         )    
     );

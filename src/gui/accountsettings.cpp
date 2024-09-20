@@ -1693,7 +1693,7 @@ void AccountSettings::customizeStyle()
     const auto color = palette().highlight().color();
     _ui->quotaProgressBar->setStyleSheet(progressBarStyle().arg(color.name()));
 
-    _ui->quotaInfoLabel->setStyleSheet(progressBarTitleStyle().arg(IonosTheme::settingsFont(), IonosTheme::settingsTitleSize(), IonosTheme::settingsTitleWeigth()));
+    _ui->quotaInfoLabel->setStyleSheet(progressBarTitleStyle().arg(IonosTheme::settingsFont(), IonosTheme::settingsTitleSize(), IonosTheme::settingsTitleWeight()));
 }
 
 void AccountSettings::initializeE2eEncryption()

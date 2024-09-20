@@ -72,19 +72,19 @@ public:
         return "Segoe UI";
     }
 
-    static QString settingsTitleSize() {
-        return "20px";
-    }
-
-    static QString settingsTitleWeigth() {
-        return "600";
-    }
-
     static QString settingsTextSize() {
         return "16px";
     }
 
-    static QString settingsTextWeigth() {
+    static QString settingsTitleSize() {
+        return "20px";
+    }
+
+    static QString settingsTitleWeight() {
+        return "600";
+    }
+
+    static QString settingsTextWeight() {
         return "normal";
     }
 
