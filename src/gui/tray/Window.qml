@@ -158,7 +158,7 @@ ApplicationWindow {
             radius: Systray.useNormalWindow ? 0.0 : Style.trayWindowRadius
             border.width: Style.trayWindowBorderWidth
             border.color: palette.dark
-            color: palette.window
+            color: "red"//palette.window
         }
 
         property int userIndex: 0
@@ -300,9 +300,12 @@ ApplicationWindow {
             onClearText: { UserModel.currentUser.unifiedSearchResultsListModel.searchTerm = "" }
         }
 
-        ErrorBox {
+        SesErrorBox {
             id: unifiedSearchResultsErrorLabel
-            visible:  UserModel.currentUser.unifiedSearchResultsListModel.errorString && !unifiedSearchResultsListView.visible && ! UserModel.currentUser.unifiedSearchResultsListModel.isSearchInProgress && ! UserModel.currentUser.unifiedSearchResultsListModel.currentFetchMoreInProgressProviderId
+            visible:    UserModel.currentUser.unifiedSearchResultsListModel.errorString &&
+                        !unifiedSearchResultsListView.visible &&
+                        !UserModel.currentUser.unifiedSearchResultsListModel.isSearchInProgress &&
+                        !UserModel.currentUser.unifiedSearchResultsListModel.currentFetchMoreInProgressProviderId
             text:  UserModel.currentUser.unifiedSearchResultsListModel.errorString
             anchors.top: trayWindowUnifiedSearchInputContainer.bottom
             anchors.left: trayWindowMainItem.left
