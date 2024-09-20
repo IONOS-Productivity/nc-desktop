@@ -198,7 +198,7 @@ GridLayout {
 
             text: shareLinkCopied ? qsTr("Copied!") : ""
             textColor: Style.sesDarkGreen
-            contentsFont.bold: true
+
             bgColor: palette.highlight
             bgNormalOpacity: 0
 

@@ -55,7 +55,6 @@ RowLayout {
             text: syncStatus.syncStatusString
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: Style.topLinePixelSize
-            font.bold: true
             wrapMode: Text.Wrap
         }
 
@@ -100,7 +99,6 @@ RowLayout {
         padding: Style.smallSpacing
         textColor: Style.adjustedCurrentUserHeaderColor
         textColorHovered: Style.currentUserHeaderTextColor
-        contentsFont.bold: true
         bgColor: Style.currentUserHeaderColor
 
         visible: false // SES-4 removed
@@ -122,7 +120,6 @@ RowLayout {
         text: qsTr("Resolve conflicts")
         textColor: Style.adjustedCurrentUserHeaderColor
         textColorHovered: Style.currentUserHeaderTextColor
-        contentsFont.bold: true
         bgColor: Style.currentUserHeaderColor
 
         visible: activityModel.hasSyncConflicts &&

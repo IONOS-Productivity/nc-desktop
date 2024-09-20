@@ -28,7 +28,7 @@ Button {
     property color textColor: palette.buttonText
     property color textColorHovered: textColor
 
-    property alias contentsFont: contents.font
+    property alias contentsFont: root.font
 
     property alias bgColor: bgRectangle.color
     property alias bgNormalColor: bgRectangle.normalColor

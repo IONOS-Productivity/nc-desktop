@@ -217,7 +217,7 @@ Page {
                 Layout.rightMargin: headerGridLayout.textRightMargin
 
                 text: root.fileDetails.name
-                font.bold: true
+
                 wrapMode: Text.Wrap
             }
 
@@ -789,7 +789,7 @@ Page {
             icon.source: Style.sesLightPlus
             text: qsTr("Add another link")
             textColor: palette.brightText
-            contentsFont.bold: true
+
             bgColor: Style.sesActionPressed
             bgNormalOpacity: 1.0
             bgHoverOpacity: Style.hoverOpacity
@@ -808,7 +808,7 @@ Page {
 
             text: qsTr("Unshare")
             textColor: Style.sesActionPressed
-            contentsFont.bold: true
+
             bgColor: palette.highlight
             bgNormalOpacity: 1.0
 
@@ -841,7 +841,6 @@ Page {
             icon.source: Style.sesClipboard
             text: shareLinkCopied ? qsTr("Share link copied!") : qsTr("Copy share link")
             textColor: palette.brightText
-            contentsFont.bold: true
 
             bgColor: Style.sesActionPressed
             bgNormalOpacity: 1.0

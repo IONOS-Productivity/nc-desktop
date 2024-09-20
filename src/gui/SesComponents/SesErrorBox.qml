@@ -51,7 +51,7 @@ Item {
 
         EnforcedPlainTextLabel {
             Layout.fillWidth: true
-            font.bold: true
+
             font.pixelSize: 16
             text: qsTr("Error")
             color: Style.sesErrorBoxText

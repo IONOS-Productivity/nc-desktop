@@ -56,7 +56,6 @@ ApplicationWindow {
                 padding: Style.smallSpacing
                 textColor: Style.ncTextColor
                 textColorHovered: Style.ncHeaderTextColor
-                contentsFont.bold: true
                 bgColor: Style.ncBlue
                 text: qsTr("Reload")
                 onClicked: reloadMaterialisedItems(accountUserIdAtHost)
