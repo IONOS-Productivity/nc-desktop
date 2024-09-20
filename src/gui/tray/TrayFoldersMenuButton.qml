@@ -121,8 +121,7 @@ HeaderButton {
                 anchors.top: openLocalFolderButtonIcon.bottom
                 anchors.topMargin: 2
                 text: root.text
-                font.family: root.font.family
-                font.pointSize: Style.sesFontPointSize
+                font: root.font
             }
 
             Loader {

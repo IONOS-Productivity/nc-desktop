@@ -71,8 +71,7 @@ Button {
             anchors.horizontalCenter: buttonIcon.horizontalCenter
             anchors.top: buttonIcon.bottom
             anchors.topMargin: 2
-            font.family: root.font.family
-            font.pointSize: Style.sesFontPointSize
+            font: root.font
             text: root.text
         }
     }

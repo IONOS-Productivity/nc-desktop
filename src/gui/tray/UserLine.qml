@@ -25,7 +25,7 @@ AbstractButton {
     id: userLine
 
     property bool isHovered: userLine.hovered || userLine.visualFocus
-    property bool isActive: userLine.pressed 
+    property bool isActive: userLine.pressed
 
     signal showUserStatusSelector(int id)
 
@@ -55,7 +55,7 @@ AbstractButton {
             Layout.leftMargin: 7
             verticalAlignment: Qt.AlignCenter
             cache: false
-            source: Style.sesAvatar            
+            source: Style.sesAvatar
         }
 
         ColumnLayout {
@@ -69,9 +69,9 @@ AbstractButton {
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
                 verticalAlignment: Text.AlignBottom
-                text: name 
+                text: name
                 elide: Text.ElideRight
-                font.pointSize: Style.sesFontPointSize
+                font: root.font
             }
 
             RowLayout {
@@ -95,7 +95,7 @@ AbstractButton {
                     visible: model.statusMessage !== ""
                     text: statusMessage
                     elide: Text.ElideRight
-                    font.pixelSize: Style.subLinePixelSize
+                    font: root.font
                     leftPadding: Style.accountLabelsSpacing
                 }
             }
@@ -131,14 +131,14 @@ AbstractButton {
 
                 background: Rectangle {
                     radius: Style.sesCornerRadius
-                    border.color: Style.sesBorderColor 
+                    border.color: Style.sesBorderColor
                 }
 
                 MenuItem {
                     visible: false
                     height: visible ? implicitHeight : 0
                     text: qsTr("Set status")
-                    font.pixelSize: Style.topLinePixelSize
+                    font: root.font
                     palette.windowText: Style.ncTextColor
                     hoverEnabled: true
                     onClicked: showUserStatusSelector(index)
@@ -153,7 +153,7 @@ AbstractButton {
                     icon.source: Style.sesLogout
                     icon.color: Style.sesIconDarkColor
                     text: model.isConnected ? qsTr("Log out") : qsTr("Log in")
-                    font.pixelSize: Style.topLinePixelSize
+                    font: root.font
                     palette.windowText: Style.ncTextColor
                     hoverEnabled: true
                     onClicked: {
@@ -185,7 +185,7 @@ AbstractButton {
                     icon.source: Style.sesDelete
                     icon.color: Style.sesIconDarkColor
                     text: qsTr("Remove account")
-                    font.pixelSize: Style.topLinePixelSize
+                    font: root.font
                     palette.windowText: Style.ncTextColor
                     hoverEnabled: true
                     onClicked: {
