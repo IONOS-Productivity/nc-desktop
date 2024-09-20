@@ -38,7 +38,8 @@ ApplicationWindow {
     flags:      Systray.useNormalWindow ? Qt.Window : Qt.Dialog | Qt.FramelessWindowHint
 
     font.family: Style.sesOpenSansRegular
-    font.pointSize: Style.sesFontPointSize
+    font.pixelSize: Style.sesFontPixelSize
+    font.weight: Style.sesFontBoldWeight
 
     // TODO: Rather than setting all these palette colours manually,
     // create a custom style and do it for all components globally
