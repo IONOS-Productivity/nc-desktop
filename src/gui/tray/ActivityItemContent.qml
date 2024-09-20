@@ -136,7 +136,7 @@ RowLayout {
                 elide: Text.ElideRight
                 wrapMode: Text.Wrap
                 maximumLineCount: 2
-                font.pixelSize: Style.topLinePixelSize
+                font: root.font
                 visible: text !== ""
             }
 
@@ -152,7 +152,8 @@ RowLayout {
                 height: (text === "") ? 0 : implicitHeight
 
                 text: root.activityData.dateTime
-                font.pixelSize: Style.subLinePixelSize
+                font.family: Style.sesOpenSansRegular
+                font.pixelSize: Style.sesFontHintPixelSize
                 color: palette.midlight
                 visible: text !== ""
             }
@@ -237,7 +238,8 @@ RowLayout {
                 elide: Text.ElideRight
                 wrapMode: Text.Wrap
                 maximumLineCount: 2
-                font.pixelSize: Style.subLinePixelSize
+                font.family: Style.sesOpenSansRegular
+                font.pixelSize: Style.sesFontHintPixelSize
                 visible: text !== ""
             }
 
@@ -256,7 +258,7 @@ RowLayout {
                 elide: Text.ElideRight
                 wrapMode: Text.Wrap
                 maximumLineCount: 2
-                font.pixelSize: Style.topLinePixelSize
+                font: root.font
                 color: palette.midlight
                 visible: text !== ""
             }
