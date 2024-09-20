@@ -21,6 +21,7 @@ import QtGraphicalEffects 1.15
 import com.nextcloud.desktopclient 1.0
 import Style 1.0
 import "../tray"
+import "../SesComponents/"
 import "../"
 
 Page {
@@ -351,7 +352,7 @@ Page {
                     // Artificially add vertical padding
                     implicitHeight: passwordErrorBox.implicitHeight + (Style.smallSpacing * 2)
 
-                    ErrorBox {
+                    SesErrorBox {
                         id: passwordErrorBox
                         anchors.left: parent.left
                         anchors.right: parent.right
