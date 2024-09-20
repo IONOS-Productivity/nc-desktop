@@ -253,4 +253,11 @@ QtObject {
     property int sesCornerRadius: 8
     property int sesHeaderTopMargin: variableSize(10)
     property int sesFontPointSize: 9
+    property int sesFontPixelSizeTitle: 20
+    property int sesFontPixelSize: 16
+    property int sesFontErrortextPixelSize: 14
+    property int sesFontHintPixelSize: 12
+    property int sesFontBoldWeight: 600
+    property int sesFontNormalWeight: 400
+
 }
