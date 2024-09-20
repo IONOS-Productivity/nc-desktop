@@ -767,6 +767,8 @@ void AccountSettings::slotCustomContextMenuRequested(const QPoint &pos)
         ac = menu->addAction(tr("Disable virtual file support …"));
         connect(ac, &QAction::triggered, this, &AccountSettings::slotDisableVfsCurrentFolder);
         ac->setDisabled(Theme::instance()->enforceVirtualFilesSyncFolder());
+
+        styleCustomContextMenu(availabilityMenu);
     }
 
     if (Theme::instance()->showVirtualFilesOption() && !folder->virtualFilesEnabled() && Vfs::checkAvailability(folder->path())) {
