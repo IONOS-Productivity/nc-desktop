@@ -22,7 +22,6 @@ Label {
             textFormat = Text.PlainText;
         }
     }
-    font.pointSize: Style.sesFontPointSize
     textFormat: Text.PlainText
     onTextFormatChanged: resetToPlainText()
     Component.onCompleted: resetToPlainText()
