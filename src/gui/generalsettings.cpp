@@ -586,17 +586,27 @@ void GeneralSettings::customizeStyle()
     _ui->infoAndUpdatesLabel->setText(aboutText);
 
     this->setStyleSheet(
-        QStringLiteral("QGroupBox {border: %1; padding: 15px; font-size: %2; font-weight: %3; font-family: %4}"
-        "QCheckBox { font-family: %4; font-weight: %5; font-size: %6; }"
-         "QLabel { font-family: %4; font-size: %6; font-weight: %3; }"
-         ).arg(Theme::instance()->systemPalette().base().color().name(), IonosTheme::settingsTitleSize(),
-          IonosTheme::settingsTitleWeight(),
-          IonosTheme::settingsFont(),
-          IonosTheme::settingsTextWeight(),
-          IonosTheme::settingsTextSize()
-        )    
+        QStringLiteral("QGroupBox { border: %1; padding: 15px; font-size: %2; font-weight: %3; }").arg(
+            Theme::instance()->systemPalette().base().color().name(),
+            IonosTheme::settingsTitleSize(),
+            IonosTheme::settingsTitleWeight()
+        )
     );
 
+    this->setStyleSheet(
+        this->styleSheet() + QStringLiteral("QCheckBox { font-size: %1; font-weight: %2; }").arg(
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight()
+        )
+    );
+
+    this->setStyleSheet(
+        this->styleSheet() + QStringLiteral("QLabel { font-size: %1; font-weight: %2; }").arg(
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTitleWeight()
+        )
+    );
+ 
     // SES-4 removed
     _ui->monoIconsCheckBox->hide();
     _ui->callNotificationsCheckBox->hide();
