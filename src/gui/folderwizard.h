@@ -180,6 +180,7 @@ private:
     FolderWizardSelectiveSync *_folderWizardSelectiveSyncPage;
 
     void customizeStyle();
+    void customizeTextsOnSelectiveSyncPage();
     void adjustWizardSize();
 };
 
