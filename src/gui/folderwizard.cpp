@@ -608,13 +608,13 @@ FolderWizardSelectiveSync::FolderWizardSelectiveSync(const AccountPtr &account)
     _selectiveSync->setStyleSheet(IonosTheme::fontConfigurationCss(
         IonosTheme::settingsFont(),
         IonosTheme::settingsTextSize(),
-        IonosTheme::settingsTitleWeight(),
+        IonosTheme::settingsTextWeight(),
         IonosTheme::titleColor()));
 
     _virtualFilesCheckBox->setStyleSheet(IonosTheme::fontConfigurationCss(
         IonosTheme::settingsFont(),
         IonosTheme::settingsTextSize(),
-        IonosTheme::settingsTitleWeight(),
+        IonosTheme::settingsTextWeight(),
         IonosTheme::titleColor()));
 }
 
