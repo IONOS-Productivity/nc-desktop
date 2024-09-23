@@ -50,8 +50,7 @@ const QString TOOLBAR_CSS()
                         "QToolBar::separator { height: 100%; width: 1px; background: %2; margin: 0 %6; } " // Style for the separator
                         "QToolBar QToolBarExtension { padding:0; } "
                         "QToolBar QToolButton:checked { background: %3; color: %4; border-radius: %5; }"
-                        "QToolBar QToolButton:hover { background: %3; }"
-                        );
+                        "QToolBar QToolButton:hover { background: %3; }");
 }
 
 const float buttonSizeRatio = 1.618f; // golden ratio
@@ -342,7 +341,17 @@ void SettingsDialog::customizeStyle()
      QString toolbarSideMargin (IonosTheme::toolbarSideMargin());
 
     QString background(palette.base().color().name());
-    _toolBar->setStyleSheet(TOOLBAR_CSS().arg(white, borderColor, highlightColor, highlightTextColor, toolbarActionBorderRadius, toolbarSideMargin));
+    _toolBar->setStyleSheet(
+        TOOLBAR_CSS().arg(white, borderColor, highlightColor, highlightTextColor, toolbarActionBorderRadius, toolbarSideMargin) + 
+        QStringLiteral("QToolButton { %1; }").arg(
+            IonosTheme::fontConfigurationCss(
+                IonosTheme::settingsFont(),
+                IonosTheme::settingsTextSize(),
+                IonosTheme::settingsTextWeight(),
+                IonosTheme::menuTextColor()
+            )
+        )
+    );
 
     Q_FOREACH (QAction *a, _actionGroup->actions()) {
         QIcon icon = Theme::createColorAwareIcon(a->property("iconPath").toString(), palette);
