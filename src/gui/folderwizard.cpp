@@ -176,6 +176,43 @@ void FolderWizardLocalPath::changeEvent(QEvent *e)
 
 void FolderWizardLocalPath::changeStyle()
 {
+    _ui.title->setStyleSheet(IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsBigTitleSize(),
+            IonosTheme::settingsTitleWeight(),
+            IonosTheme::titleColor()));
+
+    _ui.title->setProperty("text", tr("Add Folder Sync"));
+
+    _ui.subTitle->setStyleSheet(IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTitleWeight(),
+            IonosTheme::folderWizardSubtitleColor()));
+
+    _ui.subTitle->setProperty("text", tr("Step 1 of 3: Select local folder"));
+
+    _ui.description->setStyleSheet(IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight(),
+            IonosTheme::titleColor()));
+
+    _ui.description->setProperty("text",
+        tr("Select a folder on your hard drive that should be permanetly connected to your IONOS EASYSTORAGE. All files and "
+        "subfolders are automatically uploaded and synchronized"));
+
+    _ui.localFolderLineEdit->setStyleSheet(QString(
+        "color: %1; font-family: %2; font-size: %3; font-weight: %4; border-radius: %5; border: 1px "
+        "solid %6; padding: 0px 12px; text-align: left; vertical-align: middle; height: 40px;")
+        .arg(IonosTheme::folderWizardPathColor())
+        .arg(IonosTheme::settingsFont())
+        .arg(IonosTheme::settingsTextSize())
+        .arg(IonosTheme::settingsTextWeight())
+        .arg(IonosTheme::buttonRadius())
+        .arg(IonosTheme::menuBorderColor()));
+
+    _ui.localFolderChooseBtn->setProperty("text", tr("Choose"));
 }
 
 // =================================================================================
@@ -584,6 +621,51 @@ void FolderWizardRemotePath::changeEvent(QEvent *e)
 
 void FolderWizardRemotePath::changeStyle()
 {
+    _ui.title->setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsBigTitleSize(),
+        IonosTheme::settingsTitleWeight(),
+        IonosTheme::titleColor()));
+
+    _ui.title->setProperty("text", tr("Add Folder Sync"));
+
+    _ui.subTitle->setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsTextSize(),
+        IonosTheme::settingsTitleWeight(),
+        IonosTheme::folderWizardSubtitleColor()));
+
+    _ui.subTitle->setProperty("text", tr("Step 1 of 3: Select local folder"));
+
+    _ui.description1->setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsTextSize(),
+        IonosTheme::settingsTextWeight(),
+        IonosTheme::titleColor()));
+
+    _ui.description2->setProperty("text",
+        tr("Select a folder on your hard drive that should be permanetly connected to your IONOS EASYSTORAGE. All files and "
+        "subfolders are automatically uploaded and synchronized"));
+
+    _ui.folderEntry->setStyleSheet(
+        QStringLiteral("color: %1; font-family: %2; font-size: %3; font-weight: %4; border-radius: %5; border: 1px "
+        "solid %6; padding: 0px 12px; text-align: left; vertical-align: middle; height: 40px;")
+        .arg(IonosTheme::folderWizardPathColor())
+        .arg(IonosTheme::settingsFont())
+        .arg(IonosTheme::settingsTextSize())
+        .arg(IonosTheme::settingsTextWeight())
+        .arg(IonosTheme::buttonRadius())
+        .arg(IonosTheme::menuBorderColor()));
+
+    _ui.folderTreeWidget->setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsTextSize(),
+        IonosTheme::settingsTextWeight(),
+        IonosTheme::titleColor()));
+
+    _ui.refreshButton->setProperty("text", tr("Refresh"));
+
+    _ui.addFolderButton->setProperty("text", tr("Create folder"));
 }
 
 // ====================================================================================
@@ -616,6 +698,22 @@ FolderWizardSelectiveSync::FolderWizardSelectiveSync(const AccountPtr &account)
         IonosTheme::settingsTextSize(),
         IonosTheme::settingsTextWeight(),
         IonosTheme::titleColor()));
+
+    _uiSelectiveSync.title->setStyleSheet(IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsBigTitleSize(),
+            IonosTheme::settingsTitleWeight(),
+            IonosTheme::titleColor()));
+    _uiSelectiveSync.title->setProperty("text", tr("Add Folder Sync"));
+
+    _uiSelectiveSync.subTitle->setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsTextSize(),
+        IonosTheme::settingsTitleWeight(),
+        IonosTheme::folderWizardSubtitleColor()));
+
+    _uiSelectiveSync.subTitle->setProperty("text", tr("Step 3 of 3: Selektive Synchronisation"));
+
 }
 
 FolderWizardSelectiveSync::~FolderWizardSelectiveSync() = default;
@@ -730,9 +828,6 @@ FolderWizard::FolderWizard(AccountPtr account, QWidget *parent)
     adjustWizardSize();
     setWizardStyle(QWizard::ClassicStyle);
     customizeStyle();
-    customizeTextsOnSourcePage();
-    customizeTextsOnTargetPage();
-    customizeTextsOnSelectiveSyncPage();
 }
 
 FolderWizard::~FolderWizard() = default;
@@ -779,141 +874,6 @@ void FolderWizard::customizeStyle()
 
     setPalette(wizardPalette);
 
-}
-
-void FolderWizard::customizeTextsOnSourcePage()
-{
-    auto titleWidget = _folderWizardSourcePage->findChild<QWidget *>("title");
-
-    if (titleWidget) {
-        titleWidget->setStyleSheet(IonosTheme::fontConfigurationCss(
-            IonosTheme::settingsFont(),
-            IonosTheme::settingsBigTitleSize(),
-            IonosTheme::settingsTitleWeight(),
-            IonosTheme::titleColor()));
-
-        titleWidget->setProperty("text", tr("Add Folder Sync"));
-    }
-
-    auto subTitleWidget = _folderWizardSourcePage->findChild<QWidget *>("subTitle");
-    if (subTitleWidget) {
-        subTitleWidget->setStyleSheet(IonosTheme::fontConfigurationCss(
-            IonosTheme::settingsFont(),
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTitleWeight(),
-            IonosTheme::folderWizardSubtitleColor()));
-
-        subTitleWidget->setProperty("text", tr("Step 1 of 3: Select local folder"));
-    }
-
-    auto descriptionWidget = _folderWizardSourcePage->findChild<QWidget *>("description");
-    if (descriptionWidget) {
-        descriptionWidget->setStyleSheet(IonosTheme::fontConfigurationCss(
-            IonosTheme::settingsFont(),
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTextWeight(),
-            IonosTheme::titleColor()));
-
-        descriptionWidget->setProperty("text",
-                                       tr("Select a folder on your hard drive that should be permanetly connected to your IONOS EASYSTORAGE. All files and "
-                                          "subfolders are automatically uploaded and synchronized"));
-    }
-
-    auto localFolderLineEditWidget = _folderWizardSourcePage->findChild<QWidget *>("localFolderLineEdit");
-    if (localFolderLineEditWidget) {
-        localFolderLineEditWidget->setStyleSheet(QStringLiteral("color: %1; font-family: %2; font-size: %3; font-weight: %4; border-radius: %5; border: 1px "
-                                                                "solid %6; padding: 0px 12px; text-align: left; vertical-align: middle; height: 40px;")
-                                                     .arg(IonosTheme::folderWizardPathColor())
-                                                     .arg(IonosTheme::settingsFont())
-                                                     .arg(IonosTheme::settingsTextSize())
-                                                     .arg(IonosTheme::settingsTextWeight())
-                                                     .arg(IonosTheme::buttonRadius())
-                                                     .arg(IonosTheme::menuBorderColor()));
-    }
-
-    auto localFolderChooseBtnWidget = _folderWizardSourcePage->findChild<QWidget *>("localFolderChooseBtn");
-    if (localFolderChooseBtnWidget) {
-        localFolderChooseBtnWidget->setProperty("text", tr("Choose"));
-    }
-}
-
-void FolderWizard::customizeTextsOnTargetPage()
-{
-    auto titleWidget = _folderWizardTargetPage->findChild<QWidget *>("title");
-
-    if (titleWidget) {
-        titleWidget->setStyleSheet(IonosTheme::fontConfigurationCss(
-            IonosTheme::settingsFont(),
-            IonosTheme::settingsBigTitleSize(),
-            IonosTheme::settingsTitleWeight(),
-            IonosTheme::titleColor()));
-
-        titleWidget->setProperty("text", tr("Add Folder Sync"));
-    }
-
-    auto subTitleWidget = _folderWizardTargetPage->findChild<QWidget *>("subTitle");
-    if (subTitleWidget) {
-        subTitleWidget->setStyleSheet(IonosTheme::fontConfigurationCss(
-            IonosTheme::settingsFont(),
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTitleWeight(),
-            IonosTheme::folderWizardSubtitleColor()));
-
-        subTitleWidget->setProperty("text", tr("Step 2 of 3: Directory in your IONOS EASYSTORAGE"));
-    }
-
-    auto description1Widget = _folderWizardTargetPage->findChild<QWidget *>("description1");
-    if (description1Widget) {
-        description1Widget->setStyleSheet(IonosTheme::fontConfigurationCss(
-            IonosTheme::settingsFont(),
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTextWeight(),
-            IonosTheme::titleColor()));
-
-        description1Widget->setProperty("text", tr("Please now select or create a target folder in your IONOS EASYSTORAGE where the content should be uploaded and synchronized."));
-    }
-
-    auto description2Widget = _folderWizardTargetPage->findChild<QWidget *>("description2");
-    if (description2Widget) {
-        description2Widget->setStyleSheet(IonosTheme::fontConfigurationCss(
-            IonosTheme::settingsFont(),
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTextWeight(),
-            IonosTheme::titleColor()));
-
-        description2Widget->setProperty("text", tr("Both folders are permanently linked and the respective contents are automatically synchronized and updated."));
-    }
-
-    auto localFolderLineEditWidget = _folderWizardTargetPage->findChild<QWidget *>("folderEntry");
-    if (localFolderLineEditWidget) {
-        localFolderLineEditWidget->setStyleSheet(QStringLiteral("color: %1; font-family: %2; font-size: %3; font-weight: %4; border-radius: %5; border: 1px "
-                                                                "solid %6; padding: 0px 12px; text-align: left; vertical-align: middle; height: 40px;")
-                                                     .arg(IonosTheme::folderWizardPathColor())
-                                                     .arg(IonosTheme::settingsFont())
-                                                     .arg(IonosTheme::settingsTextSize())
-                                                     .arg(IonosTheme::settingsTextWeight())
-                                                     .arg(IonosTheme::buttonRadius())
-                                                     .arg(IonosTheme::menuBorderColor()));
-    }
-
-    auto folderTreeWidget = _folderWizardTargetPage->findChild<QWidget *>("folderTreeWidget");
-    if (folderTreeWidget) {
-        folderTreeWidget->setStyleSheet(IonosTheme::fontConfigurationCss(
-            IonosTheme::settingsFont(),
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTextWeight(),
-            IonosTheme::titleColor()));
-    }
-
-    auto refreshButton = _folderWizardTargetPage->findChild<QWidget *>("refreshButton");
-    if (refreshButton) {
-        refreshButton->setProperty("text", tr("Refresh"));
-    }
-
-    auto addFolderButton = _folderWizardTargetPage->findChild<QWidget *>("addFolderButton");
-    if (addFolderButton) {
-        addFolderButton->setProperty("text", tr("Create folder"));
-    }
 }
 
 void FolderWizard::customizeTextsOnSelectiveSyncPage()
