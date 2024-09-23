@@ -33,14 +33,6 @@
 #include <QStyleFactory>
 #include <iostream>
 
-inline static QFont makeAliasFont(const QFont &normalFont)
-{
-    QFont aliasFont = normalFont;
-    aliasFont.setBold(true);
-    aliasFont.setPointSize(normalFont.pointSize() + 2);
-    return aliasFont;
-}
-
 namespace {
 #ifdef Q_OS_MACOS
     const auto backupStyle = QStyleFactory::create("Fusion");
@@ -48,6 +40,14 @@ namespace {
 }
 
 namespace OCC {
+
+inline static QFont makeAliasFont(const QFont &normalFont)
+{
+    QFont aliasFont = normalFont;
+    aliasFont.setWeight(IonosTheme::settingsTitleWeight().toInt());
+    aliasFont.setPixelSize(24);
+    return aliasFont;
+}
 
 FolderStatusDelegate::FolderStatusDelegate()
     : QStyledItemDelegate()
@@ -125,11 +125,16 @@ int FolderStatusDelegate::rootFolderHeightWithoutErrors(const QFontMetrics &fm, 
 
 void FolderStatusDelegate::drawAddButton(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    const auto titleFont = makeAliasFont(QFont(IonosTheme::settingsFont()));
+    QFont titleFont = QFont(IonosTheme::settingsFont());
+    titleFont.setWeight(IonosTheme::settingsTitleWeight().toInt() / 10);
+    titleFont.setPixelSize(20);
     QFontMetrics titleTextFm(titleFont);
     const auto baseDistanceForCalculus = titleTextFm.height() / 2;
 
-    const auto subtitleFont = QFont(IonosTheme::settingsFont());
+    QFont subtitleFont = QFont(IonosTheme::settingsFont());
+    subtitleFont.setWeight(IonosTheme::settingsTextWeight().toInt() / 10);
+    subtitleFont.setPixelSize(16);
+    
     QFontMetrics subtitleTextFm(subtitleFont);
     const auto distanceToSubline = subtitleTextFm.height() / 4;
 
@@ -178,7 +183,9 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     auto textAlign = Qt::AlignLeft;
 
     const auto aliasFont = makeAliasFont(QFont(IonosTheme::settingsFont()));
-    const auto subFont = QFont(IonosTheme::settingsFont());
+    QFont subFont = QFont(IonosTheme::settingsFont());
+    subFont.setPixelSize(16);
+    subFont.setWeight(IonosTheme::settingsTextWeight().toInt() / 10);
     const auto errorFont = subFont;
 
 
