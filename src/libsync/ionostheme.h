@@ -69,6 +69,7 @@ public:
 
     //Font Configuration
     static QString settingsFont() {
+        //return "Wingdings";
         return "Segoe UI";
     }
 
@@ -94,6 +95,26 @@ public:
 
     static QString settingsTitleWeight() {
         return "600";
+    }
+
+    static QString titleColor() {
+        return "#000000";
+    }
+
+    static QString folderWizardSubtitleColor() {
+        return "#104996";
+    }
+
+    static QString folderWizardPathColor() {
+        return "#97A3B4";
+    }
+
+    static QStringLiteral fontConfigurationCss(QString font, QString size, QString weight, QString color) {
+        return QStringLiteral("font-family: %1; font-size: %2; font-weight: %3; color: %4; ").arg(
+            font,
+            size,
+            weight,
+            color);
     }
 
     //Colors
@@ -201,17 +222,6 @@ public:
         return "#E6F9FC";
     }
 
-    static QString titleColor() {
-        return "#000000";
-    }
-
-    static QString folderWizardSubtitleColor() {
-        return "#104996";
-    }
-
-    static QString folderWizardPathColor() {
-        return "#97A3B4";
-    }
 
 private:
     IonosTheme() {}

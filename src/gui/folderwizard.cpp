@@ -772,32 +772,33 @@ void FolderWizard::customizeTextsOnSourcePage()
     auto titleWidget = _folderWizardSourcePage->findChild<QWidget *>("title");
 
     if (titleWidget) {
-        titleWidget->setStyleSheet(QStringLiteral("color: %1; font-family: %2; font-size: %3; font-weight: %4;")
-                                       .arg(IonosTheme::titleColor())
-                                       .arg(IonosTheme::settingsFont())
-                                       .arg(IonosTheme::settingsBigTitleSize())
-                                       .arg(IonosTheme::settingsTitleWeight()));
+        titleWidget->setStyleSheet(IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsBigTitleSize(),
+            IonosTheme::settingsTitleWeight(),
+            IonosTheme::titleColor()));
+
         titleWidget->setProperty("text", tr("Add Folder Sync"));
     }
 
     auto subTitleWidget = _folderWizardSourcePage->findChild<QWidget *>("subTitle");
     if (subTitleWidget) {
-        subTitleWidget->setStyleSheet(QStringLiteral("color: %1; font-family: %2; font-size: %3; font-weight: %4;")
-                                          .arg(IonosTheme::folderWizardSubtitleColor())
-                                          .arg(IonosTheme::settingsFont())
-                                          .arg(IonosTheme::settingsTextSize())
-                                          .arg(IonosTheme::settingsTitleWeight()));
+        subTitleWidget->setStyleSheet(IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTitleWeight(),
+            IonosTheme::folderWizardSubtitleColor()));
 
         subTitleWidget->setProperty("text", tr("Step 1 of 3: Select local folder"));
     }
 
     auto descriptionWidget = _folderWizardSourcePage->findChild<QWidget *>("description");
     if (descriptionWidget) {
-        descriptionWidget->setStyleSheet(QStringLiteral("color: %1; font-family: %2; font-size: %3; font-weight: %4;")
-                                             .arg(IonosTheme::titleColor())
-                                             .arg(IonosTheme::settingsFont())
-                                             .arg(IonosTheme::settingsTextSize())
-                                             .arg(IonosTheme::settingsTextWeight()));
+        descriptionWidget->setStyleSheet(IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight(),
+            IonosTheme::titleColor()));
 
         descriptionWidget->setProperty("text",
                                        tr("Select a folder on your hard drive that should be permanetly connected to your IONOS EASYSTORAGE. All files and "
