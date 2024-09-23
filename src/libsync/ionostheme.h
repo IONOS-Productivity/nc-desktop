@@ -109,8 +109,8 @@ public:
         return "#97A3B4";
     }
 
-    static QStringLiteral fontConfigurationCss(QString font, QString size, QString weight, QString color) {
-        return QStringLiteral("font-family: %1; font-size: %2; font-weight: %3; color: %4; ").arg(
+    static QString fontConfigurationCss(QString font, QString size, QString weight, QString color) {
+        return QString("font-family: %1; font-size: %2; font-weight: %3; color: %4; ").arg(
             font,
             size,
             weight,
