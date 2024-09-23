@@ -180,9 +180,9 @@ private:
     FolderWizardSelectiveSync *_folderWizardSelectiveSyncPage;
 
     void customizeStyle();
+    void customizeTextsOnSourcePage();
     void adjustWizardSize();
 };
-
 
 } // namespace OCC
 

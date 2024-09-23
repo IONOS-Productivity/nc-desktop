@@ -34,7 +34,7 @@
         <string notr="true">font: 18pt bold;</string>
        </property>
        <property name="text">
-        <string>Add Folder Sync</string>
+        <string> Bla</string>
        </property>
        <property name="textFormat">
         <enum>Qt::PlainText</enum>

@@ -126,10 +126,10 @@ bool FolderWizardLocalPath::isComplete() const
         _ui.sesSnackBar->clearMessage();
         return true;
     }
-    else 
+    else
     {
          _ui.sesSnackBar->show();
-        _ui.sesSnackBar->setWarning(formatWarnings(QStringList(errorStr))); 
+        _ui.sesSnackBar->setWarning(formatWarnings(QStringList(errorStr)));
         return false;
     }
 }
@@ -226,7 +226,7 @@ void FolderWizardRemotePath::slotAddRemoteFolder()
     dlg->setLabelText(tr("Enter the name of the new folder to be created below \"%1\":")
                           .arg(parent));
     dlg->open(this, SLOT(slotCreateRemoteFolder(QString)));
-    
+
     QDialogButtonBox *buttonBox = dlg->findChild<QDialogButtonBox*>();
     buttonBox->setLayoutDirection(Qt::RightToLeft);
     buttonBox->layout()->setSpacing(16);
@@ -718,6 +718,7 @@ FolderWizard::FolderWizard(AccountPtr account, QWidget *parent)
     adjustWizardSize();
     setWizardStyle(QWizard::ClassicStyle);
     customizeStyle();
+    customizeTextsOnSourcePage();
 }
 
 FolderWizard::~FolderWizard() = default;
@@ -763,6 +764,62 @@ void FolderWizard::customizeStyle()
     wizardPalette.setColor(QPalette::Mid, backgroundColor);
 
     setPalette(wizardPalette);
+
+}
+
+void FolderWizard::customizeTextsOnSourcePage()
+{
+    auto titleWidget = _folderWizardSourcePage->findChild<QWidget *>("title");
+
+    if (titleWidget) {
+        titleWidget->setStyleSheet(QStringLiteral("color: %1; font-family: %2; font-size: %3; font-weight: %4;")
+                                       .arg(IonosTheme::titleColor())
+                                       .arg(IonosTheme::settingsFont())
+                                       .arg(IonosTheme::settingsBigTitleSize())
+                                       .arg(IonosTheme::settingsTitleWeight()));
+        titleWidget->setProperty("text", tr("Add Folder Sync"));
+    }
+
+    auto subTitleWidget = _folderWizardSourcePage->findChild<QWidget *>("subTitle");
+    if (subTitleWidget) {
+        subTitleWidget->setStyleSheet(QStringLiteral("color: %1; font-family: %2; font-size: %3; font-weight: %4;")
+                                          .arg(IonosTheme::folderWizardSubtitleColor())
+                                          .arg(IonosTheme::settingsFont())
+                                          .arg(IonosTheme::settingsTextSize())
+                                          .arg(IonosTheme::settingsTitleWeight()));
+
+        subTitleWidget->setProperty("text", tr("Step 1 of 3: Select local folder"));
+    }
+
+    auto descriptionWidget = _folderWizardSourcePage->findChild<QWidget *>("description");
+    if (descriptionWidget) {
+        descriptionWidget->setStyleSheet(QStringLiteral("color: %1; font-family: %2; font-size: %3; font-weight: %4;")
+                                             .arg(IonosTheme::titleColor())
+                                             .arg(IonosTheme::settingsFont())
+                                             .arg(IonosTheme::settingsTextSize())
+                                             .arg(IonosTheme::settingsTextWeight()));
+
+        descriptionWidget->setProperty("text",
+                                       tr("Select a folder on your hard drive that should be permanetly connected to your IONOS EASYSTORAGE. All files and "
+                                          "subfolders are automatically uploaded and synchronized"));
+    }
+
+    auto localFolderLineEditWidget = _folderWizardSourcePage->findChild<QLineEdit *>("localFolderLineEdit");
+    if (localFolderLineEditWidget) {
+        localFolderLineEditWidget->setStyleSheet(QStringLiteral("color: %1; font-family: %2; font-size: %3; font-weight: %4; border-radius: %5; border: 1px "
+                                                                "solid %6; padding: 0px 12px; text-align: left; vertical-align: middle; height: 40px;")
+                                                     .arg(IonosTheme::folderWizardPathColor())
+                                                     .arg(IonosTheme::settingsFont())
+                                                     .arg(IonosTheme::settingsTextSize())
+                                                     .arg(IonosTheme::settingsTextWeight())
+                                                     .arg(IonosTheme::buttonRadius())
+                                                     .arg(IonosTheme::menuBorderColor()));
+    }
+
+    auto localFolderChooseBtnWidget = _folderWizardSourcePage->findChild<QLineEdit *>("localFolderChooseBtn");
+    if (localFolderChooseBtnWidget) {
+        localFolderChooseBtnWidget->setProperty("text", tr("Choose"));
+    }
 }
 
 void FolderWizard::adjustWizardSize()

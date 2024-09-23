@@ -201,6 +201,18 @@ public:
         return "#E6F9FC";
     }
 
+    static QString titleColor() {
+        return "#000000";
+    }
+
+    static QString folderWizardSubtitleColor() {
+        return "#104996";
+    }
+
+    static QString folderWizardPathColor() {
+        return "#97A3B4";
+    }
+
 private:
     IonosTheme() {}
 };
