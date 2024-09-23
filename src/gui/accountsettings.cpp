@@ -647,30 +647,42 @@ void AccountSettings::slotSubfolderContextMenuRequested(const QModelIndex &index
 void AccountSettings::styleCustomContextMenu(QMenu *menu) const
 {
     #ifdef Q_OS_WINDOWS
-        menu->setWindowFlags(menu->windowFlags() | Qt::FramelessWindowHint |Qt::NoDropShadowWindowHint);
+        menu->setWindowFlags(menu->windowFlags() | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     #endif
     menu->setAttribute(Qt::WA_TranslucentBackground);
 
-    menu->setStyleSheet(QStringLiteral(
-        "QMenu {"
-            "background-color: %1;"
-            "border: 1px solid %2;"
-            "padding: 15px;"
-            "border-radius: %5;"
-        "}"
-        "QMenu::item  {"
-            "background-color: transparent;"
-            "padding: 16px 18px; "
-            "color: %3; "
-            "border-radius: 8px; "
-        "}"
-        "QMenu::item:selected  {"
-            "background-color: %4;"
-            "color: %3; "
-            "border-radius: 8px; "
-        "}"
-    )
-     .arg(IonosTheme::white(), IonosTheme::menuBorderColor(), IonosTheme::menuTextColor(), IonosTheme::menuSelectedItemColor(), IonosTheme::menuBorderRadius())
+    menu->setStyleSheet(
+        QStringLiteral(
+            "QMenu {"
+                "background-color: %1; "
+                "border: 1px solid %2; "
+                "padding: 15px; "
+                "border-radius: %5; "
+                "font-family: %6; "
+                "font-size: %7; "
+                "font-weight: %8; "
+            "}"
+            "QMenu::item  {"
+                "background-color: transparent;"
+                "padding: 16px 18px; "
+                "color: %3; "
+                "border-radius: 8px; "
+            "}"
+            "QMenu::item:selected  {"
+                "background-color: %4; "
+                "color: %3; "
+                "border-radius: 8px; "
+            "}"
+        ).arg(
+            IonosTheme::white(), 
+            IonosTheme::menuBorderColor(), 
+            IonosTheme::menuTextColor(), 
+            IonosTheme::menuSelectedItemColor(), 
+            IonosTheme::menuBorderRadius(),
+            IonosTheme::contextMenuFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight()
+        )
     );
 }
 
@@ -681,6 +693,8 @@ void AccountSettings::slotCustomContextMenuRequested(const QPoint &pos)
     if (!index.isValid()) {
         return;
     }
+
+    
 
     if (_model->classify(index) == FolderStatusModel::SubFolder) {
         slotSubfolderContextMenuRequested(index, pos);
