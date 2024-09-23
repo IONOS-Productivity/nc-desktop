@@ -604,6 +604,18 @@ FolderWizardSelectiveSync::FolderWizardSelectiveSync(const AccountPtr &account)
         _virtualFilesCheckBox->setChecked(bestAvailableVfsMode() == Vfs::WindowsCfApi);
         layout->addWidget(_virtualFilesCheckBox);
     }
+
+    _selectiveSync->setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsTextSize(),
+        IonosTheme::settingsTitleWeight(),
+        IonosTheme::titleColor()));
+
+    _virtualFilesCheckBox->setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsTextSize(),
+        IonosTheme::settingsTitleWeight(),
+        IonosTheme::titleColor()));
 }
 
 FolderWizardSelectiveSync::~FolderWizardSelectiveSync() = default;
@@ -719,6 +731,8 @@ FolderWizard::FolderWizard(AccountPtr account, QWidget *parent)
     setWizardStyle(QWizard::ClassicStyle);
     customizeStyle();
     customizeTextsOnSourcePage();
+    customizeTextsOnTargetPage();
+    customizeTextsOnSelectiveSyncPage();
 }
 
 FolderWizard::~FolderWizard() = default;
@@ -805,7 +819,7 @@ void FolderWizard::customizeTextsOnSourcePage()
                                           "subfolders are automatically uploaded and synchronized"));
     }
 
-    auto localFolderLineEditWidget = _folderWizardSourcePage->findChild<QLineEdit *>("localFolderLineEdit");
+    auto localFolderLineEditWidget = _folderWizardSourcePage->findChild<QWidget *>("localFolderLineEdit");
     if (localFolderLineEditWidget) {
         localFolderLineEditWidget->setStyleSheet(QStringLiteral("color: %1; font-family: %2; font-size: %3; font-weight: %4; border-radius: %5; border: 1px "
                                                                 "solid %6; padding: 0px 12px; text-align: left; vertical-align: middle; height: 40px;")
@@ -817,9 +831,113 @@ void FolderWizard::customizeTextsOnSourcePage()
                                                      .arg(IonosTheme::menuBorderColor()));
     }
 
-    auto localFolderChooseBtnWidget = _folderWizardSourcePage->findChild<QLineEdit *>("localFolderChooseBtn");
+    auto localFolderChooseBtnWidget = _folderWizardSourcePage->findChild<QWidget *>("localFolderChooseBtn");
     if (localFolderChooseBtnWidget) {
         localFolderChooseBtnWidget->setProperty("text", tr("Choose"));
+    }
+}
+
+void FolderWizard::customizeTextsOnTargetPage()
+{
+    auto titleWidget = _folderWizardTargetPage->findChild<QWidget *>("title");
+
+    if (titleWidget) {
+        titleWidget->setStyleSheet(IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsBigTitleSize(),
+            IonosTheme::settingsTitleWeight(),
+            IonosTheme::titleColor()));
+
+        titleWidget->setProperty("text", tr("Add Folder Sync"));
+    }
+
+    auto subTitleWidget = _folderWizardTargetPage->findChild<QWidget *>("subTitle");
+    if (subTitleWidget) {
+        subTitleWidget->setStyleSheet(IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTitleWeight(),
+            IonosTheme::folderWizardSubtitleColor()));
+
+        subTitleWidget->setProperty("text", tr("Step 2 of 3: Directory in your IONOS EASYSTORAGE"));
+    }
+
+    auto description1Widget = _folderWizardTargetPage->findChild<QWidget *>("description1");
+    if (description1Widget) {
+        description1Widget->setStyleSheet(IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight(),
+            IonosTheme::titleColor()));
+
+        description1Widget->setProperty("text", tr("Please now select or create a target folder in your IONOS EASYSTORAGE where the content should be uploaded and synchronized."));
+    }
+
+    auto description2Widget = _folderWizardTargetPage->findChild<QWidget *>("description2");
+    if (description2Widget) {
+        description2Widget->setStyleSheet(IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight(),
+            IonosTheme::titleColor()));
+
+        description2Widget->setProperty("text", tr("Both folders are permanently linked and the respective contents are automatically synchronized and updated."));
+    }
+
+    auto localFolderLineEditWidget = _folderWizardTargetPage->findChild<QWidget *>("folderEntry");
+    if (localFolderLineEditWidget) {
+        localFolderLineEditWidget->setStyleSheet(QStringLiteral("color: %1; font-family: %2; font-size: %3; font-weight: %4; border-radius: %5; border: 1px "
+                                                                "solid %6; padding: 0px 12px; text-align: left; vertical-align: middle; height: 40px;")
+                                                     .arg(IonosTheme::folderWizardPathColor())
+                                                     .arg(IonosTheme::settingsFont())
+                                                     .arg(IonosTheme::settingsTextSize())
+                                                     .arg(IonosTheme::settingsTextWeight())
+                                                     .arg(IonosTheme::buttonRadius())
+                                                     .arg(IonosTheme::menuBorderColor()));
+    }
+
+    auto folderTreeWidget = _folderWizardTargetPage->findChild<QWidget *>("folderTreeWidget");
+    if (folderTreeWidget) {
+        folderTreeWidget->setStyleSheet(IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight(),
+            IonosTheme::titleColor()));
+    }
+
+    auto refreshButton = _folderWizardTargetPage->findChild<QWidget *>("refreshButton");
+    if (refreshButton) {
+        refreshButton->setProperty("text", tr("Refresh"));
+    }
+
+    auto addFolderButton = _folderWizardTargetPage->findChild<QWidget *>("addFolderButton");
+    if (addFolderButton) {
+        addFolderButton->setProperty("text", tr("Create folder"));
+    }
+}
+
+void FolderWizard::customizeTextsOnSelectiveSyncPage()
+{
+    auto titleWidget = _folderWizardSelectiveSyncPage->findChild<QWidget *>("title");
+
+    if (titleWidget) {
+        titleWidget->setStyleSheet(IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsBigTitleSize(),
+            IonosTheme::settingsTitleWeight(),
+            IonosTheme::titleColor()));
+        titleWidget->setProperty("text", tr("Add Folder Sync"));
+    }
+
+    auto subTitleWidget = _folderWizardSelectiveSyncPage->findChild<QWidget *>("subTitle");
+    if (subTitleWidget) {
+        subTitleWidget->setStyleSheet(IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTitleWeight(),
+            IonosTheme::folderWizardSubtitleColor()));
+
+        subTitleWidget->setProperty("text", tr("Step 3 of 3: Selektive Synchronisation"));
     }
 }
 

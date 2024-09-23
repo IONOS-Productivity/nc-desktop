@@ -181,6 +181,8 @@ private:
 
     void customizeStyle();
     void customizeTextsOnSourcePage();
+    void customizeTextsOnTargetPage();
+    void customizeTextsOnSelectiveSyncPage();
     void adjustWizardSize();
 };
 
