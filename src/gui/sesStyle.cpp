@@ -18,6 +18,7 @@
  *************************************************************************/
 
 #include "sesStyle.h"
+#include "ionostheme.h"
  
 #include "pushButtonStyleHelper.h"
 #include "moreOptionsButtonStyleHelper.h"
@@ -113,8 +114,9 @@ void sesStyle::drawControl(ControlElement element, const QStyleOption *option, Q
             mPushButtonStyleHelper->adjustTextPalette(&customStyleCopy, widget);
 
             painter->save(); 
-            QFont font = painter->font(); 
-            font.setWeight(QFont::DemiBold); 
+            QFont font = painter->font();
+            font.setWeight(OCC::IonosTheme::settingsTitleWeight().toInt() / 10);
+            font.setPixelSize(16);
             painter->setFont(font); 
 
             QCommonStyle::drawControl(element, &customStyleCopy, painter, widget);
