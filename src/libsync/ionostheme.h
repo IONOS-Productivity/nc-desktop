@@ -73,6 +73,10 @@ public:
         return "Segoe UI";
     }
 
+    static QString contextMenuFont() {
+        return ":/client/fonts/OpenSans-Regular.ttf";
+    }
+
     static QString settingsSmallTextSize() {
         return "14px";
     }
