@@ -27,7 +27,7 @@ IgnoreListTableWidget::IgnoreListTableWidget(QWidget *parent)
     customizeIgnoreListDialogStyle();
 
     ui->descriptionLabel->setText(tr("Files or folders that match this pattern will not be synchronized.\n\n"
-                                     "Objects that are allowed to be deleted will be deleted if they would"
+                                     "Objects that are allowed to be deleted will be deleted if they would "
                                      "prevent a folder from being deleted. "
                                      "This is useful for metadata."));
 
@@ -52,8 +52,6 @@ IgnoreListTableWidget::IgnoreListTableWidget(QWidget *parent)
     connect(ui->removeAllPushButton, &QAbstractButton::clicked,
             this, &IgnoreListTableWidget::slotRemoveAllItems);
 
-    ui->tableWidget->setFont(IonosTheme::settingsFont());
-    ui->tableWidget->horizontalHeader()->setFont(IonosTheme::settingsFont());
     ui->tableWidget->resizeColumnsToContents();
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(patternCol, QHeaderView::Stretch);
     ui->tableWidget->verticalHeader()->setVisible(false);
@@ -186,6 +184,34 @@ int IgnoreListTableWidget::addPattern(const QString &pattern, bool deletable, bo
 }
 
 void IgnoreListTableWidget::customizeIgnoreListDialogStyle(){
+
+    ui->tableWidget->setStyleSheet(
+        IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight(),
+            IonosTheme::titleColor()
+        )
+    );
+    
+    ui->tableWidget->horizontalHeader()->setStyleSheet(
+        IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight(),
+            IonosTheme::titleColor()
+        )
+    );
+    
+    ui->descriptionLabel->setStyleSheet(
+        IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight(),
+            IonosTheme::titleColor()
+        )
+    );
+
     ui->tableWidget->setMinimumSize(374, 424);
     ui->tableWidget->horizontalHeader()->setStyleSheet(
             QStringLiteral("QHeaderView::section { background-color: %1; border-bottom: none;}").arg(IonosTheme::white()));
@@ -201,6 +227,10 @@ void IgnoreListTableWidget::customizeAddIgnorePatternDialogStyle(QInputDialog &i
 
     QLabel *label = inputDialog.findChild<QLabel*>();
     label->setAlignment(Qt::AlignCenter);
+    QFont font = label->font();
+    font.setWeight(IonosTheme::settingsTextWeight().toInt() / 10);
+    font.setPixelSize(16);
+    label->setFont(font);
 
     QDialogButtonBox *buttonBox = inputDialog.findChild<QDialogButtonBox*>();
     buttonBox->setLayoutDirection(Qt::RightToLeft);
