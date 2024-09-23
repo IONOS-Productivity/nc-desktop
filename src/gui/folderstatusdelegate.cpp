@@ -44,7 +44,7 @@ namespace OCC {
 inline static QFont makeAliasFont(const QFont &normalFont)
 {
     QFont aliasFont = normalFont;
-    aliasFont.setWeight(IonosTheme::settingsTitleWeight().toInt());
+    aliasFont.setWeight(IonosTheme::settingsTitleWeight().toInt() / 10);
     aliasFont.setPixelSize(24);
     return aliasFont;
 }
@@ -245,7 +245,6 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     remotePathRect.setLeft(nextToIcon);
 
     const auto iconSize = iconRect.width();
-
 
     const auto statusPixmap = statusIcon.pixmap(iconSize, iconSize, syncEnabled ? QIcon::Normal : QIcon::Disabled);
     painter->drawPixmap(QStyle::visualRect(option.direction, option.rect, iconRect).left(), iconRect.top(), statusPixmap);
