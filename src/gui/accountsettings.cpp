@@ -93,13 +93,6 @@ const QString progressBarStyle()
     );
 }
 
-const QString progressBarTitleStyle()
-{
-    return QStringLiteral(
-        "QLabel { font-family: %1; font-size: %2; font-weight: %3; }"
-    );
-}
-
 void showEnableE2eeWithVirtualFilesWarningDialog(std::function<void(void)> onAccept)
 {
     const auto messageBox = new QMessageBox;
@@ -1694,7 +1687,32 @@ void AccountSettings::customizeStyle()
     const auto color = palette().highlight().color();
     _ui->quotaProgressBar->setStyleSheet(progressBarStyle().arg(color.name()));
 
-    _ui->quotaInfoLabel->setStyleSheet(progressBarTitleStyle().arg(IonosTheme::settingsFont(), IonosTheme::settingsTitleSize(), IonosTheme::settingsTitleWeight()));
+    _ui->quotaInfoLabel->setStyleSheet(
+        IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTitleWeight(),
+            IonosTheme::titleColor()
+        )
+    );
+    
+    _ui->quotaInfo2Label->setStyleSheet(
+        IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsSmallTextSize(),
+            IonosTheme::settingsTextWeight(),
+            IonosTheme::titleColor()
+        )
+    );
+    
+    _ui->expandMemoryButton->setStyleSheet(
+        IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTitleWeight(),
+            IonosTheme::titleColor()
+        )
+    );
 }
 
 void AccountSettings::initializeE2eEncryption()
