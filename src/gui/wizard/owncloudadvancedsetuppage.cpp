@@ -53,7 +53,7 @@ OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage(OwncloudWizard *wizard)
     _filePathLabel->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     _filePathLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     _ui.locationsVBox->insertWidget(3, _filePathLabel.data());
-    
+
     _filePathLabel->setTextFormat(Qt::PlainText);
     _ui.userNameLabel->setTextFormat(Qt::PlainText);
     _ui.serverAddressLabel->setTextFormat(Qt::PlainText);
@@ -500,6 +500,14 @@ void OwncloudAdvancedSetupPage::slotSelectiveSyncClicked()
         if (result == QDialog::Accepted) {
             _selectiveSyncBlacklist = dlg->createBlackList();
             updateBlacklist = true;
+            _ui.confCheckBoxExternal->setStyleSheet(IonosTheme::fontConfigurationCss(
+                IonosTheme::settingsFont(),
+                IonosTheme::settingsTextSize(),
+                IonosTheme::settingsTextWeight(),
+                IonosTheme::loginWizardFontGrey()
+            ));
+
+            _ui.confCheckBoxSize->setDisabled(true);
         } else if (result == QDialog::Rejected && _selectiveSyncBlacklist == QStringList("/")) {
             _selectiveSyncBlacklist = dlg->oldBlackList();
             updateBlacklist = true;
@@ -527,6 +535,8 @@ void OwncloudAdvancedSetupPage::slotSelectiveSyncClicked()
 
     });
     dlg->open();
+
+
 }
 
 void OwncloudAdvancedSetupPage::slotVirtualFileSyncClicked()
@@ -538,6 +548,15 @@ void OwncloudAdvancedSetupPage::slotVirtualFileSyncClicked()
             setRadioChecked(_ui.rVirtualFileSync);
         });
     }
+
+    _ui.confCheckBoxExternal->setStyleSheet(IonosTheme::fontConfigurationCss(
+                IonosTheme::settingsFont(),
+                IonosTheme::settingsTextSize(),
+                IonosTheme::settingsTextWeight(),
+                IonosTheme::loginWizardFontGrey()
+            ));
+
+    _ui.confCheckBoxSize->setDisabled(true);
 }
 
 void OwncloudAdvancedSetupPage::slotSyncEverythingClicked()
@@ -548,7 +567,15 @@ void OwncloudAdvancedSetupPage::slotSyncEverythingClicked()
 
     QString errorStr = checkLocalSpace(_rSize);
     setErrorString(errorStr);
+
+    _ui.confCheckBoxExternal->setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsTextSize(),
+        IonosTheme::settingsTextWeight(),
+        IonosTheme::titleColor()
+    ));
 }
+
 
 void OwncloudAdvancedSetupPage::slotQuotaRetrieved(const QVariantMap &result)
 {
@@ -623,6 +650,35 @@ void OwncloudAdvancedSetupPage::customizeStyle()
 
     styleSyncLogo();
     styleLocalFolderLabel();
+
+    setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsTextSize(),
+        IonosTheme::settingsTextWeight(),
+        IonosTheme::titleColor()
+    ));
+
+    _ui.serverAddressLabel->setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsTextSize(),
+        IonosTheme::settingsTextWeight(),
+        IonosTheme::loginWizardFontGrey()
+    ));
+
+    _filePathLabel->setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsTextSize(),
+        IonosTheme::settingsTextWeight(),
+        IonosTheme::loginWizardFontGrey()
+    ));
+
+    _ui.lFreeSpace->setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsTextSize(),
+        IonosTheme::settingsTextWeight(),
+        IonosTheme::loginWizardFontGrey()
+    ));
+
 }
 
 void OwncloudAdvancedSetupPage::styleLocalFolderLabel()

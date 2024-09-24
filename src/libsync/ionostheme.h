@@ -128,6 +128,10 @@ public:
         return "#97A3B4";
     }
 
+    static QString loginWizardFontGrey() {
+        return "#97A3B4";
+    }
+
     static QString fontConfigurationCss(QString font, QString size, QString weight, QString color) {
         return QString("font-family: %1; font-size: %2; font-weight: %3; color: %4; ").arg(
             font,
