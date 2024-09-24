@@ -1054,7 +1054,20 @@ void AccountSettings::slotDisableVfsCurrentFolder()
                                            "will become available again."
                                            "\n\n"
                                            "This action will abort any currently running synchronization."));
+
+    msgBox->setStyleSheet(QString(
+            "QMessageBox {" +
+            IonosTheme::fontConfigurationCss(
+                IonosTheme::settingsFont(),
+                IonosTheme::settingsTextSize(),
+                IonosTheme::settingsTextWeight(),
+                IonosTheme::titleColor()
+            ) + "background-color: %1; }").arg(IonosTheme::dialogBackgroundColor())
+    );
+
     const auto acceptButton = msgBox->addButton(tr("Disable support"), QMessageBox::AcceptRole);
+    acceptButton->setProperty("buttonStyle", QVariant::fromValue(ButtonStyleName::Primary));
+
     msgBox->addButton(tr("Cancel"), QMessageBox::RejectRole);
     connect(msgBox, &QMessageBox::finished, msgBox, [this, msgBox, folder, acceptButton] {
         msgBox->deleteLater();
