@@ -13,12 +13,14 @@
  */
 #include "selectivesyncdialog.h"
 #include "account.h"
+#include "buttonstyle.h"
 #include "common/utility.h"
 #include "configfile.h"
 #include "folder.h"
 #include "folderman.h"
 #include "networkjobs.h"
 #include "theme.h"
+#include "ionostheme.h"
 #include <QDialogButtonBox>
 #include <QFileIconProvider>
 #include <QHeaderView>
@@ -77,6 +79,14 @@ SelectiveSyncWidget::SelectiveSyncWidget(AccountPtr account, QWidget *parent)
     auto header = new QLabel(this);
     header->setText(tr("Deselect remote folders you do not wish to synchronize."));
     header->setWordWrap(true);
+    header->setStyleSheet(
+        IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight(),
+            IonosTheme::titleColor())
+        + QStringLiteral("background-color: %1;").arg(IonosTheme::dialogBackgroundColor())
+    );
     layout->addWidget(header);
 
     layout->addWidget(_folderTree);
@@ -93,6 +103,19 @@ SelectiveSyncWidget::SelectiveSyncWidget(AccountPtr account, QWidget *parent)
     _folderTree->header()->setStretchLastSection(true);
     _folderTree->headerItem()->setText(0, tr("Name"));
     _folderTree->headerItem()->setText(1, tr("Size"));
+    _folderTree->header()->setStyleSheet(
+        IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight(),
+            IonosTheme::titleColor()
+    ));
+    _folderTree->setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsTextSize(),
+        IonosTheme::settingsTextWeight(),
+        IonosTheme::titleColor()
+    ));
 
     ConfigFile::setupDefaultExcludeFilePaths(_excludedFiles);
     _excludedFiles.reloadExcludeFiles();
@@ -505,6 +528,7 @@ void SelectiveSyncDialog::init(const AccountPtr &account)
     layout->addWidget(_selectiveSync);
     auto *buttonBox = new QDialogButtonBox(Qt::Horizontal);
     _okButton = buttonBox->addButton(QDialogButtonBox::Ok);
+    _okButton->setProperty("buttonStyle", QVariant::fromValue(ButtonStyleName::Primary));
     connect(_okButton, &QPushButton::clicked, this, &SelectiveSyncDialog::accept);
     QPushButton *button = nullptr;
     button = buttonBox->addButton(QDialogButtonBox::Cancel);

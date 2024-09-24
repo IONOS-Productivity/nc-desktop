@@ -488,6 +488,7 @@ void OwncloudAdvancedSetupPage::slotSelectiveSyncClicked()
     AccountPtr acc = dynamic_cast<OwncloudWizard *>(wizard())->account();
     auto *dlg = new SelectiveSyncDialog(acc, _remoteFolder, _selectiveSyncBlacklist, this);
     dlg->setAttribute(Qt::WA_DeleteOnClose);
+    dlg->setStyleSheet(QStringLiteral("background-color: %1;").arg(IonosTheme::dialogBackgroundColor()));
 
     connect(dlg, &SelectiveSyncDialog::finished, this, [this, dlg]{
         const int result = dlg->result();
