@@ -504,7 +504,7 @@ void OwncloudAdvancedSetupPage::slotSelectiveSyncClicked()
                 IonosTheme::settingsFont(),
                 IonosTheme::settingsTextSize(),
                 IonosTheme::settingsTextWeight(),
-                IonosTheme::loginWizardFontGrey()
+                IonosTheme::loginWizardFontLightGrey()
             ));
 
             _ui.confCheckBoxSize->setDisabled(true);
@@ -553,7 +553,7 @@ void OwncloudAdvancedSetupPage::slotVirtualFileSyncClicked()
                 IonosTheme::settingsFont(),
                 IonosTheme::settingsTextSize(),
                 IonosTheme::settingsTextWeight(),
-                IonosTheme::loginWizardFontGrey()
+                IonosTheme::loginWizardFontLightGrey()
             ));
 
     _ui.confCheckBoxSize->setDisabled(true);
