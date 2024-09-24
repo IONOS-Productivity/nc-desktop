@@ -227,10 +227,15 @@ void IgnoreListTableWidget::customizeAddIgnorePatternDialogStyle(QInputDialog &i
 
     QLabel *label = inputDialog.findChild<QLabel*>();
     label->setAlignment(Qt::AlignCenter);
-    QFont font = label->font();
-    font.setWeight(IonosTheme::settingsTextWeight().toInt() / 10);
-    font.setPixelSize(16);
-    label->setFont(font);
+    label->setStyleSheet(
+         IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight(),
+            IonosTheme::titleColor()
+        )
+    );
+
     QLineEdit *lineEdit = inputDialog.findChild<QLineEdit*>();
     lineEdit->setStyleSheet(
         QStringLiteral(
