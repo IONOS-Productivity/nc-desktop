@@ -651,7 +651,23 @@ void OwncloudAdvancedSetupPage::customizeStyle()
     styleSyncLogo();
     styleLocalFolderLabel();
 
-    setStyleSheet(IonosTheme::fontConfigurationCss(
+    setStyleSheet(
+        "QRadioButton {" +
+            IonosTheme::fontConfigurationCss(
+                IonosTheme::settingsFont(),
+                IonosTheme::settingsTextSize(),
+                IonosTheme::settingsTextWeight(),
+                IonosTheme::titleColor()
+            ) + "} QCheckBox {" +
+            IonosTheme::fontConfigurationCss(
+                IonosTheme::settingsFont(),
+                IonosTheme::settingsTextSize(),
+                IonosTheme::settingsTextWeight(),
+                IonosTheme::titleColor()
+            ) + "}"
+    );
+
+    _ui.userNameLabel->setStyleSheet(IonosTheme::fontConfigurationCss(
         IonosTheme::settingsFont(),
         IonosTheme::settingsTextSize(),
         IonosTheme::settingsTextWeight(),
@@ -663,6 +679,13 @@ void OwncloudAdvancedSetupPage::customizeStyle()
         IonosTheme::settingsTextSize(),
         IonosTheme::settingsTextWeight(),
         IonosTheme::loginWizardFontGrey()
+    ));
+
+    _ui.localFolderDescriptionLabel->setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsTextSize(),
+        IonosTheme::settingsTextWeight(),
+        IonosTheme::titleColor()
     ));
 
     _filePathLabel->setStyleSheet(IonosTheme::fontConfigurationCss(
