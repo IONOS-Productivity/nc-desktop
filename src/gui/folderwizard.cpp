@@ -876,31 +876,6 @@ void FolderWizard::customizeStyle()
 
 }
 
-void FolderWizard::customizeTextsOnSelectiveSyncPage()
-{
-    auto titleWidget = _folderWizardSelectiveSyncPage->findChild<QWidget *>("title");
-
-    if (titleWidget) {
-        titleWidget->setStyleSheet(IonosTheme::fontConfigurationCss(
-            IonosTheme::settingsFont(),
-            IonosTheme::settingsBigTitleSize(),
-            IonosTheme::settingsTitleWeight(),
-            IonosTheme::titleColor()));
-        titleWidget->setProperty("text", tr("Add Folder Sync"));
-    }
-
-    auto subTitleWidget = _folderWizardSelectiveSyncPage->findChild<QWidget *>("subTitle");
-    if (subTitleWidget) {
-        subTitleWidget->setStyleSheet(IonosTheme::fontConfigurationCss(
-            IonosTheme::settingsFont(),
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTitleWeight(),
-            IonosTheme::folderWizardSubtitleColor()));
-
-        subTitleWidget->setProperty("text", tr("Step 3 of 3: Selektive Synchronisation"));
-    }
-}
-
 void FolderWizard::adjustWizardSize()
 {
     setFixedSize(QSize(576, 704));
