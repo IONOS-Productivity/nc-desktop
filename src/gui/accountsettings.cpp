@@ -925,16 +925,18 @@ void AccountSettings::slotRemoveCurrentFolder()
                                           this);
 
         messageBox->setStyleSheet(
+            "QMessageBox {" +
             IonosTheme::fontConfigurationCss(
                 IonosTheme::settingsFont(),
                 IonosTheme::settingsTextSize(),
                 IonosTheme::settingsTextWeight(),
                 IonosTheme::titleColor()
-            )
+            ) + " }"
         );
 
         messageBox->setAttribute(Qt::WA_DeleteOnClose);
         const auto yesButton = messageBox->addButton(tr("Remove Folder Sync Connection"), QMessageBox::YesRole);
+        yesButton->setProperty("buttonStyle", QVariant::fromValue(ButtonStyleName::Primary));
         messageBox->addButton(tr("Cancel"), QMessageBox::NoRole);
         connect(messageBox, &QMessageBox::finished, this, [messageBox, yesButton, folder, row, this] {
             if (messageBox->clickedButton() == yesButton) {
