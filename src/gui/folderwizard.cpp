@@ -635,7 +635,7 @@ void FolderWizardRemotePath::changeStyle()
         IonosTheme::settingsTitleWeight(),
         IonosTheme::folderWizardSubtitleColor()));
 
-    _ui.subTitle->setProperty("text", tr("Step 1 of 3: Select local folder"));
+    _ui.subTitle->setProperty("text", tr("Step 2 of 3: Directory in your IONOS EASYSTORAGE"));
 
     _ui.description1->setStyleSheet(IonosTheme::fontConfigurationCss(
         IonosTheme::settingsFont(),
@@ -644,8 +644,13 @@ void FolderWizardRemotePath::changeStyle()
         IonosTheme::titleColor()));
 
     _ui.description2->setProperty("text",
-        tr("Select a folder on your hard drive that should be permanetly connected to your IONOS EASYSTORAGE. All files and "
-        "subfolders are automatically uploaded and synchronized"));
+        tr("Both folders are permanently linked and the respective contents are automatically synchronized and updated."));
+
+    _ui.description2->setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsTextSize(),
+        IonosTheme::settingsTextWeight(),
+        IonosTheme::titleColor()));
 
     _ui.folderEntry->setStyleSheet(
         QStringLiteral("color: %1; font-family: %2; font-size: %3; font-weight: %4; border-radius: %5; border: 1px "
