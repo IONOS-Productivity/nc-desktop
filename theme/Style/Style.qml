@@ -258,9 +258,7 @@ QtObject {
     property int sesFontPixelSize: 16
     property int sesFontErrortextPixelSize: 14
     property int sesFontHintPixelSize: 12
-    property int sesFontBoldWeight: 600
-    property int sesFontNormalWeight: 400
-    // property int sesFontBoldWeight: 400
-    // property int sesFontNormalWeight: sesFontBoldWeight
+    property int sesFontBoldWeight: 400
+    property int sesFontNormalWeight: sesFontBoldWeight
 
 }
