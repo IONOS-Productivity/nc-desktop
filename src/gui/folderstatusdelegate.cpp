@@ -347,7 +347,8 @@ void FolderStatusDelegate::drawSyncProgressBar(QPainter *painter, const QStyleOp
     const auto overallWidth = option.rect.right() - aliasMargin - optionsButtonVisualRect.width() - nextToIcon;
 
     auto progressFont = QFont(IonosTheme::settingsFont());
-    progressFont.setPointSize(progressFont.pointSize() - 2);
+    progressFont.setWeight(QFont::Normal);
+    progressFont.setPixelSize(IonosTheme::settingsTextPixel());
 
     painter->save();
 
