@@ -44,8 +44,8 @@ namespace OCC {
 inline static QFont makeAliasFont(const QFont &normalFont)
 {
     QFont aliasFont = normalFont;
-    aliasFont.setWeight(IonosTheme::settingsTitleWeight().toInt() / 10);
-    aliasFont.setPixelSize(24);
+    aliasFont.setWeight(QFont::DemiBold);
+    aliasFont.setPixelSize(IonosTheme::settingsBigTitlePixel());
     return aliasFont;
 }
 
@@ -79,6 +79,7 @@ QSize FolderStatusDelegate::sizeHint(const QStyleOptionViewItem &option,
     if (classif == FolderStatusModel::AddButton) {
         const int margins = aliasFm.height(); // same as 2*aliasMargin of paint
         QFontMetrics fm(qApp->font("QPushButton"));
+
         QStyleOptionButton opt;
         static_cast<QStyleOption &>(opt) = option;
         opt.text = addInfoText();
@@ -126,14 +127,14 @@ int FolderStatusDelegate::rootFolderHeightWithoutErrors(const QFontMetrics &fm, 
 void FolderStatusDelegate::drawAddButton(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     QFont titleFont = QFont(IonosTheme::settingsFont());
-    titleFont.setWeight(IonosTheme::settingsTitleWeight().toInt() / 10);
-    titleFont.setPixelSize(20);
+    titleFont.setWeight(QFont::DemiBold);
+    titleFont.setPixelSize(IonosTheme::settingsTitlePixel());
     QFontMetrics titleTextFm(titleFont);
     const auto baseDistanceForCalculus = titleTextFm.height() / 2;
 
     QFont subtitleFont = QFont(IonosTheme::settingsFont());
-    subtitleFont.setWeight(IonosTheme::settingsTextWeight().toInt() / 10);
-    subtitleFont.setPixelSize(16);
+    subtitleFont.setWeight(QFont::Normal);
+    subtitleFont.setPixelSize(IonosTheme::settingsTextPixel());
     
     QFontMetrics subtitleTextFm(subtitleFont);
     const auto distanceToSubline = subtitleTextFm.height() / 4;
@@ -184,10 +185,9 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
 
     const auto aliasFont = makeAliasFont(QFont(IonosTheme::settingsFont()));
     QFont subFont = QFont(IonosTheme::settingsFont());
-    subFont.setPixelSize(16);
-    subFont.setWeight(IonosTheme::settingsTextWeight().toInt() / 10);
+    subFont.setWeight(QFont::Normal);
+    subFont.setPixelSize(IonosTheme::settingsTextPixel());
     const auto errorFont = subFont;
-
 
     QFontMetrics subFm(subFont);
     QFontMetrics aliasFm(aliasFont);

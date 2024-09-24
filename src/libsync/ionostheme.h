@@ -69,7 +69,6 @@ public:
 
     //Font Configuration
     static QString settingsFont() {
-        //return "Wingdings";
         return "Segoe UI";
     }
 
@@ -81,16 +80,28 @@ public:
         return "14px";
     }
 
+    static int settingsTextPixel() {
+        return 16;
+    }
+
     static QString settingsTextSize() {
-        return "16px";
+        return QString::number(settingsTextPixel()) + "px";
+    }
+
+    static int settingsTitlePixel() {
+        return 20;
     }
 
     static QString settingsTitleSize() {
-        return "20px";
+        return QString::number(settingsTitlePixel()) + "px";
+    }
+
+    static int settingsBigTitlePixel() {
+        return 24;
     }
 
     static QString settingsBigTitleSize() {
-        return "24px";
+        return QString::number(settingsBigTitlePixel()) + "px";
     }
 
     static QString settingsTextWeight() {
