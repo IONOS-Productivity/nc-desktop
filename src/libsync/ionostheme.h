@@ -104,6 +104,10 @@ public:
         return QString::number(settingsBigTitlePixel()) + "px";
     }
 
+    static QString onboardingTitle() {
+        return "28px";
+    }
+
     static QString settingsTextWeight() {
         return "400";
     }
