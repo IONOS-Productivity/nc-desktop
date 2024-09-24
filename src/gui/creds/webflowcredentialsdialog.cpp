@@ -20,7 +20,7 @@ WebFlowCredentialsDialog::WebFlowCredentialsDialog(Account *account, bool useFlo
     , _useFlow2(useFlow2)
 {
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
-    
+
     setStyleSheet(QStringLiteral("QDialog { background-color: %1; }").arg(IonosTheme::dialogBackgroundColor()));
 
     setFixedWidth(646);
@@ -40,7 +40,13 @@ WebFlowCredentialsDialog::WebFlowCredentialsDialog(Account *account, bool useFlo
     _infoLabel->setTextFormat(Qt::RichText);
     _infoLabel->setAlignment(Qt::AlignCenter);
     _infoLabel->setWordWrap(true);
-    _infoLabel->setContentsMargins(0, 32, 0, 0);    
+    _infoLabel->setContentsMargins(0, 32, 0, 0);
+    _infoLabel->setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsTextSize(),
+        IonosTheme::settingsTitleWeight(),
+        IonosTheme::titleColor()
+    ));
     _containerLayout->addWidget(_infoLabel);
 
     layout()->setSizeConstraint(QLayout::SetFixedSize);

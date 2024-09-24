@@ -14,7 +14,7 @@
 
 #include "flow2authwidget.h"
 
- 
+
 #include "account.h"
 #include "buttonstyle.h"
 #include "common/utility.h"
@@ -224,7 +224,7 @@ void Flow2AuthWidget::customizeStyle()
     }
 
     _ui.openLinkButton->setText(tr("Open Browser"));
-    _ui.openLinkButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary)); 
+    _ui.openLinkButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
     _ui.openLinkButton->setFixedSize(150, 40);
 
     _ui.copyLinkButton->setText(tr("Copy Link"));
@@ -232,6 +232,22 @@ void Flow2AuthWidget::customizeStyle()
 
     _ui.mainLayoutVBox->setContentsMargins(32, 0, 32, 0);
     _ui.innerLayoutVBox->setSpacing(16);
+
+    _ui.statusLabel->setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsTextSize(),
+        IonosTheme::settingsTextWeight(),
+        IonosTheme::titleColor()
+    ));
+
+    _ui.label->setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsTextSize(),
+        IonosTheme::settingsTextWeight(),
+        IonosTheme::titleColor()
+    ));
+
+    _ui.label->setText(tr("Switch to your browser to connect your account"));
 }
 
 } // namespace OCC
