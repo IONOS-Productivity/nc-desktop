@@ -1744,15 +1744,6 @@ void AccountSettings::customizeStyle()
             IonosTheme::titleColor()
         )
     );
-
-    _ui->expandMemoryButton->setStyleSheet(
-        IonosTheme::fontConfigurationCss(
-            IonosTheme::settingsFont(),
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTitleWeight600(),
-            IonosTheme::titleColor()
-        )
-    );
 }
 
 void AccountSettings::initializeE2eEncryption()
