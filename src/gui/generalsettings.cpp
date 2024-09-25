@@ -245,7 +245,7 @@ GeneralSettings::GeneralSettings(QWidget *parent)
     connect(_ui->legalNoticeLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenLegalNoticeLink);
     connect(_ui->openSourceLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenOpenSourceLink);
     connect(_ui->privacyLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenPrivacyLink);
-    
+
     connect(_ui->sendData_checkbox, &QAbstractButton::toggled, this, &GeneralSettings::slotToggleOptionalServerNotifications);
 
     customizeStyle();
@@ -589,7 +589,7 @@ void GeneralSettings::customizeStyle()
         QStringLiteral("QGroupBox { border: %1; padding: 15px; font-size: %2; font-weight: %3; }").arg(
             Theme::instance()->systemPalette().base().color().name(),
             IonosTheme::settingsTitleSize(),
-            IonosTheme::settingsTitleWeight()
+            IonosTheme::settingsTitleWeight600()
         )
     );
 
@@ -603,10 +603,10 @@ void GeneralSettings::customizeStyle()
     this->setStyleSheet(
         this->styleSheet() + QStringLiteral("QLabel { font-size: %1; font-weight: %2; }").arg(
             IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTitleWeight()
+            IonosTheme::settingsTitleWeight600()
         )
     );
- 
+
     // SES-4 removed
     _ui->monoIconsCheckBox->hide();
     _ui->callNotificationsCheckBox->hide();

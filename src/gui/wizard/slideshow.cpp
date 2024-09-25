@@ -33,7 +33,7 @@ SlideShow::SlideShow(QWidget *parent) : QWidget(parent)
     setStyleSheet(IonosTheme::fontConfigurationCss(
         IonosTheme::settingsFont(),
         IonosTheme::onboardingTitle(),
-        IonosTheme::settingsTitleWeight(),
+        IonosTheme::settingsTitleWeight600(),
         IonosTheme::titleColor()
     ));
 }

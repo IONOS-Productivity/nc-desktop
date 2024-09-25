@@ -112,7 +112,7 @@ public:
         return "400";
     }
 
-    static QString settingsTitleWeight() {
+    static QString settingsTitleWeight600() {
         return "600";
     }
 

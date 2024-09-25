@@ -44,7 +44,7 @@ WebFlowCredentialsDialog::WebFlowCredentialsDialog(Account *account, bool useFlo
     _infoLabel->setStyleSheet(IonosTheme::fontConfigurationCss(
         IonosTheme::settingsFont(),
         IonosTheme::settingsTextSize(),
-        IonosTheme::settingsTitleWeight(),
+        IonosTheme::settingsTitleWeight600(),
         IonosTheme::titleColor()
     ));
     _containerLayout->addWidget(_infoLabel);

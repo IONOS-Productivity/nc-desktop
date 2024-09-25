@@ -189,7 +189,7 @@ AccountSettings::AccountSettings(AccountState *accountState, QWidget *parent)
 
     // Connect styleChanged events to our widgets, so they can adapt (Dark-/Light-Mode switching)
     connect(this, &AccountSettings::styleChanged, delegate, &FolderStatusDelegate::slotStyleChanged);
-    
+
     QFont folderListFont = _ui->_folderList->font();
     folderListFont.setFamily(IonosTheme::settingsFont());
     folderListFont.setPixelSize(IonosTheme::settingsTextPixel());
@@ -679,10 +679,10 @@ void AccountSettings::styleCustomContextMenu(QMenu *menu) const
                 "border-radius: 8px; "
             "}"
         ).arg(
-            IonosTheme::white(), 
-            IonosTheme::menuBorderColor(), 
-            IonosTheme::menuTextColor(), 
-            IonosTheme::menuSelectedItemColor(), 
+            IonosTheme::white(),
+            IonosTheme::menuBorderColor(),
+            IonosTheme::menuTextColor(),
+            IonosTheme::menuSelectedItemColor(),
             IonosTheme::menuBorderRadius(),
             IonosTheme::contextMenuFont(),
             IonosTheme::settingsTextSize(),
@@ -699,7 +699,7 @@ void AccountSettings::slotCustomContextMenuRequested(const QPoint &pos)
         return;
     }
 
-    
+
 
     if (_model->classify(index) == FolderStatusModel::SubFolder) {
         slotSubfolderContextMenuRequested(index, pos);
@@ -1735,11 +1735,11 @@ void AccountSettings::customizeStyle()
         IonosTheme::fontConfigurationCss(
             IonosTheme::settingsFont(),
             IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTitleWeight(),
+            IonosTheme::settingsTitleWeight600(),
             IonosTheme::titleColor()
         )
     );
-    
+
     _ui->quotaInfo2Label->setStyleSheet(
         IonosTheme::fontConfigurationCss(
             IonosTheme::settingsFont(),
@@ -1748,12 +1748,12 @@ void AccountSettings::customizeStyle()
             IonosTheme::titleColor()
         )
     );
-    
+
     _ui->expandMemoryButton->setStyleSheet(
         IonosTheme::fontConfigurationCss(
             IonosTheme::settingsFont(),
             IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTitleWeight(),
+            IonosTheme::settingsTitleWeight600(),
             IonosTheme::titleColor()
         )
     );

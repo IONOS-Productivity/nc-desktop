@@ -179,7 +179,7 @@ void FolderWizardLocalPath::changeStyle()
     _ui.title->setStyleSheet(IonosTheme::fontConfigurationCss(
             IonosTheme::settingsFont(),
             IonosTheme::settingsBigTitleSize(),
-            IonosTheme::settingsTitleWeight(),
+            IonosTheme::settingsTitleWeight600(),
             IonosTheme::titleColor()));
 
     _ui.title->setProperty("text", tr("Add Folder Sync"));
@@ -187,7 +187,7 @@ void FolderWizardLocalPath::changeStyle()
     _ui.subTitle->setStyleSheet(IonosTheme::fontConfigurationCss(
             IonosTheme::settingsFont(),
             IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTitleWeight(),
+            IonosTheme::settingsTitleWeight600(),
             IonosTheme::folderWizardSubtitleColor()));
 
     _ui.subTitle->setProperty("text", tr("Step 1 of 3: Select local folder"));
@@ -624,7 +624,7 @@ void FolderWizardRemotePath::changeStyle()
     _ui.title->setStyleSheet(IonosTheme::fontConfigurationCss(
         IonosTheme::settingsFont(),
         IonosTheme::settingsBigTitleSize(),
-        IonosTheme::settingsTitleWeight(),
+        IonosTheme::settingsTitleWeight600(),
         IonosTheme::titleColor()));
 
     _ui.title->setProperty("text", tr("Add Folder Sync"));
@@ -632,7 +632,7 @@ void FolderWizardRemotePath::changeStyle()
     _ui.subTitle->setStyleSheet(IonosTheme::fontConfigurationCss(
         IonosTheme::settingsFont(),
         IonosTheme::settingsTextSize(),
-        IonosTheme::settingsTitleWeight(),
+        IonosTheme::settingsTitleWeight600(),
         IonosTheme::folderWizardSubtitleColor()));
 
     _ui.subTitle->setProperty("text", tr("Step 2 of 3: Directory in your IONOS EASYSTORAGE"));
@@ -707,14 +707,14 @@ FolderWizardSelectiveSync::FolderWizardSelectiveSync(const AccountPtr &account)
     _uiSelectiveSync.title->setStyleSheet(IonosTheme::fontConfigurationCss(
             IonosTheme::settingsFont(),
             IonosTheme::settingsBigTitleSize(),
-            IonosTheme::settingsTitleWeight(),
+            IonosTheme::settingsTitleWeight600(),
             IonosTheme::titleColor()));
     _uiSelectiveSync.title->setProperty("text", tr("Add Folder Sync"));
 
     _uiSelectiveSync.subTitle->setStyleSheet(IonosTheme::fontConfigurationCss(
         IonosTheme::settingsFont(),
         IonosTheme::settingsTextSize(),
-        IonosTheme::settingsTitleWeight(),
+        IonosTheme::settingsTitleWeight600(),
         IonosTheme::folderWizardSubtitleColor()));
 
     _uiSelectiveSync.subTitle->setProperty("text", tr("Step 3 of 3: Selektive Synchronisation"));
