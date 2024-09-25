@@ -70,7 +70,7 @@ QSize FolderStatusDelegate::sizeHint(
     const QStyleOptionViewItem &option,
     const QModelIndex &index) const
 {
-    QFont font = QFont(IonosTheme::settingsFont());
+    QFont font = QFont(option.font);
     QFont aliasFont = makeAliasFont(font);
 
     QFontMetrics fm(font);
@@ -127,13 +127,13 @@ int FolderStatusDelegate::rootFolderHeightWithoutErrors(const QFontMetrics &fm, 
 
 void FolderStatusDelegate::drawAddButton(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    QFont titleFont = QFont(IonosTheme::settingsFont());
+    QFont titleFont = option.font;
     titleFont.setWeight(IonosTheme::settingsTitleWeightDemiBold());
     titleFont.setPixelSize(IonosTheme::settingsTitlePixel());
     QFontMetrics titleTextFm(titleFont);
     const auto baseDistanceForCalculus = titleTextFm.height() / 2;
 
-    QFont subtitleFont = IonosTheme::settingsFontDefault();
+    QFont subtitleFont = option.font;
 
     QFontMetrics subtitleTextFm(subtitleFont);
     const auto distanceToSubline = subtitleTextFm.height() / 4;
@@ -182,8 +182,8 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
 
     auto textAlign = Qt::AlignLeft;
 
-    const auto aliasFont = makeAliasFont(QFont(IonosTheme::settingsFont()));
-    QFont subFont = IonosTheme::settingsFontDefault();
+    const auto aliasFont = makeAliasFont(option.font);
+    const auto subFont = option.font;
 
     const auto errorFont = subFont;
 
@@ -344,8 +344,9 @@ void FolderStatusDelegate::drawSyncProgressBar(QPainter *painter, const QStyleOp
     constexpr auto barHeight = 7; // same height as quota bar
     const auto overallWidth = option.rect.right() - aliasMargin - optionsButtonVisualRect.width() - nextToIcon;
 
-    auto progressFont = IonosTheme::settingsFontDefault();
-
+    QFont progressFont(option.font);
+    progressFont.setPixelSize(IonosTheme::settingsTextPixel());
+    progressFont.setWeight(IonosTheme::settingsTitleWeightNormal());
     painter->save();
 
     // Overall Progress Bar.
