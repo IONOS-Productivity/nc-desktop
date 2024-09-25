@@ -121,6 +121,17 @@ public:
         return QFont::DemiBold;
     }
 
+    static QFont::Weight settingsTitleWeightNormal() {
+        return QFont::Normal;
+    }
+
+    static QFont settingsFontDefault(){
+        QFont defaultFont(settingsFont());
+        defaultFont.setPixelSize(settingsTextPixel());
+        defaultFont.setWeight(settingsTitleWeightNormal());
+        return defaultFont;
+    }
+
     static QString titleColor() {
         return "#000000";
     }

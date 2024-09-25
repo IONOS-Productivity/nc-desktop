@@ -190,11 +190,7 @@ AccountSettings::AccountSettings(AccountState *accountState, QWidget *parent)
     // Connect styleChanged events to our widgets, so they can adapt (Dark-/Light-Mode switching)
     connect(this, &AccountSettings::styleChanged, delegate, &FolderStatusDelegate::slotStyleChanged);
 
-    QFont folderListFont = _ui->_folderList->font();
-    folderListFont.setFamily(IonosTheme::settingsFont());
-    folderListFont.setPixelSize(IonosTheme::settingsTextPixel());
-    folderListFont.setWeight(QFont::Normal);
-    _ui->_folderList->setFont(folderListFont);
+    _ui->_folderList->setFont(IonosTheme::settingsFontDefault());
 
     _ui->_folderList->header()->hide();
     _ui->_folderList->setItemDelegate(delegate);

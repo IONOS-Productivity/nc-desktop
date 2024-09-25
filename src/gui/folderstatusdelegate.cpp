@@ -66,7 +66,8 @@ QString FolderStatusDelegate::addInfoText()
 }
 
 // allocate each item size in listview.
-QSize FolderStatusDelegate::sizeHint(const QStyleOptionViewItem &option,
+QSize FolderStatusDelegate::sizeHint(
+    const QStyleOptionViewItem &option,
     const QModelIndex &index) const
 {
     QFont font = QFont(IonosTheme::settingsFont());
@@ -132,10 +133,8 @@ void FolderStatusDelegate::drawAddButton(QPainter *painter, const QStyleOptionVi
     QFontMetrics titleTextFm(titleFont);
     const auto baseDistanceForCalculus = titleTextFm.height() / 2;
 
-    QFont subtitleFont = QFont(IonosTheme::settingsFont());
-    subtitleFont.setWeight(QFont::Normal);
-    subtitleFont.setPixelSize(IonosTheme::settingsTextPixel());
-    
+    QFont subtitleFont = IonosTheme::settingsFontDefault();
+
     QFontMetrics subtitleTextFm(subtitleFont);
     const auto distanceToSubline = subtitleTextFm.height() / 4;
 
@@ -184,9 +183,8 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     auto textAlign = Qt::AlignLeft;
 
     const auto aliasFont = makeAliasFont(QFont(IonosTheme::settingsFont()));
-    QFont subFont = QFont(IonosTheme::settingsFont());
-    subFont.setWeight(QFont::Normal);
-    subFont.setPixelSize(IonosTheme::settingsTextPixel());
+    QFont subFont = IonosTheme::settingsFontDefault();
+
     const auto errorFont = subFont;
 
     QFontMetrics subFm(subFont);
@@ -346,9 +344,7 @@ void FolderStatusDelegate::drawSyncProgressBar(QPainter *painter, const QStyleOp
     constexpr auto barHeight = 7; // same height as quota bar
     const auto overallWidth = option.rect.right() - aliasMargin - optionsButtonVisualRect.width() - nextToIcon;
 
-    auto progressFont = QFont(IonosTheme::settingsFont());
-    progressFont.setWeight(QFont::Normal);
-    progressFont.setPixelSize(IonosTheme::settingsTextPixel());
+    auto progressFont = IonosTheme::settingsFontDefault();
 
     painter->save();
 

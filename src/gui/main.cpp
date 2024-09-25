@@ -93,12 +93,7 @@ int main(int argc, char **argv)
     // if (app.devicePixelRatio() > 1)
     //     QApplication::setStyle(QStringLiteral("fusion"));
 
-    //int fontId = QFontDatabase::addApplicationFont(":/client/fonts/OpenSans-Regular.ttf");
-    QString fontFamily = IonosTheme::settingsFont();
-    QFont defaultFont(fontFamily);
-    defaultFont.setPointSize(9);
-    defaultFont.setWeight(QFont::Normal);
-    QApplication::setFont(defaultFont);
+    QApplication::setFont(IonosTheme::settingsFontDefault());
 
 #endif // Q_OS_WIN
 
