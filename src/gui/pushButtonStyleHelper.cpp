@@ -10,7 +10,7 @@
 
 #include "pushButtonStyleHelper.h"
 
- 
+
 #include "buttonstyle.h"
 #include "buttonStyleStrategy.h"
 #include "ionostheme.h"
@@ -18,7 +18,7 @@
 #include <QPainter>
 #include <QStyleOptionButton>
 #include <QPushButton>
-#include <QWidget> 
+#include <QWidget>
 
 void PushButtonStyleHelper::setupPainterForShape(const QStyleOptionButton *option, QPainter *painter, const QWidget *widget)
 {
@@ -29,12 +29,12 @@ void PushButtonStyleHelper::setupPainterForShape(const QStyleOptionButton *optio
         painter->setPen(QColor(style.buttonDisabledBorderColor()));
         painter->setBrush(QColor(style.buttonDisabledColor()));
     }
-    //Pressed 
+    //Pressed
     else if (option->state & QStyle::State_Sunken) {
 
         painter->setPen(QColor(style.buttonPressedBorderColor()));
         painter->setBrush(QColor(style.buttonPressedColor()));
-    } 
+    }
     // Hover
     else if(option->state & QStyle::State_MouseOver)
     {
@@ -45,7 +45,7 @@ void PushButtonStyleHelper::setupPainterForShape(const QStyleOptionButton *optio
     else if (option->state & QStyle::State_HasFocus) {
         painter->setPen(QColor(style.buttonFocusedBorderColor()));
         painter->setBrush(QColor(style.buttonFocusedColor()));
-    } 
+    }
     // Else - Just beeing there
     else {
         painter->setPen(QColor(style.buttonDefaultBorderColor()));
@@ -66,7 +66,7 @@ void PushButtonStyleHelper::drawButtonShape(const QStyleOptionButton *option, QP
 void PushButtonStyleHelper::recalculateContentSize(QSize &contentsSize, const QWidget *widget) const
 {
     QFont font = widget->font();
-    font.setWeight(QFont::DemiBold);
+    font.setWeight(OCC::IonosTheme::settingsTitleWeightDemiBold());
     QFontMetrics fm(font);
 
     //Code aus qpushbutton.cpp - sizeHint
@@ -107,8 +107,8 @@ void PushButtonStyleHelper::adjustTextPalette(QStyleOptionButton *option, const 
     // Disabled
     if (!(option->state & QStyle::State_Enabled)) {
         textColor = style.buttonDisabledFontColor();
-    }    
-    else 
+    }
+    else
     {
         textColor = style.buttonFontColor();
     }

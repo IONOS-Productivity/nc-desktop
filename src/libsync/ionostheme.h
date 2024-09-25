@@ -1,6 +1,7 @@
 #ifndef _IONOSTHEME_H
 #define _IONOSTHEME_H
 
+#include <QFont>
 #include <QString>
 #include "theme.h"
 
@@ -114,6 +115,10 @@ public:
 
     static QString settingsTitleWeight600() {
         return "600";
+    }
+
+    static QFont::Weight settingsTitleWeightDemiBold() {
+        return QFont::DemiBold;
     }
 
     static QString titleColor() {

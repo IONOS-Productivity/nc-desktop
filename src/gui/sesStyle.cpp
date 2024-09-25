@@ -19,7 +19,7 @@
 
 #include "sesStyle.h"
 #include "ionostheme.h"
- 
+
 #include "pushButtonStyleHelper.h"
 #include "moreOptionsButtonStyleHelper.h"
 
@@ -84,7 +84,7 @@ void sesStyle::drawControl(ControlElement element, const QStyleOption *option, Q
         {
             // Bevel
             mMoreOptionsButtonStyleHelper->drawToolButtonShape(btn, painter, widget);
-            
+
             // Label / Icon
             QStyleOptionButton subopt = *btn;
             subopt.rect = subElementRect(SE_PushButtonContents, btn, widget);
@@ -113,14 +113,14 @@ void sesStyle::drawControl(ControlElement element, const QStyleOption *option, Q
             QStyleOptionButton customStyleCopy = *optionButton;
             mPushButtonStyleHelper->adjustTextPalette(&customStyleCopy, widget);
 
-            painter->save(); 
+            painter->save();
             QFont font = painter->font();
-            font.setWeight(QFont::DemiBold);
+            font.setWeight(OCC::IonosTheme::settingsTitleWeightDemiBold());
             font.setPixelSize(OCC::IonosTheme::settingsTextPixel());
             painter->setFont(font);
 
             QCommonStyle::drawControl(element, &customStyleCopy, painter, widget);
-            painter->restore(); 
+            painter->restore();
         }
         return;
     default:
@@ -159,7 +159,7 @@ int sesStyle::styleHint(StyleHint stylehint, const QStyleOption *option, const Q
 }
 
 QSize sesStyle::sizeFromContents(ContentsType type, const QStyleOption *option, const QSize &contentsSize, const QWidget *widget) const
-{ 
+{
     switch (type) {
     case CT_PushButton:
         if (const auto *buttonOption = qstyleoption_cast<const QStyleOptionButton *>(option)) {

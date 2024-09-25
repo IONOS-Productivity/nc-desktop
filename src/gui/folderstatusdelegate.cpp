@@ -44,7 +44,7 @@ namespace OCC {
 inline static QFont makeAliasFont(const QFont &normalFont)
 {
     QFont aliasFont = normalFont;
-    aliasFont.setWeight(QFont::DemiBold);
+    aliasFont.setWeight(IonosTheme::settingsTitleWeightDemiBold());
     aliasFont.setPixelSize(IonosTheme::settingsBigTitlePixel());
     return aliasFont;
 }
@@ -127,7 +127,7 @@ int FolderStatusDelegate::rootFolderHeightWithoutErrors(const QFontMetrics &fm, 
 void FolderStatusDelegate::drawAddButton(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     QFont titleFont = QFont(IonosTheme::settingsFont());
-    titleFont.setWeight(QFont::DemiBold);
+    titleFont.setWeight(IonosTheme::settingsTitleWeightDemiBold());
     titleFont.setPixelSize(IonosTheme::settingsTitlePixel());
     QFontMetrics titleTextFm(titleFont);
     const auto baseDistanceForCalculus = titleTextFm.height() / 2;
