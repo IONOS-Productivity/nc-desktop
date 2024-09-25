@@ -15,6 +15,7 @@
 #include "accountmanager.h"
 #include "systray.h"
 #include "theme.h"
+#include "ionostheme.h"
 #include "config.h"
 #include "common/utility.h"
 #include "tray/svgimageprovider.h"
@@ -202,6 +203,12 @@ void Systray::setupContextMenu()
         resumeAction->setVisible(anyPaused);
         resumeAction->setEnabled(anyPaused);
     });
+
+    _contextMenu->setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsTextSize(),
+        IonosTheme::settingsTextWeight(),
+        IonosTheme::menuTextColor()));
 }
 
 void Systray::destroyDialog(QQuickWindow *dialog) const
@@ -615,7 +622,7 @@ void Systray::forceWindowInit(QQuickWindow *window) const
     // this shouldn't flicker
     window->show();
     window->hide();
-    
+
 #ifdef Q_OS_MAC
     // On macOS we need to designate the tray window as visible on all spaces and
     // at the menu bar level, otherwise showing it can cause the current spaces to
@@ -767,7 +774,7 @@ QPoint Systray::computeNotificationReferencePoint(int spacing, NotificationPosit
     auto trayIconCenter = calcTrayIconCenter();
     auto taskbarScreenEdge = taskbarOrientation();
     const auto screenRect = currentAvailableScreenRect();
-    
+
     if(position == NotificationPosition::TopLeft) {
         taskbarScreenEdge = TaskBarPosition::Top;
         trayIconCenter = QPoint(0, 0);
@@ -871,7 +878,7 @@ QPoint Systray::computeNotificationPosition(int width, int height, int spacing, 
     auto trayIconCenter = calcTrayIconCenter();
     auto taskbarScreenEdge = taskbarOrientation();
     const auto screenRect = currentScreenRect();
-        
+
     if(position == NotificationPosition::TopLeft) {
         taskbarScreenEdge = TaskBarPosition::Top;
         trayIconCenter = QPoint(0, 0);
@@ -885,7 +892,7 @@ QPoint Systray::computeNotificationPosition(int width, int height, int spacing, 
         taskbarScreenEdge = TaskBarPosition::Bottom;
         trayIconCenter = QPoint(screenRect.width(), screenRect.height());
     }
-        
+
     const auto topLeft = [=]() {
         switch(taskbarScreenEdge) {
         case TaskBarPosition::Bottom:
