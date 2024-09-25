@@ -420,12 +420,17 @@ bool OwncloudAdvancedSetupPage::validatePage()
         _checking = true;
         startSpinner();
         emit completeChanged();
-
+        ConfigFile cfgFile;
         if (_ui.rSyncEverything->isChecked()) {
             ConfigFile cfgFile;
             cfgFile.setNewBigFolderSizeLimit(_ui.confCheckBoxSize->isChecked(),
                 _ui.confSpinBox->value());
             cfgFile.setConfirmExternalStorage(_ui.confCheckBoxExternal->isChecked());
+        }
+        else 
+        {
+            cfgFile.setNewBigFolderSizeLimit(false, -1);
+            cfgFile.setConfirmExternalStorage(false);
         }
 
         emit createLocalAndRemoteFolders(localFolder(), _remoteFolder);
