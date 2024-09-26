@@ -424,7 +424,7 @@ bool OwncloudAdvancedSetupPage::validatePage()
         if (_ui.rSyncEverything->isChecked()) {
             ConfigFile cfgFile;
             cfgFile.setNewBigFolderSizeLimit(_ui.confCheckBoxSize->isChecked(),
-                _ui.confSpinBox->value());
+                _ui.confCheckBoxSize->isChecked() ? _ui.confSpinBox->value() : -1);
             cfgFile.setConfirmExternalStorage(_ui.confCheckBoxExternal->isChecked());
         }
         else 
