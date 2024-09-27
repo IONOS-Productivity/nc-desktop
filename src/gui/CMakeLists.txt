@@ -210,6 +210,8 @@ set(client_SRCS
     ga4/ganalytics.cpp
     ga4/ganalytics_worker.h
     ga4/ganalytics_worker.cpp
+    ga4/datacollectionwrapper.cpp
+    ga4/datacollectionwrapper.h
     filedetails/datefieldbackend.h
     filedetails/datefieldbackend.cpp
     filedetails/filedetails.h
