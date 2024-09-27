@@ -75,6 +75,7 @@ private:
     friend QDataStream &operator<<(QDataStream &outStream, const GAnalytics &analytics);
     friend QDataStream &operator>>(QDataStream &inStream, GAnalytics &analytics);
 
+    friend class DataCollectionWrapper;
 };
 
 QDataStream &operator<<(QDataStream &outStream, const GAnalytics &analytics);

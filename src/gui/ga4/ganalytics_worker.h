@@ -71,5 +71,6 @@ public slots:
 private:
     void prepareQuery(QUrlQuery& query);
 
+    friend class GAnalytics;
 };
 
