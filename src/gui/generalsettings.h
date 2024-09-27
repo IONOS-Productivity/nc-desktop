@@ -57,6 +57,7 @@ private slots:
     void slotOpenMoreInformationLink();
     void slotOpenLegalNoticeLink();
     void slotOpenPrivacyLink();
+    void slotClicked();
     void slotOpenOpenSourceLink();
     void slotToggleSendData();
 #if defined(BUILD_UPDATER)

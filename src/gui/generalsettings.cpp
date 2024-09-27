@@ -36,6 +36,7 @@
 #include "ignorelisteditor.h"
 #include "common/utility.h"
 #include "logger.h"
+#include "ga4/datacollectionwrapper.h"
 
 #include "legalnotice.h"
 
@@ -245,6 +246,7 @@ GeneralSettings::GeneralSettings(QWidget *parent)
     connect(_ui->legalNoticeLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenLegalNoticeLink);
     connect(_ui->openSourceLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenOpenSourceLink);
     connect(_ui->privacyLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenPrivacyLink);
+    connect(_ui->privacyLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotClicked);
 
     connect(_ui->sendData_checkbox, &QAbstractButton::toggled, this, &GeneralSettings::slotToggleOptionalServerNotifications);
 
@@ -274,6 +276,14 @@ void GeneralSettings::slotOpenOpenSourceLink()
 void GeneralSettings::slotOpenPrivacyLink()
 {
     QDesktopServices::openUrl(QUrl("https://wl.hidrive.com/easy/0005/"));
+}
+
+void GeneralSettings::slotClicked()
+{
+    DataCollectionWrapper dcw;
+    dcw.clicked(
+        DataCollectionWrapper::TrackingPage::GeneralSettings
+        , DataCollectionWrapper::TrackingElement::PrivacyPolicy);
 }
 
 QSize GeneralSettings::sizeHint() const
