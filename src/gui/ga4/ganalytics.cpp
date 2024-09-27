@@ -181,27 +181,6 @@ void GAnalytics::sendEvent(const QString &eventName, const QString &page, const 
     eventParams["engagement_time_msec"] = 100;
     eventParams["session_id"] = d->m_clientID;
 
-    // Language 
-    QLocale systemLocale = QLocale::system();
-    eventParams["ul"]= systemLocale.name();     
-
-    // screen resolution    
-    eventParams["sr"]= d->m_screenResolution;    
-
-    // login
-
-    // screen_view
-
-    // operation system
-#ifdef Q_OS_WIN
-    eventParams["os"] = "Windows";
-#endif
-#ifdef Q_OS_LINUX
-    eventParams["os"] = "Linux";
-#endif
-#ifdef Q_OS_MAC
-    eventParams["os"] = "MAC";
-#endif
 	event["params"] = eventParams;
 
 	QJsonArray eventArray;
