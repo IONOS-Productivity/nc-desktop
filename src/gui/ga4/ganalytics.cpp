@@ -141,14 +141,6 @@ QNetworkAccessManager *GAnalytics::networkAccessManager() const
     return d->networkManager;
 }
 
-void GAnalytics::clicked(const TrackPage trackPage, const TrackElement trackButton){
-    sendEvent("clicked", _trackPageString[trackPage], _trackElementString[trackButton]);
-}
-
-void GAnalytics::opened(const TrackPage trackPage){
-    sendEvent("screen_view", _trackPageString[trackPage]);
-}
-
 /**
  * This method is called whenever a button was pressed in the application.
  * A query for a POST message will be created to report this event. The

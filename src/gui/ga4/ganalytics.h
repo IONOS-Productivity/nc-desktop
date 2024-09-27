@@ -5,7 +5,7 @@
 
 class QNetworkAccessManager;
 class GAnalyticsWorker;
-
+class DataCollectionWrapper;
 // https://developers.google.com/analytics/devguides/collection/protocol/ga4/verify-implementation?client_type=gtag
 class GAnalytics : public QObject
 {
@@ -29,26 +29,6 @@ public:
         Debug,
         Info,
         Error
-    };
-
-        enum TrackEvent
-    {
-        Click,
-        Launch,
-        CloseDialog,
-        Open
-    };
-
-    enum TrackPage{
-        GeneralSetting,
-        AccountSetting,
-    };
-
-    enum TrackElement{
-        Save,
-        Cancel,
-        Add,
-        Remove
     };
 
     void setMeasurementId(const QString& measurementId);
@@ -83,33 +63,18 @@ public:
     void setNetworkAccessManager(QNetworkAccessManager *networkAccessManager);
     QNetworkAccessManager *networkAccessManager() const;
 
-public slots:
-    void sendEvent(const QString &eventName, const QString &page = QString(), const QString &element = QString());
-	void clicked(const TrackPage trackPage, const TrackElement trackButton);
-	void opened(const TrackPage trackPage);
 
 private:
+    void sendEvent(const QString &eventName, const QString &page = QString(), const QString &element = QString());
     explicit GAnalytics(QObject *parent = 0);
     Q_DISABLE_COPY_MOVE(GAnalytics);
-
-    std::map<TrackPage, QString> _trackPageString = { 
-        { GeneralSetting, "GeneralSetting" }, 
-        { AccountSetting, "AccountSetting" },
-    }; 
-    std::map<TrackElement, QString> _trackElementString = { 
-        { Save, "Save" }, 
-        { Cancel, "Cancel" },
-    }; 
-    std::map<TrackEvent, QString> _trackEventString = { 
-        { Click, "Click" }, 
-        { Launch, "Launch" },
-    }; 
 
 private:
     GAnalyticsWorker *d;
 
     friend QDataStream &operator<<(QDataStream &outStream, const GAnalytics &analytics);
     friend QDataStream &operator>>(QDataStream &inStream, GAnalytics &analytics);
+
 };
 
 QDataStream &operator<<(QDataStream &outStream, const GAnalytics &analytics);
