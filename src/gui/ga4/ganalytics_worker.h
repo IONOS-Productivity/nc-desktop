@@ -67,5 +67,9 @@ public:
 public slots:
     void postMessage();
     void postMessageFinished();
+
+private:
+    void prepareQuery(QUrlQuery& query);
+
 };
 

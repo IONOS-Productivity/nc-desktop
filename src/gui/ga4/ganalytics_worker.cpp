@@ -213,9 +213,7 @@ void GAnalyticsWorker::postMessage()
 
     // Set the required parameters for the request
     QUrlQuery query;
-    query.addQueryItem("measurement_id", m_measurementId);      // Client ID (unique per user)
-    query.addQueryItem("api_secret", m_apiSecret);         // Hit type
-
+    prepareQuery(query);
     // Build the final URL
     requestUrl.setQuery(query);
 
@@ -242,6 +240,46 @@ void GAnalyticsWorker::postMessage()
     QNetworkReply *reply = networkManager->post(m_request, requestJSon);
     connect(reply, SIGNAL(finished()), this, SLOT(postMessageFinished()));
 }
+
+void GAnalyticsWorker::prepareQuery(QUrlQuery& query){
+    query.addQueryItem("measurement_id", m_measurementId);      // Client ID (unique per user)
+    query.addQueryItem("api_secret", m_apiSecret);    
+    
+    query.addQueryItem("v", "2");    
+    query.addQueryItem("t", "event");
+
+    //Session id 
+    query.addQueryItem("sid", "1");
+    //Session sequence number 
+    query.addQueryItem("_s", "1");
+    //Session count
+    query.addQueryItem("sct", "1");
+    //user id
+    query.addQueryItem("uid", m_userID);
+    //Title variable  TODO
+    query.addQueryItem("dt", QUrl::toPercentEncoding(m_appName));
+    //language
+    query.addQueryItem("ul", m_language);
+    //screen resolution
+    query.addQueryItem("sr", m_screenResolution);
+    //User Agent Architecture
+    query.addQueryItem("ua", "x86_64");
+    //User Agent Mobile Brand
+    query.addQueryItem("uamb", "0");
+    //User Agent Mobile Brand
+    #ifdef Q_OS_WIN
+        query.addQueryItem("uap", "Windows");
+    #endif
+    #ifdef Q_OS_LINUX
+        query.addQueryItem("uap", "Linux");
+    #endif
+    #ifdef Q_OS_MAC
+        query.addQueryItem("uap", "MacOS");
+    #endif
+    // User AGent Platform Version OS Version TODO
+    query.addQueryItem("uapv", "10");
+}
+
 
 /**
  * NetworkAccsessManager has finished to POST a message.
