@@ -31,17 +31,6 @@ GAnalytics::~GAnalytics()
     delete d;
 }
 
-GAnalytics *GAnalytics::instance()
-{
-    static GAnalytics* instance = nullptr;
-    if(instance == nullptr)
-    {
-        instance = new GAnalytics();
-    }
-
-    return instance;
-}
-
 void GAnalytics::setLogLevel(GAnalytics::LogLevel logLevel)
 {
     d->m_logLevel = logLevel;

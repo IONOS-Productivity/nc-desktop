@@ -17,7 +17,11 @@ class GAnalytics : public QObject
 public:
     ~GAnalytics();
 
-    static GAnalytics* instance();
+    static GAnalytics& getInstance()
+    {
+        static GAnalytics instance; 
+        return instance;
+    }
 
 public:
     enum LogLevel
@@ -111,4 +115,3 @@ private:
 QDataStream &operator<<(QDataStream &outStream, const GAnalytics &analytics);
 QDataStream &operator>>(QDataStream &inStream, GAnalytics &analytics);
 
-#define ga (static_cast<GAnalytics *>(GAnalytics::instance()))
