@@ -10,10 +10,10 @@ QtObject {
 
     // Colors
     readonly property color ncBlue:      Theme.wizardHeaderBackgroundColor
-    readonly property color ncHeaderTextColor: Theme.wizardHeaderTitleColor
-    readonly property color ncTextColor: Theme.systemPalette.windowText
+    readonly property color ncHeaderTextColor: sesTrayFontColor
+    readonly property color ncTextColor: sesTrayFontColor
     readonly property color ncTextBrightColor: "white"
-    readonly property color ncSecondaryTextColor: "#808080"
+    readonly property color ncSecondaryTextColor: sesTrayFontColor//"#808080"
     readonly property color lightHover: Theme.darkMode ? Qt.lighter(backgroundColor, 2) : Qt.darker(backgroundColor, 1.05)
     readonly property color darkerHover: Theme.darkMode ? Qt.lighter(backgroundColor, 2.35) : Qt.darker(backgroundColor, 1.25)
     readonly property color menuBorder: Theme.darkMode ? Qt.lighter(backgroundColor, 2.5) : Qt.darker(backgroundColor, 1.5)
@@ -22,7 +22,7 @@ QtObject {
     readonly property color positiveColor: Qt.rgba(0.38, 0.74, 0.38, 1)
 
     readonly property color currentUserHeaderColor: UserModel.currentUser ? UserModel.currentUser.headerColor : ncBlue
-    readonly property color currentUserHeaderTextColor: UserModel.currentUser ? UserModel.currentUser.headerTextColor : ncHeaderTextColor
+    readonly property color currentUserHeaderTextColor: sesTrayFontColor
     readonly property color adjustedCurrentUserHeaderColor: Theme.darkMode ? Qt.lighter(currentUserHeaderColor, 2)
                                                                            : Qt.darker(currentUserHeaderColor, 1.5)
 
@@ -240,6 +240,7 @@ QtObject {
     readonly property color sesDarkGreen: "#096B35"
     readonly property color sesDarkBlue: "#001B41"
     readonly property color sesBlack: "#000000"
+    readonly property color sesTrayFontColor: "#001B41"
     readonly property color sesErrorBoxBorder: "#F50C00"
     readonly property color sesErrorBoxText: "#C80A00"
     readonly property color sesMenuBorder: "#2E4360"

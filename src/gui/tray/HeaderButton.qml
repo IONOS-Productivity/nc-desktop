@@ -73,6 +73,7 @@ Button {
             anchors.topMargin: 2
             font: root.font
             text: root.text
+            color: Style.sesTrayFontColor
         }
     }
 }

@@ -122,6 +122,7 @@ HeaderButton {
                 anchors.topMargin: 2
                 text: root.text
                 font: root.font
+                color: Style.sesTrayFontColor
             }
 
             Loader {
