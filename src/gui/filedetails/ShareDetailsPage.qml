@@ -44,6 +44,11 @@ Page {
     signal setPassword(string password)
     signal setNote(string note)
 
+
+    font.family: Style.sesOpenSansRegular
+    font.pixelSize: Style.sesFontPixelSize
+    font.weight: Style.sesFontNormalWeight
+
     property bool backgroundsVisible: true
     property color accentColor: Style.ncBlue
 
