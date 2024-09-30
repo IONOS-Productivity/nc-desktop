@@ -22,9 +22,6 @@ RowLayout {
         property int size: Style.trayListItemIconSize * 0.6
         property int whiteSpace: (Style.trayListItemIconSize - size)
 
-        Layout.preferredWidth: size
-        Layout.preferredHeight: size
-
         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
         Layout.topMargin: 16
         Layout.rightMargin: whiteSpace * (0.5 + Style.thumbnailImageSizeReduction)
