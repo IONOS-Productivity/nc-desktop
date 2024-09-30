@@ -45,8 +45,8 @@ RowLayout {
 
                 Image {
                     id: thumbnailImage
-                    width: thumbnailItem.imageWidth
-                    height: thumbnailItem.imageHeight
+                    width: Style.sesIconSize
+                    height: Style.sesIconSize
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.left: parent.left
                     cache: true
@@ -78,8 +78,8 @@ RowLayout {
 
         Image {
             id: activityIcon
-            width: model.thumbnail !== undefined ? parent.width * 0.4 : thumbnailItem.imageWidth
-            height: model.thumbnail !== undefined ? width : width * 0.9
+            width: Style.sesIconSize
+            height: Style.sesIconSize
 
             // Prevent bad access into unloaded item properties
             readonly property int thumbnailPaintedWidth: thumbnailImageLoader.item ? thumbnailImageLoader.item.paintedWidth : 0
