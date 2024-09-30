@@ -225,7 +225,6 @@ QtObject {
 
     readonly property color sesIconDarkColor: "#001B41"
     readonly property color sesIconColor: "#1474C4"
-    readonly property color sesIconActive: "#095BB1"
 
     readonly property color sesBorderColor: "#D7D7D7"
     readonly property color sesWhite: "#FFFFFF"
@@ -239,7 +238,6 @@ QtObject {
     readonly property color sesAccountMenuHover: "#EBF5FB"
     readonly property color sesDarkGreen: "#096B35"
     readonly property color sesDarkBlue: "#001B41"
-    readonly property color sesBlack: "#000000"
     readonly property color sesTrayFontColor: "#001B41"
     readonly property color sesErrorBoxBorder: "#F50C00"
     readonly property color sesErrorBoxText: "#C80A00"
