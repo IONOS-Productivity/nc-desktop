@@ -99,7 +99,7 @@ QtObject {
 
     property int addAccountButtonHeight: 50
 
-    property int headerButtonIconSize: 32
+    property int headerButtonIconSize: sesIconSize
     property int dismissButtonSize: 26
     property int minimumActivityItemHeight: 24
 
@@ -259,5 +259,7 @@ QtObject {
     property int sesFontHintPixelSize: 12
     property int sesFontBoldWeight: 400
     property int sesFontNormalWeight: sesFontBoldWeight
+
+    property int sesIconSize: 24
 
 }
