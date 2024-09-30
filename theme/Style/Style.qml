@@ -222,6 +222,7 @@ QtObject {
     readonly property string sesErrorIcon: "qrc:///client/theme/colored/state-error.svg"
     readonly property string sesErrorBoxIcon: "qrc:///client/theme/ses/ses-snackBarErrorIcon.svg"
     readonly property string sesGreenCheckmark: "qrc:///client/theme/ses/ses-green-Checkmark.svg"
+    readonly property string sesChevron: "qrc:///client/theme/ses/ses-chevron.svg"
 
     readonly property color sesIconDarkColor: "#001B41"
     readonly property color sesIconColor: "#1474C4"
