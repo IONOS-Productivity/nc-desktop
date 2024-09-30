@@ -271,13 +271,13 @@ Button {
             color: Style.currentUserHeaderTextColor
             width: source.width
             height: source.height
+            Layout.rightMargin: 33
             source: Image {
                 Layout.alignment: Qt.AlignRight
                 verticalAlignment: Qt.AlignCenter
-                Layout.margins: Style.accountDropDownCaretMargin
-                source: "qrc:///client/theme/white/caret-down.svg"
-                sourceSize.width: Style.accountDropDownCaretSize
-                sourceSize.height: Style.accountDropDownCaretSize
+                source: Style.sesChevron
+                sourceSize.width: 12
+                sourceSize.height: 7
                 Accessible.role: Accessible.PopupMenu
                 Accessible.name: qsTr("Account switcher and settings menu")
             }
