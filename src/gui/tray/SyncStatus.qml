@@ -19,14 +19,11 @@ RowLayout {
 
     NCBusyIndicator {
         id: syncIcon
-        property int size: Style.trayListItemIconSize * 0.6
-        property int whiteSpace: (Style.trayListItemIconSize - size)
-
         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
         Layout.topMargin: 16
-        Layout.rightMargin: whiteSpace * (0.5 + Style.thumbnailImageSizeReduction)
+        Layout.rightMargin: 2
         Layout.bottomMargin: 16
-        Layout.leftMargin: Style.trayHorizontalMargin + (whiteSpace * (0.5 - Style.thumbnailImageSizeReduction))
+        Layout.leftMargin:24
 
         padding: 0
 
@@ -37,10 +34,11 @@ RowLayout {
     ColumnLayout {
         id: syncProgressLayout
 
-        Layout.alignment: Qt.AlignVCenter
+        Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
         Layout.topMargin: 8
-        Layout.rightMargin: Style.trayHorizontalMargin
+        Layout.rightMargin: 24
         Layout.bottomMargin: 8
+        Layout.leftMargin: 0
         Layout.fillWidth: true
         Layout.fillHeight: true
 
