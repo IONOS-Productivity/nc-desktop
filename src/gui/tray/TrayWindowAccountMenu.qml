@@ -24,6 +24,9 @@ Button {
     Accessible.name: qsTr("Current account")
     Accessible.onPressAction: currentAccountButton.clicked()
 
+    property bool isHovered: currentAccountButton.hovered || currentAccountButton.visualFocus
+    property bool isActive: currentAccountButton.pressed
+
     // We call open() instead of popup() because we want to position it
     // exactly below the dropdown button, not the mouse
     onClicked: {
@@ -143,7 +146,9 @@ Button {
     }
 
     background: Rectangle {
-        color: parent.hovered || parent.visualFocus ? Style.sesHover : "transparent"
+        color: currentAccountButton.isActive ? Style.sesButtonPressed : 
+               currentAccountButton.isHovered ? Style.sesAccountMenuHover : 
+               accountMenu.visible? Style.sesSelectedColor : "transparent"
         radius: Style.sesCornerRadius
     }
 

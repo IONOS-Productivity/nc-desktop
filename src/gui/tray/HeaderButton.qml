@@ -37,8 +37,11 @@ Button {
     Layout.preferredWidth:  Style.trayWindowHeaderHeight
     Layout.preferredHeight: Style.trayWindowHeaderHeight
 
+    property bool isHovered: root.hovered || root.visualFocus
+    property bool isActive: root.pressed
+
     background: Rectangle {
-        color: root.hovered || root.visualFocus ? Style.sesHover : "transparent"
+        color: root.isActive ? Style.sesButtonPressed : root.isHovered ? Style.sesAccountMenuHover : "transparent"
         radius: Style.sesCornerRadius
     }
 
