@@ -16,10 +16,6 @@ RowLayout {
     NC.SyncStatusSummary {
         id: syncStatus
     }
-    Rectangle {
-        anchors.fill: parent
-        color: "yellow"
-    }
 
     NCBusyIndicator {
         id: syncIcon
@@ -33,18 +29,10 @@ RowLayout {
 
         imageSource: syncStatus.syncIcon
         running: false // hotfix for download speed slowdown when tray is open
-        Rectangle {
-            anchors.fill: parent
-            color: "red"
-        }
     }
 
     ColumnLayout {
         id: syncProgressLayout
-        Rectangle {
-            anchors.fill: parent
-            color: "purple"
-        }
 
         Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
         Layout.topMargin: 8
@@ -115,11 +103,6 @@ RowLayout {
                 NC.UserModel.currentUser.forceSyncNow();
             }
         }
-
-        Rectangle {
-            anchors.fill: parent
-            color: "aquamarine"
-        }
     }
 
     CustomButton {
@@ -140,9 +123,5 @@ RowLayout {
                  NC.UserModel.currentUser.isConnected
         enabled: visible
         onClicked: NC.Systray.createResolveConflictsDialog(activityModel.allConflicts);
-        Rectangle {
-            anchors.fill: parent
-            color: "aquamarine"
-        }
     }
 }

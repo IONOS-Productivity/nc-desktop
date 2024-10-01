@@ -8,10 +8,6 @@ import com.nextcloud.desktopclient 1.0
 
 RowLayout {
     id: root
-    Rectangle {
-        anchors.fill: parent
-        color: "yellow"
-    }
 
     property variant activityData: {{}}
 
@@ -29,12 +25,9 @@ RowLayout {
 
     Item {
         id: thumbnailItem
-         Rectangle {
-            anchors.fill: parent
-            color: "red"
-        }
-        readonly property int imageWidth: 24//width * (1 - Style.thumbnailImageSizeReduction)
-        readonly property int imageHeight: 24//height * (1 - Style.thumbnailImageSizeReduction)
+
+        readonly property int imageWidth: width * (1 - Style.thumbnailImageSizeReduction)
+        readonly property int imageHeight: height * (1 - Style.thumbnailImageSizeReduction)
         readonly property int thumbnailRadius: model.thumbnail && model.thumbnail.isUserAvatar ? width / 2 : 3
 
         implicitWidth: 24//root.iconSize
@@ -51,10 +44,6 @@ RowLayout {
                 readonly property int paintedHeight: model.thumbnail.isMimeTypeIcon ? thumbnailImage.paintedHeight * 0.55 : thumbnailImage.paintedHeight
 
                 Image {
-                     Rectangle {
-                        anchors.fill: parent
-                        color: "green"
-                    }
                     id: thumbnailImage
                     width: Style.sesIconSize
                     height: Style.sesIconSize
@@ -88,11 +77,6 @@ RowLayout {
         }
 
         Image {
-            Rectangle {
-                anchors.fill: parent
-                color: "blue"
-            }
-
             id: activityIcon
             width: Style.sesIconSize
             height: Style.sesIconSize
@@ -129,10 +113,6 @@ RowLayout {
 
     ColumnLayout {
         id: activityContentLayout
-        Rectangle {
-            anchors.fill: parent
-            color: "purple"
-        }
 
         Layout.fillHeight: true
         Layout.fillWidth: true
@@ -146,10 +126,6 @@ RowLayout {
 
             spacing: Style.trayHorizontalMargin
 
-            Rectangle {
-                anchors.fill: parent
-                color: "red"
-            }
             EnforcedPlainTextLabel {
                 id: activityTextTitle
                 text: (root.activityData.type === "Activity" || root.activityData.type === "Notification") ? root.activityData.subject : root.activityData.message
@@ -242,10 +218,6 @@ RowLayout {
         }
 
         RowLayout {
-             Rectangle {
-                anchors.fill: parent
-                color: "blue"
-            }
             Layout.fillWidth: true
             Layout.fillHeight: true
             spacing: Style.trayHorizontalMargin

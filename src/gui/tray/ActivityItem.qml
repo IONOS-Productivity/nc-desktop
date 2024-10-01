@@ -31,11 +31,7 @@ ItemDelegate {
         visible: root.hovered && !activityContent.childHovered && model.displayLocation !== ""
         text: qsTr("In %1").arg(model.displayLocation)
     }
- Rectangle {
-            anchors.fill: parent
-            color: "gray"
-            opacity: 0.5
-        }
+
     contentItem: ColumnLayout {
         spacing: Style.smallSpacing
 
