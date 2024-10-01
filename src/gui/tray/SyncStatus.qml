@@ -23,8 +23,7 @@ RowLayout {
         Layout.topMargin: 16
         Layout.rightMargin: 0
         Layout.bottomMargin: 16
-        Layout.leftMargin: Style.activityItemDistanceToFrame
-
+        Layout.leftMargin: Style.sesActivityItemDistanceToFrame
         padding: 0
 
         imageSource: syncStatus.syncIcon
@@ -36,7 +35,7 @@ RowLayout {
 
         Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
         Layout.topMargin: 8
-        Layout.rightMargin: Style.activityItemDistanceToFrame
+        Layout.rightMargin: Style.sesActivityItemDistanceToFrame
         Layout.bottomMargin: 8
         Layout.leftMargin: 0
         Layout.fillWidth: true

@@ -8,9 +8,8 @@ import com.nextcloud.desktopclient 1.0
 ItemDelegate {
     id: root
 
-    leftPadding: Style.activityItemDistanceToFrame
-    rightPadding: Style.activityItemDistanceToFrame
-
+    leftPadding: Style.sesActivityItemDistanceToFrame
+    rightPadding: Style.sesActivityItemDistanceToFrame
     property Flickable flickable
 
     property int iconSize: Style.trayListItemIconSize
