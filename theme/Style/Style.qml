@@ -251,6 +251,10 @@ QtObject {
     property int sesHeaderLogoLeftMargin: variableSize(24)
     property int sesCornerRadius: 8
     property int sesHeaderTopMargin: variableSize(10)
+    property int sesAccountMenuButtonRightMargin: 33
+    property int sesAccountMenuButtonLeftMargin: 19
+    property int sesSmallMargin: 8
+    property int sesMediumMargin: 16
 
     readonly property string sesOpenSansRegular: "qrc:///client/fonts/OpenSans-Regular.ttf"
     property int sesFontPointSize: 9

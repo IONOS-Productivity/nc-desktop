@@ -10,12 +10,15 @@ import com.nextcloud.desktopclient 1.0
 MenuItem {
     id: accountMenuItem
 
-
     property bool isHovered: accountMenuItem.hovered || accountMenuItem.visualFocus
     property bool isActive: accountMenuItem.pressed
 
-    font.pointSize: Style.sesFontPointSize
+    font.pixelSize: Style.sesFontPixelSize
     hoverEnabled: true
+    leftPadding: Style.sesMediumMargin
+    topPadding: Style.sesSmallMargin
+    bottomPadding: Style.sesSmallMargin
+    spacing: Style.sesSmallMargin
 
     icon.height: Style.smallIconSize
     icon.width: Style.smallIconSize 

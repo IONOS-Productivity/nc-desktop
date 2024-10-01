@@ -161,7 +161,7 @@ Button {
         Image {
             id: currentAccountAvatar
 
-            Layout.leftMargin: Style.trayHorizontalMargin
+            Layout.leftMargin: Style.sesAccountMenuButtonLeftMargin
             verticalAlignment: Qt.AlignCenter
             cache: false
             source: Style.sesAvatar
@@ -223,7 +223,7 @@ Button {
             id: accountLabels
             spacing: 0
             Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
-            Layout.leftMargin: Style.userStatusSpacing
+            Layout.leftMargin: Style.sesSmallMargin
             Layout.fillWidth: true
             Layout.maximumWidth: parent.width
 
@@ -270,7 +270,7 @@ Button {
             color: Style.currentUserHeaderTextColor
             width: source.width
             height: source.height
-            Layout.rightMargin: 33
+            Layout.rightMargin: Style.sesAccountMenuButtonRightMargin
             source: Image {
                 Layout.alignment: Qt.AlignRight
                 verticalAlignment: Qt.AlignCenter

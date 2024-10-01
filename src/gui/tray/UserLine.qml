@@ -37,6 +37,10 @@ AbstractButton {
 
     height: Style.sesAccountMenuHeight
 
+    leftPadding: Style.sesMediumMargin
+    topPadding: Style.sesSmallMargin
+    bottomPadding: Style.sesSmallMargin
+
     background: Rectangle {
         radius: Style.sesCornerRadius
         anchors.fill: parent
@@ -46,11 +50,10 @@ AbstractButton {
 
     contentItem: RowLayout {
         id: userLineLayout
-        spacing: Style.userStatusSpacing
+        spacing: Style.sesSmallMargin
 
         Image {
             id: accountAvatar
-            Layout.leftMargin: 7
             verticalAlignment: Qt.AlignCenter
             cache: false
             source: Style.sesAvatar
@@ -58,7 +61,6 @@ AbstractButton {
 
         ColumnLayout {
             id: accountLabels
-            Layout.leftMargin: Style.accountLabelsSpacing
             Layout.fillWidth: true
             Layout.fillHeight: true
 
@@ -150,6 +152,8 @@ AbstractButton {
 
                     icon.source: Style.sesLogout
                     icon.color: Style.sesIconDarkColor
+                    leftPadding: Style.sesMediumMargin
+                    spacing: Style.sesSmallMargin
                     text: model.isConnected ? qsTr("Log out") : qsTr("Log in")
                     font: root.font
                     palette.windowText: Style.ncTextColor
@@ -183,6 +187,8 @@ AbstractButton {
                     id: removeAccountButton
                     icon.source: Style.sesDelete
                     icon.color: Style.sesIconDarkColor
+                    leftPadding: Style.sesMediumMargin
+                    spacing: Style.sesSmallMargin
                     text: qsTr("Remove account")
                     font: root.font
                     palette.windowText: Style.ncTextColor
