@@ -33,12 +33,12 @@ RowLayout {
             anchors.fill: parent
             color: "red"
         }
-        readonly property int imageWidth: width * (1 - Style.thumbnailImageSizeReduction)
-        readonly property int imageHeight: height * (1 - Style.thumbnailImageSizeReduction)
+        readonly property int imageWidth: 24//width * (1 - Style.thumbnailImageSizeReduction)
+        readonly property int imageHeight: 24//height * (1 - Style.thumbnailImageSizeReduction)
         readonly property int thumbnailRadius: model.thumbnail && model.thumbnail.isUserAvatar ? width / 2 : 3
 
-        implicitWidth: root.iconSize
-        implicitHeight: model.thumbnail && model.thumbnail.isMimeTypeIcon ? root.iconSize * 0.9 : root.iconSize
+        implicitWidth: 24//root.iconSize
+        implicitHeight: 24//model.thumbnail && model.thumbnail.isMimeTypeIcon ? root.iconSize * 0.9 : root.iconSize
 
         Loader {
             id: thumbnailImageLoader
@@ -130,14 +130,14 @@ RowLayout {
     ColumnLayout {
         id: activityContentLayout
         Rectangle {
-        anchors.fill: parent
-        color: "purple"
-    }
+            anchors.fill: parent
+            color: "purple"
+        }
 
         Layout.fillHeight: true
         Layout.fillWidth: true
-        Layout.maximumWidth: root.width - Style.standardSpacing - root.iconSize
-        implicitWidth: root.width - Style.standardSpacing - root.iconSize
+        Layout.maximumWidth: root.width - Style.standardSpacing - root.iconSize +26
+        implicitWidth: root.width - Style.standardSpacing - root.iconSize +26
 
         spacing: Style.smallSpacing
 
@@ -146,6 +146,10 @@ RowLayout {
 
             spacing: Style.trayHorizontalMargin
 
+            Rectangle {
+                anchors.fill: parent
+                color: "red"
+            }
             EnforcedPlainTextLabel {
                 id: activityTextTitle
                 text: (root.activityData.type === "Activity" || root.activityData.type === "Notification") ? root.activityData.subject : root.activityData.message
@@ -238,6 +242,10 @@ RowLayout {
         }
 
         RowLayout {
+             Rectangle {
+                anchors.fill: parent
+                color: "blue"
+            }
             Layout.fillWidth: true
             Layout.fillHeight: true
             spacing: Style.trayHorizontalMargin
