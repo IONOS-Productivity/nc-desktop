@@ -23,7 +23,7 @@ RowLayout {
         Layout.topMargin: 16
         Layout.rightMargin: 0
         Layout.bottomMargin: 16
-        Layout.leftMargin:24
+        Layout.leftMargin: Style.activityItemDistanceToFrame
 
         padding: 0
 
@@ -36,7 +36,7 @@ RowLayout {
 
         Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
         Layout.topMargin: 8
-        Layout.rightMargin: 24
+        Layout.rightMargin: Style.activityItemDistanceToFrame
         Layout.bottomMargin: 8
         Layout.leftMargin: 0
         Layout.fillWidth: true

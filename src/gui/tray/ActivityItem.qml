@@ -8,8 +8,8 @@ import com.nextcloud.desktopclient 1.0
 ItemDelegate {
     id: root
 
-    leftPadding: 24
-    rightPadding: 24
+    leftPadding: Style.activityItemDistanceToFrame
+    rightPadding: Style.activityItemDistanceToFrame
 
     property Flickable flickable
 

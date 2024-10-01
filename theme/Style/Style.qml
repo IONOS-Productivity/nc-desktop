@@ -102,6 +102,7 @@ QtObject {
     property int headerButtonIconSize: sesIconSize
     property int dismissButtonSize: 26
     property int minimumActivityItemHeight: 24
+    property int activityItemDistanceToFrame: 24
 
     property int activityLabelBaseWidth: 240
 

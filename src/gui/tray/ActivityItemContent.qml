@@ -30,8 +30,8 @@ RowLayout {
         readonly property int imageHeight: height * (1 - Style.thumbnailImageSizeReduction)
         readonly property int thumbnailRadius: model.thumbnail && model.thumbnail.isUserAvatar ? width / 2 : 3
 
-        implicitWidth: 24//root.iconSize
-        implicitHeight: 24//model.thumbnail && model.thumbnail.isMimeTypeIcon ? root.iconSize * 0.9 : root.iconSize
+        implicitWidth: Style.sesIconSize
+        implicitHeight: Style.sesIconSize
 
         Loader {
             id: thumbnailImageLoader
