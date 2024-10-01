@@ -25,7 +25,7 @@ RowLayout {
         id: syncIcon
         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
         Layout.topMargin: 16
-        Layout.rightMargin: 2
+        Layout.rightMargin: 0
         Layout.bottomMargin: 16
         Layout.leftMargin:24
 
