@@ -12,9 +12,11 @@
 #include <QJSonObject>
 #include <QNetworkProxy>
 
-#include "windows.h"
+#include "logger.h"
 
 const QLatin1String GAnalyticsWorker::dateTimeFormat("yyyy,MM,dd-hh:mm::ss:zzz");
+
+Q_LOGGING_CATEGORY(lcGAnalyticsWorker, "nextcloud.gui.ga4.ganalytics_worker", QtInfoMsg)
 
 GAnalyticsWorker::GAnalyticsWorker(GAnalytics *parent)
     : QObject(parent), q(parent), m_logLevel(GAnalytics::Error)
@@ -58,10 +60,21 @@ void GAnalyticsWorker::logMessage(GAnalytics::LogLevel level, const QString &mes
     {
         return;
     }
-
-    char buffer[256];
-    sprintf(buffer, "[Analytics] %s\n", message.toStdString().c_str());
-    OutputDebugStringA(buffer);
+    if(level == GAnalytics::Error)
+    {
+        // log error message
+        qCCritical(lcGAnalyticsWorker) << "[Analytics]" << message;
+    }
+    else if(level == GAnalytics::Info)
+    {
+        // log info message
+        qCInfo(lcGAnalyticsWorker) << "[Analytics]" << message;
+    }
+    else if(level == GAnalytics::Debug)
+    {
+        // log debug message
+        qCDebug(lcGAnalyticsWorker) << "[Analytics]" << message;
+    }
 }
 
 /**
