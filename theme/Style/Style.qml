@@ -267,4 +267,5 @@ QtObject {
 
     property int sesIconSize: 24
     property int sesActivityItemDistanceToFrame: 24
+    property int sesActivityItemWidthModifier: 26
 }
