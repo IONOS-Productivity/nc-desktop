@@ -241,14 +241,13 @@ void GAnalyticsWorker::postMessage()
         networkManager->setProxy(*proxy);
     }
 
-    char buffer2[256];
+    char message[256];
     QByteArray requestString = m_request.rawHeaderList().join("\r\n").append("\r\n\r\n") + requestJSon;
-    sprintf(buffer2, "%s\n", requestString.constData());
-    OutputDebugStringA(buffer2);
+    snprintf(message, sizeof(message), "%s\n", requestString.constData());
+    logMessage(GAnalytics::Debug, message);
 
-    char buffer3[256];
-    sprintf(buffer3, "%s\n", requestUrl.toString().toStdString().c_str());
-    OutputDebugStringA(buffer3);
+    snprintf(message, sizeof(message), "%s\n", requestUrl.toString().toStdString().c_str());
+    logMessage(GAnalytics::Debug, message);
 
     QNetworkReply *reply = networkManager->post(m_request, requestJSon);
     connect(reply, SIGNAL(finished()), this, SLOT(postMessageFinished()));
@@ -326,7 +325,7 @@ void GAnalyticsWorker::postMessageFinished()
         QByteArray bytes = reply->readAll();
         QString str = QString::fromUtf8(bytes.data(), bytes.size());
         char message[256];
-        sprintf(message, "Status Code:%d\nReply: %s\n", httpStausCode, str.toStdString().c_str());
+        snprintf(message, sizeof(message), "Status Code:%d\nReply: %s\n", httpStausCode, str.toStdString().c_str());
         logMessage(GAnalytics::Debug, message);
     }
 
