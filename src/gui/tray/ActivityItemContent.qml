@@ -79,8 +79,8 @@ RowLayout {
         Image {
             id: activityIcon
 
-            width: model.thumbnail !== undefined ? parent.width * 0.8 : Style.sesIconSize
-            height: model.thumbnail !== undefined ? width * 0.8 : Style.sesIconSize
+            width: model.thumbnail !== undefined ? Style.sesIconSize * 0.6 : Style.sesIconSize
+            height: model.thumbnail !== undefined ? Style.sesIconSize * 0.6 : Style.sesIconSize
 
             // Prevent bad access into unloaded item properties
             readonly property int thumbnailPaintedWidth: thumbnailImageLoader.item ? thumbnailImageLoader.item.paintedWidth : 0
