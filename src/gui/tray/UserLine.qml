@@ -41,9 +41,7 @@ AbstractButton {
         radius: Style.sesCornerRadius
         anchors.fill: parent
         anchors.margins: 1
-        color: userLine.isActive ? Style.sesButtonPressed : userLine.isHovered &&
-               !userMoreButton.isHovered ?
-                   Style.sesAccountMenuHover : "transparent"
+        color: userLine.isHovered && !userMoreButton.isHovered ? Style.sesAccountMenuHover : "transparent"
     }
 
     contentItem: RowLayout {
@@ -168,7 +166,8 @@ AbstractButton {
                             radius: Style.sesCornerRadius
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: logInOutButton.isActive ? Style.isHovered : logInOutButton.isHovered ? Style.sesAccountMenuHover : "transparent"
+                            color: logInOutButton.isActive ? Style.sesButtonPressed : 
+                                   logInOutButton.isHovered ? Style.sesAccountMenuHover : "transparent"
                         }
                     }
 
@@ -200,7 +199,8 @@ AbstractButton {
                             radius: Style.sesCornerRadius
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: removeAccountButton.isActive ? Style.sesButtonPressed : removeAccountButton.isHovered ? Style.sesAccountMenuHover : "transparent"
+                            color: removeAccountButton.isActive ? Style.sesButtonPressed : 
+                                   removeAccountButton.isHovered ? Style.sesAccountMenuHover : "transparent"
                         }
                     }
 

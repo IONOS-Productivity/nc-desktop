@@ -16,7 +16,6 @@ import com.nextcloud.desktopclient 1.0
 Button {
     id: currentAccountButton
 
-
     display:                AbstractButton.IconOnly
     flat:                   true
 
@@ -26,6 +25,13 @@ Button {
 
     property bool isHovered: currentAccountButton.hovered || currentAccountButton.visualFocus
     property bool isActive: currentAccountButton.pressed
+
+    background: Rectangle {
+        color: currentAccountButton.isActive ? Style.sesButtonPressed : 
+               currentAccountButton.isHovered ? Style.sesAccountMenuHover : 
+               accountMenu.visible? Style.sesSelectedColor : "transparent"
+        radius: Style.sesCornerRadius
+    }
 
     // We call open() instead of popup() because we want to position it
     // exactly below the dropdown button, not the mouse
@@ -143,13 +149,6 @@ Button {
             onClicked: Systray.shutdown()
             icon.source: Style.sesAccountQuit
         }
-    }
-
-    background: Rectangle {
-        color: currentAccountButton.isActive ? Style.sesButtonPressed : 
-               currentAccountButton.isHovered ? Style.sesAccountMenuHover : 
-               accountMenu.visible? Style.sesSelectedColor : "transparent"
-        radius: Style.sesCornerRadius
     }
 
     RowLayout {
