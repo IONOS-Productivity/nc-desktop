@@ -266,6 +266,9 @@ QtObject {
     property int sesIconSize: 24
     property int sesActivityItemDistanceToFrame: 24
     property int sesActivityItemWidthModifier: 26
+    property int sesFileDetailsIconSize: 58
+    property int sesFileDetailsHeaderModifier: 100
+    property int sesSearchFieldHeight: 40
 
     //Tray Account Menu Values
     property int sesAccountButtonWidth: 256

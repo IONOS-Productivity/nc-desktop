@@ -78,7 +78,7 @@ Page {
     }
 
     header: ColumnLayout {
-        spacing: root.intendedPadding
+        spacing: Style.sesMediumMargin
 
         GridLayout {
             id: headerGridLayout
@@ -111,15 +111,15 @@ Page {
                 id: fileIcon
 
                 Layout.rowSpan: headerGridLayout.rows
-                Layout.preferredWidth: Style.trayListItemIconSize
-                Layout.leftMargin: root.intendedPadding
+                Layout.preferredWidth: Style.sesFileDetailsIconSize
+                Layout.leftMargin: Style.sesMediumMargin
                 Layout.fillHeight: true
 
                 verticalAlignment: Image.AlignVCenter
                 horizontalAlignment: Image.AlignHCenter
                 source: root.fileDetails.iconUrl
-                sourceSize.width: Style.trayListItemIconSize
-                sourceSize.height: Style.trayListItemIconSize
+                sourceSize.width: Style.sesFileDetailsIconSize
+                sourceSize.height: Style.sesFileDetailsIconSize
                 fillMode: Image.PreserveAspectFit
             }
 
@@ -127,7 +127,7 @@ Page {
                 id: fileNameLabel
 
                 Layout.fillWidth: true
-                Layout.rightMargin: headerGridLayout.textRightMargin
+                Layout.rightMargin: Style.sesFileDetailsHeaderModifier
 
                 text: root.fileDetails.name
 
@@ -162,7 +162,7 @@ Page {
                 id: fileDetailsLabel
 
                 Layout.fillWidth: true
-                Layout.rightMargin: headerGridLayout.textRightMargin
+                Layout.rightMargin: Style.sesFileDetailsHeaderModifier
 
                 text: `${root.fileDetails.sizeString}, ${root.fileDetails.lastChangedString}`
 

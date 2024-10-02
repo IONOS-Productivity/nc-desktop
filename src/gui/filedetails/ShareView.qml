@@ -139,6 +139,7 @@ ColumnLayout {
         Layout.fillWidth: true
         Layout.leftMargin: root.horizontalPadding
         Layout.rightMargin: root.horizontalPadding
+        Layout.preferredHeight: Style.sesSearchFieldHeight
 
         visible: root.userGroupSharingPossible
         enabled: visible && !root.loading && !root.shareModel.isShareDisabledEncryptedFolder && !shareeSearchField.isShareeFetchOngoing
@@ -160,6 +161,7 @@ ColumnLayout {
         Layout.fillHeight: true
         Layout.leftMargin: root.horizontalPadding
         Layout.rightMargin: root.horizontalPadding
+        Layout.topMargin: Style.sesMediumMargin
 
         active: root.sharingPossible
 
@@ -242,7 +244,7 @@ ColumnLayout {
                     }
 
                     Rectangle{
-                        height: 24
+                        height: Style.sesMediumMargin
                         color: "transparent"
                         width: parent.width
                     }
