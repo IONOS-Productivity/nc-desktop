@@ -119,7 +119,7 @@ HeaderButton {
             Text {
                 anchors.horizontalCenter: openLocalFolderButtonIcon.horizontalCenter
                 anchors.top: openLocalFolderButtonIcon.bottom
-                anchors.topMargin: 2
+                anchors.topMargin: 5
                 text: root.text
                 font: root.font
                 color: Style.sesTrayFontColor

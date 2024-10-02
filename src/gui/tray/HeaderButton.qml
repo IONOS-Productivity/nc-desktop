@@ -34,13 +34,15 @@ Button {
     icon.height: Style.headerButtonIconSize
 
     Layout.alignment: Qt.AlignRight
-    Layout.preferredWidth:  Style.trayWindowHeaderHeight
-    Layout.preferredHeight: Style.trayWindowHeaderHeight
+    Layout.preferredWidth: Style.sesHeaderButtonWidth
+    Layout.preferredHeight: Style.sesHeaderButtonHeight
 
     property bool isHovered: root.hovered || root.visualFocus
     property bool isActive: root.pressed
 
     background: Rectangle {
+        width: Style.sesHeaderButtonWidth
+        height: Style.sesHeaderButtonHeight
         color: root.isActive ? Style.sesButtonPressed : root.isHovered ? Style.sesAccountMenuHover : "transparent"
         radius: Style.sesCornerRadius
     }
@@ -73,7 +75,7 @@ Button {
         Text {
             anchors.horizontalCenter: buttonIcon.horizontalCenter
             anchors.top: buttonIcon.bottom
-            anchors.topMargin: 2
+            anchors.topMargin: 5
             font: root.font
             text: root.text
             color: Style.sesTrayFontColor

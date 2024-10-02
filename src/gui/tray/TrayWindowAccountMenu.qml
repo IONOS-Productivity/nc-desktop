@@ -59,7 +59,7 @@ Button {
         x: (currentAccountButton.x + 2)
         y: (currentAccountButton.y + Style.trayWindowHeaderHeight + 2)
 
-        width: (Style.currentAccountButtonWidth - 2)
+        width: Style.sesAccountMenuWidth
         height: Math.min(implicitHeight, maxMenuHeight)
         closePolicy: Menu.CloseOnPressOutsideParent | Menu.CloseOnEscape
 
@@ -154,14 +154,14 @@ Button {
     RowLayout {
         id: accountControlRowLayout
 
-        height: Style.trayWindowHeaderHeight
-        width:  Style.currentAccountButtonWidth
+        height: Style.sesAccountButtonHeight
+        width:  Style.sesAccountButtonWidth
         spacing: 0
 
         Image {
             id: currentAccountAvatar
 
-            Layout.leftMargin: Style.sesAccountMenuButtonLeftMargin
+            Layout.leftMargin: Style.sesAccountButtonLeftMargin
             verticalAlignment: Qt.AlignCenter
             cache: false
             source: Style.sesAvatar
@@ -230,7 +230,7 @@ Button {
             EnforcedPlainTextLabel {
                 id: currentAccountUser
                 Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
-                width: Style.currentAccountLabelWidth
+                width: Style.sesAccountLabelWidth
                 text: UserModel.currentUser.name
                 elide: Text.ElideRight
                 color: Style.currentUserHeaderTextColor
@@ -270,7 +270,7 @@ Button {
             color: Style.currentUserHeaderTextColor
             width: source.width
             height: source.height
-            Layout.rightMargin: Style.sesAccountMenuButtonRightMargin
+            Layout.rightMargin: Style.sesAccountButtonRightMargin
             source: Image {
                 Layout.alignment: Qt.AlignRight
                 verticalAlignment: Qt.AlignCenter

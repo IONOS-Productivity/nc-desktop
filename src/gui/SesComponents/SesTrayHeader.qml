@@ -25,12 +25,12 @@ Rectangle {
         id: trayWindowHeaderLayout
 
         anchors.fill:   parent
-        anchors.leftMargin: 20
-        anchors.rightMargin: 20
+        anchors.leftMargin: Style.sesTrayHeaderMargin
+        anchors.rightMargin: Style.sesTrayHeaderMargin
 
         TrayWindowAccountMenu{
-            Layout.preferredWidth:  Style.currentAccountButtonWidth
-            Layout.preferredHeight: Style.trayWindowHeaderHeight
+            Layout.preferredWidth:  Style.sesAccountButtonWidth
+            Layout.preferredHeight: Style.sesAccountButtonHeight
         }
 
         HeaderButton {
@@ -42,13 +42,11 @@ Rectangle {
 
             text: qsTr("Website")
 
+            Layout.rightMargin: 2
+
             Accessible.role: Accessible.Button
             Accessible.name: qsTr("Open Nextcloud in browser")
             Accessible.onPressAction: trayWindowWebsiteButton.clicked()
-
-            Layout.alignment: Qt.AlignRight
-            Layout.preferredWidth:  Style.trayWindowHeaderHeight
-            Layout.preferredHeight: Style.trayWindowHeaderHeight
         }
 
         TrayFoldersMenuButton {
@@ -57,7 +55,6 @@ Rectangle {
             visible: currentUser.hasLocalFolder
             currentUser: UserModel.currentUser
 
-
             onClicked: openLocalFolderButton.userHasGroupFolders ? openLocalFolderButton.toggleMenuOpen() : UserModel.openCurrentAccountLocalFolder()
 
             onFolderEntryTriggered: isGroupFolder ? UserModel.openCurrentAccountFolderFromTrayInfo(fullFolderPath) : UserModel.openCurrentAccountLocalFolder()
@@ -65,10 +62,6 @@ Rectangle {
             Accessible.role: Accessible.Graphic
             Accessible.name: qsTr("Open local or group folders")
             Accessible.onPressAction: openLocalFolderButton.userHasGroupFolders ? openLocalFolderButton.toggleMenuOpen() : UserModel.openCurrentAccountLocalFolder()
-
-            Layout.alignment: Qt.AlignRight
-            Layout.preferredWidth:  Style.trayWindowHeaderHeight
-            Layout.preferredHeight: Style.trayWindowHeaderHeight
         }
     }
 }   // Rectangle trayWindowHeaderBackground

@@ -251,8 +251,6 @@ QtObject {
     property int sesHeaderLogoLeftMargin: variableSize(24)
     property int sesCornerRadius: 8
     property int sesHeaderTopMargin: variableSize(10)
-    property int sesAccountMenuButtonRightMargin: 33
-    property int sesAccountMenuButtonLeftMargin: 19
     property int sesSmallMargin: 8
     property int sesMediumMargin: 16
 
@@ -268,4 +266,16 @@ QtObject {
     property int sesIconSize: 24
     property int sesActivityItemDistanceToFrame: 24
     property int sesActivityItemWidthModifier: 26
+
+    //Tray Account Menu Values
+    property int sesAccountButtonWidth: 256
+    property int sesAccountButtonHeight: 68
+    property int sesAccountButtonRightMargin: 33
+    property int sesAccountButtonLeftMargin: 19
+    property int sesHeaderButtonWidth: 84
+    property int sesHeaderButtonHeight: 68
+    property int sesAccountMenuWidth: sesAccountButtonWidth - 8
+    property int sesAccountLabelWidth: 157
+    property int sesTrayHeaderMargin: 11
+    property int sesTrayWindowWidth: 464
 }
