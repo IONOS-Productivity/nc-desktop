@@ -36,7 +36,6 @@
 #include "ignorelisteditor.h"
 #include "common/utility.h"
 #include "logger.h"
-#include "ga4/datacollectionwrapper.h"
 
 #include "legalnotice.h"
 
@@ -159,12 +158,6 @@ GeneralSettings::GeneralSettings(QWidget *parent)
         this, &GeneralSettings::slotToggleOptionalServerNotifications);
     _ui->serverNotificationsCheckBox->setToolTip(tr("Server notifications that require attention."));
 
-    connect(_ui->serverNotificationsCheckBox, &QAbstractButton::clicked, this, [](){
-        DataCollectionWrapper dcw;
-        dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
-        , DataCollectionWrapper::TrackingElement::ServerNotifications);
-     });
-
 
     connect(_ui->callNotificationsCheckBox, &QAbstractButton::toggled,
         this, &GeneralSettings::slotToggleCallNotifications);
@@ -186,11 +179,6 @@ GeneralSettings::GeneralSettings(QWidget *parent)
     } else {
         connect(_ui->autostartCheckBox, &QAbstractButton::toggled, this, &GeneralSettings::slotToggleLaunchOnStartup);
         _ui->autostartCheckBox->setChecked(ConfigFile().launchOnSystemStartup());
-        connect(_ui->autostartCheckBox, &QAbstractButton::clicked, this, [](){
-            DataCollectionWrapper dcw;
-            dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
-            , DataCollectionWrapper::TrackingElement::AutoStart);
-        });
     }
 
     // setup about section
@@ -253,48 +241,64 @@ GeneralSettings::GeneralSettings(QWidget *parent)
 
     // accountAdded means the wizard was finished and the wizard might change some options.
     connect(AccountManager::instance(), &AccountManager::accountAdded, this, &GeneralSettings::loadMiscSettings);
-
     connect(_ui->moreInfoLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenMoreInformationLink);
-    connect(_ui->moreInfoLinkButton, &OCC::LinkButton::clicked, this, [](){
-        DataCollectionWrapper dcw;
-        dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
-        , DataCollectionWrapper::TrackingElement::MoreInformation);
-     });
-
     connect(_ui->legalNoticeLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenLegalNoticeLink);
-    connect(_ui->legalNoticeLinkButton, &OCC::LinkButton::clicked, this, [](){
-        DataCollectionWrapper dcw;
-        dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
-        , DataCollectionWrapper::TrackingElement::LegalNotice);
-     });
-
     connect(_ui->openSourceLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenOpenSourceLink);
-    connect(_ui->openSourceLinkButton, &OCC::LinkButton::clicked, this, [](){
-        DataCollectionWrapper dcw;
-        dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
-        , DataCollectionWrapper::TrackingElement::OpenSourceComponents);
-     });
-
     connect(_ui->privacyLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenPrivacyLink);
-    connect(_ui->privacyLinkButton, &OCC::LinkButton::clicked, this, [](){
-        DataCollectionWrapper dcw;
-        dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
-            , DataCollectionWrapper::TrackingElement::PrivacyPolicy);
-     });
-
     connect(_ui->sendData_checkbox, &QAbstractButton::toggled, this, &GeneralSettings::slotToggleSendData);
-    connect(_ui->sendData_checkbox, &QAbstractButton::clicked, this, [](){
-        DataCollectionWrapper dcw;
-        dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
-        , DataCollectionWrapper::TrackingElement::ToogleSendData);
-    });
 
+    connectToTracking();
     customizeStyle();
 }
 
 GeneralSettings::~GeneralSettings()
 {
     delete _ui;
+}
+
+void GeneralSettings::connectToTracking()
+{
+    // DataCollectionWrapper dcw;
+
+    connect(_ui->autoCheckForUpdatesCheckBox, &QAbstractButton::clicked, this, [this](){
+        _dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
+        , DataCollectionWrapper::TrackingElement::AutoCheckforUpdate);
+    });
+
+    connect(_ui->autostartCheckBox, &QAbstractButton::clicked, this, [this](){
+        _dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
+        , DataCollectionWrapper::TrackingElement::AutoStart);
+    });
+
+    connect(_ui->serverNotificationsCheckBox, &QAbstractButton::clicked, this, [this](){
+        _dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
+        , DataCollectionWrapper::TrackingElement::ServerNotifications);
+     });
+
+    connect(_ui->moreInfoLinkButton, &OCC::LinkButton::clicked, this, [this](){
+        _dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
+        , DataCollectionWrapper::TrackingElement::MoreInformation);
+     });
+
+    connect(_ui->legalNoticeLinkButton, &OCC::LinkButton::clicked, this, [this](){
+        _dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
+        , DataCollectionWrapper::TrackingElement::LegalNotice);
+     });
+
+    connect(_ui->openSourceLinkButton, &OCC::LinkButton::clicked, this, [this](){
+        _dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
+        , DataCollectionWrapper::TrackingElement::OpenSourceComponents);
+     });
+
+    connect(_ui->privacyLinkButton, &OCC::LinkButton::clicked, this, [this](){
+        _dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
+            , DataCollectionWrapper::TrackingElement::PrivacyPolicy);
+     });
+
+    connect(_ui->sendData_checkbox, &QAbstractButton::clicked, this, [this](){
+        _dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings,
+                    DataCollectionWrapper::TrackingElement::ToogleSendData);
+    });
 }
 
 void GeneralSettings::slotOpenMoreInformationLink()
@@ -371,11 +375,6 @@ void GeneralSettings::slotUpdateInfo()
         connect(_ui->autoCheckForUpdatesCheckBox, &QAbstractButton::toggled, this,
                 &GeneralSettings::slotToggleAutoUpdateCheck, Qt::UniqueConnection);
         _ui->autoCheckForUpdatesCheckBox->setChecked(ConfigFile().autoUpdateCheck());
-        connect(_ui->autoCheckForUpdatesCheckBox, &QAbstractButton::clicked, this, [](){
-            DataCollectionWrapper dcw;
-            dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
-            , DataCollectionWrapper::TrackingElement::AutoCheckforUpdate);
-        });
     }
 
     // Note: the sparkle-updater is not an OCUpdater
