@@ -105,6 +105,7 @@ AbstractButton {
             id: userMoreButton
             Layout.preferredWidth: Style.headerButtonIconSize
             Layout.preferredHeight: Layout.preferredWidth
+            Layout.rightMargin: Style.sesMediumMargin
             flat: true
 
             property bool isHovered: userMoreButton.hovered || userMoreButton.visualFocus
