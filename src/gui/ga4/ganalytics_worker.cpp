@@ -241,13 +241,14 @@ void GAnalyticsWorker::postMessage()
         networkManager->setProxy(*proxy);
     }
 
-    char message[256];
+    char message[512];
     QByteArray requestString = m_request.rawHeaderList().join("\r\n").append("\r\n\r\n") + requestJSon;
     snprintf(message, sizeof(message), "%s\n", requestString.constData());
     logMessage(GAnalytics::Debug, message);
 
-    snprintf(message, sizeof(message), "%s\n", requestUrl.toString().toStdString().c_str());
-    logMessage(GAnalytics::Debug, message);
+    char message2[256];
+    snprintf(message2, sizeof(message2), "%s\n", requestUrl.toString().toStdString().c_str());
+    logMessage(GAnalytics::Debug, message2);
 
     QNetworkReply *reply = networkManager->post(m_request, requestJSon);
     connect(reply, SIGNAL(finished()), this, SLOT(postMessageFinished()));
