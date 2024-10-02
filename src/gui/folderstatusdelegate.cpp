@@ -140,7 +140,7 @@ void FolderStatusDelegate::drawAddButton(QPainter *painter, const QStyleOptionVi
 
     auto iconBox = option.rect;
     iconBox.setTop(iconBox.top() + baseDistanceForCalculus);
-    iconBox.setBottom(iconBox.top() + 2 * baseDistanceForCalculus + distanceToSubline);
+    iconBox.setBottom(iconBox.top() + IonosTheme::treeViewIconSize());
     iconBox.setLeft(iconBox.left() + baseDistanceForCalculus);
     iconBox.setWidth(iconBox.height());
 
@@ -234,7 +234,7 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     localPathRect.setTop(remotePathRect.bottom() + margin);
     localPathRect.setBottom(localPathRect.top() + subFm.height());
 
-    iconRect.setBottom(remotePathRect.top());
+    iconRect.setBottom(iconRect.top() + IonosTheme::treeViewIconSize());
     iconRect.setWidth(iconRect.height());
 
     const auto nextToIcon = iconRect.right() + aliasMargin;

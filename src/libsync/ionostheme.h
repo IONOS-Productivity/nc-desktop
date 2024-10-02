@@ -43,6 +43,10 @@ public:
         return QStringLiteral("qrc:///client/theme/ses/ses-refresh.svg");
     }
 
+    static int treeViewIconSize() {
+        return 32;
+    }
+
     //Control Configuration: Sizes
     static QString toolbarActionBorderRadius() {
         return "8px";
