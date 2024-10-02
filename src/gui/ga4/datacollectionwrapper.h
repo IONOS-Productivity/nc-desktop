@@ -26,7 +26,14 @@ public:
     };
 
     enum TrackingElement{
-        PrivacyPolicy
+        PrivacyPolicy,
+        OpenSourceComponents,
+        LegalNotice,
+        MoreInformation,
+        ServerNotifications,
+        AutoStart,
+        ToogleSendData,
+        AutoCheckforUpdate
     };
 
     DataCollectionWrapper(QObject *parent = 0);;
@@ -46,6 +53,13 @@ private:
 
     std::map<TrackingElement, QString> _trackingElementString = { 
         { PrivacyPolicy, "PrivacyPolicy" },
+        { OpenSourceComponents, "OpenSourceComponents" },
+        { LegalNotice, "LegalNotice" },
+        { MoreInformation, "MoreInformation" },
+        { ServerNotifications, "ServerNotifications" },
+        { AutoStart, "AutoStart" },
+        { ToogleSendData, "ToogleSendData" },
+        { AutoCheckforUpdate, "AutoCheckforUpdate" },
     }; 
 
     std::map<TrackingEvent, QString> _trackingEventString = { 
