@@ -248,7 +248,7 @@ GeneralSettings::GeneralSettings(QWidget *parent)
     connect(_ui->privacyLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenPrivacyLink);
     connect(_ui->privacyLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotClicked);
 
-    connect(_ui->sendData_checkbox, &QAbstractButton::toggled, this, &GeneralSettings::slotToggleOptionalServerNotifications);
+    connect(_ui->sendData_checkbox, &QAbstractButton::toggled, this, &GeneralSettings::slotToggleSendData);
 
     customizeStyle();
 }
