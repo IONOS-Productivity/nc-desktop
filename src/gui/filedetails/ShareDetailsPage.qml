@@ -284,8 +284,8 @@ Page {
 
             readonly property int rowIconWidth: Style.smallIconSize
             readonly property int indicatorItemWidth: 20
-            readonly property int indicatorSpacing: Style.standardSpacing
-            readonly property int itemPadding: Style.smallSpacing
+            readonly property int indicatorSpacing: Style.sesSmallMargin
+            readonly property int itemPadding: Style.sesSmallMargin
 
             width: parent.width
 
@@ -453,7 +453,13 @@ Page {
                     root.waitingForExpireDateEnabledChange = true;
                 }
 
-                NCBusyIndicator {
+                // NCBusyIndicator {
+                //     anchors.fill: parent
+                //     visible: root.waitingForExpireDateEnabledChange
+                //     running: visible
+                //     z: 1
+                // }
+
                     anchors.fill: parent
                     visible: root.waitingForExpireDateEnabledChange
                     running: visible
