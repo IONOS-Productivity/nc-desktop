@@ -18,7 +18,7 @@
 	
 	"DebugLog": {
 		"scope": "cpp",
-		"prefix": "log",
+		"prefix": "dlog",
 		"body": [
 				"char buffer$1[256];",
 				"sprintf(buffer$1, \"$2\\n\", $3);",
