@@ -9,7 +9,7 @@ QIcon SesFileIconProvider::icon(QFileInfo fileInfo)
 
     if (fileInfo.isDir())
     {
-        return QIcon(":/client/theme/ses/ses-filesIcon.svg");
+        return QIcon(":/client/theme/ses/ses-filesIconBright.svg");
     }
 
     if (fileInfo.suffix().isEmpty())
