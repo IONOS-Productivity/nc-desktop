@@ -317,14 +317,6 @@ void GeneralSettings::slotOpenPrivacyLink()
     QDesktopServices::openUrl(QUrl("https://wl.hidrive.com/easy/0005/"));
 }
 
-void GeneralSettings::slotClicked()
-{
-    DataCollectionWrapper dcw;
-    dcw.clicked(
-        DataCollectionWrapper::TrackingPage::GeneralSettings
-        , DataCollectionWrapper::TrackingElement::PrivacyPolicy);
-}
-
 QSize GeneralSettings::sizeHint() const
 {
     return {
