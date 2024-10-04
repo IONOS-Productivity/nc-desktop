@@ -690,15 +690,15 @@ FolderWizardSelectiveSync::FolderWizardSelectiveSync(const AccountPtr &account)
         });
         _virtualFilesCheckBox->setChecked(bestAvailableVfsMode() == Vfs::WindowsCfApi);
         layout->addWidget(_virtualFilesCheckBox);
+
+        _virtualFilesCheckBox->setStyleSheet(IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight(),
+            IonosTheme::titleColor()));
     }
 
     _selectiveSync->setStyleSheet(IonosTheme::fontConfigurationCss(
-        IonosTheme::settingsFont(),
-        IonosTheme::settingsTextSize(),
-        IonosTheme::settingsTextWeight(),
-        IonosTheme::titleColor()));
-
-    _virtualFilesCheckBox->setStyleSheet(IonosTheme::fontConfigurationCss(
         IonosTheme::settingsFont(),
         IonosTheme::settingsTextSize(),
         IonosTheme::settingsTextWeight(),
