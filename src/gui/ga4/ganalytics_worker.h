@@ -70,6 +70,49 @@ public slots:
 private:
     void prepareQuery(QUrlQuery& query, const QString& enValue, const QString& screenNameValue);
 
+    enum GA4
+    {
+        Version,
+        MeasurementID,
+        ClientID,
+        SessionID,
+        SessionSequence,
+        SessionCount,
+        UserID,
+        Language,
+        ScreenResolution,
+        AgentArch,
+        AgentMobileBrand,
+        AgentPlatform,
+        AgentPlatformVersion,
+        Event,
+        ScreenName,
+        AppName,
+        AppVersion,
+        EngagementTime,
+    };
+
+    std::map<GA4, QString> _ga4 = { 
+        { Version, "v" }, 
+        { MeasurementID, "tid" }, 
+        { ClientID, "cid" },
+        { SessionID, "sid" },
+        { SessionSequence, "_s" },
+        { SessionCount, "sct" },
+        { UserID, "uid" },
+        { Language, "ul" },
+        { ScreenResolution, "sr" },
+        { AgentArch, "ua" },
+        { AgentMobileBrand, "uamb" },
+        { AgentPlatform, "uap" },
+        { AgentPlatformVersion, "uapv" },
+        { Event, "en" },
+        { ScreenName, "ep.screen_name" },
+        { AppName, "ep.app_name" },
+        { AppVersion, "ep.software_version" },
+        { EngagementTime, "_et" },
+    }; 
+
     friend class GAnalytics;
 };
 

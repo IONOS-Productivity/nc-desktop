@@ -181,7 +181,6 @@ void GAnalyticsWorker::postMessage()
     QUrlQuery query;
     prepareQuery(query, buffer.enValue, buffer.screenNameValue);
 
-    query.addQueryItem("_et", "100");
 
     requestUrl.setQuery(query);
 
@@ -211,48 +210,34 @@ void GAnalyticsWorker::postMessage()
 
 void GAnalyticsWorker::prepareQuery(QUrlQuery& query, const QString& enValue, const QString& screenNameValue){
     
-    query.addQueryItem("v", "2");    
-    query.addQueryItem("tid", m_measurementId);      
-    // query.addQueryItem("api_secret", m_apiSecret);    
-    query.addQueryItem("cid", m_clientID);
-    // query.addQueryItem("dl", QUrl::toPercentEncoding("https://www.easystorage.de/"));
+    query.addQueryItem(_ga4[GA4::Version], "2");    
+    query.addQueryItem(_ga4[GA4::MeasurementID], m_measurementId);      
+    query.addQueryItem(_ga4[GA4::ClientID], m_clientID);
 
-    //Session id 
-    query.addQueryItem("sid", "1");
-    //Session sequence number 
-    query.addQueryItem("_s", "1");
-    //Session count
-    query.addQueryItem("sct", "1");
-    //user id
-    query.addQueryItem("uid", m_userID);
-    //Title variable  TODO
-    query.addQueryItem("dt", QUrl::toPercentEncoding(m_appName));
-    //language
-    query.addQueryItem("ul", m_language);
-    //screen resolution
-    query.addQueryItem("sr", m_screenResolution);
-    //User Agent Architecture
-    query.addQueryItem("ua", "x86_64");
-    //User Agent Mobile Brand
-    query.addQueryItem("uamb", "0");
-    //User Agent Mobile Brand
+    query.addQueryItem(_ga4[GA4::SessionID], "1");
+    query.addQueryItem(_ga4[GA4::SessionSequence], "1");
+    query.addQueryItem(_ga4[GA4::SessionCount], "1");
+    query.addQueryItem(_ga4[GA4::UserID], m_userID);
+    query.addQueryItem(_ga4[GA4::Language], m_language);
+    query.addQueryItem(_ga4[GA4::ScreenResolution], m_screenResolution);
+    query.addQueryItem(_ga4[GA4::AgentArch], "x86_64");
+    query.addQueryItem(_ga4[GA4::AgentMobileBrand], "0");
     #ifdef Q_OS_WIN
-        query.addQueryItem("uap", "Windows");
+        query.addQueryItem(_ga4[GA4::AgentPlatform], "Windows");
     #endif
     #ifdef Q_OS_LINUX
-        query.addQueryItem("uap", "Linux");
+        query.addQueryItem(_ga4[GA4::AgentPlatform], "Linux");
     #endif
     #ifdef Q_OS_MAC
-        query.addQueryItem("uap", "MacOS");
+        query.addQueryItem(_ga4[GA4::AgentPlatform], "MacOS");
     #endif
-    // User AGent Platform Version OS Version TODO
-    query.addQueryItem("uapv", "10");
+    query.addQueryItem(_ga4[GA4::AgentPlatformVersion], "10");
+    query.addQueryItem(_ga4[GA4::EngagementTime], "100");
 
-    query.addQueryItem("en", enValue);
-    query.addQueryItem("ep.screen_name", screenNameValue);
-    query.addQueryItem("ep.app_name", QUrl::toPercentEncoding(m_appName));
-    query.addQueryItem("ep.software_version", m_appVersion);
-    // query.addQueryItem("ep.windows_version", "Microsoft+Windows+NT+10.0.19045.0");
+    query.addQueryItem(_ga4[GA4::Event], enValue);
+    query.addQueryItem(_ga4[GA4::ScreenName], screenNameValue);
+    query.addQueryItem(_ga4[GA4::AppName], QUrl::toPercentEncoding(m_appName));
+    query.addQueryItem(_ga4[GA4::AppVersion], m_appVersion);
 }
 
 
