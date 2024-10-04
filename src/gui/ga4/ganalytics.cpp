@@ -149,35 +149,6 @@ QNetworkAccessManager *GAnalytics::networkAccessManager() const
 void GAnalytics::sendEvent(const QString &eventName, const QString &page, const QString &element)
 {
 	QJsonObject root;
-	root["client_id"] = d->m_clientID;
-
-    //https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#payload_consent
-	QJsonObject consent;
-    consent["ad_user_data"] = "DENIED";
-    consent["ad_personalization"] = "DENIED";
-	root["consent"] = consent;
-
-	QJsonObject event;
-    event["name"] = eventName;
-
-	QJsonObject eventParams;
-	if (!page.isEmpty()) {
-	    eventParams["screen_name"] = page;
-    }
-    if (!element.isEmpty()) {
-	    eventParams["trackelement"] = element;
-    }
-
-    // In order for user activity to display in standard reports like Realtime, engagement_time_msec and session_id must be supplied as part of the params for an event.
-    // https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=gtag#optional_parameters_for_reports
-    eventParams["engagement_time_msec"] = 100;
-    eventParams["session_id"] = d->m_clientID;
-
-	event["params"] = eventParams;
-
-	QJsonArray eventArray;
-	eventArray.append(event);
-	root["events"] = eventArray;
 
     d->enqueQueryWithCurrentTime(root);
 }

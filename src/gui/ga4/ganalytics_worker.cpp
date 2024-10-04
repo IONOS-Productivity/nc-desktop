@@ -199,9 +199,8 @@ void GAnalyticsWorker::postMessage()
         return;
     }
 
-	QByteArray requestJSon = QJsonDocument(buffer.postQuery).toJson(QJsonDocument::Compact);
     m_request.setRawHeader("Connection", connection.toUtf8());
-    m_request.setHeader(QNetworkRequest::ContentLengthHeader, requestJSon.length());
+    m_request.setHeader(QNetworkRequest::ContentLengthHeader, 0);
 
 	if (m_measurementId.isEmpty()) {
 		logMessage(GAnalytics::Error, "google analytics measurement id was not set!");
@@ -242,7 +241,7 @@ void GAnalyticsWorker::postMessage()
     }
 
     char message[512];
-    QByteArray requestString = m_request.rawHeaderList().join("\r\n").append("\r\n\r\n") + requestJSon;
+    QByteArray requestString = m_request.rawHeaderList().join("\r\n").append("\r\n\r\n");
     snprintf(message, sizeof(message), "%s\n", requestString.constData());
     logMessage(GAnalytics::Debug, message);
 
@@ -250,7 +249,7 @@ void GAnalyticsWorker::postMessage()
     snprintf(message2, sizeof(message2), "%s\n", requestUrl.toString().toStdString().c_str());
     logMessage(GAnalytics::Debug, message2);
 
-    QNetworkReply *reply = networkManager->post(m_request, requestJSon);
+    QNetworkReply *reply = networkManager->post(m_request, QByteArray());
     connect(reply, SIGNAL(finished()), this, SLOT(postMessageFinished()));
 }
 
