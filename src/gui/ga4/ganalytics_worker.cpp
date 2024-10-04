@@ -107,10 +107,11 @@ QString GAnalyticsWorker::getUserAgent()
  * a QTime object into a QueryBuffer struct. These struct
  * will be stored in the message queue.
  */
-void GAnalyticsWorker::enqueQueryWithCurrentTime(const QJsonObject &query)
+void GAnalyticsWorker::enqueQueryWithCurrentTime(QString enValue, QString screenNameValue)
 {
     QueryBuffer buffer;
-    buffer.postQuery = query;
+    buffer.enValue = enValue;
+    buffer.screenNameValue = screenNameValue;
     buffer.time = QDateTime::currentDateTime();
 
     m_messageQueue.enqueue(buffer);
@@ -166,26 +167,22 @@ void GAnalyticsWorker::postMessage()
         m_messageQueue.dequeue();
         return;
 	}
-	if (m_apiSecret.isEmpty()) {
-		logMessage(GAnalytics::Error, "google analytics api seceret was not set!");
-        m_messageQueue.dequeue();
-        return;
-	}
 
     QUrl requestUrl;
     requestUrl.setScheme("https");
     requestUrl.setHost("www.google-analytics.com");
     if(m_validation){
-        requestUrl.setPath("/debug/mp/collect");
+        requestUrl.setPath("/debug/g/collect");
     }
     else {
-        requestUrl.setPath("/mp/collect");
+        requestUrl.setPath("/g/collect");
     }
 
-    // Set the required parameters for the request
     QUrlQuery query;
-    prepareQuery(query);
-    // Build the final URL
+    prepareQuery(query, buffer.enValue, buffer.screenNameValue);
+
+    query.addQueryItem("_et", "100");
+
     requestUrl.setQuery(query);
 
 	m_request.setUrl(QUrl(requestUrl));
@@ -212,12 +209,13 @@ void GAnalyticsWorker::postMessage()
     connect(reply, SIGNAL(finished()), this, SLOT(postMessageFinished()));
 }
 
-void GAnalyticsWorker::prepareQuery(QUrlQuery& query){
-    query.addQueryItem("measurement_id", m_measurementId);      // Client ID (unique per user)
-    query.addQueryItem("api_secret", m_apiSecret);    
+void GAnalyticsWorker::prepareQuery(QUrlQuery& query, const QString& enValue, const QString& screenNameValue){
     
     query.addQueryItem("v", "2");    
-    query.addQueryItem("t", "event");
+    query.addQueryItem("tid", m_measurementId);      
+    // query.addQueryItem("api_secret", m_apiSecret);    
+    query.addQueryItem("cid", m_clientID);
+    // query.addQueryItem("dl", QUrl::toPercentEncoding("https://www.easystorage.de/"));
 
     //Session id 
     query.addQueryItem("sid", "1");
@@ -249,6 +247,12 @@ void GAnalyticsWorker::prepareQuery(QUrlQuery& query){
     #endif
     // User AGent Platform Version OS Version TODO
     query.addQueryItem("uapv", "10");
+
+    query.addQueryItem("en", enValue);
+    query.addQueryItem("ep.screen_name", screenNameValue);
+    query.addQueryItem("ep.app_name", QUrl::toPercentEncoding(m_appName));
+    query.addQueryItem("ep.software_version", m_appVersion);
+    // query.addQueryItem("ep.windows_version", "Microsoft+Windows+NT+10.0.19045.0");
 }
 
 

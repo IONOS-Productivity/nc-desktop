@@ -44,7 +44,7 @@ public slots:
 	void clicked(const TrackingPage trackingPage, const TrackingElement trackingButton);
 	void opened(const TrackingPage trackingPage);
 private:
-    void trackEvent(QString event, QString page = QString(), QString element = QString());
+    void trackEvent(QString page = QString(), QString element = QString());
 
     std::map<TrackingPage, QString> _trackingPageString = { 
         { GeneralSettings, "GeneralSetting" }, 

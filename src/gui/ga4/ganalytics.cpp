@@ -146,11 +146,9 @@ QNetworkAccessManager *GAnalytics::networkAccessManager() const
  * A query for a POST message will be created to report this event. The
  * created query will be stored in a message queue.
  */
-void GAnalytics::sendEvent(const QString &eventName, const QString &page, const QString &element)
+void GAnalytics::sendEvent(const QString &page, const QString &element)
 {
-	QJsonObject root;
-
-    d->enqueQueryWithCurrentTime(root);
+    d->enqueQueryWithCurrentTime(element, page);
 }
 
 /**

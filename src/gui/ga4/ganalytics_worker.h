@@ -12,7 +12,8 @@
 
 struct QueryBuffer
 {
-    QJsonObject postQuery;
+    QString enValue;
+    QString screenNameValue;
     QDateTime time;
 };
 
@@ -58,7 +59,7 @@ public:
     QString getScreenResolution();
     QString getUserAgent();
 
-    void enqueQueryWithCurrentTime(const QJsonObject &query);
+    void enqueQueryWithCurrentTime(QString enValue, QString screenNameValue);
     void setIsSending(bool doSend);
     void enable(bool state);
 
@@ -67,7 +68,7 @@ public slots:
     void postMessageFinished();
 
 private:
-    void prepareQuery(QUrlQuery& query);
+    void prepareQuery(QUrlQuery& query, const QString& enValue, const QString& screenNameValue);
 
     friend class GAnalytics;
 };

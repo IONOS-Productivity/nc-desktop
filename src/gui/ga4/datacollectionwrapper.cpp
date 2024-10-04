@@ -7,7 +7,7 @@ DataCollectionWrapper::~DataCollectionWrapper() {
 }
 
 void DataCollectionWrapper::clicked(const TrackingPage trackingPage, const TrackingElement trackingButton){
-    trackEvent(_trackingEventString[TrackingEvent::Click], _trackingPageString[trackingPage], _trackingElementString[trackingButton]);
+    trackEvent( _trackingPageString[trackingPage], _trackingElementString[trackingButton]);
 }
 
 void DataCollectionWrapper::opened(const TrackingPage trackingPage){
@@ -15,9 +15,9 @@ void DataCollectionWrapper::opened(const TrackingPage trackingPage){
 }
 
 void DataCollectionWrapper::login(){
-    trackEvent(_trackingEventString[TrackingEvent::Login]);
+    trackEvent(QString(), _trackingEventString[TrackingEvent::Login]);
 }
 
-void DataCollectionWrapper::trackEvent(QString event, QString page, QString element) {
-    GAnalytics::getInstance().sendEvent(event, page, element);
+void DataCollectionWrapper::trackEvent(QString page, QString element) {
+    GAnalytics::getInstance().sendEvent(page, element);
 }
