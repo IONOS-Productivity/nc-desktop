@@ -38,6 +38,8 @@
 #include "pushnotifications.h"
 #include "shellextensionsserver.h"
 
+#include "ga4/datacollectionwrapper.h"
+
 #if defined(BUILD_UPDATER)
 #include "updater/ocupdater.h"
 #endif
@@ -371,6 +373,11 @@ Application::Application(int &argc, char **argv)
         this, &Application::slotAccountStateAdded);
     connect(AccountManager::instance(), &AccountManager::accountRemoved,
         this, &Application::slotAccountStateRemoved);
+
+    if(!AccountManager::instance()->accounts().isEmpty()) {
+        startTracking();
+    }
+
     const auto accounts = AccountManager::instance()->accounts();
     for (const auto &ai : accounts) {
         slotAccountStateAdded(ai.data());
@@ -434,6 +441,17 @@ Application::~Application()
     disconnect(AccountManager::instance(), &AccountManager::accountRemoved,
         this, &Application::slotAccountStateRemoved);
     AccountManager::instance()->shutdown();
+}
+
+void Application::startTracking()
+{
+    DataCollectionWrapper dcw;
+
+    QByteArray byteArray = AccountManager::instance()->accounts().first()->account()->credentials()->user().toUtf8();  // Convert the input string to a byte array
+    QByteArray hash = QCryptographicHash::hash(byteArray, QCryptographicHash::Sha256);  // Perform the hash
+    
+    dcw.setClientID(hash.toHex());
+    dcw.login();   
 }
 
 void Application::setupAccountsAndFolders()
@@ -648,6 +666,8 @@ void Application::slotownCloudWizardDone(int res)
         Utility::setLaunchOnStartup(_theme->appName(), _theme->appNameGUI(), true);
 
         Systray::instance()->showWindow();
+
+        startTracking();
     }
 }
 

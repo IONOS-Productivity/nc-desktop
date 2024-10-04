@@ -204,13 +204,11 @@ int main(int argc, char **argv)
     }
 
     GAnalytics* ga = &GAnalytics::getInstance();
-
-    ga->setClientID(clientID);
     ga->setMeasurementId(GA_MEASUREMENT_ID);
     ga->enable(true);
     ga->setSendInterval(3000);
     ga->setLogLevel(GAnalytics::Debug);
-    ga->enableValidation(true);
+    ga->enableValidation(false);
 
     return app.exec();
 }

@@ -138,7 +138,7 @@ protected slots:
 
 private:
     void setHelp();
-
+    void startTracking();
     void handleEditLocallyFromOptions();
 
     AccountManager::AccountsRestoreResult restoreLegacyAccount();

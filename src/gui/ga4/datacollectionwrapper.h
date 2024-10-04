@@ -36,6 +36,8 @@ public:
         AutoCheckforUpdate
     };
 
+    void setClientID(const QString clientId);
+
     DataCollectionWrapper(QObject *parent = 0);;
     ~DataCollectionWrapper();
 

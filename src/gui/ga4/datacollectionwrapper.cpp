@@ -21,3 +21,7 @@ void DataCollectionWrapper::login(){
 void DataCollectionWrapper::trackEvent(QString page, QString element) {
     GAnalytics::getInstance().sendEvent(page, element);
 }
+
+void DataCollectionWrapper::setClientID(const QString clientId) {
+    GAnalytics::getInstance().setClientID(clientId);
+}
