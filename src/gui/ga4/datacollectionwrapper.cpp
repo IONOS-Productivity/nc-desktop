@@ -18,8 +18,17 @@ void DataCollectionWrapper::login(){
     trackEvent(QString(), _trackingEventString[TrackingEvent::Login]);
 }
 
+void DataCollectionWrapper::accountRemoved(){
+    trackEventImmediately(QString(), _trackingEventString[TrackingEvent::Logout]);
+}
+
 void DataCollectionWrapper::trackEvent(QString page, QString element) {
     GAnalytics::getInstance().sendEvent(page, element);
+}
+
+void DataCollectionWrapper::trackEventImmediately(QString page, QString element)
+{
+    GAnalytics::getInstance().sendEventImmediatley(page, element);
 }
 
 void DataCollectionWrapper::setClientID(const QString clientId) {

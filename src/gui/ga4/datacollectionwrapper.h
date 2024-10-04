@@ -17,7 +17,8 @@ public:
     {
         Click,
         Open,
-        Login
+        Login,
+        Logout,
     };
 
     enum TrackingPage{
@@ -43,10 +44,12 @@ public:
 
 public slots:
 	void login();
+	void accountRemoved();
 	void clicked(const TrackingPage trackingPage, const TrackingElement trackingButton);
 	void opened(const TrackingPage trackingPage);
 private:
     void trackEvent(QString page = QString(), QString element = QString());
+    void trackEventImmediately(QString page = QString(), QString element = QString());
 
     std::map<TrackingPage, QString> _trackingPageString = { 
         { GeneralSettings, "GeneralSetting" }, 
@@ -68,6 +71,7 @@ private:
         { Click, "click" }, 
         { Open, "screen_view" }, 
         { Login, "login" },
+        { Logout, "logout" },
     }; 
 };
 

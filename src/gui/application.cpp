@@ -374,10 +374,6 @@ Application::Application(int &argc, char **argv)
     connect(AccountManager::instance(), &AccountManager::accountRemoved,
         this, &Application::slotAccountStateRemoved);
 
-    if(!AccountManager::instance()->accounts().isEmpty()) {
-        startTracking();
-    }
-
     const auto accounts = AccountManager::instance()->accounts();
     for (const auto &ai : accounts) {
         slotAccountStateAdded(ai.data());
@@ -452,6 +448,13 @@ void Application::startTracking()
     
     dcw.setClientID(hash.toHex());
     dcw.login();   
+}
+
+void Application::stopTracking()
+{
+    DataCollectionWrapper dcw;
+    dcw.accountRemoved();
+    dcw.setClientID(QString());
 }
 
 void Application::setupAccountsAndFolders()
@@ -592,6 +595,14 @@ void Application::slotAccountStateRemoved(AccountState *accountState)
             _folderManager.data(), &FolderMan::slotServerVersionChanged);
     }
 
+    if(AccountManager::instance()->accounts().isEmpty()) {
+        stopTracking();
+    }
+    else 
+    {
+        startTracking();
+    }
+
     // if there is no more account, show the wizard.
     if (_gui && AccountManager::instance()->accounts().isEmpty()) {
         // allow to add a new account if there is non any more. Always think
@@ -610,6 +621,8 @@ void Application::slotAccountStateAdded(AccountState *accountState)
         _folderManager.data(), &FolderMan::slotAccountStateChanged);
     connect(accountState->account().data(), &Account::serverVersionChanged,
         _folderManager.data(), &FolderMan::slotServerVersionChanged);
+
+    startTracking();
 
     _gui->slotTrayMessageIfServerUnsupported(accountState->account().data());
 }
@@ -666,8 +679,6 @@ void Application::slotownCloudWizardDone(int res)
         Utility::setLaunchOnStartup(_theme->appName(), _theme->appNameGUI(), true);
 
         Systray::instance()->showWindow();
-
-        startTracking();
     }
 }
 

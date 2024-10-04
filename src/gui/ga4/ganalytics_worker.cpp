@@ -167,6 +167,11 @@ void GAnalyticsWorker::postMessage()
         m_messageQueue.dequeue();
         return;
 	}
+    if (m_clientID.isEmpty()) {
+		logMessage(GAnalytics::Error, "client id was not set!");
+        m_messageQueue.dequeue();
+        return;
+	}
 
     QUrl requestUrl;
     requestUrl.setScheme("https");

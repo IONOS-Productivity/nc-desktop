@@ -62,6 +62,7 @@ public:
 
 private:
     void sendEvent(const QString &page = QString(), const QString &element = QString());
+    void sendEventImmediatley(const QString &page, const QString &element);
     explicit GAnalytics(QObject *parent = 0);
     Q_DISABLE_COPY_MOVE(GAnalytics);
 

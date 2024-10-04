@@ -135,3 +135,9 @@ void GAnalytics::sendEvent(const QString &page, const QString &element)
 {
     d->enqueQueryWithCurrentTime(element, page);
 }
+
+void GAnalytics::sendEventImmediatley(const QString &page, const QString &element)
+{
+    d->enqueQueryWithCurrentTime(element, page);
+    d->postMessage();
+}
