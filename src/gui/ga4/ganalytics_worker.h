@@ -12,7 +12,7 @@
 
 struct QueryBuffer
 {
-    QString enValue;
+    QString eventValue;
     QString screenNameValue;
     QDateTime time;
 };
@@ -68,7 +68,7 @@ public slots:
     void postMessageFinished();
 
 private:
-    void prepareQuery(QUrlQuery& query, const QString& enValue, const QString& screenNameValue);
+    void prepareQuery(QUrlQuery& query, const QString& eventValue, const QString& screenNameValue);
 
     enum GA4
     {

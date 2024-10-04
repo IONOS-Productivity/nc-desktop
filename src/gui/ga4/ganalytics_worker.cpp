@@ -107,10 +107,10 @@ QString GAnalyticsWorker::getUserAgent()
  * a QTime object into a QueryBuffer struct. These struct
  * will be stored in the message queue.
  */
-void GAnalyticsWorker::enqueQueryWithCurrentTime(QString enValue, QString screenNameValue)
+void GAnalyticsWorker::enqueQueryWithCurrentTime(QString eventValue, QString screenNameValue)
 {
     QueryBuffer buffer;
-    buffer.enValue = enValue;
+    buffer.eventValue = eventValue;
     buffer.screenNameValue = screenNameValue;
     buffer.time = QDateTime::currentDateTime();
 
@@ -179,8 +179,7 @@ void GAnalyticsWorker::postMessage()
     }
 
     QUrlQuery query;
-    prepareQuery(query, buffer.enValue, buffer.screenNameValue);
-
+    prepareQuery(query, buffer.eventValue, buffer.screenNameValue);
 
     requestUrl.setQuery(query);
 
@@ -208,7 +207,7 @@ void GAnalyticsWorker::postMessage()
     connect(reply, SIGNAL(finished()), this, SLOT(postMessageFinished()));
 }
 
-void GAnalyticsWorker::prepareQuery(QUrlQuery& query, const QString& enValue, const QString& screenNameValue){
+void GAnalyticsWorker::prepareQuery(QUrlQuery& query, const QString& eventValue, const QString& screenNameValue){
     
     query.addQueryItem(_ga4[GA4::Version], "2");    
     query.addQueryItem(_ga4[GA4::MeasurementID], m_measurementId);      
@@ -234,7 +233,7 @@ void GAnalyticsWorker::prepareQuery(QUrlQuery& query, const QString& enValue, co
     query.addQueryItem(_ga4[GA4::AgentPlatformVersion], "10");
     query.addQueryItem(_ga4[GA4::EngagementTime], "100");
 
-    query.addQueryItem(_ga4[GA4::Event], enValue);
+    query.addQueryItem(_ga4[GA4::Event], eventValue);
     query.addQueryItem(_ga4[GA4::ScreenName], screenNameValue);
     query.addQueryItem(_ga4[GA4::AppName], QUrl::toPercentEncoding(m_appName));
     query.addQueryItem(_ga4[GA4::AppVersion], m_appVersion);
