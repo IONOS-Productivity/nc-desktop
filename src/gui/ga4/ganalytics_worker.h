@@ -57,7 +57,7 @@ public:
     QString getScreenResolution();
     QString getUserAgent();
 
-    void enqueQueryWithCurrentTime(QString enValue, QString screenNameValue);
+    void enqueQueryWithCurrentTime(QString eventValue, QString screenNameValue);
     void setIsSending(bool doSend);
     void enable(bool state);
 
@@ -66,7 +66,8 @@ public slots:
     void postMessageFinished();
 
 private:
-    void prepareQuery(QUrlQuery& query, const QString& eventValue, const QString& screenNameValue);
+    void setStaticQueryValues(QUrlQuery& query);
+    void setDynamicQueryValues(QUrlQuery& query, const QString& eventValue, const QString& screenNameValue);
 
     enum GA4
     {

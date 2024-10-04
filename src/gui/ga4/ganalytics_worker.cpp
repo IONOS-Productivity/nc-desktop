@@ -179,7 +179,8 @@ void GAnalyticsWorker::postMessage()
     }
 
     QUrlQuery query;
-    prepareQuery(query, buffer.eventValue, buffer.screenNameValue);
+    setStaticQueryValues(query);
+    setDynamicQueryValues(query, buffer.eventValue, buffer.screenNameValue);
 
     requestUrl.setQuery(query);
 
@@ -207,7 +208,12 @@ void GAnalyticsWorker::postMessage()
     connect(reply, SIGNAL(finished()), this, SLOT(postMessageFinished()));
 }
 
-void GAnalyticsWorker::prepareQuery(QUrlQuery& query, const QString& eventValue, const QString& screenNameValue){
+void GAnalyticsWorker::setDynamicQueryValues(QUrlQuery& query, const QString& eventValue, const QString& screenNameValue){
+    query.addQueryItem(_ga4[GA4::Event], eventValue);
+    query.addQueryItem(_ga4[GA4::ScreenName], screenNameValue);
+}
+
+void GAnalyticsWorker::setStaticQueryValues(QUrlQuery& query){
     
     query.addQueryItem(_ga4[GA4::Version], "2");    
     query.addQueryItem(_ga4[GA4::MeasurementID], m_measurementId);      
@@ -233,8 +239,6 @@ void GAnalyticsWorker::prepareQuery(QUrlQuery& query, const QString& eventValue,
     query.addQueryItem(_ga4[GA4::AgentPlatformVersion], "10");
     query.addQueryItem(_ga4[GA4::EngagementTime], "100");
 
-    query.addQueryItem(_ga4[GA4::Event], eventValue);
-    query.addQueryItem(_ga4[GA4::ScreenName], screenNameValue);
     query.addQueryItem(_ga4[GA4::AppName], QUrl::toPercentEncoding(m_appName));
     query.addQueryItem(_ga4[GA4::AppVersion], m_appVersion);
 }
