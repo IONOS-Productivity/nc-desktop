@@ -1,4 +1,5 @@
 #include "datacollectionwrapper.h"
+#define GA_MEASUREMENT_ID "G-P9KD4TLW0V"            // "YOUR_MEASUREMENT_ID"
 
 DataCollectionWrapper::DataCollectionWrapper(QObject *parent) : QObject(parent) {
 }
@@ -37,4 +38,12 @@ void DataCollectionWrapper::setClientID(const QString clientId) {
 
 void DataCollectionWrapper::setSendData(const bool sendData) {
     GAnalytics::getInstance().enable(sendData);
+}
+
+void DataCollectionWrapper::initDataCollection() {
+    GAnalytics* ga = &GAnalytics::getInstance();
+    ga->setMeasurementId(GA_MEASUREMENT_ID);
+    ga->setSendInterval(3000);
+    ga->setLogLevel(GAnalytics::Debug);
+    ga->enableValidation(false);
 }

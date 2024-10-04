@@ -109,6 +109,10 @@ QString GAnalyticsWorker::getUserAgent()
  */
 void GAnalyticsWorker::enqueQueryWithCurrentTime(QString eventValue, QString screenNameValue)
 {
+    if(!m_isEnabled)
+    {
+        return;
+    }
     QueryBuffer buffer;
     buffer.eventValue = eventValue;
     buffer.screenNameValue = screenNameValue;

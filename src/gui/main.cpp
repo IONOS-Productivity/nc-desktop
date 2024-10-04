@@ -203,12 +203,7 @@ int main(int argc, char **argv)
         clientID = QUuid::createUuid().toString();
     }
 
-    GAnalytics* ga = &GAnalytics::getInstance();
-    ga->setMeasurementId(GA_MEASUREMENT_ID);
-    ga->enable(true);
-    ga->setSendInterval(3000);
-    ga->setLogLevel(GAnalytics::Debug);
-    ga->enableValidation(false);
+
 
     return app.exec();
 }

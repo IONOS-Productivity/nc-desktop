@@ -39,6 +39,7 @@ public:
 
     void setClientID(const QString clientId);
     void setSendData(const bool sendData);
+    void initDataCollection();
 
     DataCollectionWrapper(QObject *parent = 0);;
     ~DataCollectionWrapper();
