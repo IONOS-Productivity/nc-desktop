@@ -57,8 +57,6 @@ public:
 
     QString getScreenResolution();
     QString getUserAgent();
-    QList<QString> persistMessageQueue();
-    void readMessagesFromFile(const QList<QString> &dataList);
 
     void enqueQueryWithCurrentTime(const QJsonObject &query);
     void setIsSending(bool doSend);

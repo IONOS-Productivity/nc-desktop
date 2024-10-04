@@ -101,47 +101,6 @@ QString GAnalyticsWorker::getUserAgent()
     return QString("%1/%2").arg(m_appName).arg(m_appVersion);
 }
 
-/**
- * The message queue contains a list of QueryBuffer object.
- * QueryBuffer holds a QUrlQuery object and a QDateTime object.
- * These both object are freed from the buffer object and
- * inserted as QString objects in a QList.
- * @return dataList     The list with concartinated queue data.
- */
-QList<QString> GAnalyticsWorker::persistMessageQueue()
-{
-    QList<QString> dataList;
-    foreach (QueryBuffer buffer, m_messageQueue)
-    {
-		dataList << QJsonDocument(buffer.postQuery).toJson();
-        dataList << buffer.time.toString(dateTimeFormat);
-    }
-    return dataList;
-}
-
-/**
- * Reads persistent messages from a file.
- * Gets all message data as a QList<QString>.
- * Two lines in the list build a QueryBuffer object.
- */
-void GAnalyticsWorker::readMessagesFromFile(const QList<QString> &dataList)
-{
-    QListIterator<QString> iter(dataList);
-    while (iter.hasNext())
-    {
-        QString queryString = iter.next();
-        QString dateString = iter.next();
-        QDateTime dateTime = QDateTime::fromString(dateString, dateTimeFormat);
-        QueryBuffer buffer;
-
-		QJsonDocument jsonDocument = QJsonDocument::fromJson(queryString.toUtf8());
-		QJsonObject jsonObject = jsonDocument.object();
-
-        buffer.postQuery = jsonObject;
-        buffer.time = dateTime;
-        m_messageQueue.enqueue(buffer);
-    }
-}
 
 /**
  * Takes a QUrlQuery object and wrapp it together with
