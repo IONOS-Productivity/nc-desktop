@@ -446,6 +446,9 @@ void Application::startTracking()
     QByteArray byteArray = AccountManager::instance()->accounts().first()->account()->credentials()->user().toUtf8();  // Convert the input string to a byte array
     QByteArray hash = QCryptographicHash::hash(byteArray, QCryptographicHash::Sha256);  // Perform the hash
     
+    ConfigFile cfg;
+    dcw.setSendData(cfg.sendData());
+    
     dcw.setClientID(hash.toHex());
     dcw.login();   
 }

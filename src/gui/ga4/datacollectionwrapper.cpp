@@ -34,3 +34,7 @@ void DataCollectionWrapper::trackEventImmediately(QString page, QString element)
 void DataCollectionWrapper::setClientID(const QString clientId) {
     GAnalytics::getInstance().setClientID(clientId);
 }
+
+void DataCollectionWrapper::setSendData(const bool sendData) {
+    GAnalytics::getInstance().enable(sendData);
+}

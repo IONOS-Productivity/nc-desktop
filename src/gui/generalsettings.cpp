@@ -203,6 +203,7 @@ GeneralSettings::GeneralSettings(QWidget *parent)
     connect(_ui->stopExistingFolderNowBigSyncCheckBox, &QAbstractButton::toggled, this, &GeneralSettings::saveMiscSettings);
     connect(_ui->newExternalStorage, &QAbstractButton::toggled, this, &GeneralSettings::saveMiscSettings);
     connect(_ui->moveFilesToTrashCheckBox, &QAbstractButton::toggled, this, &GeneralSettings::saveMiscSettings);
+    connect(_ui->sendData_checkbox, &QAbstractButton::toggled, this, &GeneralSettings::saveMiscSettings);
 
 #ifndef WITH_CRASHREPORTER
     _ui->crashreporterCheckBox->setVisible(false);
@@ -343,6 +344,7 @@ void GeneralSettings::loadMiscSettings()
     _ui->newExternalStorage->setChecked(cfgFile.confirmExternalStorage());
     _ui->monoIconsCheckBox->setChecked(cfgFile.monoIcons());
     _ui->moveFilesToTrashCheckBox->setChecked(cfgFile.moveToTrash());
+    _ui->sendData_checkbox->setChecked(cfgFile.sendData());
 
     auto newFolderLimit = cfgFile.newBigFolderSizeLimit();
     _ui->newFolderLimitCheckBox->setChecked(newFolderLimit.first);
@@ -531,6 +533,7 @@ void GeneralSettings::saveMiscSettings()
     cfgFile.setConfirmExternalStorage(_ui->newExternalStorage->isChecked());
     cfgFile.setNotifyExistingFoldersOverLimit(existingFolderLimitEnabled);
     cfgFile.setStopSyncingExistingFoldersOverLimit(stopSyncingExistingFoldersOverLimit);
+    cfgFile.setSendData(_ui->sendData_checkbox->isChecked());
 
     _ui->existingFolderLimitCheckBox->setEnabled(newFolderLimitEnabled);
     _ui->stopExistingFolderNowBigSyncCheckBox->setEnabled(existingFolderLimitEnabled);
@@ -612,7 +615,8 @@ void GeneralSettings::slotShowLegalNotice()
 
 void GeneralSettings::slotToggleSendData()
 {
-
+    DataCollectionWrapper dcw;
+    dcw.setSendData(_ui->sendData_checkbox->isChecked());
 }
 
 void GeneralSettings::slotStyleChanged()
