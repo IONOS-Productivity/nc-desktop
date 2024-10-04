@@ -92,11 +92,6 @@ void GAnalytics::setMeasurementId(const QString &measurementId)
     d->m_measurementId = measurementId;
 }
 
-void GAnalytics::setApiSecret(const QString & apiSecret)
-{
-	d->m_apiSecret = apiSecret;
-}
-
 void GAnalytics::setClientID(const QString &clientID)
 {
     d->m_clientID = clientID;
@@ -110,16 +105,6 @@ void GAnalytics::enable(bool state)
 void GAnalytics::enableValidation(bool state)
 {
     d->m_validation = state;
-}
-
-int GAnalytics::version()
-{
-    return d->m_version;
-}
-
-void GAnalytics::setVersion(int version)
-{
-    d->m_version = version;
 }
 
 void GAnalytics::setNetworkAccessManager(QNetworkAccessManager *networkAccessManager)

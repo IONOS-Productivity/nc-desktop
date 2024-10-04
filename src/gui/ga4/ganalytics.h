@@ -32,11 +32,7 @@ public:
     };
 
     void setMeasurementId(const QString& measurementId);
-	void setApiSecret(const QString& apiSecret);
     void setClientID(const QString& clientID);
-
-    int version();
-    void setVersion(int version);
 
     void setLogLevel(LogLevel logLevel);
     LogLevel logLevel() const;

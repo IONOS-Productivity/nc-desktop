@@ -35,7 +35,6 @@ public:
     GAnalytics::LogLevel m_logLevel;
 
     QString m_measurementId;
-	QString m_apiSecret;
     QString m_clientID;
     QString m_userID;
     QString m_appName;
@@ -47,7 +46,6 @@ public:
     bool m_anonymizeIPs = false;
     bool m_isEnabled = false;
     int m_timerInterval = 30000;
-    int m_version = 0;
     bool m_validation = false;
 
     const static int fourHours = 4 * 60 * 60 * 1000;
