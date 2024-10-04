@@ -150,25 +150,3 @@ void GAnalytics::sendEvent(const QString &page, const QString &element)
 {
     d->enqueQueryWithCurrentTime(element, page);
 }
-
-/**
- * Qut stream to persist class GAnalytics.
- */
-QDataStream &operator<<(QDataStream &outStream, const GAnalytics &analytics)
-{
-    outStream << analytics.d->persistMessageQueue();
-
-    return outStream;
-}
-
-/**
- * In stream to read GAnalytics from file.
- */
-QDataStream &operator>>(QDataStream &inStream, GAnalytics &analytics)
-{
-    QList<QString> dataList;
-    inStream >> dataList;
-    analytics.d->readMessagesFromFile(dataList);
-
-    return inStream;
-}
