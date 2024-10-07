@@ -452,19 +452,6 @@ Page {
                     root.toggleExpirationDate(checked);
                     root.waitingForExpireDateEnabledChange = true;
                 }
-
-                // NCBusyIndicator {
-                //     anchors.fill: parent
-                //     visible: root.waitingForExpireDateEnabledChange
-                //     running: visible
-                //     z: 1
-                // }
-
-                    anchors.fill: parent
-                    visible: root.waitingForExpireDateEnabledChange
-                    running: visible
-                    z: 1
-                }
             }
 
             NCInputDateField {
