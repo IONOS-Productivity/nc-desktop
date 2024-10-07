@@ -635,22 +635,30 @@ void GeneralSettings::customizeStyle()
     _ui->infoAndUpdatesLabel->setText(aboutText);
 
     this->setStyleSheet(
-        QStringLiteral("QGroupBox { border: %1; padding: 15px; font-size: %2; font-weight: %3; }").arg(
+        QStringLiteral("QGroupBox { border: %1; font-size: %2; font-weight: %3; }").arg(
             Theme::instance()->systemPalette().base().color().name(),
             IonosTheme::settingsTitleSize(),
-            IonosTheme::settingsTitleWeight600()
+            IonosTheme::settingsTitleWeight500()
         )
     );
 
     this->setStyleSheet(
-        this->styleSheet() + QStringLiteral("QCheckBox { font-size: %1; font-weight: %2; }").arg(
+        this->styleSheet() + QStringLiteral("QCheckBox { font-size: %1; font-weight: %2; margin-left: %3 px; }").arg(
             IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTextWeight()
+            IonosTheme::settingsTextWeight(),
+            IonosTheme::smallMargin()
         )
     );
 
     this->setStyleSheet(
         this->styleSheet() + QStringLiteral("QLabel { font-size: %1; font-weight: %2; }").arg(
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTitleWeight500()
+        )
+    );
+
+    this->setStyleSheet(
+        this->styleSheet() + QStringLiteral("QFrame { font-size: %1; font-weight: %2; }").arg(
             IonosTheme::settingsTextSize(),
             IonosTheme::settingsTitleWeight600()
         )

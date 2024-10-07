@@ -72,6 +72,10 @@ public:
         return "10px";
     }
 
+    static int smallMargin() {
+        return 8;
+    }
+
     //Font Configuration
     static QString settingsFont() {
         return "Segoe UI";
@@ -115,6 +119,10 @@ public:
 
     static QString settingsTextWeight() {
         return "400";
+    }
+
+    static QString settingsTitleWeight500() {
+        return "500";
     }
 
     static QString settingsTitleWeight600() {

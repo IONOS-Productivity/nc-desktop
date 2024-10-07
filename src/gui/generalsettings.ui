@@ -15,6 +15,18 @@
         </property>
         <layout class="QVBoxLayout" name="gridLayout_3">
             <!-- General Settings -->
+            <property name="leftMargin">
+                <number>24</number>
+            </property>
+            <property name="topMargin">
+                <number>32</number>
+            </property>
+            <property name="rightMargin">
+                <number>24</number>
+            </property>
+            <property name="bottomMargin">
+                <number>24</number>
+            </property>
             <item>
                 <layout class="QHBoxLayout">
                     <item>
@@ -27,6 +39,9 @@
                                 </font>
                             </property>
                             <layout class="QVBoxLayout">
+                                <property name="topMargin">
+                                    <number>3</number>
+                                </property>
                                 <item>
                                     <widget class="QCheckBox" name="autostartCheckBox">
                                         <property name="text">
@@ -61,6 +76,19 @@
                             </layout>
                         </widget>
                     </item>
+                    <item>
+                        <spacer name="horizontalSpacer_1">
+                            <property name="orientation">
+                                <enum>Qt::Horizontal</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                                <size>
+                                    <width>20</width>
+                                    <height>0</height>
+                                </size>
+                            </property>
+                        </spacer>
+                    </item>
                     <!-- Updates -->
                     <item>
                         <widget class="QGroupBox" name="updateGroupBox">
@@ -72,6 +100,9 @@
                                 </font>
                             </property>
                             <layout class="QVBoxLayout">
+                                <property name="topMargin">
+                                    <number>3</number>
+                                </property>
                                 <item>
                                     <widget class="QCheckBox" name="autoCheckForUpdatesCheckBox">
                                         <property name="sizePolicy">
@@ -304,11 +335,30 @@
                 </widget>
             </item>
             <item>
+                <spacer name="verticalSpacer_1">
+                    <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                        <size>
+                            <width>20</width>
+                            <height>16</height>
+                        </size>
+                    </property>
+                    <property name="sizeType" stdset="0">
+                        <enum>QSizePolicy::Minimum</enum>
+                    </property>
+                </spacer>
+            </item>
+            <item>
                 <widget class="QGroupBox" name="dataprotection_groupbox">
                     <property name="title">
                         <string>Data Protection</string>
                     </property>
                     <layout class="QVBoxLayout">
+                        <property name="topMargin">
+                            <number>3</number>
+                        </property>
                         <item>                        
                             <widget class="QCheckBox" name="sendData_checkbox">
                                 <property name="text">
@@ -318,6 +368,12 @@
                         </item>
                         <item>
                             <layout class="QHBoxLayout">
+                                <property name="spacing">
+                                    <number>12</number>
+                                </property>
+                                <property name="topMargin">
+                                    <number>5</number>
+                                </property>
                                 <item>
                                     <widget class="OCC::LinkButton" name="legalNoticeLinkButton">
                                         <property name="text">
@@ -366,7 +422,7 @@
                     <property name="sizeHint" stdset="0">
                         <size>
                             <width>20</width>
-                            <height>0</height>
+                            <height>10</height>
                         </size>
                     </property>
                 </spacer>
