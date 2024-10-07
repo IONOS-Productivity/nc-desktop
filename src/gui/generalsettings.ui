@@ -130,14 +130,14 @@
                     <property name="title">
                         <string>Advanced</string>
                     </property>
-                    <layout class="QVBoxLayout" name="verticalLayout">
+                    <layout class="QVBoxLayout" name="verticalLayout_1">
                         <item>
-                            <layout class="QVBoxLayout" name="verticalLayout_4">
+                            <layout class="QVBoxLayout" name="verticalLayout_2">
                                 <property name="spacing">
                                     <number>0</number>
                                 </property>
                                 <item>
-                                    <layout class="QHBoxLayout" name="horizontalLayout_3">
+                                    <layout class="QHBoxLayout" name="horizontalLayout_1">
                                         <item>
                                             <widget class="QCheckBox" name="newFolderLimitCheckBox">
                                                 <property name="text">
@@ -150,7 +150,7 @@
                                             </widget>
                                         </item>
                                         <item>
-                                            <spacer name="horizontalSpacer">
+                                            <spacer name="horizontalSpacer_2">
                                                 <property name="orientation">
                                                     <enum>Qt::Horizontal</enum>
                                                 </property>
@@ -187,7 +187,7 @@
                                     </layout>
                                 </item>
                                 <item>
-                                    <layout class="QHBoxLayout" name="horizontalLayout_5">
+                                    <layout class="QHBoxLayout" name="horizontalLayout_2">
                                         <item>
                                             <spacer name="horizontalSpacer_3">
                                                 <property name="orientation">
@@ -216,9 +216,9 @@
                                     </layout>
                                 </item>
                                 <item>
-                                    <layout class="QHBoxLayout" name="horizontalLayout">
+                                    <layout class="QHBoxLayout" name="horizontalLayout_3">
                                         <item>
-                                            <spacer name="horizontalSpacer_5">
+                                            <spacer name="horizontalSpacer_4">
                                                 <property name="orientation">
                                                     <enum>Qt::Horizontal</enum>
                                                 </property>
@@ -247,7 +247,7 @@
                             </layout>
                         </item>
                         <item>
-                            <layout class="QHBoxLayout" name="horizontalLayout_8">
+                            <layout class="QHBoxLayout" name="horizontalLayout_4">
                                 <item>
                                     <widget class="QCheckBox" name="newExternalStorage">
                                         <property name="text">
@@ -259,7 +259,7 @@
                             </layout>
                         </item>
                         <item>
-                            <layout class="QHBoxLayout" name="horizontalLayout">
+                            <layout class="QHBoxLayout" name="horizontalLayout_5">
                                 <item>
                                     <widget class="QCheckBox" name="moveFilesToTrashCheckBox">
                                         <property name="text">
@@ -270,7 +270,7 @@
                             </layout>
                         </item>
                         <item>
-                            <layout class="QHBoxLayout" name="horizontalLayout_10">
+                            <layout class="QHBoxLayout" name="horizontalLayout_6">
                                 <item>
                                     <widget class="QCheckBox"
                                         name="showInExplorerNavigationPaneCheckBox">
@@ -283,7 +283,7 @@
                             </layout>
                         </item>
                         <item>
-                            <layout class="QHBoxLayout" name="horizontalLayout_9">
+                            <layout class="QHBoxLayout" name="horizontalLayout_7">
                                 <item>
                                     <widget class="QCheckBox" name="crashreporterCheckBox">
                                         <property name="sizePolicy">
@@ -301,7 +301,7 @@
                             </layout>
                         </item>
                         <item>
-                            <layout class="QHBoxLayout" name="horizontalLayout_4">
+                            <layout class="QHBoxLayout" name="horizontalLayout_8">
                                 <item>
                                     <widget class="QPushButton" name="ignoredFilesButton">
                                         <property name="text">
@@ -317,7 +317,7 @@
                                     </widget>
                                 </item>
                                 <item>
-                                    <spacer name="horizontalSpacer_4">
+                                    <spacer name="horizontalSpacer_5">
                                         <property name="orientation">
                                             <enum>Qt::Horizontal</enum>
                                         </property>
@@ -396,7 +396,7 @@
                                     </widget>
                                 </item>
                                 <item>
-                                    <spacer name="horizontalSpacer">
+                                    <spacer name="horizontalSpacer_6">
                                         <property name="orientation">
                                             <enum>Qt::Horizontal</enum>
                                         </property>
@@ -409,13 +409,13 @@
                                     </spacer>
                                 </item>
                             </layout>
-                        </item>   
+                        </item>
                     </layout> 
                 </widget>
             </item>
             <!-- verticalSpacer -->
             <item>
-                <spacer name="verticalSpacer">
+                <spacer name="verticalSpacer_2">
                     <property name="orientation">
                         <enum>Qt::Vertical</enum>
                     </property>
@@ -433,7 +433,7 @@
                     <layout class="QVBoxLayout" name="verticalLayout_3">
                         <item>
                             <widget class="QFrame" name="updatesContainer">
-                                <layout class="QVBoxLayout" name="verticalLayout_5">
+                                <layout class="QVBoxLayout" name="verticalLayout_4">
                                     <property name="leftMargin">
                                         <number>0</number>
                                     </property>
@@ -447,7 +447,7 @@
                                         <number>0</number>
                                     </property>
                                     <item>
-                                        <layout class="QHBoxLayout" name="horizontalLayout_2">
+                                        <layout class="QHBoxLayout" name="horizontalLayout_9">
                                             <item>
                                                 <widget class="QLabel" name="updateChannelLabel">
                                                     <property name="sizePolicy">
@@ -513,7 +513,7 @@
                                         </layout>
                                     </item>
                                     <item>
-                                        <layout class="QHBoxLayout" name="horizontalLayout_7">
+                                        <layout class="QHBoxLayout" name="horizontalLayout_10">
                                             <item>
                                                 <widget class="QPushButton" name="updateButton">
                                                     <property name="sizePolicy">
@@ -529,7 +529,7 @@
                                                 </widget>
                                             </item>
                                             <item>
-                                                <spacer name="horizontalSpacer_6">
+                                                <spacer name="horizontalSpacer_7">
                                                     <property name="orientation">
                                                         <enum>Qt::Horizontal</enum>
                                                     </property>
@@ -544,7 +544,7 @@
                                         </layout>
                                     </item>
                                     <item>
-                                        <layout class="QHBoxLayout" name="horizontalLayout_6">
+                                        <layout class="QHBoxLayout" name="horizontalLayout_11">
                                             <item>
                                                 <widget class="QPushButton"
                                                     name="usageDocumentationButton">
@@ -554,7 +554,7 @@
                                                 </widget>
                                             </item>
                                             <item>
-                                                <spacer name="horizontalSpacer_2">
+                                                <spacer name="horizontalSpacer_8">
                                                     <property name="orientation">
                                                         <enum>Qt::Horizontal</enum>
                                                     </property>
@@ -599,7 +599,7 @@
                             </widget>
                         </item>
                         <item>
-                            <spacer name="horizontalSpacer">
+                            <spacer name="horizontalSpacer_9">
                                 <property name="orientation">
                                     <enum>Qt::Horizontal</enum>
                                 </property>
