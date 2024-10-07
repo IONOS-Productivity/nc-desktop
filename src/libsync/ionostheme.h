@@ -72,8 +72,8 @@ public:
         return "10px";
     }
 
-    static int smallMargin() {
-        return 8;
+    static QString smallMargin() {
+        return "8";
     }
 
     //Font Configuration
