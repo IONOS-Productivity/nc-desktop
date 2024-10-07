@@ -1,5 +1,8 @@
 #include "datacollectionwrapper.h"
-#define GA_MEASUREMENT_ID "G-P9KD4TLW0V"            // "YOUR_MEASUREMENT_ID"
+
+namespace {
+    const QString GA_MEASUREMENT_ID = "G-P9KD4TLW0V";  // "YOUR_MEASUREMENT_ID"
+}
 
 DataCollectionWrapper::DataCollectionWrapper(QObject *parent) : QObject(parent) {
 }
