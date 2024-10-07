@@ -1,7 +1,11 @@
 #include "datacollectionwrapper.h"
 
 namespace {
-    const QString GA_MEASUREMENT_ID = "G-P9KD4TLW0V";  // "YOUR_MEASUREMENT_ID"
+    #ifdef NDEBUG
+        const QString GA_MEASUREMENT_ID = "G-P9KD4TLW0V";  // Verwende diesen String nur wenn wir nicht in Release bauen
+    #else
+        const QString GA_MEASUREMENT_ID = "G-270CYZ49V0";  // Verwende diesen String nur wenn wir in Release bauen
+    #endif
 }
 
 DataCollectionWrapper::DataCollectionWrapper(QObject *parent) : QObject(parent) {
@@ -47,6 +51,6 @@ void DataCollectionWrapper::initDataCollection() {
     GAnalytics* ga = &GAnalytics::getInstance();
     ga->setMeasurementId(GA_MEASUREMENT_ID);
     ga->setSendInterval(3000);
-    ga->setLogLevel(GAnalytics::Debug);
+    ga->setLogLevel(GAnalytics::Info);
     ga->enableValidation(false);
 }
