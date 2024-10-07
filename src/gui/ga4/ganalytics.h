@@ -37,7 +37,6 @@ public:
     void setLogLevel(LogLevel logLevel);
     LogLevel logLevel() const;
 
-    // Getter and Setters
     void setViewportSize(const QString &viewportSize);
     QString viewportSize() const;
 

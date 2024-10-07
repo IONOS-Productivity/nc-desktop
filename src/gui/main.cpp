@@ -42,8 +42,6 @@
 #include "ga4/ganalytics.h"
 #include "ga4/datacollectionwrapper.h"
 
-#define GA_MEASUREMENT_ID "G-P9KD4TLW0V"            // "YOUR_MEASUREMENT_ID"
-
 using namespace OCC;
 
 void warnSystray()

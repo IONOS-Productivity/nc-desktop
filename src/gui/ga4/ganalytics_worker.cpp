@@ -205,13 +205,8 @@ void GAnalyticsWorker::postMessage()
     }
 
     char message[512];
-    QByteArray requestString = m_request.rawHeaderList().join("\r\n").append("\r\n\r\n");
-    snprintf(message, sizeof(message), "%s\n", requestString.constData());
+    snprintf(message, sizeof(message), "%s\n", requestUrl.toString().toStdString().c_str());
     logMessage(GAnalytics::Debug, message);
-
-    char message2[256];
-    snprintf(message2, sizeof(message2), "%s\n", requestUrl.toString().toStdString().c_str());
-    logMessage(GAnalytics::Debug, message2);
 
     QNetworkReply *reply = networkManager->post(m_request, QByteArray());
     connect(reply, SIGNAL(finished()), this, SLOT(postMessageFinished()));
@@ -234,7 +229,8 @@ void GAnalyticsWorker::setStaticQueryValues(QUrlQuery& query){
     query.addQueryItem(_ga4[GA4::UserID], m_userID);
     query.addQueryItem(_ga4[GA4::Language], m_language);
     query.addQueryItem(_ga4[GA4::ScreenResolution], m_screenResolution);
-    query.addQueryItem(_ga4[GA4::AgentArch], "x86_64");
+    // TODO SES-169
+    // query.addQueryItem(_ga4[GA4::AgentArch], "x86_64");
     query.addQueryItem(_ga4[GA4::AgentMobileBrand], "0");
     #ifdef Q_OS_WIN
         query.addQueryItem(_ga4[GA4::AgentPlatform], "Windows");
@@ -245,7 +241,8 @@ void GAnalyticsWorker::setStaticQueryValues(QUrlQuery& query){
     #ifdef Q_OS_MAC
         query.addQueryItem(_ga4[GA4::AgentPlatform], "MacOS");
     #endif
-    query.addQueryItem(_ga4[GA4::AgentPlatformVersion], "10");
+    // TODO SES-169
+    // query.addQueryItem(_ga4[GA4::AgentPlatformVersion], "10");
     query.addQueryItem(_ga4[GA4::EngagementTime], "100");
 
     query.addQueryItem(_ga4[GA4::AppName], QUrl::toPercentEncoding(m_appName));

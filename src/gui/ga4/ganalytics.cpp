@@ -41,7 +41,6 @@ GAnalytics::LogLevel GAnalytics::logLevel() const
     return d->m_logLevel;
 }
 
-// SETTER and GETTER
 void GAnalytics::setViewportSize(const QString &viewportSize)
 {
     d->m_viewportSize = viewportSize;
