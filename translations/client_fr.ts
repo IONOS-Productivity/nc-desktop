@@ -581,7 +581,7 @@ Le compte doit-il être importé ?</translation>
                                                 &lt;b&gt;removed&lt;/b&gt; from your local file
                                                 system and will not be synchronized to this computer
                                                 anymore</source>
-      <translation>"Les dossiers décochés seront  <b>supprimés<b> de votre système de fichiers local et ne seront plus synchronisés sur cet ordinateur"
+      <translation>"Les dossiers décochés seront  &lt;b&gt;supprimés&lt;b&gt; de votre système de fichiers local et ne seront plus synchronisés sur cet ordinateur"
       </translation>
     </message>
     <message>
