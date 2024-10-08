@@ -280,8 +280,7 @@
     <message>
       <location filename="../src/gui/macOS/ui/FileProviderSettings.qml" line="173" />
       <source>Signal file provider domain</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Indiquer le domaine du fournisseur de fichiers</translation>
     </message>
     <message>
       <location filename="../src/gui/macOS/ui/FileProviderSettings.qml" line="178" />
@@ -370,12 +369,12 @@
     <message>
       <location filename="../src/gui/wizard/flow2authwidget.ui" line="139" />
       <source>Copy Link</source>
-      <translation type="unfinished">Copier le lien</translation>
+      <translation>Copier le lien</translation>
     </message>
     <message>
       <location filename="../src/gui/wizard/flow2authwidget.ui" line="146" />
       <source>Reopen Browser</source>
-      <translation type="unfinished">Rouvrir le navigateur</translation>
+      <translation>Rouvrir le navigateur</translation>
     </message>
   </context>
   <context>
@@ -383,14 +382,12 @@
     <message>
       <location filename="../src/gui/folderwizardselectivesync.ui" line="37" />
       <source>Add Folder Sync</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizardselectivesync.ui" line="53" />
       <source>Step 3 of 3: Selektive Synchronisation</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Étape 3 sur 3 : synchronisation sélective</translation>
     </message>
   </context>
   <context>
@@ -406,26 +403,22 @@
     <message>
       <location filename="../src/gui/folderwizardsourcepage.ui" line="37" />
       <source>Add Folder Sync</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizardsourcepage.ui" line="53" />
       <source>Step 1 of 3: Select local folder</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Étape 1 sur 3 : sélectionner un dossier local</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizardsourcepage.ui" line="88" />
       <source>Select a folder on your hard drive that should be permanetly connected to your IONOS EASYSTORAGE. All files and subfolders are automatically uploaded and synchronized</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Sélectionnez sur votre disque dur un dossier qui doit être en permanence rattaché à votre IONOS EASYSTORAGE. Tous les fichiers et sous-dossiers sont automatiquement importés et synchronisés</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizardsourcepage.ui" line="126" />
       <source>&amp;Choose</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>&amp;Choisir</translation>
     </message>
   </context>
   <context>
@@ -447,26 +440,22 @@
     <message>
       <location filename="../src/gui/folderwizardtargetpage.ui" line="37" />
       <source>Add Folder Sync</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizardtargetpage.ui" line="53" />
       <source>Step 2 of 3: Directory in your IONOS EASYSTORAGE</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Étape 2 sur 3 : répertoire dans votre IONOS EASYSTORAGE</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizardtargetpage.ui" line="89" />
       <source>Please now select or create a target folder in your IONOS EASYSTORAGE where the content should be uploaded and synchronized.</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>À présent, sélectionnez ou créez dans votre IONOS EASYSTORAGE un dossier cible dans lequel le contenu doit être importé et synchronisé.</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizardtargetpage.ui" line="109" />
       <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Les deux dossiers sont en permanence rattachés et leur contenu respectif est automatiquement synchronisé et importé.</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizardtargetpage.ui" line="167" />
@@ -584,8 +573,7 @@ Le compte doit-il être importé ?</translation>
     <message>
       <location filename="../src/gui/accountsettings.ui" line="92" />
       <source>Expand Memory</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Augmenter la mémoire</translation>
     </message>
     <message>
       <location filename="../src/gui/accountsettings.ui" line="137" />
@@ -593,7 +581,7 @@ Le compte doit-il être importé ?</translation>
                                                 &lt;b&gt;removed&lt;/b&gt; from your local file
                                                 system and will not be synchronized to this computer
                                                 anymore</source>
-      <translation type="unfinished">
+      <translation>"Les dossiers décochés seront  <b>supprimés<b> de votre système de fichiers local et ne seront plus synchronisés sur cet ordinateur"
       </translation>
     </message>
     <message>
@@ -667,9 +655,9 @@ Le compte doit-il être importé ?</translation>
     </message>
     <message>
       <location filename="../src/gui/accountsettings.cpp" line="125" />
-      <source>This will encrypt your folder and all files within it. These files will no longer be accessible without your encryption mnemonic key. 
+      <source>This will encrypt your folder and all files within it. These files will no longer be accessible without your encryption mnemonic key.
 &lt;b&gt;This process is not reversible. Are you sure you want to proceed?&lt;/b&gt;</source>
-      <translation>Cela va chiffrer votre dossier et tous les fichiers qu'il contient. Ces fichiers ne seront plus accessibles sans votre clé de chiffrement mnémonique. 
+      <translation>Cela va chiffrer votre dossier et tous les fichiers qu'il contient. Ces fichiers ne seront plus accessibles sans votre clé de chiffrement mnémonique.
 &lt;b&gt;Ce processus n'est pas réversible. Êtes-vous sûr de vouloir le faire ?&lt;/b&gt;</translation>
     </message>
     <message>
@@ -903,8 +891,7 @@ Cette action entraînera l'interruption de toute synchronisation en cours.</tran
     <message>
       <location filename="../src/gui/accountsettings.cpp" line="1328" />
       <source>Storage space %1% occupied</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Espace de stockage %1% occupé</translation>
     </message>
     <message>
       <location filename="../src/gui/accountsettings.cpp" line="1335" />
@@ -983,8 +970,7 @@ Vous prenez vos propres risques.</translation>
     <message>
       <location filename="../src/gui/accountsettings.cpp" line="1497" />
       <source>https://wl.hidrive.com/easy/0057</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>https://wl.hidrive.com/easy/0057</translation>
     </message>
     <message>
       <location filename="../src/gui/accountsettings.cpp" line="1678" />
@@ -1399,7 +1385,7 @@ Vous prenez vos propres risques.</translation>
     <message>
       <location filename="../src/gui/caseclashfilenamedialog.ui" line="36" />
       <source>Error</source>
-      <translation type="unfinished">Erreur</translation>
+      <translation>Erreur</translation>
     </message>
     <message>
       <location filename="../src/gui/caseclashfilenamedialog.ui" line="53" />
@@ -1704,8 +1690,7 @@ Vous prenez vos propres risques.</translation>
       <location filename="../src/libsync/discoveryphase.cpp" line="676" />
       <location filename="../src/libsync/discoveryphase.cpp" line="705" />
       <source>Encrypted metadata setup error!</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Erreur de configuration des métadonnées chiffrées !</translation>
     </message>
   </context>
   <context>
@@ -2019,7 +2004,7 @@ Cela peut être un problème avec vos bibliothèques OpenSSL.</translation>
       <location filename="../src/gui/wizard/flow2authwidget.cpp" line="96" />
       <location filename="../src/gui/wizard/flow2authwidget.cpp" line="100" />
       <source>Error</source>
-      <translation type="unfinished">Erreur</translation>
+      <translation>Erreur</translation>
     </message>
     <message>
       <location filename="../src/gui/wizard/flow2authwidget.cpp" line="157" />
@@ -2044,13 +2029,12 @@ Cela peut être un problème avec vos bibliothèques OpenSSL.</translation>
     <message>
       <location filename="../src/gui/wizard/flow2authwidget.cpp" line="226" />
       <source>Open Browser</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Ouvrir le navigateur</translation>
     </message>
     <message>
       <location filename="../src/gui/wizard/flow2authwidget.cpp" line="250" />
       <source>Switch to your browser to connect your account</source>
-      <translation type="unfinished">Basculez sur votre navigateur pour connecter votre compte</translation>
+      <translation>Basculez sur votre navigateur pour connecter votre compte</translation>
     </message>
     <message>
       <source>Reopen Browser</source>
@@ -2291,24 +2275,21 @@ If you restore the files, they will be downloaded again from the server.</source
     <message>
       <location filename="../src/gui/folder.cpp" line="1633" />
       <source>Remove all files?</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Supprimer tous les fichiers ?</translation>
     </message>
     <message>
       <location filename="../src/gui/folder.cpp" line="1637" />
       <source>Proceed to remove all files</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Confirmer la suppression de tous les fichiers</translation>
     </message>
     <message>
       <location filename="../src/gui/folder.cpp" line="1638" />
       <source>Restore files</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Restaurer les fichiers</translation>
     </message>
     <message>
       <source>All files in the sync folder "%1" folder were deleted on the server.
-These deletes will be synchronized to your local sync folder, making such files unavailable unless you have a right to restore. 
+These deletes will be synchronized to your local sync folder, making such files unavailable unless you have a right to restore.
 If you decide to restore the files, they will be re-synced with the server if you have rights to do so.
 If you decide to delete the files, they will be unavailable to you, unless you are the owner.</source>
       <translation type="vanished">Tous les fichiers du dossier de synchronisation "%1" ont été supprimés sur le serveur.
@@ -2357,8 +2338,7 @@ S'il s'agissait d'un accident et que vous choisissiez de conserver vos fichiers,
     <message>
       <location filename="../src/gui/foldercreationdialog.cpp" line="40" />
       <source>%1 Create new folder</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>%1 Créer un nouveau dossier</translation>
     </message>
     <message>
       <location filename="../src/gui/foldercreationdialog.cpp" line="84" />
@@ -2489,14 +2469,12 @@ S'il s'agissait d'un accident et que vous choisissiez de conserver vos fichiers,
     <message>
       <location filename="../src/gui/folderstatusdelegate.cpp" line="60" />
       <source>Add live backup</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Ajouter une sauvegarde en temps réel</translation>
     </message>
     <message>
       <location filename="../src/gui/folderstatusdelegate.cpp" line="65" />
       <source>Synchronize any other local folder with your IONOS EASY STORAGE</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Synchronisez n’importe quel autre dossier local avec votre IONOS EASYSTORAGE</translation>
     </message>
     <message>
       <location filename="../src/gui/folderstatusdelegate.cpp" line="343" />
@@ -2713,26 +2691,22 @@ S'il s'agissait d'un accident et que vous choisissiez de conserver vos fichiers,
     <message>
       <location filename="../src/gui/folderwizard.cpp" line="185" />
       <source>Add Folder Sync</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizard.cpp" line="193" />
       <source>Step 1 of 3: Select local folder</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Étape 1 sur 3 : sélectionner un dossier local</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizard.cpp" line="202" />
       <source>Select a folder on your hard drive that should be permanetly connected to your IONOS EASYSTORAGE. All files and subfolders are automatically uploaded and synchronized</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Sélectionnez sur votre disque dur un dossier qui doit être en permanence rattaché à votre IONOS EASYSTORAGE. Tous les fichiers et sous-dossiers sont automatiquement importés et synchronisés</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizard.cpp" line="215" />
       <source>Choose</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Choisir</translation>
     </message>
   </context>
   <context>
@@ -2790,30 +2764,27 @@ S'il s'agissait d'un accident et que vous choisissiez de conserver vos fichiers,
     <message>
       <location filename="../src/gui/folderwizard.cpp" line="630" />
       <source>Add Folder Sync</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizard.cpp" line="638" />
       <source>Step 2 of 3: Directory in your IONOS EASYSTORAGE</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Étape 2 sur 3 : répertoire dans votre IONOS EASYSTORAGE</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizard.cpp" line="647" />
       <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Les deux dossiers sont en permanence rattachés et leur contenu respectif est automatiquement synchronisé et importé.</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizard.cpp" line="671" />
       <source>Refresh</source>
-      <translation type="unfinished">Rafraîchir</translation>
+      <translation>Rafraîchir</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizard.cpp" line="673" />
       <source>Create folder</source>
-      <translation type="unfinished">Créer un dossier</translation>
+      <translation>Créer un dossier</translation>
     </message>
   </context>
   <context>
@@ -2833,14 +2804,12 @@ S'il s'agissait d'un accident et que vous choisissiez de conserver vos fichiers,
     <message>
       <location filename="../src/gui/folderwizard.cpp" line="712" />
       <source>Add Folder Sync</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizard.cpp" line="720" />
       <source>Step 3 of 3: Selektive Synchronisation</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Étape 3 sur 3 : synchronisation sélective</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizard.cpp" line="747" />
@@ -3055,26 +3024,22 @@ S'il s'agissait d'un accident et que vous choisissiez de conserver vos fichiers,
     <message>
       <location filename="../src/gui/generalsettings.ui" line="309" />
       <source>Data Protection</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Protection des données</translation>
     </message>
     <message>
       <location filename="../src/gui/generalsettings.ui" line="315" />
       <source>&amp;Analysis data collection for needs-based design </source>
-      <translation type="unfinished">
-      </translation>
+      <translation>&amp;Collecte des données d’analyse pour une conception basée sur les besoins</translation>
     </message>
     <message>
       <location filename="../src/gui/generalsettings.ui" line="331" />
       <source>Privacy Policy</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Politique de confidentialité</translation>
     </message>
     <message>
       <location filename="../src/gui/generalsettings.ui" line="338" />
       <source>Open Source Software</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Logiciel libre</translation>
     </message>
     <message>
       <location filename="../src/gui/generalsettings.ui" line="420" />
@@ -3096,8 +3061,7 @@ S'il s'agissait d'un accident et que vous choisissiez de conserver vos fichiers,
     <message>
       <location filename="../src/gui/generalsettings.ui" line="541" />
       <source>More Information</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Plus d’informations</translation>
     </message>
     <message>
       <source>Show sync folders in &amp;Explorer's Navigation Pane</source>
@@ -3341,14 +3305,12 @@ Objects that are allowed to be deleted will be deleted if they would prevent a f
     <message>
       <location filename="../src/gui/ignorelisttablewidget.cpp" line="221" />
       <source>Ignore Pattern</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Ignorer le modèle</translation>
     </message>
     <message>
       <location filename="../src/gui/ignorelisttablewidget.cpp" line="222" />
       <source>Add New Ignore Pattern</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Ajouter nouveau Ignorer le modèle</translation>
     </message>
     <message>
       <source>Add Ignore Pattern</source>
@@ -4511,8 +4473,7 @@ Il s'agit d'un nouveau mode expérimental. Si vous décidez de l'utiliser, veuil
     <message>
       <location filename="../src/libsync/propagatorjobs.cpp" line="312" />
       <source>Folder %1 cannot be renamed because of a local file or folder name clash!</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Le dossier %1 ne peut pas être renommé en raison d’un conflit de nom avec un fichier ou un dossier local !</translation>
     </message>
     <message>
       <location filename="../src/libsync/propagatorjobs.cpp" line="320" />
@@ -4862,8 +4823,7 @@ Il s'agit d'un nouveau mode expérimental. Si vous décidez de l'utiliser, veuil
     <message>
       <location filename="../src/gui/settingsdialog.cpp" line="118" />
       <source>New Account</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Nouveau compte</translation>
     </message>
     <message>
       <location filename="../src/gui/settingsdialog.cpp" line="123" />
@@ -5448,7 +5408,7 @@ Le serveur a répondu avec l'erreur : %2</translation>
     <message>
       <location filename="../src/common/syncjournaldb.cpp" line="966" />
       <source>Failed to connect database.</source>
-      <translation type="unfinished">Impossible de connecter la base de données.</translation>
+      <translation>Impossible de connecter la base de données.</translation>
     </message>
   </context>
   <context>
@@ -5651,8 +5611,7 @@ Le serveur a répondu avec l'erreur : %2</translation>
     <message>
       <location filename="../src/libsync/updatee2eefoldermetadatajob.cpp" line="165" />
       <source>Failed to finalize item.</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Échec de finalisation de l’élément.</translation>
     </message>
   </context>
   <context>
@@ -5683,8 +5642,7 @@ Le serveur a répondu avec l'erreur : %2</translation>
     <message>
       <location filename="../src/libsync/updatee2eefolderusersmetadatajob.cpp" line="118" />
       <source>Could not add or remove user %1 to access folder %2</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Impossible de supprimer l’utilisateur  %1 au dossier d’accès %2 ou de l’y ajouter</translation>
     </message>
     <message>
       <source>Could not add or remove a folder user %1, for folder %2</source>
@@ -5835,17 +5793,17 @@ Le serveur a répondu avec l'erreur : %2</translation>
     <message>
       <location filename="../src/common/checksums.cpp" line="262" />
       <source>The checksum header is malformed.</source>
-      <translation type="unfinished">L’en-tête de la somme de contrôle est mal formé.</translation>
+      <translation>L’en-tête de la somme de contrôle est mal formé.</translation>
     </message>
     <message>
       <location filename="../src/common/checksums.cpp" line="296" />
       <source>The checksum header contained an unknown checksum type "%1"</source>
-      <translation type="unfinished">L’en-tête de somme de contrôle contenait un type de somme de contrôle inconnu « %1 »</translation>
+      <translation>L’en-tête de la somme de contrôle contenait un type de somme de contrôle inconnu « "%1" »</translation>
     </message>
     <message>
       <location filename="../src/common/checksums.cpp" line="301" />
       <source>The downloaded file does not match the checksum, it will be resumed. "%1" != "%2"</source>
-      <translation type="unfinished">Le fichier téléchargé ne correspond pas à la somme de contrôle, il sera repris. "%1" != "%2"</translation>
+      <translation>Le fichier téléchargé ne correspond pas à la somme de contrôle, il sera repris. "%1" != "%2"</translation>
     </message>
   </context>
   <context>
@@ -5938,8 +5896,7 @@ Le serveur a répondu avec l'erreur : %2</translation>
     <message>
       <location filename="../src/gui/creds/webflowcredentials.cpp" line="166" />
       <source>&lt;b&gt;You have been logged out of your account %1 at %2. Please login again.&lt;/b&gt;</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>&lt;b&gt;Vous avez été déconnecté(e) de votre compte %1 à %2. Veuillez vous reconnecter.&lt;/b&gt;</translation>
     </message>
   </context>
   <context>
@@ -6111,18 +6068,17 @@ Le serveur a répondu avec l'erreur : %2</translation>
     <message>
       <location filename="../src/gui/sesSnackBar.cpp" line="69" />
       <source>Error</source>
-      <translation type="unfinished">Erreur</translation>
+      <translation>Erreur</translation>
     </message>
     <message>
       <location filename="../src/gui/sesSnackBar.cpp" line="76" />
       <source>Warning</source>
-      <translation type="unfinished">Attention</translation>
+      <translation>Attention</translation>
     </message>
     <message>
       <location filename="../src/gui/sesSnackBar.cpp" line="83" />
       <source>Success</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Réussite</translation>
     </message>
   </context>
   <context>
@@ -6365,14 +6321,12 @@ Le serveur a répondu avec l'erreur : %2</translation>
     <message>
       <location filename="../src/gui/generalsettings.cpp" line="120" />
       <source>Failed to create debug archive</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Échec de création de l’archive de débogage</translation>
     </message>
     <message>
       <location filename="../src/gui/generalsettings.cpp" line="121" />
       <source>Could not create debug archive in selected location!</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Impossible de créer une archive de débogage à l’emplacement sélectionné !</translation>
     </message>
     <message>
       <location filename="../test/testactivitylistmodel.cpp" line="329" />
@@ -6427,7 +6381,7 @@ Le serveur a répondu avec l'erreur : %2</translation>
     <message>
       <location filename="../src/gui/SesComponents/SesErrorBox.qml" line="58" />
       <source>Error</source>
-      <translation type="unfinished">Erreur</translation>
+      <translation>Erreur</translation>
     </message>
   </context>
   <context>
@@ -6435,19 +6389,17 @@ Le serveur a répondu avec l'erreur : %2</translation>
     <message>
       <location filename="../src/gui/SesComponents/SesTrayHeader.qml" line="43" />
       <source>Website</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Site Web</translation>
     </message>
     <message>
       <location filename="../src/gui/SesComponents/SesTrayHeader.qml" line="46" />
       <source>Open Nextcloud in browser</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Ouvrir Nextcloud dans le navigateur</translation>
     </message>
     <message>
       <location filename="../src/gui/SesComponents/SesTrayHeader.qml" line="66" />
       <source>Open local or group folders</source>
-      <translation type="unfinished">Ouvrir des dossiers locaux ou de groupe</translation>
+      <translation>Ouvrir des dossiers locaux ou de groupe</translation>
     </message>
   </context>
   <context>
@@ -6502,8 +6454,7 @@ Le serveur a répondu avec l'erreur : %2</translation>
     <message>
       <location filename="../src/gui/filedetails/ShareDetailsPage.qml" line="669" />
       <source>Custom Permissions</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Autorisations personnalisées</translation>
     </message>
     <message>
       <location filename="../src/gui/filedetails/ShareDetailsPage.qml" line="686" />
@@ -6543,8 +6494,7 @@ Le serveur a répondu avec l'erreur : %2</translation>
     <message>
       <location filename="../src/gui/filedetails/ShareDetailsPage.qml" line="562" />
       <source>Enter the note to recipient</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Saisir la remarque à l’attention du destinataire</translation>
     </message>
     <message>
       <location filename="../src/gui/filedetails/ShareDetailsPage.qml" line="873" />
@@ -6748,8 +6698,7 @@ Le serveur a répondu avec l'erreur : %2</translation>
     <message>
       <location filename="../src/gui/tray/TrayFoldersMenuButton.qml" line="33" />
       <source>Files</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Fichiers</translation>
     </message>
     <message>
       <location filename="../src/gui/tray/TrayFoldersMenuButton.qml" line="62" />
@@ -6801,55 +6750,52 @@ Le serveur a répondu avec l'erreur : %2</translation>
     <message>
       <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="24" />
       <source>Current account</source>
-      <translation type="unfinished">Compte actuel</translation>
+      <translation>Compte actuel</translation>
     </message>
     <message>
       <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="30" />
       <source>Resume sync for all</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Reprendre toutes les synchros</translation>
     </message>
     <message>
       <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="30" />
       <source>Pause sync for all</source>
-      <translation type="unfinished">Suspendre toutes les synchros</translation>
+      <translation>Suspendre toutes les synchros</translation>
     </message>
     <message>
       <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="112" />
       <source>Add account</source>
-      <translation type="unfinished">Ajouter un compte</translation>
+      <translation>Ajouter un compte</translation>
     </message>
     <message>
       <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="132" />
       <source>Settings</source>
-      <translation type="unfinished">Paramètres</translation>
+      <translation>Paramètres</translation>
     </message>
     <message>
       <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="139" />
       <source>Exit</source>
-      <translation type="unfinished">Quitter</translation>
+      <translation>Quitter</translation>
     </message>
     <message>
       <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="165" />
       <source>Current account avatar</source>
-      <translation type="unfinished">Avatar actuel du compte</translation>
+      <translation>Avatar actuel du compte</translation>
     </message>
     <message>
       <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="214" />
       <source>Current account status is online</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Le statut du compte actuel est En ligne</translation>
     </message>
     <message>
       <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="214" />
       <source>Current account status is do not disturb</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Le statut du compte actuel est Ne pas déranger</translation>
     </message>
     <message>
       <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="277" />
       <source>Account switcher and settings menu</source>
-      <translation type="unfinished">Sélecteur de compte et menu des paramètres</translation>
+      <translation>Sélecteur de compte et menu des paramètres</translation>
     </message>
   </context>
   <context>
@@ -6857,34 +6803,32 @@ Le serveur a répondu avec l'erreur : %2</translation>
     <message>
       <location filename="../src/gui/tray/TrayWindowHeaderBar.qml" line="42" />
       <source>Website</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Site Web</translation>
     </message>
     <message>
       <location filename="../src/gui/tray/TrayWindowHeaderBar.qml" line="45" />
       <source>Open Nextcloud in browser</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Ouvrir Nextcloud dans le navigateur</translation>
     </message>
     <message>
       <location filename="../src/gui/tray/TrayWindowHeaderBar.qml" line="65" />
       <source>Open local or group folders</source>
-      <translation type="unfinished">Ouvrir des dossiers locaux ou de groupe</translation>
+      <translation>Ouvrir des dossiers locaux ou de groupe</translation>
     </message>
     <message>
       <location filename="../src/gui/tray/TrayWindowHeaderBar.qml" line="82" />
       <source>Open Nextcloud Talk in browser</source>
-      <translation type="unfinished">Ouvrez Nextcloud Talk dans le navigateur</translation>
+      <translation>Ouvrez Nextcloud Talk dans le navigateur</translation>
     </message>
     <message>
       <location filename="../src/gui/tray/TrayWindowHeaderBar.qml" line="109" />
       <source>More apps</source>
-      <translation type="unfinished">Plus d'applications</translation>
+      <translation>Plus d’applications</translation>
     </message>
     <message>
       <location filename="../src/gui/tray/TrayWindowHeaderBar.qml" line="163" />
       <source>Open %1 in browser</source>
-      <translation type="unfinished">Ouvrir %1 dans le navigateur</translation>
+      <translation>Ouvrir %1 dans le navigateur</translation>
     </message>
   </context>
   <context>
@@ -7313,8 +7257,7 @@ Le serveur a répondu avec l'erreur : %2</translation>
     <message>
       <location filename="../src/libsync/progressdispatcher.cpp" line="60" />
       <source>Updated local virtual files metadata</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>Métadonnées des fichiers virtuels locaux mises à jour</translation>
     </message>
     <message>
       <location filename="../src/libsync/progressdispatcher.cpp" line="63" />
@@ -7360,8 +7303,7 @@ Le serveur a répondu avec l'erreur : %2</translation>
     <message>
       <location filename="../src/libsync/progressdispatcher.cpp" line="93" />
       <source>updating local virtual files metadata</source>
-      <translation type="unfinished">
-      </translation>
+      <translation>mise à jour des métadonnées des fichiers virtuels locaux</translation>
     </message>
   </context>
   <context>
