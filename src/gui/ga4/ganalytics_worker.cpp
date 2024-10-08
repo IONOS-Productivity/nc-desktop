@@ -224,7 +224,6 @@ void GAnalyticsWorker::postMessage()
 
     char message[512];
     snprintf(message, sizeof(message), "%s\n", requestUrl.toString().toStdString().c_str());
-    OutputDebugStringA(message);
     logMessage(GAnalytics::Debug, message);
 
     QNetworkReply *reply = networkManager->post(m_request, QByteArray());
