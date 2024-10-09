@@ -45,12 +45,12 @@
 namespace {
 const QString TOOLBAR_CSS()
 {
-    return QStringLiteral("QToolBar { background: %1; margin: 0; padding: 0; border: none; border-bottom: 1px solid %2; spacing: 3; padding: 3; } "
-                        "QToolBar QToolButton { background: %1; border: none; margin: 0; padding: 5px; border-radius: %5; } " // Added border-radius here
-                        "QToolBar::separator { height: 100%; width: 1px; background: %2; margin: 0 %6; } " // Style for the separator
-                        "QToolBar QToolBarExtension { padding:0; } "
-                        "QToolBar QToolButton:checked { background: %3; color: %4; border-radius: %5; }"
-                        "QToolBar QToolButton:hover { background: %3; }");
+    return QStringLiteral("QToolBar { background: %1; border: none; border-bottom: 1px solid %2; } "
+                        "QToolBar QToolButton { background: %1; border: none; margin: 3px 0px 7px 12px; padding: 14px 4px 4px 4px; border-radius: %5; %7; } " // Added border-radius here
+                        "QToolBar::separator { height: 100%; width: 1px; background: %2; margin-left: 12px; } " // Style for the separator
+                        "QToolBar QToolButton:hover { background: %3; }"
+                        "QToolBar QToolButton:pressed { background: %6; color: %4; }"
+                        "QToolBar QToolButton:checked { background: %6; color: %4; }");
 }
 
 const float buttonSizeRatio = 1.618f; // golden ratio
@@ -333,24 +333,24 @@ void SettingsDialog::customizeStyle()
     QPalette palette = Theme::instance()->systemPalette();
     
     QString white(palette.window().color().name());
-    QString highlightColor(palette.highlight().color().name());
+    QString highlightColor(IonosTheme::toolButtonHoveredColor());
+    QString pressedColor(IonosTheme::toolButtonPressedColor());
     QString borderColor(palette.shadow().color().name());
     QString highlightTextColor(palette.highlightedText().color().name());
 
-     QString toolbarActionBorderRadius(IonosTheme::toolbarActionBorderRadius());
-     QString toolbarSideMargin (IonosTheme::toolbarSideMargin());
-
-    QString background(palette.base().color().name());
-    _toolBar->setStyleSheet(
-        TOOLBAR_CSS().arg(white, borderColor, highlightColor, highlightTextColor, toolbarActionBorderRadius, toolbarSideMargin) + 
-        QStringLiteral("QToolButton { %1; }").arg(
-            IonosTheme::fontConfigurationCss(
-                IonosTheme::settingsFont(),
+    QString toolbarActionBorderRadius(IonosTheme::toolbarActionBorderRadius());
+    QString toolbarSideMargin (IonosTheme::toolbarSideMargin());
+    QString toolButtonFont (
+        IonosTheme::fontConfigurationCss(
                 IonosTheme::settingsTextSize(),
                 IonosTheme::settingsTextWeight(),
+                IonosTheme::settingsFont(),
                 IonosTheme::menuTextColor()
-            )
         )
+    );
+    
+    _toolBar->setStyleSheet(
+        TOOLBAR_CSS().arg(white, borderColor, highlightColor, highlightTextColor, toolbarActionBorderRadius, pressedColor, toolButtonFont)
     );
 
     Q_FOREACH (QAction *a, _actionGroup->actions()) {
