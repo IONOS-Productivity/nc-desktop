@@ -83,28 +83,21 @@
       </widget>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="topAreaHBox" stretch="3,4,1,4,3">
+      <layout class="QHBoxLayout" name="topAreaHBox" stretch="4,1,4">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetFixedSize</enum>
+       </property>
        <property name="leftMargin">
-        <number>0</number>
+        <number>65</number>
        </property>
        <property name="rightMargin">
-        <number>0</number>
+        <number>65</number>
        </property>
        <item>
-        <spacer name="horizontalSpacer_4">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
         <layout class="QVBoxLayout" name="serverVBox">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetFixedSize</enum>
+         </property>
          <item>
           <widget class="QLabel" name="lServerIcon">
            <property name="sizePolicy">
@@ -347,19 +340,6 @@
           </widget>
          </item>
         </layout>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
        </item>
       </layout>
      </item>
