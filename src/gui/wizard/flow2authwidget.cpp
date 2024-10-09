@@ -225,7 +225,7 @@ void Flow2AuthWidget::customizeStyle()
 
     _ui.openLinkButton->setText(tr("Open Browser"));
     _ui.openLinkButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
-    _ui.openLinkButton->setFixedSize(150, 40);
+    _ui.openLinkButton->setFixedSize(180, 40);
 
     _ui.copyLinkButton->setText(tr("Copy Link"));
     _ui.copyLinkButton->setFixedSize(150, 40);
