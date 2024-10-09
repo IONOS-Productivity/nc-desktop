@@ -49,7 +49,7 @@
        <property name="sizeHint" stdset="0">
         <size>
          <width>20</width>
-         <height>11</height>
+         <height>32</height>
         </size>
        </property>
       </spacer>
@@ -59,6 +59,9 @@
      </item>
      <item>
       <widget class="QLabel" name="topLabel">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -182,6 +185,9 @@
        </item>
        <item>
         <layout class="QVBoxLayout" name="arrowVBox">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetFixedSize</enum>
+         </property>
          <item>
           <widget class="QLabel" name="syncLogoLabel">
            <property name="sizePolicy">
@@ -206,7 +212,7 @@
        <item>
         <layout class="QVBoxLayout" name="locationsVBox">
          <property name="sizeConstraint">
-          <enum>QLayout::SetMinimumSize</enum>
+          <enum>QLayout::SetFixedSize</enum>
          </property>
          <item>
           <widget class="QLabel" name="lLocal">
@@ -369,7 +375,7 @@
         <enum>Qt::Vertical</enum>
        </property>
        <property name="sizeType">
-        <enum>QSizePolicy::Preferred</enum>
+        <enum>QSizePolicy::Fixed</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
