@@ -72,7 +72,7 @@ QString shortDisplayNameForSettings(OCC::Account *account, int width)
         QFont f;
         QFontMetrics fm(f);
         host = fm.elidedText(host, Qt::ElideMiddle, width);
-        user = fm.elidedText(user, Qt::ElideRight, width);
+        user = fm.elidedText(user, Qt::ElideMiddle, width);
     }
     return QStringLiteral("%1\n%2").arg(user, host);
 }
