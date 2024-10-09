@@ -636,9 +636,6 @@ void OwncloudAdvancedSetupPage::customizeStyle()
     _ui.verticalLayout->setSpacing(0);
     _ui.pbSelectLocalFolder->setMinimumSize(0, 40);
 
-    _ui.topAreaHBox->setContentsMargins(0, 0, 0, 0);
-    _ui.topAreaHBox->setSpacing(56);
-
     _ui.serverVBox->setAlignment(Qt::AlignTop);
     _ui.serverVBox->setSpacing(5);
     _ui.serverVBox->setContentsMargins(0, 0, 0, 0);
