@@ -237,11 +237,11 @@ public:
         return "16px";
     }
 
-    static QString toolButtonPressedColor() {
+    static QString buttonPressedColor() {
         return "#0B2A63";
     }
 
-    static QString toolButtonHoveredColor() {
+    static QString buttonHoveredColor() {
         return "#1474C4";
     }
 

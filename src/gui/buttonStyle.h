@@ -246,23 +246,23 @@ public:
     // Hover
     QString buttonHoverColor() const override 
     {
-        return OCC::IonosTheme::toolButtonHoveredColor();
+        return OCC::IonosTheme::buttonHoveredColor();
     }
 
     QString buttonHoverBorderColor() const override 
     {
-        return OCC::IonosTheme::toolButtonHoveredColor();
+        return OCC::IonosTheme::buttonHoveredColor();
     }
 
     // Pressed
     QString buttonPressedColor() const override 
     {
-        return OCC::IonosTheme::toolButtonPressedColor();
+        return OCC::IonosTheme::buttonPressedColor();
     }
 
     QString buttonPressedBorderColor() const override 
     {
-        return OCC::IonosTheme::toolButtonPressedColor();
+        return OCC::IonosTheme::buttonPressedColor();
     }
 
     // Disabled
