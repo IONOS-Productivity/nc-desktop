@@ -48,6 +48,7 @@ TextField {
     placeholderText: enabled ? qsTr("Search for users or groups…") : qsTr("Sharing is not available for this folder")
     placeholderTextColor: placeholderColor
 
+
     onActiveFocusChanged: triggerSuggestionsVisibility()
     onTextChanged: triggerSuggestionsVisibility()
     Keys.onPressed: {
@@ -87,13 +88,14 @@ TextField {
         }
     }
 
-    leftPadding: searchIcon.width + searchIcon.anchors.leftMargin + horizontalPaddingOffset
-    rightPadding: clearTextButton.width + clearTextButton.anchors.rightMargin + horizontalPaddingOffset
+    leftPadding: searchIcon.width + searchIcon.anchors.leftMargin + horizontalPaddingOffset - 5
+    rightPadding: root.text ? clearTextButton.width + clearTextButton.anchors.rightMargin + horizontalPaddingOffset : 5
 
     background: Rectangle {
         radius: 5
         border.color: Style.sesMenuBorder
         border.width: 1
+
     }
 
     Image {
