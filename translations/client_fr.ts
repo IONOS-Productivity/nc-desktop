@@ -1373,13 +1373,13 @@ Vous prenez vos propres risques.</translation>
     <message>
       <location filename="../src/gui/caseclashfilenamedialog.ui" line="14" />
       <source>Case Clash Conflict</source>
-      <translation type="unfinished">
+      <translation>Case Clash Conflict
       </translation>
     </message>
     <message>
       <location filename="../src/gui/caseclashfilenamedialog.ui" line="23" />
       <source>The file could not be synced because it generates a case clash conflict with an existing file on this system.</source>
-      <translation type="unfinished">
+      <translation>Le fichier n'a pas pu être synchronisé car il génère un conflit de cas avec un fichier existant sur ce système.
       </translation>
     </message>
     <message>
@@ -1390,13 +1390,13 @@ Vous prenez vos propres risques.</translation>
     <message>
       <location filename="../src/gui/caseclashfilenamedialog.ui" line="53" />
       <source>Existing file</source>
-      <translation type="unfinished">
+      <translation>Dossier existant
       </translation>
     </message>
     <message>
       <location filename="../src/gui/caseclashfilenamedialog.ui" line="60" />
       <source>file A</source>
-      <translation type="unfinished">
+      <translation>fichier A
       </translation>
     </message>
     <message>
@@ -2261,7 +2261,9 @@ Cela signifie que le client de synchronisation ne va pas téléverser immédiate
       <source>All files in the server folder "%1" were deleted.
 
 If you restore the files, they will be uploaded again to the server.</source>
-      <translation type="unfinished">
+      <translation>"Tous les fichiers du dossier ""%1"" du serveur ont été supprimés.
+
+Si vous restaurez les fichiers, ils seront à nouveau téléchargés sur le serveur."
       </translation>
     </message>
     <message>
@@ -2269,7 +2271,9 @@ If you restore the files, they will be uploaded again to the server.</source>
       <source>All files in the local folder "%1" were deleted.
 
 If you restore the files, they will be downloaded again from the server.</source>
-      <translation type="unfinished">
+      <translation>"Tous les fichiers du dossier local ""%1"" ont été supprimés.
+
+Si vous restaurez les fichiers, ils seront à nouveau téléchargés depuis le serveur. "
       </translation>
     </message>
     <message>
@@ -2990,7 +2994,8 @@ S'il s'agissait d'un accident et que vous choisissiez de conserver vos fichiers,
       <source>
                                                         MB</source>
       <extracomment>Trailing part of "Ask confirmation before syncing folder larger than" </extracomment>
-      <translation type="unfinished">
+      <translation>MO
+Dernière partie de « Demander confirmation avant de synchroniser un dossier plus grand que »
       </translation>
     </message>
     <message>
@@ -3289,7 +3294,9 @@ Les éléments ayant l'option « Autoriser la suppression » pourront être supp
       <source>Files or folders that match this pattern will not be synchronized.
 
 Objects that are allowed to be deleted will be deleted if they would prevent a folder from being deleted. This is useful for metadata.</source>
-      <translation type="unfinished">
+      <translation>Les fichiers ou dossiers qui correspondent à ce modèle ne seront pas synchronisés.
+
+Les objets autorisés à être supprimés le seront s'ils empêchent la suppression d'un dossier. Ceci est utile pour les métadonnées.
       </translation>
     </message>
     <message>
@@ -6129,7 +6136,7 @@ Le serveur a répondu avec l'erreur : %2</translation>
                                                     MB
                                                 </source>
       <extracomment>Trailing part of "Ask confirmation before syncing folder larger than" </extracomment>
-      <translation type="unfinished">
+      <translation>MO
       </translation>
     </message>
     <message>
@@ -6139,7 +6146,8 @@ Le serveur a répondu avec l'erreur : %2</translation>
                                             from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content
                                             should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                                         </source>
-      <translation type="unfinished">
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Si cette case est cochée, le contenu existant dans le dossier local sera effacé pour commencer une synchronisation propre à partir du serveur.&lt;/p&gt;&lt;p&gt;Ne cochez pas cette case si le contenu local doit être téléchargé dans le dossier du serveur..&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+
       </translation>
     </message>
     <message>
