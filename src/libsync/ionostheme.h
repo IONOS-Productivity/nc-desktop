@@ -245,6 +245,14 @@ public:
         return "#1474C4";
     }
 
+    static QString toolButtonHoveredColor() {
+        return "#DBEDF8";
+    }
+
+    static QString toolButtonPressedColor() {
+        return "#95CAEB";
+    }
+
     static QString errorBorderColor() {
         return "#EEACB2";
     }
