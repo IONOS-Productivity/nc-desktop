@@ -108,8 +108,7 @@ OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage(OwncloudWizard *wizard)
         _ui.confTraillingSizeLabel->hide();
     }
 
-    _ui.rVirtualFileSync->setText(tr("Use &virtual files instead of downloading content immediately %1").arg(bestAvailableVfsMode() == Vfs::WindowsCfApi ? QString() : tr("(experimental)")));
-
+    _ui.virtualFilesLabel->setText(tr("Use &virtual files instead of downloading content immediately %1").arg(bestAvailableVfsMode() == Vfs::WindowsCfApi ? QString() : tr("(experimental)")));
 #ifdef Q_OS_WIN
     if (bestAvailableVfsMode() == Vfs::WindowsCfApi) {
         _ui.wSyncStrategy->addLayout(_ui.lVirtualFileSync);
@@ -268,11 +267,11 @@ void OwncloudAdvancedSetupPage::refreshVirtualFilesAvailibility(const QString &p
     }
 
     if (Utility::isPathWindowsDrivePartitionRoot(path)) {
-        _ui.rVirtualFileSync->setText(tr("Virtual files are not supported for Windows partition roots as local folder. Please choose a valid subfolder under drive letter."));
+        _ui.virtualFilesLabel->setText(tr("Virtual files are not supported for Windows partition roots as local folder. Please choose a valid subfolder under drive letter."));
         setRadioChecked(_ui.rSyncEverything);
         _ui.rVirtualFileSync->setEnabled(false);
     } else {
-        _ui.rVirtualFileSync->setText(tr("Use &virtual files instead of downloading content immediately %1").arg(bestAvailableVfsMode() == Vfs::WindowsCfApi ? QString() : tr("(experimental)")));
+        _ui.virtualFilesLabel->setText(tr("Use &virtual files instead of downloading content immediately %1").arg(bestAvailableVfsMode() == Vfs::WindowsCfApi ? QString() : tr("(experimental)")));
         _ui.rVirtualFileSync->setEnabled(true);
     }
     //
@@ -308,7 +307,7 @@ void OwncloudAdvancedSetupPage::updateStatus()
             t = Utility::escape(tr(R"(%1 folder "%2" is synced to local folder "%3")")
                                     .arg(Theme::instance()->appName(), _remoteFolder,
                                         QDir::toNativeSeparators(locFolder)));
-            _ui.rSyncEverything->setText(tr("Sync the folder \"%1\"").arg(_remoteFolder));
+            _ui.SyncEverythingLabel->setText(tr("Sync the folder \"%1\"").arg(_remoteFolder));
         }
 
         const bool dirNotEmpty(QDir(locFolder).entryList(QDir::AllEntries | QDir::NoDotAndDotDot).count() > 0);
@@ -427,7 +426,7 @@ bool OwncloudAdvancedSetupPage::validatePage()
                 _ui.confCheckBoxSize->isChecked() ? _ui.confSpinBox->value() : -1);
             cfgFile.setConfirmExternalStorage(_ui.confCheckBoxExternal->isChecked());
         }
-        else 
+        else
         {
             cfgFile.setNewBigFolderSizeLimit(false, -1);
             cfgFile.setConfirmExternalStorage(false);
