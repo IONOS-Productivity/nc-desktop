@@ -6517,12 +6517,12 @@ Le serveur a répondu avec l'erreur : %2</translation>
     <message>
       <location filename="../src/gui/filedetails/ShareDetailsPage.qml" line="909" />
       <source>Share link copied!</source>
-      <translation>Lien de partage copié !</translation>
+      <translation>Lien copié !</translation>
     </message>
     <message>
       <location filename="../src/gui/filedetails/ShareDetailsPage.qml" line="909" />
       <source>Copy share link</source>
-      <translation>Copier le lien de partage</translation>
+      <translation>Copier le lien</translation>
     </message>
   </context>
   <context>
