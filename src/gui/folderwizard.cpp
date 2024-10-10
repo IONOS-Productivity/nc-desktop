@@ -698,7 +698,7 @@ FolderWizardSelectiveSync::FolderWizardSelectiveSync(const AccountPtr &account)
         auto *virtualFilesLayout = new QHBoxLayout();
 
         virtualFilesLayout->addWidget(_virtualFilesCheckBox, 0, Qt::AlignTop);
-        virtualFilesLayout->addSpacing(10); // Add 10px spacing between checkbox and label
+        virtualFilesLayout->addSpacing(0);
         virtualFilesLayout->addWidget(_virtualFilesCheckBoxLabel, 0, Qt::AlignTop);
         virtualFilesLayout->addStretch();
 
