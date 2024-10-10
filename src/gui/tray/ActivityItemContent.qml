@@ -238,7 +238,7 @@ RowLayout {
                 height: (text === "") ? 0 : implicitHeight
                 elide: Text.ElideRight
                 wrapMode: Text.Wrap
-                maximumLineCount: 2
+                maximumLineCount: 10
                 font.family: Style.sesOpenSansRegular
                 font.pixelSize: Style.sesFontHintPixelSize
                 visible: text !== ""
