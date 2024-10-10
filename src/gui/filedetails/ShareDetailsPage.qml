@@ -837,7 +837,7 @@ Page {
     footer: GridLayout {
         id: buttonGrid
 
-        columns: 2
+        columns: 1
         rows: 2
 
         SesCustomButton {
@@ -859,6 +859,7 @@ Page {
 
             Layout.leftMargin: 16
             Layout.bottomMargin: 16
+            Layout.row: 0
 
             onClicked: root.createNewLinkShare()
         }
@@ -881,7 +882,7 @@ Page {
             Layout.bottomMargin: 16
             Layout.leftMargin: 16
             Layout.rightMargin: 60
-
+            Layout.row: 1
             onClicked: root.deleteShare()
         }
 
@@ -919,6 +920,7 @@ Page {
             Layout.alignment: Qt.AlignRight
             Layout.bottomMargin: 16
             Layout.rightMargin: 20
+            Layout.row: 1
 
             Behavior on bgColor {
                 ColorAnimation { duration: Style.shortAnimationDuration }
