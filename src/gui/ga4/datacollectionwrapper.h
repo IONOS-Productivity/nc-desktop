@@ -41,7 +41,7 @@ public:
     void setSendData(const bool sendData);
     void initDataCollection();
 
-    DataCollectionWrapper(QObject *parent = 0);;
+    DataCollectionWrapper(QObject *parent = 0);
     ~DataCollectionWrapper();
 
 public slots:
