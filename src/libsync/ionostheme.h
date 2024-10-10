@@ -76,6 +76,10 @@ public:
         return "8";
     }
 
+    static int minimalSettingsDialogWidth() {
+        return 740;
+    }
+
     //Font Configuration
     static QString settingsFont() {
         return "Segoe UI";

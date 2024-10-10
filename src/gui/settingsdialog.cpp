@@ -162,7 +162,7 @@ SettingsDialog::SettingsDialog(ownCloudGui *gui, QWidget *parent)
 
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     cfg.restoreGeometry(this);
-    resize(width() + 5, height());
+    resize(width() > IonosTheme::minimalSettingsDialogWidth() ? width(): IonosTheme::minimalSettingsDialogWidth(), height());
 }
 
 SettingsDialog::~SettingsDialog()
