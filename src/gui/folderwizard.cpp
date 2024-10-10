@@ -690,15 +690,16 @@ FolderWizardSelectiveSync::FolderWizardSelectiveSync(const AccountPtr &account)
             _selectiveSync->setEnabled(state == Qt::Unchecked);
         });
         _virtualFilesCheckBox->setChecked(bestAvailableVfsMode() == Vfs::WindowsCfApi);
+        _virtualFilesCheckBox->setStyleSheet("margin-top: 5px;");
 
         _virtualFilesCheckBoxLabel = new QLabel(tr("Use virtual files instead of downloading content immediately %1").arg(bestAvailableVfsMode() == Vfs::WindowsCfApi ? QString() : tr("(experimental)")));
         _virtualFilesCheckBoxLabel->setWordWrap(true);
 
         auto *virtualFilesLayout = new QHBoxLayout();
 
-        virtualFilesLayout->addWidget(_virtualFilesCheckBox);
+        virtualFilesLayout->addWidget(_virtualFilesCheckBox, 0, Qt::AlignTop);
         virtualFilesLayout->addSpacing(10); // Add 10px spacing between checkbox and label
-        virtualFilesLayout->addWidget(_virtualFilesCheckBoxLabel);
+        virtualFilesLayout->addWidget(_virtualFilesCheckBoxLabel, 0, Qt::AlignTop);
         virtualFilesLayout->addStretch();
 
         // Ensure the label takes the full width of the parent
