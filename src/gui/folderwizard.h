@@ -152,6 +152,7 @@ private:
     Ui_FolderWizardSelectiveSync _uiSelectiveSync{};
     SelectiveSyncWidget *_selectiveSync;
     QCheckBox *_virtualFilesCheckBox = nullptr;
+    QLabel *_virtualFilesCheckBoxLabel = nullptr;
 };
 
 /**
