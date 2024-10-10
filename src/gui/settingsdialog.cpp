@@ -162,6 +162,7 @@ SettingsDialog::SettingsDialog(ownCloudGui *gui, QWidget *parent)
 
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     cfg.restoreGeometry(this);
+    resize(width() + 5, height());
 }
 
 SettingsDialog::~SettingsDialog()
@@ -331,7 +332,7 @@ void SettingsDialog::accountRemoved(AccountState *s)
 void SettingsDialog::customizeStyle()
 {
     QPalette palette = Theme::instance()->systemPalette();
-    
+
     QString white(palette.window().color().name());
     QString highlightColor(IonosTheme::toolButtonHoveredColor());
     QString pressedColor(IonosTheme::toolButtonPressedColor());
@@ -348,7 +349,7 @@ void SettingsDialog::customizeStyle()
                 IonosTheme::menuTextColor()
         )
     );
-    
+
     _toolBar->setStyleSheet(
         TOOLBAR_CSS().arg(white, borderColor, highlightColor, highlightTextColor, toolbarActionBorderRadius, pressedColor, toolButtonFont)
     );
@@ -395,7 +396,7 @@ public:
         btn->setFixedSize(104, 94);
         btn->setDefaultAction(this);
         btn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
-    
+
         btn->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
         return btn;
     }
