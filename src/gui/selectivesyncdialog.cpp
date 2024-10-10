@@ -310,7 +310,7 @@ void SelectiveSyncWidget::slotUpdateDirectories(QStringList list)
 void SelectiveSyncWidget::slotUpdateRootFolderFilesSize(const QStringList &subfolders)
 {
     const auto job = qobject_cast<LsColJob *>(sender());
-    
+
     if (!job) {
         qWarning() << "slotUpdateRootFolderFilesSize must have a valid sender";
         return;
@@ -500,6 +500,7 @@ SelectiveSyncDialog::SelectiveSyncDialog(AccountPtr account, Folder *folder, QWi
     , _folder(folder)
 {
     bool ok = false;
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     init(account);
     QStringList selectiveSyncList = _folder->journalDb()->getSelectiveSyncList(SyncJournalDb::SelectiveSyncBlackList, &ok);
     if (ok) {
@@ -517,6 +518,7 @@ SelectiveSyncDialog::SelectiveSyncDialog(AccountPtr account, const QString &fold
     , _folder(nullptr)
 {
     init(account);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     _selectiveSync->setFolderInfo(folder, folder, blacklist);
 }
 

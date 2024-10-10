@@ -74,6 +74,7 @@ InvalidFilenameDialog::InvalidFilenameDialog(AccountPtr account, Folder *folder,
 {
     Q_ASSERT(_account);
     Q_ASSERT(_folder);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
     const auto filePathFileInfo = QFileInfo(_filePath);
     _relativeFilePath = filePathFileInfo.path() + QStringLiteral("/");

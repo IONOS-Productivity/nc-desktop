@@ -83,6 +83,8 @@ CaseClashFilenameDialog::CaseClashFilenameDialog(AccountPtr account,
     Q_ASSERT(_account);
     Q_ASSERT(_folder);
 
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+
     const auto filePathFileInfo = QFileInfo(_filePath);
     const auto conflictFileName = filePathFileInfo.fileName();
 

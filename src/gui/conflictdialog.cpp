@@ -50,6 +50,7 @@ ConflictDialog::ConflictDialog(QWidget *parent)
 {
     _ui->setupUi(this);
     forceHeaderFont(_ui->conflictMessage);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     _ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
     _ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("Keep selected version"));
 
