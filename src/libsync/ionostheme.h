@@ -125,6 +125,10 @@ public:
         return "400";
     }
 
+    static QString settingsTitleWeight400() {
+        return "400";
+    }
+
     static QString settingsTitleWeight500() {
         return "500";
     }
