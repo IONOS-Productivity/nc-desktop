@@ -66,8 +66,11 @@ void WelcomePage::styleSlideShow()
     const auto wizardTalkIconFileName = theme->isBranded() ? Theme::hidpiFileName("wizard-talk.png", backgroundColor)
                                                            : Theme::hidpiFileName(":/client/theme/colored/wizard-talk.png");
 
+    const auto ionosLogoFileName = theme->isBranded()   ? Theme::hidpiFileName("IONOS_wizard_logo.png", backgroundColor)
+                                                        : Theme::hidpiFileName(":/client/theme/colored/IONOS_wizard_logo.png");
+
     QPixmap emptyPixmap;
-    _ui->slideShow->addSlide(emptyPixmap, tr("Keep your data secure and under your control"));
+    _ui->slideShow->addSlide(ionosLogoFileName, tr("Keep your data secure and under your control")); 
     // _ui->slideShow->addSlide(wizardFilesIconFileName, tr("Secure collaboration & file exchange"));
     // _ui->slideShow->addSlide(wizardGroupwareIconFileName, tr("Easy-to-use web mail, calendaring & contacts"));
     // _ui->slideShow->addSlide(wizardTalkIconFileName, tr("Screensharing, online meetings & web conferences"));
