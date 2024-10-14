@@ -199,7 +199,7 @@ void FolderWizardLocalPath::changeStyle()
             IonosTheme::titleColor()));
 
     _ui.description->setProperty("text",
-        tr("Select a folder on your hard drive that should be permanetly connected to your IONOS EASYSTORAGE. All files and "
+        tr("Select a folder on your hard drive that should be permanetly connected to your HiDrvie Next. All files and "
         "subfolders are automatically uploaded and synchronized"));
 
     _ui.localFolderLineEdit->setStyleSheet(QString(
@@ -635,7 +635,7 @@ void FolderWizardRemotePath::changeStyle()
         IonosTheme::settingsTitleWeight600(),
         IonosTheme::folderWizardSubtitleColor()));
 
-    _ui.subTitle->setProperty("text", tr("Step 2 of 3: Directory in your IONOS EASYSTORAGE"));
+    _ui.subTitle->setProperty("text", tr("Step 2 of 3: Directory in your HiDrvie Next"));
 
     _ui.description1->setStyleSheet(IonosTheme::fontConfigurationCss(
         IonosTheme::settingsFont(),

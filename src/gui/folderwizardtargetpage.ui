@@ -50,7 +50,7 @@
                         <string notr="true">color: rgb(16,73, 150);font: bold;</string>
                     </property>
                     <property name="text">
-                        <string>Step 2 of 3: Directory in your IONOS EASYSTORAGE</string>
+                        <string>Step 2 of 3: Directory in your HiDrvie Next</string>
                     </property>
                     <property name="textFormat">
                         <enum>Qt::PlainText</enum>
@@ -86,7 +86,7 @@
                         </sizepolicy>
                     </property>
                     <property name="text">
-                        <string>Please now select or create a target folder in your IONOS EASYSTORAGE where the content should be uploaded and synchronized.</string>
+                        <string>Please now select or create a target folder in your HiDrvie Next where the content should be uploaded and synchronized.</string>
                     </property>
                     <property name="textFormat">
                         <enum>Qt::PlainText</enum>
