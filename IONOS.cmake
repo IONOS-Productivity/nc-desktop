@@ -1,6 +1,6 @@
 set( APPLICATION_NAME       "HiDrvie Next" )
 set( APPLICATION_SHORTNAME  "Easystorage" )
-set( APPLICATION_EXECUTABLE "ionoseasystorage" )
+set( APPLICATION_EXECUTABLE "hidrivenext" )
 set( APPLICATION_CONFIG_NAME "${APPLICATION_EXECUTABLE}" )
 set( APPLICATION_DOMAIN     "ionos.com" )
 set( APPLICATION_VENDOR     "IONOS SE" )
