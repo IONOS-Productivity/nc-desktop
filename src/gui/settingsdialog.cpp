@@ -46,11 +46,12 @@ namespace {
 const QString TOOLBAR_CSS()
 {
     return QStringLiteral("QToolBar { background: %1; border: none; border-bottom: 1px solid %2; } "
-                        "QToolBar QToolButton { background: %1; border: none; margin: 3px 0px 7px 12px; padding: 14px 4px 4px 4px; border-radius: %5; %7; } " // Added border-radius here
-                        "QToolBar::separator { height: 100%; width: 1px; background: %2; margin-left: 12px; } " // Style for the separator
+                        "QToolBar QToolButton { background: %1; border: none; margin: 3px 0px 7px 12px; padding: 14px 4px 4px 4px; border-radius: %5; %8; } " // Added border-radius here
+                        "QToolBar QToolButton:checked { background: %7; color: %4; }"
                         "QToolBar QToolButton:hover { background: %3; }"
                         "QToolBar QToolButton:pressed { background: %6; color: %4; }"
-                        "QToolBar QToolButton:checked { background: %6; color: %4; }");
+                        "QToolBar::separator { height: 100%; width: 1px; background: %2; margin-left: 12px; } " // Style for the separator
+                        );
 }
 
 const float buttonSizeRatio = 1.618f; // golden ratio
@@ -334,8 +335,10 @@ void SettingsDialog::customizeStyle()
     QPalette palette = Theme::instance()->systemPalette();
 
     QString white(palette.window().color().name());
-    QString highlightColor(IonosTheme::toolButtonHoveredColor());
+    QString hoverColor(IonosTheme::toolButtonHoveredColor());
     QString pressedColor(IonosTheme::toolButtonPressedColor());
+    QString selectedColor(IonosTheme::menuSelectedItemColor());
+
     QString borderColor(palette.shadow().color().name());
     QString highlightTextColor(palette.highlightedText().color().name());
 
@@ -351,7 +354,7 @@ void SettingsDialog::customizeStyle()
     );
 
     _toolBar->setStyleSheet(
-        TOOLBAR_CSS().arg(white, borderColor, highlightColor, highlightTextColor, toolbarActionBorderRadius, pressedColor, toolButtonFont)
+        TOOLBAR_CSS().arg(white, borderColor, hoverColor, highlightTextColor, toolbarActionBorderRadius, pressedColor, selectedColor, toolButtonFont)
     );
 
     Q_FOREACH (QAction *a, _actionGroup->actions()) {
