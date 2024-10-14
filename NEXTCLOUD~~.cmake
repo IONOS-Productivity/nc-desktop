@@ -1,4 +1,4 @@
-set( APPLICATION_NAME       "IONOS EasyStorage" )
+set( APPLICATION_NAME       "HiDrvie Next" )
 set( APPLICATION_SHORTNAME  "Easystorage" )
 set( APPLICATION_EXECUTABLE "ionoseasystorage" )
 set( APPLICATION_CONFIG_NAME "${APPLICATION_EXECUTABLE}" )
