@@ -62,7 +62,7 @@ QString FolderStatusDelegate::addFolderText()
 
 QString FolderStatusDelegate::addInfoText()
 {
-    return tr("Synchronize any other local folder with your IONOS EASY STORAGE");
+    return tr("Synchronize any other local folder with your %1").arg(Theme::instance()->appNameGUI());
 }
 
 // allocate each item size in listview.

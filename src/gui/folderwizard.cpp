@@ -199,8 +199,8 @@ void FolderWizardLocalPath::changeStyle()
             IonosTheme::titleColor()));
 
     _ui.description->setProperty("text",
-        tr("Select a folder on your hard drive that should be permanetly connected to your HiDrvie Next. All files and "
-        "subfolders are automatically uploaded and synchronized"));
+        tr("Select a folder on your hard drive that should be permanetly connected to your %1. All files and "
+        "subfolders are automatically uploaded and synchronized").arg(Theme::instance()->appNameGUI()));
 
     _ui.localFolderLineEdit->setStyleSheet(QString(
         "color: %1; font-family: %2; font-size: %3; font-weight: %4; border-radius: %5; border: 1px "
@@ -635,7 +635,7 @@ void FolderWizardRemotePath::changeStyle()
         IonosTheme::settingsTitleWeight600(),
         IonosTheme::folderWizardSubtitleColor()));
 
-    _ui.subTitle->setProperty("text", tr("Step 2 of 3: Directory in your HiDrvie Next"));
+    _ui.subTitle->setProperty("text", tr("Step 2 of 3: Directory in your %1").arg(Theme::instance()->appNameGUI()));
 
     _ui.description1->setStyleSheet(IonosTheme::fontConfigurationCss(
         IonosTheme::settingsFont(),

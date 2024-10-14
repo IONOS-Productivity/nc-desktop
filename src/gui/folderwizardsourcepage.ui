@@ -85,7 +85,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Select a folder on your hard drive that should be permanetly connected to your HiDrvie Next. All files and subfolders are automatically uploaded and synchronized</string>
+        <string>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</string>
        </property>
        <property name="textFormat">
         <enum>Qt::PlainText</enum>

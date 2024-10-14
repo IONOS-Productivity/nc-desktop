@@ -412,8 +412,8 @@
     </message>
     <message>
       <location filename="../src/gui/folderwizardsourcepage.ui" line="88" />
-      <source>Select a folder on your hard drive that should be permanetly connected to your HiDrvie Next. All files and subfolders are automatically uploaded and synchronized</source>
-      <translation>Sélectionnez sur votre disque dur un dossier qui doit être en permanence rattaché à votre HiDrvie Next. Tous les fichiers et sous-dossiers sont automatiquement importés et synchronisés</translation>
+      <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
+      <translation>Sélectionnez sur votre disque dur un dossier qui doit être en permanence rattaché à votre %1. Tous les fichiers et sous-dossiers sont automatiquement importés et synchronisés</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizardsourcepage.ui" line="126" />
@@ -444,13 +444,13 @@
     </message>
     <message>
       <location filename="../src/gui/folderwizardtargetpage.ui" line="53" />
-      <source>Step 2 of 3: Directory in your HiDrvie Next</source>
-      <translation>Étape 2 sur 3 : répertoire dans votre HiDrvie Next</translation>
+      <source>Step 2 of 3: Directory in your %1</source>
+      <translation>Étape 2 sur 3 : répertoire dans votre %1</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizardtargetpage.ui" line="89" />
-      <source>Please now select or create a target folder in your HiDrvie Next where the content should be uploaded and synchronized.</source>
-      <translation>À présent, sélectionnez ou créez dans votre HiDrvie Next un dossier cible dans lequel le contenu doit être importé et synchronisé.</translation>
+      <source>Please now select or create a target folder in your %1 where the content should be uploaded and synchronized.</source>
+      <translation>À présent, sélectionnez ou créez dans votre %1 un dossier cible dans lequel le contenu doit être importé et synchronisé.</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizardtargetpage.ui" line="109" />
@@ -2478,7 +2478,7 @@ S'il s'agissait d'un accident et que vous choisissiez de conserver vos fichiers,
     <message>
       <location filename="../src/gui/folderstatusdelegate.cpp" line="65" />
       <source>Synchronize any other local folder with your IONOS EASY STORAGE</source>
-      <translation>Synchronisez n’importe quel autre dossier local avec votre HiDrvie Next</translation>
+      <translation>Synchronisez n’importe quel autre dossier local avec votre %1</translation>
     </message>
     <message>
       <location filename="../src/gui/folderstatusdelegate.cpp" line="343" />
@@ -2704,8 +2704,8 @@ S'il s'agissait d'un accident et que vous choisissiez de conserver vos fichiers,
     </message>
     <message>
       <location filename="../src/gui/folderwizard.cpp" line="202" />
-      <source>Select a folder on your hard drive that should be permanetly connected to your HiDrvie Next. All files and subfolders are automatically uploaded and synchronized</source>
-      <translation>Sélectionnez sur votre disque dur un dossier qui doit être en permanence rattaché à votre HiDrvie Next. Tous les fichiers et sous-dossiers sont automatiquement importés et synchronisés</translation>
+      <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
+      <translation>Sélectionnez sur votre disque dur un dossier qui doit être en permanence rattaché à votre %1. Tous les fichiers et sous-dossiers sont automatiquement importés et synchronisés</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizard.cpp" line="215" />
@@ -2772,8 +2772,8 @@ S'il s'agissait d'un accident et que vous choisissiez de conserver vos fichiers,
     </message>
     <message>
       <location filename="../src/gui/folderwizard.cpp" line="638" />
-      <source>Step 2 of 3: Directory in your HiDrvie Next</source>
-      <translation>Étape 2 sur 3 : répertoire dans votre HiDrvie Next</translation>
+      <source>Step 2 of 3: Directory in your %1</source>
+      <translation>Étape 2 sur 3 : répertoire dans votre %1</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizard.cpp" line="647" />
