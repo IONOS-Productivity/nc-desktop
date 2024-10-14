@@ -1,4 +1,4 @@
-set( APPLICATION_NAME       "HiDrvie Next" )
+set( APPLICATION_NAME       "HiDrive Next" )
 set( APPLICATION_SHORTNAME  "hidrivenext" )
 set( APPLICATION_EXECUTABLE "hidrivenext" )
 set( APPLICATION_CONFIG_NAME "${APPLICATION_EXECUTABLE}" )
