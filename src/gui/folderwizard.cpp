@@ -683,7 +683,7 @@ FolderWizardSelectiveSync::FolderWizardSelectiveSync(const AccountPtr &account)
     layout->addWidget(_selectiveSync);
 
     if (Theme::instance()->showVirtualFilesOption() && bestAvailableVfsMode() != Vfs::Off) {
-        _virtualFilesCheckBox = new QCheckBox();
+        _virtualFilesCheckBox = new QCheckBox(tr("Use virtual files instead of downloading content immediately %1").arg(bestAvailableVfsMode() == Vfs::WindowsCfApi ? QString() : tr("(experimental)")));
 
         connect(_virtualFilesCheckBox, &QCheckBox::clicked, this, &FolderWizardSelectiveSync::virtualFilesCheckboxClicked);
         connect(_virtualFilesCheckBox, &QCheckBox::stateChanged, this, [this](int state) {
@@ -692,22 +692,9 @@ FolderWizardSelectiveSync::FolderWizardSelectiveSync(const AccountPtr &account)
         _virtualFilesCheckBox->setChecked(bestAvailableVfsMode() == Vfs::WindowsCfApi);
         _virtualFilesCheckBox->setStyleSheet("margin-top: 5px;");
 
-        _virtualFilesCheckBoxLabel = new QLabel(tr("Use virtual files instead of downloading content immediately %1").arg(bestAvailableVfsMode() == Vfs::WindowsCfApi ? QString() : tr("(experimental)")));
-        _virtualFilesCheckBoxLabel->setWordWrap(true);
+        layout->addWidget(_virtualFilesCheckBox);
 
-        auto *virtualFilesLayout = new QHBoxLayout();
-
-        virtualFilesLayout->addWidget(_virtualFilesCheckBox, 0, Qt::AlignTop);
-        virtualFilesLayout->addSpacing(0);
-        virtualFilesLayout->addWidget(_virtualFilesCheckBoxLabel, 0, Qt::AlignTop);
-        virtualFilesLayout->addStretch();
-
-        // Ensure the label takes the full width of the parent
-        virtualFilesLayout->setStretch(2, 1);
-
-        layout->addLayout(virtualFilesLayout);
-
-        _virtualFilesCheckBoxLabel->setStyleSheet(IonosTheme::fontConfigurationCss(
+        _virtualFilesCheckBox->setStyleSheet(IonosTheme::fontConfigurationCss(
             IonosTheme::settingsFont(),
             IonosTheme::settingsTextSize(),
             IonosTheme::settingsTextWeight(),
@@ -760,11 +747,11 @@ void FolderWizardSelectiveSync::initializePage()
         if (Utility::isPathWindowsDrivePartitionRoot(wizard()->field(QStringLiteral("sourceFolder")).toString())) {
             _virtualFilesCheckBox->setChecked(false);
             _virtualFilesCheckBox->setEnabled(false);
-            _virtualFilesCheckBoxLabel->setText(tr("Virtual files are not supported for Windows partition roots as local folder. Please choose a valid subfolder under drive letter."));
+            _virtualFilesCheckBox->setText(tr("Virtual files are not supported for Windows partition roots as local folder. Please choose a valid subfolder under drive letter."));
         } else {
             _virtualFilesCheckBox->setChecked(bestAvailableVfsMode() == Vfs::WindowsCfApi);
             _virtualFilesCheckBox->setEnabled(true);
-            _virtualFilesCheckBoxLabel->setText(tr("Use virtual files instead of downloading content immediately %1").arg(bestAvailableVfsMode() == Vfs::WindowsCfApi ? QString() : tr("(experimental)")));
+            _virtualFilesCheckBox->setText(tr("Use virtual files instead of downloading content immediately %1").arg(bestAvailableVfsMode() == Vfs::WindowsCfApi ? QString() : tr("(experimental)")));
 
             if (Theme::instance()->enforceVirtualFilesSyncFolder()) {
                 _virtualFilesCheckBox->setChecked(true);
