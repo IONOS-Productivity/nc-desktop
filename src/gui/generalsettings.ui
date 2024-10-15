@@ -38,7 +38,7 @@
                                 <font>
                                 </font>
                             </property>
-                            <layout class="QVBoxLayout">
+                            <layout class="QVBoxLayout" name="generalBoxLayout">
                                 <property name="topMargin">
                                     <number>3</number>
                                 </property>
@@ -355,7 +355,7 @@
                     <property name="title">
                         <string>Data Protection</string>
                     </property>
-                    <layout class="QVBoxLayout">
+                    <layout class="QVBoxLayout" name="dataProtectionBoxLayout">
                         <property name="topMargin">
                             <number>3</number>
                         </property>
