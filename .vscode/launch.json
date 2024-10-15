@@ -4,12 +4,12 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-    
+
         {
-            "name": "(RelWithDebInfo) Launch Easystorage",
+            "name": "(RelWithDebInfo) Launch hidrivenext",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/win32-MSVC-x64/RelWithDebInfo/bin/ionoseasystorage.exe",
+            "program": "${workspaceFolder}/build/win32-MSVC-x64/RelWithDebInfo/bin/hidrivenext.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
