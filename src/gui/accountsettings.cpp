@@ -196,6 +196,7 @@ AccountSettings::AccountSettings(AccountState *accountState, QWidget *parent)
     _ui->_folderList->setItemDelegate(delegate);
     _ui->_folderList->setModel(_model);
 #if defined(Q_OS_MAC)
+    _ui->_folderList->setPalette(QPalette(QPalette::ButtonText, IonosTheme::white()));
     _ui->_folderList->setMinimumWidth(400);
 #else
     _ui->_folderList->setMinimumWidth(300);
