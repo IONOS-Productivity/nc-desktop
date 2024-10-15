@@ -570,6 +570,10 @@ void AccountSettings::customizeButtonBox(QDialogButtonBox *buttonBox){
     okButton->setMinimumSize(80, 40);
 
     buttonBox->button(QDialogButtonBox::Cancel)->setMinimumSize(80, 40);
+
+#if defined(Q_OS_MAC)
+    buttonBox->layout()->setSpacing(32);
+#endif
 }
 
 void AccountSettings::slotSubfolderContextMenuRequested(const QModelIndex &index, const QPoint &pos)

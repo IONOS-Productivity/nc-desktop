@@ -186,15 +186,10 @@ int IgnoreListTableWidget::addPattern(const QString &pattern, bool deletable, bo
 void IgnoreListTableWidget::customizeIgnoreListDialogStyle(){
 
     ui->tableWidget->setStyleSheet(
-        IonosTheme::fontConfigurationCss(
-            IonosTheme::settingsFont(),
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTextWeight(),
-            IonosTheme::titleColor()
-        )
-    );
-    
-    ui->tableWidget->horizontalHeader()->setStyleSheet(
+        QStringLiteral("QTableWidget { background-color: %1; color: %2; } ").arg(
+            IonosTheme::white(), 
+            IonosTheme::black()
+        ) + 
         IonosTheme::fontConfigurationCss(
             IonosTheme::settingsFont(),
             IonosTheme::settingsTextSize(),
@@ -212,9 +207,26 @@ void IgnoreListTableWidget::customizeIgnoreListDialogStyle(){
         )
     );
 
-    ui->tableWidget->setMinimumSize(374, 424);
     ui->tableWidget->horizontalHeader()->setStyleSheet(
-            QStringLiteral("QHeaderView::section { background-color: %1; border-bottom: none;}").arg(IonosTheme::white()));
+            QStringLiteral("QHeaderView::section { background-color: %1; color: %2; border-bottom: none; %3; }").arg(
+            IonosTheme::white(), 
+            IonosTheme::black(),
+            IonosTheme::fontConfigurationCss(
+                IonosTheme::settingsFont(),
+                IonosTheme::settingsTextSize(),
+                IonosTheme::settingsTextWeight(),
+                IonosTheme::titleColor()
+            )
+        )
+    );
+
+    ui->tableWidget->setMinimumSize(374, 424);
+
+#if defined(Q_OS_MAC)
+    ui->verticalButtonLayout->setSpacing(30);
+    this->setFixedWidth(584);
+#endif
+
 }
 
 void IgnoreListTableWidget::customizeAddIgnorePatternDialogStyle(QInputDialog &inputDialog){
