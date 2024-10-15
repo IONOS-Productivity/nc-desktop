@@ -2797,7 +2797,7 @@ S'il s'agissait d'un accident et que vous choisissiez de conserver vos fichiers,
       <location filename="../src/gui/folderwizard.cpp" line="686" />
       <location filename="../src/gui/folderwizard.cpp" line="751" />
       <source>Use virtual files instead of downloading content immediately %1</source>
-      <translation>Utiliser les fichiers virtuels au lieu de télécharger le contenu immédiatement %1</translation>
+      <translation>Utiliser les fichiers virtuels</translation>
     </message>
     <message>
       <location filename="../src/gui/folderwizard.cpp" line="686" />
