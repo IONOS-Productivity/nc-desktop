@@ -377,17 +377,10 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string/>
+            <string>Synchronize everything from server</string>
            </property>
            <property name="checked">
             <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="SyncEverythingLabel">
-           <property name="text">
-            <string>Synchronize everything from server</string>
            </property>
           </widget>
          </item>
@@ -514,18 +507,11 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
-           <property name="text">
-            <string/>
-           </property>
+            <property name="text">
+             <string>Choose what to sync</string>
+            </property>
            <property name="checkable">
             <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="selectiveSyncLabel">
-           <property name="text">
-            <string>Choose what to sync</string>
            </property>
           </widget>
          </item>
@@ -564,24 +550,11 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
-           <property name="text">
-            <string notr="true"/>
-           </property>
+            <property name="text">
+                <string notr="true">Use virtual files !PLACEHOLDER!</string>
+            </property>
            <property name="checkable">
             <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="virtualFilesLabel">
-           <property name="text">
-            <string>Use virtual files !PLACEHOLDER!</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
            </property>
           </widget>
          </item>
