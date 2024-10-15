@@ -3766,7 +3766,7 @@ Notez que l'utilisation de toute option de ligne de commande de journalisation r
       <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="111" />
       <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="275" />
       <source>Use &amp;virtual files instead of downloading content immediately %1</source>
-      <translation>Utiliser les fichiers virtuels plutôt que de télécharger le contenu immédiatement %1</translation>
+      <translation>Utiliser les fichiers virtuels %1</translation>
     </message>
     <message>
       <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="111" />
