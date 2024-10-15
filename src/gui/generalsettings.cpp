@@ -635,32 +635,36 @@ void GeneralSettings::customizeStyle()
     _ui->infoAndUpdatesLabel->setText(aboutText);
 
     this->setStyleSheet(
-        QStringLiteral("QGroupBox { border: %1; font-size: %2; font-weight: %3; }").arg(
+        QStringLiteral("QGroupBox { border: %1; font-size: %2; font-weight: %3; color: %4; }").arg(
             Theme::instance()->systemPalette().base().color().name(),
             IonosTheme::settingsTitleSize(),
-            IonosTheme::settingsTitleWeight500()
+            IonosTheme::settingsTitleWeight500(),
+            IonosTheme::black()
         )
     );
 
     this->setStyleSheet(
-        this->styleSheet() + QStringLiteral("QCheckBox { font-size: %1; font-weight: %2; margin-left: %3 px; }").arg(
+        this->styleSheet() + QStringLiteral("QCheckBox { font-size: %1; font-weight: %2; margin-left: %3 px; color: %4; }").arg(
             IonosTheme::settingsTextSize(),
             IonosTheme::settingsTextWeight(),
-            IonosTheme::smallMargin()
+            IonosTheme::smallMargin(),
+            IonosTheme::black()
         )
     );
 
     this->setStyleSheet(
-        this->styleSheet() + QStringLiteral("QLabel { font-size: %1; font-weight: %2; }").arg(
+        this->styleSheet() + QStringLiteral("QLabel { font-size: %1; font-weight: %2; color: %3; }").arg(
             IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTitleWeight500()
+            IonosTheme::settingsTitleWeight500(),
+            IonosTheme::black()
         )
     );
 
     this->setStyleSheet(
-        this->styleSheet() + QStringLiteral("QFrame { font-size: %1; font-weight: %2; }").arg(
+        this->styleSheet() + QStringLiteral("QFrame { font-size: %1; font-weight: %2; color: %3; }").arg(
             IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTitleWeight600()
+            IonosTheme::settingsTitleWeight600(),
+            IonosTheme::black()
         )
     );
 
