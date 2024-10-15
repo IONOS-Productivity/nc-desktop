@@ -6,10 +6,10 @@
     "configurations": [
 
         {
-            "name": "(RelWithDebInfo) Launch hidrivenext",
+            "name": "(RelWithDebInfo) Launch HiDriveNext",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/win32-MSVC-x64/RelWithDebInfo/bin/hidrivenext.exe",
+            "program": "${workspaceFolder}/build/win32-MSVC-x64/RelWithDebInfo/bin/HiDriveNext.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

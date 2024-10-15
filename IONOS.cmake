@@ -1,5 +1,5 @@
 set( APPLICATION_NAME       "HiDrive Next" )
-set( APPLICATION_SHORTNAME  "hidrivenext" )
+set( APPLICATION_SHORTNAME  "HiDriveNext" )
 set( APPLICATION_EXECUTABLE "hidrivenext" )
 set( APPLICATION_CONFIG_NAME "${APPLICATION_EXECUTABLE}" )
 set( APPLICATION_DOMAIN     "ionos.com" )
