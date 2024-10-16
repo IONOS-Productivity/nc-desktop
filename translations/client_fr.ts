@@ -6341,8 +6341,13 @@ Le serveur a répondu avec l'erreur : %2</translation>
       <source>Reply</source>
       <translation type="unfinished">Répondre</translation>
     </message>
-  </context>
-  <context>
+    <message>
+        <location filename="../src/gui/SesComponents/syncDirValidation.cpp" line="15"/>
+        <source>The home directory cannot be part of your sync directory. Please choose another folder.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ResolveConflictsDialog</name>
     <message>
       <location filename="../src/gui/ResolveConflictsDialog.qml" line="37" />
