@@ -54,30 +54,9 @@ void WelcomePage::setLoginButtonDefault()
 
 void WelcomePage::styleSlideShow()
 {
-    const auto theme = Theme::instance();
-    const auto backgroundColor = palette().window().color();
+    const auto ionosLogoFileName = Theme::hidpiFileName(":/client/theme/colored/IONOS_logo_w_suffix_frontend.png");
 
-    const auto wizardNextcloudIconFileName = theme->isBranded() ? Theme::hidpiFileName("wizard-nextcloud.png", backgroundColor)
-                                                                : Theme::hidpiFileName(":/client/theme/colored/wizard-nextcloud.png");
-    const auto wizardFilesIconFileName = theme->isBranded() ? Theme::hidpiFileName("wizard-files.png", backgroundColor)
-                                                            : Theme::hidpiFileName(":/client/theme/colored/wizard-files.png");
-    const auto wizardGroupwareIconFileName = theme->isBranded() ? Theme::hidpiFileName("wizard-groupware.png", backgroundColor)
-                                                                : Theme::hidpiFileName(":/client/theme/colored/wizard-groupware.png");
-    const auto wizardTalkIconFileName = theme->isBranded() ? Theme::hidpiFileName("wizard-talk.png", backgroundColor)
-                                                           : Theme::hidpiFileName(":/client/theme/colored/wizard-talk.png");
-
-    const auto ionosLogoFileName = theme->isBranded()   ? Theme::hidpiFileName("IONOS_logo_w_suffix_frontend.png", backgroundColor)
-                                                        : Theme::hidpiFileName(":/client/theme/colored/IONOS_logo_w_suffix_frontend.png");
-
-    QPixmap emptyPixmap;
     _ui->slideShow->addSlide(ionosLogoFileName, tr("Keep your data secure and under your control")); 
-    // _ui->slideShow->addSlide(wizardFilesIconFileName, tr("Secure collaboration & file exchange"));
-    // _ui->slideShow->addSlide(wizardGroupwareIconFileName, tr("Easy-to-use web mail, calendaring & contacts"));
-    // _ui->slideShow->addSlide(wizardTalkIconFileName, tr("Screensharing, online meetings & web conferences"));
-
-    const auto isDarkBackground = Theme::isDarkColor(backgroundColor);
-    _ui->slideShowNextButton->setIcon(theme->uiThemeIcon(QString("control-next.svg"), isDarkBackground));
-    _ui->slideShowPreviousButton->setIcon(theme->uiThemeIcon(QString("control-prev.svg"), isDarkBackground));
 }
 
 void WelcomePage::setupSlideShow()
@@ -94,7 +73,7 @@ void WelcomePage::setupLoginButton()
     _ui->loginButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
     connect(_ui->loginButton, &QPushButton::clicked, this, [this](bool /*checked*/) {
         _nextPage = WizardCommon::Page_ServerSetup;
-        _ocWizard->next();
+        _ocWizard->next(); 
     });
 }
 
@@ -119,7 +98,7 @@ void WelcomePage::setupHostYourOwnServerLabel()
 {
     _ui->hostYourOwnServerLabel->hide();
     _ui->hostYourOwnServerLabel->setText(tr("Host your own server"));
-    _ui->hostYourOwnServerLabel->setAlignment(Qt::AlignCenter);
+    _ui->hostYourOwnServerLabel->setAlignment(Qt::AlignCenter);  
     _ui->hostYourOwnServerLabel->setUrl(QUrl("https://docs.nextcloud.com/server/latest/admin_manual/installation/#installation"));
 }
 
