@@ -2477,7 +2477,7 @@ S'il s'agissait d'un accident et que vous choisissiez de conserver vos fichiers,
     </message>
     <message>
       <location filename="../src/gui/folderstatusdelegate.cpp" line="65" />
-      <source>Synchronize any other local folder with your IONOS EASY STORAGE</source>
+      <source>Synchronize any other local folder with your %1</source>
       <translation>Synchronisez n’importe quel autre dossier local avec votre %1</translation>
     </message>
     <message>
