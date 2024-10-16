@@ -2933,7 +2933,7 @@ S'il s'agissait d'un accident et que vous choisissiez de conserver vos fichiers,
     </message>
     <message>
       <source>Ask for confirmation before synchronizing external storages</source>
-      <translation type="vanished">Demander confirmation avant de synchroniser des stockages externes </translation>
+      <translation type="vanished">Confirmation avant de synchroniser des stockages externes </translation>
     </message>
     <message>
       <location filename="../src/gui/generalsettings.ui" line="235" />
@@ -6158,7 +6158,7 @@ Le serveur a répondu avec l'erreur : %2</translation>
     <message>
       <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="503" />
       <source>Ask before syncing external storages</source>
-      <translation>Demander confirmation avant de synchroniser des stockages externes </translation>
+      <translation>Confirmation avant de synchroniser des stockages externes </translation>
     </message>
     <message>
       <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="526" />
