@@ -5567,7 +5567,7 @@ Le serveur a répondu avec l'erreur : %2</translation>
       <location filename="../src/libsync/theme.cpp" line="591" />
       <source>&lt;p&gt;%1 desktop client %2&lt;/p&gt;</source>
       <extracomment>Example text: "&lt;p&gt;Nextcloud Desktop Client&lt;/p&gt;" (%1 is the application name)</extracomment>
-      <translation>&lt;p&gt;client de bureau %1 %2&lt;/p&gt;</translation>
+      <translation>&lt;p&gt;%1 %2&lt;/p&gt;</translation>
     </message>
     <message>
       <location filename="../src/libsync/theme.cpp" line="599" />
