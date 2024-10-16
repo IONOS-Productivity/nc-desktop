@@ -1,5 +1,5 @@
 /*
- * This file is part of Nextcloud Destop - Easystorage
+ * This file is part of Nextcloud Destop - Ionos HiDrive Next
  *
  * Modifications:
  * - Changed the usage of Measurement Protocol to the GA4 API
