@@ -10,3 +10,7 @@ bool SyncDirValidator::isValidDir(const QString &path) {
       return true; // For non-Windows systems, always return true
     #endif
 }
+
+QString SyncDirValidator::message() {
+    return QObject::tr("The home directory cannot be part of your sync directory. Please choose another folder.");
+}

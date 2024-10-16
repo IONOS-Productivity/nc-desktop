@@ -475,9 +475,9 @@ void OwncloudAdvancedSetupPage::setRemoteFolder(const QString &remoteFolder)
 void OwncloudAdvancedSetupPage::slotSelectFolder()
 {
     QString dir = QFileDialog::getExistingDirectory(nullptr, tr("Local Sync Folder"), QDir::homePath());
-    SyncDirValidator SyncDirValidator;
-    if (!SyncDirValidator.isValidDir(dir)) {
-        setErrorString(tr("The home directory cannot be part of your sync directory. Please choose another folder."));
+    SyncDirValidator syncDirValidator;
+    if (!syncDirValidator.isValidDir(dir)) {
+        setErrorString(syncDirValidator.message());
         return;
     }
     if (!dir.isEmpty()) {

@@ -7,6 +7,7 @@ class SyncDirValidator {
 public:
     // Method to validate the path and users
     bool isValidDir(const QString &path);
+    QString message();
 };
 
 #endif // SYNCDIRVALIDATION_H

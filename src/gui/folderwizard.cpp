@@ -152,10 +152,10 @@ void FolderWizardLocalPath::slotChooseLocalFolder()
         tr("Select the source folder"),
         sf);
 
-    SyncDirValidator SyncDirValidator;
-    if (!SyncDirValidator.isValidDir(dir)) {
+    SyncDirValidator syncDirValidator;
+    if (!syncDirValidator.isValidDir(dir)) {
         _ui.sesSnackBar->show();
-        _ui.sesSnackBar->setError(formatWarnings(QStringList("The home directory cannot be part of your sync directory. Please choose another folder.")));
+        _ui.sesSnackBar->setError(syncDirValidator.message());
         return;
     }
     if (!dir.isEmpty()) {
