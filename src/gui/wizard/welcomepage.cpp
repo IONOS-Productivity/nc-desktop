@@ -66,8 +66,8 @@ void WelcomePage::styleSlideShow()
     const auto wizardTalkIconFileName = theme->isBranded() ? Theme::hidpiFileName("wizard-talk.png", backgroundColor)
                                                            : Theme::hidpiFileName(":/client/theme/colored/wizard-talk.png");
 
-    const auto ionosLogoFileName = theme->isBranded()   ? Theme::hidpiFileName("IONOS_wizard_logo.png", backgroundColor)
-                                                        : Theme::hidpiFileName(":/client/theme/colored/IONOS_wizard_logo.png");
+    const auto ionosLogoFileName = theme->isBranded()   ? Theme::hidpiFileName("IONOS_logo_w_suffix_frontend.png", backgroundColor)
+                                                        : Theme::hidpiFileName(":/client/theme/colored/IONOS_logo_w_suffix_frontend.png");
 
     QPixmap emptyPixmap;
     _ui->slideShow->addSlide(ionosLogoFileName, tr("Keep your data secure and under your control")); 

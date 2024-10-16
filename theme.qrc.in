@@ -276,15 +276,15 @@
         <file>theme/ses/ses-green-Checkmark.svg</file>
         <file>theme/ses/ses-chevron.svg</file>
         <file>theme/ses/ses-more.svg</file>
-        <file>theme/black/IONOS_wizard_logo.png</file>
-        <file>theme/black/IONOS_wizard_logo@2.png</file>
-        <file>theme/black/IONOS_wizard_logo.svg</file>
-        <file>theme/white/IONOS_wizard_logo.png</file>
-        <file>theme/white/IONOS_wizard_logo@2.png</file>
-        <file>theme/white/IONOS_wizard_logo.svg</file>
-        <file>theme/colored/IONOS_wizard_logo.png</file>
-        <file>theme/colored/IONOS_wizard_logo@2.png</file>
-        <file>theme/colored/IONOS_wizard_logo.svg</file>
+        <file>theme/black/IONOS_logo_w_suffix_frontend.png</file>
+        <file>theme/black/IONOS_logo_w_suffix_frontend@2.png</file>
+        <file>theme/black/IONOS_logo_w_suffix_frontend.svg</file>
+        <file>theme/white/IONOS_logo_w_suffix_frontend.png</file>
+        <file>theme/white/IONOS_logo_w_suffix_frontend@2.png</file>
+        <file>theme/white/IONOS_logo_w_suffix_frontend.svg</file>
+        <file>theme/colored/IONOS_logo_w_suffix_frontend.png</file>
+        <file>theme/colored/IONOS_logo_w_suffix_frontend@2.png</file>
+        <file>theme/colored/IONOS_logo_w_suffix_frontend.svg</file>
         <file>fonts/OpenSans-SemiBold.ttf</file>
         <file>fonts/OpenSans-Regular.ttf</file>
     </qresource>
