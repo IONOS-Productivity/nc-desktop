@@ -23,6 +23,7 @@
 #include "networkjobs.h"
 #include "selectivesyncdialog.h"
 #include "theme.h"
+#include "SesComponents/syncDirValidation.h"
 #include "wizard/owncloudwizard.h"
 
 #include <QDesktopServices>
@@ -150,6 +151,13 @@ void FolderWizardLocalPath::slotChooseLocalFolder()
     QString dir = QFileDialog::getExistingDirectory(this,
         tr("Select the source folder"),
         sf);
+
+    SyncDirValidator SyncDirValidator;
+    if (!SyncDirValidator.isValidDir(dir)) {
+        _ui.sesSnackBar->show();
+        _ui.sesSnackBar->setError(formatWarnings(QStringList("The home directory cannot be part of your sync directory. Please choose another folder.")));
+        return;
+    }
     if (!dir.isEmpty()) {
         // set the last directory component name as alias
         _ui.localFolderLineEdit->setText(QDir::toNativeSeparators(dir));

@@ -34,6 +34,7 @@
 #include "wizard/owncloudadvancedsetuppage.h"
 #include "wizard/owncloudwizard.h"
 #include "wizard/owncloudwizardcommon.h"
+#include "SesComponents/syncDirValidation.h"
 #include <folderman.h>
 
 namespace OCC {
@@ -474,6 +475,11 @@ void OwncloudAdvancedSetupPage::setRemoteFolder(const QString &remoteFolder)
 void OwncloudAdvancedSetupPage::slotSelectFolder()
 {
     QString dir = QFileDialog::getExistingDirectory(nullptr, tr("Local Sync Folder"), QDir::homePath());
+    SyncDirValidator SyncDirValidator;
+    if (!SyncDirValidator.isValidDir(dir)) {
+        setErrorString(tr("The home directory cannot be part of your sync directory. Please choose another folder."));
+        return;
+    }
     if (!dir.isEmpty()) {
         // TODO: remove when UX decision is made
         refreshVirtualFilesAvailibility(dir);
