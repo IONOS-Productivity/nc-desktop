@@ -277,13 +277,13 @@
         <file>theme/ses/ses-chevron.svg</file>
         <file>theme/ses/ses-more.svg</file>
         <file>theme/black/IONOS_logo_w_suffix_frontend.png</file>
-        <file>theme/black/IONOS_logo_w_suffix_frontend@2.png</file>
+        <file>theme/black/IONOS_logo_w_suffix_frontend@2x.png</file>
         <file>theme/black/IONOS_logo_w_suffix_frontend.svg</file>
         <file>theme/white/IONOS_logo_w_suffix_frontend.png</file>
-        <file>theme/white/IONOS_logo_w_suffix_frontend@2.png</file>
+        <file>theme/white/IONOS_logo_w_suffix_frontend@2x.png</file>
         <file>theme/white/IONOS_logo_w_suffix_frontend.svg</file>
         <file>theme/colored/IONOS_logo_w_suffix_frontend.png</file>
-        <file>theme/colored/IONOS_logo_w_suffix_frontend@2.png</file>
+        <file>theme/colored/IONOS_logo_w_suffix_frontend@2x.png</file>
         <file>theme/colored/IONOS_logo_w_suffix_frontend.svg</file>
         <file>fonts/OpenSans-SemiBold.ttf</file>
         <file>fonts/OpenSans-Regular.ttf</file>
