@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>912</width>
-    <height>633</height>
+    <height>635</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -507,9 +507,9 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
-            <property name="text">
-             <string>Choose what to sync</string>
-            </property>
+           <property name="text">
+            <string>Choose what to sync</string>
+           </property>
            <property name="checkable">
             <bool>false</bool>
            </property>
@@ -550,9 +550,9 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
-            <property name="text">
-                <string notr="true">Use virtual files !PLACEHOLDER!</string>
-            </property>
+           <property name="text">
+            <string notr="true">Use virtual files !PLACEHOLDER!</string>
+           </property>
            <property name="checkable">
             <bool>false</bool>
            </property>
@@ -587,7 +587,7 @@
         <enum>Qt::Vertical</enum>
        </property>
        <property name="sizeType">
-        <enum>QSizePolicy::Preferred</enum>
+        <enum>QSizePolicy::Fixed</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
