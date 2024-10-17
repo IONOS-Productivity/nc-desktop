@@ -80,6 +80,10 @@ public:
         return 740;
     }
 
+    static int LoginPageSpacer() {
+        return 45;
+    }
+
     //Font Configuration
     static QString settingsFont() {
         return "Segoe UI";

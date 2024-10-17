@@ -23,7 +23,7 @@
 
 namespace OCC {
 
-static const int Spacing = 6;
+static const int Spacing = IonosTheme::LoginPageSpacer();
 static const int SlideDuration = 1000;
 static const int SlideDistance = 400;
 
