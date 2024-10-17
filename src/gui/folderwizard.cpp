@@ -696,6 +696,10 @@ void FolderWizardRemotePath::changeStyle()
     _ui.refreshButton->setProperty("text", tr("Refresh"));
 
     _ui.addFolderButton->setProperty("text", tr("Create folder"));
+
+#if defined(Q_OS_MAC)
+    _ui.buttonLayout->setSpacing(24);
+#endif
 }
 
 // ====================================================================================
@@ -906,7 +910,6 @@ void FolderWizard::customizeStyle()
     wizardPalette.setColor(QPalette::Mid, backgroundColor);
 
     setPalette(wizardPalette);
-
 }
 
 void FolderWizard::adjustWizardSize()
