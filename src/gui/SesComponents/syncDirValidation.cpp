@@ -1,19 +1,21 @@
 #include "syncDirValidation.h"
 #include <QDir>
 #include <QStandardPaths>
+#include "logger.h"
 
 // Implementation of the validate method
-bool SyncDirValidator::isValidDir(const QString &path) {
+bool SyncDirValidator::isValidDir() {
     // Add actual validation logic here
     #ifdef Q_OS_WIN
-      return !QDir::homePath().startsWith(path); // Return true if validation is successful, false otherwise
+      QString appDataPath = SyncDirValidator::appDataPath();
+      return !_path.startsWith(appDataPath) && !appDataPath.startsWith(_path); // Return true if validation is successful, false otherwise
     #else
       return true; // For non-Windows systems, always return true
     #endif
 }
 
 QString SyncDirValidator::message() {
-    return QObject::tr("The home directory cannot be part of your sync directory. Please choose another folder.");
+    return QObject::tr("The directory %1 cannot be part of your sync directory. Please choose another folder.").arg(_path);
 }
 
 // Implementation of the appDataPath method
