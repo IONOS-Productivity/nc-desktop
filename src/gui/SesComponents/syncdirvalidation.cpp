@@ -1,4 +1,4 @@
-#include "syncDirValidation.h"
+#include "syncdirvalidation.h"
 #include <QDir>
 #include <QStandardPaths>
 #include "logger.h"

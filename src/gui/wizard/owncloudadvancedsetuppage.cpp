@@ -34,7 +34,7 @@
 #include "wizard/owncloudadvancedsetuppage.h"
 #include "wizard/owncloudwizard.h"
 #include "wizard/owncloudwizardcommon.h"
-#include "SesComponents/syncDirValidation.h"
+#include "SesComponents/syncdirvalidation.h"
 #include <folderman.h>
 
 namespace OCC {

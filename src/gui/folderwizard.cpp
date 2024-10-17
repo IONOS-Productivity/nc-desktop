@@ -23,7 +23,7 @@
 #include "networkjobs.h"
 #include "selectivesyncdialog.h"
 #include "theme.h"
-#include "SesComponents/syncDirValidation.h"
+#include "SesComponents/syncdirvalidation.h"
 #include "wizard/owncloudwizard.h"
 
 #include <QDesktopServices>

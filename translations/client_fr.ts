@@ -6342,7 +6342,7 @@ Le serveur a répondu avec l'erreur : %2</translation>
       <translation type="unfinished">Répondre</translation>
     </message>
     <message>
-        <location filename="../src/gui/SesComponents/syncDirValidation.cpp" line="15"/>
+        <location filename="../src/gui/SesComponents/syncdirvalidation.cpp" line="15"/>
         <source>The directory %1 cannot be part of your sync directory. Please choose another folder.</source>
         <translation>La répertoire %1 ne peut pas faire partie de votre répertoire de synchronisation. Veuillez choisir un autre dossier.</translation>
     </message>

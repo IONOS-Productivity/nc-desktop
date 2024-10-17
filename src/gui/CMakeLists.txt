@@ -222,8 +222,8 @@ set(client_SRCS
     filedetails/shareemodel.cpp
     filedetails/sortedsharemodel.h
     filedetails/sortedsharemodel.cpp
-    SesComponents/syncDirValidation.h
-    SesComponents/syncDirValidation.cpp
+    SesComponents/syncdirvalidation.h
+    SesComponents/syncdirvalidation.cpp
     tray/svgimageprovider.h
     tray/svgimageprovider.cpp
     tray/syncstatussummary.h
