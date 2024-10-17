@@ -3,15 +3,13 @@
 #include <QStandardPaths>
 #include "logger.h"
 
+#ifdef Q_OS_WIN
 // Implementation of the validate method
 bool SyncDirValidator::isValidDir() {
     // Add actual validation logic here
-    #ifdef Q_OS_WIN
       QString appDataPath = SyncDirValidator::appDataPath();
       return !_path.startsWith(appDataPath) && !appDataPath.startsWith(_path); // Return true if validation is successful, false otherwise
-    #else
-      return true; // For non-Windows systems, always return true
-    #endif
+
 }
 
 QString SyncDirValidator::message() {
@@ -27,5 +25,21 @@ QString SyncDirValidator::appDataPath() {
   appDataRoamingApplicationNameDir.cdUp();
   QString appDataPath = appDataRoamingApplicationNameDir.absolutePath();
   return appDataPath;
-
 }
+
+#else
+
+bool SyncDirValidator::isValidDir() {
+      return true;
+}
+
+QString SyncDirValidator::message() {
+    return ""
+}
+
+// Implementation of the appDataPath method
+QString SyncDirValidator::appDataPath() {
+  return "";
+}
+
+#endif
