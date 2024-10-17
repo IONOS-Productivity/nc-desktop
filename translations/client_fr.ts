@@ -6773,7 +6773,7 @@ Le serveur a répondu avec l'erreur : %2</translation>
     <message>
       <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="30" />
       <source>Pause sync for all</source>
-      <translation>Suspendre toutes les synchros</translation>
+      <translation>Suspendre synchros</translation>
     </message>
     <message>
       <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="112" />
