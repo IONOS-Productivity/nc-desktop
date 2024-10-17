@@ -223,6 +223,21 @@ void FolderWizardLocalPath::changeStyle()
     );
 
     _ui.localFolderChooseBtn->setProperty("text", tr("Choose"));
+
+
+#if defined(Q_OS_MAC)
+    _ui.localFolderChooseBtn->setStyleSheet(
+        QStringLiteral("QPushButton { margin-left: 5px; margin-top: 12px; height: 40px; width: 80px; %1} ").arg(
+            IonosTheme::fontConfigurationCss(
+                IonosTheme::settingsFont(),
+                IonosTheme::settingsTextSize(),
+                IonosTheme::settingsTitleWeight500(),
+                IonosTheme::white()
+            )
+        )
+    );
+#endif
+
 }
 
 // =================================================================================
