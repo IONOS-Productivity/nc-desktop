@@ -168,10 +168,10 @@ AbstractButton {
                         height: parent.height
                         width: parent.menu.width
                         Rectangle {
-                            radius: Style.sesCornerRadius
+                            radius: 0
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: logInOutButton.isActive ? Style.sesButtonPressed : 
+                            color: logInOutButton.isActive ? Style.sesButtonPressed :
                                    logInOutButton.isHovered ? Style.sesAccountMenuHover : "transparent"
                         }
                     }
@@ -203,10 +203,10 @@ AbstractButton {
                         height: parent.height
                         width: parent.menu.width
                         Rectangle {
-                            radius: Style.sesCornerRadius
+                            radius: 0
                             anchors.fill: parent
                             anchors.margins: 1
-                            color: removeAccountButton.isActive ? Style.sesButtonPressed : 
+                            color: removeAccountButton.isActive ? Style.sesButtonPressed :
                                    removeAccountButton.isHovered ? Style.sesAccountMenuHover : "transparent"
                         }
                     }
