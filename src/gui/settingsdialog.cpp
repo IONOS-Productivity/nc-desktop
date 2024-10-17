@@ -346,9 +346,9 @@ void SettingsDialog::customizeStyle()
     QString toolbarSideMargin (IonosTheme::toolbarSideMargin());
     QString toolButtonFont (
         IonosTheme::fontConfigurationCss(
+                IonosTheme::settingsFont(),
                 IonosTheme::settingsTextSize(),
                 IonosTheme::settingsTextWeight(),
-                IonosTheme::settingsFont(),
                 IonosTheme::menuTextColor()
         )
     );
