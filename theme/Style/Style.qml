@@ -247,7 +247,7 @@ QtObject {
 
     property int sesAccountMenuHeight: variableSize(40)
     property int sesHeaderLogoHeigth: variableSize(40)
-    property int sesHeaderLogoTopMargin: variableSize(16)
+    property int sesHeaderLogoTopMargin: variableSize(12)
     property int sesHeaderLogoLeftMargin: variableSize(24)
     property int sesCornerRadius: 8
     property int sesHeaderTopMargin: variableSize(10)

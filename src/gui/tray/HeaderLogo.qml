@@ -10,8 +10,8 @@ import "../"
 // Custom qml modules are in /theme (and included by resources.qrc)
 import Style 1.0
 
-import com.nextcloud.desktopclient 1.0        
-        
+import com.nextcloud.desktopclient 1.0
+
 Rectangle {
     Image{
             id: trayWindowLogo
@@ -22,8 +22,11 @@ Rectangle {
             anchors{
                 top: parent.top
                 left: parent.left
+                bottom: parent.bottom
                 topMargin: Style.sesHeaderLogoTopMargin
-                leftMargin: Style.sesHeaderLogoLeftMargin
+                leftMargin: Style.sesHeaderLogoTopMargin
+                bottomMargin: Style.sesHeaderLogoTopMargin
+
             }
     }
 
