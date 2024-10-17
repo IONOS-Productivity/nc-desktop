@@ -42,7 +42,7 @@ AbstractButton {
     bottomPadding: Style.sesSmallMargin
 
     background: Rectangle {
-        radius: Style.sesCornerRadius
+        radius: 0
         anchors.fill: parent
         anchors.margins: 1
         color: userLine.isHovered && !userMoreButton.isHovered ? Style.sesAccountMenuHover : "transparent"

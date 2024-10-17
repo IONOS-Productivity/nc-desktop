@@ -28,7 +28,7 @@ MenuItem {
         height: parent.height
         width: parent.menu.width
         Rectangle {
-            radius: Style.sesCornerRadius
+            radius: 0
             anchors.fill: parent
             anchors.margins: 1
             color: accountMenuItem.isActive ? Style.sesButtonPressed : accountMenuItem.isHovered ? Style.sesAccountMenuHover : "transparent"
