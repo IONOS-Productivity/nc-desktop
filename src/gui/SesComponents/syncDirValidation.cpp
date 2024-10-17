@@ -34,7 +34,7 @@ bool SyncDirValidator::isValidDir() {
 }
 
 QString SyncDirValidator::message() {
-    return ""
+    return "";
 }
 
 // Implementation of the appDataPath method
