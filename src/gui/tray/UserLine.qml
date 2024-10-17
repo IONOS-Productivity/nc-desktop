@@ -154,6 +154,8 @@ AbstractButton {
                     icon.source: Style.sesLogout
                     icon.color: Style.sesIconDarkColor
                     leftPadding: Style.sesMediumMargin
+                    topPadding: Style.sesAccountMenuItemPadding
+                    bottomPadding: Style.sesAccountMenuItemPadding
                     spacing: Style.sesSmallMargin
                     text: model.isConnected ? qsTr("Log out") : qsTr("Log in")
                     font: root.font
@@ -189,6 +191,8 @@ AbstractButton {
                     icon.source: Style.sesDelete
                     icon.color: Style.sesIconDarkColor
                     leftPadding: Style.sesMediumMargin
+                    topPadding: Style.sesAccountMenuItemPadding
+                    bottomPadding: Style.sesAccountMenuItemPadding
                     spacing: Style.sesSmallMargin
                     text: qsTr("Remove account")
                     font: root.font
