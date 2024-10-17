@@ -1,5 +1,6 @@
 #include "syncDirValidation.h"
 #include <QDir>
+#include <QStandardPaths>
 
 // Implementation of the validate method
 bool SyncDirValidator::isValidDir(const QString &path) {
@@ -13,4 +14,16 @@ bool SyncDirValidator::isValidDir(const QString &path) {
 
 QString SyncDirValidator::message() {
     return QObject::tr("The home directory cannot be part of your sync directory. Please choose another folder.");
+}
+
+// Implementation of the appDataPath method
+QString SyncDirValidator::appDataPath() {
+  //Path: AppData/Roaming/<ApplicationName>
+  QString appDataRoamingApplicationNamePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+  QDir appDataRoamingApplicationNameDir(appDataRoamingApplicationNamePath);
+  appDataRoamingApplicationNameDir.cdUp();
+  appDataRoamingApplicationNameDir.cdUp();
+  QString appDataPath = appDataRoamingApplicationNameDir.absolutePath();
+  return appDataPath;
+
 }
