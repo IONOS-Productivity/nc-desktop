@@ -16,8 +16,8 @@ MenuItem {
     font.pixelSize: Style.sesFontPixelSize
     hoverEnabled: true
     leftPadding: Style.sesMediumMargin
-    topPadding: Style.sesSmallMargin
-    bottomPadding: Style.sesSmallMargin
+    topPadding: Style.sesAccountMenuItemPadding
+    bottomPadding: Style.sesAccountMenuItemPadding
     spacing: Style.sesSmallMargin
 
     icon.height: Style.smallIconSize
