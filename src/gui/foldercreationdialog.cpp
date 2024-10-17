@@ -126,5 +126,10 @@ void FolderCreationDialog::customizeStyle()
                  IonosTheme::white()
             )
     );
+
+#if defined(Q_OS_MAC)
+    buttonlayout->setSpacing(32);
+#endif
+
 }
 }

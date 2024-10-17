@@ -270,6 +270,10 @@ void IgnoreListTableWidget::customizeAddIgnorePatternDialogStyle(QInputDialog &i
 
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setProperty("buttonStyle", QVariant::fromValue(ButtonStyleName::Primary)); 
+
+#if defined(Q_OS_MAC)
+    buttonBox->layout()->setSpacing(32);
+#endif
 }
 
 } // namespace OCC
