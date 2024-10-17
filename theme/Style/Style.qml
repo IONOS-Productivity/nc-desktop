@@ -206,7 +206,7 @@ QtObject {
     // SES
     readonly property string sesWebsiteIcon: "qrc:///client/theme/ses/ses-website.svg"
     readonly property string sesFilesIcon: "qrc:///client/theme/ses/ses-filesIcon.svg"
-    readonly property string sesIonosLogoIcon: "qrc:///client/theme/ses/ses-INONS-Logo.svg"
+    readonly property string sesIonosLogoIcon: "qrc:///client/theme/ses/ses-IONOS-Logo.svg"
 
     readonly property string sesAvatar: "qrc:///client/theme/ses/ses-settingsAvatar.svg"
 
