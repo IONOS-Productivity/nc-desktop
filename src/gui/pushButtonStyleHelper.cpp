@@ -67,6 +67,7 @@ void PushButtonStyleHelper::recalculateContentSize(QSize &contentsSize, const QW
 {
     QFont font = widget->font();
     font.setWeight(OCC::IonosTheme::settingsTitleWeightDemiBold());
+    font.setPixelSize(OCC::IonosTheme::settingsTextPixel());
     QFontMetrics fm(font);
 
     //Code aus qpushbutton.cpp - sizeHint
