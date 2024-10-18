@@ -931,13 +931,14 @@ void AccountSettings::slotRemoveCurrentFolder()
                                           this);
 
         messageBox->setStyleSheet(
-            "QMessageBox {" +
-            IonosTheme::fontConfigurationCss(
-                IonosTheme::settingsFont(),
-                IonosTheme::settingsTextSize(),
-                IonosTheme::settingsTextWeight(),
-                IonosTheme::titleColor()
-            ) + " }"
+            QStringLiteral("QMessageBox QLabel { %1; }").arg(
+                IonosTheme::fontConfigurationCss(
+                    IonosTheme::settingsFont(),
+                    IonosTheme::settingsTextSize(),
+                    IonosTheme::settingsTextWeight(),
+                    IonosTheme::titleColor()
+                )
+            )
         );
 
         messageBox->setAttribute(Qt::WA_DeleteOnClose);
