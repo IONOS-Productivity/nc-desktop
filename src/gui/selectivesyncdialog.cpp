@@ -103,6 +103,23 @@ SelectiveSyncWidget::SelectiveSyncWidget(AccountPtr account, QWidget *parent)
     _folderTree->header()->setStretchLastSection(true);
     _folderTree->headerItem()->setText(0, tr("Name"));
     _folderTree->headerItem()->setText(1, tr("Size"));
+
+
+#ifdef Q_OS_MAC
+    _folderTree->header()->setStyleSheet(
+    "QHeaderView::section {"
+    "    background-color: red;" // Set the background color
+    "    border: 1px solid #e6e6e6;"   // Optional: add a border
+    "    padding-left: 4px;" 
+    +    QString(IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight(),
+            IonosTheme::titleColor())) 
+    +
+    "}"
+    );
+#else
     _folderTree->header()->setStyleSheet(
         IonosTheme::fontConfigurationCss(
             IonosTheme::settingsFont(),
@@ -110,6 +127,8 @@ SelectiveSyncWidget::SelectiveSyncWidget(AccountPtr account, QWidget *parent)
             IonosTheme::settingsTextWeight(),
             IonosTheme::titleColor()
     ));
+#endif
+
     _folderTree->setStyleSheet(IonosTheme::fontConfigurationCss(
         IonosTheme::settingsFont(),
         IonosTheme::settingsTextSize(),
