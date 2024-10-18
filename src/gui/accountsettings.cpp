@@ -653,9 +653,8 @@ void AccountSettings::slotSubfolderContextMenuRequested(const QModelIndex &index
 
 void AccountSettings::styleCustomContextMenu(QMenu *menu) const
 {
-    #ifdef Q_OS_WINDOWS
-        menu->setWindowFlags(menu->windowFlags() | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
-    #endif
+    menu->setWindowFlags(menu->windowFlags() | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
+
     menu->setAttribute(Qt::WA_TranslucentBackground);
 
     menu->setStyleSheet(
