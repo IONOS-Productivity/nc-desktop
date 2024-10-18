@@ -108,7 +108,7 @@ SelectiveSyncWidget::SelectiveSyncWidget(AccountPtr account, QWidget *parent)
 #ifdef Q_OS_MAC
     _folderTree->header()->setStyleSheet(
     "QHeaderView::section {"
-    "    background-color: red;" // Set the background color
+    "    background-color: white;" // Set the background color
     "    border: 1px solid #e6e6e6;"   // Optional: add a border
     "    padding-left: 4px;" 
     +    QString(IonosTheme::fontConfigurationCss(
