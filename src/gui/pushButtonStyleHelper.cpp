@@ -63,11 +63,16 @@ void PushButtonStyleHelper::drawButtonShape(const QStyleOptionButton *option, QP
     painter->restore();
 }
 
+void PushButtonStyleHelper::setFont(QFont& font) const
+{
+    font.setWeight(OCC::IonosTheme::settingsTitleWeightDemiBold());
+    font.setPixelSize(OCC::IonosTheme::settingsTextPixel());
+}
+
 void PushButtonStyleHelper::recalculateContentSize(QSize &contentsSize, const QWidget *widget) const
 {
     QFont font = widget->font();
-    font.setWeight(OCC::IonosTheme::settingsTitleWeightDemiBold());
-    font.setPixelSize(OCC::IonosTheme::settingsTextPixel());
+    setFont(font);
     QFontMetrics fm(font);
 
     //Code aus qpushbutton.cpp - sizeHint

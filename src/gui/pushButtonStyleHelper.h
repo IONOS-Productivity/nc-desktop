@@ -19,6 +19,7 @@ class QStyleOptionButton;
 class QWidget;
 class QPixmap;
 class QColor;
+class QFont;
 
 class PushButtonStyleHelper
 {
@@ -27,7 +28,7 @@ public:
     void drawButtonShape(const QStyleOptionButton *option, QPainter *painter, const QWidget *widget);
     QSize sizeFromContents(const QStyleOptionButton *option, QSize contentsSize, const QWidget *widget, int margin) const;
     void adjustTextPalette(QStyleOptionButton *option, const QWidget *widget) const;
-
+    void setFont(QFont& font) const;
 private:
     void recalculateContentSize(QSize &contentsSize, const QWidget *widget) const;
 

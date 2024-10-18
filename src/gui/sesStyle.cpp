@@ -115,8 +115,7 @@ void sesStyle::drawControl(ControlElement element, const QStyleOption *option, Q
 
             painter->save();
             QFont font = painter->font();
-            font.setWeight(OCC::IonosTheme::settingsTitleWeightDemiBold());
-            font.setPixelSize(OCC::IonosTheme::settingsTextPixel());
+            mPushButtonStyleHelper->setFont(font);
             painter->setFont(font);
 
             QCommonStyle::drawControl(element, &customStyleCopy, painter, widget);
