@@ -42,6 +42,23 @@ void sesStyle::drawPrimitive(PrimitiveElement pe, const QStyleOption *option, QP
     case PE_FrameFocusRect:
         // nothing, we don't want focus rects
         break;
+    case PE_IndicatorBranch:
+        {
+        #ifdef O_OS_MAC   
+
+            if (!(option->state & State_Children))
+                break;
+            if (option->state & State_Open)
+                drawPrimitive(PE_IndicatorArrowDown, option, painter, widget);
+            else {
+                const bool reverse = (option->direction == Qt::RightToLeft);
+                drawPrimitive(reverse ? PE_IndicatorArrowLeft : PE_IndicatorArrowRight, option, painter, widget);
+            }
+        #else        
+            super::drawPrimitive(pe, option, painter, widget);
+        #endif
+        break;
+        }
     default:
         super::drawPrimitive(pe, option, painter, widget);
         break;
