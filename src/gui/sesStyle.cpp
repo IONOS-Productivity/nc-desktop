@@ -44,15 +44,23 @@ void sesStyle::drawPrimitive(PrimitiveElement pe, const QStyleOption *option, QP
         break;
     case PE_IndicatorBranch:
         {
-        #ifdef O_OS_MAC   
+
+        #ifdef Q_OS_MAC   
+
+            QStyleOption optCopy = *option;
+            int originalWidth = optCopy.rect.width();
+            int originalHeight = optCopy.rect.height();
+            optCopy.rect.setWidth(static_cast<int>(originalWidth * 0.5));
+            optCopy.rect.setHeight(static_cast<int>(originalHeight * 0.5));
+            optCopy.rect.translate(5, 5);
 
             if (!(option->state & State_Children))
                 break;
             if (option->state & State_Open)
-                drawPrimitive(PE_IndicatorArrowDown, option, painter, widget);
+                drawPrimitive(PE_IndicatorArrowDown, &optCopy, painter, widget);
             else {
                 const bool reverse = (option->direction == Qt::RightToLeft);
-                drawPrimitive(reverse ? PE_IndicatorArrowLeft : PE_IndicatorArrowRight, option, painter, widget);
+                drawPrimitive(reverse ? PE_IndicatorArrowLeft : PE_IndicatorArrowRight, &optCopy, painter, widget);
             }
         #else        
             super::drawPrimitive(pe, option, painter, widget);
