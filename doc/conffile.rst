@@ -51,12 +51,11 @@ Some interesting values that can be set on the configuration file are:
 |                                  |                          | The client adjusts the chunk size until each chunk upload takes approximately this long.               |
 |                                  |                          | Set to 0 to disable dynamic chunk sizing.                                                              |
 +----------------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+
-| ``promptDeleteAllFiles``         | ``false``                 | If a UI prompt should ask for confirmation if it was detected that all files and folders were deleted. |
+| ``promptDeleteAllFiles``         | ``false``                | If a UI prompt should ask for confirmation if it was detected that all files and folders were deleted. |
 +----------------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+
 | ``timeout``                      | ``300``                  | The timeout for network connections in seconds.                                                        |
 +----------------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+
 | ``moveToTrash``                  | ``false``                | If non-locally deleted files should be moved to trash instead of deleting them completely.             |
-|                                  |                          | This option only works on linux                                                                        |
 +----------------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+
 | ``showExperimentalOptions``      | ``false``                | Whether to show experimental options that are still undergoing testing in the user interface.          |
 |                                  |                          | Turning this on does not enable experimental behavior on its own. It does enable user interface        |

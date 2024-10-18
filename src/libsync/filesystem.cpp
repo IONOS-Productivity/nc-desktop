@@ -273,6 +273,12 @@ bool FileSystem::removeRecursively(const QString &path, const std::function<void
             removeOk = removeRecursively(path + QLatin1Char('/') + di.fileName(), onDeleted, errors); // recursive
         } else {
             QString removeError;
+
+#if !defined(Q_OS_MACOS) || __MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_15
+            const auto fileInfo = QFileInfo{di.filePath()};
+            const auto parentFolderPath = fileInfo.dir().absolutePath();
+            const auto parentPermissionsHandler = FileSystem::FilePermissionsRestore{parentFolderPath, FileSystem::FolderPermissions::ReadWrite};
+#endif
             removeOk = FileSystem::remove(di.filePath(), &removeError);
             if (removeOk) {
                 if (onDeleted)
@@ -289,6 +295,12 @@ bool FileSystem::removeRecursively(const QString &path, const std::function<void
             allRemoved = false;
     }
     if (allRemoved) {
+#if !defined(Q_OS_MACOS) || __MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_15
+        const auto fileInfo = QFileInfo{path};
+        const auto parentFolderPath = fileInfo.dir().absolutePath();
+        const auto parentPermissionsHandler = FileSystem::FilePermissionsRestore{parentFolderPath, FileSystem::FolderPermissions::ReadWrite};
+        FileSystem::setFolderPermissions(path, FileSystem::FolderPermissions::ReadWrite);
+#endif
         allRemoved = QDir().rmdir(path);
         if (allRemoved) {
             if (onDeleted)
@@ -456,7 +468,7 @@ bool FileSystem::setFolderPermissions(const QString &path,
         case OCC::FileSystem::FolderPermissions::ReadOnly:
             break;
         case OCC::FileSystem::FolderPermissions::ReadWrite:
-            std::filesystem::permissions(stdStrPath, writePerms, std::filesystem::perm_options::add);
+            std::filesystem::permissions(stdStrPath, std::filesystem::perms::owner_write, std::filesystem::perm_options::add);
             break;
         }
     } catch (const std::filesystem::filesystem_error &e) {
@@ -480,6 +492,29 @@ bool FileSystem::isFolderReadOnly(const std::filesystem::path &path) noexcept
         return false;
     }
 }
+
+FileSystem::FilePermissionsRestore::FilePermissionsRestore(const QString &path, FolderPermissions temporaryPermissions)
+    : _path(path)
+{
+    try {
+        const auto stdStrPath = _path.toStdWString();
+        _initialPermissions = FileSystem::isFolderReadOnly(stdStrPath) ? OCC::FileSystem::FolderPermissions::ReadOnly : OCC::FileSystem::FolderPermissions::ReadWrite;
+        if (_initialPermissions != temporaryPermissions) {
+            _rollbackNeeded = true;
+            FileSystem::setFolderPermissions(_path, temporaryPermissions);
+        }
+    } catch (const std::filesystem::filesystem_error &e) {
+        qCWarning(lcFileSystem()) << "exception when modifying folder permissions" << e.what() << e.path1().c_str() << e.path2().c_str();
+    }
+}
+
+FileSystem::FilePermissionsRestore::~FilePermissionsRestore()
+{
+    if (_rollbackNeeded) {
+        FileSystem::setFolderPermissions(_path, _initialPermissions);
+    }
+}
+
 #endif
 
 } // namespace OCC

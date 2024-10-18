@@ -415,7 +415,8 @@ void DiscoverySingleDirectoryJob::start()
               << "http://nextcloud.org/ns:lock-owner-type"
               << "http://nextcloud.org/ns:lock-owner-editor"
               << "http://nextcloud.org/ns:lock-time"
-              << "http://nextcloud.org/ns:lock-timeout";
+              << "http://nextcloud.org/ns:lock-timeout"
+              << "http://nextcloud.org/ns:lock-token";
     }
     props << "http://nextcloud.org/ns:is-mount-root";
 
@@ -545,7 +546,9 @@ static void propertyMapToRemoteInfo(const QMap<QString, QString> &map, RemotePer
                 result.lockTimeout = 0;
             }
         }
-
+        if (property == "lock-token") {
+            result.lockToken = value;
+        }
     }
 
     if (result.isDirectory && map.contains("size")) {
@@ -562,7 +565,6 @@ void DiscoverySingleDirectoryJob::directoryListingIteratedSlot(const QString &fi
             auto perm = RemotePermissions::fromServerString(map.value("permissions"),
                                                             _account->serverHasMountRootProperty() ? RemotePermissions::MountedPermissionAlgorithm::UseMountRootProperty : RemotePermissions::MountedPermissionAlgorithm::WildGuessMountedSubProperty,
                                                             map);
-            qCInfo(lcDiscovery()) << file << map.value("permissions") << map;
             emit firstDirectoryPermissions(perm);
             _isExternalStorage = perm.hasPermission(RemotePermissions::IsMounted);
         }
@@ -597,7 +599,6 @@ void DiscoverySingleDirectoryJob::directoryListingIteratedSlot(const QString &fi
         if (result.isDirectory)
             result.size = 0;
 
-        qCInfo(lcDiscovery()) << file << map.value("permissions") << result.remotePerm.toString() << map;
         _results.push_back(std::move(result));
     }
 
@@ -692,6 +693,14 @@ void DiscoverySingleDirectoryJob::metadataReceived(const QJsonDocument &json, in
             topLevelFolderPath = topLevelPathSplit.join(QLatin1Char('/'));
             break;
         }
+    }
+
+    if (job->signature().isEmpty()) {
+        qCDebug(lcDiscovery) << "Initial signature is empty.";
+        _account->reportClientStatus(OCC::ClientStatusReportingStatus::E2EeError_GeneralError);
+        emit finished(HttpError{0, tr("Encrypted metadata setup error: initial signature from server is empty.")});
+        deleteLater();
+        return;
     }
 
     const auto e2EeFolderMetadata = new FolderMetadata(_account,

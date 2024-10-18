@@ -159,7 +159,7 @@ void User::showDesktopNotification(const Activity &activity)
 
 void User::showDesktopNotification(const ActivityList &activityList)
 {
-    const auto subject = QStringLiteral("%1 notifications").arg(activityList.count());
+    const auto subject = tr("%1 notifications").arg(activityList.count());
     const auto notificationId = -static_cast<int>(qHash(subject));
 
     if (!canShowNotification(notificationId)) {
@@ -808,7 +808,7 @@ void User::processCompletedSyncItem(const Folder *folder, const SyncFileItemPtr 
     activity._fileAction = fileActionFromInstruction(item->_instruction);
 
     if (item->_status == SyncFileItem::NoStatus || item->_status == SyncFileItem::Success) {
-        qCWarning(lcActivity) << "Item " << item->_file << " retrieved successfully.";
+        qCDebug(lcActivity) << "Item " << item->_file << " retrieved successfully.";
 
         if (item->_direction != SyncFileItem::Up) {
             activity._message = QObject::tr("Synced %1").arg(fileName);
@@ -843,7 +843,7 @@ void User::processCompletedSyncItem(const Folder *folder, const SyncFileItemPtr 
 
         _activityModel->addSyncFileItemToActivityList(activity);
     } else {
-        qCWarning(lcActivity) << "Item " << item->_file << " retrieved resulted in error " << item->_errorString;
+        qCInfo(lcActivity) << "Item " << item->_file << " retrieved resulted in error " << item->_errorString;
 
         activity._subject = item->_errorString;
         activity._id = -static_cast<int>(qHash(activity._subject + activity._message));
@@ -881,7 +881,7 @@ void User::slotItemCompleted(const QString &folder, const SyncFileItemPtr &item)
         return;
     }
 
-    qCWarning(lcActivity) << "Item " << item->_file << " retrieved resulted in " << item->_errorString;
+    qCDebug(lcActivity) << "Item " << item->_file << " retrieved resulted in " << item->_errorString;
     processCompletedSyncItem(folderInstance, item);
 }
 
