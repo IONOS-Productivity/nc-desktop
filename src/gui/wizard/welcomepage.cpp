@@ -48,7 +48,9 @@ void WelcomePage::initializePage()
 
 void WelcomePage::setLoginButtonDefault()
 {
+#ifdef Q_OS_WIN
     _ui->loginButton->setDefault(true);
+#endif
     _ui->loginButton->setFocus();
 }
 
