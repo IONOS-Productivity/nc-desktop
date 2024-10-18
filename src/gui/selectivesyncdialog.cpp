@@ -117,6 +117,10 @@ SelectiveSyncWidget::SelectiveSyncWidget(AccountPtr account, QWidget *parent)
         IonosTheme::titleColor()
     ));
 
+    #ifdef Q_OS_MAC
+    _folderTree->setPalette(QPalette(IonosTheme::white()));
+    #endif
+
     ConfigFile::setupDefaultExcludeFilePaths(_excludedFiles);
     _excludedFiles.reloadExcludeFiles();
 }

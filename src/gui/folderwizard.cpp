@@ -267,6 +267,11 @@ FolderWizardRemotePath::FolderWizardRemotePath(const AccountPtr &account)
     connect(&_lscolTimer, &QTimer::timeout, this, &FolderWizardRemotePath::slotLsColFolderEntry);
 
     _ui.folderTreeWidget->header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
+
+#ifdef Q_OS_MAC
+    _ui.folderTreeWidget->setPalette(QPalette(IonosTheme::white()));
+#endif
+
     // Make sure that there will be a scrollbar when the contents is too wide
     _ui.folderTreeWidget->header()->setStretchLastSection(false);
 
