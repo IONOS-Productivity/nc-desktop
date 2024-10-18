@@ -1750,6 +1750,12 @@ void AccountSettings::customizeStyle()
             IonosTheme::titleColor()
         )
     );
+
+#if defined(Q_OS_MAC)
+    _ui->selectiveSyncLabel->setStyleSheet(QString("color: %1;").arg(IonosTheme::black()));
+    _ui->horizontalLayout->setSpacing(16);
+#endif
+
 }
 
 void AccountSettings::initializeE2eEncryption()
