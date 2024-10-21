@@ -100,6 +100,8 @@ Folder::Folder(const FolderDefinition &definition,
 
     connect(_engine.data(), &SyncEngine::aboutToRemoveAllFiles,
         this, &Folder::slotAboutToRemoveAllFiles);
+    connect(_engine.data(), &SyncEngine::aboutToRemoveRemnantsReadOnlyFolders,
+            this, &Folder::slotNeedToRemoveRemnantsReadOnlyFolders);
     connect(_engine.data(), &SyncEngine::transmissionProgress, this, &Folder::slotTransmissionProgress);
     connect(_engine.data(), &SyncEngine::itemCompleted,
         this, &Folder::slotItemCompleted);
@@ -1628,14 +1630,16 @@ bool Folder::virtualFilesEnabled() const
 
 void Folder::slotAboutToRemoveAllFiles(SyncFileItem::Direction dir, std::function<void(bool)> callback)
 {
-    const QString msg = dir == SyncFileItem::Down ? tr("All files in the server folder \"%1\" were deleted.\n\nIf you restore the files, they will be uploaded again to the server.")
-                                                  : tr("All files in the local folder \"%1\" were deleted.\n\nIf you restore the files, they will be downloaded again from the server.");
+    const auto isDownDirection = (dir == SyncFileItem::Down);
+    const QString msg = isDownDirection ? tr("A large number of files in the server have been deleted.\nPlease confirm if you'd like to proceed with these deletions.\nAlternatively, you can restore all deleted files by uploading from '%1' folder to the server.")
+                                        : tr("A large number of files in your local '%1' folder have been deleted.\nPlease confirm if you'd like to proceed with these deletions.\nAlternatively, you can restore all deleted files by downloading them from the server.");
     auto msgBox = new QMessageBox(QMessageBox::Warning, tr("Remove all files?"),
                                   msg.arg(shortGuiLocalPath()), QMessageBox::NoButton);
     msgBox->setAttribute(Qt::WA_DeleteOnClose);
     msgBox->setWindowFlags(msgBox->windowFlags() | Qt::WindowStaysOnTopHint);
-    msgBox->addButton(tr("Proceed to remove all files"), QMessageBox::DestructiveRole);
-    QPushButton *keepBtn = msgBox->addButton(tr("Restore files"), QMessageBox::AcceptRole);
+    msgBox->addButton(tr("Proceed with Deletion"), QMessageBox::DestructiveRole);
+    QPushButton *keepBtn = msgBox->addButton(isDownDirection ? tr("Restore Files to Server") : tr("Restore Files from Server"),
+                                             QMessageBox::AcceptRole);
     bool oldPaused = syncPaused();
     setSyncPaused(true);
     connect(msgBox, &QMessageBox::finished, this, [msgBox, keepBtn, callback, oldPaused, this] {
@@ -1651,6 +1655,27 @@ void Folder::slotAboutToRemoveAllFiles(SyncFileItem::Direction dir, std::functio
     });
     connect(this, &Folder::destroyed, msgBox, &QMessageBox::deleteLater);
     msgBox->open();
+}
+
+void Folder::slotNeedToRemoveRemnantsReadOnlyFolders(const QList<SyncFileItemPtr> &folders,
+                                                     const QString &localPath,
+                                                     std::function<void (bool)> callback)
+{
+    auto listOfFolders = QStringList{};
+    for (const auto &oneFolder : folders) {
+        listOfFolders.push_back(oneFolder->_file);
+    }
+
+    qCInfo(lcFolder()) << "will delete invalid read-only folders:" << listOfFolders.join(", ");
+
+    setSyncPaused(true);
+    for(const auto &oneFolder : folders) {
+        FileSystem::removeRecursively(localPath + oneFolder->_file);
+    }
+    callback(true);
+    setSyncPaused(false);
+    _lastEtag.clear();
+    slotScheduleThisFolder();
 }
 
 void Folder::removeLocalE2eFiles()

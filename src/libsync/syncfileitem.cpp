@@ -125,11 +125,11 @@ SyncJournalFileRecord SyncFileItem::toSyncJournalFileRecordWithInode(const QStri
     rec._lockstate._lockEditorApp = _lockEditorApp;
     rec._lockstate._lockTime = _lockTime;
     rec._lockstate._lockTimeout = _lockTimeout;
+    rec._lockstate._lockToken = _lockToken;
 
     // Update the inode if possible
     rec._inode = _inode;
     if (FileSystem::getInode(localFileName, &rec._inode)) {
-        qCDebug(lcFileItem) << localFileName << "Retrieved inode " << rec._inode << "(previous item inode: " << _inode << ")";
     } else {
         // use the "old" inode coming with the item for the case where the
         // filesystem stat fails. That can happen if the the file was removed
@@ -163,6 +163,7 @@ SyncFileItemPtr SyncFileItem::fromSyncJournalFileRecord(const SyncJournalFileRec
     item->_lockEditorApp = rec._lockstate._lockEditorApp;
     item->_lockTime = rec._lockstate._lockTime;
     item->_lockTimeout = rec._lockstate._lockTimeout;
+    item->_lockToken = rec._lockstate._lockToken;
     item->_sharedByMe = rec._sharedByMe;
     item->_isShared = rec._isShared;
     item->_lastShareStateFetchedTimestamp = rec._lastShareStateFetchedTimestamp;
@@ -251,6 +252,7 @@ void SyncFileItem::updateLockStateFromDbRecord(const SyncJournalFileRecord &dbRe
     _lockEditorApp = dbRecord._lockstate._lockEditorApp;
     _lockTime = dbRecord._lockstate._lockTime;
     _lockTimeout = dbRecord._lockstate._lockTimeout;
+    _lockToken = dbRecord._lockstate._lockToken;
 }
 
 }

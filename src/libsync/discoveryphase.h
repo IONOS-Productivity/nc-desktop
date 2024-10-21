@@ -86,6 +86,7 @@ struct RemoteInfo
     QString lockEditorApp;
     qint64 lockTime = 0;
     qint64 lockTimeout = 0;
+    QString lockToken;
 };
 
 struct LocalInfo
@@ -357,6 +358,7 @@ signals:
 
     void addErrorToGui(const SyncFileItem::Status status, const QString &errorMessage, const QString &subject, const OCC::ErrorCategory category);
 
+    void remnantReadOnlyFolderDiscovered(const OCC::SyncFileItemPtr &item);
 private slots:
     void slotItemDiscovered(const OCC::SyncFileItemPtr &item);
 };

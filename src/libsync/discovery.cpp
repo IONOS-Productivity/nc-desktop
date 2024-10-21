@@ -57,24 +57,27 @@ ProcessDirectoryJob::ProcessDirectoryJob(DiscoveryPhase *data, PinState basePinS
 ProcessDirectoryJob::ProcessDirectoryJob(const PathTuple &path, const SyncFileItemPtr &dirItem, QueryMode queryLocal, QueryMode queryServer, qint64 lastSyncTimestamp, ProcessDirectoryJob *parent)
     : QObject(parent)
     , _dirItem(dirItem)
+    , _dirParentItem(parent->_dirItem)
     , _lastSyncTimestamp(lastSyncTimestamp)
     , _queryServer(queryServer)
     , _queryLocal(queryLocal)
     , _discoveryData(parent->_discoveryData)
     , _currentFolder(path)
 {
-    qCDebug(lcDisco) << path._server << queryServer << path._local << queryLocal << lastSyncTimestamp;
+    qCDebug(lcDisco) << "PREPARING" << _currentFolder._server << _queryServer << _currentFolder._local << _queryLocal;
     computePinState(parent->_pinState);
 }
 
-ProcessDirectoryJob::ProcessDirectoryJob(DiscoveryPhase *data, PinState basePinState, const PathTuple &path, const SyncFileItemPtr &dirItem, QueryMode queryLocal, qint64 lastSyncTimestamp, QObject *parent)
+ProcessDirectoryJob::ProcessDirectoryJob(DiscoveryPhase *data, PinState basePinState, const PathTuple &path, const SyncFileItemPtr &dirItem, const SyncFileItemPtr &parentDirItem, QueryMode queryLocal, qint64 lastSyncTimestamp, QObject *parent)
         : QObject(parent)
         , _dirItem(dirItem)
+        , _dirParentItem(parentDirItem)
         , _lastSyncTimestamp(lastSyncTimestamp)
         , _queryLocal(queryLocal)
         , _discoveryData(data)
         , _currentFolder(path)
 {
+    qCDebug(lcDisco) << "PREPARING" << _currentFolder._server << _queryServer << _currentFolder._local << _queryLocal;
     computePinState(basePinState);
 }
 
@@ -259,7 +262,8 @@ bool ProcessDirectoryJob::handleExcluded(const QString &path, const Entries &ent
 
     const auto fileName = path.mid(path.lastIndexOf('/') + 1);
 
-    if (excluded == CSYNC_NOT_EXCLUDED) {
+    const auto osDoesNotSupportsSpaces = Utility::isWindows();
+    if (excluded == CSYNC_NOT_EXCLUDED && osDoesNotSupportsSpaces) {
         const auto endsWithSpace = fileName.endsWith(QLatin1Char(' '));
         const auto startsWithSpace = fileName.startsWith(QLatin1Char(' '));
         if (startsWithSpace && endsWithSpace) {
@@ -273,9 +277,12 @@ bool ProcessDirectoryJob::handleExcluded(const QString &path, const Entries &ent
 
     // we don't need to trigger a warning if trailing/leading space file is already on the server or has already been synced down
     // only if the OS supports trailing/leading spaces
-    const auto wasSyncedAlreadyAndOsSupportsSpaces = !Utility::isWindows() && (entries.serverEntry.isValid() || entries.dbEntry.isValid());
-    if ((excluded == CSYNC_FILE_EXCLUDE_LEADING_SPACE || excluded == CSYNC_FILE_EXCLUDE_TRAILING_SPACE || excluded == CSYNC_FILE_EXCLUDE_LEADING_AND_TRAILING_SPACE)
-            && (wasSyncedAlreadyAndOsSupportsSpaces || _discoveryData->_leadingAndTrailingSpacesFilesAllowed.contains(_discoveryData->_localDir + path))) {
+    const auto wasSyncedAlready = entries.serverEntry.isValid() || entries.dbEntry.isValid();
+    const auto hasLeadingOrTrailingSpaces = excluded == CSYNC_FILE_EXCLUDE_LEADING_SPACE
+                                            || excluded == CSYNC_FILE_EXCLUDE_TRAILING_SPACE
+                                            || excluded == CSYNC_FILE_EXCLUDE_LEADING_AND_TRAILING_SPACE;
+    const auto leadingAndTrailingSpacesFilesAllowed = _discoveryData->_leadingAndTrailingSpacesFilesAllowed.contains(_discoveryData->_localDir + path);
+    if (hasLeadingOrTrailingSpaces && ((!osDoesNotSupportsSpaces && wasSyncedAlready) || leadingAndTrailingSpacesFilesAllowed)) {
         excluded = CSYNC_NOT_EXCLUDED;
     }
 
@@ -485,6 +492,7 @@ void ProcessDirectoryJob::processFile(PathTuple path,
                               << " | checksum: " << dbEntry._checksumHeader << "//" << serverEntry.checksumHeader
                               << " | perm: " << dbEntry._remotePerm << "//" << serverEntry.remotePerm
                               << " | fileid: " << dbEntry._fileId << "//" << serverEntry.fileId
+                              << " | inode: " << dbEntry._inode << "/" << localEntry.inode << "/"
                               << " | type: " << dbEntry._type << "/" << localEntry.type << "/" << (serverEntry.isDirectory ? ItemTypeDirectory : ItemTypeFile)
                               << " | e2ee: " << dbEntry.isE2eEncrypted() << "/" << serverEntry.isE2eEncrypted()
                               << " | e2eeMangledName: " << dbEntry.e2eMangledName() << "/" << serverEntry.e2eMangledName
@@ -664,15 +672,7 @@ void ProcessDirectoryJob::processFileAnalyzeRemoteInfo(const SyncFileItemPtr &it
     item->_lockEditorApp = serverEntry.lockEditorApp;
     item->_lockTime = serverEntry.lockTime;
     item->_lockTimeout = serverEntry.lockTimeout;
-
-    qCDebug(lcDisco()) << "item lock for:" << item->_file
-                       << item->_locked
-                       << item->_lockOwnerDisplayName
-                       << item->_lockOwnerId
-                       << item->_lockOwnerType
-                       << item->_lockEditorApp
-                       << item->_lockTime
-                       << item->_lockTimeout;
+    item->_lockToken = serverEntry.lockToken;
 
     // Check for missing server data
     {
@@ -701,18 +701,12 @@ void ProcessDirectoryJob::processFileAnalyzeRemoteInfo(const SyncFileItemPtr &it
         // Add on a second as a precaution, sometimes we catch the server before it has had a chance to update
         const auto lockExpirationTimeout = qMax(5LL, timeRemaining + 1);
 
-        qCDebug(lcDisco) << "File:" << path._original << "is locked."
-                        << "Lock expires in:" << lockExpirationTimeout << "seconds."
-                        << "A sync run will be scheduled for around that time.";
-
         _discoveryData->_anotherSyncNeeded = true;
         _discoveryData->_filesNeedingScheduledSync.insert(path._original, lockExpirationTimeout);
 
     } else if (serverEntry.locked == SyncFileItem::LockStatus::UnlockedItem && dbEntry._lockstate._locked) {
         // We have received data that this file has been unlocked remotely, so let's notify the sync engine
         // that we no longer need a scheduled sync run for this file
-        qCInfo(lcDisco) << "File:" << path._original << "is unlocked and a scheduled sync is no longer needed."
-                        << "Will remove scheduled sync if there is one.";
 
         _discoveryData->_filesUnscheduleSync.append(path._original);
     }
@@ -874,9 +868,8 @@ void ProcessDirectoryJob::processFileAnalyzeRemoteInfo(const SyncFileItemPtr &it
             done = true;
             return;
         }
-        if (!serverEntry.isDirectory && base._etag != serverEntry.etag) {
-            /* File with different etag, don't do a rename, but download the file again */
-            qCInfo(lcDisco, "file etag different, not a rename");
+        if (!serverEntry.isDirectory && (base._modtime != serverEntry.modtime || base._fileSize != serverEntry.size)) {
+            qCInfo(lcDisco, "file metadata different, forcing a download of the new file");
             done = true;
             return;
         }
@@ -1552,7 +1545,7 @@ void ProcessDirectoryJob::processFileConflict(const SyncFileItemPtr &item, Proce
     // If there's no content hash, use heuristics
     if (serverEntry.checksumHeader.isEmpty()) {
         // If the size or mtime is different, it's definitely a conflict.
-        bool isConflict = (serverEntry.size != localEntry.size) || (serverEntry.modtime != localEntry.modtime);
+        bool isConflict = (serverEntry.size != localEntry.size) || (serverEntry.modtime != localEntry.modtime) || (dbEntry.isValid() && dbEntry._modtime != localEntry.modtime && serverEntry.modtime == localEntry.modtime);
 
         // It could be a conflict even if size and mtime match!
         //
@@ -1666,32 +1659,33 @@ void ProcessDirectoryJob::processFileFinalize(
     }
 
     if (_discoveryData->_syncOptions._vfs &&
-            (item->_type == CSyncEnums::ItemTypeFile || item->_type == CSyncEnums::ItemTypeDirectory) &&
-            item->_instruction == CSyncEnums::CSYNC_INSTRUCTION_NONE &&
-            !_discoveryData->_syncOptions._vfs->isPlaceHolderInSync(_discoveryData->_localDir + path._local)) {
+        (item->_type == CSyncEnums::ItemTypeFile || item->_type == CSyncEnums::ItemTypeDirectory) &&
+        item->_instruction == CSyncEnums::CSYNC_INSTRUCTION_NONE &&
+        !_discoveryData->_syncOptions._vfs->isPlaceHolderInSync(_discoveryData->_localDir + path._local)) {
         item->_instruction = CSyncEnums::CSYNC_INSTRUCTION_UPDATE_VFS_METADATA;
     }
 
-    if (path._original != path._target && (item->_instruction == CSYNC_INSTRUCTION_UPDATE_METADATA || item->_instruction == CSYNC_INSTRUCTION_NONE)) {
+    if (path._original != path._target && (item->_instruction == CSYNC_INSTRUCTION_UPDATE_VFS_METADATA || item->_instruction == CSYNC_INSTRUCTION_UPDATE_METADATA || item->_instruction == CSYNC_INSTRUCTION_NONE)) {
         ASSERT(_dirItem && _dirItem->_instruction == CSYNC_INSTRUCTION_RENAME);
         // This is because otherwise subitems are not updated!  (ideally renaming a directory could
         // update the database for all items!  See PropagateDirectory::slotSubJobsFinished)
-        const auto adjustedOriginalPath = _discoveryData->adjustRenamedPath(path._original, SyncFileItem::Down);
-        Q_UNUSED(adjustedOriginalPath)
-        _discoveryData->_renamedItemsLocal.insert(path._original, path._target);
+        if (_dirItem->_direction == SyncFileItem::Direction::Down) {
+            _discoveryData->_renamedItemsRemote.insert(path._original, path._target);
+        } else {
+            _discoveryData->_renamedItemsLocal.insert(path._original, path._target);
+        }
         item->_instruction = CSYNC_INSTRUCTION_RENAME;
         item->_renameTarget = path._target;
         item->_direction = _dirItem->_direction;
     }
 
     {
-        const auto discoveredItemLog = QStringLiteral("%1 %2 %3 %4").arg(item->_file).arg(item->_instruction).arg(item->_direction).arg(item->_type);
         const auto isImportantInstruction = item->_instruction != CSYNC_INSTRUCTION_NONE && item->_instruction != CSYNC_INSTRUCTION_IGNORE
             && item->_instruction != CSYNC_INSTRUCTION_UPDATE_METADATA;
         if (isImportantInstruction) {
-            qCInfo(lcDisco) << discoveredItemLog;
+            qCInfo(lcDisco) << "discovered" << item->_file << item->_instruction << item->_direction << item->_type;
         } else {
-            qCDebug(lcDisco) << discoveredItemLog;
+            qCDebug(lcDisco) << "discovered" << item->_file << item->_instruction << item->_direction << item->_type;
         }
     }
 
@@ -1777,11 +1771,18 @@ bool ProcessDirectoryJob::checkPermissions(const OCC::SyncFileItemPtr &item)
             qCWarning(lcDisco) << "checkForPermission: ERROR" << item->_file;
             item->_instruction = CSYNC_INSTRUCTION_ERROR;
             item->_errorString = tr("Not allowed because you don't have permission to add subfolders to that folder");
+            const auto localPath = QString{_discoveryData->_localDir + item->_file};
+#if !defined(Q_OS_MACOS) || __MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_15
+            qCWarning(lcDisco) << "unexpected new folder in a read-only folder will be made read-write" << localPath;
+            FileSystem::setFolderPermissions(localPath, FileSystem::FolderPermissions::ReadWrite);
+            emit _discoveryData->remnantReadOnlyFolderDiscovered(item);
+#endif
             return false;
         } else if (!item->isDirectory() && !perms.hasPermission(RemotePermissions::CanAddFile)) {
             qCWarning(lcDisco) << "checkForPermission: ERROR" << item->_file;
             item->_instruction = CSYNC_INSTRUCTION_ERROR;
             item->_errorString = tr("Not allowed because you don't have permission to add files in that folder");
+            emit _discoveryData->remnantReadOnlyFolderDiscovered(item);
             return false;
         }
         break;
@@ -1968,6 +1969,24 @@ int ProcessDirectoryJob::processSubJobs(int nbJobs)
             if (_childModified && _dirItem->_instruction == CSYNC_INSTRUCTION_REMOVE) {
                 // re-create directory that has modified contents
                 _dirItem->_instruction = CSYNC_INSTRUCTION_NEW;
+
+                const auto perms = !_rootPermissions.isNull() ? _rootPermissions
+                    : _dirParentItem ? _dirParentItem->_remotePerm : _rootPermissions;
+
+                if (perms.isNull()) {
+                    // No permissions set
+                } else if (_dirItem->isDirectory() && !perms.hasPermission(RemotePermissions::CanAddSubDirectories)) {
+                    qCWarning(lcDisco) << "checkForPermission: ERROR" << _dirItem->_file;
+                    _dirItem->_instruction = CSYNC_INSTRUCTION_ERROR;
+                    _dirItem->_errorString = tr("Not allowed because you don't have permission to add subfolders to that folder");
+                    const auto localPath = QString{_discoveryData->_localDir + _dirItem->_file};
+#if !defined(Q_OS_MACOS) || __MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_15
+                    qCWarning(lcDisco) << "unexpected new folder in a read-only folder will be made read-write" << localPath;
+                    FileSystem::setFolderPermissions(localPath, FileSystem::FolderPermissions::ReadWrite);
+                    emit _discoveryData->remnantReadOnlyFolderDiscovered(_dirItem);
+#endif
+                }
+
                 _dirItem->_direction = _dirItem->_direction == SyncFileItem::Up ? SyncFileItem::Down : SyncFileItem::Up;
             }
             if (_childModified && _dirItem->_instruction == CSYNC_INSTRUCTION_TYPE_CHANGE && !_dirItem->isDirectory()) {
