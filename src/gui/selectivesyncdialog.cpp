@@ -136,9 +136,9 @@ SelectiveSyncWidget::SelectiveSyncWidget(AccountPtr account, QWidget *parent)
         IonosTheme::titleColor()
     ));
 
-    #ifdef Q_OS_MAC
+#ifdef Q_OS_MAC
     _folderTree->setPalette(QPalette(IonosTheme::white()));
-    #endif
+#endif
 
     ConfigFile::setupDefaultExcludeFilePaths(_excludedFiles);
     _excludedFiles.reloadExcludeFiles();
@@ -552,12 +552,42 @@ void SelectiveSyncDialog::init(const AccountPtr &account)
     _selectiveSync = new SelectiveSyncWidget(account, this);
     layout->addWidget(_selectiveSync);
     auto *buttonBox = new QDialogButtonBox(Qt::Horizontal);
+    
     _okButton = buttonBox->addButton(QDialogButtonBox::Ok);
     _okButton->setProperty("buttonStyle", QVariant::fromValue(ButtonStyleName::Primary));
     connect(_okButton, &QPushButton::clicked, this, &SelectiveSyncDialog::accept);
+
     QPushButton *button = nullptr;
     button = buttonBox->addButton(QDialogButtonBox::Cancel);
+
+#ifdef Q_OS_MAC
+    _okButton->setStyleSheet(
+        _okButton->styleSheet() + QStringLiteral("QPushButton { %1; } ").arg(
+            IonosTheme::fontConfigurationCss(
+                IonosTheme::settingsFont(),
+                IonosTheme::settingsTextSize(),
+                IonosTheme::settingsTitleWeight500(),
+                IonosTheme::white()
+            )
+        )
+    );
+
+    button->setStyleSheet(
+        button->styleSheet() + QStringLiteral("QPushButton { %1; } ").arg(
+            IonosTheme::fontConfigurationCss(
+                IonosTheme::settingsFont(),
+                IonosTheme::settingsTextSize(),
+                IonosTheme::settingsTitleWeight500(),
+                IonosTheme::titleColor()
+            )
+        )
+    );
+
+    buttonBox->layout()->setSpacing(24);
+#endif
+
     connect(button, &QAbstractButton::clicked, this, &QDialog::reject);
+
     layout->addWidget(buttonBox);
 }
 
