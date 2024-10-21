@@ -232,6 +232,10 @@ void Flow2AuthWidget::customizeStyle()
 
     _ui.mainLayoutVBox->setContentsMargins(32, 0, 32, 0);
     _ui.innerLayoutVBox->setSpacing(16);
+    
+#ifdef Q_OS_MAC
+    _ui.horizontalLayout->setSpacing(32);
+#endif
 
     _ui.statusLabel->setStyleSheet(IonosTheme::fontConfigurationCss(
         IonosTheme::settingsFont(),
