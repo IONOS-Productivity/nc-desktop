@@ -1580,7 +1580,18 @@ int UserModel::findUserIdForAccount(AccountState *account) const
 }
 
 void UserModel::styleMessageBox(QMessageBox &messageBox, QPushButton *yesButton){ 
-    messageBox.setStyleSheet(QStringLiteral("QMessageBox { background-color: %1; }").arg(IonosTheme::dialogBackgroundColor()));
+
+    messageBox.setStyleSheet(QStringLiteral("QMessageBox { background-color: %1; } QMessageBox QLabel { %2 } ").arg(
+        IonosTheme::dialogBackgroundColor(),
+        IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight(),
+            IonosTheme::titleColor()
+        )
+        )
+    );
+
     messageBox.setIconPixmap(QPixmap(IonosTheme::questionCircleIcon()));
     
     yesButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
@@ -1591,6 +1602,9 @@ void UserModel::styleMessageBox(QMessageBox &messageBox, QPushButton *yesButton)
 
     QHBoxLayout *buttonBoxLayout = messageBox.findChild<QHBoxLayout *>();
     buttonBoxLayout->setSpacing(8);
+#ifdef Q_OS_MACOS
+    buttonBoxLayout->setSpacing(24);
+#endif
 
     QLabel *label = messageBox.findChild<QLabel *>("qt_msgbox_label");
     label->setMinimumSize(529, 49);
