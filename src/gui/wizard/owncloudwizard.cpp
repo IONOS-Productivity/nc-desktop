@@ -118,6 +118,9 @@ OwncloudWizard::OwncloudWizard(QWidget *parent)
 
     adjustWizardSize();
     centerWindow();
+
+    // Set focus policy to prevent initial focus on the button
+    setFocusPolicy(Qt::StrongFocus);
 }
 
 void OwncloudWizard::centerWindow()
