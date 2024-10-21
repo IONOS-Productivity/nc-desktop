@@ -192,3 +192,5 @@ convert.exe
 theme.qrc
 
 .idea/
+
+shell_integration/MacOSX/NextcloudIntegration/NextcloudIntegration.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/
