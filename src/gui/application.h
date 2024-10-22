@@ -113,29 +113,6 @@ protected slots:
     void slotSystemOnlineConfigurationChanged(QNetworkConfiguration);
     void slotGuiIsShowingSettings();
 
-        // Overriding eventFilter to catch key events
-    bool eventFilter(QObject* obj, QEvent* event) override {
-        if (event->type() == QEvent::KeyPress) {
-            QKeyEvent* keyEvent = static_cast<QKeyEvent*>(event);
-            // Catch specific key events here
-            if (keyEvent->key() == Qt::Key_Plus) { // "+" key to increase font size
-                QFont defaultFont(QApplication::font());
-                defaultFont.setPointSize(12);
-                defaultFont.setWeight(QFont::Normal);
-                QApplication::setFont(defaultFont);
-                return true; // Event is handled
-            } else if (keyEvent->key() == Qt::Key_Minus) { // "-" key to decrease font size
-                QFont defaultFont(QApplication::font());
-                defaultFont.setPointSize(9);
-                defaultFont.setWeight(QFont::Normal);
-                QApplication::setFont(defaultFont);
-                return true; // Event is handled
-            }
-        }
-        // Call base class method to ensure normal processing
-        return QApplication::eventFilter(obj, event);
-    }
-
 private:
     void setHelp();
     void startTracking();

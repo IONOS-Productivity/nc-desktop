@@ -81,7 +81,7 @@ int main(int argc, char **argv)
     QQuickStyle::setStyle(QStringLiteral("Fusion"));
 
     OCC::Application app(argc, argv);
-    app.installEventFilter(&app);
+
 #ifdef Q_OS_WIN
     // The Windows style still has pixelated elements with Qt 5.6,
     // it's recommended to use the Fusion style in this case, even
