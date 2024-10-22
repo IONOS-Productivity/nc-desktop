@@ -31,8 +31,6 @@ IgnoreListTableWidget::IgnoreListTableWidget(QWidget *parent)
                                      "prevent a folder from being deleted. "
                                      "This is useful for metadata."));
 
-
-
     connect(ui->tableWidget,         &QTableWidget::itemSelectionChanged,
             this, &IgnoreListTableWidget::slotItemSelectionChanged);
 
