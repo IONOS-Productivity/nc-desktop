@@ -71,6 +71,7 @@ QSize FolderStatusDelegate::sizeHint(
     const QModelIndex &index) const
 {
     QFont font = QFont(option.font);
+    font.setPixelSize(IonosTheme::settingsTextPixel());
     QFont aliasFont = makeAliasFont(font);
 
     QFontMetrics fm(font);
@@ -173,17 +174,22 @@ void FolderStatusDelegate::drawAddButton(QPainter *painter, const QStyleOptionVi
 
 void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    QStyledItemDelegate::paint(painter, option, index);
+    QStyleOptionViewItem opt = option;
+    QFont font = opt.font;
+    font.setPixelSize(IonosTheme::settingsTextPixel());
+    opt.font = font;
+
+    QStyledItemDelegate::paint(painter, opt, index);
 
     if (index.data(AddButton).toBool()) {
-        drawAddButton(painter, option, index);
+        drawAddButton(painter, opt, index);
         return;
     }
 
     auto textAlign = Qt::AlignLeft;
 
-    const auto aliasFont = makeAliasFont(option.font);
-    const auto subFont = option.font;
+    const auto aliasFont = makeAliasFont(opt.font);
+    const auto subFont = opt.font;
 
     const auto errorFont = subFont;
 
@@ -328,7 +334,7 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
 
     // Sync File Progress Bar: Show it if syncFile is not empty.
     if (showProgess) {
-        drawSyncProgressBar(painter, option, index, subFm, aliasMargin, remotePathRect, margin, nextToIcon);
+        drawSyncProgressBar(painter, opt, index, subFm, aliasMargin, remotePathRect, margin, nextToIcon);
     }
 
     drawMoreOptionsButton(painter, option, index);
