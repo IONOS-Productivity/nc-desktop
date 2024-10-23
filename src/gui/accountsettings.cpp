@@ -1256,11 +1256,36 @@ void AccountSettings::slotEnableCurrentFolder(bool terminate)
                                                     tr("The syncing operation is running.<br/>Do you want to terminate it?"),
                                                     QMessageBox::Yes | QMessageBox::No,
                                                     this);
-                msgbox->setAttribute(Qt::WA_DeleteOnClose);
+                msgbox->setAttribute(Qt::WA_DeleteOnClose); 
                 msgbox->setDefaultButton(QMessageBox::Yes);
+                msgbox->defaultButton()->setProperty("buttonStyle", QVariant::fromValue(ButtonStyleName::Primary));
+
+                QDialogButtonBox *buttonBox = msgbox->findChild<QDialogButtonBox *>();
+                buttonBox->setLayoutDirection(Qt::RightToLeft);
+
+                QHBoxLayout *buttonLayout = msgbox->findChild<QHBoxLayout *>();
+                buttonLayout->setSpacing(8);
+
+#ifdef Q_OS_MAC
+                buttonLayout->setSpacing(24);
+                buttonBox->setLayoutDirection(Qt::LeftToRight);
+#endif
+
                 connect(msgbox, &QMessageBox::accepted, this, [this] {
                     slotEnableCurrentFolder(true);
                 });
+
+                msgbox->setStyleSheet(
+                    QStringLiteral("QMessageBox QLabel { %1; }").arg(
+                        IonosTheme::fontConfigurationCss(
+                            IonosTheme::settingsFont(),
+                            IonosTheme::settingsTextSize(),
+                            IonosTheme::settingsTextWeight(),
+                            IonosTheme::titleColor()
+                        )
+                    )
+                );
+
                 msgbox->open();
                 return;
             }
