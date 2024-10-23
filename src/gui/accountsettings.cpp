@@ -1260,15 +1260,11 @@ void AccountSettings::slotEnableCurrentFolder(bool terminate)
                 msgbox->setDefaultButton(QMessageBox::Yes);
                 msgbox->defaultButton()->setProperty("buttonStyle", QVariant::fromValue(ButtonStyleName::Primary));
 
-                QDialogButtonBox *buttonBox = msgbox->findChild<QDialogButtonBox *>();
-                buttonBox->setLayoutDirection(Qt::RightToLeft);
-
                 QHBoxLayout *buttonLayout = msgbox->findChild<QHBoxLayout *>();
                 buttonLayout->setSpacing(8);
 
 #ifdef Q_OS_MAC
                 buttonLayout->setSpacing(24);
-                buttonBox->setLayoutDirection(Qt::LeftToRight);
 #endif
 
                 connect(msgbox, &QMessageBox::accepted, this, [this] {
