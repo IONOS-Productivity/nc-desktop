@@ -6,9 +6,11 @@
 #include <QNetworkRequest>
 #include <QQueue>
 #include "ganalytics.h"
+#include "abstractnetworkjob.h"
 
 #include <QJSonObject>
 #include <map>
+#include "account.h"
 
 struct QueryBuffer
 {
@@ -42,6 +44,8 @@ public:
     QString m_language;
     QString m_screenResolution;
     QString m_viewportSize;
+
+    OCC::AccountPtr m_account;
 
     bool m_anonymizeIPs = false;
     bool m_isEnabled = false;

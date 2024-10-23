@@ -443,11 +443,13 @@ void Application::startTracking()
 {
     DataCollectionWrapper dcw;
     dcw.initDataCollection();
-    QByteArray byteArray = AccountManager::instance()->accounts().first()->account()->credentials()->user().toUtf8();  // Convert the input string to a byte array
+    AccountPtr account = AccountManager::instance()->accounts().first()->account();
+    QByteArray byteArray = account->credentials()->user().toUtf8();  // Convert the input string to a byte array
     QByteArray hash = QCryptographicHash::hash(byteArray, QCryptographicHash::Sha256);  // Perform the hash
     
     ConfigFile cfg;
     dcw.setSendData(cfg.sendData());
+    dcw.setAccount(account);    
     
     dcw.setClientID(hash.toHex());
     dcw.login();   
@@ -458,6 +460,7 @@ void Application::stopTracking()
     DataCollectionWrapper dcw;
     dcw.accountRemoved();
     dcw.setClientID(QString());
+    dcw.setAccount(nullptr);
 }
 
 void Application::setupAccountsAndFolders()

@@ -46,6 +46,10 @@ void DataCollectionWrapper::setSendData(const bool sendData) {
     GAnalytics::getInstance().enable(sendData);
 }
 
+void DataCollectionWrapper::setAccount(const OCC::AccountPtr account) {
+    GAnalytics::getInstance().setAccount(account);
+}
+
 void DataCollectionWrapper::initDataCollection() {
     GAnalytics* ga = &GAnalytics::getInstance();
     ga->setMeasurementId(GA_MEASUREMENT_ID);

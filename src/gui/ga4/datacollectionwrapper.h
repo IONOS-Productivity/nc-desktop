@@ -2,6 +2,7 @@
 #define DATACOLLECTIONWRAPPER_H
 
 #include "ganalytics.h"
+#include "account.h"
 
 class DataCollectionWrapper : public QObject {
 
@@ -39,6 +40,7 @@ public:
 
     void setClientID(const QString clientId);
     void setSendData(const bool sendData);
+    void setAccount(const OCC::AccountPtr account);
     void initDataCollection();
 
     DataCollectionWrapper(QObject *parent = 0);

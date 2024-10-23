@@ -37,6 +37,9 @@
 #include <QJSonDocument>
 #include <QJsonArray>
 
+#include "account.h"
+
+
 GAnalytics::GAnalytics(QObject *parent) : QObject(parent)
 {
     d = new GAnalyticsWorker(this);
@@ -144,6 +147,10 @@ QNetworkAccessManager *GAnalytics::networkAccessManager() const
     return d->networkManager;
 }
 
+void GAnalytics::setAccount(OCC::AccountPtr account)
+{
+    d->m_account = account;
+}
 /**
  * This method is called whenever a button was pressed in the application.
  * A query for a POST message will be created to report this event. The

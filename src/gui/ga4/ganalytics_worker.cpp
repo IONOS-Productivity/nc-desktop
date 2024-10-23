@@ -31,6 +31,7 @@
 #include <QNetworkProxy>
 
 #include "logger.h"
+#include "account.h"
 
 const QLatin1String GAnalyticsWorker::dateTimeFormat("yyyy,MM,dd-hh:mm::ss:zzz");
 
@@ -162,6 +163,12 @@ void GAnalyticsWorker::postMessage()
         // queue has messages -> stop timer and start sending
         m_timer.stop();
     }
+    
+    if(m_account == nullptr)
+    {
+        logMessage(GAnalytics::Error, "account is not set!");
+        return;
+    }
 
     QString connection = "close";
     if (m_messageQueue.count() > 1)
@@ -213,20 +220,17 @@ void GAnalyticsWorker::postMessage()
 
 	m_request.setUrl(QUrl(requestUrl));
 
-    // Create a new network access manager if we don't have one yet
-    if (networkManager == NULL)
-    {
-        networkManager = new QNetworkAccessManager(this);
-        QNetworkProxy* proxy = new QNetworkProxy();
-        proxy->setType(QNetworkProxy::NoProxy);
-        networkManager->setProxy(*proxy);
-    }
-
     char message[512];
     snprintf(message, sizeof(message), "%s\n", requestUrl.toString().toStdString().c_str());
     logMessage(GAnalytics::Debug, message);
+    // account->sendRawRequest(QByteArrayLiteral("POST"), m_request.url(), request);
+    char buffer22222[256];
+    sprintf(buffer22222, "%s --\n", m_request.url().toString().toStdString().c_str());
+    OutputDebugStringA(buffer22222);
 
-    QNetworkReply *reply = networkManager->post(m_request, QByteArray());
+
+    QNetworkReply *reply = m_account->sendRawRequest("POST", m_request.url(), m_request, QByteArray());
+
     connect(reply, SIGNAL(finished()), this, SLOT(postMessageFinished()));
 }
 

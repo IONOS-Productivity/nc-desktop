@@ -2,17 +2,18 @@
 
 #include <QObject>
 #include <QVariantMap>
+#include "account.h"
 
 class QNetworkAccessManager;
 class GAnalyticsWorker;
 class DataCollectionWrapper;
+class Account;
+
 // https://developers.google.com/analytics/devguides/collection/protocol/ga4/verify-implementation?client_type=gtag
 class GAnalytics : public QObject
 {
     Q_OBJECT
     Q_ENUMS(LogLevel)
-
-
 
 public:
     ~GAnalytics();
@@ -51,6 +52,9 @@ public:
 
     void enable(bool state = true);
     bool isEnabled();
+
+    OCC::AccountPtr account;
+    void setAccount(OCC::AccountPtr account);
     
     void enableValidation(bool state);
 
