@@ -1,7 +1,7 @@
 #include "datacollectionwrapper.h"
 
-#ifdef NDEBUG
-    const QString GA_MEASUREMENT_ID = "G-P9KD4TLW0V";  // Verwende diesen String nur wenn wir nicht in Release bauen
+#ifdef BUILDTYPE_RELWITHDEBINFO
+    const QString GA_MEASUREMENT_ID = "G-P9KD4TLW0V";  // Verwende diesen String nur wenn wir in Debug bauen
 #else
     const QString GA_MEASUREMENT_ID = "G-270CYZ49V0";  // Verwende diesen String nur wenn wir in Release bauen
 #endif
@@ -28,7 +28,7 @@ void DataCollectionWrapper::login(){
 void DataCollectionWrapper::accountRemoved(){
     trackEventImmediately(QString(), _trackingEventString[TrackingEvent::Logout]);
 }
-
+ 
 void DataCollectionWrapper::trackEvent(QString page, QString element) {
     GAnalytics::getInstance().sendEvent(page, element);
 }
