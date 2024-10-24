@@ -1,5 +1,5 @@
-#include "sesSnackBar.h"
-#include "IonosTheme.h"
+#include "sessnackbar.h"
+#include "ionostheme.h"
 #include "Theme.h"
 #include <QLayout>
 #include <QHBoxLayout>

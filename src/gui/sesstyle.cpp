@@ -17,11 +17,11 @@
  *
  *************************************************************************/
 
-#include "sesStyle.h"
+#include "sesstyle.h"
 #include "ionostheme.h"
 
-#include "pushButtonStyleHelper.h"
-#include "moreOptionsButtonStyleHelper.h"
+#include "pushbuttonstylehelper.h"
+#include "moreoptionsbuttonstylehelper.h"
 
 #include <QCheckBox>
 #include <QPushButton>

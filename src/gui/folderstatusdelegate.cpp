@@ -19,7 +19,7 @@
 #include "folderstatusview.h"
 #include "folderman.h"
 #include "accountstate.h"
-#include "sesStyle.h"
+#include "sesstyle.h"
 #include "buttonstyle.h"
 
 #include <theme.h>

@@ -1,6 +1,6 @@
-#include "moreOptionsButtonStyleHelper.h"
+#include "moreoptionsbuttonstylehelper.h"
 
-#include "buttonStyleStrategy.h"
+#include "buttonstylestrategy.h"
 #include "buttonstyle.h"
 #include "ionostheme.h"
 #include <QPainter>

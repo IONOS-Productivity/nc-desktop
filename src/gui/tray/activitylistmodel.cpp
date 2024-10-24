@@ -26,7 +26,7 @@
 #include "activitydata.h"
 #include "systray.h"
 
-#include "IonosTheme.h"
+#include "ionostheme.h"
 
 #include <QtCore>
 #include <QAbstractListModel>

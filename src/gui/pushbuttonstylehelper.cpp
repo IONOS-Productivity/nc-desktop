@@ -8,11 +8,11 @@
 **
 ****************************************************************************/
 
-#include "pushButtonStyleHelper.h"
+#include "pushbuttonstylehelper.h"
 
 
 #include "buttonstyle.h"
-#include "buttonStyleStrategy.h"
+#include "buttonstylestrategy.h"
 #include "ionostheme.h"
 #include <QMap>
 #include <QPainter>

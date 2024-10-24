@@ -159,15 +159,15 @@ set(client_SRCS
     syncrunfilelog.cpp
     systray.h
     systray.cpp
-    sesStyle.h
-    sesStyle.cpp
-    buttonStyleStrategy.h
+    sesstyle.h
+    sesstyle.cpp
+    buttonstylestrategy.h
     sesFileIconProvider.h
     sesFileIconProvider.cpp
-    pushButtonStyleHelper.h
-    pushButtonStyleHelper.cpp
-    moreOptionsButtonStyleHelper.h
-    moreOptionsButtonStyleHelper.cpp
+    pushbuttonstylehelper.h
+    pushbuttonstylehelper.cpp
+    moreoptionsbuttonstylehelper.h
+    moreoptionsbuttonstylehelper.cpp
     buttonstyle.h
     thumbnailjob.h
     thumbnailjob.cpp
@@ -205,8 +205,8 @@ set(client_SRCS
     syncconflictsmodel.cpp
     linkButton.h
     linkButton.cpp
-    sesSnackBar.h
-    sesSnackBar.cpp
+    sessnackbar.h
+    sessnackbar.cpp
     fileactivitylistmodel.h
     fileactivitylistmodel.cpp
     ga4/ganalytics.h

@@ -38,7 +38,7 @@
 #include <QQuickStyle>
 #include <QQuickWindow>
 #include <QSurfaceFormat>
-#include "sesStyle.h"
+#include "sesstyle.h"
 #include "ga4/ganalytics.h"
 #include "ga4/datacollectionwrapper.h"
 
