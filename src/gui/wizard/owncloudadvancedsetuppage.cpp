@@ -710,6 +710,17 @@ void OwncloudAdvancedSetupPage::customizeStyle()
         IonosTheme::loginWizardFontGrey()
     ));
 
+    #ifdef Q_OS_MAC
+    _ui.syncModeLabel->setStyleSheet(
+                        IonosTheme::fontConfigurationCss(
+                        IonosTheme::settingsFont(),
+                        IonosTheme::settingsTextSize(),
+                        IonosTheme::settingsTitleWeight600(),
+                        IonosTheme::titleColor()
+                        )
+                );
+    #endif
+
 }
 
 void OwncloudAdvancedSetupPage::styleLocalFolderLabel()
