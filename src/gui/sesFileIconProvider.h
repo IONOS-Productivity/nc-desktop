@@ -8,7 +8,9 @@
 class SesFileIconProvider : public QFileIconProvider
 {
 public:
-    QIcon icon(QFileInfo fileInfo);
+    // QIcon icon(QFileInfo fileInfo) const override;
+
+    QIcon icon(const QFileInfo &info) const override;
 };
 
 #endif // SESFILEICONPROVIDER_H

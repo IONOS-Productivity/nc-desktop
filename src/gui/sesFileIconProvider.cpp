@@ -3,20 +3,20 @@
 #include <QFileIconProvider>
 #include <QIcon>
 
-QIcon SesFileIconProvider::icon(QFileInfo fileInfo)
+QIcon SesFileIconProvider::icon(const QFileInfo &info) const
 {
     QFileIconProvider provider;
 
-    if (fileInfo.isDir())
+    if (info.isDir())
     {
         return QIcon(":/client/theme/ses/ses-filesIconBright.svg");
     }
 
-    if (fileInfo.suffix().isEmpty())
+    if (info.suffix().isEmpty())
     {
         return QIcon(":/client/theme/ses/ses-file.svg");
     }
     
     
-    return provider.icon(fileInfo);
+    return provider.icon(info);
 };
