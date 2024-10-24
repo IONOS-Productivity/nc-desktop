@@ -19,6 +19,7 @@
 
 #include "account.h"
 #include "folder.h"
+#include "buttonstyle.h"
 
 #include <QPushButton>
 #include <QDir>
@@ -100,6 +101,8 @@ CaseClashFilenameDialog::CaseClashFilenameDialog(AccountPtr account,
     _ui->setupUi(this);
     _ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
     _ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("Rename file"));
+    _ui->buttonBox->button(QDialogButtonBox::Ok)->setProperty("buttonStyle", QVariant::fromValue(ButtonStyleName::Primary));
+
 
     _ui->descriptionLabel->setText(tr("The file \"%1\" could not be synced because of a case clash conflict with an existing file on this system.").arg(_originalFileName));
     _ui->explanationLabel->setText(tr("%1 does not support equal file names with only letter casing differences.").arg(QSysInfo::prettyProductName()));
@@ -151,6 +154,8 @@ CaseClashFilenameDialog::CaseClashFilenameDialog(AccountPtr account,
         _ui->buttonBox->setStandardButtons(_ui->buttonBox->standardButtons() &~ QDialogButtonBox::No);
         if (_conflictSolver.allowedToRename()) {
             _ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
+            _ui->buttonBox->button(QDialogButtonBox::Ok)->setProperty("buttonStyle", QVariant::fromValue(ButtonStyleName::Primary));
+
             _ui->filenameLineEdit->setEnabled(true);
             _ui->filenameLineEdit->selectAll();
         } else {
@@ -168,6 +173,8 @@ CaseClashFilenameDialog::CaseClashFilenameDialog(AccountPtr account,
     });
 
     checkIfAllowedToRename();
+
+    customizeStyle();
 }
 
 CaseClashFilenameDialog::~CaseClashFilenameDialog() = default;
@@ -285,5 +292,14 @@ void CaseClashFilenameDialog::onFilenameLineEditTextChanged(const QString &text)
 
     _ui->buttonBox->button(QDialogButtonBox::Ok)
         ->setEnabled(isTextValid);
+    _ui->buttonBox->button(QDialogButtonBox::Ok)->setProperty("buttonStyle", QVariant::fromValue(ButtonStyleName::Primary));
+
 }
+
+void CaseClashFilenameDialog::customizeStyle()
+{
+    this->setStyleSheet(QStringLiteral("QDialog {background-color: %1; color: %2;}")
+        .arg(IonosTheme::dialogBackgroundColor(), IonosTheme::black()));
+}
+
 }
