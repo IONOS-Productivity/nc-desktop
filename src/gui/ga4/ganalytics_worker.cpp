@@ -163,7 +163,7 @@ void GAnalyticsWorker::postMessage()
         // queue has messages -> stop timer and start sending
         m_timer.stop();
     }
-    
+
     if(m_account == nullptr)
     {
         logMessage(GAnalytics::Error, "account is not set!");
@@ -223,11 +223,6 @@ void GAnalyticsWorker::postMessage()
     char message[512];
     snprintf(message, sizeof(message), "%s\n", requestUrl.toString().toStdString().c_str());
     logMessage(GAnalytics::Debug, message);
-    // account->sendRawRequest(QByteArrayLiteral("POST"), m_request.url(), request);
-    char buffer22222[256];
-    sprintf(buffer22222, "%s --\n", m_request.url().toString().toStdString().c_str());
-    OutputDebugStringA(buffer22222);
-
 
     QNetworkReply *reply = m_account->sendRawRequest("POST", m_request.url(), m_request, QByteArray());
 
