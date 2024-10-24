@@ -325,7 +325,7 @@ void CaseClashFilenameDialog::customizeStyle()
         ));
 
     #ifdef Q_OS_MAC
-        _ui->buttonLayout->setSpacing(24);
+        _ui->buttonBox->layout()->setSpacing(24);
         _ui->buttonBox->setLayoutDirection(Qt::LeftToRight);
     #endif
 }
