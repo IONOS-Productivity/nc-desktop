@@ -309,7 +309,6 @@ void CaseClashFilenameDialog::customizeStyle()
                         IonosTheme::settingsTextWeight(),
                         IonosTheme::titleColor()
                         )));
-    _ui->filenameLineEdit->setStyleSheet(QStringLiteral("QLineEdit {background: %1}").arg(IonosTheme::white()));
  
     _ui->filenameLineEdit->setStyleSheet(
     QStringLiteral(
