@@ -1,7 +1,7 @@
-// linkButton.cpp
-#include "linkButton.h"
-#include "Ionostheme.h"
-#include "Theme.h"
+// linkbutton.cpp
+#include "linkbutton.h"
+#include "ionostheme.h"
+#include "theme.h"
 
 namespace OCC {
     LinkButton::LinkButton(QWidget* parent)

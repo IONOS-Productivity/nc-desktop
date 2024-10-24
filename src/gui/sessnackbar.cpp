@@ -1,6 +1,6 @@
 #include "sessnackbar.h"
 #include "ionostheme.h"
-#include "Theme.h"
+#include "theme.h"
 #include <QLayout>
 #include <QHBoxLayout>
 #include <QLabel>

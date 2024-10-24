@@ -22,7 +22,7 @@
 #include "owncloudsetupwizard.h"
 #include "accountmanager.h"
 #include "guiutility.h"
-#include "linkButton.h"
+#include "linkbutton.h"
 
 #if defined(BUILD_UPDATER)
 #include "updater/updater.h"

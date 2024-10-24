@@ -203,8 +203,8 @@ set(client_SRCS
     emojimodel.cpp
     syncconflictsmodel.h
     syncconflictsmodel.cpp
-    linkButton.h
-    linkButton.cpp
+    linkbutton.h
+    linkbutton.cpp
     sessnackbar.h
     sessnackbar.cpp
     fileactivitylistmodel.h
