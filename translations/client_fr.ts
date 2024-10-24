@@ -1390,14 +1390,12 @@ Vous prenez vos propres risques.</translation>
     <message>
       <location filename="../src/gui/caseclashfilenamedialog.ui" line="53" />
       <source>Existing file</source>
-      <translation>Dossier existant
-      </translation>
+      <translation>Dossier existant</translation>
     </message>
     <message>
       <location filename="../src/gui/caseclashfilenamedialog.ui" line="60" />
       <source>file A</source>
-      <translation>fichier A
-      </translation>
+      <translation>fichier A</translation>
     </message>
     <message>
       <location filename="../src/gui/caseclashfilenamedialog.ui" line="107" />
