@@ -298,8 +298,36 @@ void CaseClashFilenameDialog::onFilenameLineEditTextChanged(const QString &text)
 
 void CaseClashFilenameDialog::customizeStyle()
 {
-    this->setStyleSheet(QStringLiteral("QDialog {background-color: %1; color: %2;}")
+    this->setStyleSheet(QStringLiteral("QDialog {background-color: %1; color: %2;} QLabel {color: %2;}")
         .arg(IonosTheme::dialogBackgroundColor(), IonosTheme::black()));
+ 
+        this->setStyleSheet(QStringLiteral("QDialog {background-color: %1; color: %2;} QLabel{ %3;}")
+        .arg(IonosTheme::dialogBackgroundColor(), IonosTheme::black(),
+        IonosTheme::fontConfigurationCss(
+                        IonosTheme::settingsFont(),
+                        IonosTheme::settingsTextSize(),
+                        IonosTheme::settingsTextWeight(),
+                        IonosTheme::titleColor()
+                        )));
+    _ui->filenameLineEdit->setStyleSheet(QStringLiteral("QLineEdit {background: %1}").arg(IonosTheme::white()));
+ 
+    _ui->filenameLineEdit->setStyleSheet(
+    QStringLiteral(
+        "color: %1; font-family: %2; font-size: %3; font-weight: %4; border-radius: %5; border: 1px "
+        "solid %6; padding: 0px 12px; text-align: left; vertical-align: middle; height: 40px; background: %7; ")
+        .arg(IonosTheme::folderWizardPathColor(),
+                IonosTheme::settingsFont(),
+                IonosTheme::settingsTextSize(),
+                IonosTheme::settingsTextWeight(),
+                IonosTheme::buttonRadius(),
+                IonosTheme::menuBorderColor(),
+                IonosTheme::white()
+        ));
+
+    #ifdef Q_OS_MAC
+        _ui->buttonLayout->setSpacing(24);
+        _ui->buttonBox->setLayoutDirection(Qt::LeftToRight);
+    #endif
 }
 
 }
