@@ -20,7 +20,7 @@ import Style 1.0
 import "../../filedetails"
 import "../../tray"
 
-import com.nextcloud.desktopclient 1.0
+import com.ionos.hidrivenext.desktopclient 1.0
 
 ApplicationWindow {
     id: root
@@ -56,7 +56,6 @@ ApplicationWindow {
                 padding: Style.smallSpacing
                 textColor: Style.ncTextColor
                 textColorHovered: Style.ncHeaderTextColor
-                contentsFont.bold: true
                 bgColor: Style.ncBlue
                 text: qsTr("Reload")
                 onClicked: reloadMaterialisedItems(accountUserIdAtHost)

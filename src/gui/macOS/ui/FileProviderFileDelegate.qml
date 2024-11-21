@@ -20,7 +20,7 @@ import Style 1.0
 import "../../filedetails"
 import "../../tray"
 
-import com.nextcloud.desktopclient 1.0
+import com.ionos.hidrivenext.desktopclient 1.0
 
 Item {
     id: root
@@ -95,7 +95,6 @@ Item {
             text: qsTr("Delete")
             textColorHovered: Style.ncHeaderTextColor
             bgColor: Style.errorBoxBackgroundColor
-            contentsFont.bold: true
             onClicked: root.evictItem(root.identifier, root.domainIdentifier)
         }
     }
