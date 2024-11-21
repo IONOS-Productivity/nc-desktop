@@ -126,7 +126,7 @@ QString Theme::appNameGUI() const
 
 QString Theme::appName() const
 {
-    return APPLICATION_SHORTNAME;
+    return APPLICATION_NAME;
 }
 
 QUrl Theme::stateOnlineImageSource() const
@@ -371,6 +371,27 @@ Theme::Theme()
     reserveDarkPalette.setColor(QPalette::Disabled, QPalette::HighlightedText,
                                 QColor(127, 127, 127));
 #endif
+
+    IONOSPalette.setColor(QPalette::Window, QColor("#ffffff"));
+    IONOSPalette.setColor(QPalette::WindowText, QColor("#001B40"));
+    IONOSPalette.setColor(QPalette::Disabled, QPalette::WindowText, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::Base, QColor( "#FAFAFA"));
+    IONOSPalette.setColor(QPalette::AlternateBase, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::ToolTipBase, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::ToolTipText, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::Text, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::Disabled, QPalette::Text, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::Dark, QColor("#e1e1e1"));
+    IONOSPalette.setColor(QPalette::Shadow, QColor("#D1D1D1"));
+    IONOSPalette.setColor(QPalette::Button, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::ButtonText, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::Disabled, QPalette::ButtonText, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::BrightText,  QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::Link, QColor("#1474c4"));
+    IONOSPalette.setColor(QPalette::Highlight, QColor("#F2F5F8"));
+    IONOSPalette.setColor(QPalette::Disabled, QPalette::Highlight, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::HighlightedText, QColor(0,0,0));
+    IONOSPalette.setColor(QPalette::Disabled, QPalette::HighlightedText, QColor(0,0,0));
 
 #ifdef APPLICATION_SERVER_URL_ENFORCE
     _forceOverrideServerUrl = true;
@@ -847,38 +868,25 @@ void Theme::replaceLinkColorString(QString &linkString, const QColor &newColor)
     linkString.replace(linkRegularExpression, QString::fromLatin1("<a style='color:%1;' href").arg(newColor.name()));
 }
 
-QIcon Theme::createColorAwareIcon(const QString &name, const QPalette &palette)
+QIcon Theme::createColorAwareIcon(const QString &name, const QPalette &palette, const QSize &size)
 {
     QSvgRenderer renderer(name);
-    QImage img(64, 64, QImage::Format_ARGB32);
+    QImage img(size, QImage::Format_ARGB32);
     img.fill(Qt::GlobalColor::transparent);
     QPainter imgPainter(&img);
-    QImage inverted(64, 64, QImage::Format_ARGB32);
-    inverted.fill(Qt::GlobalColor::transparent);
-    QPainter invPainter(&inverted);
 
     renderer.render(&imgPainter);
-    renderer.render(&invPainter);
-
-    inverted.invertPixels(QImage::InvertRgb);
 
     QIcon icon;
-    if (Theme::isDarkColor(palette.color(QPalette::Base))) {
-        icon.addPixmap(QPixmap::fromImage(inverted));
-    } else {
-        icon.addPixmap(QPixmap::fromImage(img));
-    }
-    if (Theme::isDarkColor(palette.color(QPalette::HighlightedText))) {
-        icon.addPixmap(QPixmap::fromImage(img), QIcon::Normal, QIcon::On);
-    } else {
-        icon.addPixmap(QPixmap::fromImage(inverted), QIcon::Normal, QIcon::On);
-    }
+    icon.addPixmap(QPixmap::fromImage(img));
+    icon.addPixmap(QPixmap::fromImage(img), QIcon::Normal, QIcon::On);
+
     return icon;
 }
 
-QIcon Theme::createColorAwareIcon(const QString &name)
+QIcon Theme::createColorAwareIcon(const QString &name, const QSize &size)
 {
-    return createColorAwareIcon(name, QGuiApplication::palette());
+    return createColorAwareIcon(name, QGuiApplication::palette(), size);
 }
 
 QPixmap Theme::createColorAwarePixmap(const QString &name, const QPalette &palette)
@@ -932,12 +940,7 @@ void Theme::connectToPaletteSignal()
 QPalette Theme::systemPalette()
 {
     connectToPaletteSignal();
-#if defined(Q_OS_WIN)
-    if(darkMode()) {
-        return reserveDarkPalette;
-    }
-#endif
-    return QGuiApplication::palette();
+    return IONOSPalette;
 }
 
 bool Theme::darkMode()
