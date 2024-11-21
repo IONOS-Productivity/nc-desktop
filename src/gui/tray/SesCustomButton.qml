@@ -36,13 +36,21 @@ Button {
     property alias bgNormalOpacity: bgRectangle.normalOpacity
     property alias bgHoverOpacity: bgRectangle.hoverOpacity
 
+    property int bgBorderWidth
+    property string bgBorderColor
+
     background: NCButtonBackground {
         id: bgRectangle
         hovered: root.hovered
+        height: 36
+        border.width: root.bgBorderWidth
+        border.color: root.bgBorderColor
     }
 
-    leftPadding: root.text === "" ? Style.smallSpacing : Style.standardSpacing
-    rightPadding: root.text === "" ? Style.smallSpacing : Style.standardSpacing
+    leftPadding: root.text === "" ? Style.smallSpacing : 20
+    rightPadding: root.text === "" ? Style.smallSpacing : 20
+
+    implicitHeight: 36
     implicitWidth: contentItem.implicitWidth + leftPadding + rightPadding
 
     hoverEnabled: true
@@ -50,17 +58,16 @@ Button {
     NCToolTip {
         text: root.toolTipText
         visible: root.toolTipText !== "" && root.hovered
-        font: contentsFont
     }
 
-    contentItem: NCButtonContents {
+    contentItem: SesButtonContents {
         id: contents
         display: root.display
         hovered: root.hovered
         imageSourceHover: root.imageSourceHover
         imageSource: root.icon.source
-        imageSourceWidth: root.icon.width
-        imageSourceHeight: root.icon.height
+        imageSourceWidth: 12
+        imageSourceHeight: 16
         text: root.text
         textColor: root.textColor
         textColorHovered: root.textColorHovered

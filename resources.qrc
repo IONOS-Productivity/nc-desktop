@@ -39,7 +39,9 @@
         <file>src/gui/tray/UnifiedSearchResultNothingFound.qml</file>
         <file>src/gui/tray/UnifiedSearchResultSectionItem.qml</file>
         <file>src/gui/tray/CustomButton.qml</file>
+        <file>src/gui/tray/SesCustomButton.qml</file>
         <file>src/gui/tray/NCButtonContents.qml</file>
+        <file>src/gui/tray/SesButtonContents.qml</file>
         <file>src/gui/tray/NCButtonBackground.qml</file>
         <file>src/gui/tray/TextButtonContents.qml</file>
         <file>src/gui/tray/ActivityItemContextMenu.qml</file>
@@ -53,6 +55,10 @@
         <file>src/gui/tray/NCToolTip.qml</file>
         <file>src/gui/tray/NCProgressBar.qml</file>
         <file>src/gui/tray/EnforcedPlainTextLabel.qml</file>
+        <file>src/gui/tray/TrayWindowHeaderBar.qml</file>
+        <file>src/gui/tray/TrayWindowAccountMenu.qml</file>
+        <file>src/gui/tray/HeaderLogo.qml</file>
+        <file>src/gui/tray/AccountMenuItem.qml</file>
         <file>theme/Style/Style.qml</file>
         <file>theme/Style/qmldir</file>
         <file>src/gui/filedetails/NCRadioButton.qml</file>

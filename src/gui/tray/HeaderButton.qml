@@ -21,12 +21,12 @@ import QtQuick.Layouts 1.15
 
 // Custom qml modules are in /theme (and included by resources.qrc)
 import Style 1.0
-import com.nextcloud.desktopclient 1.0
+import com.ionos.hidrivenext.desktopclient 1.0
 
 Button {
     id: root
 
-    display: AbstractButton.IconOnly
+    display: AbstractButton.TextUnderIcon
     flat: true
     hoverEnabled: Style.hoverEffectsEnabled
 
@@ -34,27 +34,51 @@ Button {
     icon.height: Style.headerButtonIconSize
 
     Layout.alignment: Qt.AlignRight
-    Layout.preferredWidth:  Style.trayWindowHeaderHeight
-    Layout.preferredHeight: Style.trayWindowHeaderHeight
+    Layout.preferredWidth: Style.sesHeaderButtonWidth
+    Layout.preferredHeight: Style.sesHeaderButtonHeight
+
+    property bool isHovered: root.hovered || root.visualFocus
+    property bool isActive: root.pressed
 
     background: Rectangle {
-        color: root.hovered || root.visualFocus ? Style.currentUserHeaderTextColor : "transparent"
-        opacity: 0.2
+        width: Style.sesHeaderButtonWidth
+        height: Style.sesHeaderButtonHeight
+        color: root.isActive ? Style.sesButtonPressed : root.isHovered ? Style.sesAccountMenuHover : "transparent"
+        radius: Style.sesCornerRadius
     }
 
     contentItem: Item {
-        anchors.fill: parent
-        
+        id: rootContent
+
         Image {
-            id: internalImage
-            anchors.centerIn: parent
-            width: root.icon.width
-            height: root.icon.height
+            id: buttonIcon
+            anchors.horizontalCenter: rootContent.horizontalCenter
+            anchors.top: rootContent.top
+            anchors.topMargin: 10
+
+            property int imageWidth: root.icon.width
+            property int imageHeight: root.icon.height
+            cache: true
+
             source: root.icon.source
             sourceSize {
-                width: root.icon.width
-                height: root.icon.height
+                width: imageWidth
+                height: imageHeight
             }
+
+            width: imageWidth
+            height: imageHeight
+
+            anchors.verticalCenter: parent
+        }
+
+        Text {
+            anchors.horizontalCenter: buttonIcon.horizontalCenter
+            anchors.top: buttonIcon.bottom
+            anchors.topMargin: 5
+            font: root.font
+            text: root.text
+            color: Style.sesTrayFontColor
         }
     }
 }

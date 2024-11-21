@@ -3,7 +3,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import Style 1.0
-import com.nextcloud.desktopclient 1.0
+import com.ionos.hidrivenext.desktopclient 1.0
 
 Repeater {
     id: root
@@ -46,7 +46,6 @@ Repeater {
 
         textColor: Style.adjustedCurrentUserHeaderColor
         textColorHovered: Style.currentUserHeaderTextColor
-        contentsFont.bold: true
         bgColor: Style.currentUserHeaderColor
 
         visible: verb !== "REPLY" || (verb === "REPLY" && root.talkReplyButtonVisible)

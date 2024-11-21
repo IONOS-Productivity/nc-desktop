@@ -15,6 +15,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
+import QtGraphicalEffects 1.15
 
 import Style 1.0
 
@@ -33,12 +34,26 @@ RowLayout {
     property color textColorHovered: textColor
     property alias font: buttonLabel.font
 
+    height: parent.height
+
+    EnforcedPlainTextLabel {
+        id: buttonLabel
+
+        Layout.alignment: Qt.AlignVCenter
+
+        text: root.text
+
+        visible: root.text !== ""
+
+        color: root.hovered ? root.textColorHovered : root.textColor
+
+        elide: Text.ElideRight
+    }
+
     Image {
         id: icon
 
-        Layout.maximumWidth: root.height
-        Layout.maximumHeight: root.height
-        Layout.alignment: Qt.AlignCenter
+        Layout.alignment: Qt.AlignVCenter
 
         source: root.hovered ? root.imageSourceHover : root.imageSource
 
@@ -48,26 +63,11 @@ RowLayout {
         }
 
         fillMode: Image.PreserveAspectFit
-        horizontalAlignment: Image.AlignHCenter
-        verticalAlignment: Image.AlignVCenter
         visible: root.display === Button.TextOnly ? false : root.hovered ? root.imageSourceHover !== "" : root.imageSource !== ""
-    }
 
-    EnforcedPlainTextLabel {
-        id: buttonLabel
-
-        Layout.fillWidth: true
-        font: root.font
-
-        text: root.text
-
-        visible: root.text !== ""
-
-        color: root.hovered ? root.textColorHovered : root.textColor
-
-        horizontalAlignment: icon.visible ? Text.AlignLeft : Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-
-        elide: Text.ElideRight
+        layer.enabled: true
+        layer.effect: ColorOverlay {
+            color: Style.sesWhite
+        }
     }
 }
