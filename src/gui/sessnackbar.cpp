@@ -101,7 +101,7 @@ namespace OCC {
 
     void sesSnackBar::successStyle()
     {
-        const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-snackBarSuccessIcon.svg");
+        const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/black/state-ok.svg");
         m_iconLabel.setPixmap(logoIconFileName);
 
         updateStyleSheet(IonosTheme::successBorderColor(), IonosTheme::successColor(), IonosTheme::black(), IonosTheme::black());
@@ -109,7 +109,7 @@ namespace OCC {
 
     void sesSnackBar::warningStyle()
     {
-        const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-snackBarWarningIcon.svg");
+        const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/black/state-info.svg");
         m_iconLabel.setPixmap(logoIconFileName);
 
         updateStyleSheet(IonosTheme::warningBorderColor(), IonosTheme::warningColor(), IonosTheme::black(), IonosTheme::black());
@@ -117,7 +117,7 @@ namespace OCC {
 
     void sesSnackBar::errorStyle()
     {
-        const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-snackBarErrorIcon.svg");
+        const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/black/state-error.svg");
         m_iconLabel.setPixmap(logoIconFileName);
 
         updateStyleSheet(IonosTheme::errorBorderColor(), IonosTheme::errorColor(), IonosTheme::black(), IonosTheme::black());
