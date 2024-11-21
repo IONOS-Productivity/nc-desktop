@@ -17,7 +17,7 @@ import QtQuick.Window 2.15
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.15
 
-import com.nextcloud.desktopclient 1.0
+import com.ionos.hidrivenext.desktopclient 1.0
 import Style 1.0
 import "../tray"
 
@@ -38,7 +38,7 @@ TextField {
     }
 
     readonly property int horizontalPaddingOffset: Style.trayHorizontalMargin
-    readonly property color placeholderColor: palette.dark
+    readonly property color placeholderColor: Style.sesSearchFieldContent
     readonly property double iconsScaleFactor: 0.6
 
     function triggerSuggestionsVisibility() {
@@ -47,6 +47,7 @@ TextField {
 
     placeholderText: enabled ? qsTr("Search for users or groups…") : qsTr("Sharing is not available for this folder")
     placeholderTextColor: placeholderColor
+
 
     onActiveFocusChanged: triggerSuggestionsVisibility()
     onTextChanged: triggerSuggestionsVisibility()
@@ -87,14 +88,14 @@ TextField {
         }
     }
 
-    leftPadding: searchIcon.width + searchIcon.anchors.leftMargin + horizontalPaddingOffset
-    rightPadding: clearTextButton.width + clearTextButton.anchors.rightMargin + horizontalPaddingOffset
+    leftPadding: searchIcon.width + searchIcon.anchors.leftMargin + horizontalPaddingOffset - 5
+    rightPadding: root.text ? clearTextButton.width + clearTextButton.anchors.rightMargin + horizontalPaddingOffset : 5
 
     background: Rectangle {
         radius: 5
-        border.color: parent.activeFocus ? UserModel.currentUser.accentColor : palette.dark
+        border.color: Style.sesMenuBorder
         border.width: 1
-        color: palette.base
+
     }
 
     Image {
@@ -114,7 +115,7 @@ TextField {
         fillMode: Image.PreserveAspectFit
         horizontalAlignment: Image.AlignLeft
 
-        source: "image://svgimage-custom-color/search.svg" + "/" + root.placeholderColor
+        source: "image://svgimage-custom-color/search.svg" + "/" + Style.sesSearchFieldContent
         sourceSize: Qt.size(parent.height * root.iconsScaleFactor, parent.height * root.iconsScaleFactor)
 
         visible: !root.shareeModel.fetchOngoing

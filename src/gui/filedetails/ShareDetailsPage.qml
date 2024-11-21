@@ -18,9 +18,10 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15
 import QtGraphicalEffects 1.15
 
-import com.nextcloud.desktopclient 1.0
+import com.ionos.hidrivenext.desktopclient 1.0
 import Style 1.0
 import "../tray"
+import "../SesComponents/"
 import "../"
 
 Page {
@@ -42,6 +43,11 @@ Page {
     signal setExpireDate(var milliseconds) // Since QML ints are only 32 bits, use a variant
     signal setPassword(string password)
     signal setNote(string note)
+
+
+    font.family: Style.sesOpenSansRegular
+    font.pixelSize: Style.sesFontPixelSize
+    font.weight: Style.sesFontNormalWeight
 
     property bool backgroundsVisible: true
     property color accentColor: Style.ncBlue
@@ -95,6 +101,16 @@ Page {
     property bool waitingForPasswordChange: false
     property bool waitingForNoteChange: false
 
+    readonly property int titlePixelSize: Style.sesFontPixelSizeTitle
+    readonly property int titleFontWeight: Style.sesFontNormalWeight
+
+    readonly property int hintPixelSize: Style.sesFontHintPixelSize
+    readonly property int hintFontWeight: Style.sesFontNormalWeight
+
+
+    readonly property int pixelSize: Style.sesFontPixelSize
+    readonly property int fontWeight: Style.sesFontNormalWeight
+
     function showPasswordSetError(message) {
         passwordErrorBoxLoader.message = message !== "" ?
                                          message : qsTr("An error occurred setting the share password.");
@@ -106,8 +122,8 @@ Page {
     }
 
     function resetLinkShareLabelField() {
-        linkShareLabelTextField.text = linkShareLabel;
-        waitingForLinkShareLabelChange = false;
+        // linkShareLabelTextField.text = linkShareLabel;
+        // waitingForLinkShareLabelChange = false;
     }
 
     function resetPasswordField() {
@@ -211,17 +227,21 @@ Page {
             }
 
             EnforcedPlainTextLabel {
-                id: headLabel
+                id: fileNameLabel
 
                 Layout.fillWidth: true
+                Layout.rightMargin: headerGridLayout.textRightMargin
 
-                text: qsTr("Edit share")
-                font.bold: true
-                elide: Text.ElideRight
+                text: root.fileDetails.name
+
+                font.pixelSize: titlePixelSize
+                font.weight: titleFontWeight
+
+                wrapMode: Text.Wrap
             }
 
             CustomButton {
-                id: closeButton
+                id: placeholder
 
                 Layout.rowSpan: headerGridLayout.rows
                 Layout.preferredWidth: Style.iconButtonWidth
@@ -233,18 +253,24 @@ Page {
                 bgNormalOpacity: 0
                 toolTipText: qsTr("Dismiss")
 
+                font.pixelSize: pixelSize
+                font.weight: fontWeight
+
+
                 onClicked: root.closeShareDetails()
             }
 
             EnforcedPlainTextLabel {
-                id: secondaryLabel
+                id: fileDetailsLabel
 
                 Layout.fillWidth: true
-                Layout.rightMargin: root.padding
+                Layout.rightMargin: headerGridLayout.textRightMargin
 
-                text: root.fileDetails.name
-                color: palette.midlight
+                text: `${root.fileDetails.sizeString}, ${root.fileDetails.lastChangedString}`
                 wrapMode: Text.Wrap
+
+                font.pixelSize: hintPixelSize
+                font.weight: hintFontWeight
             }
         }
     }
@@ -258,53 +284,318 @@ Page {
 
             readonly property int rowIconWidth: Style.smallIconSize
             readonly property int indicatorItemWidth: 20
-            readonly property int indicatorSpacing: Style.standardSpacing
-            readonly property int itemPadding: Style.smallSpacing
+            readonly property int indicatorSpacing: Style.sesSmallMargin
+            readonly property int itemPadding: Style.sesSmallMargin
 
             width: parent.width
 
-            RowLayout {
+            CheckBox {
+                id: passwordProtectEnabledMenuItem
                 Layout.fillWidth: true
-                height: visible ? implicitHeight : 0
-                spacing: scrollContentsColumn.indicatorSpacing
 
-                visible: root.isLinkShare
-
-                Image {
-                    Layout.preferredWidth: scrollContentsColumn.indicatorItemWidth
-                    Layout.fillHeight: true
-
-                    verticalAlignment: Image.AlignVCenter
-                    horizontalAlignment: Image.AlignHCenter
-                    fillMode: Image.Pad
-
-                    source: "image://svgimage-custom-color/edit.svg/" + palette.dark
-                    sourceSize.width: scrollContentsColumn.rowIconWidth
-                    sourceSize.height: scrollContentsColumn.rowIconWidth
+                // TODO: Rather than setting all these palette colours manually,
+                // create a custom style and do it for all components globally.
+                //
+                // Additionally, we need to override the entire palette when we
+                // set one palette property, as otherwise we default back to the
+                // theme palette -- not the parent palette
+                palette {
+                    text: Style.ncTextColor
+                    windowText: Style.ncTextColor
+                    buttonText: Style.ncTextColor
+                    brightText: Style.ncTextBrightColor
+                    highlight: Style.lightHover
+                    highlightedText: Style.ncTextColor
+                    light: Style.lightHover
+                    midlight: Style.ncSecondaryTextColor
+                    mid: Style.darkerHover
+                    dark: Style.menuBorder
+                    button: Style.buttonBackgroundColor
+                    window: Style.menuBorder
+                    base: Style.backgroundColor
+                    toolTipBase: Style.backgroundColor
+                    toolTipText: Style.ncTextColor
                 }
 
-                NCInputTextField {
-                    id: linkShareLabelTextField
+                font.pixelSize: pixelSize
+                font.weight: fontWeight
+
+                spacing: scrollContentsColumn.indicatorSpacing
+                padding: scrollContentsColumn.itemPadding
+                indicator.width: scrollContentsColumn.indicatorItemWidth
+                indicator.height: scrollContentsColumn.indicatorItemWidth
+
+                checkable: true
+                checked: root.passwordProtectEnabled
+                text: qsTr("Password protect")
+                visible: root.shareSupportsPassword
+                enabled: visible &&
+                         !root.waitingForPasswordProtectEnabledChange &&
+                         !root.passwordEnforced
+
+                onClicked: {
+                    root.togglePasswordProtect(checked);
+                    root.waitingForPasswordProtectEnabledChange = true;
+                }
+            }
+
+            Loader {
+                id: passwordErrorBoxLoader
+
+                property string message: ""
+
+                Layout.fillWidth: true
+                height: message !== "" ? implicitHeight : 0
+
+                active: message !== ""
+                visible: active
+
+                sourceComponent: Item {
+                    anchors.top: parent.top
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    // Artificially add vertical padding
+                    implicitHeight: passwordErrorBox.implicitHeight + (Style.smallSpacing * 2)
+
+                    SesErrorBox {
+                        id: passwordErrorBox
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        anchors.verticalCenter: parent.verticalCenter
+
+                        text: passwordErrorBoxLoader.message
+                    }
+                }
+            }
+
+            TextEdit {
+                id: passwordTextEdit
+                visible: root.passwordProtectEnabled
+                Layout.fillWidth: true
+                Layout.leftMargin: 3
+                Layout.rightMargin: 3
+                height: visible ? 64 : 0
+                wrapMode: TextEdit.Wrap
+                selectByMouse: true
+                text: root.password !== "" ? root.password : root.passwordPlaceholder
+
+                font.family: root.font.family
+                font.pixelSize: pixelSize
+                font.weight: fontWeight
+
+                padding: scrollContentsColumn.itemPadding
+                enabled: visible &&
+                         root.passwordProtectEnabled &&
+                         !root.waitingForPasswordChange &&
+                         !root.waitingForPasswordProtectEnabledChange
+
+                onEditingFinished: if(text !== root.password && text !== root.passwordPlaceholder) {
+                    passwordErrorBoxLoader.message = "";
+                    root.setPassword(text);
+                    root.waitingForPasswordChange = true;
+                }
+
+                Rectangle {
+                    id: passwordTextBorder
+                    anchors.fill: parent
+                    radius: Style.slightlyRoundedButtonRadius
+                    border.width: Style.thickBorderWidth
+                    border.color: Style.sesTrayInputField
+                    color: palette.base
+                    z: -1
+                }
+            }
+
+            CheckBox {
+                id: expireDateEnabledMenuItem
+
+                Layout.fillWidth: true
+
+                // TODO: Rather than setting all these palette colours manually,
+                // create a custom style and do it for all components globally.
+                //
+                // Additionally, we need to override the entire palette when we
+                // set one palette property, as otherwise we default back to the
+                // theme palette -- not the parent palette
+                palette {
+                    text: Style.ncTextColor
+                    windowText: Style.ncTextColor
+                    buttonText: Style.ncTextColor
+                    brightText: Style.ncTextBrightColor
+                    highlight: Style.lightHover
+                    highlightedText: Style.ncTextColor
+                    light: Style.lightHover
+                    midlight: Style.ncSecondaryTextColor
+                    mid: Style.darkerHover
+                    dark: Style.menuBorder
+                    button: Style.buttonBackgroundColor
+                    window: Style.menuBorder
+                    base: Style.backgroundColor
+                    toolTipBase: Style.backgroundColor
+                    toolTipText: Style.ncTextColor
+                }
+
+                font.pixelSize: pixelSize
+                font.weight: fontWeight
+
+                spacing: scrollContentsColumn.indicatorSpacing
+                padding: scrollContentsColumn.itemPadding
+                indicator.width: scrollContentsColumn.indicatorItemWidth
+                indicator.height: scrollContentsColumn.indicatorItemWidth
+
+                checkable: true
+                checked: root.expireDateEnabled
+                text: qsTr("Set expiration date")
+                enabled: !root.waitingForExpireDateEnabledChange && !root.expireDateEnforced
+
+                onClicked: {
+                    root.toggleExpirationDate(checked);
+                    root.waitingForExpireDateEnabledChange = true;
+                }
+            }
+
+            NCInputDateField {
+                id: expireDateField
+
+                font.pixelSize: pixelSize
+                font.weight: fontWeight
+
+                Layout.fillWidth: true
+                Layout.leftMargin: 3
+                Layout.rightMargin: 3
+                height: visible ? implicitHeight : 0
+                leftPadding: 15
+
+                visible: root.expireDateEnabled
+
+                selectByMouse: true
+
+                dateInMs: root.expireDate
+                maximumDateMs: root.maximumExpireDate
+                minimumDateMs: {
+                    const currentDate = new Date();
+                    const currentYear = currentDate.getFullYear();
+                    const currentMonth = currentDate.getMonth();
+                    const currentMonthDay = currentDate.getDate();
+                    // Start of day at 00:00:0000
+                    return Date.UTC(currentYear, currentMonth, currentMonthDay + 1);
+                }
+
+
+                enabled: root.expireDateEnabled &&
+                            !root.waitingForExpireDateChange &&
+                            !root.waitingForExpireDateEnabledChange
+
+                onUserAcceptedDate: {
+                    root.setExpireDate(dateInMs);
+                    root.waitingForExpireDateChange = true;
+                }
+
+                Rectangle {
+                    id: dateTextBorder
+                    anchors.fill: parent
+                    radius: Style.slightlyRoundedButtonRadius
+                    border.width: Style.thickBorderWidth
+                    border.color: Style.sesTrayInputField
+                    color: palette.base
+                    z: -1
+                }
+            }
+
+            ColumnLayout {
+                Layout.fillWidth: true
+                height: visible ? implicitHeight : 0
+                spacing: Style.extraSmallSpacing
+
+                CheckBox {
+                    id: noteEnabledMenuItem
 
                     Layout.fillWidth: true
-                    height: visible ? implicitHeight : 0
 
-                    text: root.linkShareLabel
-                    placeholderText: qsTr("Share label")
-
-                    enabled: root.isLinkShare &&
-                             !root.waitingForLinkShareLabelChange
-
-                    onAccepted: if(text !== root.linkShareLabel) {
-                        root.setLinkShareLabel(text);
-                        root.waitingForLinkShareLabelChange = true;
+                    // TODO: Rather than setting all these palette colours manually,
+                    // create a custom style and do it for all components globally.
+                    //
+                    // Additionally, we need to override the entire palette when we
+                    // set one palette property, as otherwise we default back to the
+                    // theme palette -- not the parent palette
+                    palette {
+                        text: Style.ncTextColor
+                        windowText: Style.ncTextColor
+                        buttonText: Style.ncTextColor
+                        brightText: Style.ncTextBrightColor
+                        highlight: Style.lightHover
+                        highlightedText: Style.ncTextColor
+                        light: Style.lightHover
+                        midlight: Style.ncSecondaryTextColor
+                        mid: Style.darkerHover
+                        dark: Style.menuBorder
+                        button: Style.buttonBackgroundColor
+                        window: Style.menuBorder
+                        base: Style.backgroundColor
+                        toolTipBase: Style.backgroundColor
+                        toolTipText: Style.ncTextColor
                     }
 
-                    NCBusyIndicator {
+                    font.pixelSize: pixelSize
+                    font.weight: fontWeight
+
+
+                    spacing: scrollContentsColumn.indicatorSpacing
+                    padding: scrollContentsColumn.itemPadding
+                    indicator.width: scrollContentsColumn.indicatorItemWidth
+                    indicator.height: scrollContentsColumn.indicatorItemWidth
+
+                    checkable: true
+                    checked: root.noteEnabled
+                    text: qsTr("Note to recipient")
+                    enabled: !root.waitingForNoteEnabledChange
+
+                    onClicked: {
+                        root.toggleNoteToRecipient(checked);
+                        root.waitingForNoteEnabledChange = true;
+                    }
+                }
+
+                Text{
+                    text: qsTr("Enter the note to recipient")
+                    color: Style.sesGray
+                    padding: scrollContentsColumn.itemPadding
+                    visible: root.noteEnabled
+                    font.family: root.font.family
+                    font.pixelSize: pixelSize
+                    font.weight: fontWeight
+                }
+
+                TextEdit {
+                    id: noteTextEdit
+                    visible: root.noteEnabled
+                    font.family: root.font.family
+                    font.pixelSize: pixelSize
+                    font.weight: fontWeight
+                    Layout.fillWidth: true
+                    Layout.leftMargin: 3
+                    Layout.rightMargin: 3
+                    height: visible ? 64 : 0
+                    wrapMode: TextEdit.Wrap
+                    selectByMouse: true
+                    padding: scrollContentsColumn.itemPadding
+                    enabled: root.noteEnabled &&
+                             !root.waitingForNoteChange &&
+                             !root.waitingForNoteEnabledChange
+
+                    onEditingFinished: if(text !== "") {
+                        root.setNote(text);
+                        root.waitingForNoteChange = true;
+                    }
+
+                    Rectangle {
+                        id: noteTextBorder
                         anchors.fill: parent
-                        visible: root.waitingForLinkShareLabelChange
-                        running: visible
-                        z: 1
+                        radius: Style.slightlyRoundedButtonRadius
+                        border.width: Style.thickBorderWidth
+                        border.color: Style.sesTrayInputField
+                        color: palette.base
+                        z: -1
                     }
                 }
             }
@@ -338,6 +629,9 @@ Page {
                         toolTipText: Style.ncTextColor
                     }
 
+                    font.pixelSize: pixelSize
+                    font.weight: fontWeight
+
                     spacing: scrollContentsColumn.indicatorSpacing
                     padding: scrollContentsColumn.itemPadding
                     indicator.width: scrollContentsColumn.indicatorItemWidth
@@ -349,13 +643,6 @@ Page {
                     enabled: !root.isSharePermissionChangeInProgress
 
                     onClicked: root.toggleAllowEditing(checked)
-
-                    NCBusyIndicator {
-                        anchors.fill: parent
-                        visible: root.isSharePermissionChangeInProgress
-                        running: visible
-                        z: 1
-                    }
                 }
             }
 
@@ -372,101 +659,124 @@ Page {
                         id: permissionModeRadioButtonsGroup
                     }
 
-                    NCRadioButton {
-                        readonly property int permissionMode: ShareModel.ModeViewOnly
-                        Layout.fillWidth: true
-                        ButtonGroup.group: permissionModeRadioButtonsGroup
-                        enabled: !root.isSharePermissionChangeInProgress
-                        checked: root.currentPermissionMode === permissionMode
-                        text: qsTr("View only")
-                        indicatorItemWidth: scrollContentsColumn.indicatorItemWidth
-                        indicatorItemHeight: scrollContentsColumn.indicatorItemWidth
-                        spacing: scrollContentsColumn.indicatorSpacing
-                        padding: scrollContentsColumn.itemPadding
-                        onClicked: root.permissionModeChanged(permissionMode)
-                    }
-
-                    NCRadioButton {
-                        readonly property int permissionMode: ShareModel.ModeUploadAndEditing
-                        Layout.fillWidth: true
-                        ButtonGroup.group: permissionModeRadioButtonsGroup
-                        enabled: !root.isSharePermissionChangeInProgress
-                        checked: root.currentPermissionMode === permissionMode
-                        text: qsTr("Allow upload and editing")
-                        indicatorItemWidth: scrollContentsColumn.indicatorItemWidth
-                        indicatorItemHeight: scrollContentsColumn.indicatorItemWidth
-                        spacing: scrollContentsColumn.indicatorSpacing
-                        padding: scrollContentsColumn.itemPadding
-                        onClicked: root.permissionModeChanged(permissionMode)
-                    }
-
-                    NCRadioButton {
-                        readonly property int permissionMode: ShareModel.ModeFileDropOnly
-                        Layout.fillWidth: true
-                        ButtonGroup.group: permissionModeRadioButtonsGroup
-                        enabled: !root.isSharePermissionChangeInProgress
-                        checked: root.currentPermissionMode === permissionMode
-                        text: qsTr("File drop (upload only)")
-                        indicatorItemWidth: scrollContentsColumn.indicatorItemWidth
-                        indicatorItemHeight: scrollContentsColumn.indicatorItemWidth
-                        spacing: scrollContentsColumn.indicatorSpacing
-                        padding: scrollContentsColumn.itemPadding
-                        onClicked: root.permissionModeChanged(permissionMode)
-                    }
-
                     CheckBox {
-                        id: allowResharingCheckBox
-
+                        id: customPermissionsCheckBox
                         Layout.fillWidth: true
-
-                        // TODO: Rather than setting all these palette colours manually,
-                        // create a custom style and do it for all components globally.
-                        //
-                        // Additionally, we need to override the entire palette when we
-                        // set one palette property, as otherwise we default back to the
-                        // theme palette -- not the parent palette
-                        palette {
-                            text: Style.ncTextColor
-                            windowText: Style.ncTextColor
-                            buttonText: Style.ncTextColor
-                            brightText: Style.ncTextBrightColor
-                            highlight: Style.lightHover
-                            highlightedText: Style.ncTextColor
-                            light: Style.lightHover
-                            midlight: Style.ncSecondaryTextColor
-                            mid: Style.darkerHover
-                            dark: Style.menuBorder
-                            button: Style.buttonBackgroundColor
-                            window: palette.dark // NOTE: Fusion theme uses darker window colour for the border of the checkbox
-                            base: Style.backgroundColor
-                            toolTipBase: Style.backgroundColor
-                            toolTipText: Style.ncTextColor
-                        }
-
+                        enabled: !root.isSharePermissionChangeInProgress
+                        checked: root.currentPermissionMode === permissionMode
+                        text: qsTr("Custom Permissions")
                         spacing: scrollContentsColumn.indicatorSpacing
                         padding: scrollContentsColumn.itemPadding
                         indicator.width: scrollContentsColumn.indicatorItemWidth
                         indicator.height: scrollContentsColumn.indicatorItemWidth
+                        onClicked: root.permissionModeChanged(permissionMode)
+                        font.pixelSize: pixelSize
+                        font.weight: fontWeight
+                    }
 
-                        checkable: true
-                        checked: root.resharingAllowed
-                        text: qsTr("Allow resharing")
-                        enabled: !root.isSharePermissionChangeInProgress && root.serverAllowsResharing
-                        visible: root.serverAllowsResharing
-                        onClicked: root.toggleAllowResharing(checked);
+                    CheckBox {
+                        readonly property int permissionMode: ShareModel.ModeViewOnly
+                        Layout.fillWidth: true
+                        Layout.leftMargin: 30
+                        ButtonGroup.group: permissionModeRadioButtonsGroup
+                        enabled: !root.isSharePermissionChangeInProgress
+                        checked: root.currentPermissionMode === permissionMode
+                        text: qsTr("View only")
+                        indicator.width: scrollContentsColumn.indicatorItemWidth
+                        indicator.height: scrollContentsColumn.indicatorItemWidth
+                        spacing: scrollContentsColumn.indicatorSpacing
+                        padding: scrollContentsColumn.itemPadding
+                        onClicked: root.permissionModeChanged(permissionMode)
+                        visible: customPermissionsCheckBox.checked
+                        font.pixelSize: pixelSize
+                        font.weight: fontWeight
+                    }
 
-                        Connections {
-                            target: root
-                            onResharingAllowedChanged: allowResharingCheckBox.checked = root.resharingAllowed
-                        }
+                    CheckBox {
+                        readonly property int permissionMode: ShareModel.ModeUploadAndEditing
+                        Layout.fillWidth: true
+                        Layout.leftMargin: 30
+                        ButtonGroup.group: permissionModeRadioButtonsGroup
+                        enabled: !root.isSharePermissionChangeInProgress
+                        checked: root.currentPermissionMode === permissionMode
+                        text: qsTr("Allow upload and editing")
+                        indicator.width: scrollContentsColumn.indicatorItemWidth
+                        indicator.height: scrollContentsColumn.indicatorItemWidth
+                        spacing: scrollContentsColumn.indicatorSpacing
+                        padding: scrollContentsColumn.itemPadding
+                        onClicked: root.permissionModeChanged(permissionMode)
+                        visible: customPermissionsCheckBox.checked
+                        font.pixelSize: pixelSize
+                        font.weight: fontWeight
+                    }
+
+                    CheckBox {
+                        readonly property int permissionMode: ShareModel.ModeFileDropOnly
+                        Layout.fillWidth: true
+                        Layout.leftMargin: 30
+                        ButtonGroup.group: permissionModeRadioButtonsGroup
+                        enabled: !root.isSharePermissionChangeInProgress
+                        checked: root.currentPermissionMode === permissionMode
+                        text: qsTr("File drop (upload only)")
+                        indicator.width: scrollContentsColumn.indicatorItemWidth
+                        indicator.height: scrollContentsColumn.indicatorItemWidth
+                        spacing: scrollContentsColumn.indicatorSpacing
+                        padding: scrollContentsColumn.itemPadding
+                        onClicked: root.permissionModeChanged(permissionMode)
+                        visible: customPermissionsCheckBox.checked
+                        font.pixelSize: pixelSize
+                        font.weight: fontWeight
                     }
                 }
+            }
 
-                NCBusyIndicator {
-                    anchors.fill: parent
-                    visible: root.isSharePermissionChangeInProgress
-                    running: visible
-                    z: 1
+            CheckBox {
+                id: allowResharingCheckBox
+
+                Layout.fillWidth: true
+
+                // TODO: Rather than setting all these palette colours manually,
+                // create a custom style and do it for all components globally.
+                //
+                // Additionally, we need to override the entire palette when we
+                // set one palette property, as otherwise we default back to the
+                // theme palette -- not the parent palette
+                palette {
+                    text: Style.ncTextColor
+                    windowText: Style.ncTextColor
+                    buttonText: Style.ncTextColor
+                    brightText: Style.ncTextBrightColor
+                    highlight: Style.lightHover
+                    highlightedText: Style.ncTextColor
+                    light: Style.lightHover
+                    midlight: Style.ncSecondaryTextColor
+                    mid: Style.darkerHover
+                    dark: Style.menuBorder
+                    button: Style.buttonBackgroundColor
+                    window: palette.dark // NOTE: Fusion theme uses darker window colour for the border of the checkbox
+                    base: Style.backgroundColor
+                    toolTipBase: Style.backgroundColor
+                    toolTipText: Style.ncTextColor
+                }
+
+                font.pixelSize: pixelSize
+                font.weight: fontWeight
+
+                spacing: scrollContentsColumn.indicatorSpacing
+                padding: scrollContentsColumn.itemPadding
+                indicator.width: scrollContentsColumn.indicatorItemWidth
+                indicator.height: scrollContentsColumn.indicatorItemWidth
+
+                checkable: true
+                checked: root.resharingAllowed
+                text: qsTr("Allow resharing")
+                enabled: !root.isSharePermissionChangeInProgress && root.serverAllowsResharing
+                visible: root.serverAllowsResharing
+                onClicked: root.toggleAllowResharing(checked);
+
+                Connections {
+                    target: root
+                    onResharingAllowedChanged: allowResharingCheckBox.checked = root.resharingAllowed
                 }
             }
 
@@ -506,6 +816,9 @@ Page {
                             toolTipText: Style.ncTextColor
                         }
 
+                        font.pixelSize: pixelSize
+                        font.weight: fontWeight
+
                         spacing: scrollContentsColumn.indicatorSpacing
                         padding: scrollContentsColumn.itemPadding
                         indicator.width: scrollContentsColumn.indicatorItemWidth
@@ -515,406 +828,65 @@ Page {
                         text: qsTr("Hide download")
                         enabled: !root.isHideDownloadInProgress
                         onClicked: root.toggleHideDownload(checked);
-
-                        NCBusyIndicator {
-                            anchors.fill: parent
-                            visible: root.isHideDownloadInProgress
-                            running: visible
-                            z: 1
-                        }
                     }
                 }
-            }
-
-            CheckBox {
-                id: passwordProtectEnabledMenuItem
-
-                Layout.fillWidth: true
-
-                // TODO: Rather than setting all these palette colours manually,
-                // create a custom style and do it for all components globally.
-                //
-                // Additionally, we need to override the entire palette when we
-                // set one palette property, as otherwise we default back to the
-                // theme palette -- not the parent palette
-                palette {
-                    text: Style.ncTextColor
-                    windowText: Style.ncTextColor
-                    buttonText: Style.ncTextColor
-                    brightText: Style.ncTextBrightColor
-                    highlight: Style.lightHover
-                    highlightedText: Style.ncTextColor
-                    light: Style.lightHover
-                    midlight: Style.ncSecondaryTextColor
-                    mid: Style.darkerHover
-                    dark: Style.menuBorder
-                    button: Style.buttonBackgroundColor
-                    window: Style.menuBorder
-                    base: Style.backgroundColor
-                    toolTipBase: Style.backgroundColor
-                    toolTipText: Style.ncTextColor
-                }
-
-                spacing: scrollContentsColumn.indicatorSpacing
-                padding: scrollContentsColumn.itemPadding
-                indicator.width: scrollContentsColumn.indicatorItemWidth
-                indicator.height: scrollContentsColumn.indicatorItemWidth
-
-                checkable: true
-                checked: root.passwordProtectEnabled
-                text: qsTr("Password protect")
-                visible: root.shareSupportsPassword
-                enabled: visible && 
-                         !root.waitingForPasswordProtectEnabledChange && 
-                         !root.passwordEnforced
-
-                onClicked: {
-                    root.togglePasswordProtect(checked);
-                    root.waitingForPasswordProtectEnabledChange = true;
-                }
-
-                NCBusyIndicator {
-                    anchors.fill: parent
-                    visible: root.waitingForPasswordProtectEnabledChange
-                    running: visible
-                    z: 1
-                }
-            }
-
-            RowLayout {
-                Layout.fillWidth: true
-
-                height: visible ? implicitHeight : 0
-                spacing: scrollContentsColumn.indicatorSpacing
-
-                visible: root.shareSupportsPassword && root.passwordProtectEnabled
-
-                Image {
-                    Layout.preferredWidth: scrollContentsColumn.indicatorItemWidth
-                    Layout.fillHeight: true
-
-                    verticalAlignment: Image.AlignVCenter
-                    horizontalAlignment: Image.AlignHCenter
-                    fillMode: Image.Pad
-
-                    source: "image://svgimage-custom-color/lock-https.svg/" + palette.dark
-                    sourceSize.width: scrollContentsColumn.rowIconWidth
-                    sourceSize.height: scrollContentsColumn.rowIconWidth
-                }
-
-                NCInputTextField {
-                    id: passwordTextField
-
-                    Layout.fillWidth: true
-                    height: visible ? implicitHeight : 0
-
-                    text: root.password !== "" ? root.password : root.passwordPlaceholder
-                    enabled: visible &&
-                             root.passwordProtectEnabled &&
-                             !root.waitingForPasswordChange &&
-                             !root.waitingForPasswordProtectEnabledChange
-
-                    onAccepted: if(text !== root.password && text !== root.passwordPlaceholder) {
-                        passwordErrorBoxLoader.message = "";
-                        root.setPassword(text);
-                        root.waitingForPasswordChange = true;
-                    }
-
-                    NCBusyIndicator {
-                        anchors.fill: parent
-                        visible: root.waitingForPasswordChange ||
-                                 root.waitingForPasswordProtectEnabledChange
-                        running: visible
-                        z: 1
-                    }
-                }
-            }
-
-            Loader {
-                id: passwordErrorBoxLoader
-
-                property string message: ""
-
-                Layout.fillWidth: true
-                height: message !== "" ? implicitHeight : 0
-
-                active: message !== ""
-                visible: active
-
-                sourceComponent: Item {
-                    anchors.top: parent.top
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    // Artificially add vertical padding
-                    implicitHeight: passwordErrorBox.implicitHeight + (Style.smallSpacing * 2)
-
-                    ErrorBox {
-                        id: passwordErrorBox
-                        anchors.left: parent.left
-                        anchors.right: parent.right
-                        anchors.verticalCenter: parent.verticalCenter
-
-                        text: passwordErrorBoxLoader.message
-                    }
-                }
-            }
-
-            CheckBox {
-                id: expireDateEnabledMenuItem
-
-                Layout.fillWidth: true
-
-                // TODO: Rather than setting all these palette colours manually,
-                // create a custom style and do it for all components globally.
-                //
-                // Additionally, we need to override the entire palette when we
-                // set one palette property, as otherwise we default back to the
-                // theme palette -- not the parent palette
-                palette {
-                    text: Style.ncTextColor
-                    windowText: Style.ncTextColor
-                    buttonText: Style.ncTextColor
-                    brightText: Style.ncTextBrightColor
-                    highlight: Style.lightHover
-                    highlightedText: Style.ncTextColor
-                    light: Style.lightHover
-                    midlight: Style.ncSecondaryTextColor
-                    mid: Style.darkerHover
-                    dark: Style.menuBorder
-                    button: Style.buttonBackgroundColor
-                    window: Style.menuBorder
-                    base: Style.backgroundColor
-                    toolTipBase: Style.backgroundColor
-                    toolTipText: Style.ncTextColor
-                }
-
-                spacing: scrollContentsColumn.indicatorSpacing
-                padding: scrollContentsColumn.itemPadding
-                indicator.width: scrollContentsColumn.indicatorItemWidth
-                indicator.height: scrollContentsColumn.indicatorItemWidth
-
-                checkable: true
-                checked: root.expireDateEnabled
-                text: qsTr("Set expiration date")
-                enabled: !root.waitingForExpireDateEnabledChange && !root.expireDateEnforced
-
-                onClicked: {
-                    root.toggleExpirationDate(checked);
-                    root.waitingForExpireDateEnabledChange = true;
-                }
-
-                NCBusyIndicator {
-                    anchors.fill: parent
-                    visible: root.waitingForExpireDateEnabledChange
-                    running: visible
-                    z: 1
-                }
-            }
-
-            RowLayout {
-                Layout.fillWidth: true
-                height: visible ? implicitHeight : 0
-                spacing: scrollContentsColumn.indicatorSpacing
-
-                visible: root.expireDateEnabled
-
-                Image {
-                    Layout.preferredWidth: scrollContentsColumn.indicatorItemWidth
-                    Layout.fillHeight: true
-
-                    verticalAlignment: Image.AlignVCenter
-                    horizontalAlignment: Image.AlignHCenter
-                    fillMode: Image.Pad
-
-                    source: "image://svgimage-custom-color/calendar.svg/" + palette.dark
-                    sourceSize.width: scrollContentsColumn.rowIconWidth
-                    sourceSize.height: scrollContentsColumn.rowIconWidth
-                }
-
-                NCInputDateField {
-                    id: expireDateField
-
-                    Layout.fillWidth: true
-                    height: visible ? implicitHeight : 0
-
-                    dateInMs: root.expireDate
-                    maximumDateMs: root.maximumExpireDate
-                    minimumDateMs: {
-                        const currentDate = new Date();
-                        const currentYear = currentDate.getFullYear();
-                        const currentMonth = currentDate.getMonth();
-                        const currentMonthDay = currentDate.getDate();
-                        // Start of day at 00:00:0000 UTC
-                        return Date.UTC(currentYear, currentMonth, currentMonthDay + 1);
-                    }
-
-                    enabled: root.expireDateEnabled &&
-                             !root.waitingForExpireDateChange &&
-                             !root.waitingForExpireDateEnabledChange
-
-                    onUserAcceptedDate: {
-                        root.setExpireDate(dateInMs);
-                        root.waitingForExpireDateChange = true;
-                    }
-
-                    NCBusyIndicator {
-                        anchors.fill: parent
-                        visible: root.waitingForExpireDateEnabledChange ||
-                                 root.waitingForExpireDateChange
-                        running: visible
-                        z: 1
-                    }
-                }
-            }
-
-            CheckBox {
-                id: noteEnabledMenuItem
-
-                Layout.fillWidth: true
-
-                // TODO: Rather than setting all these palette colours manually,
-                // create a custom style and do it for all components globally.
-                //
-                // Additionally, we need to override the entire palette when we
-                // set one palette property, as otherwise we default back to the
-                // theme palette -- not the parent palette
-                palette {
-                    text: Style.ncTextColor
-                    windowText: Style.ncTextColor
-                    buttonText: Style.ncTextColor
-                    brightText: Style.ncTextBrightColor
-                    highlight: Style.lightHover
-                    highlightedText: Style.ncTextColor
-                    light: Style.lightHover
-                    midlight: Style.ncSecondaryTextColor
-                    mid: Style.darkerHover
-                    dark: Style.menuBorder
-                    button: Style.buttonBackgroundColor
-                    window: Style.menuBorder
-                    base: Style.backgroundColor
-                    toolTipBase: Style.backgroundColor
-                    toolTipText: Style.ncTextColor
-                }
-
-                spacing: scrollContentsColumn.indicatorSpacing
-                padding: scrollContentsColumn.itemPadding
-                indicator.width: scrollContentsColumn.indicatorItemWidth
-                indicator.height: scrollContentsColumn.indicatorItemWidth
-
-                checkable: true
-                checked: root.noteEnabled
-                text: qsTr("Note to recipient")
-                enabled: !root.waitingForNoteEnabledChange
-
-                onClicked: {
-                    root.toggleNoteToRecipient(checked);
-                    root.waitingForNoteEnabledChange = true;
-                }
-
-                NCBusyIndicator {
-                    anchors.fill: parent
-                    visible: root.waitingForNoteEnabledChange
-                    running: visible
-                    z: 1
-                }
-            }
-
-            RowLayout {
-                Layout.fillWidth: true
-                height: visible ? implicitHeight : 0
-                spacing: scrollContentsColumn.indicatorSpacing
-
-                visible: root.noteEnabled
-
-                Image {
-                    Layout.preferredWidth: scrollContentsColumn.indicatorItemWidth
-                    Layout.fillHeight: true
-
-                    verticalAlignment: Image.AlignVCenter
-                    horizontalAlignment: Image.AlignHCenter
-                    fillMode: Image.Pad
-
-                    source: "image://svgimage-custom-color/edit.svg/" + palette.dark
-                    sourceSize.width: scrollContentsColumn.rowIconWidth
-                    sourceSize.height: scrollContentsColumn.rowIconWidth
-                }
-
-                NCInputTextEdit {
-                    id: noteTextEdit
-
-                    Layout.fillWidth: true
-                    height: visible ? Math.max(Style.talkReplyTextFieldPreferredHeight, contentHeight) : 0
-                    submitButton.height: Math.min(Style.talkReplyTextFieldPreferredHeight, height - 2)
-
-                    text: root.note
-                    enabled: root.noteEnabled &&
-                             !root.waitingForNoteChange &&
-                             !root.waitingForNoteEnabledChange
-
-                    onEditingFinished: if(text !== root.note) {
-                        root.setNote(text);
-                        root.waitingForNoteChange = true;
-                    }
-
-                    NCBusyIndicator {
-                        anchors.fill: parent
-                        visible: root.waitingForNoteChange ||
-                                 root.waitingForNoteEnabledChange
-                        running: visible
-                        z: 1
-                    }
-                }
-            }
-
-            CustomButton {
-                height: Style.standardPrimaryButtonHeight
-
-                icon.source: "image://svgimage-custom-color/close.svg/" + Style.errorBoxBackgroundColor
-                imageSourceHover: "image://svgimage-custom-color/close.svg/" + palette.brightText
-                text: qsTr("Unshare")
-                textColor: Style.errorBoxBackgroundColor
-                textColorHovered: "white"
-                contentsFont.bold: true
-                bgNormalColor: palette.button
-                bgHoverColor: Style.errorBoxBackgroundColor
-                bgNormalOpacity: 1.0
-                bgHoverOpacity: 1.0
-
-                onClicked: root.deleteShare()
-            }
-
-            CustomButton {
-                height: Style.standardPrimaryButtonHeight
-
-                icon.source: "image://svgimage-custom-color/add.svg/" + root.accentColor
-                imageSourceHover: "image://svgimage-custom-color/add.svg/" + palette.brightText
-                text: qsTr("Add another link")
-                textColor: root.accentColor
-                textColorHovered: palette.brightText
-                contentsFont.bold: true
-                bgNormalColor: palette.button
-                bgHoverColor: root.accentColor
-                bgNormalOpacity: 1.0
-                bgHoverOpacity: 1.0
-
-                visible: root.isLinkShare && root.canCreateLinkShares
-                enabled: visible
-
-                onClicked: root.createNewLinkShare()
             }
         }
     }
 
-    footer: DialogButtonBox {
-        topPadding: 0
-        bottomPadding: root.padding
-        rightPadding: root.padding
-        leftPadding: root.padding
-        alignment: Qt.AlignRight | Qt.AlignVCenter
-        contentWidth: (contentItem as ListView).contentWidth
-        visible: copyShareLinkButton.visible
+    footer: GridLayout {
+        id: buttonGrid
 
-        CustomButton {
+        columns: 1
+        rows: 2
+
+        SesCustomButton {
+            Layout.columnSpan: buttonGrid.columns
+
+            icon.source: Style.sesLightPlus
+
+            font.pixelSize: pixelSize
+            font.weight: fontWeight
+            text: qsTr("Add another link")
+            textColor: palette.brightText
+
+            bgColor: Style.sesActionPressed
+            bgNormalOpacity: 1.0
+            bgHoverOpacity: Style.hoverOpacity
+
+            visible: root.isLinkShare && root.canCreateLinkShares
+            enabled: visible
+
+            Layout.leftMargin: 16
+            Layout.bottomMargin: 16
+            Layout.row: 0
+
+            onClicked: root.createNewLinkShare()
+        }
+
+        SesCustomButton {
+            id: unshareButton
+
+            font.pixelSize: pixelSize
+            font.weight: fontWeight
+            text: qsTr("Unshare")
+            textColor: Style.sesActionPressed
+
+            bgColor: palette.highlight
+            bgNormalOpacity: 1.0
+
+            bgBorderWidth: 2
+            bgBorderColor: Style.sesActionPressed
+            bgHoverOpacity: Style.hoverOpacity
+
+            Layout.bottomMargin: 16
+            Layout.leftMargin: 16
+            Layout.rightMargin: 60
+            Layout.row: 1
+            onClicked: root.deleteShare()
+        }
+
+        SesCustomButton {
             id: copyShareLinkButton
 
             function copyShareLink() {
@@ -929,13 +901,14 @@ Page {
 
             property bool shareLinkCopied: false
 
-            height: Style.standardPrimaryButtonHeight
+            icon.source: Style.sesClipboard
 
-            icon.source: "image://svgimage-custom-color/copy.svg/" + palette.brightText
+            font.pixelSize: pixelSize
+            font.weight: fontWeight
             text: shareLinkCopied ? qsTr("Share link copied!") : qsTr("Copy share link")
             textColor: palette.brightText
-            contentsFont.bold: true
-            bgColor: shareLinkCopied ? Style.positiveColor : root.accentColor
+
+            bgColor: Style.sesActionPressed
             bgNormalOpacity: 1.0
             bgHoverOpacity: shareLinkCopied ? 1.0 : Style.hoverOpacity
 
@@ -943,6 +916,11 @@ Page {
             enabled: visible
 
             onClicked: copyShareLink()
+
+            Layout.alignment: Qt.AlignRight
+            Layout.bottomMargin: 16
+            Layout.rightMargin: 20
+            Layout.row: 1
 
             Behavior on bgColor {
                 ColorAnimation { duration: Style.shortAnimationDuration }
