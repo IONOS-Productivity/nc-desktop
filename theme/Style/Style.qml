@@ -203,6 +203,27 @@ QtObject {
         return size * (1 + Math.min(pixelSize / 100, 1));
     }
 
+    // SES
+    readonly property string sesWebsiteIcon: "qrc:///client/theme/ses/ses-website.svg"
+    readonly property string sesFilesIcon: "qrc:///client/theme/ses/ses-filesIcon.svg"
+    readonly property string sesIonosLogoIcon: "qrc:///client/theme/ses/ses-IONOS-Logo.svg"
+
+    readonly property string sesAvatar: "qrc:///client/theme/ses/ses-settingsAvatar.svg"
+
+    readonly property string sesAccountQuit: "qrc:///client/theme/ses/ses-accountQuit.svg"
+    readonly property string sesAccountPause: "qrc:///client/theme/ses/ses-accountPause.svg"
+    readonly property string sesDarkPlus: "qrc:///client/theme/ses/ses-darkPlus16.svg"
+    readonly property string sesLightPlus: "qrc:///client/theme/ses/ses-lightPlus16.svg"
+    readonly property string sesAccountSettings: "qrc:///client/theme/ses/ses-settings16.svg"
+    readonly property string sesAccountResume: "qrc:///client/theme/ses/ses-accountResume.svg"
+    readonly property string sesLogout: "qrc:///client/theme/ses/ses-accountLogout.svg"
+    readonly property string sesDelete: "qrc:///client/theme/ses/ses-accountDelete.svg"
+    readonly property string sesClipboard: "qrc:///client/theme/ses/ses-clipboard.svg"
+    readonly property string sesErrorIcon: "qrc:///client/theme/colored/state-error.svg"
+    readonly property string sesErrorBoxIcon: "qrc:///client/theme/ses/ses-snackBarErrorIcon.svg"
+    readonly property string sesGreenCheckmark: "qrc:///client/theme/ses/ses-green-Checkmark.svg"
+    readonly property string sesChevron: "qrc:///client/theme/ses/ses-chevron.svg"
+
     readonly property color sesIconDarkColor: "#001B41"
     readonly property color sesIconColor: "#1474C4"
 
