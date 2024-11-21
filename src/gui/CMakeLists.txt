@@ -3,12 +3,15 @@ find_package(Qt${QT_MAJOR_VERSION} REQUIRED COMPONENTS Widgets Svg Qml Quick Qui
 find_package(KF6Archive REQUIRED)
 find_package(KF6GuiAddons)
 
-if (NOT TARGET Qt::GuiPrivate)
+if (NOT TARGET Qt::Gui)
     message(FATAL_ERROR "Could not find GuiPrivate component of Qt. It might be shipped as a separate package, please check that.")
 endif()
 
 if(CMAKE_BUILD_TYPE MATCHES Debug)
     add_definitions(-DQT_QML_DEBUG)
+endif()
+if(CMAKE_BUILD_TYPE MATCHES "RelWithDebInfo")
+    add_definitions(-DBUILDTYPE_RELWITHDEBINFO)
 endif()
 
 IF(BUILD_UPDATER)
@@ -16,7 +19,13 @@ IF(BUILD_UPDATER)
 endif()
 
 configure_file(${CMAKE_SOURCE_DIR}/theme.qrc.in ${CMAKE_SOURCE_DIR}/theme.qrc)
+configure_file(${CMAKE_SOURCE_DIR}/ionos-theme.qrc.in ${CMAKE_SOURCE_DIR}/ionos-theme.qrc)
 set(theme_dir ${CMAKE_SOURCE_DIR}/theme)
+
+set(client_UI_SRCS_IONOS
+    wizard/dataprotectionpage.ui
+    wizard/dataprotectionsettingspage.ui
+)
 
 set(client_UI_SRCS
     accountsettings.ui
@@ -48,7 +57,45 @@ set(client_UI_SRCS
     wizard/welcomepage.ui
 )
 
-qt_add_resources(client_UI_SRCS ../../resources.qrc ${CMAKE_SOURCE_DIR}/theme.qrc)
+list(APPEND client_UI_SRCS ${client_UI_SRCS_IONOS})
+qt_add_resources(client_UI_SRCS ../../resources.qrc ../../ionos.qrc ${CMAKE_SOURCE_DIR}/theme.qrc ${CMAKE_SOURCE_DIR}/ionos-theme.qrc)
+
+
+# The following files are separated to minimize merge conflicts.
+# (See <attachments> above for file contents. You may not need to search or read the file again.)
+set(client_SRCS_IONOS
+    clickablelabel.h
+    buttonstyle.h
+    ionostheme.h
+    whitelabeltheme.h
+    stratotheme.h
+    basetheme.h
+    wizard/dataprotectionpage.h
+    wizard/dataprotectionpage.cpp
+    wizard/dataprotectionsettingspage.h
+    wizard/dataprotectionsettingspage.cpp
+    ga4/datacollectionwrapper.cpp
+    ga4/datacollectionwrapper.h
+    ga4/ganalytics_worker.cpp
+    ga4/ganalytics_worker.h
+    ga4/ganalytics.cpp
+    ga4/ganalytics.h
+    sessnackbar.h
+    sessnackbar.cpp
+    sesstyle.h
+    sesstyle.cpp
+    linkbutton.h
+    linkbutton.cpp
+    buttonstylestrategy.h
+    sesFileIconProvider.h
+    sesFileIconProvider.cpp
+    pushbuttonstylehelper.h
+    pushbuttonstylehelper.cpp
+    moreoptionsbuttonstylehelper.h
+    moreoptionsbuttonstylehelper.cpp
+    SesComponents/syncdirvalidation.h
+    SesComponents/syncdirvalidation.cpp
+)
 
 set(client_SRCS
     accountmanager.h
@@ -251,7 +298,10 @@ set(client_SRCS
     wizard/welcomepage.cpp
     wizard/linklabel.h
     wizard/linklabel.cpp
-    )
+)
+
+# Append separated sources to main sources
+list(APPEND client_SRCS ${client_SRCS_IONOS})
 
 if (WITH_WEBENGINE)
   list(APPEND client_SRCS
@@ -560,7 +610,7 @@ target_link_libraries(nextcloudCore
   PUBLIC
   Nextcloud::sync
   Qt::Widgets
-  Qt::GuiPrivate
+  Qt::Gui
   Qt::Svg
   Qt::Network
   Qt::Xml
@@ -765,7 +815,7 @@ if(BUILD_OWNCLOUD_OSX_BUNDLE AND NOT BUILD_LIBRARIES_ONLY)
         "$<TARGET_FILE_DIR:nextcloud>/../.."
         -qmldir=${CMAKE_SOURCE_DIR}/src/gui
         -always-overwrite
-        -executable="$<TARGET_FILE_DIR:nextcloud>/${cmd_NAME}"
+        -executable=$<TARGET_FILE_DIR:nextcloud>/${cmd_NAME}
         ${NO_STRIP}
         COMMAND "${CMAKE_COMMAND}"
         -E rm -rf "${BIN_OUTPUT_DIRECTORY}/${OWNCLOUD_OSX_BUNDLE}/Contents/PlugIns/bearer"
