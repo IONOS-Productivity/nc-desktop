@@ -16,11 +16,13 @@
 #include "ui_generalsettings.h"
 
 #include "theme.h"
+#include "ionostheme.h"
 #include "configfile.h"
 #include "application.h"
 #include "owncloudsetupwizard.h"
 #include "accountmanager.h"
 #include "guiutility.h"
+#include "linkbutton.h"
 
 #if defined(BUILD_UPDATER)
 #include "updater/updater.h"
@@ -43,6 +45,7 @@
 #include <QDir>
 #include <QScopedValueRollback>
 #include <QMessageBox>
+#include <QDesktopServices>
 
 #include <KZip>
 
@@ -155,6 +158,7 @@ GeneralSettings::GeneralSettings(QWidget *parent)
         this, &GeneralSettings::slotToggleOptionalServerNotifications);
     _ui->serverNotificationsCheckBox->setToolTip(tr("Server notifications that require attention."));
 
+
     connect(_ui->callNotificationsCheckBox, &QAbstractButton::toggled,
         this, &GeneralSettings::slotToggleCallNotifications);
     _ui->callNotificationsCheckBox->setToolTip(tr("Show call notification dialogs."));
@@ -172,7 +176,7 @@ GeneralSettings::GeneralSettings(QWidget *parent)
         _ui->autostartCheckBox->setChecked(hasSystemAutoStart);
         _ui->autostartCheckBox->setDisabled(hasSystemAutoStart);
         _ui->autostartCheckBox->setToolTip(tr("You cannot disable autostart because system-wide autostart is enabled."));
-    } else {       
+    } else {
         connect(_ui->autostartCheckBox, &QAbstractButton::toggled, this, &GeneralSettings::slotToggleLaunchOnStartup);
         _ui->autostartCheckBox->setChecked(ConfigFile().launchOnSystemStartup());
     }
@@ -181,9 +185,6 @@ GeneralSettings::GeneralSettings(QWidget *parent)
     _ui->infoAndUpdatesLabel->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextBrowserInteraction);
     _ui->infoAndUpdatesLabel->setText(Theme::instance()->about());
     _ui->infoAndUpdatesLabel->setOpenExternalLinks(true);
-
-    // About legal notice
-    connect(_ui->legalNoticeButton, &QPushButton::clicked, this, &GeneralSettings::slotShowLegalNotice);
 
     connect(_ui->usageDocumentationButton, &QPushButton::clicked, this, []() {
         Utility::openBrowser(QUrl(Theme::instance()->helpUrl()));
@@ -202,6 +203,7 @@ GeneralSettings::GeneralSettings(QWidget *parent)
     connect(_ui->stopExistingFolderNowBigSyncCheckBox, &QAbstractButton::toggled, this, &GeneralSettings::saveMiscSettings);
     connect(_ui->newExternalStorage, &QAbstractButton::toggled, this, &GeneralSettings::saveMiscSettings);
     connect(_ui->moveFilesToTrashCheckBox, &QAbstractButton::toggled, this, &GeneralSettings::saveMiscSettings);
+    connect(_ui->sendData_checkbox, &QAbstractButton::toggled, this, &GeneralSettings::saveMiscSettings);
 
 #ifndef WITH_CRASHREPORTER
     _ui->crashreporterCheckBox->setVisible(false);
@@ -228,8 +230,8 @@ GeneralSettings::GeneralSettings(QWidget *parent)
     int m1 = 0;
     int m2 = 0;
     int m3 = 0;
-    _ui->horizontalLayout_3->getContentsMargins(&m0, &m1, &m2, &m3);
-    _ui->horizontalLayout_3->setContentsMargins(0, m1, m2, m3);
+    _ui->horizontalLayout_1->getContentsMargins(&m0, &m1, &m2, &m3);
+    _ui->horizontalLayout_1->setContentsMargins(0, m1, m2, m3);
 
     // OEM themes are not obliged to ship mono icons, so there
     // is no point in offering an option
@@ -240,13 +242,84 @@ GeneralSettings::GeneralSettings(QWidget *parent)
 
     // accountAdded means the wizard was finished and the wizard might change some options.
     connect(AccountManager::instance(), &AccountManager::accountAdded, this, &GeneralSettings::loadMiscSettings);
+    connect(_ui->moreInfoLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenMoreInformationLink);
+    connect(_ui->legalNoticeLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenLegalNoticeLink);
+    connect(_ui->openSourceLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenOpenSourceLink);
+    connect(_ui->privacyLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenPrivacyLink);
+    connect(_ui->sendData_checkbox, &QAbstractButton::toggled, this, &GeneralSettings::slotToggleSendData);
 
+    connectToTracking();
     customizeStyle();
 }
 
 GeneralSettings::~GeneralSettings()
 {
     delete _ui;
+}
+
+void GeneralSettings::connectToTracking()
+{
+    // DataCollectionWrapper dcw;
+
+    connect(_ui->autoCheckForUpdatesCheckBox, &QAbstractButton::clicked, this, [this](){
+        _dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
+        , DataCollectionWrapper::TrackingElement::AutoCheckforUpdate);
+    });
+
+    connect(_ui->autostartCheckBox, &QAbstractButton::clicked, this, [this](){
+        _dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
+        , DataCollectionWrapper::TrackingElement::AutoStart);
+    });
+
+    connect(_ui->serverNotificationsCheckBox, &QAbstractButton::clicked, this, [this](){
+        _dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
+        , DataCollectionWrapper::TrackingElement::ServerNotifications);
+     });
+
+    connect(_ui->moreInfoLinkButton, &OCC::LinkButton::clicked, this, [this](){
+        _dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
+        , DataCollectionWrapper::TrackingElement::MoreInformation);
+     });
+
+    connect(_ui->legalNoticeLinkButton, &OCC::LinkButton::clicked, this, [this](){
+        _dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
+        , DataCollectionWrapper::TrackingElement::LegalNotice);
+     });
+
+    connect(_ui->openSourceLinkButton, &OCC::LinkButton::clicked, this, [this](){
+        _dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
+        , DataCollectionWrapper::TrackingElement::OpenSourceComponents);
+     });
+
+    connect(_ui->privacyLinkButton, &OCC::LinkButton::clicked, this, [this](){
+        _dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings
+            , DataCollectionWrapper::TrackingElement::PrivacyPolicy);
+     });
+
+    connect(_ui->sendData_checkbox, &QAbstractButton::clicked, this, [this](){
+        _dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings,
+                    DataCollectionWrapper::TrackingElement::ToogleSendData);
+    });
+}
+
+void GeneralSettings::slotOpenMoreInformationLink()
+{
+    QDesktopServices::openUrl(QUrl("https://wl.hidrive.com/easy/0007/"));
+}
+
+void GeneralSettings::slotOpenLegalNoticeLink()
+{
+    QDesktopServices::openUrl(QUrl("https://wl.hidrive.com/easy/0004/"));
+}
+
+void GeneralSettings::slotOpenOpenSourceLink()
+{
+    QDesktopServices::openUrl(QUrl("https://wl.hidrive.com/easy/0006"));
+}
+
+void GeneralSettings::slotOpenPrivacyLink()
+{
+    QDesktopServices::openUrl(QUrl("https://wl.hidrive.com/easy/0005/"));
 }
 
 QSize GeneralSettings::sizeHint() const
@@ -271,6 +344,7 @@ void GeneralSettings::loadMiscSettings()
     _ui->newExternalStorage->setChecked(cfgFile.confirmExternalStorage());
     _ui->monoIconsCheckBox->setChecked(cfgFile.monoIcons());
     _ui->moveFilesToTrashCheckBox->setChecked(cfgFile.moveToTrash());
+    _ui->sendData_checkbox->setChecked(cfgFile.sendData());
 
     auto newFolderLimit = cfgFile.newBigFolderSizeLimit();
     _ui->newFolderLimitCheckBox->setChecked(newFolderLimit.first);
@@ -459,6 +533,7 @@ void GeneralSettings::saveMiscSettings()
     cfgFile.setConfirmExternalStorage(_ui->newExternalStorage->isChecked());
     cfgFile.setNotifyExistingFoldersOverLimit(existingFolderLimitEnabled);
     cfgFile.setStopSyncingExistingFoldersOverLimit(stopSyncingExistingFoldersOverLimit);
+    cfgFile.setSendData(_ui->sendData_checkbox->isChecked());
 
     _ui->existingFolderLimitCheckBox->setEnabled(newFolderLimitEnabled);
     _ui->stopExistingFolderNowBigSyncCheckBox->setEnabled(existingFolderLimitEnabled);
@@ -538,6 +613,12 @@ void GeneralSettings::slotShowLegalNotice()
     delete notice;
 }
 
+void GeneralSettings::slotToggleSendData()
+{
+    DataCollectionWrapper dcw;
+    dcw.setSendData(_ui->sendData_checkbox->isChecked());
+}
+
 void GeneralSettings::slotStyleChanged()
 {
     customizeStyle();
@@ -552,6 +633,51 @@ void GeneralSettings::customizeStyle()
         return aboutText;
     }();
     _ui->infoAndUpdatesLabel->setText(aboutText);
+
+    this->setStyleSheet(
+        QStringLiteral("QGroupBox { border: %1; font-size: %2; font-weight: %3; color: %4; }").arg(
+            Theme::instance()->systemPalette().base().color().name(),
+            IonosTheme::settingsTitleSize(),
+            IonosTheme::settingsTitleWeight500(),
+            IonosTheme::black()
+        )
+    );
+
+    this->setStyleSheet(
+        this->styleSheet() + QStringLiteral("QCheckBox { font-size: %1; font-weight: %2; margin-left: %3 px; color: %4; }").arg(
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight(),
+            IonosTheme::smallMargin(),
+            IonosTheme::black()
+        )
+    );
+
+    this->setStyleSheet(
+        this->styleSheet() + QStringLiteral("QLabel { font-size: %1; font-weight: %2; color: %3; }").arg(
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTitleWeight500(),
+            IonosTheme::black()
+        )
+    );
+
+    this->setStyleSheet(
+        this->styleSheet() + QStringLiteral("QFrame { font-size: %1; font-weight: %2; color: %3; }").arg(
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTitleWeight600(),
+            IonosTheme::black()
+        )
+    );
+
+#if defined(Q_OS_MAC)
+    _ui->generalBoxLayout->setMargin(16);
+    _ui->dataProtectionBoxLayout->setMargin(16);
+#endif
+
+    // SES-4 removed
+    _ui->monoIconsCheckBox->hide();
+    _ui->callNotificationsCheckBox->hide();
+    _ui->advanced_groupBox->hide();
+    _ui->updates_frame->hide();
 
 #if defined(BUILD_UPDATER)
     // updater info
