@@ -129,6 +129,11 @@ QString Theme::appName() const
     return APPLICATION_NAME;
 }
 
+QString Theme::appShortName() const
+{
+    return APPLICATION_SHORTNAME;
+}
+
 QUrl Theme::stateOnlineImageSource() const
 {
     return imagePathToUrl(themeImagePath("state-ok"));
