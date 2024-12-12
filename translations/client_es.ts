@@ -169,6 +169,80 @@
     </message>
 </context>
 <context>
+    <name>CrashReporter</name>
+    <message>
+        <location filename="../src/3rdparty/libcrashreporter-qt/src/libcrashreporter-gui/CrashReporter.ui" line="29"/>
+        <source>Tomahawk Crash Reporter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/3rdparty/libcrashreporter-qt/src/libcrashreporter-gui/CrashReporter.ui" line="104"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/3rdparty/libcrashreporter-qt/src/libcrashreporter-gui/CrashReporter.ui" line="213"/>
+        <source>Abort</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/3rdparty/libcrashreporter-qt/src/libcrashreporter-gui/CrashReporter.ui" line="257"/>
+        <source>Send this report</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/3rdparty/libcrashreporter-qt/src/libcrashreporter-gui/CrashReporter.ui" line="264"/>
+        <source>Don&apos;t send</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/3rdparty/libcrashreporter-qt/src/libcrashreporter-gui/CrashReporter.ui" line="284"/>
+        <source>You can disable sending crash reports in the configuration dialog.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/3rdparty/libcrashreporter-qt/src/libcrashreporter-gui/CrashReporter.cpp" line="109"/>
+        <location filename="../src/3rdparty/libcrashreporter-qt/src/libcrashreporter-gui/CrashReporter.cpp" line="116"/>
+        <location filename="../src/3rdparty/libcrashreporter-qt/src/libcrashreporter-gui/CrashReporter.cpp" line="152"/>
+        <source>We cannot gather useful debug information on your system.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/3rdparty/libcrashreporter-qt/src/libcrashreporter-gui/CrashReporter.cpp" line="110"/>
+        <location filename="../src/3rdparty/libcrashreporter-qt/src/libcrashreporter-gui/CrashReporter.cpp" line="117"/>
+        <location filename="../src/3rdparty/libcrashreporter-qt/src/libcrashreporter-gui/CrashReporter.cpp" line="153"/>
+        <location filename="../src/3rdparty/libcrashreporter-qt/src/libcrashreporter-gui/CrashReporter.cpp" line="280"/>
+        <location filename="../src/3rdparty/libcrashreporter-qt/src/libcrashreporter-gui/CrashReporter.cpp" line="301"/>
+        <source>Close</source>
+        <translation type="unfinished">Cerrar</translation>
+    </message>
+    <message>
+        <location filename="../src/3rdparty/libcrashreporter-qt/src/libcrashreporter-gui/CrashReporter.cpp" line="145"/>
+        <source>Ready to send debug information (&lt;a href=&quot;%1&quot;&gt;view backtrace&lt;/a&gt;).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/3rdparty/libcrashreporter-qt/src/libcrashreporter-gui/CrashReporter.cpp" line="161"/>
+        <source>Gathering debug information...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/3rdparty/libcrashreporter-qt/src/libcrashreporter-gui/CrashReporter.cpp" line="266"/>
+        <source>Uploaded %L1 of %L2 KB.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/3rdparty/libcrashreporter-qt/src/libcrashreporter-gui/CrashReporter.cpp" line="293"/>
+        <source>Sent! &lt;b&gt;Many thanks&lt;/b&gt;. Please refer to crash &lt;b&gt;%1&lt;/b&gt; in bug reports.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/3rdparty/libcrashreporter-qt/src/libcrashreporter-gui/CrashReporter.cpp" line="302"/>
+        <source>Failed to send crash info.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>EditFileLocallyLoadingDialog</name>
     <message>
         <location filename="../src/gui/tray/EditFileLocallyLoadingDialog.qml" line="95"/>
@@ -190,6 +264,14 @@
         <location filename="../src/gui/ErrorBox.qml" line="63"/>
         <source>Error</source>
         <translation>Error</translation>
+    </message>
+</context>
+<context>
+    <name>FakeHangingReply</name>
+    <message>
+        <location filename="../test/syncenginetestutils.cpp" line="1011"/>
+        <source>Operation canceled</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -358,6 +440,42 @@
     </message>
 </context>
 <context>
+    <name>FolderWizardSelectiveSync</name>
+    <message>
+        <location filename="../src/gui/folderwizardselectivesync.ui" line="37"/>
+        <source>Add Folder Sync</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gui/folderwizardselectivesync.ui" line="53"/>
+        <source>Step 3 of 3: Selektive Synchronisation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>FolderWizardSourcePage</name>
+    <message>
+        <location filename="../src/gui/folderwizardsourcepage.ui" line="37"/>
+        <source>Add Folder Sync</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gui/folderwizardsourcepage.ui" line="53"/>
+        <source>Step 1 of 3: Select local folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gui/folderwizardsourcepage.ui" line="88"/>
+        <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gui/folderwizardsourcepage.ui" line="126"/>
+        <source>&amp;Choose</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FolderWizardTargetPage</name>
     <message>
         <location filename="../src/gui/folderwizardtargetpage.ui" line="222"/>
@@ -393,6 +511,19 @@
         <location filename="../src/gui/folderwizardtargetpage.ui" line="167"/>
         <source>Folders</source>
         <translation>Carpetas</translation>
+    </message>
+</context>
+<context>
+    <name>KMessageWidget</name>
+    <message>
+        <location filename="../src/3rdparty/kmessagewidget/kmessagewidget.cpp" line="95"/>
+        <source>&amp;Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/3rdparty/kmessagewidget/kmessagewidget.cpp" line="96"/>
+        <source>Close message</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2523,12 +2654,12 @@ Alternatively, you can restore all deleted files by downloading them from the se
 <context>
     <name>OCC::FolderWizard</name>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="897"/>
+        <location filename="../src/gui/folderwizard.cpp" line="907"/>
         <source>Add Folder Sync Connection</source>
         <translation>Añadir conexión para el directorio de sincronización</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="900"/>
+        <location filename="../src/gui/folderwizard.cpp" line="910"/>
         <source>Add Sync Connection</source>
         <translation>Añadir conexión de sincronización</translation>
     </message>
@@ -2546,27 +2677,27 @@ Alternatively, you can restore all deleted files by downloading them from the se
         <translation>Introduzca la ubicación de la carpeta local.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="152"/>
+        <location filename="../src/gui/folderwizard.cpp" line="159"/>
         <source>Select the source folder</source>
         <translation>Seleccione la carpeta de origen</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="193"/>
+        <location filename="../src/gui/folderwizard.cpp" line="200"/>
         <source>Add Folder Sync</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="201"/>
+        <location filename="../src/gui/folderwizard.cpp" line="208"/>
         <source>Step 1 of 3: Select local folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="210"/>
+        <location filename="../src/gui/folderwizard.cpp" line="217"/>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="225"/>
+        <location filename="../src/gui/folderwizard.cpp" line="232"/>
         <source>Choose</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2574,77 +2705,82 @@ Alternatively, you can restore all deleted files by downloading them from the se
 <context>
     <name>OCC::FolderWizardRemotePath</name>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="291"/>
+        <location filename="../src/gui/folderwizard.cpp" line="298"/>
         <source>Create Remote Folder</source>
         <translation>Crear carpeta remota</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="292"/>
+        <location filename="../src/gui/folderwizard.cpp" line="299"/>
         <source>Enter the name of the new folder to be created below &quot;%1&quot;:</source>
         <translation>Introduce el nombre de la nueva carpeta que se creará debajo de &quot;%1&quot;:</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="361"/>
+        <location filename="../src/gui/folderwizard.cpp" line="368"/>
         <source>Folder was successfully created on %1.</source>
         <translation>La carpeta ha sido creada con éxito en %1.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="371"/>
+        <location filename="../src/gui/folderwizard.cpp" line="378"/>
         <source>Authentication failed accessing %1</source>
         <translation>Fallo de autenticación al acceder a %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="373"/>
+        <location filename="../src/gui/folderwizard.cpp" line="380"/>
         <source>Failed to create the folder on %1. Please check manually.</source>
         <translation>Fallo al crear la carpeta %1. Por favor, revíselo manualmente.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="391"/>
+        <location filename="../src/gui/folderwizard.cpp" line="398"/>
         <source>Failed to list a folder. Error: %1</source>
         <translation>Fallo al listar una carpeta. Error: %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="472"/>
+        <location filename="../src/gui/folderwizard.cpp" line="479"/>
         <source>Choose this to sync the entire account</source>
         <translation>Elija esto para sincronizar la cuenta entera</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="613"/>
+        <location filename="../src/gui/folderwizard.cpp" line="620"/>
         <source>This folder is already being synced.</source>
         <translation>Esta carpeta ya se ha sincronizado.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="615"/>
+        <location filename="../src/gui/folderwizard.cpp" line="622"/>
         <source>You are already syncing &lt;i&gt;%1&lt;/i&gt;, which is a parent folder of &lt;i&gt;%2&lt;/i&gt;.</source>
         <translation>Ya ha sincronizado &lt;i&gt;%1&lt;/i&gt;, el cual es la carpeta de &lt;i&gt;%2&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="617"/>
+        <location filename="../src/gui/folderwizard.cpp" line="624"/>
         <source>You are already syncing &lt;i&gt;%1&lt;/i&gt;, which is a subfolder of &lt;i&gt;%2&lt;/i&gt;.</source>
         <translation>Ya estás sincronizando &lt;i&gt;%1&lt;/i&gt;, que es una subcarpeta de &lt;i&gt;%2&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="693"/>
+        <location filename="../src/gui/folderwizard.cpp" line="700"/>
         <source>Add Folder Sync</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="701"/>
+        <location filename="../src/gui/folderwizard.cpp" line="708"/>
         <source>Step 2 of 3: Directory in your %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="710"/>
+        <location filename="../src/gui/folderwizard.cpp" line="717"/>
+        <source>Please now select or create a target folder in your %1 where the content should be uploaded and synchronized.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gui/folderwizard.cpp" line="720"/>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="734"/>
+        <location filename="../src/gui/folderwizard.cpp" line="744"/>
         <source>Refresh</source>
         <translation type="unfinished">Actualizar</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="736"/>
+        <location filename="../src/gui/folderwizard.cpp" line="746"/>
         <source>Create folder</source>
         <translation type="unfinished">Crear carpeta </translation>
     </message>
@@ -2652,36 +2788,44 @@ Alternatively, you can restore all deleted files by downloading them from the se
 <context>
     <name>OCC::FolderWizardSelectiveSync</name>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="753"/>
-        <location filename="../src/gui/folderwizard.cpp" line="821"/>
+        <location filename="../src/gui/folderwizard.cpp" line="763"/>
+        <location filename="../src/gui/folderwizard.cpp" line="831"/>
         <source>Use virtual files instead of downloading content immediately %1</source>
         <translation>Usa archivos virtuales en vez de descargar el contenido inmediatamente %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="753"/>
-        <location filename="../src/gui/folderwizard.cpp" line="821"/>
+        <location filename="../src/gui/folderwizard.cpp" line="763"/>
+        <location filename="../src/gui/folderwizard.cpp" line="831"/>
         <source>(experimental)</source>
         <translation>(experimental)</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="782"/>
+        <location filename="../src/gui/folderwizard.cpp" line="792"/>
         <source>Add Folder Sync</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="790"/>
+        <location filename="../src/gui/folderwizard.cpp" line="800"/>
         <source>Step 3 of 3: Selektive Synchronisation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="817"/>
+        <location filename="../src/gui/folderwizard.cpp" line="827"/>
         <source>Virtual files are not supported for Windows partition roots as local folder. Please choose a valid subfolder under drive letter.</source>
         <translation>Los archivos virtuales no son compatibles con la carpeta raíz de la partición de Windows como carpeta local. Por favor, elija una subcarpeta válida bajo la letra de la unidad.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="840"/>
+        <location filename="../src/gui/folderwizard.cpp" line="850"/>
         <source>Virtual files are not available for the selected folder</source>
         <translation>Los archivos virtuales no están disponibles para la carpeta seleccionada</translation>
+    </message>
+</context>
+<context>
+    <name>OCC::FormatWarningsWizardPage</name>
+    <message>
+        <location filename="../src/gui/folderwizard.cpp" line="68"/>
+        <source>%1</source>
+        <translation type="unfinished">%1</translation>
     </message>
 </context>
 <context>
@@ -5062,6 +5206,14 @@ El servidor respondió con el error: %2</translation>
     </message>
 </context>
 <context>
+    <name>OCC::SyncJournalDb</name>
+    <message>
+        <location filename="../src/common/syncjournaldb.cpp" line="968"/>
+        <source>Failed to connect database.</source>
+        <translation type="unfinished">Fallo en la conexión a la base de datos.</translation>
+    </message>
+</context>
+<context>
     <name>OCC::SyncStatusSummary</name>
     <message>
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="125"/>
@@ -5136,54 +5288,54 @@ El servidor respondió con el error: %2</translation>
         <translation>Descargar</translation>
     </message>
     <message>
-        <location filename="../src/gui/systray.cpp" line="185"/>
+        <location filename="../src/gui/systray.cpp" line="180"/>
         <source>Add account</source>
         <translation>Agregar cuenta</translation>
     </message>
     <message>
-        <location filename="../src/gui/systray.cpp" line="187"/>
+        <location filename="../src/gui/systray.cpp" line="182"/>
         <source>Open main dialog</source>
         <translation>Abrir diálogo principal</translation>
     </message>
     <message>
-        <location filename="../src/gui/systray.cpp" line="190"/>
-        <location filename="../src/gui/systray.cpp" line="200"/>
+        <location filename="../src/gui/systray.cpp" line="185"/>
+        <location filename="../src/gui/systray.cpp" line="195"/>
         <source>Pause sync</source>
         <translation>Pausar sincronización</translation>
     </message>
     <message>
-        <location filename="../src/gui/systray.cpp" line="191"/>
-        <location filename="../src/gui/systray.cpp" line="206"/>
+        <location filename="../src/gui/systray.cpp" line="186"/>
+        <location filename="../src/gui/systray.cpp" line="201"/>
         <source>Resume sync</source>
         <translation>Continuar sincronización</translation>
     </message>
     <message>
-        <location filename="../src/gui/systray.cpp" line="192"/>
+        <location filename="../src/gui/systray.cpp" line="187"/>
         <source>Settings</source>
         <translation>Ajustes</translation>
     </message>
     <message>
-        <location filename="../src/gui/systray.cpp" line="193"/>
+        <location filename="../src/gui/systray.cpp" line="188"/>
         <source>Help</source>
         <translation>Ayuda</translation>
     </message>
     <message>
-        <location filename="../src/gui/systray.cpp" line="194"/>
+        <location filename="../src/gui/systray.cpp" line="189"/>
         <source>Exit %1</source>
         <translation>Salir %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/systray.cpp" line="200"/>
+        <location filename="../src/gui/systray.cpp" line="195"/>
         <source>Pause sync for all</source>
         <translation>Pausar sincronización para todo</translation>
     </message>
     <message>
-        <location filename="../src/gui/systray.cpp" line="206"/>
+        <location filename="../src/gui/systray.cpp" line="201"/>
         <source>Resume sync for all</source>
         <translation>Continuar sincronización a todos</translation>
     </message>
     <message>
-        <location filename="../src/gui/systray.cpp" line="585"/>
+        <location filename="../src/gui/systray.cpp" line="580"/>
         <source>%1: %2</source>
         <translation>%1: %2</translation>
     </message>
@@ -5191,29 +5343,29 @@ El servidor respondió con el error: %2</translation>
 <context>
     <name>OCC::Theme</name>
     <message>
-        <location filename="../src/libsync/theme.cpp" line="574"/>
+        <location filename="../src/libsync/theme.cpp" line="579"/>
         <source>&lt;p&gt;%1 Desktop Client&lt;/p&gt;&lt;p&gt;Version %1. For more information please click &lt;a href=&apos;%2&apos;&gt;here&lt;/a&gt;.&lt;/p&gt;</source>
         <extracomment>Example text: &quot;&lt;p&gt;Nextcloud Desktop Client&lt;/p&gt;&quot; (%1 is the application name)</extracomment>
         <translation>&lt;p&gt;%1 Cliente de Escritorio&lt;/p&gt;&lt;p&gt;Versión %1. Para más información, por favor pulsa &lt;a href=&apos;%2&apos;&gt;aquí&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/libsync/theme.cpp" line="578"/>
+        <location filename="../src/libsync/theme.cpp" line="583"/>
         <source>&lt;p&gt;&lt;small&gt;Using virtual files plugin: %1&lt;/small&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;small&gt;Usando el plugin de archivos virtuales: %1&lt;/small&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/libsync/theme.cpp" line="591"/>
+        <location filename="../src/libsync/theme.cpp" line="596"/>
         <source>&lt;p&gt;%1 desktop client %2&lt;/p&gt;</source>
         <extracomment>Example text: &quot;&lt;p&gt;Nextcloud Desktop Client&lt;/p&gt;&quot; (%1 is the application name)</extracomment>
         <translation>&lt;p&gt;%1 cliente de escritorio %2&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/libsync/theme.cpp" line="599"/>
+        <location filename="../src/libsync/theme.cpp" line="604"/>
         <source>&lt;p&gt;Version %1. For more information please click &lt;a href=&apos;%2&apos;&gt;here&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Versión %1. Para obtener más información, haga clic &lt;a href=&apos;%2&apos;&gt; aquí &lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/libsync/theme.cpp" line="603"/>
+        <location filename="../src/libsync/theme.cpp" line="608"/>
         <source>&lt;p&gt;This release was supplied by %1.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Esta versión ha sido suministrada por %1.&lt;/p&gt;</translation>
     </message>
@@ -5435,6 +5587,24 @@ El servidor respondió con el error: %2</translation>
     </message>
 </context>
 <context>
+    <name>OCC::ValidateChecksumHeader</name>
+    <message>
+        <location filename="../src/common/checksums.cpp" line="262"/>
+        <source>The checksum header is malformed.</source>
+        <translation type="unfinished">El encabezado de checksum está malformado.</translation>
+    </message>
+    <message>
+        <location filename="../src/common/checksums.cpp" line="296"/>
+        <source>The checksum header contained an unknown checksum type &quot;%1&quot;</source>
+        <translation type="unfinished">El encabezado del checksum contenía un tipo de comprobación desconocido: &quot;%1&quot;</translation>
+    </message>
+    <message>
+        <location filename="../src/common/checksums.cpp" line="301"/>
+        <source>The downloaded file does not match the checksum, it will be resumed. &quot;%1&quot; != &quot;%2&quot;</source>
+        <translation type="unfinished">El archivo descargado no coincide con la suma de comprobación (checksum), se reanudará. &quot;%1&quot; != &quot;%2&quot;</translation>
+    </message>
+</context>
+<context>
     <name>OCC::Vfs</name>
     <message>
         <location filename="../src/common/vfs.cpp" line="75"/>
@@ -5509,6 +5679,14 @@ El servidor respondió con el error: %2</translation>
         <location filename="../src/gui/wizard/webview.cpp" line="232"/>
         <source>The host &quot;%1&quot; provided an invalid certificate. Continue?</source>
         <translation>El host &quot;%1&quot; ha entregado un certificado no válido. ¿Continuar?</translation>
+    </message>
+</context>
+<context>
+    <name>OCC::WebFlowCredentials</name>
+    <message>
+        <location filename="../src/gui/creds/webflowcredentials.cpp" line="166"/>
+        <source>&lt;b&gt;You have been logged out of your account %1 at %2. Please login again.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5661,6 +5839,24 @@ El servidor respondió con el error: %2</translation>
         <location filename="../src/gui/owncloudgui.cpp" line="512"/>
         <source>%1 (%2, %3)</source>
         <translation>%1 (%2, %3)</translation>
+    </message>
+</context>
+<context>
+    <name>OCC::sesSnackBar</name>
+    <message>
+        <location filename="../src/gui/sessnackbar.cpp" line="69"/>
+        <source>Error</source>
+        <translation type="unfinished">Error</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/sessnackbar.cpp" line="76"/>
+        <source>Warning</source>
+        <translation type="unfinished">Aviso</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/sessnackbar.cpp" line="83"/>
+        <source>Success</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5881,6 +6077,11 @@ El servidor respondió con el error: %2</translation>
         <source>The directory %1 cannot be part of your sync directory. Please choose another folder.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../test/testactivitylistmodel.cpp" line="329"/>
+        <source>Reply</source>
+        <translation type="unfinished">Responder</translation>
+    </message>
 </context>
 <context>
     <name>ResolveConflictsDialog</name>
@@ -5922,6 +6123,32 @@ El servidor respondió con el error: %2</translation>
         <location filename="../src/gui/ResolveConflictsDialog.qml" line="210"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
+    </message>
+</context>
+<context>
+    <name>SesErrorBox</name>
+    <message>
+        <location filename="../src/gui/SesComponents/SesErrorBox.qml" line="58"/>
+        <source>Error</source>
+        <translation type="unfinished">Error</translation>
+    </message>
+</context>
+<context>
+    <name>SesTrayHeader</name>
+    <message>
+        <location filename="../src/gui/SesComponents/SesTrayHeader.qml" line="43"/>
+        <source>Website</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gui/SesComponents/SesTrayHeader.qml" line="48"/>
+        <source>Open Nextcloud in browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gui/SesComponents/SesTrayHeader.qml" line="63"/>
+        <source>Open local or group folders</source>
+        <translation type="unfinished">Abrir carpetas locales de de grupo</translation>
     </message>
 </context>
 <context>
@@ -6099,6 +6326,107 @@ El servidor respondió con el error: %2</translation>
     </message>
 </context>
 <context>
+    <name>TestSetUserStatusDialog</name>
+    <message>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="221"/>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="574"/>
+        <source>1 day</source>
+        <translation type="unfinished">1 día</translation>
+    </message>
+    <message>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="245"/>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="258"/>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="399"/>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="472"/>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="476"/>
+        <source>Don&apos;t clear</source>
+        <translation type="unfinished">No borrar</translation>
+    </message>
+    <message>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="386"/>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="425"/>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="478"/>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="544"/>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="643"/>
+        <source>1 hour</source>
+        <translation type="unfinished">1 hora</translation>
+    </message>
+    <message>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="412"/>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="477"/>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="529"/>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="631"/>
+        <source>30 minutes</source>
+        <translation type="unfinished">30 minutos</translation>
+    </message>
+    <message>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="438"/>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="479"/>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="559"/>
+        <source>4 hours</source>
+        <translation type="unfinished">4 horas</translation>
+    </message>
+    <message>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="451"/>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="480"/>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="604"/>
+        <source>Today</source>
+        <translation type="unfinished">Hoy</translation>
+    </message>
+    <message>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="464"/>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="481"/>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="616"/>
+        <source>This week</source>
+        <translation type="unfinished">Esta semana</translation>
+    </message>
+    <message>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="499"/>
+        <source>Less than a minute</source>
+        <translation type="unfinished">Hace menos de un minuto</translation>
+    </message>
+    <message>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="514"/>
+        <source>1 minute</source>
+        <translation type="unfinished">1 minuto</translation>
+    </message>
+    <message>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="589"/>
+        <source>7 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="664"/>
+        <source>Could not fetch predefined statuses. Make sure you are connected to the server.</source>
+        <translation type="unfinished">No se han podido recuperar los estados predefinidos. Asegúrese de que está conectado al servidor.</translation>
+    </message>
+    <message>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="674"/>
+        <source>Could not fetch status. Make sure you are connected to the server.</source>
+        <translation type="unfinished">No se ha podido obtener el estado. Asegúrese de que está conectado al servidor.</translation>
+    </message>
+    <message>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="684"/>
+        <source>Status feature is not supported. You will not be able to set your status.</source>
+        <translation type="unfinished">La función de estado no es compatible. No podrás establecer tu estado.</translation>
+    </message>
+    <message>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="695"/>
+        <source>Could not set status. Make sure you are connected to the server.</source>
+        <translation type="unfinished">No se ha podido obtener el estado. Asegúrese de que está conectado al servidor.</translation>
+    </message>
+    <message>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="705"/>
+        <source>Emojis are not supported. Some status functionality may not work.</source>
+        <translation type="unfinished">La función de emojis no es compatible. Es posible que algunas funciones de estado del usuario no funcionen.</translation>
+    </message>
+    <message>
+        <location filename="../test/testsetuserstatusdialog.cpp" line="716"/>
+        <source>Could not clear status message. Make sure you are connected to the server.</source>
+        <translation type="unfinished">No se ha podido borrar el mensaje de estado. Asegúrese de que está conectado al servidor.</translation>
+    </message>
+</context>
+<context>
     <name>TrayFoldersMenuButton</name>
     <message>
         <location filename="../src/gui/tray/TrayFoldersMenuButton.qml" line="33"/>
@@ -6144,6 +6472,92 @@ El servidor respondió con el error: %2</translation>
         <location filename="../src/gui/tray/TrayFoldersMenuButton.qml" line="223"/>
         <source>User group and local folders menu</source>
         <translation>Menú de usuario de carpetas de grupo o locales</translation>
+    </message>
+</context>
+<context>
+    <name>TrayWindowAccountMenu</name>
+    <message>
+        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="23"/>
+        <source>Current account</source>
+        <translation type="unfinished">Cuenta actual</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="39"/>
+        <source>Resume sync for all</source>
+        <translation type="unfinished">Continuar sincronización a todos</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="39"/>
+        <source>Pause sync for all</source>
+        <translation type="unfinished">Pausar sincronización para todo</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="121"/>
+        <source>Add account</source>
+        <translation type="unfinished">Agregar cuenta</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="141"/>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="148"/>
+        <source>Exit</source>
+        <translation type="unfinished">Salir</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="169"/>
+        <source>Current account avatar</source>
+        <translation type="unfinished">Avatar del usuario actual</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="218"/>
+        <source>Current account status is online</source>
+        <translation type="unfinished">El estado actual del usuario es en línea</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="218"/>
+        <source>Current account status is do not disturb</source>
+        <translation type="unfinished">El estado actual del usuario es no molestar</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="281"/>
+        <source>Account switcher and settings menu</source>
+        <translation type="unfinished">Cambiador de cuentas y menú de configuración</translation>
+    </message>
+</context>
+<context>
+    <name>TrayWindowHeaderBar</name>
+    <message>
+        <location filename="../src/gui/tray/TrayWindowHeaderBar.qml" line="42"/>
+        <source>Website</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/TrayWindowHeaderBar.qml" line="45"/>
+        <source>Open Nextcloud in browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/TrayWindowHeaderBar.qml" line="65"/>
+        <source>Open local or group folders</source>
+        <translation type="unfinished">Abrir carpetas locales de de grupo</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/TrayWindowHeaderBar.qml" line="82"/>
+        <source>Open Nextcloud Talk in browser</source>
+        <translation type="unfinished">Abrir Nextcloud Talk en el navegador</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/TrayWindowHeaderBar.qml" line="109"/>
+        <source>More apps</source>
+        <translation type="unfinished">Más aplicaciones</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/TrayWindowHeaderBar.qml" line="163"/>
+        <source>Open %1 in browser</source>
+        <translation type="unfinished">Abrir %1 en el navegador</translation>
     </message>
 </context>
 <context>
@@ -6412,7 +6826,7 @@ El servidor respondió con el error: %2</translation>
 <context>
     <name>nextcloudTheme::aboutInfo()</name>
     <message>
-        <location filename="../src/libsync/theme.cpp" line="554"/>
+        <location filename="../src/libsync/theme.cpp" line="559"/>
         <source>&lt;p&gt;&lt;small&gt;Built from Git revision &lt;a href=&quot;%1&quot;&gt;%2&lt;/a&gt; on %3, %4 using Qt %5, %6&lt;/small&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;small&gt;Creado desde la revisión Git &lt;a href=&quot;%1&quot;&gt;%2&lt;/a&gt; en %3, %4 con Qt %5, %6&lt;/small&gt;&lt;/p&gt;</translation>
     </message>
@@ -6635,214 +7049,6 @@ El servidor respondió con el error: %2</translation>
         <location filename="../src/gui/guiutility.cpp" line="104"/>
         <source>Free up local space</source>
         <translation>Liberar espacio local</translation>
-    </message>
-</context>
-<context>
-    <name>FolderWizardSelectiveSync</name>
-    <message>
-        <location filename="../src/gui/folderwizardselectivesync.ui" line="37"/>
-        <source>Add Folder Sync</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/gui/folderwizardselectivesync.ui" line="53"/>
-        <source>Step 3 of 3: Selektive Synchronisation</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>FolderWizardSourcePage</name>
-    <message>
-        <location filename="../src/gui/folderwizardsourcepage.ui" line="37"/>
-        <source>Add Folder Sync</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/gui/folderwizardsourcepage.ui" line="53"/>
-        <source>Step 1 of 3: Select local folder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/gui/folderwizardsourcepage.ui" line="88"/>
-        <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/gui/folderwizardsourcepage.ui" line="126"/>
-        <source>&amp;Choose</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SesErrorBox</name>
-    <message>
-        <location filename="../src/gui/SesComponents/SesErrorBox.qml" line="58"/>
-        <source>Error</source>
-        <translation type="unfinished">Error</translation>
-    </message>
-</context>
-<context>
-    <name>SesTrayHeader</name>
-    <message>
-        <location filename="../src/gui/SesComponents/SesTrayHeader.qml" line="43"/>
-        <source>Website</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/gui/SesComponents/SesTrayHeader.qml" line="48"/>
-        <source>Open Nextcloud in browser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/gui/SesComponents/SesTrayHeader.qml" line="63"/>
-        <source>Open local or group folders</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>TrayWindowAccountMenu</name>
-    <message>
-        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="23"/>
-        <source>Current account</source>
-        <translation type="unfinished">Cuenta actual</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="39"/>
-        <source>Resume sync for all</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="39"/>
-        <source>Pause sync for all</source>
-        <translation type="unfinished">Pausar sincronización para todo</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="121"/>
-        <source>Add account</source>
-        <translation type="unfinished">Agregar cuenta</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="141"/>
-        <source>Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="148"/>
-        <source>Exit</source>
-        <translation type="unfinished">Salir</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="169"/>
-        <source>Current account avatar</source>
-        <translation type="unfinished">Avatar del usuario actual</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="218"/>
-        <source>Current account status is online</source>
-        <translation type="unfinished">El estado actual del usuario es en línea</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="218"/>
-        <source>Current account status is do not disturb</source>
-        <translation type="unfinished">El estado actual del usuario es no molestar</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="281"/>
-        <source>Account switcher and settings menu</source>
-        <translation type="unfinished">Cambiador de cuentas y menú de configuración</translation>
-    </message>
-</context>
-<context>
-    <name>TrayWindowHeaderBar</name>
-    <message>
-        <location filename="../src/gui/tray/TrayWindowHeaderBar.qml" line="42"/>
-        <source>Website</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/gui/tray/TrayWindowHeaderBar.qml" line="45"/>
-        <source>Open Nextcloud in browser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/gui/tray/TrayWindowHeaderBar.qml" line="65"/>
-        <source>Open local or group folders</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/gui/tray/TrayWindowHeaderBar.qml" line="82"/>
-        <source>Open Nextcloud Talk in browser</source>
-        <translation type="unfinished">Abrir Nextcloud Talk en el navegador</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/tray/TrayWindowHeaderBar.qml" line="109"/>
-        <source>More apps</source>
-        <translation type="unfinished">Más aplicaciones</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/tray/TrayWindowHeaderBar.qml" line="163"/>
-        <source>Open %1 in browser</source>
-        <translation type="unfinished">Abrir %1 en el navegador</translation>
-    </message>
-</context>
-<context>
-    <name>OCC::ValidateChecksumHeader</name>
-    <message>
-        <location filename="../src/common/checksums.cpp" line="262"/>
-        <source>The checksum header is malformed.</source>
-        <translation type="unfinished">El encabezado de checksum está malformado.</translation>
-    </message>
-    <message>
-        <location filename="../src/common/checksums.cpp" line="296"/>
-        <source>The checksum header contained an unknown checksum type &quot;%1&quot;</source>
-        <translation type="unfinished">El encabezado del checksum contenía un tipo de comprobación desconocido: &quot;%1&quot;</translation>
-    </message>
-    <message>
-        <location filename="../src/common/checksums.cpp" line="301"/>
-        <source>The downloaded file does not match the checksum, it will be resumed. &quot;%1&quot; != &quot;%2&quot;</source>
-        <translation type="unfinished">El archivo descargado no coincide con la suma de comprobación (checksum), se reanudará. &quot;%1&quot; != &quot;%2&quot;</translation>
-    </message>
-</context>
-<context>
-    <name>OCC::SyncJournalDb</name>
-    <message>
-        <location filename="../src/common/syncjournaldb.cpp" line="968"/>
-        <source>Failed to connect database.</source>
-        <translation type="unfinished">Fallo en la conexión a la base de datos.</translation>
-    </message>
-</context>
-<context>
-    <name>OCC::WebFlowCredentials</name>
-    <message>
-        <location filename="../src/gui/creds/webflowcredentials.cpp" line="166"/>
-        <source>&lt;b&gt;You have been logged out of your account %1 at %2. Please login again.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>OCC::FormatWarningsWizardPage</name>
-    <message>
-        <location filename="../src/gui/folderwizard.cpp" line="68"/>
-        <source>%1</source>
-        <translation type="unfinished">%1</translation>
-    </message>
-</context>
-<context>
-    <name>OCC::sesSnackBar</name>
-    <message>
-        <location filename="../src/gui/sessnackbar.cpp" line="69"/>
-        <source>Error</source>
-        <translation type="unfinished">Error</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/sessnackbar.cpp" line="76"/>
-        <source>Warning</source>
-        <translation type="unfinished">Aviso</translation>
-    </message>
-    <message>
-        <location filename="../src/gui/sessnackbar.cpp" line="83"/>
-        <source>Success</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
