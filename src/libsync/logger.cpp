@@ -219,7 +219,7 @@ void Logger::setLogFlush(bool flush)
 
 void Logger::setLogDebug(bool debug)
 {
-    const QSet<QString> rules = {debug ? QStringLiteral("nextcloud.*.debug=true") : QString()};
+    const QSet<QString> rules = {debug ? QStringLiteral("hidrivenext.*.debug=true") : QString()};
     if (debug) {
         addLogRule(rules);
     } else {
@@ -291,12 +291,12 @@ void Logger::enterNextLogFileNoLock()
         // Tentative new log name, will be adjusted if one like this already exists
         const auto now = QDateTime::currentDateTime();
         const auto cLocale = QLocale::c(); // Some system locales generate strings that are incompatible with filesystem
-        QString newLogName = cLocale.toString(now, QStringLiteral("yyyyMMdd_HHmm")) + QStringLiteral("_nextcloud.log");
+        QString newLogName = cLocale.toString(now, QStringLiteral("yyyyMMdd_HHmm")) + QStringLiteral("hidrivenext.log");
 
         // Expire old log files and deal with conflicts
         QStringList files = dir.entryList(QStringList("*owncloud.log.*"), QDir::Files, QDir::Name) +
-            dir.entryList(QStringList("*nextcloud.log.*"), QDir::Files, QDir::Name);
-        static const QRegularExpression rx(QRegularExpression::anchoredPattern(R"(.*(next|own)cloud\.log\.(\d+).*)"));
+            dir.entryList(QStringList("*hidrivenext.log.*"), QDir::Files, QDir::Name);
+        static const QRegularExpression rx(QRegularExpression::anchoredPattern(R"(.*(hidrivenext|owncloud)\.log\.(\d+).*)"));
         int maxNumber = -1;
         foreach (const QString &s, files) {
             if (_logExpire > 0) {
