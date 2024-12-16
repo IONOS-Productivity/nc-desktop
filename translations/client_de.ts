@@ -2559,7 +2559,7 @@ Falls dies ein Missgeschick war und Sie sich zum Behalten der Dateien entscheide
     </message>
     <message>
         <location filename="../src/gui/folderstatusdelegate.cpp" line="60"/>
-        <source>Add live backup</source>
+        <source>Add Folder Sync</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -2461,7 +2461,7 @@ Alternatively, you can restore all deleted files by downloading them from the se
     <name>OCC::FolderStatusDelegate</name>
     <message>
         <location filename="../src/gui/folderstatusdelegate.cpp" line="60"/>
-        <source>Add live backup</source>
+        <source>Add Folder Sync</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -2542,7 +2542,7 @@ Als dit een ongelukje was en je de bestanden wilt behouden, worden ze opnieuw ge
     </message>
     <message>
         <location filename="../src/gui/folderstatusdelegate.cpp" line="60"/>
-        <source>Add live backup</source>
+        <source>Add Folder Sync</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

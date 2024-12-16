@@ -2591,8 +2591,8 @@ S&apos;il s&apos;agissait d&apos;un accident et que vous choisissiez de conserve
     </message>
     <message>
         <location filename="../src/gui/folderstatusdelegate.cpp" line="60"/>
-        <source>Add live backup</source>
-        <translation>Ajouter une sauvegarde en temps réel</translation>
+        <source>Add Folder Sync</source>
+        <translation>Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
         <location filename="../src/gui/folderstatusdelegate.cpp" line="65"/>
