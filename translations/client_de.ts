@@ -5638,6 +5638,12 @@ Server antwortete mit Fehler: %2</translation>
         <translation type="vanished">&lt;p&gt;%1 Desktop-Client&lt;/p&gt;</translation>
     </message>
     <message>
+        <location filename="../src/libsync/theme.cpp" line="431"/>
+        <source>easy/0118</source>
+        <comment>Redirect URL Parameter</comment>
+        <translation>easy/0108</translation>
+    </message>
+    <message>
         <location filename="../src/libsync/theme.cpp" line="583"/>
         <source>&lt;p&gt;&lt;small&gt;Using virtual files plugin: %1&lt;/small&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;small&gt;Plugin für virtuelle Dateien: %1&lt;/small&gt;&lt;/p&gt;</translation>

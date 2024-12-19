@@ -5343,6 +5343,12 @@ El servidor respondió con el error: %2</translation>
 <context>
     <name>OCC::Theme</name>
     <message>
+        <location filename="../src/libsync/theme.cpp" line="431"/>
+        <source>easy/0118</source>
+        <comment>Redirect URL Parameter</comment>
+        <translation>easy/0138</translation>
+    </message>
+    <message>
         <location filename="../src/libsync/theme.cpp" line="579"/>
         <source>&lt;p&gt;%1 Desktop Client&lt;/p&gt;&lt;p&gt;Version %1. For more information please click &lt;a href=&apos;%2&apos;&gt;here&lt;/a&gt;.&lt;/p&gt;</source>
         <extracomment>Example text: &quot;&lt;p&gt;Nextcloud Desktop Client&lt;/p&gt;&quot; (%1 is the application name)</extracomment>

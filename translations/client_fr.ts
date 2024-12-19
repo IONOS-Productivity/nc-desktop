@@ -5685,6 +5685,12 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <translation type="vanished">&lt;p&gt;Client de bureau %1&lt;/p&gt;</translation>
     </message>
     <message>
+        <location filename="../src/libsync/theme.cpp" line="431"/>
+        <source>easy/0118</source>
+        <comment>Redirect URL Parameter</comment>
+        <translation>easy/0128</translation>
+    </message>
+    <message>
         <location filename="../src/libsync/theme.cpp" line="583"/>
         <source>&lt;p&gt;&lt;small&gt;Using virtual files plugin: %1&lt;/small&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;small&gt;Utilise l&apos;extension de fichiers virtuels : %1&lt;/small&gt;&lt;/p&gt;</translation>

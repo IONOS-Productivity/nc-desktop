@@ -428,7 +428,7 @@ QString Theme::helpUrl() const
 #ifdef APPLICATION_HELP_URL
     return QString::fromLatin1(APPLICATION_HELP_URL);
 #else
-    return QString::fromLatin1("https://docs.nextcloud.com/desktop/%1.%2/").arg(MIRALL_VERSION_MAJOR).arg(MIRALL_VERSION_MINOR);
+    return QString::fromLatin1("https://www.ionos.fr/assistance/hidrive-next/%1").arg(tr("easy/0118", "Redirect URL Parameter"));
 #endif
 }
 
