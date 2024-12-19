@@ -470,7 +470,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizardsourcepage.ui" line="126"/>
+        <location filename="../src/gui/folderwizardsourcepage.ui" line="130"/>
         <source>&amp;Choose</source>
         <translation type="unfinished"></translation>
     </message>
@@ -478,12 +478,12 @@
 <context>
     <name>FolderWizardTargetPage</name>
     <message>
-        <location filename="../src/gui/folderwizardtargetpage.ui" line="222"/>
+        <location filename="../src/gui/folderwizardtargetpage.ui" line="225"/>
         <source>Create folder</source>
         <translation>Crear carpeta </translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizardtargetpage.ui" line="209"/>
+        <location filename="../src/gui/folderwizardtargetpage.ui" line="212"/>
         <source>Refresh</source>
         <translation>Actualizar</translation>
     </message>
@@ -508,7 +508,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizardtargetpage.ui" line="167"/>
+        <location filename="../src/gui/folderwizardtargetpage.ui" line="170"/>
         <source>Folders</source>
         <translation>Carpetas</translation>
     </message>
@@ -689,9 +689,9 @@ Should the account be imported?</source>
     </message>
     <message>
         <location filename="../src/gui/accountsettings.cpp" line="125"/>
-        <source>This will encrypt your folder and all files within it. These files will no longer be accessible without your encryption mnemonic key. 
+        <source>This will encrypt your folder and all files within it. These files will no longer be accessible without your encryption mnemonic key.
 &lt;b&gt;This process is not reversible. Are you sure you want to proceed?&lt;/b&gt;</source>
-        <translation>Esto cifrará su carpeta y todos los archivos contenidos en ella. Ya no se podrá acceder a estos archivos sin su clave de cifrado. 
+        <translation>Esto cifrará su carpeta y todos los archivos contenidos en ella. Ya no se podrá acceder a estos archivos sin su clave de cifrado.
 &lt;b&gt;Este proceso no es reversible. ¿Seguro que quiere continuar?&lt;/b&gt;</translation>
     </message>
     <message>
@@ -2328,7 +2328,7 @@ Alternatively, you can restore all deleted files by downloading them from the se
         <translation>Escriba el nombre de la carpeta</translation>
     </message>
     <message>
-        <location filename="../src/gui/foldercreationdialog.ui" line="19"/>
+        <location filename="../src/gui/foldercreationdialog.ui" line="22"/>
         <source>Folder already exists</source>
         <translation>Ya existe la carpeta</translation>
     </message>
@@ -2654,12 +2654,12 @@ Alternatively, you can restore all deleted files by downloading them from the se
 <context>
     <name>OCC::FolderWizard</name>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="907"/>
+        <location filename="../src/gui/folderwizard.cpp" line="908"/>
         <source>Add Folder Sync Connection</source>
         <translation>Añadir conexión para el directorio de sincronización</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="910"/>
+        <location filename="../src/gui/folderwizard.cpp" line="911"/>
         <source>Add Sync Connection</source>
         <translation>Añadir conexión de sincronización</translation>
     </message>
@@ -2677,27 +2677,27 @@ Alternatively, you can restore all deleted files by downloading them from the se
         <translation>Introduzca la ubicación de la carpeta local.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="159"/>
+        <location filename="../src/gui/folderwizard.cpp" line="160"/>
         <source>Select the source folder</source>
         <translation>Seleccione la carpeta de origen</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="200"/>
+        <location filename="../src/gui/folderwizard.cpp" line="201"/>
         <source>Add Folder Sync</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="208"/>
+        <location filename="../src/gui/folderwizard.cpp" line="209"/>
         <source>Step 1 of 3: Select local folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="217"/>
+        <location filename="../src/gui/folderwizard.cpp" line="218"/>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="232"/>
+        <location filename="../src/gui/folderwizard.cpp" line="233"/>
         <source>Choose</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2705,82 +2705,82 @@ Alternatively, you can restore all deleted files by downloading them from the se
 <context>
     <name>OCC::FolderWizardRemotePath</name>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="298"/>
+        <location filename="../src/gui/folderwizard.cpp" line="299"/>
         <source>Create Remote Folder</source>
         <translation>Crear carpeta remota</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="299"/>
+        <location filename="../src/gui/folderwizard.cpp" line="300"/>
         <source>Enter the name of the new folder to be created below &quot;%1&quot;:</source>
         <translation>Introduce el nombre de la nueva carpeta que se creará debajo de &quot;%1&quot;:</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="368"/>
+        <location filename="../src/gui/folderwizard.cpp" line="369"/>
         <source>Folder was successfully created on %1.</source>
         <translation>La carpeta ha sido creada con éxito en %1.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="378"/>
+        <location filename="../src/gui/folderwizard.cpp" line="379"/>
         <source>Authentication failed accessing %1</source>
         <translation>Fallo de autenticación al acceder a %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="380"/>
+        <location filename="../src/gui/folderwizard.cpp" line="381"/>
         <source>Failed to create the folder on %1. Please check manually.</source>
         <translation>Fallo al crear la carpeta %1. Por favor, revíselo manualmente.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="398"/>
+        <location filename="../src/gui/folderwizard.cpp" line="399"/>
         <source>Failed to list a folder. Error: %1</source>
         <translation>Fallo al listar una carpeta. Error: %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="479"/>
+        <location filename="../src/gui/folderwizard.cpp" line="480"/>
         <source>Choose this to sync the entire account</source>
         <translation>Elija esto para sincronizar la cuenta entera</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="620"/>
+        <location filename="../src/gui/folderwizard.cpp" line="621"/>
         <source>This folder is already being synced.</source>
         <translation>Esta carpeta ya se ha sincronizado.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="622"/>
+        <location filename="../src/gui/folderwizard.cpp" line="623"/>
         <source>You are already syncing &lt;i&gt;%1&lt;/i&gt;, which is a parent folder of &lt;i&gt;%2&lt;/i&gt;.</source>
         <translation>Ya ha sincronizado &lt;i&gt;%1&lt;/i&gt;, el cual es la carpeta de &lt;i&gt;%2&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="624"/>
+        <location filename="../src/gui/folderwizard.cpp" line="625"/>
         <source>You are already syncing &lt;i&gt;%1&lt;/i&gt;, which is a subfolder of &lt;i&gt;%2&lt;/i&gt;.</source>
         <translation>Ya estás sincronizando &lt;i&gt;%1&lt;/i&gt;, que es una subcarpeta de &lt;i&gt;%2&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="700"/>
+        <location filename="../src/gui/folderwizard.cpp" line="701"/>
         <source>Add Folder Sync</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="708"/>
+        <location filename="../src/gui/folderwizard.cpp" line="709"/>
         <source>Step 2 of 3: Directory in your %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="717"/>
+        <location filename="../src/gui/folderwizard.cpp" line="718"/>
         <source>Please now select or create a target folder in your %1 where the content should be uploaded and synchronized.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="720"/>
+        <location filename="../src/gui/folderwizard.cpp" line="721"/>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="744"/>
+        <location filename="../src/gui/folderwizard.cpp" line="745"/>
         <source>Refresh</source>
         <translation type="unfinished">Actualizar</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="746"/>
+        <location filename="../src/gui/folderwizard.cpp" line="747"/>
         <source>Create folder</source>
         <translation type="unfinished">Crear carpeta </translation>
     </message>
@@ -2788,34 +2788,34 @@ Alternatively, you can restore all deleted files by downloading them from the se
 <context>
     <name>OCC::FolderWizardSelectiveSync</name>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="763"/>
-        <location filename="../src/gui/folderwizard.cpp" line="831"/>
+        <location filename="../src/gui/folderwizard.cpp" line="764"/>
+        <location filename="../src/gui/folderwizard.cpp" line="832"/>
         <source>Use virtual files instead of downloading content immediately %1</source>
         <translation>Usa archivos virtuales en vez de descargar el contenido inmediatamente %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="763"/>
-        <location filename="../src/gui/folderwizard.cpp" line="831"/>
+        <location filename="../src/gui/folderwizard.cpp" line="764"/>
+        <location filename="../src/gui/folderwizard.cpp" line="832"/>
         <source>(experimental)</source>
         <translation>(experimental)</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="792"/>
+        <location filename="../src/gui/folderwizard.cpp" line="793"/>
         <source>Add Folder Sync</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="800"/>
+        <location filename="../src/gui/folderwizard.cpp" line="801"/>
         <source>Step 3 of 3: Selektive Synchronisation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="827"/>
+        <location filename="../src/gui/folderwizard.cpp" line="828"/>
         <source>Virtual files are not supported for Windows partition roots as local folder. Please choose a valid subfolder under drive letter.</source>
         <translation>Los archivos virtuales no son compatibles con la carpeta raíz de la partición de Windows como carpeta local. Por favor, elija una subcarpeta válida bajo la letra de la unidad.</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizard.cpp" line="850"/>
+        <location filename="../src/gui/folderwizard.cpp" line="851"/>
         <source>Virtual files are not available for the selected folder</source>
         <translation>Los archivos virtuales no están disponibles para la carpeta seleccionada</translation>
     </message>
@@ -6079,7 +6079,7 @@ El servidor respondió con el error: %2</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/SesComponents/syncdirvalidation.cpp" line="14"/>
+        <location filename="../src/gui/SesComponents/syncdirvalidation.cpp" line="26"/>
         <source>The directory %1 cannot be part of your sync directory. Please choose another folder.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6121,12 +6121,12 @@ El servidor respondió con el error: %2</translation>
         <translation>Todas las versiones del servidor</translation>
     </message>
     <message>
-        <location filename="../src/gui/ResolveConflictsDialog.qml" line="206"/>
+        <location filename="../src/gui/ResolveConflictsDialog.qml" line="212"/>
         <source>Resolve conflicts</source>
         <translation>Resolver conflictos</translation>
     </message>
     <message>
-        <location filename="../src/gui/ResolveConflictsDialog.qml" line="210"/>
+        <location filename="../src/gui/ResolveConflictsDialog.qml" line="225"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
