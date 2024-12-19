@@ -3062,8 +3062,9 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
 <context>
     <name>OCC::GeneralSettings</name>
     <message>
+        <location filename="../src/gui/generalsettings.ui" line="365"/>
         <source>&amp;Analysis data collection for needs-based design</source>
-        <translation type="vanished">&amp;Analyse van gegevensverzameling voor een op behoeften gebaseerd ontwerp</translation>
+        <translation>&amp;Analyse van gegevensverzameling voor een op behoeften gebaseerd ontwerp</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.ui" line="115"/>
@@ -3093,11 +3094,6 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
         <source>
                                                         MB</source>
         <extracomment>Trailing part of &quot;Ask confirmation before syncing folder larger than&quot; </extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/gui/generalsettings.ui" line="365"/>
-        <source>&amp;Analysis data collection for needs-based design </source>
         <translation type="unfinished"></translation>
     </message>
     <message>

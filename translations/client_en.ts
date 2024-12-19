@@ -2996,8 +2996,9 @@ This means that the synchronization client might not upload local changes immedi
 <context>
     <name>OCC::GeneralSettings</name>
     <message>
+        <location filename="../src/gui/generalsettings.ui" line="365"/>
         <source>&amp;Analysis data collection for needs-based design</source>
-        <translation type="vanished">&amp;Analysis data collection for needs-based design</translation>
+        <translation>&amp;Analysis data collection for needs-based design</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.ui" line="115"/>
@@ -3027,11 +3028,6 @@ This means that the synchronization client might not upload local changes immedi
         <source>
                                                         MB</source>
         <extracomment>Trailing part of &quot;Ask confirmation before syncing folder larger than&quot; </extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/gui/generalsettings.ui" line="365"/>
-        <source>&amp;Analysis data collection for needs-based design </source>
         <translation type="unfinished"></translation>
     </message>
     <message>

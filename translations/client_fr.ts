@@ -3096,8 +3096,9 @@ Cela signifie que le client de synchronisation ne va pas téléverser immédiate
 <context>
     <name>OCC::GeneralSettings</name>
     <message>
+        <location filename="../src/gui/generalsettings.ui" line="365"/>
         <source>&amp;Analysis data collection for needs-based design</source>
-        <translation type="vanished">&amp;Collecte des données d’analyse pour une conception basée sur les besoins</translation>
+        <translation>&amp;Collecte des données d’analyse pour une conception basée sur les besoins</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.ui" line="115"/>
@@ -3127,11 +3128,6 @@ Cela signifie que le client de synchronisation ne va pas téléverser immédiate
         <source>
                                                         MB</source>
         <extracomment>Trailing part of &quot;Ask confirmation before syncing folder larger than&quot; </extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/gui/generalsettings.ui" line="365"/>
-        <source>&amp;Analysis data collection for needs-based design </source>
         <translation type="unfinished"></translation>
     </message>
     <message>

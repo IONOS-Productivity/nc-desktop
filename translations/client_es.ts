@@ -3086,8 +3086,9 @@ Esto significa que el cliente de sincronización podría no subir inmediatamente
 <context>
     <name>OCC::GeneralSettings</name>
     <message>
+        <location filename="../src/gui/generalsettings.ui" line="365"/>
         <source>&amp;Analysis data collection for needs-based design</source>
-        <translation type="vanished">&amp;Recogida de datos de análisis para un diseño basado en las necesidades</translation>
+        <translation>&amp;Recogida de datos de análisis para un diseño basado en las necesidades</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.ui" line="115"/>
@@ -3117,11 +3118,6 @@ Esto significa que el cliente de sincronización podría no subir inmediatamente
         <source>
                                                         MB</source>
         <extracomment>Trailing part of &quot;Ask confirmation before syncing folder larger than&quot; </extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/gui/generalsettings.ui" line="365"/>
-        <source>&amp;Analysis data collection for needs-based design </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
