@@ -5676,9 +5676,9 @@ El servidor respondió con el error: %2</translation>
     <name>OCC::Theme</name>
     <message>
         <location filename="../src/libsync/theme.cpp" line="596"/>
-        <source>&lt;p&gt;%1 desktop client %2&lt;/p&gt;</source>
+        <source>&lt;p&gt;%1 %2&lt;/p&gt;</source>
         <extracomment>Example text: &quot;&lt;p&gt;Nextcloud Desktop Client&lt;/p&gt;&quot; (%1 is the application name)</extracomment>
-        <translation>&lt;p&gt;%1 cliente de escritorio %2&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;%1 %2&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;%1 Desktop Client&lt;/p&gt;</source>
