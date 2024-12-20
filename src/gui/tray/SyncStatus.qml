@@ -104,17 +104,17 @@ RowLayout {
         }
     }
 
-    CustomButton {
-        Layout.preferredWidth: syncNowFm.boundingRect(text).width +
-                               leftPadding +
-                               rightPadding +
-                               Style.standardSpacing * 2
+    SesCustomButton {
         Layout.rightMargin: Style.trayHorizontalMargin
 
+        font.pixelSize: pixelSize
+        font.weight: fontWeight
+
         text: qsTr("Resolve conflicts")
-        textColor: Style.adjustedCurrentUserHeaderColor
-        textColorHovered: Style.currentUserHeaderTextColor
-        bgColor: Style.currentUserHeaderColor
+        textColor: palette.brightText
+        bgColor: Style.sesActionPressed
+        bgNormalOpacity: 1.0
+        bgHoverOpacity: Style.hoverOpacity
 
         visible: activityModel.hasSyncConflicts &&
                  !syncStatus.syncing &&

@@ -26,15 +26,14 @@ Repeater {
 
     model: root.linksForActionButtons
 
-    CustomButton {
+    SesCustomButton {
         id: activityActionButton
 
         property string verb: model.modelData.verb
         property bool isTalkReplyButton: verb === "REPLY"
 
         Layout.alignment: Qt.AlignTop | Qt.AlignRight
-
-        hoverEnabled: true
+        
         padding: Style.smallSpacing
         display: Button.TextOnly
 
@@ -44,9 +43,10 @@ Repeater {
 
         onClicked: isTalkReplyButton ? root.showReplyField() : root.triggerAction(model.index)
 
-        textColor: Style.adjustedCurrentUserHeaderColor
-        textColorHovered: Style.currentUserHeaderTextColor
-        bgColor: Style.currentUserHeaderColor
+        textColor: palette.brightText
+        bgColor: Style.sesActionPressed
+        bgNormalOpacity: 1.0
+        bgHoverOpacity: Style.hoverOpacity
 
         visible: verb !== "REPLY" || (verb === "REPLY" && root.talkReplyButtonVisible)
     }
