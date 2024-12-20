@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de-DE">
+<TS version="2.1" language="de_DE">
 <context>
     <name></name>
     <message>
@@ -5727,7 +5727,7 @@ Server antwortete mit Fehler: %2</translation>
         <location filename="../src/libsync/theme.cpp" line="431"/>
         <source>easy/0118</source>
         <comment>Redirect URL Parameter</comment>
-        <translation type="unfinished"></translation>
+        <translation>easy/0108</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="579"/>

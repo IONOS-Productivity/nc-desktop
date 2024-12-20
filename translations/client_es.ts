@@ -5688,7 +5688,7 @@ El servidor respondió con el error: %2</translation>
         <location filename="../src/libsync/theme.cpp" line="431"/>
         <source>easy/0118</source>
         <comment>Redirect URL Parameter</comment>
-        <translation type="unfinished"></translation>
+        <translation>easy/0138</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="579"/>
