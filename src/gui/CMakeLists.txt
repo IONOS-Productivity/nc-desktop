@@ -148,6 +148,7 @@ set(client_SRCS
     systray.h
     systray.cpp
     EncryptionTokenSelectionWindow.qml
+    buttonstyle.h
     userinfo.h
     userinfo.cpp
     vfsdownloaderrordialog.h
