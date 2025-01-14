@@ -146,6 +146,7 @@ set(client_SRCS
     syncrunfilelog.cpp
     systray.h
     systray.cpp
+    buttonstyle.h
     thumbnailjob.h
     thumbnailjob.cpp
     userinfo.h
