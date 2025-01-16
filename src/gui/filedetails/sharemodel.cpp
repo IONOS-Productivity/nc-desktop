@@ -37,7 +37,7 @@ static const auto secureFileDropPlaceholderLinkShareId = QStringLiteral("__secur
 
 namespace OCC
 {
-Q_LOGGING_CATEGORY(lcShareModel, "com.nextcloud.sharemodel")
+Q_LOGGING_CATEGORY(lcShareModel, "com.ionos.hidrivenext.sharemodel")
 
 ShareModel::ShareModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -764,11 +764,11 @@ QString ShareModel::iconUrlForShare(const SharePtr &share) const
 
     switch(share->getShareType()) {
     case Share::TypeInternalLink:
-        return QString(iconsPath + QStringLiteral("external.svg"));
+        return QString(iconsPath + QStringLiteral("externalLink.svg"));
     case Share::TypePlaceholderLink:
     case Share::TypeSecureFileDropPlaceholderLink:
     case Share::TypeLink:
-        return QString(iconsPath + QStringLiteral("public.svg"));
+        return QString(iconsPath + QStringLiteral("link.svg"));
     case Share::TypeEmail:
         return QString(iconsPath + QStringLiteral("email.svg"));
     case Share::TypeRoom:
@@ -1079,7 +1079,7 @@ void ShareModel::toggleShareNoteToRecipient(const SharePtr &share, const bool en
         return;
     }
 
-    const QString note = enable ? tr("Enter a note for the recipient") : QString();
+    const QString note = QString();
     if (const auto linkShare = share.objectCast<LinkShare>()) {
         linkShare->setNote(note);
     } else if (const auto userGroupShare = share.objectCast<UserGroupShare>()) {

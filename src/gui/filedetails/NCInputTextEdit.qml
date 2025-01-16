@@ -22,11 +22,12 @@ import Style
 TextEdit {
     id: root
 
-    readonly property color accentColor: palette.highlight
+    readonly property color accentColor: Style.ncBlue
     readonly property color secondaryColor: palette.dark
     readonly property alias submitButton: submitButton
 
     clip: true
+    color: Style.ncTextColor
     textMargin: Style.smallSpacing
     wrapMode: TextEdit.Wrap
     selectByMouse: true
@@ -35,7 +36,7 @@ TextEdit {
     Rectangle {
         id: textFieldBorder
         anchors.fill: parent
-        radius: Style.trayWindowRadius
+        radius: Style.slightlyRoundedButtonRadius
         border.width: Style.normalBorderWidth
         border.color: root.activeFocus ? root.accentColor : root.secondaryColor
         color: palette.base
@@ -51,6 +52,11 @@ TextEdit {
 
         width: height
         height: parent.height
+        
+        background: Rectangle {
+            radius: width / 2
+            color: textFieldBorder.color
+        }
 
         flat: true
         icon.source: "image://svgimage-custom-color/confirm.svg" + "/" + root.secondaryColor
