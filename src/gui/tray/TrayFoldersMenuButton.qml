@@ -27,7 +27,7 @@ HeaderButton {
     required property var currentUser
     property bool userHasGroupFolders: currentUser.groupFolders.length > 0
 
-    icon.source: Style.sesFilesIcon
+    icon.source: Style.sesFolderIcon
     icon.color: Style.sesIconColor
 
     text: qsTr("Files")

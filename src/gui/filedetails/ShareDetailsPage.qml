@@ -843,7 +843,7 @@ Page {
         SesCustomButton {
             Layout.columnSpan: buttonGrid.columns
 
-            icon.source: Style.sesLightPlus
+            icon.source: Style.sesDarkPlus
 
             font.pixelSize: pixelSize
             font.weight: fontWeight
