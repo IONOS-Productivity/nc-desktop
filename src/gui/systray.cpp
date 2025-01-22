@@ -15,6 +15,7 @@
 #include "accountmanager.h"
 #include "systray.h"
 #include "theme.h"
+#include "ionostheme.h"
 #include "config.h"
 #include "common/utility.h"
 #include "tray/svgimageprovider.h"
@@ -208,6 +209,12 @@ void Systray::setupContextMenu()
         resumeAction->setVisible(anyPaused);
         resumeAction->setEnabled(anyPaused);
     });
+
+    _contextMenu->setStyleSheet(IonosTheme::fontConfigurationCss(
+        IonosTheme::settingsFont(),
+        IonosTheme::settingsTextSize(),
+        IonosTheme::settingsTextWeight(),
+        IonosTheme::menuTextColor()));
 }
 
 void Systray::destroyDialog(QQuickWindow *dialog) const
