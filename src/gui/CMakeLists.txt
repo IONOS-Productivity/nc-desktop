@@ -228,6 +228,8 @@ set(client_SRCS
     sessnackbar.cpp
     sesstyle.h
     sesstyle.cpp
+    linkbutton.h
+    linkbutton.cpp
     buttonstylestrategy.h
     sesFileIconProvider.h
     sesFileIconProvider.cpp
