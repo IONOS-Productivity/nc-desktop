@@ -61,6 +61,10 @@ private slots:
     void slotShowLegalNotice();
     void slotRemotePollIntervalChanged(int seconds);
     void updatePollIntervalVisibility();
+    void slotOpenMoreInformationLink();
+    void slotOpenLegalNoticeLink();
+    void slotOpenPrivacyLink();
+    void slotOpenOpenSourceLink();
 #if defined(BUILD_UPDATER)
     void slotUpdateInfo();
     void slotUpdateChannelChanged();
