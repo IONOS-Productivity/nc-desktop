@@ -165,7 +165,7 @@ GridLayout {
             bgColor: palette.highlight
             bgNormalOpacity: 0
 
-            icon.source: Style.sesLightPlus + palette.buttonText
+            icon.source: Style.sesDarkPlus + palette.buttonText
             icon.width: Style.smallIconSize
             icon.height: Style.smallIconSize
             // display: AbstractButton.IconOnly
@@ -203,7 +203,7 @@ GridLayout {
             bgColor: palette.highlight
             bgNormalOpacity: 0
 
-            icon.source: shareLinkCopied ? Style.sesGreenCheckmark + Style.positiveColor :
+            icon.source: shareLinkCopied ? Style.sesSyncSuccessIcon + Style.positiveColor :
                                            Style.sesClipboard + palette.brightText
 
             icon.width: Style.smallIconSize
