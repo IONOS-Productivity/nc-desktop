@@ -985,13 +985,13 @@ void ConfigFile::setNewBigFolderSizeLimit(bool isChecked, qint64 mbytes)
 
 bool ConfigFile::confirmExternalStorage() const
 {
-    const auto fallback = getValue(confirmExternalStorageC, QString(), true);
+    const auto fallback = getValue(confirmExternalStorageC, QString(), false);
     return getPolicySetting(QLatin1String(confirmExternalStorageC), fallback).toBool();
 }
 
 bool ConfigFile::useNewBigFolderSizeLimit() const
 {
-    const auto fallback = getValue(useNewBigFolderSizeLimitC, QString(), true);
+    const auto fallback = getValue(useNewBigFolderSizeLimitC, QString(), false);
     return getPolicySetting(QLatin1String(useNewBigFolderSizeLimitC), fallback).toBool();
 }
 
@@ -1050,7 +1050,7 @@ bool ConfigFile::showMainDialogAsNormalWindow() const {
 bool ConfigFile::promptDeleteFiles() const
 {
     QSettings settings(configFile(), QSettings::IniFormat);
-    return settings.value(promptDeleteC, false).toBool();
+    return settings.value(promptDeleteC, true).toBool();
 }
 
 void ConfigFile::setPromptDeleteFiles(bool promptDeleteFiles)
