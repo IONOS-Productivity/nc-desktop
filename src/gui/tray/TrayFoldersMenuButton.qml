@@ -72,7 +72,7 @@ HeaderButton {
     }
 
 
-    Item {
+    contentItem: Item {
         id: rootContent
 
             Image {
