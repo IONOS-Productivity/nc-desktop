@@ -91,18 +91,18 @@ int main(int argc, char **argv)
     QApplication::setFont(IonosTheme::settingsFontDefault());
 #endif
 
-    QApplication::setStyle(new sesStyle);
-    QQuickStyle::setStyle(style);
-    QQuickStyle::setFallbackStyle(QStringLiteral("Fusion"));
-
-#if defined Q_OS_WIN
-    if (QOperatingSystemVersion::current().version() < QOperatingSystemVersion::Windows11.version()) {
-        QApplication::setStyle(QStyleFactory::create("Fusion"));
-    }
-#endif
+// Comment in again when Ionos Compiler Switch is available
+// #if defined Q_OS_WIN
+//     if (QOperatingSystemVersion::current().version() < QOperatingSystemVersion::Windows11.version()) {
+//         QApplication::setStyle(QStyleFactory::create("Fusion"));
+//     }
+// #endif
 
     OCC::Application app(argc, argv);
+    app.setStyle(new sesStyle(QStyleFactory::create("WindowsVista")));
 
+    QQuickStyle::setStyle(style);
+    QQuickStyle::setFallbackStyle(QStringLiteral("Fusion"));
 #ifndef Q_OS_WIN
     signal(SIGPIPE, SIG_IGN);
 #endif
