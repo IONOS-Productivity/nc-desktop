@@ -672,7 +672,7 @@ Page {
                         spacing: scrollContentsColumn.indicatorSpacing
                         padding: scrollContentsColumn.itemPadding
                         onClicked: root.permissionModeChanged(permissionMode)
-                        visible: customPermissionsCheckBox.checked
+                        visible: customPermissionsCheckBox.checked & false // Removed SES-307
                         font.pixelSize: pixelSize
                         font.weight: fontWeight
                     }
