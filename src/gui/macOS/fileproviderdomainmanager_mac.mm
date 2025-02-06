@@ -138,6 +138,8 @@ inline QString accountIdFromDomain(NSFileProviderDomain * const domain)
 
 namespace OCC {
 
+Q_LOGGING_CATEGORY(lcMacFileProviderDomainManager, "hidrivenext.gui.macfileproviderdomainmanager", QtInfoMsg)
+
 namespace Mac {
 
 class API_AVAILABLE(macos(11.0)) FileProviderDomainManager::MacImplementation
