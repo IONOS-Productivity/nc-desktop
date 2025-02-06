@@ -24,7 +24,7 @@
 
 namespace OCC
 {
-Q_LOGGING_CATEGORY(lcCseMetadata, "nextcloud.metadata", QtInfoMsg)
+Q_LOGGING_CATEGORY(lcCseMetadata, "hidrivenext.metadata", QtInfoMsg)
 
 namespace
 {
