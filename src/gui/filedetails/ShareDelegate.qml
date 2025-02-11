@@ -173,7 +173,7 @@ GridLayout {
             onClicked: root.createNewLinkShare()
         }
 
-        SesCustomButton {
+        SecondaryPillButton {
             id: copyLinkButton
 
             function copyShareLink() {
@@ -188,6 +188,8 @@ GridLayout {
 
             property bool shareLinkCopied: false
 
+            removeBorder: true
+
             Layout.alignment: Qt.AlignCenter
             Layout.preferredWidth: shareLinkCopied ? implicitWidth : Style.iconButtonWidth
             Layout.preferredHeight: Style.iconButtonWidth
@@ -197,10 +199,7 @@ GridLayout {
             text: shareLinkCopied ? qsTr("Copied!") : ""
             textColor: Style.sesDarkGreen
 
-            bgColor: palette.highlight
-            bgNormalOpacity: 0
-
-            icon.source: shareLinkCopied ? Style.sesSyncSuccessIcon + Style.positiveColor :
+            iconSource: shareLinkCopied ? Style.sesSyncSuccessIcon + Style.positiveColor :
                                            Style.sesClipboard + palette.brightText
 
             icon.width: Style.smallIconSize
