@@ -28,4 +28,5 @@ GAnalytics acts as an intermediary between the outer layer (DataCollectionWrappe
 The GAnalyticsWorker contains a queue, a message loop, and a QNetworkAccessManager. At fixed intervals, the queue is checked for tracking calls, which are then sent to the GA4 interface. If multiple calls are present, the connection is kept alive until all tracking calls have been sent.
 
 ## Consequences
+
 This approach allows client-side tracking using GA4, bridging the gap between web and desktop tracking. The modular design simplifies maintenance by separating tracking logic from communication handling. Usage is straightforward; the application simply calls the DataCollectionWrapper at points where tracking should occur, ensuring that actions and events are recorded seamlessly. However, relying on a reverse-engineered solution introduces risks of future incompatibility with GA4 updates. Managing a queue and network connection adds complexity, and there might be latency when batching tracking calls. Overall, the solution balances functionality with maintainability but carries some technical risks.
