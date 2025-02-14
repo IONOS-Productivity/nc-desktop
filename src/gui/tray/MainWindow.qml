@@ -259,6 +259,7 @@ ApplicationWindow {
         clip: true
 
         radius: Systray.useNormalWindow ? 0.0 : Style.trayWindowRadius
+        palette: trayWindow.palette
         color: palette.base
 
         Accessible.role: Accessible.Grouping
