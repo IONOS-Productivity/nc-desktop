@@ -153,7 +153,6 @@ RowLayout {
                 text: root.activityData.dateTime
                 font.family: Style.sesOpenSansRegular
                 font.pixelSize: Style.sesFontHintPixelSize
-                color: Style.sesTrayFontColor
                 visible: text !== ""
             }
 
