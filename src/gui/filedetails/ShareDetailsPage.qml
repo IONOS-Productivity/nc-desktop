@@ -452,56 +452,32 @@ Page {
                 height: visible ? implicitHeight : 0
                 spacing: Style.extraSmallSpacing
 
-            CheckBox {
-                id: noteEnabledMenuItem
+                CheckBox {
+                    id: noteEnabledMenuItem
 
-                Layout.fillWidth: true
+                    Layout.fillWidth: true
 
-                    // TODO: Rather than setting all these palette colours manually,
-                    // create a custom style and do it for all components globally.
-                    //
-                    // Additionally, we need to override the entire palette when we
-                    // set one palette property, as otherwise we default back to the
-                    // theme palette -- not the parent palette
-                    palette {
-                        text: Style.ncTextColor
-                        windowText: Style.ncTextColor
-                        buttonText: Style.ncTextColor
-                        brightText: Style.ncTextBrightColor
-                        highlight: Style.lightHover
-                        highlightedText: Style.ncTextColor
-                        light: Style.lightHover
-                        midlight: Style.ncSecondaryTextColor
-                        mid: Style.darkerHover
-                        dark: Style.menuBorder
-                        button: Style.buttonBackgroundColor
-                        window: Style.menuBorder
-                        base: Style.backgroundColor
-                        toolTipBase: Style.backgroundColor
-                        toolTipText: Style.ncTextColor
+                    font.pixelSize: pixelSize
+                    font.weight: fontWeight
+
+
+                    spacing: scrollContentsColumn.indicatorSpacing
+                        padding: scrollContentsColumn.itemPadding
+                    indicator.width: scrollContentsColumn.indicatorItemWidth
+                    indicator.height: scrollContentsColumn.indicatorItemWidth
+
+                    checkable: true
+                    checked: root.noteEnabled
+                    text: qsTr("Note to recipient")
+                    enabled: !root.waitingForNoteEnabledChange
+
+                    onClicked: {
+                        root.toggleNoteToRecipient(checked);
+                        root.waitingForNoteEnabledChange = true;
                     }
-
-                font.pixelSize: pixelSize
-                font.weight: fontWeight
-
-
-                spacing: scrollContentsColumn.indicatorSpacing
-                    padding: scrollContentsColumn.itemPadding
-                indicator.width: scrollContentsColumn.indicatorItemWidth
-                indicator.height: scrollContentsColumn.indicatorItemWidth
-
-                checkable: true
-                checked: root.noteEnabled
-                text: qsTr("Note to recipient")
-                enabled: !root.waitingForNoteEnabledChange
-
-                onClicked: {
-                    root.toggleNoteToRecipient(checked);
-                    root.waitingForNoteEnabledChange = true;
                 }
-            }
             
-            Text{
+                Text{
                     text: qsTr("Enter the note to recipient")
                     color: Style.sesGray
                     padding: scrollContentsColumn.itemPadding
@@ -509,7 +485,7 @@ Page {
                     font.family: root.font.family
                     font.pixelSize: pixelSize
                     font.weight: fontWeight
-            }
+                }
 
                 TextEdit {
                     id: noteTextEdit
@@ -550,29 +526,6 @@ Page {
                 active: !root.isFolderItem && !root.isEncryptedItem
                 visible: active
                 sourceComponent: CheckBox {
-                    // TODO: Rather than setting all these palette colours manually,
-                    // create a custom style and do it for all components globally.
-                    //
-                    // Additionally, we need to override the entire palette when we
-                    // set one palette property, as otherwise we default back to the
-                    // theme palette -- not the parent palette
-                    palette {
-                        text: Style.ncTextColor
-                        windowText: Style.ncTextColor
-                        buttonText: Style.ncTextColor
-                        brightText: Style.ncTextBrightColor
-                        highlight: Style.lightHover
-                        highlightedText: Style.ncTextColor
-                        light: Style.lightHover
-                        midlight: Style.ncSecondaryTextColor
-                        mid: Style.darkerHover
-                        dark: Style.menuBorder
-                        button: Style.buttonBackgroundColor
-                        window: Style.menuBorder
-                        base: Style.backgroundColor
-                        toolTipBase: Style.backgroundColor
-                        toolTipText: Style.ncTextColor
-                    }
 
                     font.pixelSize: pixelSize
                     font.weight: fontWeight
@@ -681,30 +634,6 @@ Page {
 
                 Layout.fillWidth: true
 
-                // TODO: Rather than setting all these palette colours manually,
-                // create a custom style and do it for all components globally.
-                //
-                // Additionally, we need to override the entire palette when we
-                // set one palette property, as otherwise we default back to the
-                // theme palette -- not the parent palette
-                palette {
-                    text: Style.ncTextColor
-                    windowText: Style.ncTextColor
-                    buttonText: Style.ncTextColor
-                    brightText: Style.ncTextBrightColor
-                    highlight: Style.lightHover
-                    highlightedText: Style.ncTextColor
-                    light: Style.lightHover
-                    midlight: Style.ncSecondaryTextColor
-                    mid: Style.darkerHover
-                    dark: Style.menuBorder
-                    button: Style.buttonBackgroundColor
-                    window: palette.dark // NOTE: Fusion theme uses darker window colour for the border of the checkbox
-                    base: Style.backgroundColor
-                    toolTipBase: Style.backgroundColor
-                    toolTipText: Style.ncTextColor
-                }
-
                 font.pixelSize: pixelSize
                 font.weight: fontWeight
 
@@ -737,30 +666,6 @@ Page {
 
                         anchors.left: parent.left
                         anchors.right: parent.right
-
-                        // TODO: Rather than setting all these palette colours manually,
-                        // create a custom style and do it for all components globally.
-                        //
-                        // Additionally, we need to override the entire palette when we
-                        // set one palette property, as otherwise we default back to the
-                        // theme palette -- not the parent palette
-                        palette {
-                            text: Style.ncTextColor
-                            windowText: Style.ncTextColor
-                            buttonText: Style.ncTextColor
-                            brightText: Style.ncTextBrightColor
-                            highlight: Style.lightHover
-                            highlightedText: Style.ncTextColor
-                            light: Style.lightHover
-                            midlight: Style.ncSecondaryTextColor
-                            mid: Style.darkerHover
-                            dark: Style.menuBorder
-                            button: Style.buttonBackgroundColor
-                            window: palette.dark // NOTE: Fusion theme uses darker window colour for the border of the checkbox
-                            base: Style.backgroundColor
-                            toolTipBase: Style.backgroundColor
-                            toolTipText: Style.ncTextColor
-                        }
 
                         font.pixelSize: pixelSize
                         font.weight: fontWeight
