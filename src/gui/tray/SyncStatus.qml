@@ -72,7 +72,6 @@ RowLayout {
 
             text: syncStatus.syncStatusDetailString
             visible: syncStatus.syncStatusDetailString !== ""
-            color: Style.sesTrayFontColor
             font: root.font
             wrapMode: Text.Wrap
         }
