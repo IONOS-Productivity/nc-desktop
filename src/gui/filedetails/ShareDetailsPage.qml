@@ -493,6 +493,7 @@ Page {
                     font.family: root.font.family
                     font.pixelSize: pixelSize
                     font.weight: fontWeight
+                    color: Style.sesTrayFontColor
                     Layout.fillWidth: true
                     Layout.leftMargin: 3
                     Layout.rightMargin: 3
