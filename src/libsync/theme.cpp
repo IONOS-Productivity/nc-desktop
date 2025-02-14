@@ -426,6 +426,10 @@ Theme::Theme()
     IONOSPalette.setColor(QPalette::HighlightedText, QColor(0,0,0));
     IONOSPalette.setColor(QPalette::Disabled, QPalette::HighlightedText, QColor(0,0,0));
 
+    auto systemPalette = QGuiApplication::palette();
+    systemPalette.setColor(QPalette::WindowText, QColor("#001B40"));
+    QGuiApplication::setPalette(systemPalette);
+
     connectToPaletteSignal();
 
 #ifdef APPLICATION_SERVER_URL_ENFORCE
