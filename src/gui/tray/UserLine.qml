@@ -99,7 +99,7 @@ AbstractButton {
             }
         }
 
-        Button {
+        IconButton {
             id: userMoreButton
             Layout.preferredWidth: Style.headerButtonIconSize
             Layout.preferredHeight: Layout.preferredWidth
@@ -109,20 +109,14 @@ AbstractButton {
             property bool isHovered: userMoreButton.hovered || userMoreButton.visualFocus
             property bool isActive: userMoreButton.pressed || userMoreButtonMenu.visible
 
-            icon.source: "qrc:///client/theme/more.svg"
-            icon.color: userMoreButton.isActive || userMoreButton.isHovered ? Style.sesWhite : Style.sesIconDarkColor
+            iconSource: Style.sesMore
+            iconSourceHovered: Style.sesMoreWhite
 
             Accessible.role: Accessible.ButtonMenu
             Accessible.name: qsTr("Account actions")
             Accessible.onPressAction: userMoreButtonMouseArea.clicked()
 
             onClicked: userMoreButtonMenu.visible ? userMoreButtonMenu.close() : userMoreButtonMenu.popup()
-            background: Rectangle {
-                anchors.fill: parent
-                anchors.margins: 1
-                color: userMoreButton.isActive ? Style.sesActionPressed : userMoreButton.isHovered ? Style.sesActionHover : "transparent"
-                radius: width / 2
-            }
 
             Menu {
                 id: userMoreButtonMenu
