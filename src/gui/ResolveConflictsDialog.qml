@@ -179,10 +179,4 @@ ApplicationWindow {
             }
         }
     }
-
-    Rectangle {
-        color: palette.base
-        anchors.fill: parent
-        z: 1
-    }
 }
