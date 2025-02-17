@@ -94,7 +94,7 @@ RowLayout {
         }
     }
 
-    SecondaryPillButton {
+    PrimaryPillButton {
         Layout.rightMargin: Style.trayHorizontalMargin
 
         font.pixelSize: pixelSize
