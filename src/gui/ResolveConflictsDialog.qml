@@ -216,7 +216,7 @@ ApplicationWindow {
                 bgNormalOpacity: 1.0
                 bgHoverOpacity: Style.hoverOpacity
 
-                onClicked: buttonBox.onRejected()
+                onClicked: buttonBox.onAccepted()
             }
 
             SesCustomButton {
