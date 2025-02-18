@@ -12,7 +12,8 @@ if(APPLE AND APPLICATION_NAME STREQUAL "HiDrive Next" AND EXISTS "${CMAKE_SOURCE
     set( APPLICATION_ICON_NAME "hidrivenext-macOS" )
     message("Using macOS-specific application icon: ${APPLICATION_ICON_NAME}")
 else()
-    set( APPLICATION_ICON_NAME "${APPLICATION_SHORTNAME}" )
+    # set( APPLICATION_ICON_NAME "${APPLICATION_SHORTNAME}" )
+    set( APPLICATION_ICON_NAME  "ionos_hidrive_next" )
 endif()
 
 set( APPLICATION_ICON_SET   "SVG" )
