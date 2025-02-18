@@ -16,7 +16,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-import com.nextcloud.desktopclient
+import com.ionos.hidrivenext.desktopclient
 import Style
 
 TextArea {
@@ -43,6 +43,11 @@ TextArea {
 
         width: height
         height: parent.height
+        
+        background: Rectangle {
+            radius: width / 2
+            color: textFieldBorder.color
+        }
 
         flat: true
         icon.source: "image://svgimage-custom-color/confirm.svg" + "/" + root.secondaryColor
