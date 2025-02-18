@@ -259,7 +259,8 @@ ApplicationWindow {
         clip: true
 
         radius: Systray.useNormalWindow ? 0.0 : Style.trayWindowRadius
-        color: Style.colorWithoutTransparency(palette.base)
+        palette: trayWindow.palette
+        color: palette.base
 
         Accessible.role: Accessible.Grouping
         Accessible.name: qsTr("Nextcloud desktop main dialog")
