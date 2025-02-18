@@ -2,7 +2,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 
 import Style 1.0
-import com.nextcloud.desktopclient 1.0 as NC
+import com.ionos.hidrivenext.desktopclient 1.0 as NC
 
 ScrollView {
     id: controlRoot
@@ -65,7 +65,7 @@ ScrollView {
         highlight: Rectangle {
             id: activityHover
             anchors.fill: activityList.currentItem
-            color: palette.highlight
+            color: Style.sesHover
             radius: Style.mediumRoundedButtonRadius
             visible: activityList.activeFocus
         }
@@ -126,14 +126,15 @@ ScrollView {
                 verticalAlignment: Image.AlignVCenter
                 horizontalAlignment: Image.AlignHCenter
                 fillMode: Image.PreserveAspectFit
-                source: "image://svgimage-custom-color/activity.svg/" + palette.midlight
+                source: "qrc:///client/theme/ses/ses-activity.svg"
+                sourceSize.height: 32
+                sourceSize.width: 22
             }
 
             EnforcedPlainTextLabel {
                width: parent.width
                text: qsTr("No activities yet")
-               color: palette.midlight
-               font.bold: true
+               color: Style.sesDarkBlue
                wrapMode: Text.Wrap
                horizontalAlignment: Text.AlignHCenter
                verticalAlignment: Text.AlignVCenter
