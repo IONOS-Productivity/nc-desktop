@@ -579,22 +579,6 @@ void SelectiveSyncDialog::customizeStyle()
         )
     );
 
-#ifdef Q_OS_MAC
-    button->setStyleSheet(
-        button->styleSheet() + QStringLiteral("QPushButton { %1; } ").arg(
-            IonosTheme::fontConfigurationCss(
-                IonosTheme::settingsFont(),
-                IonosTheme::settingsTextSize(),
-                IonosTheme::settingsTitleWeight500(),
-                IonosTheme::titleColor()
-            )
-        )
-    );
-
-    buttonBox->layout()->setSpacing(24);
-#endif
-
-
     // Set background colors
     auto dialogPalette = palette();
     const auto backgroundColor = QColor(IonosTheme::dialogBackgroundColor());
