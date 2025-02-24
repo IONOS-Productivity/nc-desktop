@@ -31,6 +31,8 @@
 #include "wizard/owncloudwizard.h"
 #include "wizard/webviewpage.h"
 #include "wizard/welcomepage.h"
+#include "wizard/termsofservicewizardpage.h"
+
 
 #include "common/vfs.h"
 
