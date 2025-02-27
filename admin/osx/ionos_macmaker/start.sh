@@ -41,7 +41,7 @@ done
 export MACOSX_DEPLOYMENT_TARGET=10.15
 
 # Some variables
-PRODUCT_NAME="HiDrive Next"
+PRODUCT_NAME="IONOS HiDrive Next"
 REPO_ROOT_DIR="../../.."
 CRAFT_DIR=~/Craft64
 PRODUCT_DIR=$BUILD_DIR/product
