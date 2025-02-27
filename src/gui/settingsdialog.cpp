@@ -402,7 +402,7 @@ void SettingsDialog::customizeStyle()
     );
 
     for (const auto a : _actionGroup->actions()) {
-        QIcon icon = Theme::createColorAwareIcon(a->property("iconPath").toString(), palette());
+        QIcon icon = Theme::createColorAwareIcon(a->property("iconPath").toString(), this->palette());
         a->setIcon(icon);
         auto *btn = qobject_cast<QToolButton *>(_toolBar->widgetForAction(a));
         if (btn) {
