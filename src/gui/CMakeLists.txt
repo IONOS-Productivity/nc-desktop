@@ -18,6 +18,9 @@ endif()
 if(CMAKE_BUILD_TYPE MATCHES Debug)
     add_definitions(-DQT_QML_DEBUG)
 endif()
+if(CMAKE_BUILD_TYPE MATCHES "RelWithDebInfo")
+    add_definitions(-DBUILDTYPE_RELWITHDEBINFO)
+endif()
 
 IF(BUILD_UPDATER)
     add_subdirectory(updater)
@@ -156,6 +159,16 @@ set(client_SRCS
     syncrunfilelog.cpp
     systray.h
     systray.cpp
+    sesstyle.h
+    sesstyle.cpp
+    buttonstylestrategy.h
+    sesFileIconProvider.h
+    sesFileIconProvider.cpp
+    pushbuttonstylehelper.h
+    pushbuttonstylehelper.cpp
+    moreoptionsbuttonstylehelper.h
+    moreoptionsbuttonstylehelper.cpp
+    buttonstyle.h
     thumbnailjob.h
     thumbnailjob.cpp
     userinfo.h
@@ -190,8 +203,18 @@ set(client_SRCS
     emojimodel.cpp
     syncconflictsmodel.h
     syncconflictsmodel.cpp
+    linkbutton.h
+    linkbutton.cpp
+    sessnackbar.h
+    sessnackbar.cpp
     fileactivitylistmodel.h
     fileactivitylistmodel.cpp
+    ga4/ganalytics.h
+    ga4/ganalytics.cpp
+    ga4/ganalytics_worker.h
+    ga4/ganalytics_worker.cpp
+    ga4/datacollectionwrapper.cpp
+    ga4/datacollectionwrapper.h
     filedetails/datefieldbackend.h
     filedetails/datefieldbackend.cpp
     filedetails/filedetails.h
@@ -202,6 +225,8 @@ set(client_SRCS
     filedetails/shareemodel.cpp
     filedetails/sortedsharemodel.h
     filedetails/sortedsharemodel.cpp
+    SesComponents/syncdirvalidation.h
+    SesComponents/syncdirvalidation.cpp
     tray/svgimageprovider.h
     tray/svgimageprovider.cpp
     tray/syncstatussummary.h
@@ -763,7 +788,7 @@ if(BUILD_OWNCLOUD_OSX_BUNDLE AND NOT BUILD_LIBRARIES_ONLY)
         "$<TARGET_FILE_DIR:nextcloud>/../.."
         -qmldir=${CMAKE_SOURCE_DIR}/src/gui
         -always-overwrite
-        -executable="$<TARGET_FILE_DIR:nextcloud>/${cmd_NAME}"
+        -executable=$<TARGET_FILE_DIR:nextcloud>/${cmd_NAME}
         ${NO_STRIP}
         COMMAND "${CMAKE_COMMAND}"
         -E rm -rf "${BIN_OUTPUT_DIRECTORY}/${OWNCLOUD_OSX_BUNDLE}/Contents/PlugIns/bearer"

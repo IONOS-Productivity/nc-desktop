@@ -16,7 +16,7 @@
 				<key>NSExtensionFileProviderActionActivationRule</key>
 				<string>TRUEPREDICATE</string>
 				<key>NSExtensionFileProviderActionIdentifier</key>
-				<string>com.nextcloud.desktopclient.FileProviderUIExt.ShareAction</string>
+				<string>com.ionos.hidrivenext.desktopclient.FileProviderUIExt.ShareAction</string>
 				<key>NSExtensionFileProviderActionName</key>
 				<string>Share options</string>
 			</dict>

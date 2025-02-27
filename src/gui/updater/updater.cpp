@@ -32,7 +32,7 @@
 
 namespace OCC {
 
-Q_LOGGING_CATEGORY(lcUpdater, "nextcloud.gui.updater", QtInfoMsg)
+Q_LOGGING_CATEGORY(lcUpdater, "hidrivenext.gui.updater", QtInfoMsg)
 
 Updater *Updater::_instance = nullptr;
 
@@ -60,9 +60,9 @@ QUrl Updater::updateUrl()
     if (SparkleUpdater::autoUpdaterAllowed()) {
         urlQuery.addQueryItem(QLatin1String("sparkle"), QLatin1String("true"));
     }
-#ifdef BUILD_FILE_PROVIDER_MODULE
-    urlQuery.addQueryItem(QLatin1String("fileprovider"), QLatin1String("true"));
-#endif
+// #ifdef BUILD_FILE_PROVIDER_MODULE
+//     urlQuery.addQueryItem(QLatin1String("fileprovider"), QLatin1String("true"));
+// #endif
 #endif
 #if defined(Q_OS_WIN)
     urlQuery.addQueryItem(QLatin1String("msi"), QLatin1String("true"));
@@ -97,7 +97,7 @@ QUrlQuery Updater::getQueryParams()
     query.addQueryItem(QStringLiteral("osRelease"), QSysInfo::productType());
     query.addQueryItem(QStringLiteral("osVersion"), QSysInfo::productVersion());
     query.addQueryItem(QStringLiteral("kernelVersion"), QSysInfo::kernelVersion());
-    query.addQueryItem(QStringLiteral("oem"), theme->appName());
+    query.addQueryItem(QStringLiteral("oem"), theme->appShortName());
     query.addQueryItem(QStringLiteral("buildArch"), QSysInfo::buildCpuArchitecture());
     query.addQueryItem(QStringLiteral("currentArch"), QSysInfo::currentCpuArchitecture());
 

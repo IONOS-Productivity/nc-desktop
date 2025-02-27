@@ -50,6 +50,8 @@
 #include <QJsonArray>
 #include <QLoggingCategory>
 #include <QHttpMultiPart>
+#include <QApplication>
+#include <QFontMetrics>
 
 #include <qsslconfiguration.h>
 #include <qt5keychain/keychain.h>
@@ -65,7 +67,7 @@ constexpr auto isSkipE2eeMetadataChecksumValidationAllowedInClientVersion = MIRA
 }
 
 namespace OCC {
-Q_LOGGING_CATEGORY(lcAccount, "nextcloud.sync.account", QtInfoMsg)
+Q_LOGGING_CATEGORY(lcAccount, "hidrivenext.sync.account", QtInfoMsg)
 const char app_password[] = "_app-password";
 
 Account::Account(QObject *parent)
@@ -198,9 +200,17 @@ QString Account::prettyName() const
     return name;
 }
 
+QString Account::eliedName(const int size) const
+{    
+    QFontMetrics fontMetrics(QApplication::font());
+    QString elidedName = fontMetrics.elidedText(prettyName(), Qt::ElideMiddle, size);
+    return elidedName;
+}
+
 QColor Account::serverColor() const
 {
-    return _serverColor;
+    // SES-50 Hardcoded. Old value was _serverColor;
+    return QColor("#718095");
 }
 
 QColor Account::headerColor() const
@@ -210,7 +220,8 @@ QColor Account::headerColor() const
 
 QColor Account::headerTextColor() const
 {
-    return _serverTextColor;
+    // SES-50 Hardcoded to Black. Old value was _serverTextColor;
+    return QColor("black");
 }
 
 QColor Account::accentColor() const
@@ -222,7 +233,8 @@ QColor Account::accentColor() const
     darknessAdjustment *= darknessAdjustment; // Square the value to pronounce the darkness more in lighter colours
     const auto baseAdjustment = 125;
     const auto adjusted = Theme::isDarkColor(accentColor) ? accentColor : accentColor.darker(baseAdjustment + darknessAdjustment);
-    return adjusted;
+    // SES-50 Hardcoded. Old value was adjusted;
+    return QColor("#718095");
 }
 
 QString Account::id() const
