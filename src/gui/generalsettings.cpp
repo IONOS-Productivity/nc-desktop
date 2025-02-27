@@ -191,10 +191,12 @@ GeneralSettings::GeneralSettings(QWidget *parent)
 {
     _ui->setupUi(this);
     
+#ifndef IONOS_BUILD
     _ui->labelInterval->setText("seconds (if <a href=\"https://github.com/nextcloud/notify_push\">Client Push</a> is unavailable)");
     _ui->labelInterval->setTextFormat(Qt::RichText);
     _ui->labelInterval->setTextInteractionFlags(Qt::TextBrowserInteraction);
     _ui->labelInterval->setOpenExternalLinks(true);
+#endif
 
     connect(_ui->serverNotificationsCheckBox, &QAbstractButton::toggled,
         this, &GeneralSettings::slotToggleOptionalServerNotifications);
@@ -404,7 +406,9 @@ void GeneralSettings::loadMiscSettings()
     _ui->monoIconsCheckBox->setChecked(cfgFile.monoIcons());
 
     const auto interval = cfgFile.remotePollInterval(); 
+#ifndef IONOS_BUILD
     _ui->remotePollIntervalSpinBox->setValue(static_cast<int>(interval.count() / 1000));  
+#endif
 }
 
 #if defined(BUILD_UPDATER)
