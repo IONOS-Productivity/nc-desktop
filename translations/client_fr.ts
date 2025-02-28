@@ -119,10 +119,6 @@
         <translation>Synchronisation de %1 sur %2</translation>
     </message>
     <message>
-        <source>Syncing %1 of %2  (%3 left)</source>
-        <translation>Synchronisation de %1 sur %2 (%3 restant)</translation>
-    </message>
-    <message>
         <source>Syncing %1 of %2 (%3 left)</source>
         <translation type="unfinished">Synchronisation de %1 sur %2 (%3 restant⸱s)</translation>
     </message>
@@ -235,18 +231,10 @@
 <context>
     <name>FileDetailsPage</name>
     <message>
-        <source>Activity</source>
-        <translation>Activité</translation>
-    </message>
-    <message>
         <source>Dismiss</source>
         <translation type="unfinished">Rejeter</translation>
     </message>
-<message>
-        <source>Sharing</source>
-        <translation>Partage</translation>
-    </message>
-    </context>
+</context>
 <context>
     <name>FileDetailsWindow</name>
     <message>
@@ -274,10 +262,6 @@
     <message>
         <source>Enable fast sync</source>
         <translation>Activer la sync. rapide</translation>
-    </message>
-    <message>
-        <source>Fast sync will only sync changes in files and folders within folders that have been explored. This can significantly increase responsiveness on initial configuration of virtual files. However, it will cause redundant downloads of files moved to an unexplored folder. </source>
-        <translation>La synchronisation rapide va uniquement synchroniser les modifications des fichiers et des dossiers dans les dossiers qui ont été explorés. Ceci peut significativement augmenter la réactivité sur la configuration initiale des fichiers virtuelles. Cependant, cela va causer des téléchargements redondants de fichiers déplacés dans un dossier non exploré.</translation>
     </message>
     <message>
         <source>Fast sync will only sync changes in files and folders within folders that have been explored. This can significantly increase responsiveness on initial configuration of virtual files. However, it will cause redundant downloads of files moved to an unexplored folder.</source>
@@ -373,11 +357,11 @@
         <source>Reopen Browser</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Switch to your browser to connect your account</source>
         <translation>Basculez sur votre navigateur pour connecter votre compte</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>FolderWizardSelectiveSync</name>
     <message>
@@ -395,17 +379,9 @@
         <source>&amp;Choose</source>
         <translation type="unfinished" />
     </message>
-<message>
-        <source>&amp;Choose …</source>
-        <translation>&amp;Sélectionner …</translation>
-    </message>
     <message>
         <source>Add Folder Sync</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Pick a local folder on your computer to sync</source>
-        <translation>Sélectionnez un dossier local de votre ordinateur à synchroniser</translation>
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
@@ -415,7 +391,7 @@
         <source>Step 1 of 3: Select local folder</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>FolderWizardTargetPage</name>
     <message>
@@ -426,7 +402,7 @@
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Create folder</source>
         <translation>Créer un dossier</translation>
     </message>
@@ -443,14 +419,10 @@
         <translation>Rafraîchir</translation>
     </message>
     <message>
-        <source>Select a remote destination folder</source>
-        <translation>Veuillez sélectionner un dossier distant</translation>
-    </message>
-    <message>
         <source>Step 2 of 3: Directory in your %1</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>main.cpp</name>
     <message>
@@ -831,24 +803,12 @@ Vous prenez vos propres risques.</translation>
         <translation>Il y a des dossiers qui ont augmenté de taille au-delà de %1MB: %2</translation>
     </message>
     <message>
-        <source>There are folders that were not synchronized because they are external storages: </source>
-        <translation>Certains dossiers n&apos;ont pas été synchronisés parce qu&apos;ils sont localisés sur un stockage externe :</translation>
-    </message>
-    <message>
         <source>There are folders that were not synchronized because they are external storages:</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>There are folders that were not synchronized because they are too big or external storages: </source>
-        <translation>Certains dossiers n&apos;ont pas été synchronisés parce qu&apos;ils sont localisés sur un stockage externe ou qu&apos;ils sont de taille trop importante :</translation>
-    </message>
-    <message>
         <source>There are folders that were not synchronized because they are too big or external storages:</source>
         <translation type="unfinished" />
-    </message>
-<message>
-        <source>There are folders that were not synchronized because they are too big: </source>
-        <translation>Certains dossiers n&apos;ont pas été synchronisés parce qu&apos;ils sont de taille trop importante :</translation>
     </message>
     <message>
         <source>There are folders that were not synchronized because they are too big:</source>
@@ -911,7 +871,7 @@ Wait for the new sync, then encrypt it.</source>
         <source>https://wl.hidrive.com/easy/0057</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::AccountSetupFromCommandLineJob</name>
     <message>
@@ -1746,7 +1706,7 @@ Cela peut être un problème avec vos bibliothèques OpenSSL.</translation>
         <source>Switch to your browser to connect your account</source>
         <translation type="unfinished">Basculez sur votre navigateur pour connecter votre compte</translation>
     </message>
-<message>
+    <message>
         <source>Unable to open the Browser, please copy the link to your Browser.</source>
         <translation>Impossible d&apos;ouvrir le navigateur, veuillez copier le lien dans votre navigateur Web.</translation>
     </message>
@@ -1754,7 +1714,7 @@ Cela peut être un problème avec vos bibliothèques OpenSSL.</translation>
         <source>Waiting for authorization</source>
         <translation>En attente de l&apos;autorisation</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::Folder</name>
     <message numerus="yes">
@@ -1850,17 +1810,10 @@ Cela peut être un problème avec vos bibliothèques OpenSSL.</translation>
         <translation>%1 est actuellement verrouillé.</translation>
     </message>
     <message>
-        <source>A folder from an external storage has been added.
-</source>
-        <translation>Un nouveau dossier localisé sur un stockage externe a été ajouté.
-
-</translation>
-    </message>
-    <message>
         <source>A folder from an external storage has been added.</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>A folder has surpassed the set folder size limit of %1MB: %2.
 %3</source>
         <translation>Un dossier a dépassé la taille limite fixée de %1MB: %2.
@@ -1881,12 +1834,6 @@ Alternatively, you can restore all deleted files by downloading them from the se
         <translation>Un grand nombre de fichiers de votre dossier local &apos;%1&apos; ont été supprimés.
 Veuillez confirmer si vous souhaitez procéder à ces suppressions.
 Vous pouvez également restaurer tous les fichiers supprimés en les téléchargeant depuis le serveur.</translation>
-    </message>
-    <message>
-        <source>A new folder larger than %1 MB has been added: %2.
-</source>
-        <translation>Un nouveau dossier de taille supérieure à %1 Mo a été ajouté : %2.
-</translation>
     </message>
     <message>
         <source>A new folder larger than %1 MB has been added: %2.</source>
@@ -1972,14 +1919,14 @@ Cela signifie que le client de synchronisation ne va pas téléverser immédiate
         <source>Would you like to stop syncing this folder?</source>
         <translation>Voulez vous arrêter la synchronisation de ce dossier ?</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::FolderCreationDialog</name>
     <message>
         <source>%1 Create new folder</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Could not create a folder! Check your write permissions.</source>
         <translation>Impossible de créer le dossier ! Veuillez vérifier vos permissions d’écriture.</translation>
     </message>
@@ -1999,7 +1946,7 @@ Cela signifie que le client de synchronisation ne va pas téléverser immédiate
         <source>Folder already exists</source>
         <translation>Le dossier existe déjà</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::FolderMan</name>
     <message>
@@ -2007,16 +1954,8 @@ Cela signifie que le client de synchronisation ne va pas téléverser immédiate
         <translation>%1 (Synchronisation en pause)</translation>
     </message>
     <message>
-        <source> (backup %1)</source>
-        <translation>(sauvegarde %1)</translation>
-    </message>
-    <message>
         <source>(backup %1)</source>
         <translation type="unfinished" />
-    </message>
-<message>
-        <source> (backup)</source>
-        <translation>(sauvegarde)</translation>
     </message>
     <message>
         <source>(backup)</source>
@@ -2130,16 +2069,12 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
         <source>Waiting to start syncing.</source>
         <translation>En attente de synchronisation.</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::FolderStatusDelegate</name>
     <message>
         <source>Add Folder Sync</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Add Folder Sync Connection</source>
-        <translation>Ajouter une synchronisation de dossier</translation>
     </message>
     <message>
         <source>File</source>
@@ -2314,7 +2249,7 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
         <source>Choose</source>
         <translation type="unfinished">Choisir</translation>
     </message>
-<message>
+    <message>
         <source>Click to select a local folder to sync.</source>
         <translation>Cliquez pour choisir un dossier local à synchroniser.</translation>
     </message>
@@ -2334,7 +2269,7 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
         <source>Step 1 of 3: Select local folder</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::FolderWizardRemotePath</name>
     <message>
@@ -2361,7 +2296,7 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
         <source>Create folder</source>
         <translation type="unfinished">Créer un dossier</translation>
     </message>
-<message>
+    <message>
         <source>Enter the name of the new folder to be created below &quot;%1&quot;:</source>
         <translation>Entrez le nom du nouveau dossier à créer dans &quot;%1&quot; :</translation>
     </message>
@@ -2393,7 +2328,7 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
         <source>Step 2 of 3: Directory in your %1</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::FolderWizardSelectiveSync</name>
     <message>
@@ -2408,7 +2343,7 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
         <source>Step 3 of 3: Selektive Synchronisation</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Use virtual files instead of downloading content immediately %1</source>
         <translation>Utiliser les fichiers virtuels au lieu de télécharger le contenu immédiatement %1</translation>
     </message>
@@ -2420,7 +2355,7 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
         <source>Virtual files are not supported for Windows partition roots as local folder. Please choose a valid subfolder under drive letter.</source>
         <translation>Vous ne pouvez pas définir la racine d&apos;une partition Windows pour votre dossier local. Veuillez choisir un (sous)dossier de la partition.</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::GeneralSettings</name>
     <message>
@@ -2430,10 +2365,6 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
     <message>
         <source>&amp;Automatically check for updates</source>
         <translation>&amp;Vérifier automatiquement les mises à jour</translation>
-    </message>
-    <message>
-        <source>&amp;Launch on System Startup</source>
-        <translation>&amp;Lancer au démarrage du système</translation>
     </message>
     <message>
         <source>&amp;Launch on system startup</source>
@@ -2528,10 +2459,6 @@ La rétrogradation des versions n&apos;est pas possible immédiatement: passer d
         <translation>Paramètres généraux</translation>
     </message>
     <message>
-        <source>Info</source>
-        <translation>Informations</translation>
-    </message>
-    <message>
         <source>Legal Notice</source>
         <translation>Mentions légales</translation>
     </message>
@@ -2544,7 +2471,7 @@ La rétrogradation des versions n&apos;est pas possible immédiatement: passer d
         <source>More Information</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Move removed files to trash</source>
         <translation>Déplacer les fichiers supprimés vers la corbeille</translation>
     </message>
@@ -2569,28 +2496,12 @@ La rétrogradation des versions n&apos;est pas possible immédiatement: passer d
         <translation>Notifications du serveur requérant votre attention.</translation>
     </message>
     <message>
-        <source>Show Call Notifications</source>
-        <translation>Afficher les notifications d&apos;appel</translation>
-    </message>
-    <message>
-        <source>Show Chat Notifications</source>
-        <translation>Afficher les notifications de discussion</translation>
-    </message>
-    <message>
-        <source>Show Server &amp;Notifications</source>
-        <translation>Afficher les &amp;notifications serveur</translation>
-    </message>
-    <message>
         <source>Show call notification dialogs.</source>
         <translation>Montre les fenêtres de notification d&apos;appel.</translation>
     </message>
     <message>
         <source>Show call notifications</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Show chat notification dialogs.</source>
-        <translation>Afficher les boîtes de dialogue de notification de chat.</translation>
     </message>
     <message>
         <source>Show server &amp;notifications</source>
@@ -2622,10 +2533,6 @@ La rétrogradation des versions n&apos;est pas possible immédiatement: passer d
         <translation>Documentation d&apos;utilisation</translation>
     </message>
     <message>
-        <source>Use &amp;Monochrome Icons</source>
-        <translation>Utiliser les icônes &amp;monochromes</translation>
-    </message>
-    <message>
         <source>Use &amp;monochrome icons</source>
         <translation type="unfinished" />
     </message>
@@ -2653,7 +2560,7 @@ La rétrogradation des versions n&apos;est pas possible immédiatement: passer d
         <source>stable</source>
         <translation>stable</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::GETFileJob</name>
     <message>
@@ -2749,10 +2656,6 @@ La rétrogradation des versions n&apos;est pas possible immédiatement: passer d
         <translation>Ajouter</translation>
     </message>
     <message>
-        <source>Add Ignore Pattern</source>
-        <translation>Ajouter un modèle d&apos;exclusion</translation>
-    </message>
-    <message>
         <source>Add a new ignore pattern:</source>
         <translation>Ajouter un nouveau modèle d&apos;exclusion :</translation>
     </message>
@@ -2779,7 +2682,7 @@ Les éléments dont la suppression est autorisée seront supprimés s&apos;ils e
         <source>Ignore Pattern</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Pattern</source>
         <translation>Modèle</translation>
     </message>
@@ -2791,7 +2694,7 @@ Les éléments dont la suppression est autorisée seront supprimés s&apos;ils e
         <source>Remove all</source>
         <translation>Tout retirer</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::InvalidFilenameDialog</name>
     <message>
@@ -4106,11 +4009,11 @@ Il s&apos;agit d&apos;un nouveau mode expérimental. Si vous décidez de l&apos;
         <source>Success</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Warning</source>
         <translation type="unfinished">Attention</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::SettingsDialog</name>
     <message>
@@ -4134,11 +4037,11 @@ Il s&apos;agit d&apos;un nouveau mode expérimental. Si vous décidez de l&apos;
         <source>New account</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Settings</source>
         <translation>Paramètres</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::ShareeModel</name>
     <message>
@@ -4423,26 +4326,14 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <translation>La connexion n&apos;est pas sécurisée</translation>
     </message>
     <message>
-        <source>This connection is NOT secure as it is not encrypted.
-</source>
-        <translation>Cette connexion n&apos;est PAS sécurisée car elle n&apos;est pas chiffrée.
-</translation>
-    </message>
-    <message>
         <source>This connection is NOT secure as it is not encrypted.</source>
         <translation type="unfinished" />
-    </message>
-<message>
-        <source>This connection is encrypted using %1 bit %2.
-</source>
-        <translation>Cette connexion est chiffrée en utilisant %1 bit %2.
-</translation>
     </message>
     <message>
         <source>This connection is encrypted using %1 bit %2.</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::SslErrorDialog</name>
     <message>
@@ -4982,17 +4873,9 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>&lt;b&gt;You have been logged out of your account %1 at %2. Please login again.&lt;/b&gt;</source>
         <translation type="unfinished" />
     </message>
-<message>
-        <source>You have been logged out of your account %1 at %2. Please login again.</source>
-        <translation>Vous avez été déconnecté de votre compte %1 à %2. Merci de vous reconnecter.</translation>
-    </message>
-    </context>
+</context>
 <context>
     <name>OCC::WelcomePage</name>
-    <message>
-        <source>Easy-to-use web mail, calendaring &amp; contacts</source>
-        <translation>E-mail, agenda et contacts en ligne faciles à utiliser</translation>
-    </message>
     <message>
         <source>Form</source>
         <translation>Formulaire</translation>
@@ -5010,14 +4893,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <translation>Se connecter</translation>
     </message>
     <message>
-        <source>Screensharing, online meetings &amp; web conferences</source>
-        <translation>Partage d&apos;écran, réunions en ligne et conférences Web</translation>
-    </message>
-    <message>
-        <source>Secure collaboration &amp; file exchange</source>
-        <translation>Collaboration et échange de fichiers sécurisés</translation>
-    </message>
-    <message>
         <source>Sign up with provider</source>
         <translation>S&apos;inscrire auprès d&apos;un fournisseur</translation>
     </message>
@@ -5031,10 +4906,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Si cette case est cochée, le contenu existant du dossier local sera supprimé pour démarrer une synchronisation propre depuis le serveur.&lt;/p&gt;&lt;p&gt;Ne pas cocher si le contenu local doit être téléversé vers le serveur.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Ask before syncing external storages</source>
-        <translation>Demander confirmation avant de synchroniser des stockages externes </translation>
     </message>
     <message>
         <source>Ask before syncing folders larger than</source>
@@ -5095,10 +4966,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
 </context>
 <context>
     <name>OwncloudSetupPage</name>
-    <message>
-        <source>Logo</source>
-        <translation>Logo</translation>
-    </message>
     <message>
         <source>Server address</source>
         <translation>Adresse du serveur</translation>
@@ -5271,7 +5138,7 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>The directory %1 cannot be part of your sync directory. Please choose another folder.</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>You changed %1</source>
         <translation>Vous avez modifié %1</translation>
     </message>
@@ -5295,7 +5162,7 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>now</source>
         <translation>A l&apos;instant</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>ResolveConflictsDialog</name>
     <message numerus="yes">
@@ -5348,11 +5215,11 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>Open local or group folders</source>
         <translation type="unfinished">Ouvrir des dossiers locaux ou de groupe</translation>
     </message>
-<message>
+    <message>
         <source>Website</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>ShareDelegate</name>
     <message>
@@ -5398,14 +5265,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>Custom Permissions</source>
         <translation type="unfinished" />
     </message>
-<message>
-        <source>Edit share</source>
-        <translation>Modifier le partage</translation>
-    </message>
-    <message>
-        <source>Enter a note for the recipient</source>
-        <translation>Saisir une note pour le destinataire</translation>
-    </message>
     <message>
         <source>Enter the note to recipient</source>
         <translation type="unfinished" />
@@ -5431,10 +5290,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <translation>Définir une date d&apos;expiration</translation>
     </message>
     <message>
-        <source>Share label</source>
-        <translation>Libellé du partage</translation>
-    </message>
-    <message>
         <source>Share link copied!</source>
         <translation>Lien de partage copié !</translation>
     </message>
@@ -5446,7 +5301,7 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>View only</source>
         <translation>Afficher seulement</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>ShareeSearchField</name>
     <message>
@@ -5586,7 +5441,7 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>Account switcher and settings menu</source>
         <translation type="unfinished">Sélecteur de compte et menu de paramètres</translation>
     </message>
-<message>
+    <message>
         <source>Add account</source>
         <translation type="unfinished">Ajouter un compte</translation>
     </message>
@@ -5622,7 +5477,7 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>Settings</source>
         <translation type="unfinished">Paramètres</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>TrayWindowHeader</name>
     <message>
@@ -5648,7 +5503,7 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>Open %1 in browser</source>
         <translation type="unfinished">Ouvrir %1 dans le navigateur</translation>
     </message>
-<message>
+    <message>
         <source>Open Nextcloud Talk in browser</source>
         <translation type="unfinished">Ouvrir Nextcloud Discussion dans le navigateur</translation>
     </message>
@@ -5664,7 +5519,7 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>Website</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>UnifiedSearchInputContainer</name>
     <message>
@@ -5719,14 +5574,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     <message>
         <source>Account actions</source>
         <translation>Actions du compte</translation>
-    </message>
-    <message>
-        <source>Current account status is do not disturb</source>
-        <translation>Le statut actuel du compte est &quot;ne pas déranger&quot;</translation>
-    </message>
-    <message>
-        <source>Current account status is online</source>
-        <translation>Le statut actuel du compte est &quot;en ligne&quot;</translation>
     </message>
     <message>
         <source>Log in</source>
