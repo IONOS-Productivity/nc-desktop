@@ -122,7 +122,7 @@ SettingsDialog::SettingsDialog(ownCloudGui *gui, QWidget *parent)
     _actionGroup->setExclusive(true);
     connect(_actionGroup, &QActionGroup::triggered, this, &SettingsDialog::slotSwitchPage);
 
-    QAction *newAccountAction = createColorAwareAction(QLatin1String(":/client/theme/ses/ses-darkPlus.svg"), tr("New Account"));
+    QAction *newAccountAction = createColorAwareAction(QLatin1String(":/client/theme/ses/ses-darkPlus.svg"), tr("New account"));
     _actionGroup->addAction(newAccountAction);
     _toolBar->addAction(newAccountAction);
     connect(newAccountAction, &QAction::triggered, _gui, &ownCloudGui::slotNewAccountWizard);

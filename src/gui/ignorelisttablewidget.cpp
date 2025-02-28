@@ -26,10 +26,10 @@ IgnoreListTableWidget::IgnoreListTableWidget(QWidget *parent)
 
     customizeIgnoreListDialogStyle();
 
-    ui->descriptionLabel->setText(tr("Files or folders that match this pattern will not be synchronized.\n\n"
-                                     "Objects that are allowed to be deleted will be deleted if they would "
-                                     "prevent a folder from being deleted. "
-                                     "This is useful for metadata."));
+    ui->descriptionLabel->setText(tr("Files or folders matching a pattern will not be synchronized.\n\n"
+                                    "Items where deletion is allowed will be deleted if they prevent a "
+                                    "directory from being removed. "
+                                    "This is useful for meta data."));
 
     connect(ui->tableWidget,         &QTableWidget::itemSelectionChanged,
             this, &IgnoreListTableWidget::slotItemSelectionChanged);
@@ -232,7 +232,7 @@ void IgnoreListTableWidget::customizeIgnoreListDialogStyle(){
 
 void IgnoreListTableWidget::customizeAddIgnorePatternDialogStyle(QInputDialog &inputDialog){
     inputDialog.setWindowTitle(tr("Ignore Pattern"));
-    inputDialog.setLabelText(tr("Add New Ignore Pattern"));
+    inputDialog.setLabelText(tr("Add a new ignore pattern:"));
     inputDialog.setTextValue(QString());
     inputDialog.resize(626, 196);
     inputDialog.setVisible(true);

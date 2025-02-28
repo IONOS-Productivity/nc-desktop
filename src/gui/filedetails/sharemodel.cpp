@@ -989,7 +989,7 @@ void ShareModel::toggleShareNoteToRecipient(const SharePtr &share, const bool en
         return;
     }
 
-    const QString note = enable ? tr(" ") : QString();
+    const QString note = enable ? " " : QString();
     if (const auto linkShare = share.objectCast<LinkShare>()) {
         linkShare->setNote(note);
     } else if (const auto userGroupShare = share.objectCast<UserGroupShare>()) {

@@ -140,10 +140,9 @@
                                     <layout class="QHBoxLayout" name="horizontalLayout_1">
                                         <item>
                                             <widget class="QCheckBox" name="newFolderLimitCheckBox">
-                                                <property name="text">
-                                                    <string>Ask for confirmation before
-                                                        synchronizing new folders larger than</string>
-                                                </property>
+          <property name="text">
+                                                    <string>Ask for confirmation before synchronizing new folders larger than</string>
+          </property>
                                                 <property name="checked">
                                                     <bool>true</bool>
                                                 </property>
@@ -178,9 +177,7 @@
                                         <item>
                                             <widget class="QLabel" name="label">
                                                 <property name="text">
-                                                    <string
-                                                        extracomment="Trailing part of &quot;Ask confirmation before syncing folder larger than&quot; ">
-                                                        MB</string>
+                                                    <string extracomment="Trailing part of &quot;Ask confirmation before syncing folder larger than&quot; ">MB</string>
                                                 </property>
                                             </widget>
                                         </item>
@@ -208,8 +205,7 @@
                                             <widget class="QCheckBox"
                                                 name="existingFolderLimitCheckBox">
                                                 <property name="text">
-                                                    <string>Notify when synchronised folders grow
-                                                        larger than specified limit</string>
+                                                    <string>Notify when synchronised folders grow larger than specified limit</string>
                                                 </property>
                                             </widget>
                                         </item>
@@ -237,8 +233,7 @@
                                             <widget class="QCheckBox"
                                                 name="stopExistingFolderNowBigSyncCheckBox">
                                                 <property name="text">
-                                                    <string>Automatically disable synchronisation of
-                                                        folders that overcome limit</string>
+                                                    <string>Automatically disable synchronisation of folders that overcome limit</string>
                                                 </property>
                                             </widget>
                                         </item>
@@ -251,8 +246,7 @@
                                 <item>
                                     <widget class="QCheckBox" name="newExternalStorage">
                                         <property name="text">
-                                            <string>Ask for confirmation before synchronizing
-                                                external storages</string>
+                                            <string>Ask for confirmation before synchronizing external storages</string>
                                         </property>
                                     </widget>
                                 </item>
@@ -275,8 +269,7 @@
                                     <widget class="QCheckBox"
                                         name="showInExplorerNavigationPaneCheckBox">
                                         <property name="text">
-                                            <string>Show sync folders in &amp;Explorer's navigation
-                                                pane</string>
+                                            <string>Show sync folders in &amp;Explorer's navigation pane</string>
                                         </property>
                                     </widget>
                                 </item>

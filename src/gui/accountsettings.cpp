@@ -1717,9 +1717,9 @@ void AccountSettings::refreshSelectiveSyncStatus()
     QString infoString;
 
     if (!unsyncedFoldersString.isEmpty()) {
-        infoString += !cfg.confirmExternalStorage() ? tr("There are folders that were not synchronized because they are too big: ")
-            : !cfg.newBigFolderSizeLimit().first    ? tr("There are folders that were not synchronized because they are external storages: ")
-                                                    : tr("There are folders that were not synchronized because they are too big or external storages: ");
+        infoString += !cfg.confirmExternalStorage() ? tr("There are folders that were not synchronized because they are too big:") + " "
+            : !cfg.newBigFolderSizeLimit().first    ? tr("There are folders that were not synchronized because they are external storages:") + " "
+                                                    : tr("There are folders that were not synchronized because they are too big or external storages:") + " ";
 
         infoString += unsyncedFoldersString;
     }
