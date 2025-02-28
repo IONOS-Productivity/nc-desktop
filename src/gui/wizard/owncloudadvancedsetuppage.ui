@@ -456,9 +456,7 @@
          <item>
           <widget class="QLabel" name="confTraillingSizeLabel">
            <property name="text">
-            <string extracomment="Trailing part of &quot;Ask confirmation before syncing folder larger than&quot; ">
-                                                    MB
-                                                </string>
+            <string extracomment="Trailing part of &quot;Ask confirmation before syncing folder larger than&quot; ">MB</string>
            </property>
            <property name="textFormat">
             <enum>Qt::PlainText</enum>
@@ -672,13 +670,9 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="toolTip">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked,
-                                            existing content in the local folder will be erased to start a clean sync
-                                            from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content
-                                            should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                        </string>
-         </property>
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
          <property name="text">
           <string>Erase local folder and start a clean sync</string>
          </property>
