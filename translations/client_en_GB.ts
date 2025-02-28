@@ -38,13 +38,6 @@
     </message>
 </context>
 <context>
-    <name>BasicComboBox</name>
-    <message>
-        <source>Clear status message menu</source>
-        <translation>Delete status message menu</translation>
-    </message>
-</context>
-<context>
     <name>CallNotificationDialog</name>
     <message>
         <source>Answer Talk call notification</source>
@@ -314,10 +307,6 @@
     <message>
         <source>Evict local copies …</source>
         <translation>Evict local copies …</translation>
-    </message>
-    <message>
-        <source>Evict local copies...</source>
-        <translation>Evict local copies...</translation>
     </message>
     <message>
         <source>Local storage use</source>
@@ -2568,22 +2557,6 @@ Downgrading versions is not possible immediately: changing from stable to enterp
     <message>
         <source>enterprise</source>
         <translation>enterprise</translation>
-    </message>
-    <message>
-        <source>https://wl.hidrive.com/easy/0004</source>
-        <translation>https://wl.hidrive.com/easy/0004</translation>
-    </message>
-    <message>
-        <source>https://wl.hidrive.com/easy/0005</source>
-        <translation>https://wl.hidrive.com/easy/0005</translation>
-    </message>
-    <message>
-        <source>https://wl.hidrive.com/easy/0006</source>
-        <translation>https://wl.hidrive.com/easy/0006</translation>
-    </message>
-    <message>
-        <source>https://wl.hidrive.com/easy/0007</source>
-        <translation>https://wl.hidrive.com/easy/0007</translation>
     </message>
     <message>
         <source>stable</source>

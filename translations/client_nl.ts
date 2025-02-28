@@ -38,13 +38,6 @@
     </message>
 </context>
 <context>
-    <name>BasicComboBox</name>
-    <message>
-        <source>Clear status message menu</source>
-        <translation>Statusbericht wissen</translation>
-    </message>
-</context>
-<context>
     <name>CallNotificationDialog</name>
     <message>
         <source>Answer Talk call notification</source>
@@ -314,10 +307,6 @@
     <message>
         <source>Evict local copies …</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Evict local copies...</source>
-        <translation>Lokale kopieën verwijderen...</translation>
     </message>
     <message>
         <source>Local storage use</source>
@@ -2559,22 +2548,6 @@ Downgrading versions is not possible immediately: changing from stable to enterp
         <translation>zakelijk</translation>
     </message>
     <message>
-        <source>https://wl.hidrive.com/easy/0004</source>
-        <translation>https://wl.hidrive.com/easy/0004</translation>
-    </message>
-    <message>
-        <source>https://wl.hidrive.com/easy/0005</source>
-        <translation>https://wl.hidrive.com/easy/0005</translation>
-    </message>
-    <message>
-        <source>https://wl.hidrive.com/easy/0006</source>
-        <translation>https://wl.hidrive.com/easy/0006</translation>
-    </message>
-    <message>
-        <source>https://wl.hidrive.com/easy/0007</source>
-        <translation>https://wl.hidrive.com/easy/0007</translation>
-    </message>
-    <message>
         <source>stable</source>
         <translation>stabiel</translation>
     </message>
@@ -4676,10 +4649,6 @@ Server antwoordde met fout: %2</translation>
 </context>
 <context>
     <name>OCC::User</name>
-    <message>
-        <source>%1 notifications</source>
-        <translation>%1 kennisgevingen</translation>
-    </message>
     <message numerus="yes">
         <source>%n notification(s)</source>
         <translation type="unfinished">
@@ -5096,10 +5065,6 @@ Server antwoordde met fout: %2</translation>
         <source>Virtual file created</source>
         <translation>Virtueel bestand gecreëerd</translation>
     </message>
-    <message>
-        <source>updating local virtual files metadata</source>
-        <translation>Metagegevens van lokale virtuele bestanden bijwerken</translation>
-    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -5460,13 +5425,6 @@ Server antwoordde met fout: %2</translation>
     <message>
         <source>Waiting to start syncing</source>
         <translation>In afwachting van synchronisatie</translation>
-    </message>
-</context>
-<context>
-    <name>TrayFoldersMenuButton</name>
-    <message>
-        <source>Files</source>
-        <translation>Bestanden</translation>
     </message>
 </context>
 <context>

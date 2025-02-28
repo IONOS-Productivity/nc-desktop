@@ -38,13 +38,6 @@
     </message>
 </context>
 <context>
-    <name>BasicComboBox</name>
-    <message>
-        <source>Clear status message menu</source>
-        <translation>Delete status message menu</translation>
-    </message>
-</context>
-<context>
     <name>CallNotificationDialog</name>
     <message>
         <source>Answer Talk call notification</source>
@@ -314,10 +307,6 @@
     <message>
         <source>Evict local copies …</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Evict local copies...</source>
-        <translation>Evict local copies...</translation>
     </message>
     <message>
         <source>Local storage use</source>
@@ -2544,22 +2533,6 @@ Downgrading versions is not possible immediately: changing from stable to enterp
         <translation type="unfinished" />
     </message>
     <message>
-        <source>https://wl.hidrive.com/easy/0004</source>
-        <translation>https://wl.hidrive.com/easy/0004</translation>
-    </message>
-    <message>
-        <source>https://wl.hidrive.com/easy/0005</source>
-        <translation>https://wl.hidrive.com/easy/0005</translation>
-    </message>
-    <message>
-        <source>https://wl.hidrive.com/easy/0006</source>
-        <translation>https://wl.hidrive.com/easy/0006</translation>
-    </message>
-    <message>
-        <source>https://wl.hidrive.com/easy/0007</source>
-        <translation>https://wl.hidrive.com/easy/0007</translation>
-    </message>
-    <message>
         <source>stable</source>
         <translation type="unfinished" />
     </message>
@@ -4648,10 +4621,6 @@ Server replied with error: %2</source>
 </context>
 <context>
     <name>OCC::User</name>
-    <message>
-        <source>%1 notifications</source>
-        <translation>%1 notifications</translation>
-    </message>
     <message numerus="yes">
         <source>%n notification(s)</source>
         <translation type="unfinished">
@@ -5068,10 +5037,6 @@ Server replied with error: %2</source>
         <source>Virtual file created</source>
         <translation type="unfinished" />
     </message>
-    <message>
-        <source>updating local virtual files metadata</source>
-        <translation>Updating local virtual files metadata</translation>
-    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -5432,13 +5397,6 @@ Server replied with error: %2</source>
     <message>
         <source>Waiting to start syncing</source>
         <translation type="unfinished" />
-    </message>
-</context>
-<context>
-    <name>TrayFoldersMenuButton</name>
-    <message>
-        <source>Files</source>
-        <translation>Files</translation>
     </message>
 </context>
 <context>

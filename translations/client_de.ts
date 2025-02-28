@@ -38,13 +38,6 @@
     </message>
 </context>
 <context>
-    <name>BasicComboBox</name>
-    <message>
-        <source>Clear status message menu</source>
-        <translation>Statusmeldungs-Menü löschen</translation>
-    </message>
-</context>
-<context>
     <name>CallNotificationDialog</name>
     <message>
         <source>Answer Talk call notification</source>
@@ -314,10 +307,6 @@
     <message>
         <source>Evict local copies …</source>
         <translation>Lokale Kopien entfernen …</translation>
-    </message>
-    <message>
-        <source>Evict local copies...</source>
-        <translation>Lokale Kopien entfernen...</translation>
     </message>
     <message>
         <source>Local storage use</source>
@@ -2568,22 +2557,6 @@ Ein Downgrade von Versionen ist nicht sofort möglich: Der Wechsel von Beta auf 
         <translation>Unternehmensversion</translation>
     </message>
     <message>
-        <source>https://wl.hidrive.com/easy/0004</source>
-        <translation>https://wl.hidrive.com/easy/0004</translation>
-    </message>
-    <message>
-        <source>https://wl.hidrive.com/easy/0005</source>
-        <translation>https://wl.hidrive.com/easy/0005</translation>
-    </message>
-    <message>
-        <source>https://wl.hidrive.com/easy/0006</source>
-        <translation>https://wl.hidrive.com/easy/0006</translation>
-    </message>
-    <message>
-        <source>https://wl.hidrive.com/easy/0007</source>
-        <translation>https://wl.hidrive.com/easy/0007</translation>
-    </message>
-    <message>
         <source>stable</source>
         <translation>Stabil</translation>
     </message>
@@ -4685,10 +4658,6 @@ Server antwortete mit Fehler: %2</translation>
 </context>
 <context>
     <name>OCC::User</name>
-    <message>
-        <source>%1 notifications</source>
-        <translation>%1 Benachrichtigungen</translation>
-    </message>
     <message numerus="yes">
         <source>%n notification(s)</source>
         <translation>
@@ -5105,10 +5074,6 @@ Server antwortete mit Fehler: %2</translation>
         <source>Virtual file created</source>
         <translation>Virtuelle Datei erstellt</translation>
     </message>
-    <message>
-        <source>updating local virtual files metadata</source>
-        <translation>Aktualisierung der Metadaten lokaler virtueller Dateien</translation>
-    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -5469,13 +5434,6 @@ Server antwortete mit Fehler: %2</translation>
     <message>
         <source>Waiting to start syncing</source>
         <translation>Warte auf Beginn der Synchronisierung.</translation>
-    </message>
-</context>
-<context>
-    <name>TrayFoldersMenuButton</name>
-    <message>
-        <source>Files</source>
-        <translation>Dateien</translation>
     </message>
 </context>
 <context>
