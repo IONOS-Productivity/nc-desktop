@@ -51,7 +51,7 @@ Column {
         padding: Style.smallSpacing
         text: qsTr("Fast sync will only sync changes in files and folders within folders that have been explored. " +
                     "This can significantly increase responsiveness on initial configuration of virtual files. " +
-                    "However, it will cause redundant downloads of files moved to an unexplored folder. ")
+                    "However, it will cause redundant downloads of files moved to an unexplored folder.")
         wrapMode: Text.Wrap
         visible: fastEnumerationEnabled
     }
