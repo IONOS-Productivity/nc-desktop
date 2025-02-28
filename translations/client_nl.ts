@@ -37,7 +37,14 @@
         <translation type="unfinished" />
     </message>
 </context>
-<context><name>BasicComboBox</name><message><source>Clear status message menu</source><translation>Statusbericht wissen</translation></message></context><context>
+<context>
+    <name>BasicComboBox</name>
+    <message>
+        <source>Clear status message menu</source>
+        <translation>Statusbericht wissen</translation>
+    </message>
+</context>
+<context>
     <name>CallNotificationDialog</name>
     <message>
         <source>Answer Talk call notification</source>
@@ -214,7 +221,7 @@
     </message>
     <message>
         <source>Choose</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kies</translation>
     </message>
     <message>
         <source>Token Encryption Key Chooser</source>
@@ -308,7 +315,11 @@
         <source>Evict local copies …</source>
         <translation type="unfinished" />
     </message>
-    <message><source>Evict local copies...</source><translation>Lokale kopieën verwijderen...</translation></message><message>
+    <message>
+        <source>Evict local copies...</source>
+        <translation>Lokale kopieën verwijderen...</translation>
+    </message>
+    <message>
         <source>Local storage use</source>
         <translation>Gebruik lokale opslag</translation>
     </message>
@@ -381,7 +392,7 @@
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
@@ -396,7 +407,7 @@
     <name>FolderWizardTargetPage</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
@@ -2071,7 +2082,7 @@ For advanced users: this issue might be related to multiple sync database files 
     <name>OCC::FolderStatusDelegate</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <source>File</source>
@@ -2241,7 +2252,7 @@ For advanced users: this issue might be related to multiple sync database files 
     <name>OCC::FolderWizardLocalPath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <source>Choose</source>
@@ -2257,7 +2268,7 @@ For advanced users: this issue might be related to multiple sync database files 
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Selecteer een map op je harde schijf die permanent verbonden moet zijn met je %1. Alle bestanden en submappen worden automatisch geüpload en gesynchroniseerd.</translation>
     </message>
     <message>
         <source>Select the source folder</source>
@@ -2265,14 +2276,14 @@ For advanced users: this issue might be related to multiple sync database files 
     </message>
     <message>
         <source>Step 1 of 3: Select local folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Stap 1 van 3: Selecteer lokale map</translation>
     </message>
 </context>
 <context>
     <name>OCC::FolderWizardRemotePath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <source>Authentication failed accessing %1</source>
@@ -2280,7 +2291,7 @@ For advanced users: this issue might be related to multiple sync database files 
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Beide mappen zijn permanent gekoppeld en de respectieve inhoud wordt automatisch gesynchroniseerd en bijgewerkt.</translation>
     </message>
     <message>
         <source>Choose this to sync the entire account</source>
@@ -2316,7 +2327,7 @@ For advanced users: this issue might be related to multiple sync database files 
     </message>
     <message>
         <source>Please now select or create a target folder in your %1 where the content should be uploaded and synchronized.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Selecteer of maak nu een doelmap in uw %1 waar de inhoud moet worden geüpload en gesynchroniseerd.</translation>
     </message>
     <message>
         <source>Refresh</source>
@@ -2324,7 +2335,7 @@ For advanced users: this issue might be related to multiple sync database files 
     </message>
     <message>
         <source>Step 2 of 3: Directory in your %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Stap 2 van 3: Directory in uw %1</translation>
     </message>
 </context>
 <context>
@@ -2335,11 +2346,11 @@ For advanced users: this issue might be related to multiple sync database files 
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <source>Step 3 of 3: Selektive Synchronisation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Stap 3 van 3: Selektieve synchronisatie</translation>
     </message>
     <message>
         <source>Use virtual files instead of downloading content immediately %1</source>
@@ -2547,7 +2558,23 @@ Downgrading versions is not possible immediately: changing from stable to enterp
         <source>enterprise</source>
         <translation>zakelijk</translation>
     </message>
-    <message><source>https://wl.hidrive.com/easy/0004</source><translation>https://wl.hidrive.com/easy/0004</translation></message><message><source>https://wl.hidrive.com/easy/0005</source><translation>https://wl.hidrive.com/easy/0005</translation></message><message><source>https://wl.hidrive.com/easy/0006</source><translation>https://wl.hidrive.com/easy/0006</translation></message><message><source>https://wl.hidrive.com/easy/0007</source><translation>https://wl.hidrive.com/easy/0007</translation></message><message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0004</source>
+        <translation>https://wl.hidrive.com/easy/0004</translation>
+    </message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0005</source>
+        <translation>https://wl.hidrive.com/easy/0005</translation>
+    </message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0006</source>
+        <translation>https://wl.hidrive.com/easy/0006</translation>
+    </message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0007</source>
+        <translation>https://wl.hidrive.com/easy/0007</translation>
+    </message>
+    <message>
         <source>stable</source>
         <translation>stabiel</translation>
     </message>
@@ -4559,7 +4586,7 @@ Server antwoordde met fout: %2</translation>
     </message>
     <message>
         <source>Open Browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Browser openen</translation>
     </message>
     <message>
         <source>Polling</source>
@@ -4649,7 +4676,11 @@ Server antwoordde met fout: %2</translation>
 </context>
 <context>
     <name>OCC::User</name>
-    <message><source>%1 notifications</source><translation>%1 kennisgevingen</translation></message><message numerus="yes">
+    <message>
+        <source>%1 notifications</source>
+        <translation>%1 kennisgevingen</translation>
+    </message>
+    <message numerus="yes">
         <source>%n notification(s)</source>
         <translation type="unfinished">
             <numerusform />
@@ -5065,7 +5096,11 @@ Server antwoordde met fout: %2</translation>
         <source>Virtual file created</source>
         <translation>Virtueel bestand gecreëerd</translation>
     </message>
-<message><source>updating local virtual files metadata</source><translation>Metagegevens van lokale virtuele bestanden bijwerken</translation></message></context>
+    <message>
+        <source>updating local virtual files metadata</source>
+        <translation>Metagegevens van lokale virtuele bestanden bijwerken</translation>
+    </message>
+</context>
 <context>
     <name>QObject</name>
     <message>
@@ -5427,7 +5462,14 @@ Server antwoordde met fout: %2</translation>
         <translation>In afwachting van synchronisatie</translation>
     </message>
 </context>
-<context><name>TrayFoldersMenuButton</name><message><source>Files</source><translation>Bestanden</translation></message></context><context>
+<context>
+    <name>TrayFoldersMenuButton</name>
+    <message>
+        <source>Files</source>
+        <translation>Bestanden</translation>
+    </message>
+</context>
+<context>
     <name>TrayWindowAccountMenu</name>
     <message>
         <source>Account switcher and settings menu</source>
@@ -5501,7 +5543,7 @@ Server antwoordde met fout: %2</translation>
     </message>
     <message>
         <source>Open Nextcloud in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">HiDrive Next in browser openen</translation>
     </message>
     <message>
         <source>Open local or group folders</source>
@@ -5509,7 +5551,7 @@ Server antwoordde met fout: %2</translation>
     </message>
     <message>
         <source>Website</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Website</translation>
     </message>
 </context>
 <context>

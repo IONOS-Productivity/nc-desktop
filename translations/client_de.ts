@@ -37,7 +37,14 @@
         <translation>Nach unten blättern</translation>
     </message>
 </context>
-<context><name>BasicComboBox</name><message><source>Clear status message menu</source><translation>Statusmeldungs-Menü löschen</translation></message></context><context>
+<context>
+    <name>BasicComboBox</name>
+    <message>
+        <source>Clear status message menu</source>
+        <translation>Statusmeldungs-Menü löschen</translation>
+    </message>
+</context>
+<context>
     <name>CallNotificationDialog</name>
     <message>
         <source>Answer Talk call notification</source>
@@ -308,7 +315,11 @@
         <source>Evict local copies …</source>
         <translation>Lokale Kopien entfernen …</translation>
     </message>
-    <message><source>Evict local copies...</source><translation>Lokale Kopien entfernen...</translation></message><message>
+    <message>
+        <source>Evict local copies...</source>
+        <translation>Lokale Kopien entfernen...</translation>
+    </message>
+    <message>
         <source>Local storage use</source>
         <translation>Lokaler Speicher verwenden</translation>
     </message>
@@ -381,7 +392,7 @@
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ordner Sync hinzufügen</translation>
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
@@ -396,7 +407,7 @@
     <name>FolderWizardTargetPage</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ordner Sync hinzufügen</translation>
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
@@ -2075,7 +2086,7 @@ Für fortgeschrittene Benutzer: Dieses Problem kann damit zusammenhängen, dass 
     <name>OCC::FolderStatusDelegate</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ordner Sync hinzufügen</translation>
     </message>
     <message>
         <source>File</source>
@@ -2244,7 +2255,7 @@ Für fortgeschrittene Benutzer: Dieses Problem kann damit zusammenhängen, dass 
     <name>OCC::FolderWizardLocalPath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ordner Sync hinzufügen</translation>
     </message>
     <message>
         <source>Choose</source>
@@ -2260,7 +2271,7 @@ Für fortgeschrittene Benutzer: Dieses Problem kann damit zusammenhängen, dass 
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Wählen Sie einen Ordner auf Ihrer Festplatte, der dauerhaft mit Ihrem %1 verbunden sein soll. Alle Dateien und Unterordner werden automatisch hochgeladen und synchronisiert.</translation>
     </message>
     <message>
         <source>Select the source folder</source>
@@ -2268,14 +2279,14 @@ Für fortgeschrittene Benutzer: Dieses Problem kann damit zusammenhängen, dass 
     </message>
     <message>
         <source>Step 1 of 3: Select local folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Schritt 1 von 3: Lokalen Ordner auswählen</translation>
     </message>
 </context>
 <context>
     <name>OCC::FolderWizardRemotePath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ordner Sync hinzufügen</translation>
     </message>
     <message>
         <source>Authentication failed accessing %1</source>
@@ -2283,7 +2294,7 @@ Für fortgeschrittene Benutzer: Dieses Problem kann damit zusammenhängen, dass 
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Beide Ordner sind dauerhaft miteinander verknüpft und die jeweiligen Inhalte werden automatisch synchronisiert und aktualisiert.</translation>
     </message>
     <message>
         <source>Choose this to sync the entire account</source>
@@ -2319,7 +2330,7 @@ Für fortgeschrittene Benutzer: Dieses Problem kann damit zusammenhängen, dass 
     </message>
     <message>
         <source>Please now select or create a target folder in your %1 where the content should be uploaded and synchronized.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Bitte wählen oder erstellen Sie nun einen Zielordner in Ihrem %1, in den der Inhalt hochgeladen und synchronisiert werden soll.</translation>
     </message>
     <message>
         <source>Refresh</source>
@@ -2327,7 +2338,7 @@ Für fortgeschrittene Benutzer: Dieses Problem kann damit zusammenhängen, dass 
     </message>
     <message>
         <source>Step 2 of 3: Directory in your %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Schritt 2 von 3: Verzeichnis in Ihrem %1</translation>
     </message>
 </context>
 <context>
@@ -2338,11 +2349,11 @@ Für fortgeschrittene Benutzer: Dieses Problem kann damit zusammenhängen, dass 
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ordner Sync hinzufügen</translation>
     </message>
     <message>
         <source>Step 3 of 3: Selektive Synchronisation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Schritt 3 von 3: Selektive Synchronisierung</translation>
     </message>
     <message>
         <source>Use virtual files instead of downloading content immediately %1</source>
@@ -2556,7 +2567,23 @@ Ein Downgrade von Versionen ist nicht sofort möglich: Der Wechsel von Beta auf 
         <source>enterprise</source>
         <translation>Unternehmensversion</translation>
     </message>
-    <message><source>https://wl.hidrive.com/easy/0004</source><translation>https://wl.hidrive.com/easy/0004</translation></message><message><source>https://wl.hidrive.com/easy/0005</source><translation>https://wl.hidrive.com/easy/0005</translation></message><message><source>https://wl.hidrive.com/easy/0006</source><translation>https://wl.hidrive.com/easy/0006</translation></message><message><source>https://wl.hidrive.com/easy/0007</source><translation>https://wl.hidrive.com/easy/0007</translation></message><message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0004</source>
+        <translation>https://wl.hidrive.com/easy/0004</translation>
+    </message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0005</source>
+        <translation>https://wl.hidrive.com/easy/0005</translation>
+    </message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0006</source>
+        <translation>https://wl.hidrive.com/easy/0006</translation>
+    </message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0007</source>
+        <translation>https://wl.hidrive.com/easy/0007</translation>
+    </message>
+    <message>
         <source>stable</source>
         <translation>Stabil</translation>
     </message>
@@ -4658,7 +4685,11 @@ Server antwortete mit Fehler: %2</translation>
 </context>
 <context>
     <name>OCC::User</name>
-    <message><source>%1 notifications</source><translation>%1 Benachrichtigungen</translation></message><message numerus="yes">
+    <message>
+        <source>%1 notifications</source>
+        <translation>%1 Benachrichtigungen</translation>
+    </message>
+    <message numerus="yes">
         <source>%n notification(s)</source>
         <translation>
             <numerusform>%n Benachrichtigung</numerusform>
@@ -5074,7 +5105,11 @@ Server antwortete mit Fehler: %2</translation>
         <source>Virtual file created</source>
         <translation>Virtuelle Datei erstellt</translation>
     </message>
-<message><source>updating local virtual files metadata</source><translation>Aktualisierung der Metadaten lokaler virtueller Dateien</translation></message></context>
+    <message>
+        <source>updating local virtual files metadata</source>
+        <translation>Aktualisierung der Metadaten lokaler virtueller Dateien</translation>
+    </message>
+</context>
 <context>
     <name>QObject</name>
     <message>
@@ -5436,7 +5471,14 @@ Server antwortete mit Fehler: %2</translation>
         <translation>Warte auf Beginn der Synchronisierung.</translation>
     </message>
 </context>
-<context><name>TrayFoldersMenuButton</name><message><source>Files</source><translation>Dateien</translation></message></context><context>
+<context>
+    <name>TrayFoldersMenuButton</name>
+    <message>
+        <source>Files</source>
+        <translation>Dateien</translation>
+    </message>
+</context>
+<context>
     <name>TrayWindowAccountMenu</name>
     <message>
         <source>Account switcher and settings menu</source>
@@ -5510,7 +5552,7 @@ Server antwortete mit Fehler: %2</translation>
     </message>
     <message>
         <source>Open Nextcloud in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">HiDrive Next im Browser öffnen</translation>
     </message>
     <message>
         <source>Open local or group folders</source>
@@ -5518,7 +5560,7 @@ Server antwortete mit Fehler: %2</translation>
     </message>
     <message>
         <source>Website</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Website</translation>
     </message>
 </context>
 <context>
