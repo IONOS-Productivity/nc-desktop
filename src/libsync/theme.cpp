@@ -474,7 +474,7 @@ QString Theme::helpUrl() const
 #ifdef APPLICATION_HELP_URL
     return QString::fromLatin1(APPLICATION_HELP_URL);
 #else
-    return QString::fromLatin1("https://wl.hidrive.com/%1").arg(tr("easy/0118", "Redirect URL Parameter"));
+    return QString::fromLatin1("https://wl.hidrive.com/%1").arg(tr("easy/0118"));
 #endif
 }
 
@@ -647,7 +647,7 @@ QString Theme::aboutInfo() const
 QString Theme::about() const
 {
     //: Example text: "<p>Nextcloud Desktop Client</p>"   (%1 is the application name)
-    const auto devString = tr("<p>%1 %2</p>").arg(APPLICATION_NAME, QString::fromLatin1(MIRALL_STRINGIFY(MIRALL_VERSION)));
+    const auto devString = QString("<p>%1 %2</p>").arg(APPLICATION_NAME, QString::fromLatin1(MIRALL_STRINGIFY(MIRALL_VERSION)));
 
     return devString;
 }
