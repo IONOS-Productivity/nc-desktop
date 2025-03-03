@@ -37,7 +37,14 @@
         <translation type="unfinished" />
     </message>
 </context>
-<context><name>BasicComboBox</name><message><source>Clear status message menu</source><translation>Delete status message menu</translation></message></context><context>
+<context>
+    <name>BasicComboBox</name>
+    <message>
+        <source>Clear status message menu</source>
+        <translation>Delete status message menu</translation>
+    </message>
+</context>
+<context>
     <name>CallNotificationDialog</name>
     <message>
         <source>Answer Talk call notification</source>
@@ -214,7 +221,7 @@
     </message>
     <message>
         <source>Choose</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Choose</translation>
     </message>
     <message>
         <source>Token Encryption Key Chooser</source>
@@ -308,7 +315,11 @@
         <source>Evict local copies …</source>
         <translation type="unfinished" />
     </message>
-    <message><source>Evict local copies...</source><translation>Evict local copies...</translation></message><message>
+    <message>
+        <source>Evict local copies...</source>
+        <translation>Evict local copies...</translation>
+    </message>
+    <message>
         <source>Local storage use</source>
         <translation type="unfinished" />
     </message>
@@ -381,7 +392,7 @@
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Add Folder Sync</translation>
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
@@ -396,7 +407,7 @@
     <name>FolderWizardTargetPage</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Add Folder Sync</translation>
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
@@ -1321,7 +1332,7 @@ Wait for the new sync, then encrypt it.</source>
     </message>
     <message>
         <source>Local version</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Local version</translation>
     </message>
     <message>
         <source>Open local version</source>
@@ -1333,7 +1344,7 @@ Wait for the new sync, then encrypt it.</source>
     </message>
     <message>
         <source>Server version</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Server version</translation>
     </message>
     <message>
         <source>Sync Conflict</source>
@@ -2057,7 +2068,7 @@ For advanced users: this issue might be related to multiple sync database files 
     <name>OCC::FolderStatusDelegate</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Add Folder Sync</translation>
     </message>
     <message>
         <source>File</source>
@@ -2226,7 +2237,7 @@ For advanced users: this issue might be related to multiple sync database files 
     <name>OCC::FolderWizardLocalPath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Add Folder Sync</translation>
     </message>
     <message>
         <source>Choose</source>
@@ -2242,7 +2253,7 @@ For advanced users: this issue might be related to multiple sync database files 
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized.</translation>
     </message>
     <message>
         <source>Select the source folder</source>
@@ -2250,14 +2261,14 @@ For advanced users: this issue might be related to multiple sync database files 
     </message>
     <message>
         <source>Step 1 of 3: Select local folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Step 1 of 3: Select local folder</translation>
     </message>
 </context>
 <context>
     <name>OCC::FolderWizardRemotePath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Add Folder Sync</translation>
     </message>
     <message>
         <source>Authentication failed accessing %1</source>
@@ -2265,7 +2276,7 @@ For advanced users: this issue might be related to multiple sync database files 
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Both folders are permanently linked and the respective contents are automatically synchronized and updated.</translation>
     </message>
     <message>
         <source>Choose this to sync the entire account</source>
@@ -2277,7 +2288,7 @@ For advanced users: this issue might be related to multiple sync database files 
     </message>
     <message>
         <source>Create folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Create folder</translation>
     </message>
     <message>
         <source>Enter the name of the new folder to be created below &quot;%1&quot;:</source>
@@ -2301,7 +2312,7 @@ For advanced users: this issue might be related to multiple sync database files 
     </message>
     <message>
         <source>Please now select or create a target folder in your %1 where the content should be uploaded and synchronized.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Please now select or create a target folder in your %1 where the content should be uploaded and synchronized.</translation>
     </message>
     <message>
         <source>Refresh</source>
@@ -2309,7 +2320,7 @@ For advanced users: this issue might be related to multiple sync database files 
     </message>
     <message>
         <source>Step 2 of 3: Directory in your %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Step 2 of 3: Directory in your %1</translation>
     </message>
 </context>
 <context>
@@ -2320,11 +2331,11 @@ For advanced users: this issue might be related to multiple sync database files 
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Add Folder Sync</translation>
     </message>
     <message>
         <source>Step 3 of 3: Selektive Synchronisation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Step 3 of 3: Selektive Synchronisation</translation>
     </message>
     <message>
         <source>Use virtual files instead of downloading content immediately %1</source>
@@ -2532,7 +2543,23 @@ Downgrading versions is not possible immediately: changing from stable to enterp
         <source>enterprise</source>
         <translation type="unfinished" />
     </message>
-    <message><source>https://wl.hidrive.com/easy/0004</source><translation>https://wl.hidrive.com/easy/0004</translation></message><message><source>https://wl.hidrive.com/easy/0005</source><translation>https://wl.hidrive.com/easy/0005</translation></message><message><source>https://wl.hidrive.com/easy/0006</source><translation>https://wl.hidrive.com/easy/0006</translation></message><message><source>https://wl.hidrive.com/easy/0007</source><translation>https://wl.hidrive.com/easy/0007</translation></message><message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0004</source>
+        <translation>https://wl.hidrive.com/easy/0004</translation>
+    </message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0005</source>
+        <translation>https://wl.hidrive.com/easy/0005</translation>
+    </message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0006</source>
+        <translation>https://wl.hidrive.com/easy/0006</translation>
+    </message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0007</source>
+        <translation>https://wl.hidrive.com/easy/0007</translation>
+    </message>
+    <message>
         <source>stable</source>
         <translation type="unfinished" />
     </message>
@@ -3816,7 +3843,7 @@ This is a new, experimental mode. If you decide to use it, please report any iss
     </message>
     <message>
         <source>Failed to unlock encrypted folder.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Failed to unlock encrypted folder.</translation>
     </message>
     <message>
         <source>Failed to upload encrypted file.</source>
@@ -4100,7 +4127,7 @@ Server replied with error: %2</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Delete</translation>
     </message>
     <message>
         <source>Delete local changes</source>
@@ -4433,7 +4460,7 @@ Server replied with error: %2</source>
     </message>
     <message>
         <source>All synced!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">All synced!</translation>
     </message>
     <message>
         <source>Checking folder changes</source>
@@ -4531,7 +4558,7 @@ Server replied with error: %2</source>
     </message>
     <message>
         <source>Open Browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Open Browser</translation>
     </message>
     <message>
         <source>Polling</source>
@@ -4621,7 +4648,11 @@ Server replied with error: %2</source>
 </context>
 <context>
     <name>OCC::User</name>
-    <message><source>%1 notifications</source><translation>%1 notifications</translation></message><message numerus="yes">
+    <message>
+        <source>%1 notifications</source>
+        <translation>%1 notifications</translation>
+    </message>
+    <message numerus="yes">
         <source>%n notification(s)</source>
         <translation type="unfinished">
             <numerusform />
@@ -5037,7 +5068,11 @@ Server replied with error: %2</source>
         <source>Virtual file created</source>
         <translation type="unfinished" />
     </message>
-<message><source>updating local virtual files metadata</source><translation>Updating local virtual files metadata</translation></message></context>
+    <message>
+        <source>updating local virtual files metadata</source>
+        <translation>Updating local virtual files metadata</translation>
+    </message>
+</context>
 <context>
     <name>QObject</name>
     <message>
@@ -5399,7 +5434,14 @@ Server replied with error: %2</source>
         <translation type="unfinished" />
     </message>
 </context>
-<context><name>TrayFoldersMenuButton</name><message><source>Files</source><translation>Files</translation></message></context><context>
+<context>
+    <name>TrayFoldersMenuButton</name>
+    <message>
+        <source>Files</source>
+        <translation>Files</translation>
+    </message>
+</context>
+<context>
     <name>TrayWindowAccountMenu</name>
     <message>
         <source>Account switcher and settings menu</source>
@@ -5473,7 +5515,7 @@ Server replied with error: %2</source>
     </message>
     <message>
         <source>Open Nextcloud in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Open HiDrive Next in browser</translation>
     </message>
     <message>
         <source>Open local or group folders</source>
@@ -5481,7 +5523,7 @@ Server replied with error: %2</source>
     </message>
     <message>
         <source>Website</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Website</translation>
     </message>
 </context>
 <context>
