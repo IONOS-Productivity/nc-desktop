@@ -57,7 +57,7 @@ constexpr auto versionC = "version";
 
 namespace OCC {
 
-Q_LOGGING_CATEGORY(lcFolder, "nextcloud.gui.folder", QtInfoMsg)
+Q_LOGGING_CATEGORY(lcFolder, "hidrivenext.gui.folder", QtInfoMsg)
 
 Folder::Folder(const FolderDefinition &definition,
     AccountState *accountState, std::unique_ptr<Vfs> vfs,
@@ -1324,10 +1324,10 @@ void Folder::slotNewBigFolderDiscovered(const QString &newF, bool isExternal)
             journal->setSelectiveSyncList(SyncJournalDb::SelectiveSyncUndecidedList, undecidedList);
             emit newBigFolderDiscovered(newFolder);
         }
-        QString message = !isExternal ? (tr("A new folder larger than %1 MB has been added: %2.\n")
+        QString message = !isExternal ? (tr("A new folder larger than %1 MB has been added: %2.") 
                                                 .arg(ConfigFile().newBigFolderSizeLimit().second)
-                                                .arg(newF))
-                                      : (tr("A folder from an external storage has been added.\n"));
+                                                .arg(newF) + "\n")
+                                      : (tr("A folder from an external storage has been added.") + "\n");
         message += tr("Please go in the settings to select it if you wish to download it.");
 
         auto logger = Logger::instance();
@@ -1604,7 +1604,7 @@ void Folder::registerFolderWatcher()
     }
     connect(_folderWatcher.data(), &FolderWatcher::filesLockImposed, this, &Folder::slotFilesLockImposed, Qt::UniqueConnection);
     _folderWatcher->init(path());
-    _folderWatcher->startNotificatonTest(path() + QLatin1String(".nextcloudsync.log"));
+    _folderWatcher->startNotificatonTest(path() + QLatin1String(".hidrivenextsync.log"));
     connect(_engine.data(), &SyncEngine::lockFileDetected, _folderWatcher.data(), &FolderWatcher::slotLockFileDetectedExternally);
 }
 

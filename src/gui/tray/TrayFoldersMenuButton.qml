@@ -27,6 +27,11 @@ HeaderButton {
     required property var currentUser
     property bool userHasGroupFolders: currentUser.groupFolders.length > 0
 
+    icon.source: Style.sesFolderIcon
+    icon.color: Style.sesIconColor
+
+    text: qsTr("Files")
+
     function openMenu() {
         foldersMenuLoader.openMenu()
     }
@@ -60,23 +65,14 @@ HeaderButton {
     contentItem: Item {
         id: rootContent
 
-        anchors.fill: parent
-
-        Item {
-            id: contentContainer
-            anchors.centerIn: parent
-
-            implicitWidth: openLocalFolderButtonCaretIconLoader.active ? openLocalFolderButtonIcon.width + openLocalFolderButtonCaretIconLoader.width : openLocalFolderButtonIcon.width
-            implicitHeight: openLocalFolderButtonIcon.height
-
             Image {
                 id: folderStateIndicator
-                visible: root.currentUser.hasLocalFolder
+                visible: root.currentUser.hasLocalFolder && false // SES-50 Hide Indicator till we have a proper implementation
                 source: root.currentUser.isConnected ? Style.stateOnlineImageSource : Style.stateOfflineImageSource
                 cache: false
 
                 anchors.bottom: openLocalFolderButtonIcon.bottom
-                anchors.bottomMargin: Style.trayFoldersMenuButtonStateIndicatorBottomOffset
+                anchors.bottomMargin: -5
                 anchors.right: openLocalFolderButtonIcon.right
                 sourceSize.width: Style.folderStateIndicatorSize
                 sourceSize.height: Style.folderStateIndicatorSize
@@ -84,16 +80,6 @@ HeaderButton {
                 Accessible.role: Accessible.Indicator
                 Accessible.name: root.currentUser.isConnected ? qsTr("Connected") : qsTr("Disconnected")
                 z: 1
-
-                Rectangle {
-                    id: folderStateIndicatorBackground
-                    width: Style.folderStateIndicatorSize + Style.trayFolderStatusIndicatorSizeOffset
-                    height: width
-                    anchors.centerIn: parent
-                    color: Style.currentUserHeaderColor
-                    radius: width * Style.trayFolderStatusIndicatorRadiusFactor
-                    z: -2
-                }
 
                 Rectangle {
                     id: folderStateIndicatorBackgroundMouseHover
@@ -110,12 +96,15 @@ HeaderButton {
             Image {
                 id: openLocalFolderButtonIcon
 
-                property int imageWidth: rootContent.width * Style.trayFoldersMenuButtonMainIconSizeFraction
-                property int imageHeight: rootContent.width * Style.trayFoldersMenuButtonMainIconSizeFraction
+                anchors.horizontalCenter: rootContent.horizontalCenter
+                anchors.top: rootContent.top
+                anchors.topMargin: 10
 
+                property int imageWidth: root.icon.width
+                property int imageHeight: root.icon.height
                 cache: true
 
-                source: "image://svgimage-custom-color/folder.svg/" + Style.currentUserHeaderTextColor
+                source: root.icon.source
                 sourceSize {
                     width: imageWidth
                     height: imageHeight
@@ -124,9 +113,17 @@ HeaderButton {
                 width: imageWidth
                 height: imageHeight
 
-                anchors.verticalCenter: parent.verticalCenter
+                anchors.verticalCenter: parent
             }
 
+            Text {
+                anchors.horizontalCenter: openLocalFolderButtonIcon.horizontalCenter
+                anchors.top: openLocalFolderButtonIcon.bottom
+                anchors.topMargin: 5
+                text: root.text
+                font: root.font
+                color: Style.sesTrayFontColor
+            }
 
             Loader {
                 id: openLocalFolderButtonCaretIconLoader
@@ -154,9 +151,7 @@ HeaderButton {
 
                 width: openLocalFolderButtonCaretIconLoader.imageWidth
                 height: openLocalFolderButtonCaretIconLoader.imageHeight
-
             }
-        }
     }
 
     Loader {
