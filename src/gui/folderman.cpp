@@ -55,7 +55,7 @@ int numberOfSyncJournals(const QString &path)
 
 namespace OCC {
 
-Q_LOGGING_CATEGORY(lcFolderMan, "nextcloud.gui.folder.manager", QtInfoMsg)
+Q_LOGGING_CATEGORY(lcFolderMan, "hidrivenext.gui.folder.manager", QtInfoMsg)
 
 FolderMan *FolderMan::_instance = nullptr;
 
@@ -1426,12 +1426,12 @@ QString FolderMan::getBackupName(QString fullPathName) const
     if (fullPathName.isEmpty())
         return QString();
 
-    QString newName = fullPathName + tr(" (backup)");
+    QString newName = fullPathName + " " + tr("(backup)");
     QFileInfo fi(newName);
     int cnt = 2;
     do {
         if (fi.exists()) {
-            newName = fullPathName + tr(" (backup %1)").arg(cnt++);
+            newName = fullPathName + " " + tr("(backup %1)").arg(cnt++);
             fi.setFile(newName);
         }
     } while (fi.exists());
