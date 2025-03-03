@@ -122,10 +122,6 @@
         <translation>Synchroniseren %1 van %2</translation>
     </message>
     <message>
-        <source>Syncing %1 of %2  (%3 left)</source>
-        <translation>Synchroniseer %1 van %2  (%3 over)</translation>
-    </message>
-    <message>
         <source>Syncing %1 of %2 (%3 left)</source>
         <translation type="unfinished">Sync %1 van %2  (%3 over)</translation>
     </message>
@@ -165,16 +161,8 @@
 <context>
     <name>FileDetailsPage</name>
     <message>
-        <source>Activity</source>
-        <translation>Activiteit</translation>
-    </message>
-    <message>
         <source>Dismiss</source>
         <translation>Negeren</translation>
-    </message>
-    <message>
-        <source>Sharing</source>
-        <translation>Delen</translation>
     </message>
 </context>
 <context>
@@ -303,11 +291,11 @@
         <source>Reopen Browser</source>
         <translation type="unfinished">Heropen browser</translation>
     </message>
-<message>
+    <message>
         <source>Switch to your browser to connect your account</source>
         <translation>Schakel over naar je browser om je account te verbinden</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>FolderWizardSelectiveSync</name>
     <message>
@@ -325,17 +313,9 @@
         <source>&amp;Choose</source>
         <translation type="unfinished" />
     </message>
-<message>
-        <source>&amp;Choose …</source>
-        <translation>&amp;Kies ...</translation>
-    </message>
     <message>
         <source>Add Folder Sync</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Pick a local folder on your computer to sync</source>
-        <translation>Kies een map op je computer om te synchroniseren</translation>
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
@@ -345,7 +325,7 @@
         <source>Step 1 of 3: Select local folder</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>FolderWizardTargetPage</name>
     <message>
@@ -356,7 +336,7 @@
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Create folder</source>
         <translation>Maak map</translation>
     </message>
@@ -373,14 +353,10 @@
         <translation>Vernieuwen</translation>
     </message>
     <message>
-        <source>Select a remote destination folder</source>
-        <translation>Kies een externe doelmap</translation>
-    </message>
-    <message>
         <source>Step 2 of 3: Directory in your %1</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>main.cpp</name>
     <message>
@@ -734,24 +710,12 @@ Would you like to set up end-to-end encryption?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>There are folders that were not synchronized because they are external storages: </source>
-        <translation>Er zijn mappen die niet gesynchroniseerd zijn, omdat ze op externe opslag staan:</translation>
-    </message>
-    <message>
         <source>There are folders that were not synchronized because they are external storages:</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>There are folders that were not synchronized because they are too big or external storages: </source>
-        <translation>Er zijn mappen die niet gesynchroniseerd zijn, omdat ze te groot zijn of op externe opslag staan:</translation>
-    </message>
-    <message>
         <source>There are folders that were not synchronized because they are too big or external storages:</source>
         <translation type="unfinished" />
-    </message>
-<message>
-        <source>There are folders that were not synchronized because they are too big: </source>
-        <translation>Er zijn mappen die niet gesynchroniseerd zijn, omdat ze te groot zijn:</translation>
     </message>
     <message>
         <source>There are folders that were not synchronized because they are too big:</source>
@@ -811,7 +775,7 @@ Wait for the new sync, then encrypt it.</source>
         <source>https://wl.hidrive.com/easy/0057</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::AccountSetupFromCommandLineJob</name>
     <message>
@@ -1608,10 +1572,6 @@ Dit kan een probleem zijn met je OpenSSL-bibliotheken.</translation>
         <translation>Controleren op autorisatie</translation>
     </message>
     <message>
-        <source>Reopen Browser</source>
-        <translation>Heropen browser</translation>
-    </message>
-    <message>
         <source>Starting authorization</source>
         <translation>Starten autorisatie</translation>
     </message>
@@ -1619,7 +1579,7 @@ Dit kan een probleem zijn met je OpenSSL-bibliotheken.</translation>
         <source>Switch to your browser to connect your account</source>
         <translation type="unfinished">Schakel over naar je browser om je account te verbinden</translation>
     </message>
-<message>
+    <message>
         <source>Unable to open the Browser, please copy the link to your Browser.</source>
         <translation>Kan de browser niet openen, kopieer de link naar je browser.</translation>
     </message>
@@ -1627,7 +1587,7 @@ Dit kan een probleem zijn met je OpenSSL-bibliotheken.</translation>
         <source>Waiting for authorization</source>
         <translation>Wachten op autorisatie</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::Folder</name>
     <message numerus="yes">
@@ -1731,16 +1691,10 @@ Dit kan een probleem zijn met je OpenSSL-bibliotheken.</translation>
         <translation>%1 zou een map moeten zijn, maar is dat niet.</translation>
     </message>
     <message>
-        <source>A folder from an external storage has been added.
-</source>
-        <translation>Er is een map op externe opslag toegevoegd.
-</translation>
-    </message>
-    <message>
         <source>A folder from an external storage has been added.</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>A folder has surpassed the set folder size limit of %1MB: %2.
 %3</source>
         <translation type="unfinished" />
@@ -1756,12 +1710,6 @@ Alternatively, you can restore all deleted files by uploading from &apos;%1&apos
 Please confirm if you&apos;d like to proceed with these deletions.
 Alternatively, you can restore all deleted files by downloading them from the server.</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>A new folder larger than %1 MB has been added: %2.
-</source>
-        <translation>Er is een nieuwe map groter dan %1 MB toegevoegd: %2.
-</translation>
     </message>
     <message>
         <source>A new folder larger than %1 MB has been added: %2.</source>
@@ -1839,14 +1787,14 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
         <source>Would you like to stop syncing this folder?</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::FolderCreationDialog</name>
     <message>
         <source>%1 Create new folder</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Could not create a folder! Check your write permissions.</source>
         <translation>Kan map niet aanmaken! Controleer je schrijfmachtiging.</translation>
     </message>
@@ -1866,7 +1814,7 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
         <source>Folder already exists</source>
         <translation>Map bestaat al</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::FolderMan</name>
     <message>
@@ -1874,16 +1822,8 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
         <translation>%1 (Synchronisatie onderbroken)</translation>
     </message>
     <message>
-        <source> (backup %1)</source>
-        <translation>(backup %1)</translation>
-    </message>
-    <message>
         <source>(backup %1)</source>
         <translation type="unfinished" />
-    </message>
-<message>
-        <source> (backup)</source>
-        <translation>(backup)</translation>
     </message>
     <message>
         <source>(backup)</source>
@@ -1961,16 +1901,12 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
         <source>You have no permission to write to the selected folder!</source>
         <translation>U heeft geen machtiging om te schrijven naar de geselecteerde map!</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::FolderStatusDelegate</name>
     <message>
         <source>Add Folder Sync</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Add Folder Sync Connection</source>
-        <translation>Toevoegen mapsynchronisatie verbinding</translation>
     </message>
     <message>
         <source>File</source>
@@ -2146,7 +2082,7 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
         <source>Choose</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Click to select a local folder to sync.</source>
         <translation>Klikken om een lokale map te selecteren voor synchronisatie</translation>
     </message>
@@ -2166,7 +2102,7 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
         <source>Step 1 of 3: Select local folder</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::FolderWizardRemotePath</name>
     <message>
@@ -2193,7 +2129,7 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
         <source>Create folder</source>
         <translation type="unfinished">Maak map</translation>
     </message>
-<message>
+    <message>
         <source>Enter the name of the new folder to be created below &quot;%1&quot;:</source>
         <translation>Voer de naam van de hieronder te maken nieuwe map in &quot;%1&quot;:</translation>
     </message>
@@ -2233,7 +2169,7 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
         <source>You are already syncing &lt;i&gt;%1&lt;/i&gt;, which is a subfolder of &lt;i&gt;%2&lt;/i&gt;.</source>
         <translation>Je synchroniseert &lt;i&gt;%1&lt;/i&gt; al, dat is de bovenliggende map van &lt;i&gt;%2&lt;/i&gt;.</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::FolderWizardSelectiveSync</name>
     <message>
@@ -2248,7 +2184,7 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
         <source>Step 3 of 3: Selektive Synchronisation</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Use virtual files instead of downloading content immediately %1</source>
         <translation>Gebruik virtuele bestanden in plaats van de content direct te downloaden %1</translation>
     </message>
@@ -2259,17 +2195,6 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
     <message>
         <source>Virtual files are not supported for Windows partition roots as local folder. Please choose a valid subfolder under drive letter.</source>
         <translation>Virtuele bestanden worden niet ondersteund voor Windows-partitie-hoofdmappen als lokale map. Kies een geldige submap onder de stationsletter.</translation>
-    </message>
-    </context>
-<context>
-    <name>OCC::FormatWarningsWizardPage</name>
-    <message>
-        <source>&lt;b&gt;Warning:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Waarschuwing:&lt;/b&gt; </translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Warning:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Waarschuwing:&lt;/b&gt;  %1</translation>
     </message>
 </context>
 <context>
@@ -2451,7 +2376,7 @@ Merk op dat dit alleen selecteert van welke pool upgrades worden overgenomen en 
         <source>https://wl.hidrive.com/easy/0005</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>https://wl.hidrive.com/easy/0006</source>
         <translation type="unfinished" />
     </message>
@@ -2463,7 +2388,7 @@ Merk op dat dit alleen selecteert van welke pool upgrades worden overgenomen en 
         <source>stable</source>
         <translation>stabiel</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::GETFileJob</name>
     <message>
@@ -2559,10 +2484,6 @@ Merk op dat dit alleen selecteert van welke pool upgrades worden overgenomen en 
         <translation>Toevoegen</translation>
     </message>
     <message>
-        <source>Add Ignore Pattern</source>
-        <translation>Toevoegen negeerpatroon</translation>
-    </message>
-    <message>
         <source>Add a new ignore pattern:</source>
         <translation>Voeg nieuw negeerpatroon toe:</translation>
     </message>
@@ -2590,7 +2511,7 @@ Onderdelen die gewist mogen worden, worden verwijderd als ze verhinderen dat een
         <source>Ignore Pattern</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Pattern</source>
         <translation>Patroon</translation>
     </message>
@@ -2602,7 +2523,7 @@ Onderdelen die gewist mogen worden, worden verwijderd als ze verhinderen dat een
         <source>Remove all</source>
         <translation>Alles verwijderen</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::InvalidFilenameDialog</name>
     <message>
@@ -3858,11 +3779,11 @@ Dit is een nieuwe, experimentele modus. Als je besluit het te gebruiken, vragen 
         <source>Success</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Warning</source>
         <translation type="unfinished">Waarschuwing</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::SettingsDialog</name>
     <message>
@@ -3886,11 +3807,11 @@ Dit is een nieuwe, experimentele modus. Als je besluit het te gebruiken, vragen 
         <source>New account</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Settings</source>
         <translation>Instellingen</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::ShareeModel</name>
     <message>
@@ -4177,26 +4098,14 @@ Server replied with error: %2</source>
         <translation>De verbinding is niet veilig</translation>
     </message>
     <message>
-        <source>This connection is NOT secure as it is not encrypted.
-</source>
-        <translation>Deze verbinding is NIET veilig, omdat deze niet versleuteld is.
-</translation>
-    </message>
-    <message>
         <source>This connection is NOT secure as it is not encrypted.</source>
         <translation type="unfinished" />
-    </message>
-<message>
-        <source>This connection is encrypted using %1 bit %2.
-</source>
-        <translation>Deze verbinding is versleuteld via %1 bit %2.
-</translation>
     </message>
     <message>
         <source>This connection is encrypted using %1 bit %2.</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::SslErrorDialog</name>
     <message>
@@ -4681,10 +4590,6 @@ Server replied with error: %2</source>
 <context>
     <name>OCC::WelcomePage</name>
     <message>
-        <source>Easy-to-use web mail, calendaring &amp; contacts</source>
-        <translation>Eenvoudig te gebruiken webmail, agenda &amp; contacten</translation>
-    </message>
-    <message>
         <source>Form</source>
         <translation>Formulier</translation>
     </message>
@@ -4701,14 +4606,6 @@ Server replied with error: %2</source>
         <translation type="unfinished">Meld u aan</translation>
     </message>
     <message>
-        <source>Screensharing, online meetings &amp; web conferences</source>
-        <translation>Schermdelen, online afspraken &amp; web conferenties</translation>
-    </message>
-    <message>
-        <source>Secure collaboration &amp; file exchange</source>
-        <translation>Veilige samenwerking &amp; bestandsuitwisseling</translation>
-    </message>
-    <message>
         <source>Sign up with provider</source>
         <translation type="unfinished" />
     </message>
@@ -4722,10 +4619,6 @@ Server replied with error: %2</source>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Als deze checkbox is aangevinkt zullen bestaande bestanden in de lokale map worden gewist om een schone sync vanaf de server te starten.&lt;/p&gt;&lt;p&gt;Vink dit niet aan als de lokale bestanden naar de map op de server zouden moeten worden geüploadet.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Ask before syncing external storages</source>
-        <translation>Vraag bevestiging voor synchronisatie externe opslag</translation>
     </message>
     <message>
         <source>Ask before syncing folders larger than</source>
@@ -4786,10 +4679,6 @@ Server replied with error: %2</source>
 </context>
 <context>
     <name>OwncloudSetupPage</name>
-    <message>
-        <source>Logo</source>
-        <translation>Logo</translation>
-    </message>
     <message>
         <source>Server address</source>
         <translation>Serveradres</translation>
@@ -4958,7 +4847,7 @@ Server replied with error: %2</source>
         <source>The directory %1 cannot be part of your sync directory. Please choose another folder.</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>You changed %1</source>
         <translation>Je wijzigde %1</translation>
     </message>
@@ -4982,7 +4871,7 @@ Server replied with error: %2</source>
         <source>now</source>
         <translation>nu</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>ResolveConflictsDialog</name>
     <message numerus="yes">
@@ -5035,11 +4924,11 @@ Server replied with error: %2</source>
         <source>Open local or group folders</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Website</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>ShareDelegate</name>
     <message>
@@ -5085,7 +4974,7 @@ Server replied with error: %2</source>
         <source>Custom Permissions</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Dismiss</source>
         <translation type="unfinished">Negeren</translation>
     </message>
@@ -5125,7 +5014,7 @@ Server replied with error: %2</source>
         <source>View only</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>ShareeSearchField</name>
     <message>
@@ -5246,7 +5135,7 @@ Server replied with error: %2</source>
         <source>Files</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Open %1 in file explorer</source>
         <translation type="unfinished" />
     </message>
@@ -5270,14 +5159,14 @@ Server replied with error: %2</source>
         <source>User group and local folders menu</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>TrayWindowAccountMenu</name>
     <message>
         <source>Account switcher and settings menu</source>
         <translation type="unfinished">Accountswitcher en instellingenmenu</translation>
     </message>
-<message>
+    <message>
         <source>Add account</source>
         <translation type="unfinished">Account toevoegen</translation>
     </message>
@@ -5313,7 +5202,7 @@ Server replied with error: %2</source>
         <source>Settings</source>
         <translation type="unfinished">Instellingen</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>TrayWindowHeaderBar</name>
     <message>
@@ -5324,7 +5213,7 @@ Server replied with error: %2</source>
         <source>Open %1 in browser</source>
         <translation type="unfinished">Open %1 in browser</translation>
     </message>
-<message>
+    <message>
         <source>Open Nextcloud Talk in browser</source>
         <translation type="unfinished">Open Nextcloud Talk in browser</translation>
     </message>
@@ -5340,7 +5229,7 @@ Server replied with error: %2</source>
         <source>Website</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>UnifiedSearchInputContainer</name>
     <message>
@@ -5595,56 +5484,12 @@ Server replied with error: %2</source>
 <context>
     <name>Window</name>
     <message>
-        <source>Account switcher and settings menu</source>
-        <translation>Accountswitcher en instellingenmenu</translation>
-    </message>
-    <message>
-        <source>Add account</source>
-        <translation>Account toevoegen</translation>
-    </message>
-    <message>
-        <source>Add new account</source>
-        <translation>Nieuw account toevoegen</translation>
-    </message>
-    <message>
-        <source>Current account</source>
-        <translation>Huidige account</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Afsluiten</translation>
-    </message>
-    <message>
-        <source>More apps</source>
-        <translation>Meer apps</translation>
-    </message>
-    <message>
         <source>New activities</source>
         <translation type="unfinished" />
     </message>
     <message>
         <source>Nextcloud desktop main dialog</source>
         <translation>Nextcloud desktop hoofddialoog</translation>
-    </message>
-    <message>
-        <source>Open %1 in browser</source>
-        <translation>Open %1 in browser</translation>
-    </message>
-    <message>
-        <source>Open Nextcloud Talk in browser</source>
-        <translation>Open Nextcloud Talk in browser</translation>
-    </message>
-    <message>
-        <source>Pause sync for all</source>
-        <translation>Synchronisatie voor iedereen onderbreken</translation>
-    </message>
-    <message>
-        <source>Resume sync for all</source>
-        <translation>Hervat de synchronisatie voor iedereen</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Instellingen</translation>
     </message>
     <message>
         <source>Unified search results list</source>
