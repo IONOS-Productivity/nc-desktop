@@ -808,8 +808,9 @@ void GeneralSettings::updatePollIntervalVisibility()
         }
         return accountPtr->capabilities().availablePushNotifications().testFlag(PushNotificationType::Files);
     });
-
+#ifndef IONOS_BUILD
     _ui->horizontalLayoutWidget_remotePollInterval->setVisible(!pushAvailable);
+#endif
 }
 
 } // namespace OCC
