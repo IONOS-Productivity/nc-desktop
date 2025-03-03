@@ -17,7 +17,7 @@ import QtQuick.Window
 import QtQuick.Layouts
 import QtQuick.Controls
 
-import com.nextcloud.desktopclient
+import com.ionos.hidrivenext.desktopclient
 import Style
 
 ApplicationWindow {
@@ -25,9 +25,6 @@ ApplicationWindow {
 
     property var accountState
     property string localPath: ""
-
-    LayoutMirroring.enabled: Application.layoutDirection === Qt.RightToLeft
-    LayoutMirroring.childrenInherit: true
 
     width: 400
     height: 500

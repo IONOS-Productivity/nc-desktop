@@ -101,6 +101,7 @@ static constexpr char notifyExistingFoldersOverLimitC[] = "notifyExistingFolders
 static constexpr char stopSyncingExistingFoldersOverLimitC[] = "stopSyncingExistingFoldersOverLimit";
 static constexpr char confirmExternalStorageC[] = "confirmExternalStorage";
 static constexpr char moveToTrashC[] = "moveToTrash";
+static constexpr char sendDataC[] = "sendData";
 
 static constexpr char forceLoginV2C[] = "forceLoginV2";
 
@@ -122,7 +123,7 @@ namespace OCC {
 
 namespace chrono = std::chrono;
 
-Q_LOGGING_CATEGORY(lcConfigFile, "nextcloud.sync.configfile", QtInfoMsg)
+Q_LOGGING_CATEGORY(lcConfigFile, "hidrivenext.sync.configfile", QtInfoMsg)
 
 QString ConfigFile::_confDir = {};
 QString ConfigFile::_discoveredLegacyConfigPath = {};
@@ -997,13 +998,13 @@ void ConfigFile::setNewBigFolderSizeLimit(bool isChecked, qint64 mbytes)
 
 bool ConfigFile::confirmExternalStorage() const
 {
-    const auto fallback = getValue(confirmExternalStorageC, QString(), true);
+    const auto fallback = getValue(confirmExternalStorageC, QString(), false);
     return getPolicySetting(QLatin1String(confirmExternalStorageC), fallback).toBool();
 }
 
 bool ConfigFile::useNewBigFolderSizeLimit() const
 {
-    const auto fallback = getValue(useNewBigFolderSizeLimitC, QString(), true);
+    const auto fallback = getValue(useNewBigFolderSizeLimitC, QString(), false);
     return getPolicySetting(QLatin1String(useNewBigFolderSizeLimitC), fallback).toBool();
 }
 
@@ -1033,6 +1034,16 @@ void ConfigFile::setStopSyncingExistingFoldersOverLimit(const bool stopSyncing)
 void ConfigFile::setConfirmExternalStorage(bool isChecked)
 {
     setValue(confirmExternalStorageC, isChecked);
+}
+
+bool ConfigFile::sendData() const
+{
+    return getValue(sendDataC, QString(), false).toBool();
+}
+
+void ConfigFile::setSendData(bool isChecked)
+{
+    setValue(sendDataC, isChecked);
 }
 
 bool ConfigFile::moveToTrash() const
