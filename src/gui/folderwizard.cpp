@@ -67,11 +67,11 @@ QString FormatWarningsWizardPage::formatWarnings(const QStringList &warnings) co
 {
     QString formattedWarning;
     if (warnings.count() == 1) {
-        ret = QString("%1").arg(warnings.first());
+        formattedWarning = QString("%1").arg(warnings.first());
     } else if (warnings.count() > 1) {
-        ret = " <ul>";
+        formattedWarning = " <ul>";
         Q_FOREACH (QString warning, warnings) {
-            ret += QString::fromLatin1("<li>%1</li>").arg(warning);
+            formattedWarning += QString::fromLatin1("<li>%1</li>").arg(warning);
         }
         formattedWarning += "</ul>";
     }
