@@ -57,6 +57,7 @@ RowLayout {
         id: buttonLabel
 
         Layout.fillWidth: true
+        font: root.font
 
         text: root.text
 
