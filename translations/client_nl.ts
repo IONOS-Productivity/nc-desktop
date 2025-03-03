@@ -315,7 +315,7 @@
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
@@ -330,7 +330,7 @@
     <name>FolderWizardTargetPage</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
@@ -1912,7 +1912,7 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
     <name>OCC::FolderStatusDelegate</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <source>File</source>
@@ -2082,7 +2082,7 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
     <name>OCC::FolderWizardLocalPath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <source>Choose</source>
@@ -2098,7 +2098,7 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Selecteer een map op je harde schijf die permanent verbonden moet zijn met je %1. Alle bestanden en submappen worden automatisch geüpload en gesynchroniseerd.</translation>
     </message>
     <message>
         <source>Select the source folder</source>
@@ -2106,14 +2106,14 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
     </message>
     <message>
         <source>Step 1 of 3: Select local folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Stap 1 van 3: Selecteer lokale map</translation>
     </message>
 </context>
 <context>
     <name>OCC::FolderWizardRemotePath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <source>Authentication failed accessing %1</source>
@@ -2121,7 +2121,7 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Beide mappen zijn permanent gekoppeld en de respectieve inhoud wordt automatisch gesynchroniseerd en bijgewerkt.</translation>
     </message>
     <message>
         <source>Choose this to sync the entire account</source>
@@ -2153,7 +2153,7 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
     </message>
     <message>
         <source>Please now select or create a target folder in your %1 where the content should be uploaded and synchronized.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Selecteer of maak nu een doelmap in uw %1 waar de inhoud moet worden geüpload en gesynchroniseerd.</translation>
     </message>
     <message>
         <source>Refresh</source>
@@ -2161,7 +2161,7 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
     </message>
     <message>
         <source>Step 2 of 3: Directory in your %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Stap 2 van 3: Directory in uw %1</translation>
     </message>
     <message>
         <source>This folder is already being synced.</source>
@@ -2184,11 +2184,11 @@ Dit betekent dat de synchronisatieclient misschien niet meteen lokale wijziginge
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <source>Step 3 of 3: Selektive Synchronisation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Stap 3 van 3: Selektieve synchronisatie</translation>
     </message>
     <message>
         <source>Use virtual files instead of downloading content immediately %1</source>
@@ -5198,11 +5198,11 @@ Server replied with error: %2</source>
     </message>
     <message>
         <source>Pause sync for all</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Pauzeer sync voor iedereen</translation>
     </message>
     <message>
         <source>Resume sync for all</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vervolg sync voor iedereen</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -5225,7 +5225,7 @@ Server replied with error: %2</source>
     </message>
     <message>
         <source>Open Nextcloud in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">HiDrive Next in browser openen</translation>
     </message>
     <message>
         <source>Open local or group folders</source>
@@ -5233,7 +5233,7 @@ Server replied with error: %2</source>
     </message>
     <message>
         <source>Website</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Website</translation>
     </message>
 </context>
 <context>

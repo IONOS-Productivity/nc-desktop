@@ -315,7 +315,7 @@
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Add Folder Sync</translation>
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
@@ -330,7 +330,7 @@
     <name>FolderWizardTargetPage</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Add Folder Sync</translation>
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
@@ -1212,7 +1212,7 @@ Wait for the new sync, then encrypt it.</source>
     </message>
     <message>
         <source>Local version</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Local version</translation>
     </message>
     <message>
         <source>Open local version</source>
@@ -1224,7 +1224,7 @@ Wait for the new sync, then encrypt it.</source>
     </message>
     <message>
         <source>Server version</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Server version</translation>
     </message>
     <message>
         <source>Sync Conflict</source>
@@ -1901,7 +1901,7 @@ This means that the synchronization client might not upload local changes immedi
     <name>OCC::FolderStatusDelegate</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Add Folder Sync</translation>
     </message>
     <message>
         <source>File</source>
@@ -2070,7 +2070,7 @@ This means that the synchronization client might not upload local changes immedi
     <name>OCC::FolderWizardLocalPath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Add Folder Sync</translation>
     </message>
     <message>
         <source>Choose</source>
@@ -2086,7 +2086,7 @@ This means that the synchronization client might not upload local changes immedi
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized.</translation>
     </message>
     <message>
         <source>Select the source folder</source>
@@ -2094,14 +2094,14 @@ This means that the synchronization client might not upload local changes immedi
     </message>
     <message>
         <source>Step 1 of 3: Select local folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Step 1 of 3: Select local folder</translation>
     </message>
 </context>
 <context>
     <name>OCC::FolderWizardRemotePath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Add Folder Sync</translation>
     </message>
     <message>
         <source>Authentication failed accessing %1</source>
@@ -2109,7 +2109,7 @@ This means that the synchronization client might not upload local changes immedi
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Both folders are permanently linked and the respective contents are automatically synchronized and updated.</translation>
     </message>
     <message>
         <source>Choose this to sync the entire account</source>
@@ -2121,7 +2121,7 @@ This means that the synchronization client might not upload local changes immedi
     </message>
     <message>
         <source>Create folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Create folder</translation>
     </message>
     <message>
         <source>Enter the name of the new folder to be created below &quot;%1&quot;:</source>
@@ -2141,7 +2141,7 @@ This means that the synchronization client might not upload local changes immedi
     </message>
     <message>
         <source>Please now select or create a target folder in your %1 where the content should be uploaded and synchronized.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Please now select or create a target folder in your %1 where the content should be uploaded and synchronized.</translation>
     </message>
     <message>
         <source>Refresh</source>
@@ -2149,7 +2149,7 @@ This means that the synchronization client might not upload local changes immedi
     </message>
     <message>
         <source>Step 2 of 3: Directory in your %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Step 2 of 3: Directory in your %1</translation>
     </message>
     <message>
         <source>This folder is already being synced.</source>
@@ -2172,11 +2172,11 @@ This means that the synchronization client might not upload local changes immedi
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Add Folder Sync</translation>
     </message>
     <message>
         <source>Step 3 of 3: Selektive Synchronisation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Step 3 of 3: Selektive Synchronisation</translation>
     </message>
     <message>
         <source>Use virtual files instead of downloading content immediately %1</source>
@@ -3601,7 +3601,7 @@ This is a new, experimental mode. If you decide to use it, please report any iss
     </message>
     <message>
         <source>Failed to unlock encrypted folder.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Failed to unlock encrypted folder.</translation>
     </message>
     <message>
         <source>Failed to upload encrypted file.</source>
@@ -3885,7 +3885,7 @@ Server replied with error: %2</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Delete</translation>
     </message>
     <message>
         <source>Delete local changes</source>
@@ -4222,7 +4222,7 @@ Server replied with error: %2</source>
     </message>
     <message>
         <source>All synced!</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">All synced!</translation>
     </message>
     <message>
         <source>Offline</source>
@@ -5200,7 +5200,7 @@ Server replied with error: %2</source>
     </message>
     <message>
         <source>Open Nextcloud in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Open HiDrive Next in browser</translation>
     </message>
     <message>
         <source>Open local or group folders</source>
@@ -5208,7 +5208,7 @@ Server replied with error: %2</source>
     </message>
     <message>
         <source>Website</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Website</translation>
     </message>
 </context>
 <context>

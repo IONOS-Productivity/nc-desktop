@@ -315,7 +315,7 @@
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
@@ -330,7 +330,7 @@
     <name>FolderWizardTargetPage</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
@@ -1915,7 +1915,7 @@ Cela signifie que le client de synchronisation ne va pas téléverser immédiate
     <name>OCC::FolderStatusDelegate</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
         <source>File</source>
@@ -2084,7 +2084,7 @@ Cela signifie que le client de synchronisation ne va pas téléverser immédiate
     <name>OCC::FolderWizardLocalPath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
         <source>Choose</source>
@@ -2100,7 +2100,7 @@ Cela signifie que le client de synchronisation ne va pas téléverser immédiate
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sélectionnez sur votre disque dur un dossier qui doit être en permanence rattaché à votre %1. Tous les fichiers et sous-dossiers sont automatiquement importés et synchronisés.</translation>
     </message>
     <message>
         <source>Select the source folder</source>
@@ -2108,14 +2108,14 @@ Cela signifie que le client de synchronisation ne va pas téléverser immédiate
     </message>
     <message>
         <source>Step 1 of 3: Select local folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Étape 1 sur 3 : sélectionner un dossier local</translation>
     </message>
 </context>
 <context>
     <name>OCC::FolderWizardRemotePath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
         <source>Authentication failed accessing %1</source>
@@ -2123,7 +2123,7 @@ Cela signifie que le client de synchronisation ne va pas téléverser immédiate
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Les deux dossiers sont en permanence rattachés et leur contenu respectif est automatiquement synchronisé et importé.</translation>
     </message>
     <message>
         <source>Choose this to sync the entire account</source>
@@ -2155,7 +2155,7 @@ Cela signifie que le client de synchronisation ne va pas téléverser immédiate
     </message>
     <message>
         <source>Please now select or create a target folder in your %1 where the content should be uploaded and synchronized.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">À présent, sélectionnez ou créez dans votre %1 un dossier cible dans lequel le contenu doit être importé et synchronisé.</translation>
     </message>
     <message>
         <source>Refresh</source>
@@ -2163,7 +2163,7 @@ Cela signifie que le client de synchronisation ne va pas téléverser immédiate
     </message>
     <message>
         <source>Step 2 of 3: Directory in your %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Étape 2 sur 3 : répertoire dans votre %1</translation>
     </message>
     <message>
         <source>This folder is already being synced.</source>
@@ -2186,11 +2186,11 @@ Cela signifie que le client de synchronisation ne va pas téléverser immédiate
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
         <source>Step 3 of 3: Selektive Synchronisation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Étape 3 sur 3 : synchronisation sélective</translation>
     </message>
     <message>
         <source>Use virtual files instead of downloading content immediately %1</source>
@@ -5206,7 +5206,7 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     </message>
     <message>
         <source>Resume sync for all</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Relancer toutes les synchros</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -5229,7 +5229,7 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     </message>
     <message>
         <source>Open Nextcloud in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ouvrir HiDrive Next dans le navigateur</translation>
     </message>
     <message>
         <source>Open local or group folders</source>
@@ -5237,7 +5237,7 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     </message>
     <message>
         <source>Website</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Site Web</translation>
     </message>
 </context>
 <context>

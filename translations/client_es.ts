@@ -315,7 +315,7 @@
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Añadir sincronización de carpetas</translation>
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
@@ -330,7 +330,7 @@
     <name>FolderWizardTargetPage</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Añadir sincronización de carpetas</translation>
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
@@ -1917,7 +1917,7 @@ Esto significa que el cliente de sincronización podría no subir inmediatamente
     <name>OCC::FolderStatusDelegate</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Añadir sincronización de carpetas</translation>
     </message>
     <message>
         <source>File</source>
@@ -2086,7 +2086,7 @@ Esto significa que el cliente de sincronización podría no subir inmediatamente
     <name>OCC::FolderWizardLocalPath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Añadir sincronización de carpetas</translation>
     </message>
     <message>
         <source>Choose</source>
@@ -2102,7 +2102,7 @@ Esto significa que el cliente de sincronización podría no subir inmediatamente
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Selecciona una carpeta de tu disco duro que deba estar permanentemente conectada a tu %1. Todos los archivos y subcarpetas se cargan y sincronizan automáticamente.</translation>
     </message>
     <message>
         <source>Select the source folder</source>
@@ -2110,14 +2110,14 @@ Esto significa que el cliente de sincronización podría no subir inmediatamente
     </message>
     <message>
         <source>Step 1 of 3: Select local folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paso 1 de 3: Seleccionar carpeta local</translation>
     </message>
 </context>
 <context>
     <name>OCC::FolderWizardRemotePath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Añadir sincronización de carpetas</translation>
     </message>
     <message>
         <source>Authentication failed accessing %1</source>
@@ -2125,7 +2125,7 @@ Esto significa que el cliente de sincronización podría no subir inmediatamente
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ambas carpetas están permanentemente vinculadas y sus respectivos contenidos se sincronizan y actualizan automáticamente.</translation>
     </message>
     <message>
         <source>Choose this to sync the entire account</source>
@@ -2157,7 +2157,7 @@ Esto significa que el cliente de sincronización podría no subir inmediatamente
     </message>
     <message>
         <source>Please now select or create a target folder in your %1 where the content should be uploaded and synchronized.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Por favor, ahora seleccione o cree una carpeta de destino en su %1 donde el contenido debe ser cargado y sincronizado.</translation>
     </message>
     <message>
         <source>Refresh</source>
@@ -2165,7 +2165,7 @@ Esto significa que el cliente de sincronización podría no subir inmediatamente
     </message>
     <message>
         <source>Step 2 of 3: Directory in your %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paso 2 de 3: Directorio en su %1</translation>
     </message>
     <message>
         <source>This folder is already being synced.</source>
@@ -2188,11 +2188,11 @@ Esto significa que el cliente de sincronización podría no subir inmediatamente
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Añadir sincronización de carpetas</translation>
     </message>
     <message>
         <source>Step 3 of 3: Selektive Synchronisation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Paso 3 de 3: Sincronización selectiva</translation>
     </message>
     <message>
         <source>Use virtual files instead of downloading content immediately %1</source>
@@ -4934,7 +4934,7 @@ El servidor respondió con el error: %2</translation>
     </message>
     <message>
         <source>Open local or group folders</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Abrir carpetas locales de de grupo</translation>
     </message>
     <message>
         <source>Website</source>
@@ -5208,7 +5208,7 @@ El servidor respondió con el error: %2</translation>
     </message>
     <message>
         <source>Resume sync for all</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Continuar sincronización a todos</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -5231,15 +5231,15 @@ El servidor respondió con el error: %2</translation>
     </message>
     <message>
         <source>Open Nextcloud in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Abrir HiDrive Next en el navegador</translation>
     </message>
     <message>
         <source>Open local or group folders</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Abrir carpetas locales de de grupo</translation>
     </message>
     <message>
         <source>Website</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sitio web</translation>
     </message>
 </context>
 <context>
