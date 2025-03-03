@@ -18,7 +18,6 @@
 #include "tray/unifiedsearchresultslistmodel.h"
 #include "tray/talkreply.h"
 #include "userstatusconnector.h"
-#include "thumbnailjob.h"
 #include "buttonstyle.h"
 
 #include <QDesktopServices>
