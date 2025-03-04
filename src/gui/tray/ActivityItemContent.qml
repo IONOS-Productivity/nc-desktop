@@ -4,7 +4,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import Style
 import Qt5Compat.GraphicalEffects
-import com.nextcloud.desktopclient
+import com.ionos.hidrivenext.desktopclient
 
 RowLayout {
     id: root
@@ -26,12 +26,12 @@ RowLayout {
     Item {
         id: thumbnailItem
 
-        readonly property int imageWidth: width * (1 - Style.thumbnailImageSizeReduction)
-        readonly property int imageHeight: height * (1 - Style.thumbnailImageSizeReduction)
+        readonly property int imageWidth: Style.sesIconSize
+        readonly property int imageHeight: Style.sesIconSize
         readonly property int thumbnailRadius: model.thumbnail && model.thumbnail.isUserAvatar ? width / 2 : 3
 
-        implicitWidth: root.iconSize
-        implicitHeight: model.thumbnail && model.thumbnail.isMimeTypeIcon ? root.iconSize * 0.9 : root.iconSize
+        implicitWidth: Style.sesIconSize
+        implicitHeight: Style.sesIconSize
 
         Loader {
             id: thumbnailImageLoader
@@ -45,8 +45,8 @@ RowLayout {
 
                 Image {
                     id: thumbnailImage
-                    width: thumbnailItem.imageWidth
-                    height: thumbnailItem.imageHeight
+                    width: Style.sesIconSize
+                    height: Style.sesIconSize
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.left: parent.left
                     cache: true
@@ -78,8 +78,9 @@ RowLayout {
 
         Image {
             id: activityIcon
-            width: model.thumbnail !== undefined ? parent.width * 0.4 : thumbnailItem.imageWidth
-            height: model.thumbnail !== undefined ? width : width * 0.9
+
+            width: model.thumbnail !== undefined ? Style.sesIconSize * 0.6 : Style.sesIconSize
+            height: model.thumbnail !== undefined ? Style.sesIconSize * 0.6 : Style.sesIconSize
 
             // Prevent bad access into unloaded item properties
             readonly property int thumbnailPaintedWidth: thumbnailImageLoader.item ? thumbnailImageLoader.item.paintedWidth : 0
@@ -116,8 +117,8 @@ RowLayout {
 
         Layout.fillHeight: true
         Layout.fillWidth: true
-        Layout.maximumWidth: root.width - Style.standardSpacing - root.iconSize
-        implicitWidth: root.width - Style.standardSpacing - root.iconSize
+        Layout.maximumWidth: root.width - Style.standardSpacing - root.iconSize + Style.sesActivityItemWidthModifier
+        implicitWidth: root.width - Style.standardSpacing - root.iconSize + Style.sesActivityItemWidthModifier
 
         spacing: Style.smallSpacing
 
@@ -134,7 +135,7 @@ RowLayout {
                 elide: Text.ElideRight
                 wrapMode: Text.Wrap
                 maximumLineCount: 2
-                font.pixelSize: Style.topLinePixelSize
+                font: root.font
                 visible: text !== ""
             }
 
@@ -150,7 +151,8 @@ RowLayout {
                 height: (text === "") ? 0 : implicitHeight
 
                 text: root.activityData.dateTime
-                font.pixelSize: Style.subLinePixelSize
+                font.family: Style.sesOpenSansRegular
+                font.pixelSize: Style.sesFontHintPixelSize
                 visible: text !== ""
             }
 
@@ -158,13 +160,21 @@ RowLayout {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 spacing: Style.extraSmallSpacing
 
-                Button {
-                    id: fileDetailsButton
+                IconButton {
+                    id: fileDetailsButton   
+                 
+                    property bool isHovered: fileDetailsButton.hovered || fileDetailsButton.visualFocus
+                    property bool isActive: fileDetailsButton.pressed
+                    
+                    Layout.preferredWidth: Style.dismissButtonSize
+                    Layout.preferredHeight: Style.dismissButtonSize
+                    Layout.alignment: Qt.AlignTop | Qt.AlignRight
 
                     width: Style.activityListButtonWidth
                     height: Style.activityListButtonHeight
-
-                    icon.source: "image://svgimage-custom-color/more.svg/" + palette.buttonText
+                    iconSource: Style.sesMore
+                    iconSourceHovered: Style.sesMoreWhite
+                    
                     icon.width: Style.activityListButtonIconSize
                     icon.height: Style.activityListButtonIconSize
 
@@ -173,13 +183,17 @@ RowLayout {
                         visible: parent.hovered
                     }
 
-                    display: Button.IconOnly
+                    leftPadding: 0
+                    rightPadding: 0
+
                     visible: model.showFileDetails
                     onClicked: Systray.presentShareViewInTray(model.openablePath)
                 }
 
-                Button {
+                IconButton {
                     id: dismissActionButton
+
+                    customHoverEnabled: false
 
                     width: Style.activityListButtonWidth
                     height: Style.activityListButtonHeight
@@ -220,8 +234,9 @@ RowLayout {
                 height: (text === "") ? 0 : implicitHeight
                 elide: Text.ElideRight
                 wrapMode: Text.Wrap
-                maximumLineCount: 2
-                font.pixelSize: Style.subLinePixelSize
+                maximumLineCount: 10
+                font.family: Style.sesOpenSansRegular
+                font.pixelSize: Style.sesFontHintPixelSize
                 visible: text !== ""
             }
 
@@ -241,7 +256,8 @@ RowLayout {
                 elide: Text.ElideRight
                 wrapMode: Text.Wrap
                 maximumLineCount: 2
-                font.pixelSize: Style.topLinePixelSize
+                font: root.font
+                color: Style.sesTrayFontColor                
                 visible: text !== ""
             }
 

@@ -25,6 +25,7 @@
 #include "application.h"
 #include "cocoainitializer.h"
 #include "theme.h"
+#include "ionostheme.h"
 #include "common/utility.h"
 
 #if defined(BUILD_UPDATER)
@@ -40,6 +41,9 @@
 #include <QQuickWindow>
 #include <QSurfaceFormat>
 #include <QOperatingSystemVersion>
+#include "sesstyle.h"
+#include "ga4/ganalytics.h"
+#include "ga4/datacollectionwrapper.h"
 
 using namespace OCC;
 
@@ -91,8 +95,16 @@ int main(int argc, char **argv)
         qmlStyle = QStringLiteral("FluentWinUI3");
         widgetsStyle = QStringLiteral("windows11");
     }
+    QApplication::setFont(IonosTheme::settingsFontDefault());
 #endif
 
+#ifdef IONOS_BUILD
+    OCC::Application app(argc, argv);
+    app.setStyle(new sesStyle(QStyleFactory::create("WindowsVista")));
+
+    QQuickStyle::setStyle(qmlStyle);
+    QQuickStyle::setFallbackStyle(QStringLiteral("Fusion"));
+#elif
     QQuickStyle::setStyle(qmlStyle);
     QQuickStyle::setFallbackStyle(QStringLiteral("Fusion"));
 
@@ -101,6 +113,7 @@ int main(int argc, char **argv)
     if (!widgetsStyle.isEmpty()) {
         QApplication::setStyle(QStyleFactory::create(widgetsStyle));
     }
+#endif
 
 #ifndef Q_OS_WIN
     signal(SIGPIPE, SIG_IGN);
@@ -200,6 +213,13 @@ int main(int argc, char **argv)
             }
         }
     }
+
+    QString clientID;
+    if (clientID.isEmpty()) {
+        clientID = QUuid::createUuid().toString();
+    }
+
+
 
     return app.exec();
 }

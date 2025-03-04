@@ -214,8 +214,8 @@ void setClipboardText(const QString &text)
 
 namespace OCC {
 
-Q_LOGGING_CATEGORY(lcSocketApi, "nextcloud.gui.socketapi", QtInfoMsg)
-Q_LOGGING_CATEGORY(lcPublicLink, "nextcloud.gui.socketapi.publiclink", QtInfoMsg)
+Q_LOGGING_CATEGORY(lcSocketApi, "hidrivenext.gui.socketapi", QtInfoMsg)
+Q_LOGGING_CATEGORY(lcPublicLink, "hidrivenext.gui.socketapi.publiclink", QtInfoMsg)
 
 
 void SocketListener::sendMessage(const QString &message, bool doWait) const
@@ -1360,9 +1360,11 @@ void SocketApi::command_GET_MENU_ITEMS(const QString &argument, OCC::SocketListe
         const QFileInfo fileInfo(fileData.localPath);
         sendLockFileInfoMenuEntries(fileInfo, syncFolder, fileData, listener, record);
 
+        #ifndef IONOS_BUILD
         if (!FileSystem::isDir(fileData.localPath)) {
             listener->sendMessage(QLatin1String("MENU_ITEM:ACTIVITY") + flagString + tr("Activity"));
         }
+        #endif 
 
         DirectEditor* editor = getDirectEditorForLocalFile(fileData.localPath);
         if (editor) {
