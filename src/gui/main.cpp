@@ -25,6 +25,7 @@
 #include "application.h"
 #include "cocoainitializer.h"
 #include "theme.h"
+#include "ionostheme.h"
 #include "common/utility.h"
 
 #if defined(BUILD_UPDATER)
@@ -37,6 +38,9 @@
 #include <QQuickStyle>
 #include <QQuickWindow>
 #include <QSurfaceFormat>
+#include "sesstyle.h"
+#include "ga4/ganalytics.h"
+#include "ga4/datacollectionwrapper.h"
 
 using namespace OCC;
 
@@ -84,9 +88,14 @@ int main(int argc, char **argv)
     // though it looks slightly less native. Check here after the
     // QApplication was constructed, but before any QWidget is
     // constructed.
-    if (app.devicePixelRatio() > 1)
-        QApplication::setStyle(QStringLiteral("fusion"));
+    // if (app.devicePixelRatio() > 1)
+    //     QApplication::setStyle(QStringLiteral("fusion"));
+
+    QApplication::setFont(IonosTheme::settingsFontDefault());
+
 #endif // Q_OS_WIN
+
+    QApplication::setStyle(new sesStyle);
 
 #ifndef Q_OS_WIN
     signal(SIGPIPE, SIG_IGN);
@@ -186,6 +195,13 @@ int main(int argc, char **argv)
             }
         }
     }
+
+    QString clientID;
+    if (clientID.isEmpty()) {
+        clientID = QUuid::createUuid().toString();
+    }
+
+
 
     return app.exec();
 }

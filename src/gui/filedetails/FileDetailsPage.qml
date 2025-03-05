@@ -16,7 +16,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15
 
-import com.nextcloud.desktopclient 1.0
+import com.ionos.hidrivenext.desktopclient 1.0
 import Style 1.0
 import "../tray"
 
@@ -44,6 +44,10 @@ Page {
         id: fileDetails
         localPath: root.localPath
     }
+
+    font.family: Style.sesOpenSansRegular
+    font.pixelSize: Style.sesFontPixelSize
+    font.weight: Style.sesFontNormalWeight
 
     Connections {
         target: Systray
@@ -74,7 +78,7 @@ Page {
     }
 
     header: ColumnLayout {
-        spacing: root.intendedPadding
+        spacing: Style.sesMediumMargin
 
         GridLayout {
             id: headerGridLayout
@@ -107,15 +111,15 @@ Page {
                 id: fileIcon
 
                 Layout.rowSpan: headerGridLayout.rows
-                Layout.preferredWidth: Style.trayListItemIconSize
-                Layout.leftMargin: root.intendedPadding
+                Layout.preferredWidth: Style.sesFileDetailsIconSize
+                Layout.leftMargin: Style.sesMediumMargin
                 Layout.fillHeight: true
 
                 verticalAlignment: Image.AlignVCenter
                 horizontalAlignment: Image.AlignHCenter
                 source: root.fileDetails.iconUrl
-                sourceSize.width: Style.trayListItemIconSize
-                sourceSize.height: Style.trayListItemIconSize
+                sourceSize.width: Style.sesFileDetailsIconSize
+                sourceSize.height: Style.sesFileDetailsIconSize
                 fillMode: Image.PreserveAspectFit
             }
 
@@ -123,10 +127,13 @@ Page {
                 id: fileNameLabel
 
                 Layout.fillWidth: true
-                Layout.rightMargin: headerGridLayout.textRightMargin
+                Layout.rightMargin: Style.sesFileDetailsHeaderModifier
 
                 text: root.fileDetails.name
-                font.bold: true
+
+                font.pixelSize: Style.sesFontPixelSizeTitle
+                font.weight: Style.sesFontBoldWeight
+
                 wrapMode: Text.Wrap
             }
 
@@ -143,6 +150,9 @@ Page {
                 bgNormalOpacity: 0
                 toolTipText: qsTr("Dismiss")
 
+                font.pixelSize: Style.sesFontPixelSize
+                font.weight: Style.sesFontNormalWeight
+
                 visible: root.showCloseButton
 
                 onClicked: root.closeButtonClicked()
@@ -152,10 +162,13 @@ Page {
                 id: fileDetailsLabel
 
                 Layout.fillWidth: true
-                Layout.rightMargin: headerGridLayout.textRightMargin
+                Layout.rightMargin: Style.sesFileDetailsHeaderModifier
 
-                text: `${root.fileDetails.sizeString} · ${root.fileDetails.lastChangedString}`
-                color: palette.midlight
+                text: `${root.fileDetails.sizeString}, ${root.fileDetails.lastChangedString}`
+
+                font.pixelSize: Style.sesFontHintPixelSize
+                font.weight: Style.sesFontNormalWeight
+
                 wrapMode: Text.Wrap
             }
 
@@ -169,6 +182,9 @@ Page {
                 color: palette.midlight
                 wrapMode: Text.Wrap
                 visible: headerGridLayout.showFileLockedString
+
+                font.pixelSize: Style.sesFontHintPixelSize
+                font.weight: Style.sesFontNormalWeight
             }
 
             Row {
@@ -211,37 +227,11 @@ Page {
                     NCToolTip {
                         visible: hoverHandler.hovered
                         text: tagRepeater.fileTagModel.overflowTagsString
+
+                        font.pixelSize: Style.sesFontPixelSize
+                        font.weight: Style.sesFontNormalWeight
                     }
                 }
-            }
-        }
-
-        TabBar {
-            id: viewBar
-
-            Layout.leftMargin: root.intendedPadding
-            Layout.rightMargin: root.intendedPadding
-
-            padding: 0
-            background: null
-
-            NCTabButton {
-                svgCustomColorSource: "image://svgimage-custom-color/activity.svg"
-                text: qsTr("Activity")
-                accentColor: root.accentColor
-                checked: swipeView.currentIndex === fileActivityView.swipeIndex
-                onClicked: swipeView.currentIndex = fileActivityView.swipeIndex
-            }
-
-            NCTabButton {
-                width: visible ? implicitWidth : 0
-                height: visible ? implicitHeight : 0
-                svgCustomColorSource: "image://svgimage-custom-color/share.svg"
-                text: qsTr("Sharing")
-                accentColor: root.accentColor
-                checked: swipeView.currentIndex === shareViewLoader.swipeIndex
-                onClicked: swipeView.currentIndex = shareViewLoader.swipeIndex
-                visible: root.fileDetails.sharingAvailable
             }
         }
     }
@@ -251,18 +241,6 @@ Page {
 
         anchors.fill: parent
         clip: true
-
-        FileActivityView {
-            id: fileActivityView
-
-            readonly property int swipeIndex: SwipeView.index
-
-            delegateHorizontalPadding: root.intendedPadding
-
-            accountState: root.accountState
-            localPath: root.localPath
-            iconSize: root.iconSize
-        }
 
         Loader {
             id: shareViewLoader
