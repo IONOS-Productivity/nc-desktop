@@ -8,11 +8,10 @@ set( APPLICATION_VENDOR     "IONOS SE" )
 set( APPLICATION_UPDATE_URL "https://customerupdates.nextcloud.com/client/" CACHE STRING "URL for updater" )
 set( APPLICATION_HELP_URL   "" CACHE STRING "URL for the help menu" )
 
-if(APPLE AND APPLICATION_NAME STREQUAL "HiDrive Next" AND EXISTS "${CMAKE_SOURCE_DIR}/theme/colored/hidrivenext-macOS-icon.svg")
-    set( APPLICATION_ICON_NAME "hidrivenext-macOS" )
+if(APPLE AND APPLICATION_NAME STREQUAL "IONOS HiDrive Next")
+    set( APPLICATION_ICON_NAME "ionos_hidrive_next-macOS" )
     message("Using macOS-specific application icon: ${APPLICATION_ICON_NAME}")
 else()
-    # set( APPLICATION_ICON_NAME "${APPLICATION_SHORTNAME}" )
     set( APPLICATION_ICON_NAME  "ionos_hidrive_next" )
 endif()
 
