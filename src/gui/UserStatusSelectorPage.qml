@@ -16,7 +16,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import Style 1.0
 
-import com.nextcloud.desktopclient 1.0 as NC
+import com.ionos.hidrivenext.desktopclient 1.0 as NC
 
 Page {
     id: page

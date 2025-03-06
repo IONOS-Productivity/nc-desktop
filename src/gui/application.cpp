@@ -38,6 +38,8 @@
 #include "pushnotifications.h"
 #include "shellextensionsserver.h"
 
+#include "ga4/datacollectionwrapper.h"
+
 #if defined(BUILD_UPDATER)
 #include "updater/ocupdater.h"
 #endif
@@ -71,7 +73,7 @@ class QSocket;
 
 namespace OCC {
 
-Q_LOGGING_CATEGORY(lcApplication, "nextcloud.gui.application", QtInfoMsg)
+Q_LOGGING_CATEGORY(lcApplication, "hidrivenext.gui.application", QtInfoMsg)
 
 namespace {
 
@@ -162,9 +164,6 @@ bool Application::configVersionMigration()
     const auto theme = Theme::instance();
     configFile.setLaunchOnSystemStartup(configFile.launchOnSystemStartup());
     Utility::setLaunchOnStartup(theme->appName(), theme->appNameGUI(), configFile.launchOnSystemStartup());
-
-    // default is now off to displaying dialog warning user of too many files deletion
-    configFile.setPromptDeleteFiles(false);
 
     // back up all old config files
     QStringList backupFilesList;
@@ -374,6 +373,7 @@ Application::Application(int &argc, char **argv)
         this, &Application::slotAccountStateAdded);
     connect(AccountManager::instance(), &AccountManager::accountRemoved,
         this, &Application::slotAccountStateRemoved);
+
     const auto accounts = AccountManager::instance()->accounts();
     for (const auto &ai : accounts) {
         slotAccountStateAdded(ai.data());
@@ -437,6 +437,30 @@ Application::~Application()
     disconnect(AccountManager::instance(), &AccountManager::accountRemoved,
         this, &Application::slotAccountStateRemoved);
     AccountManager::instance()->shutdown();
+}
+
+void Application::startTracking()
+{
+    DataCollectionWrapper dcw;
+    dcw.initDataCollection();
+    AccountPtr account = AccountManager::instance()->accounts().first()->account();
+    QByteArray byteArray = account->credentials()->user().toUtf8();  // Convert the input string to a byte array
+    QByteArray hash = QCryptographicHash::hash(byteArray, QCryptographicHash::Sha256);  // Perform the hash
+    
+    ConfigFile cfg;
+    dcw.setSendData(cfg.sendData());
+    dcw.setAccount(account);    
+    
+    dcw.setClientID(hash.toHex());
+    dcw.login();   
+}
+
+void Application::stopTracking()
+{
+    DataCollectionWrapper dcw;
+    dcw.accountRemoved();
+    dcw.setClientID(QString());
+    dcw.setAccount(nullptr);
 }
 
 void Application::setupAccountsAndFolders()
@@ -577,6 +601,14 @@ void Application::slotAccountStateRemoved(AccountState *accountState)
             _folderManager.data(), &FolderMan::slotServerVersionChanged);
     }
 
+    if(AccountManager::instance()->accounts().isEmpty()) {
+        stopTracking();
+    }
+    else 
+    {
+        startTracking();
+    }
+
     // if there is no more account, show the wizard.
     if (_gui && AccountManager::instance()->accounts().isEmpty()) {
         // allow to add a new account if there is non any more. Always think
@@ -595,6 +627,8 @@ void Application::slotAccountStateAdded(AccountState *accountState)
         _folderManager.data(), &FolderMan::slotAccountStateChanged);
     connect(accountState->account().data(), &Account::serverVersionChanged,
         _folderManager.data(), &FolderMan::slotServerVersionChanged);
+
+    startTracking();
 
     _gui->slotTrayMessageIfServerUnsupported(accountState->account().data());
 }
@@ -674,8 +708,7 @@ void Application::setupLogging()
     logger->setLogDebug(true);
 #endif
 
-    logger->enterNextLogFile(QStringLiteral("nextcloud.log"), OCC::Logger::LogType::Log);
-    logger->enterNextLogFile(QStringLiteral("permanent_delete.log"), OCC::Logger::LogType::DeleteLog);
+    logger->enterNextLogFile();
 
     qCInfo(lcApplication) << "##################" << _theme->appName()
                           << "locale:" << QLocale::system().name()

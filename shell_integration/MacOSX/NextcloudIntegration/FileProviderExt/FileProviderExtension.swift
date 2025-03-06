@@ -37,7 +37,7 @@ import OSLog
         return LocalSocketClient(socketPath: socketPath.path, lineProcessor: lineProcessor)
     }()
 
-    let urlSessionIdentifier = "com.nextcloud.session.upload.fileproviderext"
+    let urlSessionIdentifier = "com.ionos.hidrivenext.session.upload.fileproviderext"
     let urlSessionMaximumConnectionsPerHost = 5
     lazy var urlSession: URLSession = {
         let configuration = URLSessionConfiguration.background(withIdentifier: urlSessionIdentifier)
