@@ -37,7 +37,14 @@
         <translation>Scroll to top</translation>
     </message>
 </context>
-<context><name>BasicComboBox</name><message><source>Clear status message menu</source><translation>Delete status message menu</translation></message></context><context>
+<context>
+    <name>BasicComboBox</name>
+    <message>
+        <source>Clear status message menu</source>
+        <translation>Delete status message menu</translation>
+    </message>
+</context>
+<context>
     <name>CallNotificationDialog</name>
     <message>
         <source>Answer Talk call notification</source>
@@ -285,7 +292,11 @@
         <source>General settings</source>
         <translation>General settings</translation>
     </message>
-    <message><source>Signal file provider domain</source><translation>Signal file provider domain</translation></message><message>
+    <message>
+        <source>Signal file provider domain</source>
+        <translation>Signal file provider domain</translation>
+    </message>
+    <message>
         <source>Virtual files settings</source>
         <translation>Virtual files settings</translation>
     </message>
@@ -300,7 +311,11 @@
         <source>Evict local copies …</source>
         <translation>Evict local copies …</translation>
     </message>
-    <message><source>Evict local copies...</source><translation>Evict local copies...</translation></message><message>
+    <message>
+        <source>Evict local copies...</source>
+        <translation>Evict local copies...</translation>
+    </message>
+    <message>
         <source>Local storage use</source>
         <translation>Local storage use</translation>
     </message>
@@ -2560,7 +2575,23 @@ Downgrading versions is not possible immediately: changing from stable to enterp
         <source>enterprise</source>
         <translation>enterprise</translation>
     </message>
-    <message><source>https://wl.hidrive.com/easy/0004</source><translation>https://wl.hidrive.com/easy/0004</translation></message><message><source>https://wl.hidrive.com/easy/0005</source><translation>https://wl.hidrive.com/easy/0005</translation></message><message><source>https://wl.hidrive.com/easy/0006</source><translation>https://wl.hidrive.com/easy/0006</translation></message><message><source>https://wl.hidrive.com/easy/0007</source><translation>https://wl.hidrive.com/easy/0007</translation></message><message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0004</source>
+        <translation>https://wl.hidrive.com/easy/0004</translation>
+    </message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0005</source>
+        <translation>https://wl.hidrive.com/easy/0005</translation>
+    </message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0006</source>
+        <translation>https://wl.hidrive.com/easy/0006</translation>
+    </message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0007</source>
+        <translation>https://wl.hidrive.com/easy/0007</translation>
+    </message>
+    <message>
         <source>stable</source>
         <translation>stable</translation>
     </message>
@@ -4662,7 +4693,7 @@ Server replied with error: %2</translation>
 </context>
 <context>
     <name>OCC::User</name>
-    <message><source>%1 notifications</source><translation /></message><message numerus="yes">
+    <message numerus="yes">
         <source>%n notification(s)</source>
         <translation>
             <numerusform>%n notification(s)</numerusform>
@@ -5078,7 +5109,7 @@ Server replied with error: %2</translation>
         <source>Virtual file created</source>
         <translation>Virtual file created</translation>
     </message>
-<message><source>updating local virtual files metadata</source><translation /></message></context>
+</context>
 <context>
     <name>QObject</name>
     <message>
@@ -5440,7 +5471,7 @@ Server replied with error: %2</translation>
         <translation>Waiting to start syncing</translation>
     </message>
 </context>
-<context><name>TrayFoldersMenuButton</name><message><source>Files</source><translation /></message></context><context>
+<context>
     <name>TrayWindowAccountMenu</name>
     <message>
         <source>Account switcher and settings menu</source>

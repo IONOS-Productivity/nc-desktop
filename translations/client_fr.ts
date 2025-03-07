@@ -37,7 +37,14 @@
         <translation>Défiler vers le haut</translation>
     </message>
 </context>
-<context><name>BasicComboBox</name><message><source>Clear status message menu</source><translation>Menu d&apos;effacement du message de statut</translation></message></context><context>
+<context>
+    <name>BasicComboBox</name>
+    <message>
+        <source>Clear status message menu</source>
+        <translation>Menu d&apos;effacement du message de statut</translation>
+    </message>
+</context>
+<context>
     <name>CallNotificationDialog</name>
     <message>
         <source>Answer Talk call notification</source>
@@ -285,7 +292,11 @@
         <source>General settings</source>
         <translation>Paramètres généraux</translation>
     </message>
-    <message><source>Signal file provider domain</source><translation>Indiquer le domaine du fournisseur de fichiers</translation></message><message>
+    <message>
+        <source>Signal file provider domain</source>
+        <translation>Indiquer le domaine du fournisseur de fichiers</translation>
+    </message>
+    <message>
         <source>Virtual files settings</source>
         <translation>Paramètres des fichiers virtuels</translation>
     </message>
@@ -300,7 +311,11 @@
         <source>Evict local copies …</source>
         <translation>Évincer les copies locales…</translation>
     </message>
-    <message><source>Evict local copies...</source><translation>Supprimer les copies locales</translation></message><message>
+    <message>
+        <source>Evict local copies...</source>
+        <translation>Supprimer les copies locales</translation>
+    </message>
+    <message>
         <source>Local storage use</source>
         <translation>Utilisation du stockage local</translation>
     </message>
@@ -382,7 +397,7 @@ macOS may ignore or delay this request.</source>
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
@@ -397,7 +412,7 @@ macOS may ignore or delay this request.</source>
     <name>FolderWizardTargetPage</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
@@ -2075,7 +2090,7 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
     <name>OCC::FolderStatusDelegate</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
         <source>File</source>
@@ -2244,7 +2259,7 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
     <name>OCC::FolderWizardLocalPath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
         <source>Choose</source>
@@ -2260,7 +2275,7 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Sélectionnez sur votre disque dur un dossier qui doit être en permanence rattaché à votre %1. Tous les fichiers et sous-dossiers sont automatiquement importés et synchronisés.</translation>
     </message>
     <message>
         <source>Select the source folder</source>
@@ -2268,14 +2283,14 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
     </message>
     <message>
         <source>Step 1 of 3: Select local folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Étape 1 sur 3 : sélectionner un dossier local</translation>
     </message>
 </context>
 <context>
     <name>OCC::FolderWizardRemotePath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
         <source>Authentication failed accessing %1</source>
@@ -2283,7 +2298,7 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Les deux dossiers sont en permanence rattachés et leur contenu respectif est automatiquement synchronisé et importé.</translation>
     </message>
     <message>
         <source>Choose this to sync the entire account</source>
@@ -2319,7 +2334,7 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
     </message>
     <message>
         <source>Please now select or create a target folder in your %1 where the content should be uploaded and synchronized.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">À présent, sélectionnez ou créez dans votre %1 un dossier cible dans lequel le contenu doit être importé et synchronisé.</translation>
     </message>
     <message>
         <source>Refresh</source>
@@ -2327,7 +2342,7 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
     </message>
     <message>
         <source>Step 2 of 3: Directory in your %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Étape 2 sur 3 : répertoire dans votre %1</translation>
     </message>
 </context>
 <context>
@@ -2338,11 +2353,11 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
         <source>Step 3 of 3: Selektive Synchronisation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Étape 3 sur 3 : synchronisation sélective</translation>
     </message>
     <message>
         <source>Use virtual files instead of downloading content immediately %1</source>
@@ -2557,7 +2572,23 @@ La rétrogradation des versions n&apos;est pas possible immédiatement: passer d
         <source>enterprise</source>
         <translation>enterprise</translation>
     </message>
-    <message><source>https://wl.hidrive.com/easy/0004</source><translation>https://wl.hidrive.com/easy/0004</translation></message><message><source>https://wl.hidrive.com/easy/0005</source><translation>https://wl.hidrive.com/easy/0005</translation></message><message><source>https://wl.hidrive.com/easy/0006</source><translation>https://wl.hidrive.com/easy/0006</translation></message><message><source>https://wl.hidrive.com/easy/0007</source><translation>https://wl.hidrive.com/easy/0007</translation></message><message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0004</source>
+        <translation>https://wl.hidrive.com/easy/0004</translation>
+    </message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0005</source>
+        <translation>https://wl.hidrive.com/easy/0005</translation>
+    </message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0006</source>
+        <translation>https://wl.hidrive.com/easy/0006</translation>
+    </message>
+    <message>
+        <source>https://wl.hidrive.com/easy/0007</source>
+        <translation>https://wl.hidrive.com/easy/0007</translation>
+    </message>
+    <message>
         <source>stable</source>
         <translation>stable</translation>
     </message>
@@ -4659,7 +4690,11 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
 </context>
 <context>
     <name>OCC::User</name>
-    <message><source>%1 notifications</source><translation>%1 notifications</translation></message><message numerus="yes">
+    <message>
+        <source>%1 notifications</source>
+        <translation>%1 notifications</translation>
+    </message>
+    <message numerus="yes">
         <source>%n notification(s)</source>
         <translation type="unfinished">
             <numerusform />
@@ -5075,7 +5110,11 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>Virtual file created</source>
         <translation>Fichier virtuel créé</translation>
     </message>
-<message><source>updating local virtual files metadata</source><translation>Mise à jour des métadonnées des fichiers virtuels locaux</translation></message></context>
+    <message>
+        <source>updating local virtual files metadata</source>
+        <translation>Mise à jour des métadonnées des fichiers virtuels locaux</translation>
+    </message>
+</context>
 <context>
     <name>QObject</name>
     <message>
@@ -5437,7 +5476,14 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <translation>En attente du démarrage de la synchronisation</translation>
     </message>
 </context>
-<context><name>TrayFoldersMenuButton</name><message><source>Files</source><translation>Fichiers</translation></message></context><context>
+<context>
+    <name>TrayFoldersMenuButton</name>
+    <message>
+        <source>Files</source>
+        <translation>Fichiers</translation>
+    </message>
+</context>
+<context>
     <name>TrayWindowAccountMenu</name>
     <message>
         <source>Account switcher and settings menu</source>
@@ -5457,11 +5503,11 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     </message>
     <message>
         <source>Current account status is do not disturb</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Le statuts de compte actuel est ne pas déranger</translation>
     </message>
     <message>
         <source>Current account status is online</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Le statuts de compte actuel est en ligne</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -5511,7 +5557,7 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     </message>
     <message>
         <source>Open Nextcloud in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ouvrir HiDrive Next dans le navigateur</translation>
     </message>
     <message>
         <source>Open local or group folders</source>
@@ -5519,7 +5565,7 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     </message>
     <message>
         <source>Website</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Site Web</translation>
     </message>
 </context>
 <context>
