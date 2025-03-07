@@ -8,6 +8,18 @@ Diese Anleitung beschreibt den Prozess zur Lokalisierung des HiDrive Next Client
 - Python-Script `merge_translation.py`
 - Qt Linguist Tools (insbesondere `lupdate`)
 
+# Vorgehen bei Release
+
+Um in einem Release zu erstellen und einen valider PR zur übersetuen zu haben ist folgendes Vorgehen notwendig:
+
+0. (Optional) Einbeziehen unserer Änderungen aus Phrase. Dieser Schritt ist optional, da die Änderungen in der Regel schon in der Diff-Datei enthalten sind. Sollte es dennoch notwendig sein, können die Änderungen aus Phrase in die `.ts`-Diff-Dateien gemerged werden.
+1. Es wird ein neuer `treanslations_<version source>` branch erstellt. Abgeleitet vom entsprechenden `develop_<version source>`. (z.b. translations_stable-3.16)
+2. Durchlaufen der unter stehen den Schritte 1-6
+3. Erstellen eines "approved" PRs von `translations_<version source>` nach `<version source>`, also in Richtung der eigentlichen Basisversion von nc (z.B. [stable-3.16] Translations)
+4. Der PR wird dann hoffentlich vom Brander gemerged
+
+Das Rebasedn der translations branches lohnt sich eigentlich nicht, weil der nextcloud master sich relativ jäufig Ändert, was zu vielen Konflikten führen würde.
+
 ## Allgemeines
 
 Die Lokalisierung erfolgt in mehreren Schritten. Für eine bessere Vergleichbarkeit werden der Dateiname (Location) und die Zeilennummer in den `.ts`-Dateien entfernt. Die `.ts`-Dateien müssen vor jedem Merge-Schritt sortiert werden.
