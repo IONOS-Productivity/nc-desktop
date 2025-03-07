@@ -29,6 +29,7 @@ Die Lokalisierung erfolgt in mehreren Schritten. Für eine bessere Vergleichbark
 ### 1. Nextcloud-Grundstand aktualisieren
 
 - Den **unveränderten Nextcloud Stable Client** verwenden.
+- Am Einfachsten ist es den branch auschecken, den befehl laufen lassen, stashen und dann wieder auf den alten branch wechseln. Stash poppen.
 - Mit folgendem Befehl die `.ts`Dateien auf den neuesten Stand bringen:
 
 ```
