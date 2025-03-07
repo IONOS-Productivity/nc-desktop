@@ -32,7 +32,7 @@ Die Lokalisierung erfolgt in mehreren Schritten. Für eine bessere Vergleichbark
 - Mit folgendem Befehl die `.ts`Dateien auf den neuesten Stand bringen:
 
 ```
-C:\Craft64\bin\lupdate.exe -locations none -no-obsolete -no-ui-lines C:\repos\nc\nc-desktop\src\libsync\ C:\repos\nc\nc-desktop\src\gui\ C:\repos\nc\nc-desktop\src\csync\ C:\repos\nc\nc-desktop\src\common\ C:\repos\nc\nc-desktop\src\cmd\ -ts .\translations\client_de.ts .\translations\client_en.ts .\translations\client_en_GB.ts .\translations\client_fr.ts .\translations\client_es.ts .\translations\client_nl.ts
+C:\Craft64\bin\lupdate.exe -locations none -no-obsolete -no-ui-lines .\src\libsync\ .\src\gui\ .\src\csync\ .\src\common\ .\src\cmd\ -ts .\translations\client_de.ts .\translations\client_en.ts .\translations\client_en_GB.ts .\translations\client_fr.ts .\translations\client_es.ts .\translations\client_nl.ts
 ```
 
 - Wichtig: **Obsolete Keys entfernen**.
