@@ -1384,9 +1384,9 @@ void Folder::slotNewBigFolderDiscovered(const QString &newF, bool isExternal)
             journal->setSelectiveSyncList(SyncJournalDb::SelectiveSyncUndecidedList, undecidedList);
             emit newBigFolderDiscovered(newFolder);
         }
-        QString message = !isExternal ? (tr("A new folder larger than %1 MB has been added: %2.") 
+        QString message = !isExternal ? (tr("A new folder larger than %1 MB has been added: %2.") + "\n"
                                                 .arg(ConfigFile().newBigFolderSizeLimit().second)
-                                                .arg(newF) + "\n")
+                                                .arg(newF))
                                       : (tr("A folder from an external storage has been added.") + "\n");
         message += tr("Please go in the settings to select it if you wish to download it.");
 
