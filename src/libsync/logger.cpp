@@ -69,7 +69,7 @@ static bool compressLog(const QString &originalName, const QString &targetName)
 
 namespace OCC {
 
-Q_LOGGING_CATEGORY(lcPermanentLog, "nextcloud.log.permanent")
+Q_LOGGING_CATEGORY(lcPermanentLog, "hidrivenext.log.permanent")
 
 Logger *Logger::instance()
 {
@@ -137,7 +137,7 @@ void Logger::doLog(QtMsgType type, const QMessageLogContext &ctx, const QString 
                 _logstream->flush();
             }
             closeNoLock();
-            enterNextLogFileNoLock(QStringLiteral("nextcloud.log"), LogType::Log);
+            enterNextLogFileNoLock(QStringLiteral("hidrivenext.log"), LogType::Log);
         }
         ++linesCounter;
 
@@ -223,7 +223,7 @@ void Logger::setLogFlush(bool flush)
 
 void Logger::setLogDebug(bool debug)
 {
-    const QSet<QString> rules = {debug ? QStringLiteral("nextcloud.*.debug=true") : QString()};
+    const QSet<QString> rules = {debug ? QStringLiteral("hidrivenext.*.debug=true") : QString()};
     if (debug) {
         addLogRule(rules);
     } else {
@@ -240,9 +240,10 @@ QString Logger::temporaryFolderLogDirPath() const
 void Logger::setupTemporaryFolderLogDir()
 {
     auto dir = temporaryFolderLogDirPath();
-    if (!QDir().mkpath(dir)) {
+    if (!QDir().mkpath(dir)) 
         return;
-    }
+    setLogDebug(true);
+    setLogExpire(4 /*hours*/);
     setLogDir(dir);
     _temporaryFolderLogDir = true;
 }
@@ -252,8 +253,10 @@ void Logger::disableTemporaryFolderLogDir()
     if (!_temporaryFolderLogDir)
         return;
 
-    enterNextLogFile("nextcloud.log", LogType::Log);
+    enterNextLogFile("hidrivenext.log", LogType::Log);
     setLogDir(QString());
+    setLogDebug(false);
+    setLogFile(QString());
     _temporaryFolderLogDir = false;
 }
 

@@ -57,6 +57,7 @@
         <file>src/gui/tray/ListItemLineAndSubline.qml</file>
         <file>src/gui/tray/TrayFoldersMenuButton.qml</file>
         <file>src/gui/tray/TrayFolderListItem.qml</file>
+        <file>src/gui/tray/HeaderLogo.qml</file>
         <file>src/gui/ResolveConflictsDialog.qml</file>
         <file>src/gui/ConflictDelegate.qml</file>
         <file>src/gui/ConflictItemFileInfo.qml</file>
@@ -66,5 +67,12 @@
         <file>src/gui/macOS/ui/FileProviderSyncStatus.qml</file>
         <file>src/gui/macOS/ui/FileProviderStorageInfo.qml</file>
         <file>src/gui/macOS/ui/FileProviderFastEnumerationSettings.qml</file>
+        <file>src/gui/SesComponents/SesErrorBox.qml</file>
+        <file>src/gui/SesComponents/SesTrayHeader.qml</file>
+        <file>src/gui/tray/TrayWindowAccountMenu.qml</file>
+        <file>src/gui/tray/PrimaryPillButton.qml</file>
+        <file>src/gui/tray/SecondaryPillButton.qml</file>
+        <file>src/gui/tray/IconButton.qml</file>
+        <file>src/gui/tray/AccountMenuItem.qml</file>
     </qresource>
 </RCC>
