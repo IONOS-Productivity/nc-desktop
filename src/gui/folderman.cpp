@@ -48,7 +48,7 @@ constexpr auto maxFoldersVersion = 1;
 
 namespace OCC {
 
-Q_LOGGING_CATEGORY(lcFolderMan, "nextcloud.gui.folder.manager", QtInfoMsg)
+Q_LOGGING_CATEGORY(lcFolderMan, "hidrivenext.gui.folder.manager", QtInfoMsg)
 
 FolderMan *FolderMan::_instance = nullptr;
 

@@ -57,7 +57,7 @@ constexpr auto versionC = "version";
 
 namespace OCC {
 
-Q_LOGGING_CATEGORY(lcFolder, "nextcloud.gui.folder", QtInfoMsg)
+Q_LOGGING_CATEGORY(lcFolder, "hidrivenext.gui.folder", QtInfoMsg)
 
 Folder::Folder(const FolderDefinition &definition,
     AccountState *accountState, std::unique_ptr<Vfs> vfs,
@@ -1604,7 +1604,7 @@ void Folder::registerFolderWatcher()
     }
     connect(_folderWatcher.data(), &FolderWatcher::filesLockImposed, this, &Folder::slotFilesLockImposed, Qt::UniqueConnection);
     _folderWatcher->init(path());
-    _folderWatcher->startNotificatonTest(path() + QLatin1String(".nextcloudsync.log"));
+    _folderWatcher->startNotificatonTest(path() + QLatin1String(".hidrivenextsync.log"));
     connect(_engine.data(), &SyncEngine::lockFileDetected, _folderWatcher.data(), &FolderWatcher::slotLockFileDetectedExternally);
 }
 

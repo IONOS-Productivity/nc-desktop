@@ -25,7 +25,7 @@ using namespace QKeychain;
 
 namespace OCC {
 
-Q_LOGGING_CATEGORY(lcWebFlowCredentials, "nextcloud.sync.credentials.webflow", QtInfoMsg)
+Q_LOGGING_CATEGORY(lcWebFlowCredentials, "hidrivenext.sync.credentials.webflow", QtInfoMsg)
 
 namespace {
     const char userC[] = "user";
@@ -163,8 +163,8 @@ void WebFlowCredentials::askFromUser() {
             _askDialog->setUrl(url);
         }
 
-        QString msg = tr("You have been logged out of your account %1 at %2. Please login again.")
-                          .arg(_account->prettyName(), _account->url().toDisplayString());
+        QString msg = tr("<b>You have been logged out of your account %1 at %2. Please login again.</b>")
+                          .arg(_account->eliedName(200), _account->url().toDisplayString());
         _askDialog->setInfo(msg);
 
         _askDialog->show();

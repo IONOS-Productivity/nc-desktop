@@ -20,6 +20,7 @@
 #include <QPointer>
 #include <QHash>
 #include <QTimer>
+#include <QDialogButtonBox>
 
 #include "folder.h"
 #include "userinfo.h"
@@ -131,8 +132,10 @@ private slots:
     void resetE2eEncryption();
     void checkClientSideEncryptionState();
     void removeActionFromEncryptionMessage(const QString &actionId);
+    void slotExpandMemoryClicked();
 
 private:
+    void styleCustomContextMenu(QMenu *menu) const;
     bool event(QEvent *) override;
     QAction *addActionToEncryptionMessage(const QString &actionTitle, const QString &actionId);
 
@@ -142,6 +145,8 @@ private:
     [[nodiscard]] QString selectedFolderAlias() const;
 
     void disguiseTabWidget() const;
+
+    void customizeButtonBox(QDialogButtonBox *buttonBox);
 
     Ui::AccountSettings *_ui;
 
