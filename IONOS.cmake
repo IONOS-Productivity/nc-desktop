@@ -16,7 +16,7 @@ else()
 endif()
 
 set( APPLICATION_ICON_SET   "SVG" )
-set( APPLICATION_SERVER_URL "https://easy-qa-1.nextcloud-ionos.com" CACHE STRING "URL for the server to use. If entered, the UI field will be pre-filled with it" )
+set( APPLICATION_SERVER_URL "https://storage.ionos.fr" CACHE STRING "URL for the server to use. If entered, the UI field will be pre-filled with it" )
 set( APPLICATION_SERVER_URL_ENFORCE ON ) # If set and APPLICATION_SERVER_URL is defined, the server can only connect to the pre-defined URL
 set( APPLICATION_REV_DOMAIN "com.ionos.hidrivenext.desktopclient" )
 # set( APPLICATION_VIRTUALFILE_SUFFIX "nextcloud" CACHE STRING "Virtual file suffix (not including the .)")
@@ -74,7 +74,7 @@ if(WIN32)
     set( WIN_MSI_UPGRADE_CODE                "6C9E5670-E8A9-4BBD-9BDF-D003794AC177" )
 
     # Windows build options
-    option( BUILD_WIN_MSI "Build MSI scripts and helper DLL" ON )
+    option( BUILD_WIN_MSI "Build MSI scripts and helper DLL" OFF )
     option( BUILD_WIN_TOOLS "Build Win32 migration tools" OFF )
 endif()
 
