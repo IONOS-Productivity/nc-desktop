@@ -56,7 +56,7 @@ struct Build: ParsableCommand {
     var buildType = "RelWithDebInfo"
 
     @Option(name: [.long], help: "The application's branded name.")
-    var appName = "Nextcloud"
+    var appName = "IONOS HiDrive Next"
 
     @Option(name: [.long], help: "Sparkle download URL.")
     var sparkleDownloadUrl =
@@ -286,7 +286,7 @@ struct Codesign: ParsableCommand {
     static let configuration = CommandConfiguration(abstract: "Codesigning script for the client.")
 
     @Argument(help: "Path to the Nextcloud Desktop Client app bundle.")
-    var appBundlePath = "\(FileManager.default.currentDirectoryPath)/product/Nextcloud.app"
+    var appBundlePath = "\(FileManager.default.currentDirectoryPath)/product/IONOS HiDrive Next.app"
 
     @Option(name: [.short, .long], help: "Code signing identity for desktop client and libs.")
     var codeSignIdentity: String
@@ -323,7 +323,7 @@ struct Package: ParsableCommand {
     var craftBlueprintName = "nextcloud-client"
 
     @Option(name: [.long], help: "The application's branded name.")
-    var appName = "Nextcloud"
+    var appName = "IONOS HiDrive Next"
 
     @Option(name: [.long], help: "Apple ID, used for notarisation.")
     var appleId: String?
