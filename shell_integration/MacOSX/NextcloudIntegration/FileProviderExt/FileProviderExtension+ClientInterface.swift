@@ -99,7 +99,7 @@ extension FileProviderExtension: NSFileProviderServicing {
             userId: newNcAccount.username,
             password: newNcAccount.password,
             urlBase: newNcAccount.serverUrl,
-            userAgent: "IONOS HiDrive Next/FileProviderExt",
+            userAgent: "IONOS-HiDrive-Next/FileProviderExt",
             nextcloudVersion: 25,
             delegate: nil) // TODO: add delegate methods for self
 
