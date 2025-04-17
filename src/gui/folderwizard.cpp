@@ -808,6 +808,8 @@ FolderWizardSelectiveSync::FolderWizardSelectiveSync(const AccountPtr &account)
         IonosTheme::folderWizardSubtitleColor()));
 
     _uiSelectiveSync.subTitle->setProperty("text", tr("Step 3 of 3: Selektive Synchronisation"));
+
+    setupVirtualFilesCheckbox();
 }
 
 FolderWizardSelectiveSync::~FolderWizardSelectiveSync() = default;
