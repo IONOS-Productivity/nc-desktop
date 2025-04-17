@@ -41,7 +41,7 @@ done
 export MACOSX_DEPLOYMENT_TARGET=10.15
 
 # Some variables
-PRODUCT_NAME="HiDrive Next"
+PRODUCT_NAME="IONOS HiDrive Next"
 REPO_ROOT_DIR="../../.."
 CRAFT_DIR=~/Craft64
 PRODUCT_DIR=$BUILD_DIR/product
@@ -99,13 +99,14 @@ cmake -S $REPO_ROOT_DIR/ -B $BUILD_DIR \
       -DBUILD_TESTING=OFF \
       -DBUILD_UPDATER=$(if [ $BUILD_UPDATER == true ]; then echo "ON"; else echo "OFF"; fi) \
       -DMIRALL_VERSION_BUILD=`date +%Y%m%d` \
-      -DMIRALL_VERSION_SUFFIX="release" \
+      -DMIRALL_VERSION_SUFFIX="stable" \
       -DBUILD_OWNCLOUD_OSX_BUNDLE=ON \
       -DCMAKE_OSX_ARCHITECTURES=x86_64 \
       -DBUILD_FILE_PROVIDER_MODULE=ON \
       -DCMAKE_PREFIX_PATH=$CRAFT_DIR \
       -DSPARKLE_LIBRARY=$SPARKLE_DIR/Sparkle.framework \
       -DSOCKETAPI_TEAM_IDENTIFIER_PREFIX="$TEAM_IDENTIFIER." \
+      -DARG_SIDEBAR_ICONS=ON \
 
 make install -C $BUILD_DIR -j4
 
