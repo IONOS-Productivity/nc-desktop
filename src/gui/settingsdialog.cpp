@@ -48,7 +48,7 @@ const QString TOOLBAR_CSS()
 {
 #ifdef IONOS_BUILD
     return QStringLiteral("QToolBar { background: %1; border: none; border-bottom: 1px solid %2; } "
-                        "QToolBar QToolButton { background: %1; border: none; margin: 2px 0px 7px 12px; padding: 11px 4px 4px 4px; border-radius: %5; %8; } "
+                        "QToolBar QToolButton { background: %1; border: none; margin: 2px 0px 7px 12px; padding: 10px 4px 4px 4px; border-radius: %5; %8; } "
                         "QToolBar QToolButton:checked { background: %7; color: %4; }"
                         "QToolBar QToolButton:hover { background: %3; }"
                         "QToolBar QToolButton:pressed { background: %6; color: %4; }"
