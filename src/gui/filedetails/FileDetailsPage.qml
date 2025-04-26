@@ -111,15 +111,15 @@ Page {
                 id: fileIcon
 
                 Layout.rowSpan: headerGridLayout.rows
-                Layout.preferredWidth: Style.sesFileDetailsIconSize
+                Layout.preferredWidth: Style.trayListItemIconSize
                 Layout.leftMargin: Style.sesMediumMargin
                 Layout.fillHeight: true
 
                 verticalAlignment: Image.AlignVCenter
                 horizontalAlignment: Image.AlignHCenter
                 source: root.fileDetails.iconUrl
-                sourceSize.width: Style.sesFileDetailsIconSize
-                sourceSize.height: Style.sesFileDetailsIconSize
+                sourceSize.width: Style.trayListItemIconSize
+                sourceSize.height: Style.trayListItemIconSize
                 fillMode: Image.PreserveAspectFit
             }
 
