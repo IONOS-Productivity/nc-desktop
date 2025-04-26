@@ -769,22 +769,27 @@ FolderWizardSelectiveSync::FolderWizardSelectiveSync(const AccountPtr &account)
     layout->addWidget(_selectiveSync);
 
     if (!Theme::instance()->disableVirtualFilesSyncFolder() && Theme::instance()->showVirtualFilesOption() && bestAvailableVfsMode() != Vfs::Off) {
-        _virtualFilesCheckBox = new QCheckBox(tr("Use virtual files instead of downloading content immediately %1").arg(bestAvailableVfsMode() == Vfs::WindowsCfApi ? QString() : tr("(experimental)")));
 
-        connect(_virtualFilesCheckBox, &QCheckBox::clicked, this, &FolderWizardSelectiveSync::virtualFilesCheckboxClicked);
-        connect(_virtualFilesCheckBox, &QCheckBox::stateChanged, this, [this](int state) {
-            _selectiveSync->setEnabled(state == Qt::Unchecked);
-        });
-        _virtualFilesCheckBox->setChecked(bestAvailableVfsMode() == Vfs::WindowsCfApi);
-        _virtualFilesCheckBox->setStyleSheet("margin-top: 5px;");
+        #ifdef IONOS_BUILD
+            setupVirtualFilesCheckbox();
+        #else
+            _virtualFilesCheckBox = new QCheckBox(tr("Use virtual files instead of downloading content immediately %1").arg(bestAvailableVfsMode() == Vfs::WindowsCfApi ? QString() : tr("(experimental)")));
 
-        QFont f;
-        QFont::Weight w;
-        f.setFamily(IonosTheme::settingsFont());
-        f.setWeight( QFont::Weight::Normal);
-        f.setPixelSize(IonosTheme::settingsTextPixel());
-        _virtualFilesCheckBox->setFont(f);
+            connect(_virtualFilesCheckBox, &QCheckBox::clicked, this, &FolderWizardSelectiveSync::virtualFilesCheckboxClicked);
+            connect(_virtualFilesCheckBox, &QCheckBox::stateChanged, this, [this](int state) {
+                _selectiveSync->setEnabled(state == Qt::Unchecked);
+            });
+            _virtualFilesCheckBox->setChecked(bestAvailableVfsMode() == Vfs::WindowsCfApi);
+            _virtualFilesCheckBox->setStyleSheet("margin-top: 5px;");
 
+            QFont f;
+            QFont::Weight w;
+            f.setFamily(IonosTheme::settingsFont());
+            f.setWeight( QFont::Weight::Normal);
+            f.setPixelSize(IonosTheme::settingsTextPixel());
+            _virtualFilesCheckBox->setFont(f);
+        #endif
+        
         layout->addLayout(_virtualFilesHBox);
     }
 
@@ -808,19 +813,26 @@ FolderWizardSelectiveSync::FolderWizardSelectiveSync(const AccountPtr &account)
         IonosTheme::folderWizardSubtitleColor()));
 
     _uiSelectiveSync.subTitle->setProperty("text", tr("Step 3 of 3: Selektive Synchronisation"));
-
-    setupVirtualFilesCheckbox();
 }
 
 FolderWizardSelectiveSync::~FolderWizardSelectiveSync() = default;
 
 
 void FolderWizardSelectiveSync::setupVirtualFilesCheckbox(){
+
     _virtualFilesHBox = new QHBoxLayout();
     _virtualFilesHBox->setSpacing(5);
     _virtualFilesHBox->setAlignment(Qt::AlignLeft);
+
     _virtualFilesCheckBox = new QCheckBox();
     _virtualFilesCheckBox->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
+
+    connect(_virtualFilesCheckBox, &QCheckBox::clicked, this, &FolderWizardSelectiveSync::virtualFilesCheckboxClicked);
+    connect(_virtualFilesCheckBox, &QCheckBox::stateChanged, this, [this](int state) {
+        _selectiveSync->setEnabled(state == Qt::Unchecked);
+    });
+
+    _virtualFilesCheckBox->setChecked(bestAvailableVfsMode() == Vfs::WindowsCfApi);
 
     _virtualFilesCheckBoxLabel = new ClickableLabel(tr("Use virtual files instead of downloading content immediately %1")
         .arg(bestAvailableVfsMode() == Vfs::WindowsCfApi ? QString() : tr("(experimental)")));
@@ -828,6 +840,7 @@ void FolderWizardSelectiveSync::setupVirtualFilesCheckbox(){
     _virtualFilesCheckBoxLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
 
     connect(_virtualFilesCheckBoxLabel, &ClickableLabel::clicked, this, &FolderWizardSelectiveSync::virtualFilesCheckboxLabelClicked);
+    connect(_virtualFilesCheckBoxLabel, &ClickableLabel::clicked, this, &FolderWizardSelectiveSync::virtualFilesCheckboxClicked);
 
     _virtualFilesHBox->addWidget(_virtualFilesCheckBox, 0);
     _virtualFilesHBox->addWidget(_virtualFilesCheckBoxLabel, 1);
