@@ -50,7 +50,7 @@ set(client_UI_SRCS
     wizard/webview.ui
     wizard/welcomepage.ui
     wizard/dataprotectionpage.ui
-
+    wizard/dataprotectionsettingspage.ui
 qt_add_resources(client_UI_SRCS ../../resources.qrc ${CMAKE_SOURCE_DIR}/theme.qrc)
 
 set(client_SRCS
@@ -279,8 +279,8 @@ set(client_SRCS
     wizard/linklabel.cpp
     wizard/dataprotectionpage.h
     wizard/dataprotectionpage.cpp
-if (WITH_WEBENGINE)
-  list(APPEND client_SRCS
+    wizard/dataprotectionsettingspage.h
+    wizard/dataprotectionsettingspage.cpp
     wizard/webviewpage.h
     wizard/webviewpage.cpp
     wizard/webview.h
