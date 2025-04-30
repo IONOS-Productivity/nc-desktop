@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+    <class>OCC::DataProtectionSettingsPage</class>
+    <widget class="QWidget" name="OCC::DataProtectionSettingsPage">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>626</width>
+                <height>450</height>
+            </rect>
+        </property>
+        <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+            </sizepolicy>
+        </property>
+        <property name="windowTitle">
+            <string>Form</string>
+        </property>
+        <layout class="QVBoxLayout" name="mainVBox">
+            <item>
+                <widget class="OCC::SlideShow" name="slideShow" native="true">
+                    <property name="font">
+                        <font>
+                            <pointsize>12</pointsize>
+                            <bold>true</bold>
+                        </font>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                        <size>
+                            <width>-1</width>
+                            <height>-1</height>
+                        </size>
+                    </property>
+                </widget>
+            </item>
+            <item>
+                <widget class="QLabel" name="label">
+                    <property name="text">
+                        <string>We collect anonymized data to optimize our app. We use software solutions from various partners for this purpose. We want to give you full transparency and freedom of choice regarding the collection and processing of your anonymized usage. You can change your settings at any time under the menu item Data Protection.</string>
+                    </property>
+                    <property name="wordWrap">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </item>
+            <item>
+                <widget class="QCheckBox" name="necessaryDataCheckBox">
+                    <property name="text">
+                        <string>Necessary data</string>
+                    </property>
+                </widget>
+            </item>
+            <item>
+                <widget class="QCheckBox" name="anonymousDataCheckBox">
+                    <property name="text">
+                        <string>Send anonymous use</string>
+                    </property>
+                </widget>
+            </item>
+            <item>
+                <layout class="QHBoxLayout" name="buttonLayout">
+                    <item>
+                        <widget class="QPushButton" name="backButton">
+                            <property name="maximumSize">
+                                <size>
+                                    <width>80</width>
+                                    <height>16777215</height>
+                                </size>
+                            </property>
+                            <property name="text">
+                                <string>Back</string>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QPushButton" name="saveButton">
+                            <property name="maximumSize">
+                                <size>
+                                    <width>80</width>
+                                    <height>16777215</height>
+                                </size>
+                            </property>
+                            <property name="text">
+                                <string>Save Settings</string>
+                            </property>
+                        </widget>
+                    </item>
+                </layout>
+            </item>
+        </layout>
+    </widget>
+    <customwidgets>
+        <customwidget>
+            <class>OCC::SlideShow</class>
+            <extends>QWidget</extends>
+            <header>wizard/slideshow.h</header>
+        </customwidget>
+        <customwidget>
+            <class>OCC::LinkLabel</class>
+            <extends>QWidget</extends>
+            <header>wizard/linklabel.h</header>
+            <container>1</container>
+        </customwidget>
+    </customwidgets>
+    <resources/>
+    <connections/>
+</ui>
