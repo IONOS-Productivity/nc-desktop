@@ -199,6 +199,10 @@ GeneralSettings::GeneralSettings(QWidget *parent)
     _ui->labelInterval->setTextFormat(Qt::RichText);
     _ui->labelInterval->setTextInteractionFlags(Qt::TextBrowserInteraction);
     _ui->labelInterval->setOpenExternalLinks(true);
+
+    connect(_ui->sendNecessaryData_checkbox, &QCheckBox::clicked, this, [this](){
+        _ui->sendNecessaryData_checkbox->setChecked(true);
+    });
 #endif
 
     connect(_ui->serverNotificationsCheckBox, &QAbstractButton::toggled,
@@ -254,7 +258,7 @@ GeneralSettings::GeneralSettings(QWidget *parent)
     connect(_ui->stopExistingFolderNowBigSyncCheckBox, &QAbstractButton::toggled, this, &GeneralSettings::saveMiscSettings);
     connect(_ui->newExternalStorage, &QAbstractButton::toggled, this, &GeneralSettings::saveMiscSettings);
     connect(_ui->moveFilesToTrashCheckBox, &QAbstractButton::toggled, this, &GeneralSettings::saveMiscSettings);
-    connect(_ui->sendData_checkbox, &QAbstractButton::toggled, this, &GeneralSettings::saveMiscSettings);
+    connect(_ui->sendAnonymousData_checkbox, &QAbstractButton::toggled, this, &GeneralSettings::saveMiscSettings);
 
 #ifndef WITH_CRASHREPORTER
     _ui->crashreporterCheckBox->setVisible(false);
@@ -293,7 +297,7 @@ GeneralSettings::GeneralSettings(QWidget *parent)
     connect(_ui->legalNoticeLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenLegalNoticeLink);
     connect(_ui->openSourceLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenOpenSourceLink);
     connect(_ui->privacyLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenPrivacyLink);
-    connect(_ui->sendData_checkbox, &QAbstractButton::toggled, this, &GeneralSettings::slotToggleSendData);
+    connect(_ui->sendAnonymousData_checkbox, &QAbstractButton::toggled, this, &GeneralSettings::slotToggleSendData);
 #if defined(BUILD_UPDATER)
     loadUpdateChannelsList();
 #endif
@@ -346,7 +350,7 @@ void GeneralSettings::connectToTracking()
             , DataCollectionWrapper::TrackingElement::PrivacyPolicy);
      });
 
-    connect(_ui->sendData_checkbox, &QAbstractButton::clicked, this, [this](){
+    connect(_ui->sendAnonymousData_checkbox, &QAbstractButton::clicked, this, [this](){
         _dcw.clicked(DataCollectionWrapper::TrackingPage::GeneralSettings,
                     DataCollectionWrapper::TrackingElement::ToogleSendData);
     });
@@ -396,7 +400,7 @@ void GeneralSettings::loadMiscSettings()
     _ui->newExternalStorage->setChecked(cfgFile.confirmExternalStorage());
     _ui->monoIconsCheckBox->setChecked(cfgFile.monoIcons());
     _ui->moveFilesToTrashCheckBox->setChecked(cfgFile.moveToTrash());
-    _ui->sendData_checkbox->setChecked(cfgFile.sendData());
+    _ui->sendAnonymousData_checkbox->setChecked(cfgFile.sendData());
 
     auto newFolderLimit = cfgFile.newBigFolderSizeLimit();
     _ui->newFolderLimitCheckBox->setChecked(newFolderLimit.first);
@@ -621,7 +625,7 @@ void GeneralSettings::saveMiscSettings()
     cfgFile.setConfirmExternalStorage(_ui->newExternalStorage->isChecked());
     cfgFile.setNotifyExistingFoldersOverLimit(existingFolderLimitEnabled);
     cfgFile.setStopSyncingExistingFoldersOverLimit(stopSyncingExistingFoldersOverLimit);
-    cfgFile.setSendData(_ui->sendData_checkbox->isChecked());
+    cfgFile.setSendData(_ui->sendAnonymousData_checkbox->isChecked());
 
     _ui->existingFolderLimitCheckBox->setEnabled(newFolderLimitEnabled);
     _ui->stopExistingFolderNowBigSyncCheckBox->setEnabled(existingFolderLimitEnabled);
@@ -714,7 +718,7 @@ void GeneralSettings::slotShowLegalNotice()
 void GeneralSettings::slotToggleSendData()
 {
     DataCollectionWrapper dcw;
-    dcw.setSendData(_ui->sendData_checkbox->isChecked());
+    dcw.setSendData(_ui->sendAnonymousData_checkbox->isChecked());
 }
 
 void GeneralSettings::slotStyleChanged()
