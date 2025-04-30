@@ -110,7 +110,7 @@ int Flow2AuthCredsPage::nextId() const
         return WizardCommon::Page_TermsOfService;
     }
 
-    return WizardCommon::Page_AdvancedSetup;
+    return WizardCommon::Page_DataProtection;
 }
 
 void Flow2AuthCredsPage::setConnected()
