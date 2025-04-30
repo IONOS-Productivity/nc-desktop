@@ -31,6 +31,8 @@
 #include "wizard/owncloudwizard.h"
 #include "wizard/webviewpage.h"
 #include "wizard/welcomepage.h"
+#include "wizard/dataprotectionpage.h"
+#include "wizard/dataprotectionsettingspage.h"
 #include "wizard/termsofservicewizardpage.h"
 
 
@@ -58,6 +60,8 @@ OwncloudWizard::OwncloudWizard(QWidget *parent)
     , _flow2CredsPage(new Flow2AuthCredsPage)
     , _termsOfServicePage(new TermsOfServiceWizardPage)
     , _advancedSetupPage(new OwncloudAdvancedSetupPage(this))
+    , _dataProtectionPage(new DataProtectionPage(this))
+    , _dataProtectionSettingsPage(new DataProtectionSettingsPage(this))
 #ifdef WITH_WEBENGINE
     , _webViewPage(new WebViewPage(this))
 #else // WITH_WEBENGINE
@@ -76,7 +80,10 @@ OwncloudWizard::OwncloudWizard(QWidget *parent)
     setPage(WizardCommon::Page_HttpCreds, _httpCredsPage);
     setPage(WizardCommon::Page_Flow2AuthCreds, _flow2CredsPage);
     setPage(WizardCommon::Page_TermsOfService, _termsOfServicePage);
+    setPage(WizardCommon::Page_DataProtection, _dataProtectionPage);
+    setPage(WizardCommon::Page_DataProtectionSettings, _dataProtectionSettingsPage);
     setPage(WizardCommon::Page_AdvancedSetup, _advancedSetupPage);
+    
 #ifdef WITH_WEBENGINE
     if (!useFlow2()) {
         setPage(WizardCommon::Page_WebView, _webViewPage);
