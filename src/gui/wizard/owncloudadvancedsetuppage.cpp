@@ -407,7 +407,6 @@ QUrl OwncloudAdvancedSetupPage::serverUrl() const
 
 int OwncloudAdvancedSetupPage::nextId() const
 {
-    // tells the caller that this is the last dialog page
     return -1;
 }
 
