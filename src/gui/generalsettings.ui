@@ -146,9 +146,9 @@
                                     <layout class="QHBoxLayout" name="horizontalLayout_1">
                                         <item>
                                             <widget class="QCheckBox" name="newFolderLimitCheckBox">
-          <property name="text">
+                                                <property name="text">
                                                     <string>Ask for confirmation before synchronizing new folders larger than</string>
-          </property>
+                                                </property>
                                                 <property name="checked">
                                                     <bool>true</bool>
                                                 </property>
@@ -359,9 +359,19 @@
                             <number>32</number>
                         </property>
                         <item>                        
-                            <widget class="QCheckBox" name="sendData_checkbox">
+                            <widget class="QCheckBox" name="sendNecessaryData_checkbox">
                                 <property name="text">
-                                    <string>&amp;Analysis data collection for needs-based design</string>
+                                    <string>&amp;Necessary data</string>
+                                </property>
+                                <property name="checked">
+                                    <bool>true</bool>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>                        
+                            <widget class="QCheckBox" name="sendAnonymousData_checkbox">
+                                <property name="text">
+                                    <string>&amp;Send anonymous use</string>
                                 </property>
                             </widget>
                         </item>
