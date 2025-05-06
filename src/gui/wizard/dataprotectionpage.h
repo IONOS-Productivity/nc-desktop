@@ -25,14 +25,11 @@ public:
 private:
     void setupUi();
     void customizeStyle();
-    void styleSlideShow();
-    void setupSlideShow();
 
     QScopedPointer<Ui::DataProtectionPage> _ui;
 
     OwncloudWizard *_ocWizard;
 
-    //SES-TODO ADJUST NEXTPAGE
     WizardCommon::Pages _nextPage = WizardCommon::Page_AdvancedSetup;
 };
 
