@@ -52,6 +52,8 @@ namespace OCC{
         });
 
         _ui->descriptionLabel->setText(tr("We collect anonymized data to optimize our app. We use software solutions from various partners for this purpose. We want to give you full transparency and freedom of choice regarding the collection and processing of your anonymized usage. You can change your settings at any time under the menu item Data Protection."));
+    
+        _ui->anonymousDataCheckBox->setChecked(false);
     }
 
     void DataProtectionSettingsPage::customizeStyle()
