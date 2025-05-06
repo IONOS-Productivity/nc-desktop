@@ -21,44 +21,59 @@
         </property>
         <layout class="QVBoxLayout" name="mainVBox">
             <item>
-                <widget class="OCC::SlideShow" name="slideShow" native="true">
-                    <property name="font">
-                        <font>
-                            <pointsize>12</pointsize>
-                            <bold>true</bold>
-                        </font>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                        <size>
-                            <width>-1</width>
-                            <height>-1</height>
-                        </size>
-                    </property>
-                </widget>
-            </item>
-            <item>
-                <widget class="QLabel" name="label">
-                    <property name="text">
-                        <string>We collect anonymized data to optimize our app. We use software solutions from various partners for this purpose. We want to give you full transparency and freedom of choice regarding the collection and processing of your anonymized usage. You can change your settings at any time under the menu item Data Protection.</string>
-                    </property>
+                <widget class="QLabel" name="descriptionLabel">
                     <property name="wordWrap">
                         <bool>true</bool>
                     </property>
                 </widget>
             </item>
-            <item>
-                <widget class="QCheckBox" name="necessaryDataCheckBox">
-                    <property name="text">
-                        <string>Necessary data</string>
-                    </property>
-                </widget>
+            <item>        
+                <layout class="QVBoxLayout" name="necessaryDataLayout">
+                    <item>                
+                        <widget class="QCheckBox" name="necessaryDataCheckBox">
+                            <property name="text">
+                                <string>&amp;Necessary data</string>
+                            </property>
+                            <property name="checked">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QLabel" name="necessaryDataLabel">
+                            <property name="text">
+                                <string>Required to ensure that the software can be used as expected</string>
+                            </property>
+                            <property name="wordWrap">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </item>
+                </layout>
             </item>
-            <item>
-                <widget class="QCheckBox" name="anonymousDataCheckBox">
-                    <property name="text">
-                        <string>Send anonymous use</string>
-                    </property>
-                </widget>
+            <item>        
+                <layout class="QVBoxLayout" name="anonymousDataLayout">
+                    <item>                
+                        <widget class="QCheckBox" name="anonymousDataCheckBox">
+                            <property name="text">
+                                <string>Send anonymous use</string>
+                            </property>
+                            <property name="checked">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QLabel" name="anonymousDataLabel">
+                            <property name="text">
+                                <string>This helps us to optimize the software and to better identify system crashes and unexpected errors.</string>
+                            </property>
+                            <property name="wordWrap">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </item>
+                </layout>
             </item>
             <item>
                 <layout class="QHBoxLayout" name="buttonLayout">
