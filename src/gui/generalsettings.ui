@@ -358,22 +358,53 @@
                         <property name="topMargin">
                             <number>32</number>
                         </property>
-                        <item>                        
-                            <widget class="QCheckBox" name="sendNecessaryData_checkbox">
-                                <property name="text">
-                                    <string>&amp;Necessary data</string>
-                                </property>
-                                <property name="checked">
-                                    <bool>true</bool>
-                                </property>
-                            </widget>
+                        <item>        
+                            <layout class="QVBoxLayout" name="necessaryDataLayout">
+                                <item>                
+                                    <widget class="QCheckBox" name="sendNecessaryData_checkbox">
+                                        <property name="text">
+                                            <string>&amp;Necessary data</string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QLabel" name="necessaryDataLabel">
+                                        <property name="text">
+                                            <string>Required to ensure that the software can be used as expected</string>
+                                        </property>
+                                        <property name="wordWrap">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                </item>
+                            </layout>
                         </item>
-                        <item>                        
-                            <widget class="QCheckBox" name="sendAnonymousData_checkbox">
-                                <property name="text">
-                                    <string>&amp;Send anonymous use</string>
-                                </property>
-                            </widget>
+                        <item>        
+                            <layout class="QVBoxLayout" name="anonymousDataLayout">
+                                <item>                
+                                    <widget class="QCheckBox" name="sendAnonymousData_checkbox">
+                                        <property name="text">
+                                            <string>Send anonymous use</string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QLabel" name="anonymousDataLabel">
+                                        <property name="text">
+                                            <string>This helps us to optimize the software and to better identify system crashes and unexpected errors.</string>
+                                        </property>
+                                        <property name="wordWrap">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                </item>
+                            </layout>
                         </item>
                         <item>
                             <layout class="QHBoxLayout">
