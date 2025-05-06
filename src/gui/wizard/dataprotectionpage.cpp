@@ -1,10 +1,11 @@
 #include "dataprotectionpage.h"
 #include "buttonstyle.h"
+#include "linkbutton.h"
 #include "guiutility.h"
 #include "theme.h"
 #include "ui_dataprotectionpage.h"
 #include "wizard/owncloudwizard.h"
-#include "wizard/slideshow.h"
+#include <QDesktopServices>
 
 namespace OCC{
 
@@ -21,22 +22,9 @@ namespace OCC{
     void DataProtectionPage::setupUi()
     {
         _ui->setupUi(this);
-        setupSlideShow();
     }
 
     void DataProtectionPage::initializePage()
-    {
-        customizeStyle();
-    }
-
-    void DataProtectionPage::styleSlideShow()
-    {
-        const auto dataProtectionLogoFileName = Theme::hidpiFileName(":/client/theme/colored/data-protection-logo.png");
-
-        _ui->slideShow->addSlide(dataProtectionLogoFileName, tr("This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings.Information on data processing and more can be found in our privacy policy")); 
-    }
-
-    void DataProtectionPage::setupSlideShow()
     {
         connect(_ui->agreeButton, &QPushButton::clicked, this, [this]() {
             _nextPage = WizardCommon::Page_AdvancedSetup; 
@@ -47,6 +35,13 @@ namespace OCC{
             _nextPage = WizardCommon::Page_DataProtectionSettings; 
             _ocWizard->next();
         });
+
+        _ui->logoLabel->setPixmap(Theme::hidpiFileName(":/client/theme/colored/data-protection-logo.png"));
+        _ui->descriptionLabel->setText(tr("This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. <br/> <br/>Information on data processing and more can be found in our <a href='https://wl.hidrive.com/easy/0005'>privacy policy</a>."));
+        _ui->descriptionLabel->setOpenExternalLinks(true);
+        _ui->descriptionLabel->setTextFormat(Qt::RichText);
+
+        customizeStyle();
     }
 
     int DataProtectionPage::nextId() const
@@ -56,24 +51,29 @@ namespace OCC{
 
     void DataProtectionPage::customizeStyle()
     {
-        _ui->slideShow->setStyleSheet(
-            QStringLiteral("QLabel { %1; }").arg(
+        _ocWizard->setFixedSize(626, 460);
+        _ui->mainVBox->setContentsMargins(24, 0, 24, 24);   
+
+        _ui->logoLabel->setAlignment(Qt::AlignHCenter);
+        _ui->logoLabel->setMargin(8);
+
+        _ui->descriptionLabel->setStyleSheet(
+            QStringLiteral("QLabel { %1; margin-left: %2; margin-right: %2; margin-bottom: %2; }").arg(
                 IonosTheme::fontConfigurationCss(
                     IonosTheme::settingsFont(),
                     IonosTheme::settingsTextSize(),
-                    "0",
-                    IonosTheme::titleColor()
-                )
+                    IonosTheme::settingsTextWeight(),
+                    IonosTheme::black()
+                ),
+                "32"
             )
         );
-        _ocWizard->setFixedSize(626, 460);
-        _ui->mainVBox->setContentsMargins(24, 0, 24, 24);   
+
         _ui->agreeButton->setMinimumWidth(80);
+        _ui->agreeButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
         _ui->settingsButton->setMinimumWidth(80);
 
-        styleSlideShow();
-
-        _ui->buttonLayout->setContentsMargins(160, 0, 160, 0);
-        _ui->agreeButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
+        _ui->buttonLayout->setAlignment(Qt::AlignCenter);
+        _ui->buttonLayout->setSpacing(16);
     }
 }
