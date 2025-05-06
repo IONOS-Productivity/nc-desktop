@@ -199,11 +199,11 @@ GeneralSettings::GeneralSettings(QWidget *parent)
     _ui->labelInterval->setTextFormat(Qt::RichText);
     _ui->labelInterval->setTextInteractionFlags(Qt::TextBrowserInteraction);
     _ui->labelInterval->setOpenExternalLinks(true);
+#endif
 
     connect(_ui->sendNecessaryData_checkbox, &QCheckBox::clicked, this, [this](){
         _ui->sendNecessaryData_checkbox->setChecked(true);
     });
-#endif
 
     connect(_ui->serverNotificationsCheckBox, &QAbstractButton::toggled,
         this, &GeneralSettings::slotToggleOptionalServerNotifications);
@@ -767,6 +767,42 @@ void GeneralSettings::customizeStyle()
             IonosTheme::settingsTextSize(),
             IonosTheme::settingsTitleWeight600(),
             IonosTheme::black()
+        )
+    );
+
+    _ui->sendNecessaryData_checkbox->setStyleSheet(
+        QStringLiteral("QCheckBox { font-size: %1; font-weight: %2; color: %3; }").arg(
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTitleWeight600(),
+            IonosTheme::folderWizardSubtitleColor()
+        )
+    );
+
+    _ui->sendAnonymousData_checkbox->setStyleSheet(
+        QStringLiteral("QCheckBox { font-size: %1; font-weight: %2; color: %3; }").arg(
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTitleWeight600(),
+            IonosTheme::folderWizardSubtitleColor()
+        )
+    );
+
+    _ui->necessaryDataLabel->setStyleSheet(
+        QStringLiteral("QLabel { font-size: %1; font-weight: %2; color: %3; margin-left: %4; }").arg(
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight(),
+            IonosTheme::black(),
+            "24"
+        )
+    );
+
+    _ui->anonymousDataLabel->setStyleSheet(
+        QStringLiteral("QLabel { font-size: %1; font-weight: %2; color: %3;  margin-left: %4; margin-bottom: %5; }").arg(
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight(),
+            IonosTheme::black(),
+            "24",
+            "16"
+
         )
     );
 
