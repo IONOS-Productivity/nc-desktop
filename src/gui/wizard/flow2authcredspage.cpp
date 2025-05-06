@@ -110,7 +110,10 @@ int Flow2AuthCredsPage::nextId() const
         return WizardCommon::Page_TermsOfService;
     }
 
+#ifdef IONOS_BUILD
     return WizardCommon::Page_DataProtection;
+#endif
+    return WizardCommon::Page_AdvancedSetup;
 }
 
 void Flow2AuthCredsPage::setConnected()
