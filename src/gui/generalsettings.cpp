@@ -736,6 +736,9 @@ void GeneralSettings::customizeStyle()
     }();
     _ui->infoAndUpdatesLabel->setText(aboutText);
 
+    this->setAutoFillBackground(true);
+    setPalette(QPalette(QPalette::Window, IonosTheme::dialogBackgroundColor()));
+
     this->setStyleSheet(
         QStringLiteral("QGroupBox { border: %1; font-size: %2; font-weight: %3; color: %4; }").arg(
             Theme::instance()->systemPalette()["base"].value<QColor>().name(),

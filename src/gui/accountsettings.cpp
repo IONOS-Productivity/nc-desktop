@@ -180,6 +180,8 @@ AccountSettings::AccountSettings(AccountState *accountState, QWidget *parent)
     , _userInfo(accountState, false, true)
 {
     _ui->setupUi(this);
+    this->setAutoFillBackground(true);
+    setPalette(QPalette(QPalette::Window, IonosTheme::dialogBackgroundColor()));
 
     _model->setAccountState(_accountState);
     _model->setParent(this);
@@ -591,7 +593,6 @@ void AccountSettings::openIgnoredFilesDialog(const QString & absFolderPath)
 
     const auto dialog = new QDialog();
     dialog->setLayout(layout);
-    dialog->setStyleSheet(QStringLiteral("QDialog { background-color: %1; }").arg(IonosTheme::dialogBackgroundColor()));
 
     connect(buttonBox, &QDialogButtonBox::clicked, [=](QAbstractButton * button) {
         if (buttonBox->buttonRole(button) == QDialogButtonBox::AcceptRole) {
