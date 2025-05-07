@@ -25,7 +25,7 @@ Button{
         text: root.text
         color: textColor
         font.weight: Style.sesFontNormalWeight
-        font.pointSize: Style.sesFontPointSize
+        font.pixelSize: Style.sesFontHintPixelSize
     }
     Image {
       visible: root.iconSource
