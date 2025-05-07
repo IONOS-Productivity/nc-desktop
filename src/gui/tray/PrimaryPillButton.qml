@@ -22,7 +22,7 @@ Button{
         text: root.text
         color: "white"
         font.weight: Style.sesFontNormalWeight
-        font.pointSize: Style.sesFontPointSize
+        font.pixelSize: Style.sesFontHintPixelSize
     }
     Image {
       visible: root.iconSource
