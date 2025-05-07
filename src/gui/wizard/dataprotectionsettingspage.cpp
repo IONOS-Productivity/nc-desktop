@@ -62,6 +62,26 @@ namespace OCC{
 
         _ui->mainVBox->setContentsMargins(32, 0, 32, 0);
 
+        _ui->necessaryDataCheckBox->setStyleSheet(
+            QStringLiteral("QCheckBox { %1; }").arg(
+                IonosTheme::fontConfigurationCss(
+                    IonosTheme::settingsFont(),
+                    IonosTheme::settingsTextSize(),
+                    IonosTheme::settingsTitleWeight600(),
+                    IonosTheme::folderWizardSubtitleColor()
+                )
+            ));
+
+            _ui->anonymousDataCheckBox->setStyleSheet(
+                QStringLiteral("QCheckBox { %1; }").arg(
+                    IonosTheme::fontConfigurationCss(
+                        IonosTheme::settingsFont(),
+                        IonosTheme::settingsTextSize(),
+                        IonosTheme::settingsTitleWeight600(),
+                        IonosTheme::folderWizardSubtitleColor()
+                    )
+                ));
+
         _ui->necessaryDataCheckBox->setChecked(true);
 
         _ui->descriptionLabel->setStyleSheet(
