@@ -111,6 +111,9 @@ void FolderCreationDialog::customizeStyle()
 {
     ui->buttonBox->setLayoutDirection(Qt::RightToLeft);
 
+    this->setAutoFillBackground(true);
+    setPalette(QPalette(QPalette::Window, IonosTheme::dialogBackgroundColor()));
+
     QPushButton *okButton = ui->buttonBox->button(QDialogButtonBox::Ok);
     okButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
 
