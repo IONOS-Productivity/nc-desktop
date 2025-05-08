@@ -62,6 +62,7 @@ namespace OCC{
 
         _ui->mainVBox->setContentsMargins(32, 0, 32, 0);
 
+        _ui->necessaryDataCheckBox->setEnabled(false);
         _ui->necessaryDataCheckBox->setStyleSheet(
             QStringLiteral("QCheckBox { %1; }").arg(
                 IonosTheme::fontConfigurationCss(
