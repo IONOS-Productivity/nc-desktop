@@ -32,7 +32,7 @@
                     <item>                
                         <widget class="QCheckBox" name="necessaryDataCheckBox">
                             <property name="text">
-                                <string>&amp;Necessary data</string>
+                                <string>Necessary data</string>
                             </property>
                             <property name="checked">
                                 <bool>true</bool>
