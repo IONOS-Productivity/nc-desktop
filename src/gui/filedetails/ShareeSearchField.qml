@@ -17,7 +17,7 @@ import QtQuick.Window
 import QtQuick.Layouts
 import QtQuick.Controls
 
-import com.nextcloud.desktopclient
+import com.ionos.hidrivenext.desktopclient
 import Style
 import "../tray"
 
@@ -38,6 +38,7 @@ TextField {
     }
 
     readonly property int horizontalPaddingOffset: Style.trayHorizontalMargin
+    readonly property color placeholderColor: Style.sesSearchFieldContent
     readonly property double iconsScaleFactor: 0.6
 
     function triggerSuggestionsVisibility() {
@@ -45,8 +46,10 @@ TextField {
     }
 
     placeholderText: enabled ? qsTr("Search for users or groups…") : qsTr("Sharing is not available for this folder")
+    placeholderTextColor: placeholderColor
     verticalAlignment: Qt.AlignVCenter
     implicitHeight: Math.max(Style.talkReplyTextFieldPreferredHeight, contentHeight)
+
 
     onActiveFocusChanged: triggerSuggestionsVisibility()
     onTextChanged: triggerSuggestionsVisibility()
@@ -87,8 +90,15 @@ TextField {
         }
     }
 
-    leftPadding: searchIcon.width + searchIcon.anchors.leftMargin + horizontalPaddingOffset
-    rightPadding: clearTextButton.width + clearTextButton.anchors.rightMargin + horizontalPaddingOffset
+    leftPadding: searchIcon.width + searchIcon.anchors.leftMargin + horizontalPaddingOffset - 5
+    rightPadding: root.text ? clearTextButton.width + clearTextButton.anchors.rightMargin + horizontalPaddingOffset : 5
+
+    background: Rectangle {
+        radius: 5
+        border.color: Style.sesMenuBorder
+        border.width: 1
+
+    }
 
     Image {
         id: searchIcon
@@ -107,7 +117,7 @@ TextField {
         fillMode: Image.PreserveAspectFit
         horizontalAlignment: Image.AlignLeft
 
-        source: "image://svgimage-custom-color/search.svg" + "/" + palette.placeholderText
+        source: "image://svgimage-custom-color/search.svg" + "/" + Style.sesSearchFieldContent
         sourceSize: Qt.size(parent.height * root.iconsScaleFactor, parent.height * root.iconsScaleFactor)
 
         visible: !root.shareeModel.fetchOngoing

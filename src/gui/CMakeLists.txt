@@ -10,6 +10,9 @@ endif()
 if(CMAKE_BUILD_TYPE MATCHES Debug)
     add_definitions(-DQT_QML_DEBUG)
 endif()
+if(CMAKE_BUILD_TYPE MATCHES "RelWithDebInfo")
+    add_definitions(-DBUILDTYPE_RELWITHDEBINFO)
+endif()
 
 IF(BUILD_UPDATER)
     add_subdirectory(updater)
@@ -46,6 +49,8 @@ set(client_UI_SRCS
     wizard/termsofservicecheckwidget.ui
     wizard/webview.ui
     wizard/welcomepage.ui
+    wizard/dataprotectionpage.ui
+    wizard/dataprotectionsettingspage.ui
 )
 
 qt_add_resources(client_UI_SRCS ../../resources.qrc ${CMAKE_SOURCE_DIR}/theme.qrc)
@@ -97,6 +102,7 @@ set(client_SRCS
     folderwatcher.cpp
     folderwizard.h
     folderwizard.cpp
+    clickablelabel.h
     generalsettings.h
     generalsettings.cpp
     legalnotice.h
@@ -146,6 +152,7 @@ set(client_SRCS
     systray.h
     systray.cpp
     EncryptionTokenSelectionWindow.qml
+    buttonstyle.h
     userinfo.h
     userinfo.cpp
     vfsdownloaderrordialog.h
@@ -221,6 +228,27 @@ set(client_SRCS
     creds/webflowcredentials.cpp
     creds/webflowcredentialsdialog.h
     creds/webflowcredentialsdialog.cpp
+    ga4/datacollectionwrapper.cpp
+    ga4/datacollectionwrapper.h
+    ga4/ganalytics_worker.cpp
+    ga4/ganalytics_worker.h
+    ga4/ganalytics.cpp
+    ga4/ganalytics.h
+    sessnackbar.h
+    sessnackbar.cpp
+    sesstyle.h
+    sesstyle.cpp
+    linkbutton.h
+    linkbutton.cpp
+    buttonstylestrategy.h
+    sesFileIconProvider.h
+    sesFileIconProvider.cpp
+    pushbuttonstylehelper.h
+    pushbuttonstylehelper.cpp
+    moreoptionsbuttonstylehelper.h
+    moreoptionsbuttonstylehelper.cpp
+    SesComponents/syncdirvalidation.h
+    SesComponents/syncdirvalidation.cpp
     wizard/postfixlineedit.h
     wizard/postfixlineedit.cpp
     wizard/abstractcredswizardpage.h
@@ -249,6 +277,10 @@ set(client_SRCS
     wizard/slideshow.cpp
     wizard/welcomepage.h
     wizard/welcomepage.cpp
+    wizard/dataprotectionpage.h
+    wizard/dataprotectionpage.cpp
+    wizard/dataprotectionsettingspage.h
+    wizard/dataprotectionsettingspage.cpp
     wizard/linklabel.h
     wizard/linklabel.cpp
     )
@@ -765,7 +797,7 @@ if(BUILD_OWNCLOUD_OSX_BUNDLE AND NOT BUILD_LIBRARIES_ONLY)
         "$<TARGET_FILE_DIR:nextcloud>/../.."
         -qmldir=${CMAKE_SOURCE_DIR}/src/gui
         -always-overwrite
-        -executable="$<TARGET_FILE_DIR:nextcloud>/${cmd_NAME}"
+        -executable=$<TARGET_FILE_DIR:nextcloud>/${cmd_NAME}
         ${NO_STRIP}
         COMMAND "${CMAKE_COMMAND}"
         -E rm -rf "${BIN_OUTPUT_DIRECTORY}/${OWNCLOUD_OSX_BUNDLE}/Contents/PlugIns/bearer"

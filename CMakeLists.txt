@@ -3,6 +3,8 @@ cmake_policy(SET CMP0071 NEW) # Enable use of QtQuick compiler/generated code
 
 project(client)
 
+add_compile_definitions(IONOS_BUILD)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 if(APPLE)
     set(CMAKE_OSX_DEPLOYMENT_TARGET "12.0" CACHE STRING "Minimum OSX deployment version")
 endif()
@@ -21,7 +23,7 @@ set(CMAKE_XCODE_ATTRIBUTE_ENABLE_HARDENED_RUNTIME YES)
 
 set(BIN_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 
-include(${CMAKE_SOURCE_DIR}/NEXTCLOUD.cmake)
+include(${CMAKE_SOURCE_DIR}/IONOS.cmake)
 
 set(QT_VERSION_MAJOR "6")
 set(REQUIRED_QT_VERSION "6.8.0")
