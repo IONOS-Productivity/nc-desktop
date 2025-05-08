@@ -51,7 +51,7 @@ namespace OCC{
 
     void DataProtectionPage::customizeStyle()
     {
-        _ocWizard->setFixedSize(626, 460);
+        _ocWizard->setFixedSize(626, 470);
         _ui->mainVBox->setContentsMargins(24, 0, 24, 24);   
 
         _ui->logoLabel->setAlignment(Qt::AlignHCenter);
