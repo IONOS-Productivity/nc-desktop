@@ -19,6 +19,7 @@ class DataProtectionSettingsPage : public QWizardPage
 public:
     explicit DataProtectionSettingsPage(OwncloudWizard *ocWizard);
     ~DataProtectionSettingsPage() override;
+    [[nodiscard]] int nextId() const override;
     void initializePage() override;
 
 private:
@@ -28,9 +29,11 @@ private:
 
     QScopedPointer<Ui::DataProtectionSettingsPage> _ui;
 
+    bool _anonymousUseState;
+
     OwncloudWizard *_ocWizard;
 
-    bool _anonymousUseState;
+    WizardCommon::Pages _nextPage = WizardCommon::Page_AdvancedSetup;
 };
 
 }
