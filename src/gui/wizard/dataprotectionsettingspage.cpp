@@ -22,7 +22,7 @@ namespace OCC{
     void DataProtectionSettingsPage::setupUi()
     {
         _ui->setupUi(this);
-        setupSlideShow();
+        setupPage();
     }
 
     void DataProtectionSettingsPage::initializePage()
@@ -31,7 +31,7 @@ namespace OCC{
         customizeStyle();
     }
 
-    void DataProtectionSettingsPage::setupSlideShow()
+    void DataProtectionSettingsPage::setupPage()
     {
         ConfigFile cfgFile;
 
