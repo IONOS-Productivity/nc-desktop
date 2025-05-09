@@ -24,7 +24,7 @@ public:
 private:
     void setupUi();
     void customizeStyle();
-    void setupSlideShow();
+    void setupPage();
 
     QScopedPointer<Ui::DataProtectionSettingsPage> _ui;
 
