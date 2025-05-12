@@ -24,14 +24,15 @@ export -f sign_folder_content
 set -xe
 
 # Parse the command line arguments
-while getopts "b:s:ci" opt; do
+while getopts "b:p:s:ci" opt; do
   case ${opt} in
-    b )BUILD_DIR=$OPTARG;;
+    b )BASE_DIR=$OPTARG;;
+    p )PATH_TO_PKG=$OPTARG ;;
     s )CODE_SIGN_IDENTITY=$OPTARG ;;
     c )CLEAN_REBUILD=true ;;
     i )PACKAGE_INSTALLER=true ;;
     \? )
-      echo "Usage: start.sh [-b <build_dir>] [-s <code_sign_identity>] [-c] [-i]"
+      echo "Usage: sign.sh [-b <base_dir>] [-s <code_sign_identity>] [-c] [-i]"
       exit 1
       ;;
   esac
@@ -42,44 +43,24 @@ export MACOSX_DEPLOYMENT_TARGET=10.15
 
 # Some variables
 PRODUCT_NAME="IONOS HiDrive Next"
-REPO_ROOT_DIR="../../.."
-CRAFT_DIR=~/Craft64
-PRODUCT_DIR=$BUILD_DIR/product
-BUILD_UPDATER=true
+PRODUCT_DIR=$BASE_DIR/product
 TEAM_IDENTIFIER="5TDLCVD243"
+WORK_DIR="ExtractedPkg"
+FINAL_PKG="Reassembled.pkg"
 
-# Check if the client is running and kill it
-# This is necessary to avoid issues with replacement of the bundle file
-# if pgrep -x "$PRODUCT_NAME" >/dev/null; then
-#   killall "$PRODUCT_NAME"
-# fi
+TARGET_PATH="${BASE_DIR%/}/$WORK_DIR"
+FINAL_TARGET_PATH="${BASE_DIR%/}/$FINAL_PKG"
 
-# Check if BUILD_DIR is set, so we don't accidentally delete the whole filesystem
-# if [ -z "$BUILD_DIR" ]; then
-#   echo "Build dir not set. Add -b <build_dir> to the command."
-#   exit 0
-# fi
+echo "Expanding original package..."
+pkgutil --expand-full "$PATH_TO_PKG" "$TARGET_PATH"
 
-# Check if BUILD_DIR exists. If not, create it. If so, clear it.
-# if [ ! -d $BUILD_DIR ]; then
-#   mkdir -p $BUILD_DIR
-# else
-#   if [ $CLEAN_REBUILD = true ]; then
-#     rm -rf $BUILD_DIR/*
-#   fi
-# fi
 
-# Check if Craft dir exists, if not exit
-# if [ ! -d $CRAFT_DIR ]; then
-#   echo "Craft dir not found. Exiting."
-#   exit 1
-# fi
-
+# TODO: 
 # Load Sparkle
-SPARKLE_DIR=$BUILD_DIR/sparkle
+SPARKLE_DIR=$BASE_DIR/sparkle
 SPARKLE_DOWNLOAD_URI="https://github.com/sparkle-project/Sparkle/releases/download/1.27.3/Sparkle-1.27.3.tar.xz"
 
-if [ "$CLEAN_REBUILD" == "true" ] && [ "$BUILD_UPDATER" == "true" ]; then
+if [ "$CLEAN_REBUILD" == "true" ]; then
   mkdir -p $SPARKLE_DIR
   wget $SPARKLE_DOWNLOAD_URI -O $SPARKLE_DIR/Sparkle.tar.xz
   tar -xvf $SPARKLE_DIR/Sparkle.tar.xz -C $SPARKLE_DIR
@@ -92,23 +73,7 @@ if [ "$CLEAN_REBUILD" == "true" ] && [ "$BUILD_UPDATER" == "true" ]; then
   fi
 fi
 
-# # Build the client
-# cmake -S $REPO_ROOT_DIR/ -B $BUILD_DIR \
-#       -DQT_TRANSLATIONS_DIR=$REPO_ROOT_DIR/translations \
-#       -DCMAKE_INSTALL_PREFIX=$PRODUCT_DIR \
-#       -DBUILD_TESTING=OFF \
-#       -DBUILD_UPDATER=$(if [ $BUILD_UPDATER == true ]; then echo "ON"; else echo "OFF"; fi) \
-#       -DMIRALL_VERSION_BUILD=`date +%Y%m%d` \
-#       -DMIRALL_VERSION_SUFFIX="stable" \
-#       -DBUILD_OWNCLOUD_OSX_BUNDLE=ON \
-#       -DCMAKE_OSX_ARCHITECTURES=x86_64 \
-#       -DBUILD_FILE_PROVIDER_MODULE=ON \
-#       -DCMAKE_PREFIX_PATH=$CRAFT_DIR \
-#       -DSPARKLE_LIBRARY=$SPARKLE_DIR/Sparkle.framework \
-#       -DSOCKETAPI_TEAM_IDENTIFIER_PREFIX="$TEAM_IDENTIFIER." \
-#       -DARG_SIDEBAR_ICONS=ON \
 
-# make install -C $BUILD_DIR -j4
 
 # ---------------------------------------------------
 # Sign the client
@@ -155,8 +120,11 @@ if [ -z "$PACKAGE_INSTALLER" ]; then
   exit 0
 fi
 
+echo "Reassembling the package..."
+pkgutil --flatten "$TARGET_PATH" "$FINAL_TARGET_PATH"
+
 # package
-$BUILD_DIR/admin/osx/create_mac.sh "$PRODUCT_DIR" "$BUILD_DIR" 'Developer ID Installer: IONOS SE (5TDLCVD243)'
+# $BASE_DIR/admin/osx/create_mac.sh "$PRODUCT_DIR" "$BASE_DIR" 'Developer ID Installer: IONOS SE (5TDLCVD243)'
 
 # notariaze
 # Extract package filename from filesystem per .pkg extension
