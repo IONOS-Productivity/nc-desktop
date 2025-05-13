@@ -111,8 +111,8 @@ namespace OCC{
         _ui->buttonLayout->setSpacing(16);
         _ui->buttonLayout->setContentsMargins(0, 16, 0, 16);
 
-        _ui->backButton->setMinimumWidth(80);
-        _ui->saveButton->setMinimumWidth(140);
+        _ui->backButton->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        _ui->saveButton->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
         _ui->saveButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
     }
 }
