@@ -34,12 +34,6 @@
                 <layout class="QHBoxLayout" name="buttonLayout">
                     <item>
                         <widget class="QPushButton" name="settingsButton">
-                            <property name="maximumSize">
-                                <size>
-                                    <width>80</width>
-                                    <height>16777215</height>
-                                </size>
-                            </property>
                             <property name="text">
                                 <string>Settings</string>
                             </property>
@@ -47,12 +41,6 @@
                     </item>
                     <item>
                         <widget class="QPushButton" name="agreeButton">
-                            <property name="maximumSize">
-                                <size>
-                                    <width>80</width>
-                                    <height>16777215</height>
-                                </size>
-                            </property>
                             <property name="text">
                                 <string>Agree</string>
                             </property>

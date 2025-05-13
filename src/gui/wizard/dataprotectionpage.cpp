@@ -69,9 +69,10 @@ namespace OCC{
             )
         );
 
-        _ui->agreeButton->setMinimumWidth(80);
+        _ui->agreeButton->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
         _ui->agreeButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
-        _ui->settingsButton->setMinimumWidth(80);
+
+        _ui->settingsButton->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         _ui->buttonLayout->setAlignment(Qt::AlignCenter);
         _ui->buttonLayout->setSpacing(16);
