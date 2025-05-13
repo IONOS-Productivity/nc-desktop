@@ -22,6 +22,7 @@ export -f sign_folder_content
 
 # This script is used to build the Mac OS X version of the IONOS client.
 set -xe
+# set -e
 
 # Parse the command line arguments
 while getopts "b:p:s:ci" opt; do
@@ -38,44 +39,61 @@ while getopts "b:p:s:ci" opt; do
   esac
 done
 
-# Set the deployment target
-export MACOSX_DEPLOYMENT_TARGET=10.15
-
 # Some variables
+PKG_FILENAME=$(basename "$PATH_TO_PKG")
+PKG_ORGINAL_NAME="${PKG_FILENAME%.pkg}"
 PRODUCT_NAME="IONOS HiDrive Next"
 UNDERSCORE_PRODUCT_NAME="IONOS_HiDrive_Next"
+
 TEAM_IDENTIFIER="5TDLCVD243"
 WORK_DIR="ex"
+INNER_WORK_DIR="tmp"
 FINAL_PKG="Reassembled.pkg"
 
 EXTRACTED_DIR="${BASE_DIR%/}/$WORK_DIR"
 FINAL_TARGET_PATH="${BASE_DIR%/}/$FINAL_PKG"
 
 PRODUCT_DIR=$EXTRACTED_DIR/$UNDERSCORE_PRODUCT_NAME.pkg/Payload/Applications
-
+SCRIPTS_DIR=$EXTRACTED_DIR/$UNDERSCORE_PRODUCT_NAME.pkg/Scripts
+INNER_PKG=$EXTRACTED_DIR/$UNDERSCORE_PRODUCT_NAME.pkg
+PAYLOAD_DIR=$EXTRACTED_DIR/$UNDERSCORE_PRODUCT_NAME.pkg/Payload
+INSTALLER_PKG=$BASE_DIR/INSTALLER.pkg
 
 echo "Expanding original package..."
 
-pkgutil --expand-full "$PATH_TO_PKG" "$EXTRACTED_DIR"
+if [ -d "$EXTRACTED_DIR" ]; then
+
+  echo "$EXTRACTED_DIR already exits."
+
+  if [ "$CLEAN_REBUILD" = true ]; then
+    echo "Clean Rebuild Enabled - Deleting folder: $EXTRACTED_DIR"
+    rm -rf "$EXTRACTED_DIR"
+    pkgutil --expand-full "$PATH_TO_PKG" "$EXTRACTED_DIR"
+  fi
+else 
+  pkgutil --expand-full "$PATH_TO_PKG" "$EXTRACTED_DIR"
+fi
+
+
+
 
 # TODO: 
 # Load Sparkle
-SPARKLE_DIR=$BASE_DIR/sparkle
-SPARKLE_DOWNLOAD_URI="https://github.com/sparkle-project/Sparkle/releases/download/1.27.3/Sparkle-1.27.3.tar.xz"
+# SPARKLE_DIR=$BASE_DIR/sparkle
+# SPARKLE_DOWNLOAD_URI="https://github.com/sparkle-project/Sparkle/releases/download/1.27.3/Sparkle-1.27.3.tar.xz"
 
-if [ "$CLEAN_REBUILD" == "true" ]; then
-  mkdir -p $SPARKLE_DIR
-  wget $SPARKLE_DOWNLOAD_URI -O $SPARKLE_DIR/Sparkle.tar.xz
-  tar -xvf $SPARKLE_DIR/Sparkle.tar.xz -C $SPARKLE_DIR
+# if [ "$CLEAN_REBUILD" == "true" ]; then
+#   mkdir -p $SPARKLE_DIR
+#   wget $SPARKLE_DOWNLOAD_URI -O $SPARKLE_DIR/Sparkle.tar.xz
+#   tar -xvf $SPARKLE_DIR/Sparkle.tar.xz -C $SPARKLE_DIR
 
-  # Sign Sparkle
-  if [ -n "$CODE_SIGN_IDENTITY" ]; then
-    SPARKLE_FRAMEWORK_DIR=$SPARKLE_DIR/Sparkle.framework
-    find "$SPARKLE_FRAMEWORK_DIR/Resources/Autoupdate.app/Contents/MacOS" -mindepth 1 -print0 | xargs -0 -I {} bash -c 'sign_folder_content "$@" "$CODE_SIGN_IDENTITY"' _ {} "$CODE_SIGN_IDENTITY"
-    codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --verbose=4 --deep --options=runtime --timestamp "$SPARKLE_FRAMEWORK_DIR/Sparkle"
-  fi
-fi
-
+#   # Sign Sparkle
+#   if [ -n "$CODE_SIGN_IDENTITY" ]; then
+#     SPARKLE_FRAMEWORK_DIR=$SPARKLE_DIR/Sparkle.framework
+#     find "$SPARKLE_FRAMEWORK_DIR/Resources/Autoupdate.app/Contents/MacOS" -mindepth 1 -print0 | xargs -0 -I {} bash -c 'sign_folder_content "$@" "$CODE_SIGN_IDENTITY"' _ {} "$CODE_SIGN_IDENTITY"
+#     codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --verbose=4 --deep --options=runtime --timestamp "$SPARKLE_FRAMEWORK_DIR/Sparkle"
+#   fi
+# fi
 
 
 # ---------------------------------------------------
@@ -96,6 +114,11 @@ CLIENT_FRAMEWORKS_DIR=$CLIENT_CONTENTS_DIR/Frameworks
 CLIENT_PLUGINS_DIR=$CLIENT_CONTENTS_DIR/PlugIns
 CLIENT_RESOURCES_DIR=$CLIENT_CONTENTS_DIR/Resources
 
+for script in $SCRIPTS_DIR/*; do
+    echo "→ Signing script: $script"
+    codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --verbose=4 --options=runtime --timestamp "$script"
+done
+
 find "$CLIENT_FRAMEWORKS_DIR" -print0 | xargs -0 -I {} bash -c 'recursive_sign "$@" "$CODE_SIGN_IDENTITY"' _ {} "$CODE_SIGN_IDENTITY"
 find "$CLIENT_PLUGINS_DIR" -print0 | xargs -0 -I {} bash -c 'recursive_sign "$@" "$CODE_SIGN_IDENTITY"' _ {} "$CODE_SIGN_IDENTITY"
 find "$CLIENT_RESOURCES_DIR" -print0 | xargs -0 -I {} bash -c 'recursive_sign "$@" "$CODE_SIGN_IDENTITY"' _ {} "$CODE_SIGN_IDENTITY"
@@ -105,7 +128,7 @@ codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --ver
 
 
 # Sign the client
-find "$CLIENT_CONTENTS_DIR/MacOS" -mindepth 1 -print0 | xargs -0 -I {} bash -c 'sign_folder_content "$@" "$CODE_SIGN_IDENTITY" "$entitlements" ' _ {} "$CODE_SIGN_IDENTITY" "--preserve-metadata=entitlements"
+# find "$CLIENT_CONTENTS_DIR/MacOS" -mindepth 1 -print0 | xargs -0 -I {} bash -c 'sign_folder_content "$@" "$CODE_SIGN_IDENTITY" "$entitlements" ' _ {} "$CODE_SIGN_IDENTITY" "--preserve-metadata=entitlements"
 
 # Validate that the key used for signing the binary matches the expected TeamIdentifier
 # needed to pass the SocketApi through the sandbox for communication with virtual file system
@@ -124,22 +147,55 @@ if [ -z "$PACKAGE_INSTALLER" ]; then
   exit 0
 fi
 
+echo "Renew BOM"
+mkbom $PAYLOAD_DIR $INNER_PKG/Bom
 echo "Reassembling the package..."
-pkgutil --flatten "$EXTRACTED_DIR" "$FINAL_TARGET_PATH"
+(cd $PAYLOAD_DIR && \
+ find . | cpio -o --format odc | gzip -c) > $PAYLOAD_DIR.new
+
+rm -rf $PAYLOAD_DIR
+mv $PAYLOAD_DIR.new $PAYLOAD_DIR
+
+# xar --compression none \
+#   -cf $INNER_PKG.flat \
+#   PackageInfo Bom Payload Scripts 2>/dev/null
+
+(cd $EXTRACTED_DIR && \
+  pkgutil --flatten $UNDERSCORE_PRODUCT_NAME.pkg $UNDERSCORE_PRODUCT_NAME.pkg.flat)
+
+rm -rf $INNER_PKG
+mv $INNER_PKG.flat $INNER_PKG
+
+productsign --timestamp --sign 'Developer ID Installer: IONOS SE (5TDLCVD243)' \
+  $INNER_PKG \
+  $INNER_PKG.signed
+
+rm -rf $INNER_PKG
+mv $INNER_PKG.signed $INNER_PKG
+
+(cd $BASE_DIR && productbuild \
+  --distribution ex/Distribution \
+  --resources ex/Resources \
+  --package-path ex \
+  $INSTALLER_PKG.unsigned)
+
+productsign --timestamp --sign 'Developer ID Installer: IONOS SE (5TDLCVD243)' $INSTALLER_PKG.unsigned "$BASE_DIR$PKG_ORGINAL_NAME.resigned.pkg"
+
+# pkgutil --flatten "$EXTRACTED_DIR" "$FINAL_TARGET_PATH"
 
 # codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --verbose=4 --deep --options=runtime --timestamp "$FINAL_TARGET_PATH"
-productsign --timestamp --sign 'Developer ID Installer: IONOS SE (5TDLCVD243)' "$FINAL_TARGET_PATH" "$FINAL_TARGET_PATH.new"
-exit 0
+# productsign --timestamp --sign 'Developer ID Installer: IONOS SE (5TDLCVD243)' "$FINAL_TARGET_PATH" "$FINAL_TARGET_PATH.new"
+# exit 0
 
 # package
 # $BASE_DIR/admin/osx/create_mac.sh "$PRODUCT_DIR" "$BASE_DIR" 'Developer ID Installer: IONOS SE (5TDLCVD243)'
 
 # notariaze
 # Extract package filename from filesystem per .pkg extension
-PACKAGE_FILENAME=$(ls $PRODUCT_DIR/*.pkg)
+# PACKAGE_FILENAME=$(ls $PRODUCT_DIR/*.pkg)
 
 # catch the output of the notarytool command
-OUTPUT=$(xcrun notarytool submit --wait $PACKAGE_FILENAME\
+OUTPUT=$(xcrun notarytool submit --wait "$BASE_DIR$PKG_ORGINAL_NAME.resigned.pkg"\
   --keychain-profile "IONOS SE HiDrive Next")
 
 SUBMISSION_STATUS=$(echo $OUTPUT | grep -o 'status: [^ ]*' | cut -d ' ' -f 2)
@@ -151,7 +207,7 @@ if [ $SUBMISSION_STATUS != "Accepted" ]; then
 fi
 
 # staple
-xcrun stapler staple $PACKAGE_FILENAME
-xcrun stapler validate $PACKAGE_FILENAME
+xcrun stapler staple "$BASE_DIR$PKG_ORGINAL_NAME.resigned.pkg"
+xcrun stapler validate "$BASE_DIR$PKG_ORGINAL_NAME.resigned.pkg"
 
-open $PRODUCT_DIR
+# open $PRODUCT_DIR
