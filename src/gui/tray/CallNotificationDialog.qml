@@ -16,7 +16,7 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
 import Style 1.0
-import com.nextcloud.desktopclient 1.0
+import com.ionos.hidrivenext.desktopclient 1.0
 import QtQuick.Layouts 1.2
 import QtMultimedia 5.15
 import QtQuick.Controls 2.15
@@ -239,7 +239,6 @@ ApplicationWindow {
 
                         visible: isAnswerCallButton
                         text: modelData.label
-                        contentsFont.bold: true
                         bgColor: Style.ncBlue
                         bgNormalOpacity: 0.8
 
@@ -266,7 +265,6 @@ ApplicationWindow {
                 CustomButton {
                     id: declineCall
                     text: qsTr("Decline")
-                    contentsFont.bold: true
                     bgColor: Style.errorBoxBackgroundColor
                     bgNormalOpacity: 0.8
 

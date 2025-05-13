@@ -17,9 +17,10 @@ import QtQuick.Window 2.15
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.15
 
-import com.nextcloud.desktopclient 1.0
+import com.ionos.hidrivenext.desktopclient 1.0
 import Style 1.0
 import "../tray"
+import "../SesComponents"
 import "../"
 
 ColumnLayout {
@@ -123,20 +124,14 @@ ColumnLayout {
         }
     }
 
-    ErrorBox {
+    SesErrorBox {
         id: errorBox
 
         Layout.fillWidth: true
         Layout.leftMargin: root.horizontalPadding
         Layout.rightMargin: root.horizontalPadding
 
-        showCloseButton: true
         visible: false
-
-        onCloseButtonClicked: {
-            text = "";
-            visible = false;
-        }
     }
 
     ShareeSearchField {
@@ -144,6 +139,7 @@ ColumnLayout {
         Layout.fillWidth: true
         Layout.leftMargin: root.horizontalPadding
         Layout.rightMargin: root.horizontalPadding
+        Layout.preferredHeight: Style.sesSearchFieldHeight
 
         visible: root.userGroupSharingPossible
         enabled: visible && !root.loading && !root.shareModel.isShareDisabledEncryptedFolder && !shareeSearchField.isShareeFetchOngoing
@@ -165,6 +161,7 @@ ColumnLayout {
         Layout.fillHeight: true
         Layout.leftMargin: root.horizontalPadding
         Layout.rightMargin: root.horizontalPadding
+        Layout.topMargin: Style.sesMediumMargin
 
         active: root.sharingPossible
 
@@ -186,61 +183,71 @@ ColumnLayout {
                     sourceModel: root.shareModel
                 }
 
-                delegate: ShareDelegate {
-                    id: shareDelegate
+                delegate: ColumnLayout{
+                    width: parent.width
+                    ShareDelegate {
+                        id: shareDelegate
 
-                    Connections {
-                        target: root.shareModel
-                        // Though we try to handle this internally by listening to onPasswordChanged,
-                        // with passwords we will get the same value from the model data when a
-                        // password set has failed, meaning we won't be able to easily tell when we
-                        // have had a response from the server in QML. So we listen to this signal
-                        // directly from the model and do the reset of the password field manually.
-                        function onPasswordSetError(shareId, errorCode, errorMessage) {
-                            if(shareId !== model.shareId) {
-                                return;
+                        Connections {
+                            target: root.shareModel
+                            // Though we try to handle this internally by listening to onPasswordChanged,
+                            // with passwords we will get the same value from the model data when a
+                            // password set has failed, meaning we won't be able to easily tell when we
+                            // have had a response from the server in QML. So we listen to this signal
+                            // directly from the model and do the reset of the password field manually.
+                            function onPasswordSetError(shareId, errorCode, errorMessage) {
+                                if(shareId !== model.shareId) {
+                                    return;
+                                }
+                                shareDelegate.resetPasswordField();
+                                shareDelegate.showPasswordSetError(errorMessage);
                             }
-                            shareDelegate.resetPasswordField();
-                            shareDelegate.showPasswordSetError(errorMessage);
+
+                            function onServerError() {
+                                if(shareId !== model.shareId) {
+                                    return;
+                                }
+                                shareDelegate.resetMenu();
+                            }
                         }
 
-                        function onServerError() {
-                            if(shareId !== model.shareId) {
-                                return;
-                            }
-                            shareDelegate.resetMenu();
+                        iconSize: root.iconSize
+                        fileDetails: root.fileDetails
+                        rootStackView: root.rootStackView
+                        backgroundsVisible: root.backgroundsVisible
+                        accentColor: Style.sesIconColor
+                        canCreateLinkShares: root.publicLinkSharingPossible
+                        serverAllowsResharing: root.serverAllowsResharing
+
+                        onCreateNewLinkShare: {
+                            root.waitingForSharesToChange = true;
+                            shareModel.createNewLinkShare();
                         }
+                        onDeleteShare: {
+                            root.waitingForSharesToChange = true;
+                            shareModel.deleteShareFromQml(model.share);
+                        }
+
+                        onToggleAllowEditing: shareModel.toggleShareAllowEditingFromQml(model.share, enable)
+                        onToggleAllowResharing: shareModel.toggleShareAllowResharingFromQml(model.share, enable)
+                        onToggleHideDownload: shareModel.toggleHideDownloadFromQml(model.share, enable)
+                        onTogglePasswordProtect: shareModel.toggleSharePasswordProtectFromQml(model.share, enable)
+                        onToggleExpirationDate: shareModel.toggleShareExpirationDateFromQml(model.share, enable)
+                        onToggleNoteToRecipient: shareModel.toggleShareNoteToRecipientFromQml(model.share, enable)
+                        onPermissionModeChanged: shareModel.changePermissionModeFromQml(model.share, permissionMode)
+
+                        onSetLinkShareLabel: shareModel.setLinkShareLabelFromQml(model.share, label)
+                        onSetExpireDate: shareModel.setShareExpireDateFromQml(model.share, milliseconds)
+                        onSetPassword: shareModel.setSharePasswordFromQml(model.share, password)
+                        onSetNote: shareModel.setShareNoteFromQml(model.share, note)
+                        width: parent.width
                     }
 
-                    iconSize: root.iconSize
-                    fileDetails: root.fileDetails
-                    rootStackView: root.rootStackView
-                    backgroundsVisible: root.backgroundsVisible
-                    accentColor: root.accentColor
-                    canCreateLinkShares: root.publicLinkSharingPossible
-                    serverAllowsResharing: root.serverAllowsResharing
-
-                    onCreateNewLinkShare: {
-                        root.waitingForSharesToChange = true;
-                        shareModel.createNewLinkShare();
+                    Rectangle{
+                        height: Style.sesMediumMargin
+                        color: "transparent"
+                        width: parent.width
                     }
-                    onDeleteShare: {
-                        root.waitingForSharesToChange = true;
-                        shareModel.deleteShareFromQml(model.share);
-                    }
-
-                    onToggleAllowEditing: shareModel.toggleShareAllowEditingFromQml(model.share, enable)
-                    onToggleAllowResharing: shareModel.toggleShareAllowResharingFromQml(model.share, enable)
-                    onToggleHideDownload: shareModel.toggleHideDownloadFromQml(model.share, enable)
-                    onTogglePasswordProtect: shareModel.toggleSharePasswordProtectFromQml(model.share, enable)
-                    onToggleExpirationDate: shareModel.toggleShareExpirationDateFromQml(model.share, enable)
-                    onToggleNoteToRecipient: shareModel.toggleShareNoteToRecipientFromQml(model.share, enable)
-                    onPermissionModeChanged: shareModel.changePermissionModeFromQml(model.share, permissionMode)
-
-                    onSetLinkShareLabel: shareModel.setLinkShareLabelFromQml(model.share, label)
-                    onSetExpireDate: shareModel.setShareExpireDateFromQml(model.share, milliseconds)
-                    onSetPassword: shareModel.setSharePasswordFromQml(model.share, password)
-                    onSetNote: shareModel.setShareNoteFromQml(model.share, note)
                 }
 
                 Loader {

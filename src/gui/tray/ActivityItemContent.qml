@@ -4,7 +4,7 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import QtGraphicalEffects 1.15
 import Style 1.0
-import com.nextcloud.desktopclient 1.0
+import com.ionos.hidrivenext.desktopclient 1.0
 
 RowLayout {
     id: root
@@ -26,12 +26,12 @@ RowLayout {
     Item {
         id: thumbnailItem
 
-        readonly property int imageWidth: width * (1 - Style.thumbnailImageSizeReduction)
-        readonly property int imageHeight: height * (1 - Style.thumbnailImageSizeReduction)
+        readonly property int imageWidth: Style.sesIconSize
+        readonly property int imageHeight: Style.sesIconSize
         readonly property int thumbnailRadius: model.thumbnail && model.thumbnail.isUserAvatar ? width / 2 : 3
 
-        implicitWidth: root.iconSize
-        implicitHeight: model.thumbnail && model.thumbnail.isMimeTypeIcon ? root.iconSize * 0.9 : root.iconSize
+        implicitWidth: Style.sesIconSize
+        implicitHeight: Style.sesIconSize
 
         Loader {
             id: thumbnailImageLoader
@@ -45,8 +45,8 @@ RowLayout {
 
                 Image {
                     id: thumbnailImage
-                    width: thumbnailItem.imageWidth
-                    height: thumbnailItem.imageHeight
+                    width: Style.sesIconSize
+                    height: Style.sesIconSize
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.left: parent.left
                     cache: true
@@ -78,8 +78,9 @@ RowLayout {
 
         Image {
             id: activityIcon
-            width: model.thumbnail !== undefined ? parent.width * 0.4 : thumbnailItem.imageWidth
-            height: model.thumbnail !== undefined ? width : width * 0.9
+
+            width: model.thumbnail !== undefined ? Style.sesIconSize * 0.6 : Style.sesIconSize
+            height: model.thumbnail !== undefined ? Style.sesIconSize * 0.6 : Style.sesIconSize
 
             // Prevent bad access into unloaded item properties
             readonly property int thumbnailPaintedWidth: thumbnailImageLoader.item ? thumbnailImageLoader.item.paintedWidth : 0
@@ -116,8 +117,8 @@ RowLayout {
 
         Layout.fillHeight: true
         Layout.fillWidth: true
-        Layout.maximumWidth: root.width - Style.standardSpacing - root.iconSize
-        implicitWidth: root.width - Style.standardSpacing - root.iconSize
+        Layout.maximumWidth: root.width - Style.standardSpacing - root.iconSize + Style.sesActivityItemWidthModifier
+        implicitWidth: root.width - Style.standardSpacing - root.iconSize + Style.sesActivityItemWidthModifier
 
         spacing: Style.smallSpacing
 
@@ -136,7 +137,7 @@ RowLayout {
                 elide: Text.ElideRight
                 wrapMode: Text.Wrap
                 maximumLineCount: 2
-                font.pixelSize: Style.topLinePixelSize
+                font: root.font
                 visible: text !== ""
             }
 
@@ -152,30 +153,39 @@ RowLayout {
                 height: (text === "") ? 0 : implicitHeight
 
                 text: root.activityData.dateTime
-                font.pixelSize: Style.subLinePixelSize
-                color: palette.midlight
+                font.family: Style.sesOpenSansRegular
+                font.pixelSize: Style.sesFontHintPixelSize
+                color: Style.sesTrayFontColor
                 visible: text !== ""
             }
 
             CustomButton {
                 id: fileDetailsButton
 
+                property bool isHovered: fileDetailsButton.hovered || fileDetailsButton.visualFocus
+                property bool isActive: fileDetailsButton.pressed
+
                 Layout.preferredWidth: Style.dismissButtonSize
                 Layout.preferredHeight: Style.dismissButtonSize
                 Layout.alignment: Qt.AlignTop | Qt.AlignRight
 
-                icon.source: "image://svgimage-custom-color/more.svg/" + palette.buttonText
+                icon.source: "image://svgimage-custom-color/more.svg/" + (isHovered ? Style.sesWhite : Style.sesActionHover)
 
                 NCToolTip {
                     text: qsTr("Open file details")
                     visible: parent.hovered
                 }
 
+                background: Rectangle {
+                    anchors.fill: parent
+                    anchors.margins: 1
+                    color: parent.isActive ? Style.sesActionPressed : parent.isHovered ? Style.sesActionHover : "transparent"
+                    radius: width / 2
+                }
+
                 display: Button.IconOnly
                 leftPadding: 0
                 rightPadding: 0
-                bgColor: palette.mid
-                bgNormalOpacity:  0
 
                 visible: model.showFileDetails
 
@@ -228,8 +238,9 @@ RowLayout {
                 height: (text === "") ? 0 : implicitHeight
                 elide: Text.ElideRight
                 wrapMode: Text.Wrap
-                maximumLineCount: 2
-                font.pixelSize: Style.subLinePixelSize
+                maximumLineCount: 10
+                font.family: Style.sesOpenSansRegular
+                font.pixelSize: Style.sesFontHintPixelSize
                 visible: text !== ""
             }
 
@@ -248,8 +259,8 @@ RowLayout {
                 elide: Text.ElideRight
                 wrapMode: Text.Wrap
                 maximumLineCount: 2
-                font.pixelSize: Style.topLinePixelSize
-                color: palette.midlight
+                font: root.font
+                color: Style.sesTrayFontColor
                 visible: text !== ""
             }
 

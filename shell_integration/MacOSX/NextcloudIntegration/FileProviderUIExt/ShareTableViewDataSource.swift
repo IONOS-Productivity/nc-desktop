@@ -44,7 +44,10 @@ class ShareTableViewDataSource: NSObject, NSTableViewDataSource, NSTableViewDele
                 user: account.username,
                 userId: account.username,
                 password: account.password,
-                urlBase: account.serverUrl
+                urlBase: account.serverUrl,
+                userAgent: "IONOS HiDrive Next/FileProviderUIExt",
+                nextcloudVersion: 25,
+                delegate: nil
             )
         }
     }

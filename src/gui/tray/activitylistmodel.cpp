@@ -26,6 +26,8 @@
 #include "activitydata.h"
 #include "systray.h"
 
+#include "ionostheme.h"
+
 #include <QtCore>
 #include <QAbstractListModel>
 #include <QDesktopServices>
@@ -36,7 +38,7 @@
 
 namespace OCC {
 
-Q_LOGGING_CATEGORY(lcActivity, "nextcloud.gui.activity", QtInfoMsg)
+Q_LOGGING_CATEGORY(lcActivity, "hidrivenext.gui.activity", QtInfoMsg)
 
 ActivityListModel::ActivityListModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -226,11 +228,11 @@ QVariant ActivityListModel::data(const QModelIndex &index, int role) const
     };
 
     const auto generateIconPath = [&]() {
-        auto colorIconPath = role == DarkIconRole ? QStringLiteral("qrc:///client/theme/white/") : QStringLiteral("qrc:///client/theme/black/");
+        auto colorIconPath = QStringLiteral("qrc:///client/theme/colored/");
         if (a._type == Activity::NotificationType && !a._talkNotificationData.userAvatar.isEmpty()) {
             return QStringLiteral("qrc:///client/theme/colored/talk-bordered.svg");
         } else if (a._type == Activity::SyncResultType) {
-            colorIconPath.append("state-error.svg");
+            colorIconPath.append("state-ok.svg");
             return colorIconPath;
         } else if (a._type == Activity::SyncFileItemType) {
             if (a._syncFileItemStatus == SyncFileItem::NormalError
@@ -249,19 +251,16 @@ QVariant ActivityListModel::data(const QModelIndex &index, int role) const
                 colorIconPath.append("state-warning.svg");
                 return colorIconPath;
             } else if (a._syncFileItemStatus == SyncFileItem::FileIgnored) {
-                colorIconPath.append("state-info.svg");
+                colorIconPath = QStringLiteral("qrc:///client/theme/ses/ses-info.svg");
                 return colorIconPath;
             } else {
                 // File sync successful
                 if (a._fileAction == "file_created") {
-                    return a._previews.empty() ? QStringLiteral("qrc:///client/theme/colored/add.svg")
-                                               : QStringLiteral("qrc:///client/theme/colored/add-bordered.svg");
+                    return IonosTheme::plusIcon();
                 } else if (a._fileAction == "file_deleted") {
-                    return a._previews.empty() ? QStringLiteral("qrc:///client/theme/colored/delete.svg")
-                                               : QStringLiteral("qrc:///client/theme/colored/delete-bordered.svg");
+                    return IonosTheme::deleteIcon();
                 } else {
-                    return a._previews.empty() ? colorIconPath % QStringLiteral("change.svg")
-                                               : QStringLiteral("qrc:///client/theme/colored/change-bordered.svg");
+                    return IonosTheme::refreshIcon();
                 }
             }
         } else {

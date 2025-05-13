@@ -40,9 +40,9 @@
 
 namespace OCC {
 
-Q_LOGGING_CATEGORY(lcPropagateLocalRemove, "nextcloud.sync.propagator.localremove", QtInfoMsg)
-Q_LOGGING_CATEGORY(lcPropagateLocalMkdir, "nextcloud.sync.propagator.localmkdir", QtInfoMsg)
-Q_LOGGING_CATEGORY(lcPropagateLocalRename, "nextcloud.sync.propagator.localrename", QtInfoMsg)
+Q_LOGGING_CATEGORY(lcPropagateLocalRemove, "hidrivenext.sync.propagator.localremove", QtInfoMsg)
+Q_LOGGING_CATEGORY(lcPropagateLocalMkdir, "hidrivenext.sync.propagator.localmkdir", QtInfoMsg)
+Q_LOGGING_CATEGORY(lcPropagateLocalRename, "hidrivenext.sync.propagator.localrename", QtInfoMsg)
 
 QByteArray localFileIdFromFullId(const QByteArray &id)
 {
@@ -101,7 +101,6 @@ bool PropagateLocalRemove::removeRecursively(const QString &path)
 void PropagateLocalRemove::start()
 {
     qCInfo(lcPropagateLocalRemove) << "Start propagate local remove job";
-    qCInfo(lcPermanentLog) << "delete" << _item->_file << _item->_discoveryResult;
 
     _moveToTrash = propagator()->syncOptions()._moveFilesToTrash;
 

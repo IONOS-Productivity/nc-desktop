@@ -17,7 +17,7 @@ import QtQuick.Window 2.15
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.15
 
-import com.nextcloud.desktopclient 1.0
+import com.ionos.hidrivenext.desktopclient 1.0
 import Style 1.0
 
 import "../tray"
@@ -61,6 +61,9 @@ ItemDelegate {
             id: shareeLabel
             Layout.preferredHeight: unifiedSearchResultSkeletonItemDetails.iconWidth
             Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
+
+            font.pixelSize: Style.sesFontPixelSize
+            font.weight: Style.sesFontNormalWeight
 
             Layout.fillWidth: true
 

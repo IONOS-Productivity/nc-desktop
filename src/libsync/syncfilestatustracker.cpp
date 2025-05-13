@@ -24,7 +24,7 @@
 
 namespace OCC {
 
-Q_LOGGING_CATEGORY(lcStatusTracker, "nextcloud.sync.statustracker", QtInfoMsg)
+Q_LOGGING_CATEGORY(lcStatusTracker, "hidrivenext.sync.statustracker", QtInfoMsg)
 
 static int pathCompare( const QString& lhs, const QString& rhs )
 {
@@ -249,9 +249,6 @@ void SyncFileStatusTracker::slotAboutToPropagate(SyncFileItemVector &items)
         }
 
         SharedFlag sharedFlag = item->_remotePerm.hasPermission(RemotePermissions::IsShared) ? Shared : NotShared;
-        if (item->_instruction != CSyncEnums::CSYNC_INSTRUCTION_REMOVE) {
-            item->_discoveryResult.clear();
-        }
         if (item->_instruction != CSYNC_INSTRUCTION_NONE
             && item->_instruction != CSYNC_INSTRUCTION_UPDATE_METADATA
             && item->_instruction != CSYNC_INSTRUCTION_IGNORE

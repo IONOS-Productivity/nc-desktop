@@ -3,7 +3,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import Style 1.0
-import com.nextcloud.desktopclient 1.0
+import com.ionos.hidrivenext.desktopclient 1.0
 
 Repeater {
     id: root
@@ -26,15 +26,14 @@ Repeater {
 
     model: root.linksForActionButtons
 
-    CustomButton {
+    SesCustomButton {
         id: activityActionButton
 
         property string verb: model.modelData.verb
         property bool isTalkReplyButton: verb === "REPLY"
 
         Layout.alignment: Qt.AlignTop | Qt.AlignRight
-
-        hoverEnabled: true
+        
         padding: Style.smallSpacing
         display: Button.TextOnly
 
@@ -44,10 +43,10 @@ Repeater {
 
         onClicked: isTalkReplyButton ? root.showReplyField() : root.triggerAction(model.index)
 
-        textColor: Style.adjustedCurrentUserHeaderColor
-        textColorHovered: Style.currentUserHeaderTextColor
-        contentsFont.bold: true
-        bgColor: Style.currentUserHeaderColor
+        textColor: palette.brightText
+        bgColor: Style.sesActionPressed
+        bgNormalOpacity: 1.0
+        bgHoverOpacity: Style.hoverOpacity
 
         visible: verb !== "REPLY" || (verb === "REPLY" && root.talkReplyButtonVisible)
     }
