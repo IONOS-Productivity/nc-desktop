@@ -43,17 +43,20 @@ export MACOSX_DEPLOYMENT_TARGET=10.15
 
 # Some variables
 PRODUCT_NAME="IONOS HiDrive Next"
-PRODUCT_DIR=$BASE_DIR/product
+UNDERSCORE_PRODUCT_NAME="IONOS_HiDrive_Next"
 TEAM_IDENTIFIER="5TDLCVD243"
-WORK_DIR="ExtractedPkg"
+WORK_DIR="ex"
 FINAL_PKG="Reassembled.pkg"
 
-TARGET_PATH="${BASE_DIR%/}/$WORK_DIR"
+EXTRACTED_DIR="${BASE_DIR%/}/$WORK_DIR"
 FINAL_TARGET_PATH="${BASE_DIR%/}/$FINAL_PKG"
 
-echo "Expanding original package..."
-pkgutil --expand-full "$PATH_TO_PKG" "$TARGET_PATH"
+PRODUCT_DIR=$EXTRACTED_DIR/$UNDERSCORE_PRODUCT_NAME.pkg/Payload/Applications
 
+
+echo "Expanding original package..."
+
+pkgutil --expand-full "$PATH_TO_PKG" "$EXTRACTED_DIR"
 
 # TODO: 
 # Load Sparkle
@@ -100,6 +103,7 @@ find "$CLIENT_RESOURCES_DIR" -print0 | xargs -0 -I {} bash -c 'recursive_sign "$
 codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --verbose=4 --deep --options=runtime --timestamp "$PRODUCT_PATH"
 
 
+
 # Sign the client
 find "$CLIENT_CONTENTS_DIR/MacOS" -mindepth 1 -print0 | xargs -0 -I {} bash -c 'sign_folder_content "$@" "$CODE_SIGN_IDENTITY" "$entitlements" ' _ {} "$CODE_SIGN_IDENTITY" "--preserve-metadata=entitlements"
 
@@ -121,7 +125,11 @@ if [ -z "$PACKAGE_INSTALLER" ]; then
 fi
 
 echo "Reassembling the package..."
-pkgutil --flatten "$TARGET_PATH" "$FINAL_TARGET_PATH"
+pkgutil --flatten "$EXTRACTED_DIR" "$FINAL_TARGET_PATH"
+
+# codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --verbose=4 --deep --options=runtime --timestamp "$FINAL_TARGET_PATH"
+productsign --timestamp --sign 'Developer ID Installer: IONOS SE (5TDLCVD243)' "$FINAL_TARGET_PATH" "$FINAL_TARGET_PATH.new"
+exit 0
 
 # package
 # $BASE_DIR/admin/osx/create_mac.sh "$PRODUCT_DIR" "$BASE_DIR" 'Developer ID Installer: IONOS SE (5TDLCVD243)'
