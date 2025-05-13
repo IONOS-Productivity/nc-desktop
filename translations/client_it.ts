@@ -1,6 +1,49 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TS version="2.1" language="it">
-<context><name /><message><source>Agree</source><translation>Akkoord</translation></message><message><source>Back</source><translation>Terug</translation></message><message><source>Necessary data</source><translation>Noodzakelijke gegevens</translation></message><message><source>Required to ensure that the software can be used as expected</source><translation>Vereist om ervoor te zorgen dat de software kan worden gebruikt zoals verwacht</translation></message><message><source>Save Settings</source><translation>Instellingen opslaan</translation></message><message><source>Send anonymous use</source><translation>Anoniem gebruik verzenden</translation></message><message><source>Settings</source><translation>Instellingen</translation></message><message><source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;.</source><translation>Deze applicatie maakt gebruik van traceertechnologieën. Door op Akkoord te klikken, accepteert u de verwerking van uw geanonimiseerde gegevens. U kunt uw keuzes op elk gewenst moment aanpassen via de instellingen. &lt;br/&gt; &lt;br/&gt;Informatie over gegevensverwerking en meer kunt u vinden in ons &lt;a href=&apos;https://wl.hidrive.com/easy/0045&apos;&gt;privacybeleid&lt;/a&gt;.</translation></message><message><source>This helps us to optimize the software and to better identify system crashes and unexpected errors.</source><translation>Dit helpt ons om de software te optimaliseren en om systeemcrashes en onverwachte fouten beter te identificeren.</translation></message><message><source>We collect anonymized data to optimize our app. We use software solutions from various partners for this purpose. We want to give you full transparency and freedom of choice regarding the collection and processing of your anonymized usage. You can change your settings at any time under the menu item Data Protection.</source><translation>We verzamelen geanonimiseerde gegevens om onze app te optimaliseren. Hiervoor gebruiken we softwareoplossingen van verschillende partners. We willen je volledige transparantie en keuzevrijheid geven met betrekking tot het verzamelen en verwerken van je geanonimiseerde gebruik. Je kunt je instellingen op elk gewenst moment wijzigen onder het menu-item Gegevensbescherming.</translation></message></context><context>
+<context>
+    <name />
+    <message>
+        <source>Agree</source>
+        <translation>Akkoord</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Terug</translation>
+    </message>
+    <message>
+        <source>Necessary data</source>
+        <translation>Noodzakelijke gegevens</translation>
+    </message>
+    <message>
+        <source>Required to ensure that the software can be used as expected</source>
+        <translation>Vereist om ervoor te zorgen dat de software kan worden gebruikt zoals verwacht</translation>
+    </message>
+    <message>
+        <source>Save Settings</source>
+        <translation>Instellingen opslaan</translation>
+    </message>
+    <message>
+        <source>Send anonymous use</source>
+        <translation>Anoniem gebruik verzenden</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Instellingen</translation>
+    </message>
+    <message>
+        <source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;.</source>
+        <translation>Deze applicatie maakt gebruik van traceertechnologieën. Door op Akkoord te klikken, accepteert u de verwerking van uw geanonimiseerde gegevens. U kunt uw keuzes op elk gewenst moment aanpassen via de instellingen. &lt;br/&gt; &lt;br/&gt;Informatie over gegevensverwerking en meer kunt u vinden in ons &lt;a href=&apos;https://wl.hidrive.com/easy/0045&apos;&gt;privacybeleid&lt;/a&gt;.</translation>
+    </message>
+    <message>
+        <source>This helps us to optimize the software and to better identify system crashes and unexpected errors.</source>
+        <translation>Dit helpt ons om de software te optimaliseren en om systeemcrashes en onverwachte fouten beter te identificeren.</translation>
+    </message>
+    <message>
+        <source>We collect anonymized data to optimize our app. We use software solutions from various partners for this purpose. We want to give you full transparency and freedom of choice regarding the collection and processing of your anonymized usage. You can change your settings at any time under the menu item Data Protection.</source>
+        <translation>We verzamelen geanonimiseerde gegevens om onze app te optimaliseren. Hiervoor gebruiken we softwareoplossingen van verschillende partners. We willen je volledige transparantie en keuzevrijheid geven met betrekking tot het verzamelen en verwerken van je geanonimiseerde gebruik. Je kunt je instellingen op elk gewenst moment wijzigen onder het menu-item Gegevensbescherming.</translation>
+    </message>
+</context>
+<context>
     <name>ActivityItem</name>
     <message>
         <source>In %1</source>
@@ -37,7 +80,14 @@
         <translation type="unfinished" />
     </message>
 </context>
-<context><name>BasicComboBox</name><message><source>Clear status message menu</source><translation>Statusbericht wissen</translation></message></context><context>
+<context>
+    <name>BasicComboBox</name>
+    <message>
+        <source>Clear status message menu</source>
+        <translation>Statusbericht wissen</translation>
+    </message>
+</context>
+<context>
     <name>CallNotificationDialog</name>
     <message>
         <source>Answer Talk call notification</source>
@@ -214,7 +264,7 @@
     </message>
     <message>
         <source>Choose</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Kies</translation>
     </message>
     <message>
         <source>Token Encryption Key Chooser</source>
@@ -285,7 +335,11 @@
         <source>General settings</source>
         <translation type="unfinished" />
     </message>
-    <message><source>Signal file provider domain</source><translation>Signal file provider domain</translation></message><message>
+    <message>
+        <source>Signal file provider domain</source>
+        <translation>Signal file provider domain</translation>
+    </message>
+    <message>
         <source>Virtual files settings</source>
         <translation type="unfinished" />
     </message>
@@ -300,7 +354,11 @@
         <source>Evict local copies …</source>
         <translation type="unfinished" />
     </message>
-    <message><source>Evict local copies...</source><translation>Lokale kopieën verwijderen...</translation></message><message>
+    <message>
+        <source>Evict local copies...</source>
+        <translation>Lokale kopieën verwijderen...</translation>
+    </message>
+    <message>
         <source>Local storage use</source>
         <translation type="unfinished" />
     </message>
@@ -382,7 +440,7 @@ macOS may ignore or delay this request.</source>
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
@@ -397,7 +455,7 @@ macOS may ignore or delay this request.</source>
     <name>FolderWizardTargetPage</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
@@ -1412,7 +1470,7 @@ Attendi la nuova sincronizzazione, quindi cifrala.</translation>
     <name>OCC::DataProtectionPage</name>
     <message>
         <source>Agree</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Akkoord</translation>
     </message>
     <message>
         <source>Form</source>
@@ -1424,14 +1482,14 @@ Attendi la nuova sincronizzazione, quindi cifrala.</translation>
     </message>
     <message>
         <source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Deze applicatie maakt gebruik van traceertechnologieën. Door op Akkoord te klikken, accepteert u de verwerking van uw geanonimiseerde gegevens. U kunt uw keuzes op elk gewenst moment aanpassen via de instellingen. &lt;br/&gt; &lt;br/&gt;Informatie over gegevensverwerking en meer kunt u vinden in ons &lt;a href=&apos;https://wl.hidrive.com/easy/0045&apos;&gt;privacybeleid&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
     <name>OCC::DataProtectionSettingsPage</name>
     <message>
         <source>Back</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Terug</translation>
     </message>
     <message>
         <source>Form</source>
@@ -1439,27 +1497,27 @@ Attendi la nuova sincronizzazione, quindi cifrala.</translation>
     </message>
     <message>
         <source>Necessary data</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Noodzakelijke gegevens</translation>
     </message>
     <message>
         <source>Required to ensure that the software can be used as expected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vereist om ervoor te zorgen dat de software kan worden gebruikt zoals verwacht</translation>
     </message>
     <message>
         <source>Save Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Instellingen opslaan</translation>
     </message>
     <message>
         <source>Send anonymous use</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Anoniem gebruik verzenden</translation>
     </message>
     <message>
         <source>This helps us to optimize the software and to better identify system crashes and unexpected errors.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dit helpt ons om de software te optimaliseren en om systeemcrashes en onverwachte fouten beter te identificeren.</translation>
     </message>
     <message>
         <source>We collect anonymized data to optimize our app. We use software solutions from various partners for this purpose. We want to give you full transparency and freedom of choice regarding the collection and processing of your anonymized usage. You can change your settings at any time under the menu item Data Protection.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">We verzamelen geanonimiseerde gegevens om onze app te optimaliseren. Hiervoor gebruiken we softwareoplossingen van verschillende partners. We willen je volledige transparantie en keuzevrijheid geven met betrekking tot het verzamelen en verwerken van je geanonimiseerde gebruik. Je kunt je instellingen op elk gewenst moment wijzigen onder het menu-item Gegevensbescherming.</translation>
     </message>
 </context>
 <context>
@@ -2129,7 +2187,7 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     <name>OCC::FolderStatusDelegate</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <source>File</source>
@@ -2298,7 +2356,7 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     <name>OCC::FolderWizardLocalPath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <source>Choose</source>
@@ -2314,7 +2372,7 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Selecteer een map op je harde schijf die permanent verbonden moet zijn met je %1. Alle bestanden en submappen worden automatisch geüpload en gesynchroniseerd.</translation>
     </message>
     <message>
         <source>Select the source folder</source>
@@ -2322,14 +2380,14 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     </message>
     <message>
         <source>Step 1 of 3: Select local folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Stap 1 van 3: Selecteer lokale map</translation>
     </message>
 </context>
 <context>
     <name>OCC::FolderWizardRemotePath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <source>Authentication failed accessing %1</source>
@@ -2337,7 +2395,7 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Beide mappen zijn permanent gekoppeld en de respectieve inhoud wordt automatisch gesynchroniseerd en bijgewerkt.</translation>
     </message>
     <message>
         <source>Choose this to sync the entire account</source>
@@ -2373,7 +2431,7 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     </message>
     <message>
         <source>Please now select or create a target folder in your %1 where the content should be uploaded and synchronized.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Selecteer of maak nu een doelmap in uw %1 waar de inhoud moet worden geüpload en gesynchroniseerd.</translation>
     </message>
     <message>
         <source>Refresh</source>
@@ -2381,7 +2439,7 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     </message>
     <message>
         <source>Step 2 of 3: Directory in your %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Stap 2 van 3: Directory in uw %1</translation>
     </message>
 </context>
 <context>
@@ -2392,11 +2450,11 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <source>Step 3 of 3: Selektive Synchronisation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Stap 3 van 3: Selektieve synchronisatie</translation>
     </message>
     <message>
         <source>Use virtual files instead of downloading content immediately %1</source>
@@ -2413,7 +2471,11 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
 </context>
 <context>
     <name>OCC::GeneralSettings</name>
-    <message><source>&amp;Analysis data collection for needs-based design</source><translation>&amp;Analyse van gegevensverzameling voor een op behoeften gebaseerd ontwerp</translation></message><message>
+    <message>
+        <source>&amp;Analysis data collection for needs-based design</source>
+        <translation>&amp;Analyse van gegevensverzameling voor een op behoeften gebaseerd ontwerp</translation>
+    </message>
+    <message>
         <source>&amp;Automatically check for updates</source>
         <translation>Verific&amp;a automaticamente la presenza di aggiornamenti.</translation>
     </message>
@@ -2544,7 +2606,7 @@ Il downgrade delle versioni non è possibile immediatamente: passare da stabile 
     </message>
     <message>
         <source>Required to ensure that the software can be used as expected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vereist om ervoor te zorgen dat de software kan worden gebruikt zoals verwacht</translation>
     </message>
     <message>
         <source>S&amp;how crash reporter</source>
@@ -2552,7 +2614,7 @@ Il downgrade delle versioni non è possibile immediatamente: passare da stabile 
     </message>
     <message>
         <source>Send anonymous use</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Anoniem gebruik verzenden</translation>
     </message>
     <message>
         <source>Server notifications that require attention.</source>
@@ -2585,7 +2647,7 @@ Il downgrade delle versioni non è possibile immediatamente: passare da stabile 
     </message>
     <message>
         <source>This helps us to optimize the software and to better identify system crashes and unexpected errors.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dit helpt ons om de software te optimaliseren en om systeemcrashes en onverwachte fouten beter te identificeren.</translation>
     </message>
     <message>
         <source>Update channel</source>
@@ -4753,7 +4815,11 @@ Il server ha risposto con errore: %2</translation>
 </context>
 <context>
     <name>OCC::User</name>
-    <message><source>%1 notifications</source><translation>%1 kennisgevingen</translation></message><message numerus="yes">
+    <message>
+        <source>%1 notifications</source>
+        <translation>%1 kennisgevingen</translation>
+    </message>
+    <message numerus="yes">
         <source>%n notification(s)</source>
         <translation>
             <numerusform>%n notifica(e)</numerusform>
@@ -5169,7 +5235,11 @@ Il server ha risposto con errore: %2</translation>
         <source>Virtual file created</source>
         <translation>File virtuale creato</translation>
     </message>
-<message><source>updating local virtual files metadata</source><translation>Metagegevens van lokale virtuele bestanden bijwerken</translation></message></context>
+    <message>
+        <source>updating local virtual files metadata</source>
+        <translation>Metagegevens van lokale virtuele bestanden bijwerken</translation>
+    </message>
+</context>
 <context>
     <name>QObject</name>
     <message>
@@ -5535,7 +5605,14 @@ Il server ha risposto con errore: %2</translation>
         <translation>In attesa di iniziare la sincronizzazione</translation>
     </message>
 </context>
-<context><name>TrayFoldersMenuButton</name><message><source>Files</source><translation>Bestanden</translation></message></context><context>
+<context>
+    <name>TrayFoldersMenuButton</name>
+    <message>
+        <source>Files</source>
+        <translation>Bestanden</translation>
+    </message>
+</context>
+<context>
     <name>TrayWindowAccountMenu</name>
     <message>
         <source>Account switcher and settings menu</source>
@@ -5609,7 +5686,7 @@ Il server ha risposto con errore: %2</translation>
     </message>
     <message>
         <source>Open Nextcloud in browser</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">HiDrive Next in browser openen</translation>
     </message>
     <message>
         <source>Open local or group folders</source>
@@ -5617,7 +5694,7 @@ Il server ha risposto con errore: %2</translation>
     </message>
     <message>
         <source>Website</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Website</translation>
     </message>
 </context>
 <context>
