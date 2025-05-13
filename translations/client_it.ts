@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TS version="2.1" language="it">
-<context>
+<context><name /><message><source>Agree</source><translation>Akkoord</translation></message><message><source>Back</source><translation>Terug</translation></message><message><source>Necessary data</source><translation>Noodzakelijke gegevens</translation></message><message><source>Required to ensure that the software can be used as expected</source><translation>Vereist om ervoor te zorgen dat de software kan worden gebruikt zoals verwacht</translation></message><message><source>Save Settings</source><translation>Instellingen opslaan</translation></message><message><source>Send anonymous use</source><translation>Anoniem gebruik verzenden</translation></message><message><source>Settings</source><translation>Instellingen</translation></message><message><source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;.</source><translation>Deze applicatie maakt gebruik van traceertechnologieën. Door op Akkoord te klikken, accepteert u de verwerking van uw geanonimiseerde gegevens. U kunt uw keuzes op elk gewenst moment aanpassen via de instellingen. &lt;br/&gt; &lt;br/&gt;Informatie over gegevensverwerking en meer kunt u vinden in ons &lt;a href=&apos;https://wl.hidrive.com/easy/0045&apos;&gt;privacybeleid&lt;/a&gt;.</translation></message><message><source>This helps us to optimize the software and to better identify system crashes and unexpected errors.</source><translation>Dit helpt ons om de software te optimaliseren en om systeemcrashes en onverwachte fouten beter te identificeren.</translation></message><message><source>We collect anonymized data to optimize our app. We use software solutions from various partners for this purpose. We want to give you full transparency and freedom of choice regarding the collection and processing of your anonymized usage. You can change your settings at any time under the menu item Data Protection.</source><translation>We verzamelen geanonimiseerde gegevens om onze app te optimaliseren. Hiervoor gebruiken we softwareoplossingen van verschillende partners. We willen je volledige transparantie en keuzevrijheid geven met betrekking tot het verzamelen en verwerken van je geanonimiseerde gebruik. Je kunt je instellingen op elk gewenst moment wijzigen onder het menu-item Gegevensbescherming.</translation></message></context><context>
     <name>ActivityItem</name>
     <message>
         <source>In %1</source>
@@ -37,11 +37,11 @@
         <translation type="unfinished" />
     </message>
 </context>
-<context>
+<context><name>BasicComboBox</name><message><source>Clear status message menu</source><translation>Statusbericht wissen</translation></message></context><context>
     <name>CallNotificationDialog</name>
     <message>
         <source>Answer Talk call notification</source>
-        <translation type="unfinished" />
+        <translation>Answer Talk call notification</translation>
     </message>
     <message>
         <source>Decline</source>
@@ -49,11 +49,11 @@
     </message>
     <message>
         <source>Decline Talk call notification</source>
-        <translation type="unfinished" />
+        <translation>Afwijzingsmelding voor gesprek</translation>
     </message>
     <message>
         <source>Talk notification caller avatar</source>
-        <translation type="unfinished" />
+        <translation>Spraakmelding beller avatar</translation>
     </message>
 </context>
 <context>
@@ -88,7 +88,7 @@
     </message>
     <message>
         <source>Quit sync client</source>
-        <translation>Chiudi il client di sincronizzazione</translation>
+        <translation>Afsluiten synchronisatieclient</translation>
     </message>
     <message>
         <source>Recently changed</source>
@@ -127,11 +127,11 @@
     <name>ConflictDelegate</name>
     <message>
         <source>Local version</source>
-        <translation type="unfinished">Versione locale</translation>
+        <translation>Lokale versie</translation>
     </message>
     <message>
         <source>Server version</source>
-        <translation type="unfinished">Versione del server</translation>
+        <translation>Serverversie</translation>
     </message>
 </context>
 <context>
@@ -265,14 +265,14 @@
     </message>
     <message>
         <source>Fast sync will only sync changes in files and folders within folders that have been explored. This can significantly increase responsiveness on initial configuration of virtual files. However, it will cause redundant downloads of files moved to an unexplored folder.</source>
-        <translation type="unfinished" />
+        <translation>Fast sync will only sync changes in files and folders within folders that have been explored. This can significantly increase responsiveness on initial configuration of virtual files. However, it will cause redundant downloads of files moved to an unexplored folder.</translation>
     </message>
 </context>
 <context>
     <name>FileProviderFileDelegate</name>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Elimina</translation>
+        <translation>Verwijderen</translation>
     </message>
 </context>
 <context>
@@ -285,7 +285,7 @@
         <source>General settings</source>
         <translation type="unfinished" />
     </message>
-    <message>
+    <message><source>Signal file provider domain</source><translation>Signal file provider domain</translation></message><message>
         <source>Virtual files settings</source>
         <translation type="unfinished" />
     </message>
@@ -300,7 +300,7 @@
         <source>Evict local copies …</source>
         <translation type="unfinished" />
     </message>
-    <message>
+    <message><source>Evict local copies...</source><translation>Lokale kopieën verwijderen...</translation></message><message>
         <source>Local storage use</source>
         <translation type="unfinished" />
     </message>
@@ -309,7 +309,7 @@
     <name>FileProviderSyncStatus</name>
     <message>
         <source>All synced!</source>
-        <translation type="unfinished">Tutto sincronizzato!</translation>
+        <translation>Alles gesynchroniseerd!</translation>
     </message>
     <message>
         <source>Request a sync of changes for the VFS environment.
@@ -367,18 +367,18 @@ macOS may ignore or delay this request.</source>
     <name>FolderWizardSelectiveSync</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation>Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <source>Step 3 of 3: Selektive Synchronisation</source>
-        <translation type="unfinished" />
+        <translation>Stap 3 van 3: Selektieve synchronisatie</translation>
     </message>
 </context>
 <context>
     <name>FolderWizardSourcePage</name>
     <message>
         <source>&amp;Choose</source>
-        <translation type="unfinished" />
+        <translation>&amp;Kiezen</translation>
     </message>
     <message>
         <source>Add Folder Sync</source>
@@ -386,11 +386,11 @@ macOS may ignore or delay this request.</source>
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
-        <translation type="unfinished" />
+        <translation>Selecteer een map op je harde schijf die permanent verbonden moet zijn met je %1. Alle bestanden en submappen worden automatisch geüpload en gesynchroniseerd.</translation>
     </message>
     <message>
         <source>Step 1 of 3: Select local folder</source>
-        <translation type="unfinished" />
+        <translation>Stap 1 van 3: Selecteer lokale map</translation>
     </message>
 </context>
 <context>
@@ -401,11 +401,11 @@ macOS may ignore or delay this request.</source>
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
-        <translation type="unfinished" />
+        <translation>Beide mappen zijn permanent gekoppeld en de respectieve inhoud wordt automatisch gesynchroniseerd en bijgewerkt.</translation>
     </message>
     <message>
         <source>Create folder</source>
-        <translation>Crea cartella</translation>
+        <translation>Maak map</translation>
     </message>
     <message>
         <source>Folders</source>
@@ -413,7 +413,7 @@ macOS may ignore or delay this request.</source>
     </message>
     <message>
         <source>Please now select or create a target folder in your %1 where the content should be uploaded and synchronized.</source>
-        <translation type="unfinished" />
+        <translation>Selecteer of maak nu een doelmap in uw %1 waar de inhoud moet worden geüpload en gesynchroniseerd.</translation>
     </message>
     <message>
         <source>Refresh</source>
@@ -421,7 +421,7 @@ macOS may ignore or delay this request.</source>
     </message>
     <message>
         <source>Step 2 of 3: Directory in your %1</source>
-        <translation type="unfinished" />
+        <translation>Stap 2 van 3: Directory in uw %1</translation>
     </message>
 </context>
 <context>
@@ -492,8 +492,8 @@ macOS may ignore or delay this request.</source>
     <message>
         <source>%1 accounts were detected from a legacy desktop client.
 Should the accounts be imported?</source>
-        <translation>%1 account trovati da una versione precedente del client desktop.
-Importare gli account?</translation>
+        <translation>Er zijn %1 accounts gedetecteerd van een oudere desktopclient.
+Moeten de accounts worden geïmporteerd?</translation>
     </message>
     <message>
         <source>1 account was detected from a legacy desktop client.
@@ -522,7 +522,7 @@ Importare l&apos;account?</translation>
     <name>OCC::AccountSettings</name>
     <message>
         <source>%1 (%3%) of %2 in use. Some folders, including network mounted or shared folders, might have different limits.</source>
-        <translation>%1 (%3%) di %2 in uso. Alcune cartelle, incluse quelle montate in rete o le cartelle condivise, potrebbero avere limiti diversi.</translation>
+        <translation>%1 (%3%) van %2 in gebruik. Sommige mappen, inclusief netwerkmappen en gedeelde mappen, kunnen andere limieten hebben.</translation>
     </message>
     <message>
         <source>%1 as %2</source>
@@ -680,7 +680,7 @@ Vuoi configurare la cifratura end-to-end?</translation>
     </message>
     <message>
         <source>Expand Memory</source>
-        <translation type="unfinished" />
+        <translation>Geheugen uitbreiden</translation>
     </message>
     <message>
         <source>Folder creation failed</source>
@@ -688,7 +688,7 @@ Vuoi configurare la cifratura end-to-end?</translation>
     </message>
     <message>
         <source>Force sync now</source>
-        <translation>Forza ora la sincronizzazione</translation>
+        <translation>Synchronisatie nu forceren</translation>
     </message>
     <message>
         <source>Migrate certificate to a new one</source>
@@ -764,7 +764,7 @@ Vuoi configurare la cifratura end-to-end?</translation>
     </message>
     <message>
         <source>Storage space %1% occupied</source>
-        <translation type="unfinished" />
+        <translation>Opslagruimte %1% bezet</translation>
     </message>
     <message>
         <source>Storage space: …</source>
@@ -804,15 +804,15 @@ Vuoi configurare la cifratura end-to-end?</translation>
     </message>
     <message>
         <source>There are folders that were not synchronized because they are external storages:</source>
-        <translation type="unfinished" />
+        <translation>Er zijn mappen die niet gesynchroniseerd zijn, omdat ze op externe opslag staan:</translation>
     </message>
     <message>
         <source>There are folders that were not synchronized because they are too big or external storages:</source>
-        <translation type="unfinished" />
+        <translation>Er zijn mappen die niet gesynchroniseerd zijn, omdat ze te groot zijn of op externe opslag staan:</translation>
     </message>
     <message>
         <source>There are folders that were not synchronized because they are too big:</source>
-        <translation type="unfinished" />
+        <translation>Er zijn mappen die niet gesynchroniseerd zijn, omdat ze te groot zijn:</translation>
     </message>
     <message>
         <source>This account supports end-to-end encryption</source>
@@ -833,12 +833,12 @@ Questa azione interromperà qualsiasi sincronizzazione attualmente in esecuzione
     <message>
         <source>This will encrypt your folder and all files within it. These files will no longer be accessible without your encryption mnemonic key. 
 &lt;b&gt;This process is not reversible. Are you sure you want to proceed?&lt;/b&gt;</source>
-        <translation>Verrà cifrata la cartella e tutti i file al suo interno. Questi file non saranno più accessibili senza la tua chiave mnemonica di crittografia. 
-&lt;b&gt;Questo processo è irreversibile. Vuoi davvero procedere?&lt;/b&gt;</translation>
+        <translation>Dit zal je map en alle bestanden erin versleutelen. Deze bestanden zullen niet langer toegankelijk zijn zonder je coderingssleutel.
+&lt;b&gt;Dit proces is niet omkeerbaar. Weet u zeker dat u wilt doorgaan?</translation>
     </message>
     <message>
         <source>To protect your Cryptographic Identity, we encrypt it with a mnemonic of 12 dictionary words. Please note these down and keep them safe. They will be needed to add other devices to your account (like your mobile phone or laptop).</source>
-        <translation>Per proteggere la tua identità crittografica, la cifriamo con un codice mnemonico di 12 parole di dizionario. Annotale e tienile al sicuro. Saranno necessarie per aggiungere altri dispositivi al tuo account (come il tuo smartphone o il portatile).</translation>
+        <translation>To protect your Cryptographic Identity, we encrypt it with a mnemonic of 12 dictionary words. Please note these down and keep them safe. They will be needed to add other devices to your account (like your mobile phone or laptop).</translation>
     </message>
     <message>
         <source>Unable to connect to %1.</source>
@@ -872,7 +872,7 @@ Attendi la nuova sincronizzazione, quindi cifrala.</translation>
     </message>
     <message>
         <source>https://wl.hidrive.com/easy/0057</source>
-        <translation type="unfinished" />
+        <translation>https://wl.hidrive.com/easy/0097</translation>
     </message>
 </context>
 <context>
@@ -1189,7 +1189,7 @@ Attendi la nuova sincronizzazione, quindi cifrala.</translation>
     </message>
     <message>
         <source>Existing file</source>
-        <translation>File esistente</translation>
+        <translation>Bestaand bestand</translation>
     </message>
     <message>
         <source>Filename contains illegal characters: %1</source>
@@ -1233,7 +1233,7 @@ Attendi la nuova sincronizzazione, quindi cifrala.</translation>
     </message>
     <message>
         <source>The file could not be synced because it generates a case clash conflict with an existing file on this system.</source>
-        <translation>Il file non può essere sincronizzato perché genera un conflitto di maiuscole/minuscole con un altro file già esistente nel sistema.</translation>
+        <translation>The file could not be synced because it generates a case clash conflict with an existing file on this system.</translation>
     </message>
     <message>
         <source>Use invalid name</source>
@@ -1477,11 +1477,11 @@ Attendi la nuova sincronizzazione, quindi cifrala.</translation>
     <name>OCC::DiscoverySingleDirectoryJob</name>
     <message>
         <source>Encrypted metadata setup error!</source>
-        <translation>Eerrore nell&apos;impostazione dei metadati di crittografia!</translation>
+        <translation>Encrypted metadata setup error!</translation>
     </message>
     <message>
         <source>Encrypted metadata setup error: initial signature from server is empty.</source>
-        <translation>Errore di configurazione dei metadati crittografati: la firma iniziale del server è vuota.</translation>
+        <translation>Fout bij opzetten versleutelde metagegevens: initiële handtekening van server is leeg.</translation>
     </message>
     <message>
         <source>Server error: PROPFIND reply is not XML formatted!</source>
@@ -1746,7 +1746,7 @@ Questo può essere un problema delle le tue librerie OpenSSL.</translation>
     </message>
     <message>
         <source>Open Browser</source>
-        <translation>Apri il browser</translation>
+        <translation>Browser openen</translation>
     </message>
     <message>
         <source>Polling for authorization</source>
@@ -1865,7 +1865,7 @@ Questo può essere un problema delle le tue librerie OpenSSL.</translation>
     </message>
     <message>
         <source>A folder from an external storage has been added.</source>
-        <translation type="unfinished" />
+        <translation>Er is een map op externe opslag toegevoegd.</translation>
     </message>
     <message>
         <source>A folder has surpassed the set folder size limit of %1MB: %2.
@@ -1877,21 +1877,21 @@ Questo può essere un problema delle le tue librerie OpenSSL.</translation>
         <source>A large number of files in the server have been deleted.
 Please confirm if you&apos;d like to proceed with these deletions.
 Alternatively, you can restore all deleted files by uploading from &apos;%1&apos; folder to the server.</source>
-        <translation>Un gran numero di file nel server è stato eliminato.
-Conferma se vuoi procedere con queste eliminazioni.
-In alternativa, puoi ripristinare tutti i file eliminati caricandoli dalla cartella &apos;%1&apos; sul server.</translation>
+        <translation>Een groot aantal bestanden op de server is verwijderd.
+Bevestig alstublieft of u door wilt gaan met deze verwijderingen.
+U kunt ook alle verwijderde bestanden terugzetten door vanuit de map &apos;%1&apos; te uploaden naar de server.</translation>
     </message>
     <message>
         <source>A large number of files in your local &apos;%1&apos; folder have been deleted.
 Please confirm if you&apos;d like to proceed with these deletions.
 Alternatively, you can restore all deleted files by downloading them from the server.</source>
-        <translation>Un gran numero di file nella cartella locale &apos;%1&apos; sono stati eliminati.
-Si prega di confermare se si desidera procedere con queste eliminazioni.
-In alternativa, è possibile ripristinare tutti i file eliminati scaricandoli dal server.</translation>
+        <translation>Een groot aantal bestanden in uw lokale map &apos;%1&apos; is verwijderd.
+Bevestig alstublieft of u door wilt gaan met deze verwijderingen.
+U kunt ook alle verwijderde bestanden herstellen door ze van de server te downloaden.</translation>
     </message>
     <message>
         <source>A new folder larger than %1 MB has been added: %2.</source>
-        <translation type="unfinished" />
+        <translation>Er is een nieuwe map groter dan %1 MB toegevoegd: %2.</translation>
     </message>
     <message>
         <source>Changes in synchronized folders could not be tracked reliably.
@@ -1931,19 +1931,19 @@ Questo significa che il client di sincronizzazione potrebbe non caricare le modi
     </message>
     <message>
         <source>Proceed with Deletion</source>
-        <translation>Procedi con la cancellazione</translation>
+        <translation>Doorgaan met verwijderen</translation>
     </message>
     <message>
         <source>Remove all files?</source>
-        <translation>Rimuovere tutti i file?</translation>
+        <translation>Alle bestanden verwijderen?</translation>
     </message>
     <message>
         <source>Restore Files from Server</source>
-        <translation>Ripristina i file dal server</translation>
+        <translation>Bestanden terugzetten van server</translation>
     </message>
     <message>
         <source>Restore Files to Server</source>
-        <translation>Ripristina i file sul server</translation>
+        <translation>Bestanden terugzetten naar server</translation>
     </message>
     <message>
         <source>Stop syncing</source>
@@ -1978,7 +1978,7 @@ Questo significa che il client di sincronizzazione potrebbe non caricare le modi
     <name>OCC::FolderCreationDialog</name>
     <message>
         <source>%1 Create new folder</source>
-        <translation type="unfinished" />
+        <translation>%1 Nieuwe map maken</translation>
     </message>
     <message>
         <source>Could not create a folder! Check your write permissions.</source>
@@ -2009,11 +2009,11 @@ Questo significa che il client di sincronizzazione potrebbe non caricare le modi
     </message>
     <message>
         <source>(backup %1)</source>
-        <translation type="unfinished" />
+        <translation>(backup %1)</translation>
     </message>
     <message>
         <source>(backup)</source>
-        <translation type="unfinished" />
+        <translation>(backup)</translation>
     </message>
     <message>
         <source>An old sync journal &quot;%1&quot; was found, but could not be removed. Please make sure that no application is currently using it.</source>
@@ -2137,7 +2137,7 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     </message>
     <message>
         <source>Synchronize any other local folder with your %1</source>
-        <translation type="unfinished" />
+        <translation>Synchroniseer een andere lokale map met uw %1</translation>
     </message>
 </context>
 <context>
@@ -2302,7 +2302,7 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     </message>
     <message>
         <source>Choose</source>
-        <translation type="unfinished" />
+        <translation>Kies</translation>
     </message>
     <message>
         <source>Click to select a local folder to sync.</source>
@@ -2353,7 +2353,7 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     </message>
     <message>
         <source>Enter the name of the new folder to be created below &quot;%1&quot;:</source>
-        <translation>Digita il nome della nuova cartella da creare sotto a &quot;%1&quot;:</translation>
+        <translation>Voer de naam van de hieronder te maken nieuwe map in &quot;%1&quot;:</translation>
     </message>
     <message>
         <source>Failed to create the folder on %1. Please check manually.</source>
@@ -2400,7 +2400,7 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     </message>
     <message>
         <source>Use virtual files instead of downloading content immediately %1</source>
-        <translation>Usa file virtuali invece di scaricare immediatamente il contenuto %1</translation>
+        <translation>Gebruik virtuele bestanden in plaats van direct downloaden content%1</translation>
     </message>
     <message>
         <source>Virtual files are not supported at the selected location</source>
@@ -2413,7 +2413,7 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
 </context>
 <context>
     <name>OCC::GeneralSettings</name>
-    <message>
+    <message><source>&amp;Analysis data collection for needs-based design</source><translation>&amp;Analyse van gegevensverzameling voor een op behoeften gebaseerd ontwerp</translation></message><message>
         <source>&amp;Automatically check for updates</source>
         <translation>Verific&amp;a automaticamente la presenza di aggiornamenti.</translation>
     </message>
@@ -2455,15 +2455,15 @@ Il downgrade delle versioni non è possibile immediatamente: passare da stabile 
     </message>
     <message>
         <source>Ask for confirmation before synchronizing external storages</source>
-        <translation>Chiedi conferma prima di sincronizzare storage esterni</translation>
+        <translation>Vraag bevestiging voor synchronisatie van mappen op externe opslag</translation>
     </message>
     <message>
         <source>Ask for confirmation before synchronizing new folders larger than</source>
-        <translation>Chiedi conferma prima di sincronizzare cartelle più grandi di</translation>
+        <translation>Ask for confirmation before synchronizing new folders larger than</translation>
     </message>
     <message>
         <source>Automatically disable synchronisation of folders that overcome limit</source>
-        <translation>Disabilita automaticamente la sincronizzazione delle cartelle che superano il limite</translation>
+        <translation>Automatically disable synchronisation of folders that overcome limit</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -2487,7 +2487,7 @@ Il downgrade delle versioni non è possibile immediatamente: passare da stabile 
     </message>
     <message>
         <source>Data Protection</source>
-        <translation type="unfinished" />
+        <translation>Gegevensbescherming</translation>
     </message>
     <message>
         <source>Debug Archive Created</source>
@@ -2524,7 +2524,7 @@ Il downgrade delle versioni non è possibile immediatamente: passare da stabile 
     </message>
     <message>
         <source>More Information</source>
-        <translation type="unfinished" />
+        <translation>Meer informatie</translation>
     </message>
     <message>
         <source>Move removed files to trash</source>
@@ -2536,11 +2536,11 @@ Il downgrade delle versioni non è possibile immediatamente: passare da stabile 
     </message>
     <message>
         <source>Open Source Software</source>
-        <translation type="unfinished" />
+        <translation>Open source software</translation>
     </message>
     <message>
         <source>Privacy Policy</source>
-        <translation type="unfinished" />
+        <translation>Privacybeleid</translation>
     </message>
     <message>
         <source>Required to ensure that the software can be used as expected</source>
@@ -2572,7 +2572,7 @@ Il downgrade delle versioni non è possibile immediatamente: passare da stabile 
     </message>
     <message>
         <source>Show sync folders in &amp;Explorer&apos;s navigation pane</source>
-        <translation>Mostra le cartelle di sincronizzazione nel pannello di navigazione di &amp;Explorer</translation>
+        <translation>Show sync folders in &amp;Explorer&apos;s navigation pane</translation>
     </message>
     <message>
         <source>The channel determines which upgrades will be offered to install:
@@ -2593,7 +2593,7 @@ Il downgrade delle versioni non è possibile immediatamente: passare da stabile 
     </message>
     <message>
         <source>Updates</source>
-        <translation type="unfinished" />
+        <translation>Updates</translation>
     </message>
     <message>
         <source>Usage Documentation</source>
@@ -2625,19 +2625,19 @@ Il downgrade delle versioni non è possibile immediatamente: passare da stabile 
     </message>
     <message>
         <source>https://wl.hidrive.com/easy/0004</source>
-        <translation type="unfinished" />
+        <translation>https://wl.hidrive.com/easy/0004</translation>
     </message>
     <message>
         <source>https://wl.hidrive.com/easy/0005</source>
-        <translation type="unfinished" />
+        <translation>https://wl.hidrive.com/easy/0005</translation>
     </message>
     <message>
         <source>https://wl.hidrive.com/easy/0006</source>
-        <translation type="unfinished" />
+        <translation>https://wl.hidrive.com/easy/0006</translation>
     </message>
     <message>
         <source>https://wl.hidrive.com/easy/0007</source>
-        <translation type="unfinished" />
+        <translation>https://wl.hidrive.com/easy/0007</translation>
     </message>
     <message>
         <source>stable</source>
@@ -2740,7 +2740,7 @@ Il downgrade delle versioni non è possibile immediatamente: passare da stabile 
     </message>
     <message>
         <source>Add a new ignore pattern:</source>
-        <translation>Aggiungi un nuovo modello di esclusione:</translation>
+        <translation>Voeg nieuw negeerpatroon toe:</translation>
     </message>
     <message>
         <source>Allow Deletion</source>
@@ -2758,13 +2758,13 @@ Il downgrade delle versioni non è possibile immediatamente: passare da stabile 
         <source>Files or folders matching a pattern will not be synchronized.
 
 Items where deletion is allowed will be deleted if they prevent a directory from being removed. This is useful for meta data.</source>
-        <translation>I file e le cartelle che verificano un modello non saranno sincronizzati.
+        <translation>Bestanden of mappen die overeenkomen met dit patroon worden niet gesynchroniseerd.
 
-Gli elementi per i quali è consentita l&apos;eliminazione saranno eliminati se impediscono la rimozione di una cartella. Utile per i metadati.</translation>
+Objecten die verwijderd mogen worden, worden verwijderd als ze zouden verhinderen dat een map verwijderd wordt. Dit is nuttig voor metadata.</translation>
     </message>
     <message>
         <source>Ignore Pattern</source>
-        <translation type="unfinished" />
+        <translation>Patroon negeren</translation>
     </message>
     <message>
         <source>Pattern</source>
@@ -3006,7 +3006,7 @@ Nota che l&apos;utilizzo di qualsiasi opzione della riga di comando di registraz
     </message>
     <message>
         <source>No proxy</source>
-        <translation>Nessun proxy</translation>
+        <translation>Geen proxy</translation>
     </message>
     <message>
         <source>Note: proxy settings have no effects for accounts on localhost</source>
@@ -3785,7 +3785,7 @@ This is a new, experimental mode. If you decide to use it, please report any iss
     <name>OCC::PropagateLocalMkdir</name>
     <message>
         <source>Could not create folder %1</source>
-        <translation>Impossibile creare la cartella %1</translation>
+        <translation>Kon map %1 niet maken</translation>
     </message>
     <message>
         <source>Error updating metadata: %1</source>
@@ -3859,7 +3859,7 @@ This is a new, experimental mode. If you decide to use it, please report any iss
     </message>
     <message>
         <source>Folder %1 cannot be renamed because of a local file or folder name clash!</source>
-        <translation>La cartella %1 non può essere rinominata perché il suo nome conflitta con quello di un altro file o cartella!</translation>
+        <translation>Map %1 kan niet hernoemd worden vanwege een lokale bestands- of mapnaamclash!</translation>
     </message>
     <message>
         <source>The file %1 is currently in use</source>
@@ -3982,7 +3982,7 @@ This is a new, experimental mode. If you decide to use it, please report any iss
     </message>
     <message>
         <source>Upload of %1 exceeds the quota for the folder</source>
-        <translation>Il caricamento di %1 supera la quota per la cartella</translation>
+        <translation>Upload van %1 overschrijdt het quotum voor de map</translation>
     </message>
 </context>
 <context>
@@ -4103,7 +4103,7 @@ This is a new, experimental mode. If you decide to use it, please report any iss
     </message>
     <message>
         <source>Success</source>
-        <translation type="unfinished" />
+        <translation>Succes</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -4131,7 +4131,7 @@ This is a new, experimental mode. If you decide to use it, please report any iss
     </message>
     <message>
         <source>New account</source>
-        <translation type="unfinished" />
+        <translation>Nieuw account</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -4423,11 +4423,11 @@ Il server ha risposto con errore: %2</translation>
     </message>
     <message>
         <source>This connection is NOT secure as it is not encrypted.</source>
-        <translation type="unfinished" />
+        <translation>Deze verbinding is NIET veilig, omdat deze niet versleuteld is.</translation>
     </message>
     <message>
         <source>This connection is encrypted using %1 bit %2.</source>
-        <translation type="unfinished" />
+        <translation>Deze verbinding is versleuteld via %1 bit %2.</translation>
     </message>
 </context>
 <context>
@@ -4691,7 +4691,7 @@ Il server ha risposto con errore: %2</translation>
     </message>
     <message>
         <source>easy/0118</source>
-        <translation type="unfinished" />
+        <translation>easy/0118</translation>
     </message>
 </context>
 <context>
@@ -4717,11 +4717,11 @@ Il server ha risposto con errore: %2</translation>
     <name>OCC::UpdateE2eeFolderMetadataJob</name>
     <message>
         <source>Failed to finalize item.</source>
-        <translation>Impossibile finalizzare l&apos;elemento.</translation>
+        <translation>Failed to finalize item.</translation>
     </message>
     <message>
         <source>Failed to unlock encrypted folder.</source>
-        <translation>Sblocco della cartella cifrata non riuscito.</translation>
+        <translation>Kon versleutelde map niet ontgrendelen.</translation>
     </message>
     <message>
         <source>Failed to update folder metadata.</source>
@@ -4732,7 +4732,7 @@ Il server ha risposto con errore: %2</translation>
     <name>OCC::UpdateE2eeFolderUsersMetadataJob</name>
     <message>
         <source>Could not add or remove user %1 to access folder %2</source>
-        <translation>Impossibile aggiungere o rimuovere l&apos;utente %1 per accedere alla cartella %2</translation>
+        <translation>Kan gebruiker %1 niet toevoegen of verwijderen voor toegang tot map %2</translation>
     </message>
     <message>
         <source>Could not fetch public key for user %1</source>
@@ -4753,7 +4753,7 @@ Il server ha risposto con errore: %2</translation>
 </context>
 <context>
     <name>OCC::User</name>
-    <message numerus="yes">
+    <message><source>%1 notifications</source><translation>%1 kennisgevingen</translation></message><message numerus="yes">
         <source>%n notification(s)</source>
         <translation>
             <numerusform>%n notifica(e)</numerusform>
@@ -4967,7 +4967,7 @@ Il server ha risposto con errore: %2</translation>
     <name>OCC::WebFlowCredentials</name>
     <message>
         <source>&lt;b&gt;You have been logged out of your account %1 at %2. Please login again.&lt;/b&gt;</source>
-        <translation type="unfinished" />
+        <translation>&lt;b&gt;U bent afgemeld bij uw account %1 op %2. Log opnieuw in.&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -5001,7 +5001,7 @@ Il server ha risposto con errore: %2</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Se questa casella è marcata, il contenuto della cartella locale sarà cancellato per avviare una nuova sincronizzazione dal server.&lt;/p&gt;&lt;p&gt;Non marcarla se il contenuto locale deve essere caricato nella cartella del server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Als deze checkbox is aangevinkt zullen bestaande bestanden in de lokale map worden gewist om een schone sync vanaf de server te starten.&lt;/p&gt;&lt;p&gt;Vink dit niet aan als de lokale bestanden naar de map op de server zouden moeten worden geüploadet.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Ask before syncing folders larger than</source>
@@ -5143,7 +5143,7 @@ Il server ha risposto con errore: %2</translation>
     </message>
     <message>
         <source>Updated local virtual files metadata</source>
-        <translation>Metadati dei file virtuali locali aggiornati</translation>
+        <translation>Metagegevens van lokale virtuele bestanden bijgewerkt</translation>
     </message>
     <message>
         <source>Updating end-to-end encryption metadata</source>
@@ -5169,7 +5169,7 @@ Il server ha risposto con errore: %2</translation>
         <source>Virtual file created</source>
         <translation>File virtuale creato</translation>
     </message>
-</context>
+<message><source>updating local virtual files metadata</source><translation>Metagegevens van lokale virtuele bestanden bijwerken</translation></message></context>
 <context>
     <name>QObject</name>
     <message>
@@ -5208,7 +5208,7 @@ Il server ha risposto con errore: %2</translation>
     </message>
     <message>
         <source>Could not create debug archive in selected location!</source>
-        <translation>Impossibile creare archivio con i log per il debug nel percorso selezionato!</translation>
+        <translation>Kon geen debug-archief aanmaken op geselecteerde locatie!</translation>
     </message>
     <message>
         <source>Error deleting the file</source>
@@ -5216,7 +5216,7 @@ Il server ha risposto con errore: %2</translation>
     </message>
     <message>
         <source>Failed to create debug archive</source>
-        <translation>Impossibile creare archivio con i log per il debug</translation>
+        <translation>Debug-archief is niet aangemaakt</translation>
     </message>
     <message>
         <source>New folder</source>
@@ -5236,7 +5236,7 @@ Il server ha risposto con errore: %2</translation>
     </message>
     <message>
         <source>The directory %1 cannot be part of your sync directory. Please choose another folder.</source>
-        <translation type="unfinished" />
+        <translation>De map %1 kan geen deel uitmaken van je synchronisatiemap. Kies een andere map.</translation>
     </message>
     <message>
         <source>You changed %1</source>
@@ -5309,7 +5309,7 @@ Il server ha risposto con errore: %2</translation>
     <name>SesTrayHeader</name>
     <message>
         <source>Open Nextcloud in browser</source>
-        <translation type="unfinished" />
+        <translation>HiDrive Next in browser openen</translation>
     </message>
     <message>
         <source>Open local or group folders</source>
@@ -5317,7 +5317,7 @@ Il server ha risposto con errore: %2</translation>
     </message>
     <message>
         <source>Website</source>
-        <translation type="unfinished" />
+        <translation>Website</translation>
     </message>
 </context>
 <context>
@@ -5359,15 +5359,15 @@ Il server ha risposto con errore: %2</translation>
     </message>
     <message>
         <source>Copy share link</source>
-        <translation type="unfinished" />
+        <translation>Copy share link</translation>
     </message>
     <message>
         <source>Custom Permissions</source>
-        <translation type="unfinished" />
+        <translation>Aangepaste machtigingen</translation>
     </message>
     <message>
         <source>Enter the note to recipient</source>
-        <translation type="unfinished" />
+        <translation>Voer de notitie aan de ontvanger in</translation>
     </message>
     <message>
         <source>File drop (upload only)</source>
@@ -5391,7 +5391,7 @@ Il server ha risposto con errore: %2</translation>
     </message>
     <message>
         <source>Share link copied!</source>
-        <translation type="unfinished" />
+        <translation>Share link copied!</translation>
     </message>
     <message>
         <source>Unshare</source>
@@ -5535,7 +5535,7 @@ Il server ha risposto con errore: %2</translation>
         <translation>In attesa di iniziare la sincronizzazione</translation>
     </message>
 </context>
-<context>
+<context><name>TrayFoldersMenuButton</name><message><source>Files</source><translation>Bestanden</translation></message></context><context>
     <name>TrayWindowAccountMenu</name>
     <message>
         <source>Account switcher and settings menu</source>
