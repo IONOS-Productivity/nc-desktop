@@ -6936,12 +6936,12 @@ Il server ha risposto con errore: %2</translation>
     <message>
         <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="38" />
         <source>Pause sync for all</source>
-        <translation type="unfinished" />
+        <translation type="unfinished" >Sospendi la sincronizzazione per tutti</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="38" />
         <source>Resume sync for all</source>
-        <translation type="unfinished" />
+        <translation type="unfinished" >Riprendi la sincronizzazione per tutti</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="148" />
