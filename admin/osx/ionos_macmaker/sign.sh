@@ -45,7 +45,8 @@ PKG_ORGINAL_NAME="${PKG_FILENAME%.pkg}"
 PRODUCT_NAME="IONOS HiDrive Next"
 UNDERSCORE_PRODUCT_NAME="IONOS_HiDrive_Next"
 
-TEAM_IDENTIFIER="5TDLCVD243"
+IONOS_TEAM_IDENTIFIER="5TDLCVD243"
+NC_TEAM_IDENTIFIER="NKUJUXUJ3B"
 WORK_DIR="ex"
 INNER_WORK_DIR="tmp"
 FINAL_PKG="Reassembled.pkg"
@@ -58,6 +59,8 @@ SCRIPTS_DIR=$EXTRACTED_DIR/$UNDERSCORE_PRODUCT_NAME.pkg/Scripts
 INNER_PKG=$EXTRACTED_DIR/$UNDERSCORE_PRODUCT_NAME.pkg
 PAYLOAD_DIR=$EXTRACTED_DIR/$UNDERSCORE_PRODUCT_NAME.pkg/Payload
 INSTALLER_PKG=$BASE_DIR/INSTALLER.pkg
+APP_PATH=$PRODUCT_DIR/$PRODUCT_NAME.app
+
 
 echo "Expanding original package..."
 
@@ -97,6 +100,29 @@ fi
 
 
 # ---------------------------------------------------
+# Patch Team Identifier 
+
+# Ensure both IDs are same length
+if [[ ${#NC_TEAM_IDENTIFIER} -ne ${#IONOS_TEAM_IDENTIFIER} ]]; then
+  echo "❌ OLD_ID and NEW_ID must be the same length for binary-safe patching."
+  exit 1
+fi
+# --- Replace in .plist files (plain XML) ---
+echo "🔧 Replacing in .plist files..."
+# find "$APP_PATH" -name "*.plist" -exec sed -i '' "s/$NC_TEAM_IDENTIFIER/$IONOS_TEAM_IDENTIFIER/g" {} \;
+find "$APP_PATH" -name "*.plist" -exec grep -q "$NC_TEAM_IDENTIFIER" {} \; -exec sed -i '' "s/$NC_TEAM_IDENTIFIER/$IONOS_TEAM_IDENTIFIER/g" {} \;
+
+
+
+# Find and patch all binaries containing the old ID
+find . -type f -exec grep -q --binary-files=text "$NC_TEAM_IDENTIFIER" {} \; -print | while read -r file; do
+  echo "🔧 Patching $file"
+  perl -pi -e "s/$NC_TEAM_IDENTIFIER/$IONOS_TEAM_IDENTIFIER/g" "$file"
+done
+
+
+
+# ---------------------------------------------------
 # Sign the client
 # CODE_SIGN_IDENTITY="Developer ID Application: IONOS SE (5TDLCVD243)"
 
@@ -107,11 +133,9 @@ if [ -z "$CODE_SIGN_IDENTITY" ]; then
   exit 0
 fi
 
-PRODUCT_PATH=$PRODUCT_DIR/$PRODUCT_NAME.app
 
-CLIENT_CONTENTS_DIR=$PRODUCT_PATH/Contents
+CLIENT_CONTENTS_DIR=$APP_PATH/Contents
 CLIENT_FRAMEWORKS_DIR=$CLIENT_CONTENTS_DIR/Frameworks
-CLIENT_PLUGINS_DIR=$CLIENT_CONTENTS_DIR/PlugIns
 CLIENT_RESOURCES_DIR=$CLIENT_CONTENTS_DIR/Resources
 
 for script in $SCRIPTS_DIR/*; do
@@ -122,8 +146,7 @@ done
 find "$CLIENT_FRAMEWORKS_DIR" -print0 | xargs -0 -I {} bash -c 'recursive_sign "$@" "$CODE_SIGN_IDENTITY"' _ {} "$CODE_SIGN_IDENTITY"
 find "$CLIENT_PLUGINS_DIR" -print0 | xargs -0 -I {} bash -c 'recursive_sign "$@" "$CODE_SIGN_IDENTITY"' _ {} "$CODE_SIGN_IDENTITY"
 find "$CLIENT_RESOURCES_DIR" -print0 | xargs -0 -I {} bash -c 'recursive_sign "$@" "$CODE_SIGN_IDENTITY"' _ {} "$CODE_SIGN_IDENTITY"
-
-codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --verbose=4 --deep --options=runtime --timestamp "$PRODUCT_PATH"
+codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --verbose=4 --deep --options=runtime --timestamp "$APP_PATH"
 
 
 
@@ -132,7 +155,7 @@ codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --ver
 
 # Validate that the key used for signing the binary matches the expected TeamIdentifier
 # needed to pass the SocketApi through the sandbox for communication with virtual file system
-if ! codesign -dv "$PRODUCT_PATH" 2>&1 | grep -q "TeamIdentifier=$TEAM_IDENTIFIER"; then
+if ! codesign -dv "$APP_PATH" 2>&1 | grep -q "TeamIdentifier=$IONOS_TEAM_IDENTIFIER"; then
   echo "TeamIdentifier does not match. Exiting."
   exit 0
 fi
