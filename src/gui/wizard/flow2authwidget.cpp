@@ -229,7 +229,6 @@ void Flow2AuthWidget::customizeStyle()
     _ui.openLinkButton->setFixedSize(180, 40);
 
     _ui.copyLinkButton->setText(tr("Copy Link"));
-    _ui.copyLinkButton->setFixedSize(150, 40);
 
     _ui.mainLayoutVBox->setContentsMargins(32, 0, 32, 0);
     _ui.innerLayoutVBox->setSpacing(16);
