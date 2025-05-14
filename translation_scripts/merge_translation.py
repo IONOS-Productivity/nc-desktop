@@ -287,8 +287,8 @@ if __name__ == "__main__":
     diff_files = [r".\de_DE.ts"
                   , r".\es.ts"
                   , r".\fr.ts"
-                  , r".\it.ts"
                   , r".\nl.ts"
+                  , r".\it.ts"
                   , r".\en.ts"
                   , r".\en_GB.ts"
                   ]
