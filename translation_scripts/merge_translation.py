@@ -279,6 +279,7 @@ if __name__ == "__main__":
                 , r"..\translations\client_es.ts"
                 , r"..\translations\client_fr.ts"
                 , r"..\translations\client_nl.ts"
+                , r"..\translations\client_it.ts"
                 , r"..\translations\client_en.ts"
                 , r"..\translations\client_en_GB.ts"
                 ]
@@ -287,6 +288,7 @@ if __name__ == "__main__":
                   , r".\es.ts"
                   , r".\fr.ts"
                   , r".\nl.ts"
+                  , r".\it.ts"
                   , r".\en.ts"
                   , r".\en_GB.ts"
                   ]
