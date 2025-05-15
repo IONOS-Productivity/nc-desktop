@@ -63,7 +63,7 @@ namespace OCC{
 
     void DataProtectionSettingsPage::customizeStyle()
     {
-        _ocWizard->setFixedSize(626, 470);
+        _ocWizard->setFixedSize(626, 480);
 
         _ui->mainVBox->setContentsMargins(32, 0, 32, 0);
 
