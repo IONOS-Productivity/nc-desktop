@@ -380,7 +380,7 @@ QSize GeneralSettings::sizeHint() const
 {
     return {
         ownCloudGui::settingsDialogSize().width(),
-        QWidget::sizeHint().height()
+        ownCloudGui::settingsDialogSize().height()
     };
 }
 
