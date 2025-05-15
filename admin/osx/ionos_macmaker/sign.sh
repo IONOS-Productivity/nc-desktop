@@ -21,38 +21,39 @@ sign_folder_content(){
 export -f sign_folder_content
 
 # This script is used to build the Mac OS X version of the IONOS client.
-set -xe
-# set -e
-
 # Parse the command line arguments
-while getopts "b:p:s:ci" opt; do
+while getopts "b:p:s:civ" opt; do
   case ${opt} in
     b )BASE_DIR=$OPTARG;;
     p )PATH_TO_PKG=$OPTARG ;;
     s )CODE_SIGN_IDENTITY=$OPTARG ;;
     c )CLEAN_REBUILD=true ;;
     i )PACKAGE_INSTALLER=true ;;
+    v )VERBOSE=true ;; 
     \? )
-      echo "Usage: sign.sh [-b <base_dir>] [-s <code_sign_identity>] [-c] [-i]"
+      echo "Usage: sign.sh [-b <base_dir>] [-p <path_to_pkg>] [-s <code_sign_identity>] [-c clean-rebuild] [-i build-installer] [-v verbose]"
       exit 1
       ;;
   esac
 done
 
+if [ "$VERBOSE" = true ]; then
+  set -xe
+fi
+
 # Some variables
-PKG_FILENAME=$(basename "$PATH_TO_PKG")
-PKG_ORGINAL_NAME="${PKG_FILENAME%.pkg}"
+PKG_FULLNAME=$(basename "$PATH_TO_PKG")
+PKG_FILENAME="${PKG_FULLNAME%.pkg}"
 PRODUCT_NAME="IONOS HiDrive Next"
 UNDERSCORE_PRODUCT_NAME="IONOS_HiDrive_Next"
 
 IONOS_TEAM_IDENTIFIER="5TDLCVD243"
 NC_TEAM_IDENTIFIER="NKUJUXUJ3B"
-WORK_DIR="ex"
-INNER_WORK_DIR="tmp"
-FINAL_PKG="Reassembled.pkg"
+INSTALLER_CERT="Developer ID Installer: $CODE_SIGN_IDENTITY"
+APPLICATION_CERT="Developer ID Application: $CODE_SIGN_IDENTITY"
 
+WORK_DIR="ex"
 EXTRACTED_DIR="${BASE_DIR%/}/$WORK_DIR"
-FINAL_TARGET_PATH="${BASE_DIR%/}/$FINAL_PKG"
 
 PRODUCT_DIR=$EXTRACTED_DIR/$UNDERSCORE_PRODUCT_NAME.pkg/Payload/Applications
 SCRIPTS_DIR=$EXTRACTED_DIR/$UNDERSCORE_PRODUCT_NAME.pkg/Scripts
@@ -60,7 +61,6 @@ INNER_PKG=$EXTRACTED_DIR/$UNDERSCORE_PRODUCT_NAME.pkg
 PAYLOAD_DIR=$EXTRACTED_DIR/$UNDERSCORE_PRODUCT_NAME.pkg/Payload
 INSTALLER_PKG=$BASE_DIR/INSTALLER.pkg
 APP_PATH=$PRODUCT_DIR/$PRODUCT_NAME.app
-
 
 echo "Expanding original package..."
 
@@ -77,50 +77,24 @@ else
   pkgutil --expand-full "$PATH_TO_PKG" "$EXTRACTED_DIR"
 fi
 
-
-
-
-# TODO: 
-# Load Sparkle
-# SPARKLE_DIR=$BASE_DIR/sparkle
-# SPARKLE_DOWNLOAD_URI="https://github.com/sparkle-project/Sparkle/releases/download/1.27.3/Sparkle-1.27.3.tar.xz"
-
-# if [ "$CLEAN_REBUILD" == "true" ]; then
-#   mkdir -p $SPARKLE_DIR
-#   wget $SPARKLE_DOWNLOAD_URI -O $SPARKLE_DIR/Sparkle.tar.xz
-#   tar -xvf $SPARKLE_DIR/Sparkle.tar.xz -C $SPARKLE_DIR
-
-#   # Sign Sparkle
-#   if [ -n "$CODE_SIGN_IDENTITY" ]; then
-#     SPARKLE_FRAMEWORK_DIR=$SPARKLE_DIR/Sparkle.framework
-#     find "$SPARKLE_FRAMEWORK_DIR/Resources/Autoupdate.app/Contents/MacOS" -mindepth 1 -print0 | xargs -0 -I {} bash -c 'sign_folder_content "$@" "$CODE_SIGN_IDENTITY"' _ {} "$CODE_SIGN_IDENTITY"
-#     codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --verbose=4 --deep --options=runtime --timestamp "$SPARKLE_FRAMEWORK_DIR/Sparkle"
-#   fi
-# fi
-
-
 # ---------------------------------------------------
 # Patch Team Identifier 
 
 # Ensure both IDs are same length
 if [[ ${#NC_TEAM_IDENTIFIER} -ne ${#IONOS_TEAM_IDENTIFIER} ]]; then
-  echo "❌ OLD_ID and NEW_ID must be the same length for binary-safe patching."
+  echo "NC_TEAM_IDENTIFIER and IONOS_TEAM_IDENTIFIER must be the same length for binary-safe patching."
+  open $BASE_DIR
   exit 1
 fi
 # --- Replace in .plist files (plain XML) ---
-echo "🔧 Replacing in .plist files..."
-# find "$APP_PATH" -name "*.plist" -exec sed -i '' "s/$NC_TEAM_IDENTIFIER/$IONOS_TEAM_IDENTIFIER/g" {} \;
+echo "Replacing Team Identifier in .plist files..."
 find "$APP_PATH" -name "*.plist" -exec grep -q "$NC_TEAM_IDENTIFIER" {} \; -exec sed -i '' "s/$NC_TEAM_IDENTIFIER/$IONOS_TEAM_IDENTIFIER/g" {} \;
-
-
 
 # Find and patch all binaries containing the old ID
 find . -type f -exec grep -q --binary-files=text "$NC_TEAM_IDENTIFIER" {} \; -print | while read -r file; do
-  echo "🔧 Patching $file"
+  echo "Patching Team Identifier in $file"
   perl -pi -e "s/$NC_TEAM_IDENTIFIER/$IONOS_TEAM_IDENTIFIER/g" "$file"
 done
-
-
 
 # ---------------------------------------------------
 # Sign the client
@@ -129,10 +103,11 @@ done
 # Check if CODE_SIGN_IDENTITY is set, if not exit
 if [ -z "$CODE_SIGN_IDENTITY" ]; then
   echo "Code sign identity not set. Exiting."
-  open $PRODUCT_DIR
+  open $BASE_DIR
   exit 0
 fi
 
+echo "start signing the client"
 
 CLIENT_CONTENTS_DIR=$APP_PATH/Contents
 CLIENT_FRAMEWORKS_DIR=$CLIENT_CONTENTS_DIR/Frameworks
@@ -148,25 +123,26 @@ find "$CLIENT_PLUGINS_DIR" -print0 | xargs -0 -I {} bash -c 'recursive_sign "$@"
 find "$CLIENT_RESOURCES_DIR" -print0 | xargs -0 -I {} bash -c 'recursive_sign "$@" "$CODE_SIGN_IDENTITY"' _ {} "$CODE_SIGN_IDENTITY"
 codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --verbose=4 --deep --options=runtime --timestamp "$APP_PATH"
 
-
-
-# Sign the client
+# Sign the client ---- Still needed?
 # find "$CLIENT_CONTENTS_DIR/MacOS" -mindepth 1 -print0 | xargs -0 -I {} bash -c 'sign_folder_content "$@" "$CODE_SIGN_IDENTITY" "$entitlements" ' _ {} "$CODE_SIGN_IDENTITY" "--preserve-metadata=entitlements"
 
 # Validate that the key used for signing the binary matches the expected TeamIdentifier
 # needed to pass the SocketApi through the sandbox for communication with virtual file system
 if ! codesign -dv "$APP_PATH" 2>&1 | grep -q "TeamIdentifier=$IONOS_TEAM_IDENTIFIER"; then
   echo "TeamIdentifier does not match. Exiting."
+  open $BASE_DIR
   exit 0
 fi
 
 # ---------------------------------------------------
 # Installer
 
+echo "start building the installer"
+
 # Build the installer, if enabled
 if [ -z "$PACKAGE_INSTALLER" ]; then
   echo "Installer packaging not enabled. Exiting."
-  open $PRODUCT_DIR
+  open $BASE_DIR
   exit 0
 fi
 
@@ -178,10 +154,6 @@ echo "Reassembling the package..."
 
 rm -rf $PAYLOAD_DIR
 mv $PAYLOAD_DIR.new $PAYLOAD_DIR
-
-# xar --compression none \
-#   -cf $INNER_PKG.flat \
-#   PackageInfo Bom Payload Scripts 2>/dev/null
 
 (cd $EXTRACTED_DIR && \
   pkgutil --flatten $UNDERSCORE_PRODUCT_NAME.pkg $UNDERSCORE_PRODUCT_NAME.pkg.flat)
@@ -202,23 +174,10 @@ mv $INNER_PKG.signed $INNER_PKG
   --package-path ex \
   $INSTALLER_PKG.unsigned)
 
-productsign --timestamp --sign 'Developer ID Installer: IONOS SE (5TDLCVD243)' $INSTALLER_PKG.unsigned "$BASE_DIR$PKG_ORGINAL_NAME.resigned.pkg"
-
-# pkgutil --flatten "$EXTRACTED_DIR" "$FINAL_TARGET_PATH"
-
-# codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --verbose=4 --deep --options=runtime --timestamp "$FINAL_TARGET_PATH"
-# productsign --timestamp --sign 'Developer ID Installer: IONOS SE (5TDLCVD243)' "$FINAL_TARGET_PATH" "$FINAL_TARGET_PATH.new"
-# exit 0
-
-# package
-# $BASE_DIR/admin/osx/create_mac.sh "$PRODUCT_DIR" "$BASE_DIR" 'Developer ID Installer: IONOS SE (5TDLCVD243)'
-
-# notariaze
-# Extract package filename from filesystem per .pkg extension
-# PACKAGE_FILENAME=$(ls $PRODUCT_DIR/*.pkg)
+productsign --timestamp --sign 'Developer ID Installer: IONOS SE (5TDLCVD243)' $INSTALLER_PKG.unsigned "$BASE_DIR$PKG_FILENAME.resigned.pkg"
 
 # catch the output of the notarytool command
-OUTPUT=$(xcrun notarytool submit --wait "$BASE_DIR$PKG_ORGINAL_NAME.resigned.pkg"\
+OUTPUT=$(xcrun notarytool submit --wait "$BASE_DIR$PKG_FILENAME.resigned.pkg"\
   --keychain-profile "IONOS SE HiDrive Next")
 
 SUBMISSION_STATUS=$(echo $OUTPUT | grep -o 'status: [^ ]*' | cut -d ' ' -f 2)
@@ -226,11 +185,13 @@ SUBMISSION_STATUS=$(echo $OUTPUT | grep -o 'status: [^ ]*' | cut -d ' ' -f 2)
 # Check if the notarization was successful
 if [ $SUBMISSION_STATUS != "Accepted" ]; then
   echo "Notarization failed. Exiting."
+  open $BASE_DIR
   exit 1
 fi
 
 # staple
-xcrun stapler staple "$BASE_DIR$PKG_ORGINAL_NAME.resigned.pkg"
-xcrun stapler validate "$BASE_DIR$PKG_ORGINAL_NAME.resigned.pkg"
+xcrun stapler staple "$BASE_DIR$PKG_FILENAME.resigned.pkg"
+xcrun stapler validate "$BASE_DIR$PKG_FILENAME.resigned.pkg"
 
-# open $PRODUCT_DIR
+open $BASE_DIR
+
