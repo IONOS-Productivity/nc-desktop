@@ -532,6 +532,9 @@ void OwncloudAdvancedSetupPage::slotSelectiveSyncClicked()
     auto *dlg = new SelectiveSyncDialog(acc, _remoteFolder, _selectiveSyncBlacklist, this);
     dlg->setAttribute(Qt::WA_DeleteOnClose);
 
+    dlg->setStyleSheet(QStringLiteral("QDialog { background-color: %1; } QWidget { background-color: %1; }").arg(
+        IonosTheme::dialogBackgroundColor()));
+
     connect(dlg, &SelectiveSyncDialog::finished, this, [this, dlg]{
         const int result = dlg->result();
         bool updateBlacklist = false;
