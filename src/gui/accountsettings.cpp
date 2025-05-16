@@ -980,13 +980,14 @@ void AccountSettings::slotRemoveCurrentFolder()
             this);
 
         messageBox->setStyleSheet(
-            QStringLiteral("QMessageBox QLabel { %1; }").arg(
+            QStringLiteral("QMessageBox QLabel { %1; } QDialog { background-color: %2; }").arg(
                 IonosTheme::fontConfigurationCss(
                     IonosTheme::settingsFont(),
                     IonosTheme::settingsTextSize(),
                     IonosTheme::settingsTextWeight(),
                     IonosTheme::titleColor()
-                )
+                ),
+                IonosTheme::dialogBackgroundColor()
             )
         );
 
