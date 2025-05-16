@@ -773,7 +773,7 @@ void GeneralSettings::customizeStyle()
         )
     );
 
-    _ui->sendNecessaryData_checkbox->setEnabled(false);
+    _ui->sendNecessaryData_checkbox->setChecked(true);
     _ui->sendNecessaryData_checkbox->setStyleSheet(
         QStringLiteral("QCheckBox { font-size: %1; font-weight: %2; color: %3; }").arg(
             IonosTheme::settingsTextSize(),
