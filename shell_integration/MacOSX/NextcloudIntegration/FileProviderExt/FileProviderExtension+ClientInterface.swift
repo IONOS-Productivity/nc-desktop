@@ -117,7 +117,7 @@ extension FileProviderExtension: NSFileProviderServicing, ChangeNotificationInte
                 user: user,
                 userId: userId,
                 password: password,
-                userAgent: "Nextcloud-macOS/FileProviderExt",
+                userAgent: "IONOS HiDrive Next/FileProviderExt",
                 nextcloudVersion: 25,
                 groupIdentifier: ""
             )
