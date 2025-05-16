@@ -236,6 +236,17 @@ void IgnoreListTableWidget::customizeAddIgnorePatternDialogStyle(QInputDialog &i
     inputDialog.resize(626, 196);
     inputDialog.setVisible(true);
     inputDialog.setContentsMargins(12,0,12,12);
+    
+    inputDialog.setStyleSheet( QStringLiteral("QDialog { %1; background-color: %2; }").arg(
+            IonosTheme::fontConfigurationCss(
+                IonosTheme::settingsFont(),
+                IonosTheme::settingsTextSize(),
+                IonosTheme::settingsTextWeight(),
+                IonosTheme::titleColor()
+            ),
+            IonosTheme::dialogBackgroundColor()
+        )
+    );
 
     QLabel *label = inputDialog.findChild<QLabel*>();
     label->setAlignment(Qt::AlignCenter);
