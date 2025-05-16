@@ -568,6 +568,10 @@ void SelectiveSyncDialog::init(const AccountPtr &account)
 
 void SelectiveSyncDialog::customizeStyle()
 {
+    this->setStyleSheet(
+        QStringLiteral("QWidget QTreeView{ background-color: %1; }").arg(IonosTheme::dialogBackgroundColor())
+    );
+
     _okButton->setStyleSheet(
         _okButton->styleSheet() + QStringLiteral("QPushButton { %1; } ").arg(
             IonosTheme::fontConfigurationCss(
