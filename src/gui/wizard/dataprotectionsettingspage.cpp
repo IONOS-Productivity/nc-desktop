@@ -67,7 +67,9 @@ namespace OCC{
 
         _ui->mainVBox->setContentsMargins(32, 0, 32, 0);
 
-        _ui->necessaryDataCheckBox->setEnabled(false);
+        //_ui->necessaryDataCheckBox->setEnabled(false);
+        _ui->necessaryDataCheckBox->setChecked(true);
+
         _ui->necessaryDataCheckBox->setStyleSheet(
             QStringLiteral("QCheckBox { %1; }").arg(
                 IonosTheme::fontConfigurationCss(
@@ -88,8 +90,6 @@ namespace OCC{
                     )
                 ));
 
-        _ui->necessaryDataCheckBox->setChecked(true);
-
         _ui->descriptionLabel->setStyleSheet(
             QStringLiteral("QLabel { %1; margin-top: %2; margin-bottom: %2; }").arg(
                 IonosTheme::fontConfigurationCss(
@@ -102,10 +102,26 @@ namespace OCC{
             )
         );
 
-        _ui->necessaryDataLabel->setStyleSheet(QStringLiteral("QLabel { margin-left: %1; margin-bottom: %2; }")
-            .arg("16", IonosTheme::smallMargin()));
-        _ui->anonymousDataLabel->setStyleSheet(QStringLiteral("QLabel { margin-left: %1; margin-bottom: %2; }")
-            .arg("16", "48"));
+        _ui->necessaryDataLabel->setStyleSheet(QStringLiteral("QLabel { %1; margin-left: %2; margin-bottom: %3; }")
+            .arg(IonosTheme::fontConfigurationCss(
+                    IonosTheme::settingsFont(),
+                    IonosTheme::settingsTextSize(),
+                    IonosTheme::settingsTextWeight(),
+                    IonosTheme::black()
+                ),
+                "16", 
+                IonosTheme::smallMargin()));
+
+        _ui->anonymousDataLabel->setStyleSheet(QStringLiteral("QLabel {%1; margin-left: %2; margin-bottom: %3; }")
+            .arg(IonosTheme::fontConfigurationCss(
+                    IonosTheme::settingsFont(),
+                    IonosTheme::settingsTextSize(),
+                    IonosTheme::settingsTextWeight(),
+                    IonosTheme::black()
+                ),
+                "16", 
+                "48")
+            );
 
         _ui->buttonLayout->setAlignment(Qt::AlignCenter);
         _ui->buttonLayout->setSpacing(16);
