@@ -22,7 +22,7 @@ export -f sign_folder_content
 
 # This script is used to build the Mac OS X version of the IONOS client.
 # Parse the command line arguments
-while getopts "b:p:s:civ" opt; do
+while getopts "b:p:s:civt" opt; do
   case ${opt} in
     b )BASE_DIR=$OPTARG;;
     p )PATH_TO_PKG=$OPTARG ;;
@@ -30,6 +30,7 @@ while getopts "b:p:s:civ" opt; do
     c )CLEAN_REBUILD=true ;;
     i )PACKAGE_INSTALLER=true ;;
     v )VERBOSE=true ;; 
+    t )TEAM_PATCHING=true ;;
     \? )
       echo "Usage: sign.sh [-b <base_dir>] [-p <path_to_pkg>] [-s <code_sign_identity>] [-c clean-rebuild] [-i build-installer] [-v verbose]"
       exit 1
@@ -80,22 +81,35 @@ fi
 # ---------------------------------------------------
 # Patch Team Identifier 
 
-# Ensure both IDs are same length
-if [[ ${#NC_TEAM_IDENTIFIER} -ne ${#IONOS_TEAM_IDENTIFIER} ]]; then
-  echo "NC_TEAM_IDENTIFIER and IONOS_TEAM_IDENTIFIER must be the same length for binary-safe patching."
-  open $BASE_DIR
-  exit 1
+# check wether patching is needed. ".com" is important because otherwise the ID in the signature will be found
+
+if [[ -n "$TEAM_PATCHING" ]]; then
+  PLIST_MATCHES=$(find "$APP_PATH" -name "*.plist" -exec grep -q "$NC_TEAM_IDENTIFIER.com" {} \; -print | wc -l)
+  BIN_MATCHES=$(find "$APP_PATH" -type f -exec grep -q --binary-files=text "$NC_TEAM_IDENTIFIER.com" {} \; -print | wc -l)
+
+  if [[ "$PLIST_MATCHES" -gt 0 || "$BIN_MATCHES" -gt 0 ]]; then
+    # Ensure both IDs are same lengt
+    if [[ ${#NC_TEAM_IDENTIFIER} -ne ${#IONOS_TEAM_IDENTIFIER} ]]; then
+      echo "NC_TEAM_IDENTIFIER and IONOS_TEAM_IDENTIFIER must be the same length for binary-safe patching."
+      open $BASE_DIR
+      exit 1
+    fi
+
+    if [[ "$PLIST_MATCHES" -gt 0 ]]; then
+    # --- Replace in .plist files (plain XML) ---
+      echo "Replacing Team Identifier in .plist files..."
+      find "$APP_PATH" -name "*.plist" -exec grep -q "$NC_TEAM_IDENTIFIER" {} \; -exec sed -i '' "s/$NC_TEAM_IDENTIFIER/$IONOS_TEAM_IDENTIFIER/g" {} \;
+    fi
+    
+    if [[ "$BIN_MATCHES" -gt 0 ]]; then
+      # Find and patch all binaries containing the old ID
+      find "$APP_PATH" -type f -exec grep -q --binary-files=text "$NC_TEAM_IDENTIFIER" {} \; -print | while read -r file; do
+        echo "Patching Team Identifier in $file"
+        perl -pi -e "s/$NC_TEAM_IDENTIFIER/$IONOS_TEAM_IDENTIFIER/g" "$file"
+      done
+    fi
+  fi
 fi
-# --- Replace in .plist files (plain XML) ---
-echo "Replacing Team Identifier in .plist files..."
-find "$APP_PATH" -name "*.plist" -exec grep -q "$NC_TEAM_IDENTIFIER" {} \; -exec sed -i '' "s/$NC_TEAM_IDENTIFIER/$IONOS_TEAM_IDENTIFIER/g" {} \;
-
-# Find and patch all binaries containing the old ID
-find . -type f -exec grep -q --binary-files=text "$NC_TEAM_IDENTIFIER" {} \; -print | while read -r file; do
-  echo "Patching Team Identifier in $file"
-  perl -pi -e "s/$NC_TEAM_IDENTIFIER/$IONOS_TEAM_IDENTIFIER/g" "$file"
-done
-
 # ---------------------------------------------------
 # Sign the client
 # CODE_SIGN_IDENTITY="Developer ID Application: IONOS SE (5TDLCVD243)"
@@ -112,6 +126,7 @@ echo "start signing the client"
 CLIENT_CONTENTS_DIR=$APP_PATH/Contents
 CLIENT_FRAMEWORKS_DIR=$CLIENT_CONTENTS_DIR/Frameworks
 CLIENT_RESOURCES_DIR=$CLIENT_CONTENTS_DIR/Resources
+CLIENT_PLUGINS_DIR=$CLIENT_CONTENTS_DIR/PlugIns
 
 for script in $SCRIPTS_DIR/*; do
     echo "→ Signing script: $script"
@@ -124,7 +139,7 @@ find "$CLIENT_RESOURCES_DIR" -print0 | xargs -0 -I {} bash -c 'recursive_sign "$
 codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --verbose=4 --deep --options=runtime --timestamp "$APP_PATH"
 
 # Sign the client ---- Still needed?
-# find "$CLIENT_CONTENTS_DIR/MacOS" -mindepth 1 -print0 | xargs -0 -I {} bash -c 'sign_folder_content "$@" "$CODE_SIGN_IDENTITY" "$entitlements" ' _ {} "$CODE_SIGN_IDENTITY" "--preserve-metadata=entitlements"
+find "$CLIENT_CONTENTS_DIR/MacOS" -mindepth 1 -print0 | xargs -0 -I {} bash -c 'sign_folder_content "$@" "$CODE_SIGN_IDENTITY" "$entitlements" ' _ {} "$CODE_SIGN_IDENTITY" "--preserve-metadata=entitlements"
 
 # Validate that the key used for signing the binary matches the expected TeamIdentifier
 # needed to pass the SocketApi through the sandbox for communication with virtual file system
