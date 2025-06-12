@@ -325,6 +325,14 @@ void FolderWizardRemotePath::slotAddRemoteFolder()
             )
     );
 
+    dlg->findChild<QLabel*>()->setStyleSheet(
+        IonosTheme::fontConfigurationCss(
+            IonosTheme::settingsFont(),
+            IonosTheme::settingsBigTitleSize(),
+            IonosTheme::settingsTitleWeight600(),
+            IonosTheme::titleColor())
+        );
+
     #ifdef Q_OS_MAC
         buttonBox->layout()->setSpacing(24);
 
@@ -750,6 +758,10 @@ void FolderWizardRemotePath::changeStyle()
         IonosTheme::settingsTextWeight(),
         IonosTheme::titleColor()));
 
+    _ui.folderTreeWidget->setStyleSheet(
+        QStringLiteral("QTreeWidget { background: %1; }").arg(IonosTheme::white())
+    );
+
     _ui.refreshButton->setProperty("text", tr("Refresh"));
 
     _ui.addFolderButton->setProperty("text", tr("Create folder"));
@@ -793,11 +805,12 @@ FolderWizardSelectiveSync::FolderWizardSelectiveSync(const AccountPtr &account)
         layout->addLayout(_virtualFilesHBox);
     }
 
-    _selectiveSync->setStyleSheet(IonosTheme::fontConfigurationCss(
+    _selectiveSync->setStyleSheet(QStringLiteral(" %1; background: %2; ").arg(IonosTheme::fontConfigurationCss(
         IonosTheme::settingsFont(),
         IonosTheme::settingsTextSize(),
         IonosTheme::settingsTextWeight(),
-        IonosTheme::titleColor()));
+        IonosTheme::titleColor()),
+        IonosTheme::white()));
 
     _uiSelectiveSync.title->setStyleSheet(IonosTheme::fontConfigurationCss(
             IonosTheme::settingsFont(),
