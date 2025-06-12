@@ -237,7 +237,7 @@ void IgnoreListTableWidget::customizeAddIgnorePatternDialogStyle(QInputDialog &i
     inputDialog.setVisible(true);
     inputDialog.setContentsMargins(12,0,12,12);
     
-    inputDialog.setStyleSheet( QStringLiteral("QDialog { %1; background-color: %2; }").arg(
+    inputDialog.setStyleSheet( QStringLiteral("QDialog { %1; background: %2; }").arg(
             IonosTheme::fontConfigurationCss(
                 IonosTheme::settingsFont(),
                 IonosTheme::settingsTextSize(),
