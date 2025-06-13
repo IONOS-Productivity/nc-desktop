@@ -29,7 +29,6 @@ AbstractButton {
 
     signal showUserStatusSelector(int id)
 
-
     Accessible.role: Accessible.MenuItem
     Accessible.name: qsTr("Switch to account") + " " + model.name
 
@@ -70,6 +69,7 @@ AbstractButton {
                 text: name
                 elide: Text.ElideRight
                 font: root.font
+                color: Style.sesDarkBlue
             }
 
             RowLayout {
@@ -144,6 +144,8 @@ AbstractButton {
                     property bool isHovered: logInOutButton.hovered || logInOutButton.visualFocus
                     property bool isActive: logInOutButton.pressed
 
+                    palette.text: Style.sesDarkBlue
+
                     icon.source: Style.sesLogout
                     icon.color: Style.sesIconDarkColor
                     leftPadding: Style.sesMediumMargin
@@ -189,6 +191,8 @@ AbstractButton {
 
                     property bool isHovered: removeAccountButton.hovered || removeAccountButton.visualFocus
                     property bool isActive: removeAccountButton.pressed
+
+                    palette.text: Style.sesDarkBlue
 
                     id: removeAccountButton
                     icon.source: Style.sesDelete
