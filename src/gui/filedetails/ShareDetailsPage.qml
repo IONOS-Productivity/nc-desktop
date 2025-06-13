@@ -191,8 +191,7 @@ Page {
     padding: Style.standardSpacing * 2
 
     background: Rectangle {
-        color: palette.base
-        visible: root.backgroundsVisible
+        color: Style.sesWhite
     }
 
     header: ColumnLayout {

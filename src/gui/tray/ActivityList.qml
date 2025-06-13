@@ -20,6 +20,10 @@ ScrollView {
         scrollingToTop = true
     }
 
+    background: Rectangle {
+        color: Style.sesWhite
+    }
+
     signal openFile(string filePath)
     signal activityItemClicked(int index)
 
