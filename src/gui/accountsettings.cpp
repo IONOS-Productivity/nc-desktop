@@ -1849,6 +1849,10 @@ void AccountSettings::customizeStyle()
         )
     );
 
+    _ui->_folderList->setStyleSheet(
+        QStringLiteral("background: %1; ").arg(IonosTheme::white())
+    );
+
 #if defined(Q_OS_MAC)
     _ui->selectiveSyncLabel->setStyleSheet(QString("color: %1;").arg(IonosTheme::black()));
     _ui->horizontalLayout->setSpacing(16);
