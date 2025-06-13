@@ -73,8 +73,7 @@ Page {
     bottomPadding: intendedPadding
 
     background: Rectangle {
-        color: palette.window
-        visible: root.backgroundsVisible
+        color: Style.sesDarkBlue
     }
 
     header: ColumnLayout {
