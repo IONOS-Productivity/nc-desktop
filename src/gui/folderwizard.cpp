@@ -328,8 +328,8 @@ void FolderWizardRemotePath::slotAddRemoteFolder()
     dlg->findChild<QLabel*>()->setStyleSheet(
         IonosTheme::fontConfigurationCss(
             IonosTheme::settingsFont(),
-            IonosTheme::settingsBigTitleSize(),
-            IonosTheme::settingsTitleWeight600(),
+            IonosTheme::settingsTextSize(),
+            IonosTheme::settingsTextWeight(),
             IonosTheme::titleColor())
         );
 
@@ -759,7 +759,7 @@ void FolderWizardRemotePath::changeStyle()
         IonosTheme::titleColor()));
 
     _ui.folderTreeWidget->setStyleSheet(
-        QStringLiteral("QTreeWidget { background: %1; }").arg(IonosTheme::white())
+        _ui.folderTreeWidget->styleSheet() + QStringLiteral("QTreeWidget { background: %1; }").arg(IonosTheme::white())
     );
 
     _ui.refreshButton->setProperty("text", tr("Refresh"));
