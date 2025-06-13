@@ -102,26 +102,31 @@ namespace OCC{
             )
         );
 
-        _ui->necessaryDataLabel->setStyleSheet(QStringLiteral("QLabel { %1; margin-left: %2; margin-bottom: %3; }")
-            .arg(IonosTheme::fontConfigurationCss(
+        _ui->necessaryDataLabel->setStyleSheet(
+            QStringLiteral("QLabel { %1; margin-left: %2; margin-bottom: %3; }").arg(
+                IonosTheme::fontConfigurationCss(
                     IonosTheme::settingsFont(),
                     IonosTheme::settingsTextSize(),
                     IonosTheme::settingsTextWeight(),
                     IonosTheme::black()
                 ),
                 "16", 
-                IonosTheme::smallMargin()));
+                IonosTheme::smallMargin()
+            )
+        );
 
-        _ui->anonymousDataLabel->setStyleSheet(QStringLiteral("QLabel {%1; margin-left: %2; margin-bottom: %3; }")
-            .arg(IonosTheme::fontConfigurationCss(
+        _ui->anonymousDataLabel->setStyleSheet(
+            QStringLiteral("QLabel { %1; margin-left: %2; margin-bottom: %3; }").arg(
+                IonosTheme::fontConfigurationCss(
                     IonosTheme::settingsFont(),
                     IonosTheme::settingsTextSize(),
                     IonosTheme::settingsTextWeight(),
                     IonosTheme::black()
                 ),
                 "16", 
-                "48")
-            );
+                "48"
+            )
+        );
 
         _ui->buttonLayout->setAlignment(Qt::AlignCenter);
         _ui->buttonLayout->setSpacing(16);
