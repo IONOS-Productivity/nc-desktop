@@ -218,7 +218,7 @@ def run_script(script_name, input_file, output_file):
 
 def run_lupdate(ts_files, mode="default"):
     command = [
-        r"C:\Craft64\bin\lupdate.exe",
+        r"C:\CraftRoot\bin\lupdate.exe",
         "-locations", "none",
         "-no-ui-lines",
         "-no-sort",
@@ -231,7 +231,7 @@ def run_lupdate(ts_files, mode="default"):
     ]
     
     command_no_obs = [
-        r"C:\Craft64\bin\lupdate.exe",
+        r"C:\CraftRoot\bin\lupdate.exe",
         "-locations", "none",
         "-no-ui-lines",
         "-no-sort",
@@ -245,7 +245,7 @@ def run_lupdate(ts_files, mode="default"):
     ]
     
     command_location = [
-        r"C:\Craft64\bin\lupdate.exe",
+        r"C:\CraftRoot\bin\lupdate.exe",
         "-locations", "absolute",
         "-no-sort",
         "-no-obsolete",
