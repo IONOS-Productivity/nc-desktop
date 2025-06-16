@@ -752,11 +752,17 @@ void FolderWizardRemotePath::changeStyle()
         .arg(IonosTheme::buttonRadius())
         .arg(IonosTheme::menuBorderColor()));
 
-    _ui.folderTreeWidget->setStyleSheet(IonosTheme::fontConfigurationCss(
-        IonosTheme::settingsFont(),
-        IonosTheme::settingsTextSize(),
-        IonosTheme::settingsTextWeight(),
-        IonosTheme::titleColor()));
+    _ui.folderTreeWidget->setStyleSheet(
+        QStringLiteral(" %1; background: %2; ").arg(
+            IonosTheme::fontConfigurationCss(
+                IonosTheme::settingsFont(),
+                IonosTheme::settingsTextSize(),
+                IonosTheme::settingsTextWeight(),
+                IonosTheme::titleColor()
+            ),
+            IonosTheme::white()
+        )
+    );
 
     _ui.folderTreeWidget->setStyleSheet(
         _ui.folderTreeWidget->styleSheet() + QStringLiteral("QTreeWidget { background: %1; }").arg(IonosTheme::white())
@@ -859,6 +865,17 @@ void FolderWizardSelectiveSync::setupVirtualFilesCheckbox(){
     _virtualFilesHBox->addWidget(_virtualFilesCheckBoxLabel, 1);
 
     _virtualFilesHBox->setAlignment(_virtualFilesCheckBox, Qt::AlignVCenter);
+
+    _virtualFilesCheckBox->setStyleSheet(
+        QStringLiteral(" %1; ").arg(
+            IonosTheme::fontConfigurationCss(
+                IonosTheme::settingsFont(),
+                IonosTheme::settingsTextSize(),
+                IonosTheme::settingsTextWeight(),
+                IonosTheme::titleColor()
+            )
+        )
+    );
 }
 
 void FolderWizardSelectiveSync::virtualFilesCheckboxLabelClicked(){
