@@ -45,7 +45,9 @@ ApplicationWindow {
 
     font.family: Style.sesOpenSansRegular 
     font.pixelSize: Style.sesFontPixelSize 
-    font.weight: Style.sesFontBoldWeight 
+    font.weight: Style.sesFontBoldWeight
+    palette.base: Style.sesWhite
+    palette.windowText: Style.sesTrayFontColor
  
     // TODO: Rather than setting all these palette colours manually, 
     // create a custom style and do it for all components globally 

@@ -13,8 +13,12 @@ RowLayout {
 
     spacing: Style.trayHorizontalMargin
 
-    NC.SyncStatusSummary {
-        id: syncStatus
+    Rectangle{
+        color: Style.sesWhite
+
+        NC.SyncStatusSummary {
+            id: syncStatus
+        }
     }
 
     NCBusyIndicator {
