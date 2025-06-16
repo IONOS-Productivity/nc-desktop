@@ -1,6 +1,71 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TS version="2.1" language="it">
-<context><name /><message><source>Agree</source><translation>Consenti</translation></message><message><source>Back</source><translation>Indietro</translation></message><message><source>Necessary data</source><translation>Dati necessari</translation></message><message><source>Required to ensure that the software can be used as expected</source><translation>Necessario per garantire che il software possa essere utilizzato come previsto.</translation></message><message><source>Save Settings</source><translation>Salva le impostazioni</translation></message><message><source>Send anonymous use</source><translation>Invia l&apos;uso anonimo</translation></message><message><source>Settings</source><translation>Impostazioni</translation></message><message><source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;.</source><translation>Questa applicazione utilizza tecnologie di tracciamento. Facendo clic su Accetto, si accetta il trattamento dei propri dati anonimizzati. È possibile modificare le proprie scelte in qualsiasi momento tramite le impostazioni. &lt;br/&gt; &lt;br/&gt;Informazioni sul trattamento dei dati e altro ancora sono disponibili nella nostra &lt;a href=&apos;https://wl.hidrive.com/easy/0035&apos;&gt;politica sulla privacy&lt;/a&gt;.</translation></message><message><source>This helps us to optimize the software and to better identify system crashes and unexpected errors.</source><translation>Questo ci aiuta a ottimizzare il software e a identificare meglio i crash di sistema e gli errori imprevisti.</translation></message><message><source>We collect anonymized data to optimize our app. We use software solutions from various partners for this purpose. We want to give you full transparency and freedom of choice regarding the collection and processing of your anonymized usage. You can change your settings at any time under the menu item Data Protection.</source><translation>Raccogliamo dati anonimizzati per ottimizzare la nostra applicazione. A tale scopo utilizziamo soluzioni software di vari partner. Desideriamo offrirvi piena trasparenza e libertà di scelta in merito alla raccolta e all&apos;elaborazione dei vostri dati anonimizzati. Potete modificare le vostre impostazioni in qualsiasi momento alla voce di menu Protezione dei dati.</translation></message></context><context><name>BasicComboBox</name><message><source>Clear status message menu</source><translation> Cancella messaggio di stato</translation></message></context><context><name>CallNotificationDialog</name><message><source>Answer Talk call notification</source><translation>Notifica di risposta chiamata Talk</translation></message><message><source>Decline Talk call notification</source><translation>Notifica di rifiuto chiamata Talk</translation></message><message><source>Talk notification caller avatar</source><translation>Avatar chiamante notifica Talk</translation></message></context><context>
+<context>
+    <name />
+    <message>
+        <source>Agree</source>
+        <translation>Consenti</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Indietro</translation>
+    </message>
+    <message>
+        <source>Necessary data</source>
+        <translation>Dati necessari</translation>
+    </message>
+    <message>
+        <source>Required to ensure that the software can be used as expected</source>
+        <translation>Necessario per garantire che il software possa essere utilizzato come previsto.</translation>
+    </message>
+    <message>
+        <source>Save Settings</source>
+        <translation>Salva le impostazioni</translation>
+    </message>
+    <message>
+        <source>Send anonymous use</source>
+        <translation>Invia l&apos;uso anonimo</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Impostazioni</translation>
+    </message>
+    <message>
+        <source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;.</source>
+        <translation>Questa applicazione utilizza tecnologie di tracciamento. Facendo clic su Accetto, si accetta il trattamento dei propri dati anonimizzati. È possibile modificare le proprie scelte in qualsiasi momento tramite le impostazioni. &lt;br/&gt; &lt;br/&gt;Informazioni sul trattamento dei dati e altro ancora sono disponibili nella nostra &lt;a href=&apos;https://wl.hidrive.com/easy/0035&apos;&gt;politica sulla privacy&lt;/a&gt;.</translation>
+    </message>
+    <message>
+        <source>This helps us to optimize the software and to better identify system crashes and unexpected errors.</source>
+        <translation>Questo ci aiuta a ottimizzare il software e a identificare meglio i crash di sistema e gli errori imprevisti.</translation>
+    </message>
+    <message>
+        <source>We collect anonymized data to optimize our app. We use software solutions from various partners for this purpose. We want to give you full transparency and freedom of choice regarding the collection and processing of your anonymized usage. You can change your settings at any time under the menu item Data Protection.</source>
+        <translation>Raccogliamo dati anonimizzati per ottimizzare la nostra applicazione. A tale scopo utilizziamo soluzioni software di vari partner. Desideriamo offrirvi piena trasparenza e libertà di scelta in merito alla raccolta e all&apos;elaborazione dei vostri dati anonimizzati. Potete modificare le vostre impostazioni in qualsiasi momento alla voce di menu Protezione dei dati.</translation>
+    </message>
+</context>
+<context>
+    <name>BasicComboBox</name>
+    <message>
+        <source>Clear status message menu</source>
+        <translation> Cancella messaggio di stato</translation>
+    </message>
+</context>
+<context>
+    <name>CallNotificationDialog</name>
+    <message>
+        <source>Answer Talk call notification</source>
+        <translation>Notifica di risposta chiamata Talk</translation>
+    </message>
+    <message>
+        <source>Decline Talk call notification</source>
+        <translation>Notifica di rifiuto chiamata Talk</translation>
+    </message>
+    <message>
+        <source>Talk notification caller avatar</source>
+        <translation>Avatar chiamante notifica Talk</translation>
+    </message>
+</context>
+<context>
     <name>CloudProviderWrapper</name>
     <message>
         <source>%1 (%2, %3)</source>
@@ -67,7 +132,53 @@
         <translation type="unfinished">Sincronizzazione%1 di %2 (%3 rimasto)</translation>
     </message>
 </context>
-<context><name>ConflictDelegate</name><message><source>Local version</source><translation>Versione locale</translation></message><message><source>Server version</source><translation>Versione del server</translation></message></context><context><name>FileProviderFastEnumerationSettings</name><message><source>Fast sync will only sync changes in files and folders within folders that have been explored. This can significantly increase responsiveness on initial configuration of virtual files. However, it will cause redundant downloads of files moved to an unexplored folder.</source><translation>La sincronizzazione veloce sincronizzerà cambiamenti solo sui file e cartelle che sono stati esplorati. Questo migliorarerà sensibilmente la responsività, specie al primo avvio coi file virtuali. Per contro, causerà lo scaricamento ripetuto di file spostati verso una cartella inesplorata.</translation></message></context><context><name>FileProviderFileDelegate</name><message><source>Delete</source><translation>Cancella</translation></message></context><context><name>FileProviderSettings</name><message><source>Signal file provider domain</source><translation>Dominio del fornitore del file di segnale</translation></message></context><context><name>FileProviderStorageInfo</name><message><source>Evict local copies...</source><translation>Evita copie locali...</translation></message></context><context><name>FileProviderSyncStatus</name><message><source>All synced!</source><translation>Tutto sincronizzato!</translation></message></context><context>
+<context>
+    <name>ConflictDelegate</name>
+    <message>
+        <source>Local version</source>
+        <translation>Versione locale</translation>
+    </message>
+    <message>
+        <source>Server version</source>
+        <translation>Versione del server</translation>
+    </message>
+</context>
+<context>
+    <name>FileProviderFastEnumerationSettings</name>
+    <message>
+        <source>Fast sync will only sync changes in files and folders within folders that have been explored. This can significantly increase responsiveness on initial configuration of virtual files. However, it will cause redundant downloads of files moved to an unexplored folder.</source>
+        <translation>La sincronizzazione veloce sincronizzerà cambiamenti solo sui file e cartelle che sono stati esplorati. Questo migliorarerà sensibilmente la responsività, specie al primo avvio coi file virtuali. Per contro, causerà lo scaricamento ripetuto di file spostati verso una cartella inesplorata.</translation>
+    </message>
+</context>
+<context>
+    <name>FileProviderFileDelegate</name>
+    <message>
+        <source>Delete</source>
+        <translation>Cancella</translation>
+    </message>
+</context>
+<context>
+    <name>FileProviderSettings</name>
+    <message>
+        <source>Signal file provider domain</source>
+        <translation>Dominio del fornitore del file di segnale</translation>
+    </message>
+</context>
+<context>
+    <name>FileProviderStorageInfo</name>
+    <message>
+        <source>Evict local copies...</source>
+        <translation>Evita copie locali...</translation>
+    </message>
+</context>
+<context>
+    <name>FileProviderSyncStatus</name>
+    <message>
+        <source>All synced!</source>
+        <translation>Tutto sincronizzato!</translation>
+    </message>
+</context>
+<context>
     <name>FileSystem</name>
     <message>
         <source>Could not remove folder &quot;%1&quot;</source>
@@ -124,7 +235,7 @@
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aggiungi cartella di sincronizzazione</translation>
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
@@ -139,7 +250,7 @@
     <name>FolderWizardTargetPage</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aggiungi cartella di sincronizzazione</translation>
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
@@ -1139,7 +1250,7 @@ Attendi la nuova sincronizzazione, quindi cifrala.</translation>
     <name>OCC::DataProtectionPage</name>
     <message>
         <source>Agree</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Consenti</translation>
     </message>
     <message>
         <source>Form</source>
@@ -1151,14 +1262,14 @@ Attendi la nuova sincronizzazione, quindi cifrala.</translation>
     </message>
     <message>
         <source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Questa applicazione utilizza tecnologie di tracciamento. Facendo clic su Accetto, si accetta il trattamento dei propri dati anonimizzati. È possibile modificare le proprie scelte in qualsiasi momento tramite le impostazioni. &lt;br/&gt; &lt;br/&gt;Informazioni sul trattamento dei dati e altro ancora sono disponibili nella nostra &lt;a href=&apos;https://wl.hidrive.com/easy/0035&apos;&gt;politica sulla privacy&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
     <name>OCC::DataProtectionSettingsPage</name>
     <message>
         <source>Back</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Indietro</translation>
     </message>
     <message>
         <source>Form</source>
@@ -1166,27 +1277,27 @@ Attendi la nuova sincronizzazione, quindi cifrala.</translation>
     </message>
     <message>
         <source>Necessary data</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Dati necessari</translation>
     </message>
     <message>
         <source>Required to ensure that the software can be used as expected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Necessario per garantire che il software possa essere utilizzato come previsto.</translation>
     </message>
     <message>
         <source>Save Settings</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Salva le impostazioni</translation>
     </message>
     <message>
         <source>Send anonymous use</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Invia l&apos;uso anonimo</translation>
     </message>
     <message>
         <source>This helps us to optimize the software and to better identify system crashes and unexpected errors.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Questo ci aiuta a ottimizzare il software e a identificare meglio i crash di sistema e gli errori imprevisti.</translation>
     </message>
     <message>
         <source>We collect anonymized data to optimize our app. We use software solutions from various partners for this purpose. We want to give you full transparency and freedom of choice regarding the collection and processing of your anonymized usage. You can change your settings at any time under the menu item Data Protection.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Raccogliamo dati anonimizzati per ottimizzare la nostra applicazione. A tale scopo utilizziamo soluzioni software di vari partner. Desideriamo offrirvi piena trasparenza e libertà di scelta in merito alla raccolta e all&apos;elaborazione dei vostri dati anonimizzati. Potete modificare le vostre impostazioni in qualsiasi momento alla voce di menu Protezione dei dati.</translation>
     </message>
 </context>
 <context>
@@ -1856,7 +1967,7 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     <name>OCC::FolderStatusDelegate</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aggiungi cartella di sincronizzazione</translation>
     </message>
     <message>
         <source>File</source>
@@ -2025,7 +2136,7 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     <name>OCC::FolderWizardLocalPath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aggiungi cartella di sincronizzazione</translation>
     </message>
     <message>
         <source>Choose</source>
@@ -2041,7 +2152,7 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Selezionare una cartella sul disco rigido che deve essere collegata in modo permanente al %1. Tutti i file e le sottocartelle vengono caricati e sincronizzati automaticamente.</translation>
     </message>
     <message>
         <source>Select the source folder</source>
@@ -2049,14 +2160,14 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     </message>
     <message>
         <source>Step 1 of 3: Select local folder</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Passo 1 di 3: selezionare la cartella locale</translation>
     </message>
 </context>
 <context>
     <name>OCC::FolderWizardRemotePath</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aggiungi cartella di sincronizzazione</translation>
     </message>
     <message>
         <source>Authentication failed accessing %1</source>
@@ -2064,7 +2175,7 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Le due cartelle sono collegate in modo permanente e i rispettivi contenuti vengono sincronizzati e aggiornati automaticamente.</translation>
     </message>
     <message>
         <source>Choose this to sync the entire account</source>
@@ -2100,7 +2211,7 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     </message>
     <message>
         <source>Please now select or create a target folder in your %1 where the content should be uploaded and synchronized.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Selezionare o creare una cartella di destinazione nel proprio %1 in cui caricare e sincronizzare il contenuto.</translation>
     </message>
     <message>
         <source>Refresh</source>
@@ -2108,7 +2219,7 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     </message>
     <message>
         <source>Step 2 of 3: Directory in your %1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fase 2 di 3: directory nel vostro %1</translation>
     </message>
 </context>
 <context>
@@ -2119,11 +2230,11 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
     </message>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Aggiungi cartella di sincronizzazione</translation>
     </message>
     <message>
         <source>Step 3 of 3: Selektive Synchronisation</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Fase 3 di 3: sincronizzazione selettiva</translation>
     </message>
     <message>
         <source>Use virtual files instead of downloading content immediately %1</source>
@@ -2140,7 +2251,11 @@ Per utenti avanzati: questo problema potrebbe essere correlato a più file di da
 </context>
 <context>
     <name>OCC::GeneralSettings</name>
-    <message><source>&amp;Analysis data collection for needs-based design</source><translation>Analisi della raccolta dei dati per la progettazione basata sui usability</translation></message><message>
+    <message>
+        <source>&amp;Analysis data collection for needs-based design</source>
+        <translation>Analisi della raccolta dei dati per la progettazione basata sui usability</translation>
+    </message>
+    <message>
         <source>&amp;Automatically check for updates</source>
         <translation>Verific&amp;a automaticamente la presenza di aggiornamenti.</translation>
     </message>
@@ -2271,7 +2386,7 @@ Il downgrade delle versioni non è possibile immediatamente: passare da stabile 
     </message>
     <message>
         <source>Required to ensure that the software can be used as expected</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Necessario per garantire che il software possa essere utilizzato come previsto.</translation>
     </message>
     <message>
         <source>S&amp;how crash reporter</source>
@@ -2279,7 +2394,7 @@ Il downgrade delle versioni non è possibile immediatamente: passare da stabile 
     </message>
     <message>
         <source>Send anonymous use</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Invia l&apos;uso anonimo</translation>
     </message>
     <message>
         <source>Server notifications that require attention.</source>
@@ -2312,7 +2427,7 @@ Il downgrade delle versioni non è possibile immediatamente: passare da stabile 
     </message>
     <message>
         <source>This helps us to optimize the software and to better identify system crashes and unexpected errors.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Questo ci aiuta a ottimizzare il software e a identificare meglio i crash di sistema e gli errori imprevisti.</translation>
     </message>
     <message>
         <source>Update channel</source>
@@ -4480,7 +4595,11 @@ Il server ha risposto con errore: %2</translation>
 </context>
 <context>
     <name>OCC::User</name>
-    <message><source>%1 notifications</source><translation>%1 Notifiche</translation></message><message numerus="yes">
+    <message>
+        <source>%1 notifications</source>
+        <translation>%1 Notifiche</translation>
+    </message>
+    <message numerus="yes">
         <source>%n notification(s)</source>
         <translation>
             <numerusform>%n notifica(e)</numerusform>
@@ -4896,7 +5015,11 @@ Il server ha risposto con errore: %2</translation>
         <source>Virtual file created</source>
         <translation>File virtuale creato</translation>
     </message>
-<message><source>updating local virtual files metadata</source><translation>Aggiornamento dei metadati dei file virtuali locali</translation></message></context>
+    <message>
+        <source>updating local virtual files metadata</source>
+        <translation>Aggiornamento dei metadati dei file virtuali locali</translation>
+    </message>
+</context>
 <context>
     <name>QObject</name>
     <message>
@@ -4990,7 +5113,37 @@ Il server ha risposto con errore: %2</translation>
         <translation>adesso</translation>
     </message>
 </context>
-<context><name>SesTrayHeader</name><message><source>Open Nextcloud in browser</source><translation>Apri HiDrive Next nel browser</translation></message><message><source>Website</source><translation>Homepage</translation></message></context><context><name>ShareDetailsPage</name><message><source>Copy share link</source><translation>Copia il collegamento di condivisione</translation></message><message><source>Custom Permissions</source><translation>Permessi definiti dall&apos;utente</translation></message><message><source>Enter the note to recipient</source><translation>Inserire una nota per il destinatario</translation></message><message><source>Share link copied!</source><translation>Collegamento del link di condivisione copiato!</translation></message></context><context>
+<context>
+    <name>SesTrayHeader</name>
+    <message>
+        <source>Open Nextcloud in browser</source>
+        <translation>Apri HiDrive Next nel browser</translation>
+    </message>
+    <message>
+        <source>Website</source>
+        <translation>Homepage</translation>
+    </message>
+</context>
+<context>
+    <name>ShareDetailsPage</name>
+    <message>
+        <source>Copy share link</source>
+        <translation>Copia il collegamento di condivisione</translation>
+    </message>
+    <message>
+        <source>Custom Permissions</source>
+        <translation>Permessi definiti dall&apos;utente</translation>
+    </message>
+    <message>
+        <source>Enter the note to recipient</source>
+        <translation>Inserire una nota per il destinatario</translation>
+    </message>
+    <message>
+        <source>Share link copied!</source>
+        <translation>Collegamento del link di condivisione copiato!</translation>
+    </message>
+</context>
+<context>
     <name>SyncJournalDb</name>
     <message>
         <source>Failed to connect database.</source>
@@ -5055,7 +5208,14 @@ Il server ha risposto con errore: %2</translation>
         <translation>In attesa di iniziare la sincronizzazione</translation>
     </message>
 </context>
-<context><name>TrayFoldersMenuButton</name><message><source>Files</source><translation>File</translation></message></context><context>
+<context>
+    <name>TrayFoldersMenuButton</name>
+    <message>
+        <source>Files</source>
+        <translation>File</translation>
+    </message>
+</context>
+<context>
     <name>Utility</name>
     <message>
         <source>%1 %2</source>
