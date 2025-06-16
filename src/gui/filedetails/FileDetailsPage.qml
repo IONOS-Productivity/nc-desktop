@@ -48,6 +48,7 @@ Page {
     font.family: Style.sesOpenSansRegular
     font.pixelSize: Style.sesFontPixelSize
     font.weight: Style.sesFontNormalWeight
+    palette.windowText: Style.sesTrayFontColor
     
         Connections {
         target: Systray
@@ -73,7 +74,7 @@ Page {
     bottomPadding: intendedPadding
 
     background: Rectangle {
-        color: Style.sesDarkBlue
+        color: Style.sesWhite
     }
 
     header: ColumnLayout {
