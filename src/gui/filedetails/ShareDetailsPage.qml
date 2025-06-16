@@ -48,6 +48,7 @@ Page {
     font.family: Style.sesOpenSansRegular
     font.pixelSize: Style.sesFontPixelSize
     font.weight: Style.sesFontNormalWeight
+    palette.windowText: Style.sesTrayFontColor
 
     property bool backgroundsVisible: true
     property color accentColor: Style.ncBlue
