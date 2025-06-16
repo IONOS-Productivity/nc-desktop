@@ -1850,7 +1850,15 @@ void AccountSettings::customizeStyle()
     );
 
     _ui->_folderList->setStyleSheet(
-        QStringLiteral("background: %1; ").arg(IonosTheme::white())
+        QStringLiteral("background: %1; %2;").arg(
+            IonosTheme::white(),
+            IonosTheme::fontConfigurationCss(
+                IonosTheme::settingsFont(),
+                IonosTheme::settingsTextSize(),
+                IonosTheme::settingsTextWeight(),
+                IonosTheme::titleColor()
+            )
+        )
     );
 
 #if defined(Q_OS_MAC)
