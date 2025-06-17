@@ -866,8 +866,8 @@ void FolderWizardSelectiveSync::setupVirtualFilesCheckbox(){
 
     _virtualFilesHBox->setAlignment(_virtualFilesCheckBox, Qt::AlignVCenter);
 
-    _virtualFilesCheckBox->setStyleSheet(
-        QStringLiteral(" %1; ").arg(
+    _virtualFilesCheckBoxLabel->setStyleSheet(
+        QStringLiteral("QLabel { %1; }").arg(
             IonosTheme::fontConfigurationCss(
                 IonosTheme::settingsFont(),
                 IonosTheme::settingsTextSize(),
