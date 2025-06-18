@@ -29,8 +29,6 @@ private:
 
     QScopedPointer<Ui::DataProtectionSettingsPage> _ui;
 
-    bool _anonymousUseState;
-
     OwncloudWizard *_ocWizard;
 
     WizardCommon::Pages _nextPage = WizardCommon::Page_AdvancedSetup;
