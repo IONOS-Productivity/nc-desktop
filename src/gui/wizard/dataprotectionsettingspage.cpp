@@ -12,7 +12,6 @@ namespace OCC{
         : QWizardPage()
         , _ui(new Ui::DataProtectionSettingsPage)
         , _ocWizard(ocWizard)
-        , _anonymousUseState(false)
     {
         setupUi();
     }
@@ -27,7 +26,7 @@ namespace OCC{
 
     void DataProtectionSettingsPage::initializePage()
     {
-        _anonymousUseState = _ui->anonymousDataCheckBox->isChecked();
+        _ui->anonymousDataCheckBox->setChecked(true);
         customizeStyle();
     }
 
@@ -36,14 +35,12 @@ namespace OCC{
         ConfigFile cfgFile;
 
         connect(_ui->backButton, &QPushButton::clicked, this, [this, &cfgFile]() {
-            _ui->anonymousDataCheckBox->setChecked(_anonymousUseState);
-            cfgFile.setSendData(_anonymousUseState);
+            _ui->anonymousDataCheckBox->setChecked(true);
             _ocWizard->back();
         });
 
         connect(_ui->saveButton, &QPushButton::clicked, this, [this, &cfgFile](){
-            _anonymousUseState = _ui->anonymousDataCheckBox->isChecked();
-            cfgFile.setSendData(_anonymousUseState);
+            cfgFile.setSendData(_ui->anonymousDataCheckBox->isChecked());
             _ocWizard->next();
         });
 
