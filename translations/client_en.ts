@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TS version="2.1" language="en_US">
-<context>
+<context><name /><message><source>Agree</source><translation>Agree</translation></message><message><source>Back</source><translation>Back</translation></message><message><source>Necessary data</source><translation>Necessary data</translation></message><message><source>Required to ensure that the software can be used as expected</source><translation>Required to ensure that the software can be used as expected</translation></message><message><source>Save Settings</source><translation>Save Settings</translation></message><message><source>Send anonymous use</source><translation>Send anonymous use</translation></message><message><source>Settings</source><translation>Settings</translation></message><message><source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;.</source><translation>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;.</translation></message><message><source>This helps us to optimize the software and to better identify system crashes and unexpected errors.</source><translation>This helps us to optimize the software and to better identify system crashes and unexpected errors.</translation></message><message><source>We collect anonymized data to optimize our app. We use software solutions from various partners for this purpose. We want to give you full transparency and freedom of choice regarding the collection and processing of your anonymized usage. You can change your settings at any time under the menu item Data Protection.</source><translation>We collect anonymized data to optimize our app. We use software solutions from various partners for this purpose. We want to give you full transparency and freedom of choice regarding the collection and processing of your anonymized usage. You can change your settings at any time under the menu item Data Protection.</translation></message></context><context><name>BasicComboBox</name><message><source>Clear status message menu</source><translation>Delete status message menu</translation></message></context><context><name>CallNotificationDialog</name><message><source>Answer Talk call notification</source><translation>Answer Talk call notification</translation></message><message><source>Decline Talk call notification</source><translation>Decline Talk call notification</translation></message><message><source>Talk notification caller avatar</source><translation>Talk notification caller avatar</translation></message></context><context>
     <name>CloudProviderWrapper</name>
     <message>
         <source>%1 (%2, %3)</source>
@@ -32,7 +32,7 @@
     </message>
     <message>
         <source>Quit sync client</source>
-        <translation type="unfinished" />
+        <translation>Quit sync client</translation>
     </message>
     <message>
         <source>Recently changed</source>
@@ -67,7 +67,7 @@
         <translation type="unfinished" />
     </message>
 </context>
-<context>
+<context><name>ConflictDelegate</name><message><source>Local version</source><translation>Local version</translation></message><message><source>Server version</source><translation>Server version</translation></message></context><context><name>FileProviderFastEnumerationSettings</name><message><source>Fast sync will only sync changes in files and folders within folders that have been explored. This can significantly increase responsiveness on initial configuration of virtual files. However, it will cause redundant downloads of files moved to an unexplored folder.</source><translation>Fast sync will only sync changes in files and folders within folders that have been explored. This can significantly increase responsiveness on initial configuration of virtual files. However, it will cause redundant downloads of files moved to an unexplored folder.</translation></message></context><context><name>FileProviderFileDelegate</name><message><source>Delete</source><translation>Delete</translation></message></context><context><name>FileProviderSettings</name><message><source>Signal file provider domain</source><translation>Signal file provider domain</translation></message></context><context><name>FileProviderStorageInfo</name><message><source>Evict local copies...</source><translation>Evict local copies...</translation></message></context><context><name>FileProviderSyncStatus</name><message><source>All synced!</source><translation>All synced!</translation></message></context><context>
     <name>FileSystem</name>
     <message>
         <source>Could not remove folder &quot;%1&quot;</source>
@@ -109,18 +109,18 @@
     <name>FolderWizardSelectiveSync</name>
     <message>
         <source>Add Folder Sync</source>
-        <translation type="unfinished" />
+        <translation>Add Folder Sync</translation>
     </message>
     <message>
         <source>Step 3 of 3: Selektive Synchronisation</source>
-        <translation type="unfinished" />
+        <translation>Step 3 of 3: Selective Synchronisation</translation>
     </message>
 </context>
 <context>
     <name>FolderWizardSourcePage</name>
     <message>
         <source>&amp;Choose</source>
-        <translation type="unfinished" />
+        <translation>&amp;Choose</translation>
     </message>
     <message>
         <source>Add Folder Sync</source>
@@ -128,11 +128,11 @@
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
-        <translation type="unfinished" />
+        <translation>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized.</translation>
     </message>
     <message>
         <source>Step 1 of 3: Select local folder</source>
-        <translation type="unfinished" />
+        <translation>Step 1 of 3: Select local folder</translation>
     </message>
 </context>
 <context>
@@ -143,11 +143,11 @@
     </message>
     <message>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
-        <translation type="unfinished" />
+        <translation>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</translation>
     </message>
     <message>
         <source>Create folder</source>
-        <translation type="unfinished" />
+        <translation>Create folder</translation>
     </message>
     <message>
         <source>Folders</source>
@@ -155,7 +155,7 @@
     </message>
     <message>
         <source>Please now select or create a target folder in your %1 where the content should be uploaded and synchronized.</source>
-        <translation type="unfinished" />
+        <translation>Please now select or create a target folder in your %1 where the content should be uploaded and synchronized.</translation>
     </message>
     <message>
         <source>Refresh</source>
@@ -163,7 +163,7 @@
     </message>
     <message>
         <source>Step 2 of 3: Directory in your %1</source>
-        <translation type="unfinished" />
+        <translation>Step 2 of 3: Directory in your %1</translation>
     </message>
 </context>
 <context>
@@ -219,7 +219,8 @@
     <message>
         <source>%1 accounts were detected from a legacy desktop client.
 Should the accounts be imported?</source>
-        <translation type="unfinished" />
+        <translation>%1 accounts were detected from a legacy desktop client.
+Should the accounts be imported?</translation>
     </message>
     <message>
         <source>1 account was detected from a legacy desktop client.
@@ -247,7 +248,7 @@ Should the account be imported?</source>
     <name>OCC::AccountSettings</name>
     <message>
         <source>%1 (%3%) of %2 in use. Some folders, including network mounted or shared folders, might have different limits.</source>
-        <translation type="unfinished" />
+        <translation>%1 (%3%) of %2 in use. Some folders, including network mounted or shared folders, might have different limits.</translation>
     </message>
     <message>
         <source>%1 as %2</source>
@@ -404,7 +405,7 @@ Would you like to set up end-to-end encryption?</source>
     </message>
     <message>
         <source>Expand Memory</source>
-        <translation type="unfinished" />
+        <translation>Expand Memory</translation>
     </message>
     <message>
         <source>Folder creation failed</source>
@@ -412,7 +413,7 @@ Would you like to set up end-to-end encryption?</source>
     </message>
     <message>
         <source>Force sync now</source>
-        <translation type="unfinished" />
+        <translation>Force sync now</translation>
     </message>
     <message>
         <source>Migrate certificate to a new one</source>
@@ -488,7 +489,7 @@ Would you like to set up end-to-end encryption?</source>
     </message>
     <message>
         <source>Storage space %1% occupied</source>
-        <translation type="unfinished" />
+        <translation>Storage space %1% occupied</translation>
     </message>
     <message>
         <source>Storage space: …</source>
@@ -528,15 +529,15 @@ Would you like to set up end-to-end encryption?</source>
     </message>
     <message>
         <source>There are folders that were not synchronized because they are external storages:</source>
-        <translation type="unfinished" />
+        <translation>There are folders that were not synchronised because they are external storages:</translation>
     </message>
     <message>
         <source>There are folders that were not synchronized because they are too big or external storages:</source>
-        <translation type="unfinished" />
+        <translation>There are folders that were not synchronised because they are too big or external storages:</translation>
     </message>
     <message>
         <source>There are folders that were not synchronized because they are too big:</source>
-        <translation type="unfinished" />
+        <translation>There are folders that were not synchronised because they are too big:</translation>
     </message>
     <message>
         <source>This account supports end-to-end encryption</source>
@@ -553,11 +554,12 @@ This action will abort any currently running synchronization.</source>
     <message>
         <source>This will encrypt your folder and all files within it. These files will no longer be accessible without your encryption mnemonic key. 
 &lt;b&gt;This process is not reversible. Are you sure you want to proceed?&lt;/b&gt;</source>
-        <translation type="unfinished" />
+        <translation>This will encrypt your folder and all files within it. These files will no longer be accessible without your encryption mnemonic key.
+&lt;b&gt;This process is not reversible. Are you sure you want to proceed?&lt;/b&gt;</translation>
     </message>
     <message>
         <source>To protect your Cryptographic Identity, we encrypt it with a mnemonic of 12 dictionary words. Please note these down and keep them safe. They will be needed to add other devices to your account (like your mobile phone or laptop).</source>
-        <translation type="unfinished" />
+        <translation>To protect your Cryptographic Identity, we encrypt it with a mnemonic of 12 dictionary words. Please note these down and keep them safe. They will be needed to add other devices to your account (like your mobile phone or laptop).</translation>
     </message>
     <message>
         <source>Unable to connect to %1.</source>
@@ -590,7 +592,7 @@ Wait for the new sync, then encrypt it.</source>
     </message>
     <message>
         <source>https://wl.hidrive.com/easy/0057</source>
-        <translation type="unfinished" />
+        <translation>https://wl.hidrive.com/easy/0077</translation>
     </message>
 </context>
 <context>
@@ -906,7 +908,7 @@ Wait for the new sync, then encrypt it.</source>
     </message>
     <message>
         <source>Existing file</source>
-        <translation type="unfinished" />
+        <translation>Existing file</translation>
     </message>
     <message>
         <source>Filename contains illegal characters: %1</source>
@@ -950,7 +952,7 @@ Wait for the new sync, then encrypt it.</source>
     </message>
     <message>
         <source>The file could not be synced because it generates a case clash conflict with an existing file on this system.</source>
-        <translation type="unfinished" />
+        <translation>The file could not be synced because it generates a case clash conflict with an existing file on this system.</translation>
     </message>
     <message>
         <source>Use invalid name</source>
@@ -1192,11 +1194,11 @@ Wait for the new sync, then encrypt it.</source>
     <name>OCC::DiscoverySingleDirectoryJob</name>
     <message>
         <source>Encrypted metadata setup error!</source>
-        <translation type="unfinished" />
+        <translation>Encrypted metadata setup error!</translation>
     </message>
     <message>
         <source>Encrypted metadata setup error: initial signature from server is empty.</source>
-        <translation type="unfinished" />
+        <translation>Encrypted metadata setup error: initial signature from server is empty.</translation>
     </message>
     <message>
         <source>Server error: PROPFIND reply is not XML formatted!</source>
@@ -1460,7 +1462,7 @@ This can be an issue with your OpenSSL libraries.</source>
     </message>
     <message>
         <source>Open Browser</source>
-        <translation type="unfinished" />
+        <translation>Open Browser</translation>
     </message>
     <message>
         <source>Polling for authorization</source>
@@ -1579,7 +1581,7 @@ This can be an issue with your OpenSSL libraries.</source>
     </message>
     <message>
         <source>A folder from an external storage has been added.</source>
-        <translation type="unfinished" />
+        <translation>A folder from an external storage has been added.</translation>
     </message>
     <message>
         <source>A folder has surpassed the set folder size limit of %1MB: %2.
@@ -1590,17 +1592,21 @@ This can be an issue with your OpenSSL libraries.</source>
         <source>A large number of files in the server have been deleted.
 Please confirm if you&apos;d like to proceed with these deletions.
 Alternatively, you can restore all deleted files by uploading from &apos;%1&apos; folder to the server.</source>
-        <translation type="unfinished" />
+        <translation>Eine große Anzahl von Dateien wurde auf dem Server gelöscht.
+Bitte bestätigen Sie, ob Sie mit diesen Löschungen fortfahren möchten.
+Alternativ können Sie alle gelöschten Dateien wiederherstellen, indem Sie sie aus dem Ordner &quot;%1&quot; auf den Server hochladen.</translation>
     </message>
     <message>
         <source>A large number of files in your local &apos;%1&apos; folder have been deleted.
 Please confirm if you&apos;d like to proceed with these deletions.
 Alternatively, you can restore all deleted files by downloading them from the server.</source>
-        <translation type="unfinished" />
+        <translation>Eine große Anzahl von Dateien in Ihrem lokalen Ordner &quot;%1&quot; wurde gelöscht.
+Bitte bestätigen Sie, ob Sie mit diesen Löschungen fortfahren möchten.
+Alternativ können Sie alle gelöschten Dateien wiederherstellen, indem Sie sie vom Server herunterladen.</translation>
     </message>
     <message>
         <source>A new folder larger than %1 MB has been added: %2.</source>
-        <translation type="unfinished" />
+        <translation>A new folder larger than %1 MB has been added: %2.</translation>
     </message>
     <message>
         <source>Changes in synchronized folders could not be tracked reliably.
@@ -1636,19 +1642,19 @@ This means that the synchronization client might not upload local changes immedi
     </message>
     <message>
         <source>Proceed with Deletion</source>
-        <translation type="unfinished" />
+        <translation>Proceed with deletion</translation>
     </message>
     <message>
         <source>Remove all files?</source>
-        <translation type="unfinished" />
+        <translation>Remove all files?</translation>
     </message>
     <message>
         <source>Restore Files from Server</source>
-        <translation type="unfinished" />
+        <translation>Restore files from server</translation>
     </message>
     <message>
         <source>Restore Files to Server</source>
-        <translation type="unfinished" />
+        <translation>Restore files to server</translation>
     </message>
     <message>
         <source>Stop syncing</source>
@@ -1683,7 +1689,7 @@ This means that the synchronization client might not upload local changes immedi
     <name>OCC::FolderCreationDialog</name>
     <message>
         <source>%1 Create new folder</source>
-        <translation type="unfinished" />
+        <translation>%1 Create new folder</translation>
     </message>
     <message>
         <source>Could not create a folder! Check your write permissions.</source>
@@ -1714,11 +1720,11 @@ This means that the synchronization client might not upload local changes immedi
     </message>
     <message>
         <source>(backup %1)</source>
-        <translation type="unfinished" />
+        <translation>(backup %1)</translation>
     </message>
     <message>
         <source>(backup)</source>
-        <translation type="unfinished" />
+        <translation>(backup)</translation>
     </message>
     <message>
         <source>An old sync journal &quot;%1&quot; was found, but could not be removed. Please make sure that no application is currently using it.</source>
@@ -1838,7 +1844,7 @@ For advanced users: this issue might be related to multiple sync database files 
     </message>
     <message>
         <source>Synchronize any other local folder with your %1</source>
-        <translation type="unfinished" />
+        <translation>Synchronize any other local folder with your %1</translation>
     </message>
 </context>
 <context>
@@ -2003,7 +2009,7 @@ For advanced users: this issue might be related to multiple sync database files 
     </message>
     <message>
         <source>Choose</source>
-        <translation type="unfinished" />
+        <translation>Choose</translation>
     </message>
     <message>
         <source>Click to select a local folder to sync.</source>
@@ -2054,7 +2060,7 @@ For advanced users: this issue might be related to multiple sync database files 
     </message>
     <message>
         <source>Enter the name of the new folder to be created below &quot;%1&quot;:</source>
-        <translation type="unfinished" />
+        <translation>Enter the name of the new folder to be created below &quot;%1&quot;:</translation>
     </message>
     <message>
         <source>Failed to create the folder on %1. Please check manually.</source>
@@ -2101,7 +2107,7 @@ For advanced users: this issue might be related to multiple sync database files 
     </message>
     <message>
         <source>Use virtual files instead of downloading content immediately %1</source>
-        <translation type="unfinished" />
+        <translation>Use virtual files instead of downloading content immediately %1</translation>
     </message>
     <message>
         <source>Virtual files are not supported at the selected location</source>
@@ -2114,7 +2120,7 @@ For advanced users: this issue might be related to multiple sync database files 
 </context>
 <context>
     <name>OCC::GeneralSettings</name>
-    <message>
+    <message><source>&amp;Analysis data collection for needs-based design</source><translation>&amp;Analysis data collection for needs-based design</translation></message><message>
         <source>&amp;Automatically check for updates</source>
         <translation type="unfinished" />
     </message>
@@ -2151,15 +2157,15 @@ Downgrading versions is not possible immediately: changing from stable to enterp
     </message>
     <message>
         <source>Ask for confirmation before synchronizing external storages</source>
-        <translation type="unfinished" />
+        <translation>Ask for confirmation before synchronizing external storages</translation>
     </message>
     <message>
         <source>Ask for confirmation before synchronizing new folders larger than</source>
-        <translation type="unfinished" />
+        <translation>Ask for confirmation before synchronizing new folders larger than</translation>
     </message>
     <message>
         <source>Automatically disable synchronisation of folders that overcome limit</source>
-        <translation type="unfinished" />
+        <translation>Automatically disable synchronisation of folders that overcome limit</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -2183,7 +2189,7 @@ Downgrading versions is not possible immediately: changing from stable to enterp
     </message>
     <message>
         <source>Data Protection</source>
-        <translation type="unfinished" />
+        <translation>Data Protection</translation>
     </message>
     <message>
         <source>Debug Archive Created</source>
@@ -2220,7 +2226,7 @@ Downgrading versions is not possible immediately: changing from stable to enterp
     </message>
     <message>
         <source>More Information</source>
-        <translation type="unfinished" />
+        <translation>More Information</translation>
     </message>
     <message>
         <source>Move removed files to trash</source>
@@ -2232,11 +2238,11 @@ Downgrading versions is not possible immediately: changing from stable to enterp
     </message>
     <message>
         <source>Open Source Software</source>
-        <translation type="unfinished" />
+        <translation>Open Source Software</translation>
     </message>
     <message>
         <source>Privacy Policy</source>
-        <translation type="unfinished" />
+        <translation>Privacy Policy</translation>
     </message>
     <message>
         <source>Required to ensure that the software can be used as expected</source>
@@ -2268,7 +2274,7 @@ Downgrading versions is not possible immediately: changing from stable to enterp
     </message>
     <message>
         <source>Show sync folders in &amp;Explorer&apos;s navigation pane</source>
-        <translation type="unfinished" />
+        <translation>Show sync folders in &amp;Explorer&apos;s navigation pane</translation>
     </message>
     <message>
         <source>The channel determines which upgrades will be offered to install:
@@ -2287,7 +2293,7 @@ Downgrading versions is not possible immediately: changing from stable to enterp
     </message>
     <message>
         <source>Updates</source>
-        <translation type="unfinished" />
+        <translation>Updates</translation>
     </message>
     <message>
         <source>Usage Documentation</source>
@@ -2319,19 +2325,19 @@ Downgrading versions is not possible immediately: changing from stable to enterp
     </message>
     <message>
         <source>https://wl.hidrive.com/easy/0004</source>
-        <translation type="unfinished" />
+        <translation>https://wl.hidrive.com/easy/0004</translation>
     </message>
     <message>
         <source>https://wl.hidrive.com/easy/0005</source>
-        <translation type="unfinished" />
+        <translation>https://wl.hidrive.com/easy/0005</translation>
     </message>
     <message>
         <source>https://wl.hidrive.com/easy/0006</source>
-        <translation type="unfinished" />
+        <translation>https://wl.hidrive.com/easy/0006</translation>
     </message>
     <message>
         <source>https://wl.hidrive.com/easy/0007</source>
-        <translation type="unfinished" />
+        <translation>https://wl.hidrive.com/easy/0007</translation>
     </message>
     <message>
         <source>stable</source>
@@ -2432,7 +2438,7 @@ Downgrading versions is not possible immediately: changing from stable to enterp
     </message>
     <message>
         <source>Add a new ignore pattern:</source>
-        <translation type="unfinished" />
+        <translation>Add a new ignore pattern:</translation>
     </message>
     <message>
         <source>Allow Deletion</source>
@@ -2450,11 +2456,13 @@ Downgrading versions is not possible immediately: changing from stable to enterp
         <source>Files or folders matching a pattern will not be synchronized.
 
 Items where deletion is allowed will be deleted if they prevent a directory from being removed. This is useful for meta data.</source>
-        <translation type="unfinished" />
+        <translation>Files or folders matching a pattern will not be synchronized.
+
+Items where deletion is allowed will be deleted if they prevent a directory from being removed. This is useful for meta data.</translation>
     </message>
     <message>
         <source>Ignore Pattern</source>
-        <translation type="unfinished" />
+        <translation>Ignore Pattern</translation>
     </message>
     <message>
         <source>Pattern</source>
@@ -2695,7 +2703,7 @@ Note that using any logging command line options will override this setting.</so
     </message>
     <message>
         <source>No proxy</source>
-        <translation type="unfinished" />
+        <translation>No proxy</translation>
     </message>
     <message>
         <source>Note: proxy settings have no effects for accounts on localhost</source>
@@ -3474,7 +3482,7 @@ This is a new, experimental mode. If you decide to use it, please report any iss
     <name>OCC::PropagateLocalMkdir</name>
     <message>
         <source>Could not create folder %1</source>
-        <translation type="unfinished" />
+        <translation>Could not create folder %1</translation>
     </message>
     <message>
         <source>Error updating metadata: %1</source>
@@ -3548,7 +3556,7 @@ This is a new, experimental mode. If you decide to use it, please report any iss
     </message>
     <message>
         <source>Folder %1 cannot be renamed because of a local file or folder name clash!</source>
-        <translation type="unfinished" />
+        <translation>Folder %1 cannot be renamed because of a local file or folder name clash!</translation>
     </message>
     <message>
         <source>The file %1 is currently in use</source>
@@ -3671,7 +3679,7 @@ This is a new, experimental mode. If you decide to use it, please report any iss
     </message>
     <message>
         <source>Upload of %1 exceeds the quota for the folder</source>
-        <translation type="unfinished" />
+        <translation>Upload of %1 exceeds the quota for the folder</translation>
     </message>
 </context>
 <context>
@@ -3792,7 +3800,7 @@ This is a new, experimental mode. If you decide to use it, please report any iss
     </message>
     <message>
         <source>Success</source>
-        <translation type="unfinished" />
+        <translation>Success</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -3820,7 +3828,7 @@ This is a new, experimental mode. If you decide to use it, please report any iss
     </message>
     <message>
         <source>New account</source>
-        <translation type="unfinished" />
+        <translation>New Account</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -4110,11 +4118,11 @@ Server replied with error: %2</source>
     </message>
     <message>
         <source>This connection is NOT secure as it is not encrypted.</source>
-        <translation type="unfinished" />
+        <translation>This connection is NOT secure as it is not encrypted.</translation>
     </message>
     <message>
         <source>This connection is encrypted using %1 bit %2.</source>
-        <translation type="unfinished" />
+        <translation>This connection is encrypted using %1 bit %2.</translation>
     </message>
 </context>
 <context>
@@ -4378,7 +4386,7 @@ Server replied with error: %2</source>
     </message>
     <message>
         <source>easy/0118</source>
-        <translation type="unfinished" />
+        <translation>easy/0108</translation>
     </message>
 </context>
 <context>
@@ -4404,11 +4412,11 @@ Server replied with error: %2</source>
     <name>OCC::UpdateE2eeFolderMetadataJob</name>
     <message>
         <source>Failed to finalize item.</source>
-        <translation type="unfinished" />
+        <translation>Failed to finalize item.</translation>
     </message>
     <message>
         <source>Failed to unlock encrypted folder.</source>
-        <translation type="unfinished" />
+        <translation>Failed to unlock encrypted folder.</translation>
     </message>
     <message>
         <source>Failed to update folder metadata.</source>
@@ -4419,7 +4427,7 @@ Server replied with error: %2</source>
     <name>OCC::UpdateE2eeFolderUsersMetadataJob</name>
     <message>
         <source>Could not add or remove user %1 to access folder %2</source>
-        <translation type="unfinished" />
+        <translation>Could not add or remove user %1 to access folder %2</translation>
     </message>
     <message>
         <source>Could not fetch public key for user %1</source>
@@ -4440,7 +4448,7 @@ Server replied with error: %2</source>
 </context>
 <context>
     <name>OCC::User</name>
-    <message numerus="yes">
+    <message><source>%1 notifications</source><translation>%1 notifications</translation></message><message numerus="yes">
         <source>%n notification(s)</source>
         <translation type="unfinished">
             <numerusform />
@@ -4654,7 +4662,7 @@ Server replied with error: %2</source>
     <name>OCC::WebFlowCredentials</name>
     <message>
         <source>&lt;b&gt;You have been logged out of your account %1 at %2. Please login again.&lt;/b&gt;</source>
-        <translation type="unfinished" />
+        <translation>&lt;b&gt;You have been logged out of your account %1 at %2. Please login again.&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -4688,7 +4696,7 @@ Server replied with error: %2</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished" />
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Ask before syncing folders larger than</source>
@@ -4830,7 +4838,7 @@ Server replied with error: %2</source>
     </message>
     <message>
         <source>Updated local virtual files metadata</source>
-        <translation type="unfinished" />
+        <translation>Updated local virtual files metadata</translation>
     </message>
     <message>
         <source>Updating end-to-end encryption metadata</source>
@@ -4856,7 +4864,7 @@ Server replied with error: %2</source>
         <source>Virtual file created</source>
         <translation type="unfinished" />
     </message>
-</context>
+<message><source>updating local virtual files metadata</source><translation>Updating local virtual files metadata</translation></message></context>
 <context>
     <name>QObject</name>
     <message>
@@ -4895,7 +4903,7 @@ Server replied with error: %2</source>
     </message>
     <message>
         <source>Could not create debug archive in selected location!</source>
-        <translation type="unfinished" />
+        <translation>Could not create debug archive in selected location!</translation>
     </message>
     <message>
         <source>Error deleting the file</source>
@@ -4903,7 +4911,7 @@ Server replied with error: %2</source>
     </message>
     <message>
         <source>Failed to create debug archive</source>
-        <translation type="unfinished" />
+        <translation>Failed to create debug archive</translation>
     </message>
     <message>
         <source>New folder</source>
@@ -4923,7 +4931,7 @@ Server replied with error: %2</source>
     </message>
     <message>
         <source>The directory %1 cannot be part of your sync directory. Please choose another folder.</source>
-        <translation type="unfinished" />
+        <translation>The directory %1 cannot be part of your sync directory. Please choose another folder.</translation>
     </message>
     <message>
         <source>You changed %1</source>
@@ -4950,7 +4958,7 @@ Server replied with error: %2</source>
         <translation type="unfinished" />
     </message>
 </context>
-<context>
+<context><name>SesTrayHeader</name><message><source>Open Nextcloud in browser</source><translation>Open HiDrive Next in browser</translation></message><message><source>Website</source><translation>Website</translation></message></context><context><name>ShareDetailsPage</name><message><source>Copy share link</source><translation>Copy share link</translation></message><message><source>Custom Permissions</source><translation>Custom Permissions</translation></message><message><source>Enter the note to recipient</source><translation>Enter the note to recipient</translation></message><message><source>Share link copied!</source><translation>Share link copied!</translation></message></context><context>
     <name>SyncJournalDb</name>
     <message>
         <source>Failed to connect database.</source>
@@ -5015,7 +5023,7 @@ Server replied with error: %2</source>
         <translation type="unfinished" />
     </message>
 </context>
-<context>
+<context><name>TrayFoldersMenuButton</name><message><source>Files</source><translation>Files</translation></message></context><context>
     <name>Utility</name>
     <message>
         <source>%1 %2</source>
