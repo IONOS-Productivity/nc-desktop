@@ -1114,14 +1114,14 @@ void AccountSettings::slotDisableVfsCurrentFolder()
            "\n\n"
            "This action will abort any currently running synchronization."));
 
-    msgBox->setStyleSheet(QString(
-            "QMessageBox {" +
-            IonosTheme::fontConfigurationCss(
+    msgBox->setStyleSheet(QStringLiteral(
+            "QMessageBox { %1 background-color: %2; }").arg(
+                IonosTheme::fontConfigurationCss(
                 IonosTheme::settingsFont(),
                 IonosTheme::settingsTextSize(),
                 IonosTheme::settingsTextWeight(),
                 IonosTheme::titleColor()
-            ) + "background-color: %1; }").arg(IonosTheme::dialogBackgroundColor())
+            ), IonosTheme::dialogBackgroundColor())
     );
 
     const auto acceptButton = msgBox->addButton(tr("Disable support"), QMessageBox::AcceptRole);
