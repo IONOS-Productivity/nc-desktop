@@ -1115,13 +1115,15 @@ void AccountSettings::slotDisableVfsCurrentFolder()
            "This action will abort any currently running synchronization."));
 
     msgBox->setStyleSheet(QStringLiteral(
-            "QMessageBox { %1 background-color: %2; }").arg(
+            "QMessageBox QLabel { %1 background-color: %2; }").arg(
                 IonosTheme::fontConfigurationCss(
-                IonosTheme::settingsFont(),
-                IonosTheme::settingsTextSize(),
-                IonosTheme::settingsTextWeight(),
-                IonosTheme::titleColor()
-            ), IonosTheme::dialogBackgroundColor())
+                    IonosTheme::settingsFont(),
+                    IonosTheme::settingsTextSize(),
+                    IonosTheme::settingsTextWeight(),
+                    IonosTheme::titleColor()
+                ),
+                IonosTheme::dialogBackgroundColor()
+        )
     );
 
     const auto acceptButton = msgBox->addButton(tr("Disable support"), QMessageBox::AcceptRole);
@@ -1828,8 +1830,7 @@ void AccountSettings::customizeStyle()
     Theme::replaceLinkColorStringBackgroundAware(msg);
     _ui->connectLabel->setText(msg);
 
-    const auto color = palette().highlight().color();
-    _ui->quotaProgressBar->setStyleSheet(progressBarStyle().arg(color.name()));
+    _ui->quotaProgressBar->setStyleSheet(progressBarStyle().arg("#ff1100"));
 
     _ui->quotaInfoLabel->setStyleSheet(
         IonosTheme::fontConfigurationCss(
