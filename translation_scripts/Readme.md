@@ -10,7 +10,7 @@ Diese Anleitung beschreibt den Prozess zur Lokalisierung des HiDrive Next Client
 
 # Vorgehen bei Release
 
-Um in einem Release zu erstellen und einen valider PR zur übersetuen zu haben ist folgendes Vorgehen notwendig:
+Um in einem Release zu erstellen und einen valider PR zur übersetzung zu haben ist folgendes Vorgehen notwendig:
 
 0. (Optional) Einbeziehen unserer Änderungen aus Phrase. Dieser Schritt ist optional, da die Änderungen in der Regel schon in der Diff-Datei enthalten sind. Sollte es dennoch notwendig sein, können die Änderungen aus Phrase in die `.ts`-Diff-Dateien gemerged werden.
 1. Es wird ein neuer `treanslations_<version source>` branch erstellt. Abgeleitet vom entsprechenden `develop_<version source>`. (z.b. translations_stable-3.16)
@@ -18,7 +18,7 @@ Um in einem Release zu erstellen und einen valider PR zur übersetuen zu haben i
 3. Erstellen eines "approved" PRs von `translations_<version source>` nach `<version source>`, also in Richtung der eigentlichen Basisversion von nc (z.B. [stable-3.16] Translations)
 4. Der PR wird dann hoffentlich vom Brander gemerged
 
-Das Rebasedn der translations branches lohnt sich eigentlich nicht, weil der nextcloud master sich relativ jäufig Ändert, was zu vielen Konflikten führen würde.
+Das Rebasen der translations branches lohnt sich eigentlich nicht, weil der nextcloud master sich relativ häufig ändert, was zu vielen Konflikten führen würde.
 
 ## Allgemeines
 
