@@ -559,7 +559,16 @@ void SelectiveSyncDialog::init(const AccountPtr &account)
 
     QPushButton *button = nullptr;
     button = buttonBox->addButton(QDialogButtonBox::Cancel);
-
+    button->setStyleSheet(
+        button->styleSheet() + QStringLiteral("QPushButton { %1; } ").arg(
+            IonosTheme::fontConfigurationCss(
+                IonosTheme::settingsFont(),
+                IonosTheme::settingsTextSize(),
+                IonosTheme::settingsTextWeight(),
+                IonosTheme::black()
+            )
+        )
+    );
     connect(button, &QAbstractButton::clicked, this, &QDialog::reject);
 
     layout->addWidget(buttonBox);
