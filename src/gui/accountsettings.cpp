@@ -87,7 +87,7 @@ Q_LOGGING_CATEGORY(lcAccountSettings, "hidrivenext.gui.account.settings", QtInfo
 const QString progressBarStyle()
 {
     return QStringLiteral(
-        "QProgressBar { border: 1px solid grey;  border-radius: 5px; text-align: center; }"
+        "QProgressBar::horizontal { border: 1px solid grey; border-radius: 5px; text-align: center; }"
         "QProgressBar::chunk { background-color: %1; width: 1px; }"
     );
 }
@@ -1830,7 +1830,7 @@ void AccountSettings::customizeStyle()
     Theme::replaceLinkColorStringBackgroundAware(msg);
     _ui->connectLabel->setText(msg);
 
-    _ui->quotaProgressBar->setStyleSheet(progressBarStyle().arg("#ff1100"));
+    _ui->quotaProgressBar->setStyleSheet(progressBarStyle().arg(IonosTheme::dialogBackgroundColor()));
 
     _ui->quotaInfoLabel->setStyleSheet(
         IonosTheme::fontConfigurationCss(
