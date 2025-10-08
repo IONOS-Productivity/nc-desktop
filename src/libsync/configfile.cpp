@@ -259,7 +259,7 @@ qint64 ConfigFile::chunkSize() const
 qint64 ConfigFile::maxChunkSize() const
 {
     QSettings settings(configFile(), QSettings::IniFormat);
-    return settings.value(QLatin1String(maxChunkSizeC), 100LL * 1024LL * 1024LL).toLongLong(); // default to 100 MiB
+    return settings.value(QLatin1String(maxChunkSizeC), 20LL * 1024LL * 1024LL).toLongLong(); // default to 20 MiB (SES-406)
 }
 
 qint64 ConfigFile::minChunkSize() const
