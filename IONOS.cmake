@@ -4,8 +4,7 @@ if(APPLE AND APPLICATION_NAME STREQUAL "IONOS HiDrive Next")
 endif()
 
 set( APPLICATION_REV_DOMAIN "com.ionos.hidrivenext.desktopclient" )
-
-# set( DO_NOT_USE_PROXY OFF )
+set( APPLICATION_VENDOR     "IONOS SE" )
 
 ## Theming options
 set( APPLICATION_WIZARD_HEADER_TITLE_COLOR "#000000" CACHE STRING "Hex color of the text in the wizard header" FORCE)
@@ -19,7 +18,6 @@ set( APPLICATION_VIRTUALFILE_SUFFIX "${APPLICATION_SHORTNAME}_virtual" CACHE STR
 # set( APPLICATION_CONFIG_NAME "IONOS-HiDrive-Next" )
 # set( APPLICATION_ICON_NAME  "ionos_hidrive_next" )
 # set( APPLICATION_DOMAIN     "ionos.com" )
-# set( APPLICATION_VENDOR     "IONOS SE" )
 # set( APPLICATION_UPDATE_URL "https://customerupdates.nextcloud.com/client/" CACHE STRING "URL for updater" FORCE)
 # set( APPLICATION_HELP_URL   "" CACHE STRING "URL for the help menu" FORCE)
 # set( APPLICATION_SERVER_URL "https://storage.ionos.fr" CACHE STRING "URL for the server to use. If entered, the UI field will be pre-filled with it" FORCE)
