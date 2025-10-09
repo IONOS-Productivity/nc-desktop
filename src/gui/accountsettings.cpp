@@ -1122,7 +1122,7 @@ void AccountSettings::slotDisableVfsCurrentFolder()
                     IonosTheme::settingsTextWeight(),
                     IonosTheme::titleColor()
                 ),
-                IonosTheme::dialogBackgroundColor()
+                IonosTheme::white()
         )
     );
 
