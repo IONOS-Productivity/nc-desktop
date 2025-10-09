@@ -1410,7 +1410,7 @@ void AccountSettings::slotUpdateQuota(qint64 total, qint64 used)
         // workaround the label only accepting ints (which may be only 32 bit wide)
         const auto percent = used / (double)total * 100;
         const auto percentInt = qMin(qRound(percent), 100);
-        _ui->quotaProgressBar->setValue(50);
+        _ui->quotaProgressBar->setValue(percentInt);
         const auto usedStr = Utility::octetsToString(used);
         const auto totalStr = Utility::octetsToString(total);
         const auto percentStr = Utility::compactFormatDouble(percent, 1);
