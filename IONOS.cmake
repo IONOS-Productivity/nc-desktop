@@ -5,7 +5,7 @@ set( APPLICATION_CONFIG_NAME "IONOS-HiDrive-Next" )
 set( APPLICATION_ICON_NAME  "ionos_hidrive_next" )
 set( APPLICATION_DOMAIN     "ionos.com" )
 set( APPLICATION_VENDOR     "IONOS SE" )
-set( APPLICATION_UPDATE_URL "https://customerupdates.nextcloud.com/client/" CACHE STRING "URL for updater" )
+set( APPLICATION_UPDATE_URL "https://customerupdates.nextcloud.com/client/" CACHE STRING "URL for updater" FORCE)
 set( APPLICATION_HELP_URL   "" CACHE STRING "URL for the help menu" FORCE)
 
 if(APPLE AND APPLICATION_NAME STREQUAL "IONOS HiDrive Next")
