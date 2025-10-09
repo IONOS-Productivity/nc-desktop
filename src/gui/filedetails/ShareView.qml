@@ -88,6 +88,10 @@ ColumnLayout {
             close();
         }
 
+        background: Rectangle {
+            color: Style.sesWhite
+        }
+
         anchors.centerIn: parent
         width: parent.width * 0.8
 
