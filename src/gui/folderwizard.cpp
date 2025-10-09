@@ -311,6 +311,12 @@ void FolderWizardRemotePath::slotAddRemoteFolder()
     buttonBox->button(QDialogButtonBox::Ok)->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
     dlg->setAttribute(Qt::WA_DeleteOnClose);
 
+    dlg->setStyleSheet(
+        QStringLiteral("QDialog { background-color: %1; }").arg(
+            IonosTheme::dialogBackgroundColor()
+        )
+    );
+
     dlg->findChild<QLineEdit*>()->setStyleSheet(
         QStringLiteral(
             "color: %1; font-family: %2; font-size: %3; font-weight: %4; border-radius: %5; border: 1px "
