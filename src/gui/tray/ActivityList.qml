@@ -86,7 +86,11 @@ ScrollView {
         }
 
         delegate: ActivityItem {
-            background: null
+
+            background: Rectangle {
+                color: Style.sesWhite
+            }
+
             width: activityList.contentItem.width
 
             isFileActivityList: controlRoot.isFileActivityList

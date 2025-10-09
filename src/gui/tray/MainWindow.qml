@@ -89,7 +89,7 @@ ApplicationWindow {
         radius: 0.0
         border.width: Style.trayWindowBorderWidth
         border.color: palette.dark
-        color: palette.window
+        color: Style.sesWhite
     }
 
     Connections {
