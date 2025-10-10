@@ -56,23 +56,26 @@ export -f sign_folder_content
 
 # This script is used to build the Mac OS X version of the IONOS client.
 # Parse the command line arguments
-while getopts "b:p:s:civt" opt; do
+while getopts "b:p:s:k:civtu" opt; do
   case ${opt} in
     b )BASE_DIR=$OPTARG;;
     p )PATH_TO_PKG=$OPTARG ;;
     s )CODE_SIGN_IDENTITY=$OPTARG ;;
+    k )SPARKLE_KEY=$OPTARG ;;
     c )CLEAN_REBUILD=true ;;
     i )PACKAGE_INSTALLER=true ;;
     v )VERBOSE=true ;; 
     t )TEAM_PATCHING=true ;;
+    u )BUILD_UPDATER=true ;;
     \? )
-      echo "Usage: sign.sh [-b <base_dir>] [-p <path_to_pkg>] [-s <code_sign_identity>] [-c clean-rebuild] [-i build-installer] [-v verbose]"
+      echo "Usage: mac_craft.sh [-b <base_dir>] [-p <path_to_pkg>] [-s <code_sign_identity>] [-c clean-rebuild] [-i build-installer] [-v verbose]"
       exit 1
       ;;
   esac
 done
 
 if [ "$VERBOSE" = true ]; then
+  echo "VERBOSE MODE"
   set -xe
 fi
 
@@ -96,7 +99,60 @@ INNER_PKG=$EXTRACTED_DIR/$UNDERSCORE_PRODUCT_NAME.pkg
 PAYLOAD_DIR=$EXTRACTED_DIR/$UNDERSCORE_PRODUCT_NAME.pkg/Payload
 INSTALLER_PKG=$BASE_DIR/INSTALLER.pkg
 APP_PATH=$PRODUCT_DIR/$PRODUCT_NAME.app
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ADMIN_OSX="$( cd "$SCRIPT_DIR/.." && pwd )/macosx.entitlements.cmake"
+MACCRAFTER_DIR="$( cd "$SCRIPT_DIR/../mac-crafter" && pwd )"
 
+
+
+PACKAGE_PATH="$BASE_DIR$PKG_FILENAME.resigned.pkg"
+SPARKLE_TBZ_PATH="${PACKAGE_PATH}.tbz"
+
+
+
+# Load Sparkle
+SPARKLE_DIR="$BASE_DIR/sparkle"
+SPARKLE_DOWNLOAD_URI="https://github.com/sparkle-project/Sparkle/releases/download/1.27.3/Sparkle-1.27.3.tar.xz"
+
+if [ "$BUILD_UPDATER" == "true" ] && [ -z "$SPARKLE_KEY" ]; then
+  echo "SPARKLE_KEY not set. Exiting."
+  exit 0
+fi
+echo "HIER"
+if [ "$BUILD_UPDATER" == "true" ]; then
+  echo "Creating Sparkle package archive: $SPARKLE_TBZ_PATH"
+
+  if [ -d "$SPARKLE_DIR" ]; then
+
+    echo "$SPARKLE_DIR already exits."
+    echo "Deleting..."
+    rm -rf "$SPARKLE_DIR"
+  fi
+
+  echo "Download Sparkle"
+
+  mkdir -p $SPARKLE_DIR
+  wget $SPARKLE_DOWNLOAD_URI -O $SPARKLE_DIR/Sparkle.tar.xz
+  tar -xvf $SPARKLE_DIR/Sparkle.tar.xz -C $SPARKLE_DIR
+
+  if tar cf "$SPARKLE_TBZ_PATH" "$PACKAGE_PATH"; then
+      echo "✅ Sparkle package created successfully."
+  else
+      echo "❌ Could not create Sparkle package tbz!" >&2
+      exit 1
+  fi
+
+  echo "Signing Sparkle package: $SPARKLE_TBZ_PATH"
+# -s $SPARKLE_KEY 
+  if "$SPARKLE_DIR/bin/sign_update" "$SPARKLE_TBZ_PATH"; then
+      echo "✅ Sparkle package signed successfully."
+  else
+      echo "❌ Could not sign Sparkle package tbz!" >&2
+      exit 1
+  fi
+
+fi
+exit 0
 echo "Expanding original package..."
 
 if [ -d "$EXTRACTED_DIR" ]; then
@@ -118,6 +174,8 @@ fi
 # check wether patching is needed. ".com" is important because otherwise the ID in the signature will be found
 
 if [[ -n "$TEAM_PATCHING" ]]; then
+  echo "Team Patching Enabled - Start Patching Detection"
+
   PLIST_MATCHES=$(find "$APP_PATH" -name "*.plist" -exec grep -q "$NC_TEAM_IDENTIFIER.com" {} \; -print | wc -l)
   BIN_MATCHES=$(find "$APP_PATH" -type f -exec grep -q --binary-files=text "$NC_TEAM_IDENTIFIER.com" {} \; -print | wc -l)
 
@@ -142,8 +200,11 @@ if [[ -n "$TEAM_PATCHING" ]]; then
         perl -pi -e "s/$NC_TEAM_IDENTIFIER/$IONOS_TEAM_IDENTIFIER/g" "$file"
       done
     fi
+  else
+    echo "Nothing to patch"
   fi
 fi
+
 # ---------------------------------------------------
 # Sign the client
 # CODE_SIGN_IDENTITY="Developer ID Application: IONOS SE (5TDLCVD243)"
@@ -157,25 +218,32 @@ fi
 
 echo "start signing the client"
 
-CLIENT_CONTENTS_DIR=$APP_PATH/Contents
-CLIENT_FRAMEWORKS_DIR=$CLIENT_CONTENTS_DIR/Frameworks
-CLIENT_RESOURCES_DIR=$CLIENT_CONTENTS_DIR/Resources
-CLIENT_PLUGINS_DIR=$CLIENT_CONTENTS_DIR/PlugIns
-
-for script in $SCRIPTS_DIR/*; do
-    echo "→ Signing script: $script"
-    codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --verbose=4 --options=runtime --timestamp "$script"
-    codesign -d --entitlements - "$script"
-done
-
-find "$CLIENT_FRAMEWORKS_DIR" -print0 | xargs -0 -I {} bash -c 'recursive_sign "$@" "$CODE_SIGN_IDENTITY"' _ {} "$CODE_SIGN_IDENTITY"
-find "$CLIENT_PLUGINS_DIR" -print0 | xargs -0 -I {} bash -c 'recursive_sign "$@" "$CODE_SIGN_IDENTITY"' _ {} "$CODE_SIGN_IDENTITY"
-find "$CLIENT_RESOURCES_DIR" -print0 | xargs -0 -I {} bash -c 'recursive_sign "$@" "$CODE_SIGN_IDENTITY"' _ {} "$CODE_SIGN_IDENTITY"
-codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --verbose=4 --deep --options=runtime --timestamp "$APP_PATH"
+swift run --package-path "$MACCRAFTER_DIR" \
+    mac-crafter codesign \
+    -c "$CODE_SIGN_IDENTITY" \
+    -e "$ADMIN_OSX" \
+    "$APP_PATH"
 
 
-# Sign the client ---- Still needed?
-find "$CLIENT_CONTENTS_DIR/MacOS" -mindepth 1 -print0 | xargs -0 -I {} bash -c 'sign_folder_content "$@" "$CODE_SIGN_IDENTITY" "$entitlements" ' _ {} "$CODE_SIGN_IDENTITY" "--preserve-metadata=entitlements"
+# CLIENT_CONTENTS_DIR=$APP_PATH/Contents
+# CLIENT_FRAMEWORKS_DIR=$CLIENT_CONTENTS_DIR/Frameworks
+# CLIENT_RESOURCES_DIR=$CLIENT_CONTENTS_DIR/Resources
+# CLIENT_PLUGINS_DIR=$CLIENT_CONTENTS_DIR/PlugIns
+
+# for script in $SCRIPTS_DIR/*; do
+#     echo "→ Signing script: $script"
+#     codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --verbose=4 --options=runtime --timestamp "$script"
+#     codesign -d --entitlements - "$script"
+# done
+
+# find "$CLIENT_FRAMEWORKS_DIR" -print0 | xargs -0 -I {} bash -c 'recursive_sign "$@" "$CODE_SIGN_IDENTITY"' _ {} "$CODE_SIGN_IDENTITY"
+# find "$CLIENT_PLUGINS_DIR" -print0 | xargs -0 -I {} bash -c 'recursive_sign "$@" "$CODE_SIGN_IDENTITY"' _ {} "$CODE_SIGN_IDENTITY"
+# find "$CLIENT_RESOURCES_DIR" -print0 | xargs -0 -I {} bash -c 'recursive_sign "$@" "$CODE_SIGN_IDENTITY"' _ {} "$CODE_SIGN_IDENTITY"
+# codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --verbose=4 --deep --options=runtime --timestamp "$APP_PATH"
+
+
+# # Sign the client ---- Still needed?
+# find "$CLIENT_CONTENTS_DIR/MacOS" -mindepth 1 -print0 | xargs -0 -I {} bash -c 'sign_folder_content "$@" "$CODE_SIGN_IDENTITY" "$entitlements" ' _ {} "$CODE_SIGN_IDENTITY" "--preserve-metadata=entitlements"
 
 # Validate that the key used for signing the binary matches the expected TeamIdentifier
 # needed to pass the SocketApi through the sandbox for communication with virtual file system
@@ -243,6 +311,21 @@ fi
 # staple
 xcrun stapler staple "$BASE_DIR$PKG_FILENAME.resigned.pkg"
 xcrun stapler validate "$BASE_DIR$PKG_FILENAME.resigned.pkg"
+
+
+# Sparkle
+
+PACKAGE_PATH="$BASE_DIR$PKG_FILENAME.resigned.pkg"
+SPARKLE_TBZ_PATH="${PACKAGE_PATH}.tbz"
+
+echo "Creating Sparkle package archive: $SPARKLE_TBZ_PATH"
+
+if tar cf "$SPARKLE_TBZ_PATH" "$PACKAGE_PATH"; then
+    echo "✅ Sparkle package created successfully."
+else
+    echo "❌ Could not create Sparkle package tbz!" >&2
+    exit 1
+fi
 
 open $BASE_DIR
 
