@@ -212,9 +212,9 @@ AccountSettings::AccountSettings(AccountState *accountState, QWidget *parent)
         const auto fpSettingsWidget = fpSettingsController->settingsViewWidget(fpAccountUserIdAtHost, fileProviderTab);
         fpSettingsLayout->setContentsMargins(0, 0, 0, 0);
         fpSettingsLayout->addWidget(fpSettingsWidget);
-        fileProviderTab->setStyleSheet(QStringLiteral("QWidget { background-color: %1; }").arg(IonosTheme::dialogBackgroundColor()));
         fileProviderTab->setLayout(fpSettingsLayout);
 
+        _ui->tabWidget->setStyleSheet(QStringLiteral("QTabWidget { background-color: %1; }").arg(IonosTheme::dialogBackgroundColor()));
         _ui->tabWidget->tabBar()->setStyleSheet("QTabBar::tab {\
                                    color: #000000;\
                                }\
@@ -1863,6 +1863,8 @@ void AccountSettings::customizeStyle()
             )
         )
     );
+
+    ui->f
 
 #if defined(Q_OS_MAC)
     _ui->selectiveSyncLabel->setStyleSheet(QString("color: %1;").arg(IonosTheme::black()));
