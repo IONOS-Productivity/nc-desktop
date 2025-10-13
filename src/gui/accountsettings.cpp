@@ -214,7 +214,7 @@ AccountSettings::AccountSettings(AccountState *accountState, QWidget *parent)
         fpSettingsLayout->addWidget(fpSettingsWidget);
         fileProviderTab->setLayout(fpSettingsLayout);
 
-        _ui->tabWidget->setStyleSheet(QStringLiteral("QTabWidget { background-color: %1; }").arg(IonosTheme::dialogBackgroundColor()));
+        _ui->tabWidget->setStyleSheet(QStringLiteral("QTabWidget::pane { background-color: %1; }").arg(IonosTheme::white()));
         _ui->tabWidget->tabBar()->setStyleSheet("QTabBar::tab {\
                                    color: #000000;\
                                }\
