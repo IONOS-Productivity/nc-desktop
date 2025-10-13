@@ -68,7 +68,7 @@ AbstractButton {
                 verticalAlignment: Text.AlignBottom
                 text: name
                 elide: Text.ElideRight
-                font: root.font
+                font: userLine.font
                 color: Style.sesDarkBlue
             }
 
@@ -93,7 +93,7 @@ AbstractButton {
                     visible: model.statusMessage !== ""
                     text: statusMessage
                     elide: Text.ElideRight
-                    font: root.font
+                    font: userLine.font
                     leftPadding: Style.accountLabelsSpacing
                 }
             }
@@ -153,7 +153,7 @@ AbstractButton {
                     bottomPadding: Style.sesAccountMenuItemPadding
                     spacing: Style.sesSmallMargin
                     text: model.isConnected ? qsTr("Log out") : qsTr("Log in")
-                    font: root.font
+                    font: userLine.font
                     palette.windowText: Style.ncTextColor
                     hoverEnabled: true
                     onClicked: {
@@ -181,7 +181,7 @@ AbstractButton {
                     visible: false
                     height: visible ? implicitHeight : 0
                     text: qsTr("Set status")
-                    font: root.font
+                    font: userLine.font
                     palette.windowText: Style.ncTextColor
                     hoverEnabled: true
                     onClicked: showUserStatusSelector(index)
@@ -202,7 +202,7 @@ AbstractButton {
                     bottomPadding: Style.sesAccountMenuItemPadding
                     spacing: Style.sesSmallMargin
                     text: qsTr("Remove account")
-                    font: root.font
+                    font: userLine.font
                     palette.windowText: Style.ncTextColor
                     hoverEnabled: true
                     onClicked: {

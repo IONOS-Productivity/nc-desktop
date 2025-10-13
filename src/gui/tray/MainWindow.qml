@@ -95,7 +95,7 @@ ApplicationWindow {
     Connections {
         target: UserModel
         function onCurrentUserChanged() {
-            trayWindowHeader.currentAccountHeaderButton.accountMenu.close();
+            trayWindowHeaderBackground.currentAccountHeaderButton.accountMenu.close();
             syncStatus.model.load();
         }
     }
@@ -121,9 +121,9 @@ ApplicationWindow {
             fileDetailsDrawer.close();
 
             if (Systray.isOpen) {
-                trayWindowHeader.currentAccountHeaderButton.accountMenu.close();
-                trayWindowHeader.appsMenu.close();
-                trayWindowHeader.openLocalFolderButton.closeMenu()
+                trayWindowHeaderBackground.currentAccountHeaderButton.accountMenu.close();
+                trayWindowHeaderBackground.appsMenu.close();
+                trayWindowHeaderBackground.openLocalFolderButton.closeMenu()
             }
         }
 
