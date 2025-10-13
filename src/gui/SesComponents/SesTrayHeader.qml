@@ -31,6 +31,7 @@ Rectangle {
         anchors.bottomMargin: Style.sesHeaderTopMargin
 
         TrayWindowAccountMenu{
+            id: currentAccountHeaderButton
             Layout.preferredWidth:  Style.sesAccountButtonWidth
             Layout.preferredHeight: Style.sesAccountButtonHeight
         }
