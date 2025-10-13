@@ -1,8 +1,3 @@
-if(APPLE AND APPLICATION_NAME STREQUAL "IONOS HiDrive Next")
-    set( APPLICATION_ICON_NAME "ionos_hidrive_next-macOS" )
-    message("Using macOS-specific application icon: ${APPLICATION_ICON_NAME}")
-endif()
-
 set( APPLICATION_REV_DOMAIN "com.ionos.hidrivenext.desktopclient" )
 set( APPLICATION_VENDOR     "IONOS SE" )
 
@@ -12,15 +7,15 @@ set( APPLICATION_WIZARD_HEADER_TITLE_COLOR "#000000" CACHE STRING "Hex color of 
 ## Only needed for local build
 set( APPLICATION_VIRTUALFILE_SUFFIX "${APPLICATION_SHORTNAME}_virtual" CACHE STRING "Virtual file suffix (not including the .)" FORCE)
 
-# set( APPLICATION_NAME       "IONOS HiDrive Next" )
-# set( APPLICATION_SHORTNAME  "IONOSHiDriveNext" )
-# set( APPLICATION_EXECUTABLE "IONOS_HiDrive_Next" )
-# set( APPLICATION_CONFIG_NAME "IONOS-HiDrive-Next" )
-# set( APPLICATION_ICON_NAME  "ionos_hidrive_next" )
-# set( APPLICATION_DOMAIN     "ionos.com" )
-# set( APPLICATION_UPDATE_URL "https://customerupdates.nextcloud.com/client/" CACHE STRING "URL for updater" FORCE)
-# set( APPLICATION_HELP_URL   "" CACHE STRING "URL for the help menu" FORCE)
-# set( APPLICATION_SERVER_URL "https://storage.ionos.fr" CACHE STRING "URL for the server to use. If entered, the UI field will be pre-filled with it" FORCE)
+set( APPLICATION_NAME       "IONOS HiDrive Next" )
+set( APPLICATION_SHORTNAME  "IONOSHiDriveNext" )
+set( APPLICATION_EXECUTABLE "IONOS_HiDrive_Next" )
+set( APPLICATION_CONFIG_NAME "IONOS-HiDrive-Next" )
+set( APPLICATION_ICON_NAME  "ionos_hidrive_next" )
+set( APPLICATION_DOMAIN     "ionos.com" )
+set( APPLICATION_UPDATE_URL "https://customerupdates.nextcloud.com/client/" CACHE STRING "URL for updater" FORCE)
+set( APPLICATION_HELP_URL   "" CACHE STRING "URL for the help menu" FORCE)
+set( APPLICATION_SERVER_URL "https://storage.ionos.fr" CACHE STRING "URL for the server to use. If entered, the UI field will be pre-filled with it" FORCE)
 
 ## Windows Shell Extensions & MSI - IMPORTANT: Generate new GUIDs for custom builds with "guidgen" or "uuidgen"
 if(WIN32)
@@ -36,4 +31,9 @@ if(WIN32)
 
     # MSI Upgrade Code (without brackets)
     set( WIN_MSI_UPGRADE_CODE                "6C9E5670-E8A9-4BBD-9BDF-D003794AC177" )
+endif()
+
+if(APPLE AND APPLICATION_NAME STREQUAL "IONOS HiDrive Next")
+    set( APPLICATION_ICON_NAME "ionos_hidrive_next-macOS" )
+    message("Using macOS-specific application icon: ${APPLICATION_ICON_NAME}")
 endif()
