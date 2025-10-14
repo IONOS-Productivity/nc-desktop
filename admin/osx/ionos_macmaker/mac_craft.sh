@@ -1,66 +1,14 @@
 #!/bin/bash
 
-safe_codesign() {
-  local path="$1"
-  local identity="$2"
-
-  local tmpfile
-  # tmpfile=$(mktemp ./entitlements.XXXXXX.plist)
-  tmpfile=$(mktemp ./entitlements.XXXXXX) 
-  mv "$tmpfile" "$tmpfile.plist"
-  tmpfile="$tmpfile.plist"
-  
-  # Extract entitlements (may be empty)
-  codesign -d --entitlements - --xml "$path" > "$tmpfile" 2>/dev/null
-
-  # Check if file has *any* entitlements (dict not empty)
-  if grep -q "<key>" "$tmpfile"; then
-    # Strip get-task-allow if present
-    /usr/libexec/PlistBuddy -c "Delete :com.apple.security.get-task-allow" "$tmpfile" 2>/dev/null
-    echo "Signing with filtered entitlements: $path"
-    codesign -s "$identity" --force --options=runtime --deep --timestamp --entitlements "$tmpfile" "$path"
-    
-  else
-    echo "Signing without entitlements: $path"
-    codesign -s "$identity" --force --preserve-metadata=entitlements --verbose=4 --deep --options runtime --timestamp "$path"
-    
-  fi
-
-  rm -f "$tmpfile"
-}
-
-export -f safe_codesign
-
-recursive_sign(){
-  local path="$1"
-  local extension="${path##*.}"
-  if [[ "$extension" == "dylib" || "$extension" == "framework" || "$extension" == "appex" ]]; then
-    echo "Signing directory: $path"
-    # codesign -s "$2" --force --preserve-metadata=entitlements --verbose=4 --deep --options=runtime --timestamp "${path}" 
-    safe_codesign "$path" "$2"
-    codesign -d --entitlements - "${path}"
-
-  fi
-}
-
-export -f recursive_sign
-
-sign_folder_content(){
-  local folder="$1"
-  local identity="$2"
-  local entitlements="$3"
-  codesign -s "$identity" --force $entitlements --verbose=4 --deep --options=runtime --timestamp "${folder}" 
-}
-
-export -f sign_folder_content
 
 # This script is used to build the Mac OS X version of the IONOS client.
 # Parse the command line arguments
-while getopts "b:p:s:k:civtu" opt; do
+while getopts "b:p:s:n:k:civtu" opt; do
   case ${opt} in
-    b )BASE_DIR=$OPTARG;;
-    p )PATH_TO_PKG=$OPTARG ;;
-    s )CODE_SIGN_IDENTITY=$OPTARG ;;
+    b )REL_BASE_DIR=$OPTARG;;
+    p )REL_PATH_TO_PKG=$OPTARG ;;
+    s )IONOS_TEAM_IDENTIFIER=$OPTARG ;;
+    n )NC_TEAM_IDENTIFIER==$OPTARG ;;
     k )SPARKLE_KEY=$OPTARG ;;
     c )CLEAN_REBUILD=true ;;
     i )PACKAGE_INSTALLER=true ;;
@@ -79,14 +27,26 @@ if [ "$VERBOSE" = true ]; then
   set -xe
 fi
 
+# if [ "$BUILD_UPDATER" == "true" ] && [ -z "$SPARKLE_KEY" ]; then
+#   echo "SPARKLE_KEY not set. Exiting."
+#   exit 0
+# fi
+
+if [ "$TEAM_PATCHING" == "true" ] && [ -z "$NC_TEAM_IDENTIFIER" ]; then
+  echo "Patching aktivated, but NC_TEAM_IDENTIFIER not set. Exiting."
+  exit 0
+fi
+
 # Some variables
+BASE_DIR="$( cd "$REL_BASE_DIR" && pwd )"
+PATH_TO_PKG="$( realpath "$REL_PATH_TO_PKG")"
+
 PKG_FULLNAME=$(basename "$PATH_TO_PKG")
 PKG_FILENAME="${PKG_FULLNAME%.pkg}"
 PRODUCT_NAME="IONOS HiDrive Next"
 UNDERSCORE_PRODUCT_NAME="IONOS_HiDrive_Next"
 
-IONOS_TEAM_IDENTIFIER="5TDLCVD243"
-NC_TEAM_IDENTIFIER="NKUJUXUJ3B"
+CODE_SIGN_IDENTITY="IONOS SE ($IONOS_TEAM_IDENTIFIER)"
 INSTALLER_CERT="Developer ID Installer: $CODE_SIGN_IDENTITY"
 APPLICATION_CERT="Developer ID Application: $CODE_SIGN_IDENTITY"
 
@@ -97,62 +57,20 @@ PRODUCT_DIR=$EXTRACTED_DIR/$UNDERSCORE_PRODUCT_NAME.pkg/Payload/Applications
 SCRIPTS_DIR=$EXTRACTED_DIR/$UNDERSCORE_PRODUCT_NAME.pkg/Scripts
 INNER_PKG=$EXTRACTED_DIR/$UNDERSCORE_PRODUCT_NAME.pkg
 PAYLOAD_DIR=$EXTRACTED_DIR/$UNDERSCORE_PRODUCT_NAME.pkg/Payload
-INSTALLER_PKG=$BASE_DIR/INSTALLER.pkg
+INSTALLER_PKG=${BASE_DIR%/}/INSTALLER.pkg
 APP_PATH=$PRODUCT_DIR/$PRODUCT_NAME.app
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ADMIN_OSX="$( cd "$SCRIPT_DIR/.." && pwd )/macosx.entitlements.cmake"
 MACCRAFTER_DIR="$( cd "$SCRIPT_DIR/../mac-crafter" && pwd )"
 
 
-
-PACKAGE_PATH="$BASE_DIR$PKG_FILENAME.resigned.pkg"
+# Sparkle Variables
+PACKAGE_PATH="${BASE_DIR%/}/$PKG_FILENAME.resigned.pkg"
 SPARKLE_TBZ_PATH="${PACKAGE_PATH}.tbz"
-
-
-
-# Load Sparkle
-SPARKLE_DIR="$BASE_DIR/sparkle"
+SPARKLE_DIR="${BASE_DIR%/}/sparkle"
 SPARKLE_DOWNLOAD_URI="https://github.com/sparkle-project/Sparkle/releases/download/1.27.3/Sparkle-1.27.3.tar.xz"
 
-if [ "$BUILD_UPDATER" == "true" ] && [ -z "$SPARKLE_KEY" ]; then
-  echo "SPARKLE_KEY not set. Exiting."
-  exit 0
-fi
-echo "HIER"
-if [ "$BUILD_UPDATER" == "true" ]; then
-  echo "Creating Sparkle package archive: $SPARKLE_TBZ_PATH"
 
-  if [ -d "$SPARKLE_DIR" ]; then
-
-    echo "$SPARKLE_DIR already exits."
-    echo "Deleting..."
-    rm -rf "$SPARKLE_DIR"
-  fi
-
-  echo "Download Sparkle"
-
-  mkdir -p $SPARKLE_DIR
-  wget $SPARKLE_DOWNLOAD_URI -O $SPARKLE_DIR/Sparkle.tar.xz
-  tar -xvf $SPARKLE_DIR/Sparkle.tar.xz -C $SPARKLE_DIR
-
-  if tar cf "$SPARKLE_TBZ_PATH" "$PACKAGE_PATH"; then
-      echo "✅ Sparkle package created successfully."
-  else
-      echo "❌ Could not create Sparkle package tbz!" >&2
-      exit 1
-  fi
-
-  echo "Signing Sparkle package: $SPARKLE_TBZ_PATH"
-# -s $SPARKLE_KEY 
-  if "$SPARKLE_DIR/bin/sign_update" "$SPARKLE_TBZ_PATH"; then
-      echo "✅ Sparkle package signed successfully."
-  else
-      echo "❌ Could not sign Sparkle package tbz!" >&2
-      exit 1
-  fi
-
-fi
-exit 0
 echo "Expanding original package..."
 
 if [ -d "$EXTRACTED_DIR" ]; then
@@ -207,7 +125,6 @@ fi
 
 # ---------------------------------------------------
 # Sign the client
-# CODE_SIGN_IDENTITY="Developer ID Application: IONOS SE (5TDLCVD243)"
 
 # Check if CODE_SIGN_IDENTITY is set, if not exit
 if [ -z "$CODE_SIGN_IDENTITY" ]; then
@@ -223,27 +140,6 @@ swift run --package-path "$MACCRAFTER_DIR" \
     -c "$CODE_SIGN_IDENTITY" \
     -e "$ADMIN_OSX" \
     "$APP_PATH"
-
-
-# CLIENT_CONTENTS_DIR=$APP_PATH/Contents
-# CLIENT_FRAMEWORKS_DIR=$CLIENT_CONTENTS_DIR/Frameworks
-# CLIENT_RESOURCES_DIR=$CLIENT_CONTENTS_DIR/Resources
-# CLIENT_PLUGINS_DIR=$CLIENT_CONTENTS_DIR/PlugIns
-
-# for script in $SCRIPTS_DIR/*; do
-#     echo "→ Signing script: $script"
-#     codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --verbose=4 --options=runtime --timestamp "$script"
-#     codesign -d --entitlements - "$script"
-# done
-
-# find "$CLIENT_FRAMEWORKS_DIR" -print0 | xargs -0 -I {} bash -c 'recursive_sign "$@" "$CODE_SIGN_IDENTITY"' _ {} "$CODE_SIGN_IDENTITY"
-# find "$CLIENT_PLUGINS_DIR" -print0 | xargs -0 -I {} bash -c 'recursive_sign "$@" "$CODE_SIGN_IDENTITY"' _ {} "$CODE_SIGN_IDENTITY"
-# find "$CLIENT_RESOURCES_DIR" -print0 | xargs -0 -I {} bash -c 'recursive_sign "$@" "$CODE_SIGN_IDENTITY"' _ {} "$CODE_SIGN_IDENTITY"
-# codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --verbose=4 --deep --options=runtime --timestamp "$APP_PATH"
-
-
-# # Sign the client ---- Still needed?
-# find "$CLIENT_CONTENTS_DIR/MacOS" -mindepth 1 -print0 | xargs -0 -I {} bash -c 'sign_folder_content "$@" "$CODE_SIGN_IDENTITY" "$entitlements" ' _ {} "$CODE_SIGN_IDENTITY" "--preserve-metadata=entitlements"
 
 # Validate that the key used for signing the binary matches the expected TeamIdentifier
 # needed to pass the SocketApi through the sandbox for communication with virtual file system
@@ -280,7 +176,7 @@ mv $PAYLOAD_DIR.new $PAYLOAD_DIR
 rm -rf $INNER_PKG
 mv $INNER_PKG.flat $INNER_PKG
 
-productsign --timestamp --sign 'Developer ID Installer: IONOS SE (5TDLCVD243)' \
+productsign --timestamp --sign "$INSTALLER_CERT" \
   $INNER_PKG \
   $INNER_PKG.signed
 
@@ -293,10 +189,11 @@ mv $INNER_PKG.signed $INNER_PKG
   --package-path ex \
   $INSTALLER_PKG.unsigned)
 
-productsign --timestamp --sign 'Developer ID Installer: IONOS SE (5TDLCVD243)' $INSTALLER_PKG.unsigned "$BASE_DIR$PKG_FILENAME.resigned.pkg"
+RESIGNED_PKG="${BASE_DIR%/}/$PKG_FILENAME.resigned.pkg"
+productsign --timestamp --sign "$INSTALLER_CERT" $INSTALLER_PKG.unsigned "$RESIGNED_PKG"
 
 # catch the output of the notarytool command
-OUTPUT=$(xcrun notarytool submit --wait "$BASE_DIR$PKG_FILENAME.resigned.pkg"\
+OUTPUT=$(xcrun notarytool submit --wait "$RESIGNED_PKG"\
   --keychain-profile "IONOS SE HiDrive Next")
 
 SUBMISSION_STATUS=$(echo $OUTPUT | grep -o 'status: [^ ]*' | cut -d ' ' -f 2)
@@ -309,22 +206,52 @@ if [ $SUBMISSION_STATUS != "Accepted" ]; then
 fi
 
 # staple
-xcrun stapler staple "$BASE_DIR$PKG_FILENAME.resigned.pkg"
-xcrun stapler validate "$BASE_DIR$PKG_FILENAME.resigned.pkg"
+xcrun stapler staple "$RESIGNED_PKG"
+xcrun stapler validate "$RESIGNED_PKG"
 
 
 # Sparkle
 
-PACKAGE_PATH="$BASE_DIR$PKG_FILENAME.resigned.pkg"
-SPARKLE_TBZ_PATH="${PACKAGE_PATH}.tbz"
+# PACKAGE_PATH="$BASE_DIR$PKG_FILENAME.resigned.pkg"
+SPARKLE_TBZ_PATH="${RESIGNED_PKG}.tbz"
 
 echo "Creating Sparkle package archive: $SPARKLE_TBZ_PATH"
 
-if tar cf "$SPARKLE_TBZ_PATH" "$PACKAGE_PATH"; then
-    echo "✅ Sparkle package created successfully."
-else
-    echo "❌ Could not create Sparkle package tbz!" >&2
-    exit 1
+# Load Sparkle
+
+echo "HIER"
+if [ "$BUILD_UPDATER" == "true" ]; then
+  echo "Creating Sparkle package archive: $SPARKLE_TBZ_PATH"
+
+  if [ -d "$SPARKLE_DIR" ]; then
+
+    echo "$SPARKLE_DIR already exits."
+    echo "Deleting..."
+    rm -rf "$SPARKLE_DIR"
+  fi
+
+  echo "Download Sparkle"
+
+  mkdir -p $SPARKLE_DIR
+  wget $SPARKLE_DOWNLOAD_URI -O ${SPARKLE_DIR%/}/Sparkle.tar.xz
+  tar -xvf ${SPARKLE_DIR%/}/Sparkle.tar.xz -C $SPARKLE_DIR
+
+  if tar cf "$SPARKLE_TBZ_PATH" "$RESIGNED_PKG"; then
+      echo "✅ Sparkle package created successfully."
+  else
+      echo "❌ Could not create Sparkle package tbz!" >&2
+      exit 1
+  fi
+
+  echo "Signing Sparkle package: $SPARKLE_TBZ_PATH"
+# -s $SPARKLE_KEY 
+  if "${SPARKLE_DIR%/}/bin/sign_update" "$SPARKLE_TBZ_PATH"; then
+      echo "✅ Sparkle package signed successfully."
+  else
+      echo "❌ Could not sign Sparkle package tbz!" >&2
+      exit 1
+  fi
+
 fi
 
 open $BASE_DIR
