@@ -312,10 +312,16 @@ void FolderWizardRemotePath::slotAddRemoteFolder()
     dlg->setAttribute(Qt::WA_DeleteOnClose);
 
     dlg->setStyleSheet(
-        QStringLiteral("QDialog { background-color: %1; }").arg(
-            IonosTheme::dialogBackgroundColor()
-        )
-    );
+            QStringLiteral("QDialog { %1; background-color: %2; }").arg(
+                IonosTheme::fontConfigurationCss(
+                    IonosTheme::settingsFont(),
+                    IonosTheme::settingsTextSize(),
+                    IonosTheme::settingsTextWeight(),
+                    IonosTheme::titleColor()
+                ),
+                IonosTheme::dialogBackgroundColor()
+            )
+        );
 
     dlg->findChild<QLineEdit*>()->setStyleSheet(
         QStringLiteral(
@@ -341,17 +347,6 @@ void FolderWizardRemotePath::slotAddRemoteFolder()
 
     #ifdef Q_OS_MAC
         buttonBox->layout()->setSpacing(24);
-
-        dlg->setStyleSheet(
-            QStringLiteral(" %1; } ").arg(
-                IonosTheme::fontConfigurationCss(
-                    IonosTheme::settingsFont(),
-                    IonosTheme::settingsTextSize(),
-                    IonosTheme::settingsTextWeight(),
-                    IonosTheme::titleColor()
-                )
-            )
-        );
 
         buttonBox->button(QDialogButtonBox::Ok)->setStyleSheet(
             buttonBox->button(QDialogButtonBox::Ok)->styleSheet() +
