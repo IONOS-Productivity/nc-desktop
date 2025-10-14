@@ -371,6 +371,10 @@ void FolderStatusDelegate::drawSyncProgressBar(QPainter *painter, const QStyleOp
     progressBarOpt.progress = overallPercent;
     progressBarOpt.state = QStyle::StateFlag::State_Horizontal;
     progressBarOpt.rect = QStyle::visualRect(option.direction, option.rect, progressBarRect);
+    QPalette paletteTmp = progressBarOpt.palette;
+    paletteTmp.setColor(QPalette::Base, IonosTheme::white());
+    progressBarOpt.palette = paletteTmp;
+
 #ifdef Q_OS_MACOS
     backupStyle->drawControl(QStyle::CE_ProgressBar, &progressBarOpt, painter, option.widget);
 #else
@@ -383,6 +387,7 @@ void FolderStatusDelegate::drawSyncProgressBar(QPainter *painter, const QStyleOp
     overallProgressRect.setHeight(fileNameTextHeight);
     overallProgressRect.setLeft(progressBarRect.left());
     overallProgressRect.setWidth(progressBarRect.width());
+
     painter->setFont(progressFont);
 
     painter->drawText(QStyle::visualRect(option.direction, option.rect, overallProgressRect), Qt::AlignLeft | Qt::AlignVCenter, overallString);
