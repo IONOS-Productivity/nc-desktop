@@ -52,7 +52,7 @@ public:
 
 public slots:
     void setVfsEnabledForAccount(const QString &userIdAtHost, const bool setEnabled, const bool showInformationDialog = true);
-    void setTrashDeletionEnabledForAccount(const QString &userIdAtHost, const bool setEnabled);
+    void setFastEnumerationEnabledForAccount(const QString &userIdAtHost, const bool setEnabled);
 
     void createEvictionWindowForAccount(const QString &userIdAtHost);
     void refreshMaterialisedItemsForAccount(const QString &userIdAtHost);
