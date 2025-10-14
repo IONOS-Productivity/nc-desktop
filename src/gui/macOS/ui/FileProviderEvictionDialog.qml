@@ -33,8 +33,15 @@ ApplicationWindow {
     LayoutMirroring.enabled: Application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
 
+    font.family: Style.sesOpenSansRegular 
+    font.pixelSize: Style.sesFontPixelSize 
+    font.weight: Style.sesFontBoldWeight
+    palette.base: Style.sesWhite
+    palette.windowText: Style.sesTrayFontColor
+    palette.buttonText: Style.sesTrayFontColor
+
     title: qsTr("Evict materialised files")
-    color: palette.base
+    color: Style.sesWhite
     flags: Qt.Dialog | Qt.WindowStaysOnTopHint
     width: 640
     height: 480
