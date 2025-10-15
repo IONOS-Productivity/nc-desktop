@@ -24,12 +24,16 @@ export -f sign_folder_content
 set -xe
 
 # Parse the command line arguments
-while getopts "b:s:ci" opt; do
+while getopts "a:b:s:cifou" opt; do
   case ${opt} in
+    a ) ARCHITECTURE=$OPTARG ;;
     b )BUILD_DIR=$OPTARG;;
     s )CODE_SIGN_IDENTITY=$OPTARG ;;
     c )CLEAN_REBUILD=true ;;
     i )PACKAGE_INSTALLER=true ;;
+    f )BUILD_FILEPROVIDER=true ;;
+    o )OSX_BUNDLE=true ;;
+    u )BUILD_UPDATER=true ;;
     \? )
       echo "Usage: start.sh [-b <build_dir>] [-s <code_sign_identity>] [-c] [-i]"
       exit 1
@@ -45,7 +49,6 @@ PRODUCT_NAME="IONOS HiDrive Next"
 REPO_ROOT_DIR="../../.."
 CRAFT_DIR=~/Craft64
 PRODUCT_DIR=$BUILD_DIR/product
-BUILD_UPDATER=true
 TEAM_IDENTIFIER="5TDLCVD243"
 
 # Check if the client is running and kill it
@@ -57,6 +60,12 @@ fi
 # Check if BUILD_DIR is set, so we don't accidentally delete the whole filesystem
 if [ -z "$BUILD_DIR" ]; then
   echo "Build dir not set. Add -b <build_dir> to the command."
+  exit 0
+fi
+
+# Check if ARCHITECTURE is set
+if [ -z "$ARCHITECTURE" ]; then
+  echo "ARCHITECTURE not set. Add -a <ARCHITECTURE> to the command."
   exit 0
 fi
 
@@ -100,9 +109,9 @@ cmake -S $REPO_ROOT_DIR/ -B $BUILD_DIR \
       -DBUILD_UPDATER=$(if [ $BUILD_UPDATER == true ]; then echo "ON"; else echo "OFF"; fi) \
       -DMIRALL_VERSION_BUILD=`date +%Y%m%d` \
       -DMIRALL_VERSION_SUFFIX="stable" \
-      -DBUILD_OWNCLOUD_OSX_BUNDLE=ON \
-      -DCMAKE_OSX_ARCHITECTURES=x86_64 \
-      -DBUILD_FILE_PROVIDER_MODULE=ON \
+      -DBUILD_OWNCLOUD_OSX_BUNDLE=$(if [ $OSX_BUNDLE == true ]; then echo "ON"; else echo "OFF"; fi) \
+      -DCMAKE_OSX_ARCHITECTURES=$ARCHITECTURE \
+      -DBUILD_FILE_PROVIDER_MODULE=$(if [ $BUILD_FILEPROVIDER == true ]; then echo "ON"; else echo "OFF"; fi) \
       -DCMAKE_PREFIX_PATH=$CRAFT_DIR \
       -DSPARKLE_LIBRARY=$SPARKLE_DIR/Sparkle.framework \
       -DSOCKETAPI_TEAM_IDENTIFIER_PREFIX="$TEAM_IDENTIFIER." \
