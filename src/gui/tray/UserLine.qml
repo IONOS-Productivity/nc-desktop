@@ -146,6 +146,11 @@ AbstractButton {
 
                     palette.text: Style.sesDarkBlue
 
+                    Component.onCompleted: {
+                        if (contentItem && contentItem.hasOwnProperty("color")) {
+                            contentItem.color = logInOutButton.palette.text
+                        }
+                    }
                     icon.source: Style.sesLogout
                     icon.color: Style.sesIconDarkColor
                     leftPadding: Style.sesMediumMargin
@@ -188,13 +193,18 @@ AbstractButton {
                }
 
                 MenuItem {
+                    id: removeAccountButton
 
                     property bool isHovered: removeAccountButton.hovered || removeAccountButton.visualFocus
                     property bool isActive: removeAccountButton.pressed
 
                     palette.text: Style.sesDarkBlue
 
-                    id: removeAccountButton
+                    Component.onCompleted: {
+                        if (contentItem && contentItem.hasOwnProperty("color")) {
+                            contentItem.color = removeAccountButton.palette.text
+                        }
+                    }
                     icon.source: Style.sesDelete
                     icon.color: Style.sesIconDarkColor
                     leftPadding: Style.sesMediumMargin
