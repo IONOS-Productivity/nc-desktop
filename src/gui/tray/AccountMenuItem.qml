@@ -25,6 +25,13 @@ MenuItem {
     icon.height: Style.smallIconSize
     icon.width: Style.smallIconSize 
     icon.color: Style.sesIconDarkColor
+    
+    Component.onCompleted: {
+        if (contentItem && contentItem.hasOwnProperty("color")) {
+            contentItem.color = accountMenuItem.palette.text
+        }
+    }
+
 
     background: Item {
         height: parent.height
