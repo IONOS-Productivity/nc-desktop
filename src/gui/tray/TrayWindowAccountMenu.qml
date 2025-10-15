@@ -28,7 +28,7 @@ Button {
     background: Rectangle {
         color: currentAccountButton.isActive ? Style.sesButtonPressed : 
                currentAccountButton.isHovered ? Style.sesAccountMenuHover : 
-               accountMenu.visible? Style.sesSelectedColor : "transparent"
+               accountMenu.visible ? Style.sesSelectedColor : "transparent"
         radius: Style.sesCornerRadius
     }
 
