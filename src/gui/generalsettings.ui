@@ -51,14 +51,14 @@
                                 <item>
                                     <widget class="QCheckBox" name="autostartCheckBox">
                                         <property name="text">
-                                            <string>&amp;Launch on system startup</string>
+                                            <string>&amp;Launch on System Startup</string>
                                         </property>
                                     </widget>
                                 </item>
                                 <item>
                                     <widget class="QCheckBox" name="serverNotificationsCheckBox">
                                         <property name="text">
-                                            <string>Show server &amp;notifications</string>
+                                            <string>Show Server &amp;Notifications</string>
                                         </property>
                                     </widget>
                                 </item>
@@ -363,7 +363,7 @@
                                 <item>                
                                     <widget class="QCheckBox" name="sendNecessaryData_checkbox">
                                         <property name="text">
-                                            <string>&amp;Necessary data</string>
+                                            <string>Necessary data</string>
                                         </property>
                                         <property name="checked">
                                             <bool>true</bool>
