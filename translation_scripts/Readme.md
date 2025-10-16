@@ -36,6 +36,12 @@ Die Lokalisierung erfolgt in mehreren Schritten. Für eine bessere Vergleichbark
 C:\Craft64\bin\lupdate.exe -locations none -no-obsolete -no-ui-lines .\src\libsync\ .\src\gui\ .\src\csync\ .\src\common\ .\src\cmd\ -ts .\translations\client_de.ts .\translations\client_en.ts .\translations\client_en_GB.ts .\translations\client_fr.ts .\translations\client_es.ts .\translations\client_nl.ts
 ```
 
+Danach die .ts Dateien mit folgendem Befehl sortieren:
+
+```
+python3 merge_translation.py 0
+```
+
 - Wichtig: **Obsolete Keys entfernen**.
 - Die `.ts`Datei manuell per Skript sortieren.
 - Datei in den **Translation Branch** legen und committen.
