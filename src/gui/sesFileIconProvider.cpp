@@ -1,4 +1,4 @@
-#include "sesfileiconprovider.h"
+#include "sesFileIconProvider.h"
 
 #include <QFileIconProvider>
 #include <QIcon>

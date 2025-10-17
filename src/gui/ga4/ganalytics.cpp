@@ -33,8 +33,8 @@
 #include <QUuid>
 #include <QLocale>
 
-#include <QJSonObject>
-#include <QJSonDocument>
+#include <QJsonObject>
+#include <QJsonDocument>
 #include <QJsonArray>
 
 #include "account.h"
