@@ -27,7 +27,7 @@
 
 #include <QJsonDocument>
 #include <QJsonArray>
-#include <QJSonObject>
+#include <QJsonObject>
 #include <QNetworkProxy>
 
 #include "logger.h"
