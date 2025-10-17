@@ -8,7 +8,7 @@
 #include "ganalytics.h"
 #include "abstractnetworkjob.h"
 
-#include <QJSonObject>
+#include <QJsonObject>
 #include <map>
 #include "account.h"
 
