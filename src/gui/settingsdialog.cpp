@@ -459,7 +459,7 @@ public:
         QString objectName = QLatin1String("settingsdialog_toolbutton_");
         objectName += text();
         btn->setObjectName(objectName);
-        btn->setFixedSize(150, 94);
+        btn->setFixedSize(158, 94);
         btn->setDefaultAction(this);
         btn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
