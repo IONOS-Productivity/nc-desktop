@@ -303,13 +303,13 @@ void CaseClashFilenameDialog::customizeStyle()
 {
     this->setStyleSheet(
         QStringLiteral("QDialog {background-color: %1; color: %2;} QLabel{ %3;}").arg(
-            IonosTheme::dialogBackgroundColor(), 
-            IonosTheme::black(),
-            IonosTheme::fontConfigurationCss(
-                IonosTheme::settingsFont(),
-                IonosTheme::settingsTextSize(),
-                IonosTheme::settingsTextWeight(),
-                IonosTheme::titleColor()
+            WhitelabelTheme::getInstance::dialogBackgroundColor(), 
+            WhitelabelTheme::getInstance::black(),
+            WhitelabelTheme::getInstance::fontConfigurationCss(
+                WhitelabelTheme::getInstance::settingsFont(),
+                WhitelabelTheme::getInstance::settingsTextSize(),
+                WhitelabelTheme::getInstance::settingsTextWeight(),
+                WhitelabelTheme::getInstance::titleColor()
             )
         )
     );
@@ -318,13 +318,13 @@ void CaseClashFilenameDialog::customizeStyle()
         QStringLiteral(
             "color: %1; font-family: %2; font-size: %3; font-weight: %4; border-radius: %5; border: 1px "
             "solid %6; padding: 0px 12px; text-align: left; vertical-align: middle; height: 40px; background: %7; ").arg(
-                IonosTheme::folderWizardPathColor(),
-                IonosTheme::settingsFont(),
-                IonosTheme::settingsTextSize(),
-                IonosTheme::settingsTextWeight(),
-                IonosTheme::buttonRadius(),
-                IonosTheme::menuBorderColor(),
-                IonosTheme::white()
+                WhitelabelTheme::getInstance::folderWizardPathColor(),
+                WhitelabelTheme::getInstance::settingsFont(),
+                WhitelabelTheme::getInstance::settingsTextSize(),
+                WhitelabelTheme::getInstance::settingsTextWeight(),
+                WhitelabelTheme::getInstance::buttonRadius(),
+                WhitelabelTheme::getInstance::menuBorderColor(),
+                WhitelabelTheme::getInstance::white()
             )
     );
 

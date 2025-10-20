@@ -17,7 +17,7 @@
 
 #include "folderman.h"
 #include "theme.h"
-#include "ionostheme.h"
+#include "whitelabeltheme.h"
 #include "generalsettings.h"
 #include "networksettings.h"
 #include "accountsettings.h"
@@ -104,7 +104,7 @@ SettingsDialog::SettingsDialog(ownCloudGui *gui, QWidget *parent)
 
     _ui->setupUi(this);
     _toolBar = new QToolBar;
-    _toolBar->setIconSize(QSize(IonosTheme::toolbarIconSize(), IonosTheme::toolbarIconSize()));
+    _toolBar->setIconSize(QSize(WhitelabelTheme::getInstance::toolbarIconSize(), WhitelabelTheme::getInstance::toolbarIconSize()));
     _toolBar->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     _toolBar->setFixedHeight(94);
     layout()->setMenuBar(_toolBar);
@@ -193,7 +193,7 @@ SettingsDialog::SettingsDialog(ownCloudGui *gui, QWidget *parent)
 
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     cfg.restoreGeometry(this);
-    resize(width() > IonosTheme::minimalSettingsDialogWidth() ? width(): IonosTheme::minimalSettingsDialogWidth(), 
+    resize(width() > WhitelabelTheme::getInstance::minimalSettingsDialogWidth() ? width(): WhitelabelTheme::getInstance::minimalSettingsDialogWidth(), 
         (height() > generalSettings->sizeHint().height() ? height(): generalSettings->sizeHint().height()) + 25);
 }
 
@@ -380,21 +380,21 @@ void SettingsDialog::customizeStyle()
     QVariantMap palette = Theme::instance()->systemPalette();
 
     QString white(palette["window"].value<QColor>().name());
-    QString hoverColor(IonosTheme::toolButtonHoveredColor());
-    QString pressedColor(IonosTheme::toolButtonPressedColor());
-    QString selectedColor(IonosTheme::menuSelectedItemColor());
+    QString hoverColor(WhitelabelTheme::getInstance::toolButtonHoveredColor());
+    QString pressedColor(WhitelabelTheme::getInstance::toolButtonPressedColor());
+    QString selectedColor(WhitelabelTheme::getInstance::menuSelectedItemColor());
 
     QString borderColor(palette["shadow"].value<QColor>().name());
     QString highlightTextColor(palette["highlightedText"].value<QColor>().name());
 
-    QString toolbarActionBorderRadius(IonosTheme::toolbarActionBorderRadius());
-    QString toolbarSideMargin (IonosTheme::toolbarSideMargin());
+    QString toolbarActionBorderRadius(WhitelabelTheme::getInstance::toolbarActionBorderRadius());
+    QString toolbarSideMargin (WhitelabelTheme::getInstance::toolbarSideMargin());
     QString toolButtonFont (
-        IonosTheme::fontConfigurationCss(
-                IonosTheme::settingsFont(),
-                IonosTheme::settingsTextSize(),
-                IonosTheme::settingsTextWeight(),
-                IonosTheme::menuTextColor()
+        WhitelabelTheme::getInstance::fontConfigurationCss(
+                WhitelabelTheme::getInstance::settingsFont(),
+                WhitelabelTheme::getInstance::settingsTextSize(),
+                WhitelabelTheme::getInstance::settingsTextWeight(),
+                WhitelabelTheme::getInstance::menuTextColor()
         )
     );
 

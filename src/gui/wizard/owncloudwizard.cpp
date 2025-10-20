@@ -23,7 +23,7 @@
 #include "foregroundbackground_interface.h"
 #endif
 
-#include "ionostheme.h"
+#include "whitelabeltheme.h"
 #include "wizard/flow2authcredspage.h"
 #include "wizard/owncloudadvancedsetuppage.h"
 #include "wizard/owncloudhttpcredspage.h"
@@ -471,7 +471,7 @@ void OwncloudWizard::customizeStyle()
 
     // Set background colors
     auto wizardPalette = palette();
-    const auto backgroundColor = QColor(IonosTheme::dialogBackgroundColor());
+    const auto backgroundColor = QColor(WhitelabelTheme::getInstance::dialogBackgroundColor());
     
     // Set Color of upper part
     wizardPalette.setColor(QPalette::Base, backgroundColor);

@@ -15,7 +15,7 @@
 #include "foldercreationdialog.h"
  
 #include "buttonstyle.h"
-#include "ionostheme.h"
+#include "whitelabeltheme.h"
 #include "ui_foldercreationdialog.h"
 
 #include <limits>
@@ -112,7 +112,7 @@ void FolderCreationDialog::customizeStyle()
     ui->buttonBox->setLayoutDirection(Qt::RightToLeft);
 
     this->setAutoFillBackground(true);
-    setPalette(QPalette(QPalette::Window, IonosTheme::dialogBackgroundColor()));
+    setPalette(QPalette(QPalette::Window, WhitelabelTheme::getInstance::dialogBackgroundColor()));
 
     QPushButton *okButton = ui->buttonBox->button(QDialogButtonBox::Ok);
     okButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
@@ -124,13 +124,13 @@ void FolderCreationDialog::customizeStyle()
         QStringLiteral(
             "color: %1; font-family: %2; font-size: %3; font-weight: %4; border-radius: %5; border: 1px "
             "solid %6; padding: 0px 12px; text-align: left; vertical-align: middle; height: 40px; background: %7; ")
-            .arg(IonosTheme::folderWizardPathColor(),
-                 IonosTheme::settingsFont(),
-                 IonosTheme::settingsTextSize(),
-                 IonosTheme::settingsTextWeight(),
-                 IonosTheme::buttonRadius(),
-                 IonosTheme::menuBorderColor(),
-                 IonosTheme::white()
+            .arg(WhitelabelTheme::getInstance::folderWizardPathColor(),
+                 WhitelabelTheme::getInstance::settingsFont(),
+                 WhitelabelTheme::getInstance::settingsTextSize(),
+                 WhitelabelTheme::getInstance::settingsTextWeight(),
+                 WhitelabelTheme::getInstance::buttonRadius(),
+                 WhitelabelTheme::getInstance::menuBorderColor(),
+                 WhitelabelTheme::getInstance::white()
             )
     );
 

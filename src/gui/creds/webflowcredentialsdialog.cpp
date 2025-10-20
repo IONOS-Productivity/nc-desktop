@@ -6,7 +6,7 @@
 #include "application.h"
 #include "owncloudgui.h"
 #include "wizard/owncloudwizardcommon.h"
-#include "ionostheme.h"
+#include "whitelabeltheme.h"
 #ifdef WITH_WEBENGINE
 #include "wizard/webview.h"
 #endif // WITH_WEBENGINE
@@ -24,7 +24,7 @@ WebFlowCredentialsDialog::WebFlowCredentialsDialog(Account *account, bool useFlo
 {
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
-    setStyleSheet(QStringLiteral("QDialog { background-color: %1; }").arg(IonosTheme::dialogBackgroundColor()));
+    setStyleSheet(QStringLiteral("QDialog { background-color: %1; }").arg(WhitelabelTheme::getInstance::dialogBackgroundColor()));
 
     setFixedWidth(646);
     setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum));
@@ -44,11 +44,11 @@ WebFlowCredentialsDialog::WebFlowCredentialsDialog(Account *account, bool useFlo
     _infoLabel->setAlignment(Qt::AlignCenter);
     _infoLabel->setWordWrap(true);
     _infoLabel->setContentsMargins(0, 32, 0, 0);
-    _infoLabel->setStyleSheet(IonosTheme::fontConfigurationCss(
-        IonosTheme::settingsFont(),
-        IonosTheme::settingsTextSize(),
-        IonosTheme::settingsTitleWeight600(),
-        IonosTheme::titleColor()
+    _infoLabel->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
+        WhitelabelTheme::getInstance::settingsFont(),
+        WhitelabelTheme::getInstance::settingsTextSize(),
+        WhitelabelTheme::getInstance::settingsTitleWeight600(),
+        WhitelabelTheme::getInstance::titleColor()
     ));
     _containerLayout->addWidget(_infoLabel);
 

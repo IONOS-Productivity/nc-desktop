@@ -13,7 +13,7 @@
 
 #include "buttonstyle.h"
 #include "buttonstylestrategy.h"
-#include "ionostheme.h"
+#include "whitelabeltheme.h"
 #include <QMap>
 #include <QPainter>
 #include <QStyleOptionButton>
@@ -58,15 +58,15 @@ void PushButtonStyleHelper::drawButtonShape(const QStyleOptionButton *option, QP
     painter->save();
     painter->setRenderHints(QPainter::Antialiasing);
     setupPainterForShape(option, painter, widget);
-    const int radius = OCC::IonosTheme::buttonRadiusInt();
+    const int radius = OCC::WhitelabelTheme::getInstance::buttonRadiusInt();
     painter->drawRoundedRect(option->rect, radius, radius);
     painter->restore();
 }
 
 void PushButtonStyleHelper::setFont(QFont& font) const
 {
-    font.setWeight(OCC::IonosTheme::settingsTitleWeightDemiBold());
-    font.setPixelSize(OCC::IonosTheme::settingsTextPixel());
+    font.setWeight(OCC::WhitelabelTheme::getInstance::settingsTitleWeightDemiBold());
+    font.setPixelSize(OCC::WhitelabelTheme::getInstance::settingsTextPixel());
 }
 
 void PushButtonStyleHelper::recalculateContentSize(QSize &contentsSize, const QWidget *widget) const

@@ -1,6 +1,6 @@
 // linkbutton.cpp
 #include "linkbutton.h"
-#include "ionostheme.h"
+#include "whitelabeltheme.h"
 #include "theme.h"
 
 namespace OCC {
@@ -8,9 +8,9 @@ namespace OCC {
         : QLabel(parent)
     {
         setStyleSheet(QStringLiteral("QLabel { color: %1; text-decoration: underline; font-size: %2; font-weight: %3; }")
-            .arg(IonosTheme::settingsLinkColor()
-                , IonosTheme::settingsTextSize()
-                , IonosTheme::settingsTitleWeight600()
+            .arg(WhitelabelTheme::getInstance::settingsLinkColor()
+                , WhitelabelTheme::getInstance::settingsTextSize()
+                , WhitelabelTheme::getInstance::settingsTitleWeight600()
             ));
 
         setCursor(Qt::PointingHandCursor);

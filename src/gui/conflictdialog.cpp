@@ -191,13 +191,13 @@ void ConflictDialog::customizeStyle()
 {
     this->setStyleSheet(
         QStringLiteral("QDialog {background-color: %1; color: %2;} QLabel{ %3;}").arg(
-            IonosTheme::dialogBackgroundColor(), 
-            IonosTheme::black(),
-            IonosTheme::fontConfigurationCss(
-                IonosTheme::settingsFont(),
-                IonosTheme::settingsTextSize(),
-                IonosTheme::settingsTextWeight(),
-                IonosTheme::titleColor()
+            WhitelabelTheme::getInstance::dialogBackgroundColor(), 
+            WhitelabelTheme::getInstance::black(),
+            WhitelabelTheme::getInstance::fontConfigurationCss(
+                WhitelabelTheme::getInstance::settingsFont(),
+                WhitelabelTheme::getInstance::settingsTextSize(),
+                WhitelabelTheme::getInstance::settingsTextWeight(),
+                WhitelabelTheme::getInstance::titleColor()
             )
         )
     );
@@ -207,11 +207,11 @@ void ConflictDialog::customizeStyle()
         _ui->buttonBox->setLayoutDirection(Qt::LeftToRight);
 
         _ui->localVersionRadio->setStyleSheet(
-            QStringLiteral("QCheckBox {color: %1;}").arg(IonosTheme::black())
+            QStringLiteral("QCheckBox {color: %1;}").arg(WhitelabelTheme::getInstance::black())
         );
 
         _ui->remoteVersionRadio->setStyleSheet(
-            QStringLiteral("QCheckBox {color: %1;}").arg(IonosTheme::black())
+            QStringLiteral("QCheckBox {color: %1;}").arg(WhitelabelTheme::getInstance::black())
         );
     #endif
 }
