@@ -18,7 +18,7 @@
  *************************************************************************/
 
 #include "sesstyle.h"
-#include "ionostheme.h"
+#include "whitelabeltheme.h"
 
 #include "pushbuttonstylehelper.h"
 #include "moreoptionsbuttonstylehelper.h"

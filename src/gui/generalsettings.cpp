@@ -16,7 +16,7 @@
 #include "ui_generalsettings.h"
 
 #include "theme.h"
-#include "ionostheme.h"
+#include "whitelabeltheme.h"
 #include "configfile.h"
 #include "application.h"
 #include "owncloudsetupwizard.h"
@@ -737,73 +737,73 @@ void GeneralSettings::customizeStyle()
     _ui->infoAndUpdatesLabel->setText(aboutText);
 
     this->setAutoFillBackground(true);
-    setPalette(QPalette(QPalette::Window, IonosTheme::dialogBackgroundColor()));
+    setPalette(QPalette(QPalette::Window, WhitelabelTheme::getInstance::dialogBackgroundColor()));
 
     this->setStyleSheet(
         QStringLiteral("QGroupBox { border: %1; font-size: %2; font-weight: %3; color: %4; }").arg(
             Theme::instance()->systemPalette()["base"].value<QColor>().name(),
-            IonosTheme::settingsTitleSize(),
-            IonosTheme::settingsTitleWeight600(),
-            IonosTheme::black()
+            WhitelabelTheme::getInstance::settingsTitleSize(),
+            WhitelabelTheme::getInstance::settingsTitleWeight600(),
+            WhitelabelTheme::getInstance::black()
         )
     );
 
     this->setStyleSheet(
         this->styleSheet() + QStringLiteral("QCheckBox { font-size: %1; font-weight: %2; margin-left: %3 px; color: %4; }").arg(
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTextWeight(),
-            IonosTheme::smallMargin(),
-            IonosTheme::black()
+            WhitelabelTheme::getInstance::settingsTextSize(),
+            WhitelabelTheme::getInstance::settingsTextWeight(),
+            WhitelabelTheme::getInstance::smallMargin(),
+            WhitelabelTheme::getInstance::black()
         )
     );
 
     this->setStyleSheet(
         this->styleSheet() + QStringLiteral("QLabel { font-size: %1; font-weight: %2; color: %3; }").arg(
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTitleWeight500(),
-            IonosTheme::black()
+            WhitelabelTheme::getInstance::settingsTextSize(),
+            WhitelabelTheme::getInstance::settingsTitleWeight500(),
+            WhitelabelTheme::getInstance::black()
         )
     );
 
     this->setStyleSheet(
         this->styleSheet() + QStringLiteral("QFrame { font-size: %1; font-weight: %2; color: %3; }").arg(
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTitleWeight600(),
-            IonosTheme::black()
+            WhitelabelTheme::getInstance::settingsTextSize(),
+            WhitelabelTheme::getInstance::settingsTitleWeight600(),
+            WhitelabelTheme::getInstance::black()
         )
     );
 
     _ui->sendNecessaryData_checkbox->setChecked(true);
     _ui->sendNecessaryData_checkbox->setStyleSheet(
         QStringLiteral("QCheckBox { font-size: %1; font-weight: %2; color: %3; }").arg(
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTitleWeight600(),
-            IonosTheme::folderWizardSubtitleColor()
+            WhitelabelTheme::getInstance::settingsTextSize(),
+            WhitelabelTheme::getInstance::settingsTitleWeight600(),
+            WhitelabelTheme::getInstance::folderWizardSubtitleColor()
         )
     );
 
     _ui->sendAnonymousData_checkbox->setStyleSheet(
         QStringLiteral("QCheckBox { font-size: %1; font-weight: %2; color: %3; }").arg(
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTitleWeight600(),
-            IonosTheme::folderWizardSubtitleColor()
+            WhitelabelTheme::getInstance::settingsTextSize(),
+            WhitelabelTheme::getInstance::settingsTitleWeight600(),
+            WhitelabelTheme::getInstance::folderWizardSubtitleColor()
         )
     );
 
     _ui->necessaryDataLabel->setStyleSheet(
         QStringLiteral("QLabel { font-size: %1; font-weight: %2; color: %3; margin-left: %4; }").arg(
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTextWeight(),
-            IonosTheme::black(),
+            WhitelabelTheme::getInstance::settingsTextSize(),
+            WhitelabelTheme::getInstance::settingsTextWeight(),
+            WhitelabelTheme::getInstance::black(),
             "24"
         )
     );
 
     _ui->anonymousDataLabel->setStyleSheet(
         QStringLiteral("QLabel { font-size: %1; font-weight: %2; color: %3;  margin-left: %4; margin-bottom: %5; }").arg(
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTextWeight(),
-            IonosTheme::black(),
+            WhitelabelTheme::getInstance::settingsTextSize(),
+            WhitelabelTheme::getInstance::settingsTextWeight(),
+            WhitelabelTheme::getInstance::black(),
             "24",
             "16"
 

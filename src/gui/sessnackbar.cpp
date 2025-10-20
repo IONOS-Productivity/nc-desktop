@@ -1,5 +1,5 @@
 #include "sessnackbar.h"
-#include "ionostheme.h"
+#include "whitelabeltheme.h"
 #include "theme.h"
 #include <QLayout>
 #include <QHBoxLayout>
@@ -104,7 +104,7 @@ namespace OCC {
         const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-snackbar-success.svg");
         m_iconLabel.setPixmap(logoIconFileName);
 
-        updateStyleSheet(IonosTheme::successBorderColor(), IonosTheme::successColor(), IonosTheme::black(), IonosTheme::black());
+        updateStyleSheet(WhitelabelTheme::getInstance::successBorderColor(), WhitelabelTheme::getInstance::successColor(), WhitelabelTheme::getInstance::black(), WhitelabelTheme::getInstance::black());
     }
 
     void sesSnackBar::warningStyle()
@@ -112,7 +112,7 @@ namespace OCC {
         const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-snackbar-warning.svg");
         m_iconLabel.setPixmap(logoIconFileName);
 
-        updateStyleSheet(IonosTheme::warningBorderColor(), IonosTheme::warningColor(), IonosTheme::black(), IonosTheme::black());
+        updateStyleSheet(WhitelabelTheme::getInstance::warningBorderColor(), WhitelabelTheme::getInstance::warningColor(), WhitelabelTheme::getInstance::black(), WhitelabelTheme::getInstance::black());
     }
 
     void sesSnackBar::errorStyle()
@@ -120,7 +120,7 @@ namespace OCC {
         const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-snackbar-error.svg");
         m_iconLabel.setPixmap(logoIconFileName);
 
-        updateStyleSheet(IonosTheme::errorBorderColor(), IonosTheme::errorColor(), IonosTheme::black(), IonosTheme::black());
+        updateStyleSheet(WhitelabelTheme::getInstance::errorBorderColor(), WhitelabelTheme::getInstance::errorColor(), WhitelabelTheme::getInstance::black(), WhitelabelTheme::getInstance::black());
     }
 
     void sesSnackBar::updateStyleSheet(QColor frameBorderColor, QColor frameBackgroundColor, QColor frameColor, QColor labelColor) 

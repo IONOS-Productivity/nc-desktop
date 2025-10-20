@@ -2,7 +2,7 @@
 #ifndef _BUTTONSTYLE_H
 #define _BUTTONSTYLE_H
  
-#include "ionostheme.h"
+#include "whitelabeltheme.h"
 #include <QMetaType>
 #include <QString>
 
@@ -69,67 +69,67 @@ public:
     // Default
     QString buttonDefaultColor() const override 
     {
-        return OCC::IonosTheme::buttonPrimaryColor();
+        return OCC::WhitelabelTheme::getInstance::buttonPrimaryColor();
     }
 
     QString buttonDefaultBorderColor() const override 
     {
-        return OCC::IonosTheme::buttonPrimaryColor();
+        return OCC::WhitelabelTheme::getInstance::buttonPrimaryColor();
     }
 
     //Hover
     QString buttonHoverColor() const override 
     {
-        return OCC::IonosTheme::buttonPrimaryHoverColor();
+        return OCC::WhitelabelTheme::getInstance::buttonPrimaryHoverColor();
     }
 
     QString buttonHoverBorderColor() const override 
     {
-        return OCC::IonosTheme::buttonPrimaryHoverColor();
+        return OCC::WhitelabelTheme::getInstance::buttonPrimaryHoverColor();
     }
 
     // Pressed
     QString buttonPressedColor() const override 
     {
-        return OCC::IonosTheme::buttonPrimaryPressedColor();
+        return OCC::WhitelabelTheme::getInstance::buttonPrimaryPressedColor();
     }
 
     QString buttonPressedBorderColor() const override 
     {
-        return OCC::IonosTheme::buttonPrimaryPressedColor();
+        return OCC::WhitelabelTheme::getInstance::buttonPrimaryPressedColor();
     }
 
     // Disabled
     QString buttonDisabledColor() const override 
     {
-        return OCC::IonosTheme::buttonDisabledColor();
+        return OCC::WhitelabelTheme::getInstance::buttonDisabledColor();
     }
 
     QString buttonDisabledBorderColor() const override 
     {
-        return OCC::IonosTheme::buttonDisabledColor();
+        return OCC::WhitelabelTheme::getInstance::buttonDisabledColor();
     }
 
     // Focused
     QString buttonFocusedColor() const override 
     {
-        return OCC::IonosTheme::buttonPrimaryColor();
+        return OCC::WhitelabelTheme::getInstance::buttonPrimaryColor();
     }
 
     QString buttonFocusedBorderColor() const override 
     {
-        return OCC::IonosTheme::black();
+        return OCC::WhitelabelTheme::getInstance::black();
     }
 
     // Font
     QString buttonDisabledFontColor() const override 
     {
-        return OCC::IonosTheme::buttonDisabledFontColor();
+        return OCC::WhitelabelTheme::getInstance::buttonDisabledFontColor();
     }
 
     QString buttonFontColor() const override 
     {
-        return OCC::IonosTheme::white();
+        return OCC::WhitelabelTheme::getInstance::white();
     }
 };
 
@@ -152,67 +152,67 @@ public:
     // Default
     QString buttonDefaultColor() const override 
     {
-        return OCC::IonosTheme::white();
+        return OCC::WhitelabelTheme::getInstance::white();
     }
 
     QString buttonDefaultBorderColor() const override 
     {
-        return OCC::IonosTheme::buttonSecondaryBorderColor();
+        return OCC::WhitelabelTheme::getInstance::buttonSecondaryBorderColor();
     }
 
     // Hover
     QString buttonHoverColor() const override 
     {
-        return OCC::IonosTheme::buttonSecondaryHoverColor();
+        return OCC::WhitelabelTheme::getInstance::buttonSecondaryHoverColor();
     }
 
     QString buttonHoverBorderColor() const override 
     {
-        return OCC::IonosTheme::buttonSecondaryBorderColor();
+        return OCC::WhitelabelTheme::getInstance::buttonSecondaryBorderColor();
     }
 
     // Pressed
     QString buttonPressedColor() const override 
     {
-        return OCC::IonosTheme::buttonSecondaryPressedColor();
+        return OCC::WhitelabelTheme::getInstance::buttonSecondaryPressedColor();
     }
 
     QString buttonPressedBorderColor() const override 
     {
-        return OCC::IonosTheme::buttonSecondaryBorderColor();
+        return OCC::WhitelabelTheme::getInstance::buttonSecondaryBorderColor();
     }
 
     // Disabled
     QString buttonDisabledColor() const override 
     {
-        return OCC::IonosTheme::buttonDisabledColor();
+        return OCC::WhitelabelTheme::getInstance::buttonDisabledColor();
     }
 
     QString buttonDisabledBorderColor() const override 
     {
-        return OCC::IonosTheme::buttonDisabledColor();
+        return OCC::WhitelabelTheme::getInstance::buttonDisabledColor();
     }
 
     // Focused 
     QString buttonFocusedColor() const override 
     {
-        return OCC::IonosTheme::white();
+        return OCC::WhitelabelTheme::getInstance::white();
     }
 
     QString buttonFocusedBorderColor() const override 
     { 
-        return OCC::IonosTheme::black();
+        return OCC::WhitelabelTheme::getInstance::black();
     }
 
     // Font
     QString buttonDisabledFontColor() const override 
     {
-        return OCC::IonosTheme::buttonDisabledFontColor();
+        return OCC::WhitelabelTheme::getInstance::buttonDisabledFontColor();
     }
 
     QString buttonFontColor() const override 
     {
-        return OCC::IonosTheme::black();
+        return OCC::WhitelabelTheme::getInstance::black();
     }
 };
 
@@ -235,67 +235,67 @@ public:
     // Default
     QString buttonDefaultColor() const override 
     {
-        return OCC::IonosTheme::white();
+        return OCC::WhitelabelTheme::getInstance::white();
     }
 
     QString buttonDefaultBorderColor() const override 
     {
-        return OCC::IonosTheme::white();
+        return OCC::WhitelabelTheme::getInstance::white();
     }
 
     // Hover
     QString buttonHoverColor() const override 
     {
-        return OCC::IonosTheme::buttonHoveredColor();
+        return OCC::WhitelabelTheme::getInstance::buttonHoveredColor();
     }
 
     QString buttonHoverBorderColor() const override 
     {
-        return OCC::IonosTheme::buttonHoveredColor();
+        return OCC::WhitelabelTheme::getInstance::buttonHoveredColor();
     }
 
     // Pressed
     QString buttonPressedColor() const override 
     {
-        return OCC::IonosTheme::buttonPressedColor();
+        return OCC::WhitelabelTheme::getInstance::buttonPressedColor();
     }
 
     QString buttonPressedBorderColor() const override 
     {
-        return OCC::IonosTheme::buttonPressedColor();
+        return OCC::WhitelabelTheme::getInstance::buttonPressedColor();
     }
 
     // Disabled
     QString buttonDisabledColor() const override 
     {
-        return OCC::IonosTheme::buttonDisabledColor();
+        return OCC::WhitelabelTheme::getInstance::buttonDisabledColor();
     }
 
     QString buttonDisabledBorderColor() const override 
     {
-        return OCC::IonosTheme::buttonDisabledColor();
+        return OCC::WhitelabelTheme::getInstance::buttonDisabledColor();
     }
 
     // Focused 
     QString buttonFocusedColor() const override 
     {
-        return OCC::IonosTheme::white();
+        return OCC::WhitelabelTheme::getInstance::white();
     }
 
     QString buttonFocusedBorderColor() const override 
     { 
-        return OCC::IonosTheme::black();
+        return OCC::WhitelabelTheme::getInstance::black();
     }
 
     // Font
     QString buttonDisabledFontColor() const override 
     {
-        return OCC::IonosTheme::buttonDisabledFontColor();
+        return OCC::WhitelabelTheme::getInstance::buttonDisabledFontColor();
     }
 
     QString buttonFontColor() const override 
     {
-        return OCC::IonosTheme::black();
+        return OCC::WhitelabelTheme::getInstance::black();
     }
 };
 }

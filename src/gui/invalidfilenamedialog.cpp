@@ -19,7 +19,7 @@
 #include "ui_invalidfilenamedialog.h"
 
 #include "filesystem.h"
-#include "ionostheme.h"
+#include "whitelabeltheme.h"
 #include "buttonstyle.h"
 #include <folder.h>
 
@@ -337,10 +337,10 @@ void InvalidFilenameDialog::customizeStyle()
 {
     this->setStyleSheet(
         QStringLiteral("QDialog {background-color: %1; } QLabel{ font-family: %2; font-size: %3; font-weight: %4; }").arg(
-            IonosTheme::dialogBackgroundColor(), 
-            IonosTheme::settingsFont(),
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTextWeight()
+            WhitelabelTheme::getInstance::dialogBackgroundColor(), 
+            WhitelabelTheme::getInstance::settingsFont(),
+            WhitelabelTheme::getInstance::settingsTextSize(),
+            WhitelabelTheme::getInstance::settingsTextWeight()
         )
     );
  
@@ -348,13 +348,13 @@ void InvalidFilenameDialog::customizeStyle()
         QStringLiteral(
             "color: %1; font-family: %2; font-size: %3; font-weight: %4; border-radius: %5; border: 1px "
             "solid %6; padding: 0px 12px; text-align: left; vertical-align: middle; height: 40px; background: %7; ").arg(
-                IonosTheme::folderWizardPathColor(),
-                IonosTheme::settingsFont(),
-                IonosTheme::settingsTextSize(),
-                IonosTheme::settingsTextWeight(),
-                IonosTheme::buttonRadius(),
-                IonosTheme::menuBorderColor(),
-                IonosTheme::white()
+                WhitelabelTheme::getInstance::folderWizardPathColor(),
+                WhitelabelTheme::getInstance::settingsFont(),
+                WhitelabelTheme::getInstance::settingsTextSize(),
+                WhitelabelTheme::getInstance::settingsTextWeight(),
+                WhitelabelTheme::getInstance::buttonRadius(),
+                WhitelabelTheme::getInstance::menuBorderColor(),
+                WhitelabelTheme::getInstance::white()
             )
     );
 

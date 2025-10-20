@@ -44,8 +44,8 @@ namespace OCC {
 inline static QFont makeAliasFont(const QFont &normalFont)
 {
     QFont aliasFont = normalFont;
-    aliasFont.setWeight(IonosTheme::settingsTitleWeightDemiBold());
-    aliasFont.setPixelSize(IonosTheme::settingsBigTitlePixel());
+    aliasFont.setWeight(WhitelabelTheme::getInstance::settingsTitleWeightDemiBold());
+    aliasFont.setPixelSize(WhitelabelTheme::getInstance::settingsBigTitlePixel());
     return aliasFont;
 }
 
@@ -70,7 +70,7 @@ QSize FolderStatusDelegate::sizeHint(const QStyleOptionViewItem &option,
     const QModelIndex &index) const
 {
     QFont font = QFont(option.font);
-    font.setPixelSize(IonosTheme::settingsTextPixel());
+    font.setPixelSize(WhitelabelTheme::getInstance::settingsTextPixel());
     QFont aliasFont = makeAliasFont(font);
 
     QFontMetrics fm(font);
@@ -125,8 +125,8 @@ int FolderStatusDelegate::rootFolderHeightWithoutErrors(const QFontMetrics &fm, 
 void FolderStatusDelegate::drawAddButton(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     QFont titleFont = option.font;
-    titleFont.setWeight(IonosTheme::settingsTitleWeightDemiBold());
-    titleFont.setPixelSize(IonosTheme::settingsTitlePixel());
+    titleFont.setWeight(WhitelabelTheme::getInstance::settingsTitleWeightDemiBold());
+    titleFont.setPixelSize(WhitelabelTheme::getInstance::settingsTitlePixel());
     QFontMetrics titleTextFm(titleFont);
     const auto baseDistanceForCalculus = titleTextFm.height() / 2;
 
@@ -137,7 +137,7 @@ void FolderStatusDelegate::drawAddButton(QPainter *painter, const QStyleOptionVi
 
     auto iconBox = option.rect;
     iconBox.setTop(iconBox.top() + baseDistanceForCalculus);
-    iconBox.setBottom(iconBox.top() + IonosTheme::treeViewIconSize());
+    iconBox.setBottom(iconBox.top() + WhitelabelTheme::getInstance::treeViewIconSize());
     iconBox.setLeft(iconBox.left() + baseDistanceForCalculus);
     iconBox.setWidth(iconBox.height());
 
@@ -155,7 +155,7 @@ void FolderStatusDelegate::drawAddButton(QPainter *painter, const QStyleOptionVi
 
     auto titleText = addFolderText();
     auto subtitleText = addInfoText();
-    auto addIcon = QIcon(IonosTheme::liveBackupPlusIcon());
+    auto addIcon = QIcon(WhitelabelTheme::getInstance::liveBackupPlusIcon());
     const auto addPixmap = addIcon.pixmap(iconBox.size(), QIcon::Normal);
 
     painter->save();
@@ -178,7 +178,7 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
 {
     QStyleOptionViewItem opt = option;
     QFont font = opt.font;
-    font.setPixelSize(IonosTheme::settingsTextPixel());
+    font.setPixelSize(WhitelabelTheme::getInstance::settingsTextPixel());
     opt.font = font;
 
     QStyledItemDelegate::paint(painter, opt, index);
@@ -241,7 +241,7 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     localPathRect.setTop(remotePathRect.bottom() + margin);
     localPathRect.setBottom(localPathRect.top() + subFm.height());
 
-    iconRect.setBottom(iconRect.top() + IonosTheme::treeViewIconSize());
+    iconRect.setBottom(iconRect.top() + WhitelabelTheme::getInstance::treeViewIconSize());
     iconRect.setWidth(iconRect.height());
 
     const auto nextToIcon = iconRect.right() + aliasMargin;
@@ -325,13 +325,13 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     };
 
     if (!conflictTexts.isEmpty()) {
-        drawTextBox(conflictTexts, QColor(IonosTheme::warningColor()), QColor(IonosTheme::warningBorderColor()));
+        drawTextBox(conflictTexts, QColor(WhitelabelTheme::getInstance::warningColor()), QColor(WhitelabelTheme::getInstance::warningBorderColor()));
     }
     if (!errorTexts.isEmpty()) {
-        drawTextBox(errorTexts, QColor(IonosTheme::errorColor()), QColor(IonosTheme::errorBorderColor()));
+        drawTextBox(errorTexts, QColor(WhitelabelTheme::getInstance::errorColor()), QColor(WhitelabelTheme::getInstance::errorBorderColor()));
     }
     if (!infoTexts.isEmpty()) {
-        drawTextBox(infoTexts, QColor(IonosTheme::infoColor()), QColor(IonosTheme::infoBorderColor()));
+        drawTextBox(infoTexts, QColor(WhitelabelTheme::getInstance::infoColor()), QColor(WhitelabelTheme::getInstance::infoBorderColor()));
     }
 
     // Sync File Progress Bar: Show it if syncFile is not empty.
@@ -353,8 +353,8 @@ void FolderStatusDelegate::drawSyncProgressBar(QPainter *painter, const QStyleOp
     const auto overallWidth = option.rect.right() - aliasMargin - optionsButtonVisualRect.width() - nextToIcon;
 
     QFont progressFont(option.font);
-    progressFont.setPixelSize(IonosTheme::settingsTextPixel());
-    progressFont.setWeight(IonosTheme::settingsTitleWeightNormal());
+    progressFont.setPixelSize(WhitelabelTheme::getInstance::settingsTextPixel());
+    progressFont.setWeight(WhitelabelTheme::getInstance::settingsTitleWeightNormal());
     painter->save();
 
         // Overall Progress Bar.
@@ -372,7 +372,7 @@ void FolderStatusDelegate::drawSyncProgressBar(QPainter *painter, const QStyleOp
     progressBarOpt.state = QStyle::StateFlag::State_Horizontal;
     progressBarOpt.rect = QStyle::visualRect(option.direction, option.rect, progressBarRect);
     QPalette paletteTmp = progressBarOpt.palette;
-    paletteTmp.setColor(QPalette::Base, IonosTheme::white());
+    paletteTmp.setColor(QPalette::Base, WhitelabelTheme::getInstance::white());
     progressBarOpt.palette = paletteTmp;
 
 #ifdef Q_OS_MACOS
@@ -485,7 +485,7 @@ bool FolderStatusDelegate::editorEvent(QEvent *event, QAbstractItemModel *model,
 
 QRect FolderStatusDelegate::optionsButtonRect(QRect within, Qt::LayoutDirection direction)
 {
-    QFont font = QFont(IonosTheme::settingsFont());
+    QFont font = QFont(WhitelabelTheme::getInstance::settingsFont());
     QFont aliasFont = makeAliasFont(font);
     QFontMetrics fm(font);
     QFontMetrics aliasFm(aliasFont);
@@ -507,7 +507,7 @@ QRect FolderStatusDelegate::optionsButtonRect(QRect within, Qt::LayoutDirection 
 
 QRect FolderStatusDelegate::errorsListRect(QRect within)
 {
-    QFont font = QFont(IonosTheme::settingsFont());
+    QFont font = QFont(WhitelabelTheme::getInstance::settingsFont());
     QFont aliasFont = makeAliasFont(font);
     QFontMetrics fm(font);
     QFontMetrics aliasFm(aliasFont);

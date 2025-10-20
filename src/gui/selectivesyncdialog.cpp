@@ -20,7 +20,7 @@
 #include "folderman.h"
 #include "networkjobs.h"
 #include "theme.h"
-#include "ionostheme.h"
+#include "whitelabeltheme.h"
 #include <QDialogButtonBox>
 #include <QFileIconProvider>
 #include <QHeaderView>
@@ -80,12 +80,12 @@ SelectiveSyncWidget::SelectiveSyncWidget(AccountPtr account, QWidget *parent)
     header->setText(tr("Deselect remote folders you do not wish to synchronize."));
     header->setWordWrap(true);
     header->setStyleSheet(
-        IonosTheme::fontConfigurationCss(
-            IonosTheme::settingsFont(),
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTextWeight(),
-            IonosTheme::titleColor())
-        + QStringLiteral("background-color: %1;").arg(IonosTheme::dialogBackgroundColor())
+        WhitelabelTheme::getInstance::fontConfigurationCss(
+            WhitelabelTheme::getInstance::settingsFont(),
+            WhitelabelTheme::getInstance::settingsTextSize(),
+            WhitelabelTheme::getInstance::settingsTextWeight(),
+            WhitelabelTheme::getInstance::titleColor())
+        + QStringLiteral("background-color: %1;").arg(WhitelabelTheme::getInstance::dialogBackgroundColor())
     );
     layout->addWidget(header);
 
@@ -111,33 +111,33 @@ SelectiveSyncWidget::SelectiveSyncWidget(AccountPtr account, QWidget *parent)
     "    background-color: white;" // Set the background color
     "    border: 1px solid #e6e6e6;"   // Optional: add a border
     "    padding-left: 4px;" 
-    +    QString(IonosTheme::fontConfigurationCss(
-            IonosTheme::settingsFont(),
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTextWeight(),
-            IonosTheme::titleColor())) 
+    +    QString(WhitelabelTheme::getInstance::fontConfigurationCss(
+            WhitelabelTheme::getInstance::settingsFont(),
+            WhitelabelTheme::getInstance::settingsTextSize(),
+            WhitelabelTheme::getInstance::settingsTextWeight(),
+            WhitelabelTheme::getInstance::titleColor())) 
     +
     "}"
     );
 #else
     _folderTree->header()->setStyleSheet(
-        IonosTheme::fontConfigurationCss(
-            IonosTheme::settingsFont(),
-            IonosTheme::settingsTextSize(),
-            IonosTheme::settingsTextWeight(),
-            IonosTheme::titleColor()
+        WhitelabelTheme::getInstance::fontConfigurationCss(
+            WhitelabelTheme::getInstance::settingsFont(),
+            WhitelabelTheme::getInstance::settingsTextSize(),
+            WhitelabelTheme::getInstance::settingsTextWeight(),
+            WhitelabelTheme::getInstance::titleColor()
     ));
 #endif
 
-    _folderTree->setStyleSheet(IonosTheme::fontConfigurationCss(
-        IonosTheme::settingsFont(),
-        IonosTheme::settingsTextSize(),
-        IonosTheme::settingsTextWeight(),
-        IonosTheme::titleColor()
+    _folderTree->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
+        WhitelabelTheme::getInstance::settingsFont(),
+        WhitelabelTheme::getInstance::settingsTextSize(),
+        WhitelabelTheme::getInstance::settingsTextWeight(),
+        WhitelabelTheme::getInstance::titleColor()
     ));
 
 #ifdef Q_OS_MAC
-    _folderTree->setPalette(QPalette(IonosTheme::white()));
+    _folderTree->setPalette(QPalette(WhitelabelTheme::getInstance::white()));
 #endif
 
     ConfigFile::setupDefaultExcludeFilePaths(_excludedFiles);
@@ -561,11 +561,11 @@ void SelectiveSyncDialog::init(const AccountPtr &account)
     button = buttonBox->addButton(QDialogButtonBox::Cancel);
     button->setStyleSheet(
         button->styleSheet() + QStringLiteral("QPushButton { %1; } ").arg(
-            IonosTheme::fontConfigurationCss(
-                IonosTheme::settingsFont(),
-                IonosTheme::settingsTextSize(),
-                IonosTheme::settingsTextWeight(),
-                IonosTheme::black()
+            WhitelabelTheme::getInstance::fontConfigurationCss(
+                WhitelabelTheme::getInstance::settingsFont(),
+                WhitelabelTheme::getInstance::settingsTextSize(),
+                WhitelabelTheme::getInstance::settingsTextWeight(),
+                WhitelabelTheme::getInstance::black()
             )
         )
     );
@@ -578,23 +578,23 @@ void SelectiveSyncDialog::init(const AccountPtr &account)
 void SelectiveSyncDialog::customizeStyle()
 {
     this->setStyleSheet(
-        QStringLiteral("QWidget QTreeView{ background-color: %1; }").arg(IonosTheme::dialogBackgroundColor())
+        QStringLiteral("QWidget QTreeView{ background-color: %1; }").arg(WhitelabelTheme::getInstance::dialogBackgroundColor())
     );
 
     _okButton->setStyleSheet(
         _okButton->styleSheet() + QStringLiteral("QPushButton { %1; } ").arg(
-            IonosTheme::fontConfigurationCss(
-                IonosTheme::settingsFont(),
-                IonosTheme::settingsTextSize(),
-                IonosTheme::settingsTitleWeight500(),
-                IonosTheme::white()
+            WhitelabelTheme::getInstance::fontConfigurationCss(
+                WhitelabelTheme::getInstance::settingsFont(),
+                WhitelabelTheme::getInstance::settingsTextSize(),
+                WhitelabelTheme::getInstance::settingsTitleWeight500(),
+                WhitelabelTheme::getInstance::white()
             )
         )
     );
 
     // Set background colors
     auto dialogPalette = palette();
-    const auto backgroundColor = QColor(IonosTheme::dialogBackgroundColor());
+    const auto backgroundColor = QColor(WhitelabelTheme::getInstance::dialogBackgroundColor());
 
     // Set Color of upper part
     dialogPalette.setColor(QPalette::Base, backgroundColor);

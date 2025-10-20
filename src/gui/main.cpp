@@ -25,7 +25,7 @@
 #include "application.h"
 #include "cocoainitializer.h"
 #include "theme.h"
-#include "ionostheme.h"
+#include "whitelabeltheme.h"
 #include "common/utility.h"
 
 #if defined(BUILD_UPDATER)
@@ -95,7 +95,7 @@ int main(int argc, char **argv)
         qmlStyle = QStringLiteral("FluentWinUI3");
         widgetsStyle = QStringLiteral("windows11");
     }
-    QApplication::setFont(IonosTheme::settingsFontDefault());
+    QApplication::setFont(WhitelabelTheme::getInstance::settingsFontDefault());
 #endif
 
 #ifdef IONOS_BUILD

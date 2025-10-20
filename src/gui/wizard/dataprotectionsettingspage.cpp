@@ -69,31 +69,31 @@ namespace OCC{
 
         _ui->necessaryDataCheckBox->setStyleSheet(
             QStringLiteral("QCheckBox { %1; }").arg(
-                IonosTheme::fontConfigurationCss(
-                    IonosTheme::settingsFont(),
-                    IonosTheme::settingsTextSize(),
-                    IonosTheme::settingsTitleWeight600(),
-                    IonosTheme::folderWizardSubtitleColor()
+                WhitelabelTheme::getInstance::fontConfigurationCss(
+                    WhitelabelTheme::getInstance::settingsFont(),
+                    WhitelabelTheme::getInstance::settingsTextSize(),
+                    WhitelabelTheme::getInstance::settingsTitleWeight600(),
+                    WhitelabelTheme::getInstance::folderWizardSubtitleColor()
                 )
             ));
 
             _ui->anonymousDataCheckBox->setStyleSheet(
                 QStringLiteral("QCheckBox { %1; }").arg(
-                    IonosTheme::fontConfigurationCss(
-                        IonosTheme::settingsFont(),
-                        IonosTheme::settingsTextSize(),
-                        IonosTheme::settingsTitleWeight600(),
-                        IonosTheme::folderWizardSubtitleColor()
+                    WhitelabelTheme::getInstance::fontConfigurationCss(
+                        WhitelabelTheme::getInstance::settingsFont(),
+                        WhitelabelTheme::getInstance::settingsTextSize(),
+                        WhitelabelTheme::getInstance::settingsTitleWeight600(),
+                        WhitelabelTheme::getInstance::folderWizardSubtitleColor()
                     )
                 ));
 
         _ui->descriptionLabel->setStyleSheet(
             QStringLiteral("QLabel { %1; margin-top: %2; margin-bottom: %2; }").arg(
-                IonosTheme::fontConfigurationCss(
-                    IonosTheme::settingsFont(),
-                    IonosTheme::settingsTextSize(),
-                    IonosTheme::settingsTextWeight(),
-                    IonosTheme::black()
+                WhitelabelTheme::getInstance::fontConfigurationCss(
+                    WhitelabelTheme::getInstance::settingsFont(),
+                    WhitelabelTheme::getInstance::settingsTextSize(),
+                    WhitelabelTheme::getInstance::settingsTextWeight(),
+                    WhitelabelTheme::getInstance::black()
                 ),
                 "24"
             )
@@ -101,24 +101,24 @@ namespace OCC{
 
         _ui->necessaryDataLabel->setStyleSheet(
             QStringLiteral("QLabel { %1; margin-left: %2; margin-bottom: %3; }").arg(
-                IonosTheme::fontConfigurationCss(
-                    IonosTheme::settingsFont(),
-                    IonosTheme::settingsTextSize(),
-                    IonosTheme::settingsTextWeight(),
-                    IonosTheme::black()
+                WhitelabelTheme::getInstance::fontConfigurationCss(
+                    WhitelabelTheme::getInstance::settingsFont(),
+                    WhitelabelTheme::getInstance::settingsTextSize(),
+                    WhitelabelTheme::getInstance::settingsTextWeight(),
+                    WhitelabelTheme::getInstance::black()
                 ),
                 "16", 
-                IonosTheme::smallMargin()
+                WhitelabelTheme::getInstance::smallMargin()
             )
         );
 
         _ui->anonymousDataLabel->setStyleSheet(
             QStringLiteral("QLabel { %1; margin-left: %2; margin-bottom: %3; }").arg(
-                IonosTheme::fontConfigurationCss(
-                    IonosTheme::settingsFont(),
-                    IonosTheme::settingsTextSize(),
-                    IonosTheme::settingsTextWeight(),
-                    IonosTheme::black()
+                WhitelabelTheme::getInstance::fontConfigurationCss(
+                    WhitelabelTheme::getInstance::settingsFont(),
+                    WhitelabelTheme::getInstance::settingsTextSize(),
+                    WhitelabelTheme::getInstance::settingsTextWeight(),
+                    WhitelabelTheme::getInstance::black()
                 ),
                 "16", 
                 "48"
