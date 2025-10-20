@@ -26,7 +26,7 @@
 #include "activitydata.h"
 #include "systray.h"
 
-#include "ionostheme.h"
+#include "whitelabeltheme.h"
 
 #include <QtCore>
 #include <QAbstractListModel>
@@ -255,11 +255,11 @@ QVariant ActivityListModel::data(const QModelIndex &index, int role) const
             } else {
                 // File sync successful
                 if (a._fileAction == "file_created") {
-                    return IonosTheme::plusIcon();
+                    return WhitelabelTheme::getInstance::plusIcon();
                 } else if (a._fileAction == "file_deleted") {
-                    return IonosTheme::deleteIcon();
+                    return WhitelabelTheme::getInstance::deleteIcon();
                 } else {
-                    return IonosTheme::refreshIcon();
+                    return WhitelabelTheme::getInstance::refreshIcon();
                 }
             }
         } else {

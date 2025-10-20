@@ -237,18 +237,18 @@ void Flow2AuthWidget::customizeStyle()
     _ui.horizontalLayout->setSpacing(32);
 #endif
 
-    _ui.statusLabel->setStyleSheet(IonosTheme::fontConfigurationCss(
-        IonosTheme::settingsFont(),
-        IonosTheme::settingsTextSize(),
-        IonosTheme::settingsTextWeight(),
-        IonosTheme::titleColor()
+    _ui.statusLabel->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
+        WhitelabelTheme::getInstance::settingsFont(),
+        WhitelabelTheme::getInstance::settingsTextSize(),
+        WhitelabelTheme::getInstance::settingsTextWeight(),
+        WhitelabelTheme::getInstance::titleColor()
     ));
 
-    _ui.label->setStyleSheet(IonosTheme::fontConfigurationCss(
-        IonosTheme::settingsFont(),
-        IonosTheme::settingsTextSize(),
-        IonosTheme::settingsTextWeight(),
-        IonosTheme::titleColor()
+    _ui.label->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
+        WhitelabelTheme::getInstance::settingsFont(),
+        WhitelabelTheme::getInstance::settingsTextSize(),
+        WhitelabelTheme::getInstance::settingsTextWeight(),
+        WhitelabelTheme::getInstance::titleColor()
     ));
 
     _ui.label->setText(tr("Switch to your browser to connect your account"));

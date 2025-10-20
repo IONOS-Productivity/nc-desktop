@@ -2,7 +2,7 @@
 
 #include "buttonstylestrategy.h"
 #include "buttonstyle.h"
-#include "ionostheme.h"
+#include "whitelabeltheme.h"
 #include <QPainter>
 #include <QStyleOptionButton>
 #include <QWidget>

@@ -13,7 +13,7 @@
  */
 
 #include "slideshow.h"
-#include "ionostheme.h"
+#include "whitelabeltheme.h"
 
 #include <QGuiApplication>
 #include <QMouseEvent>
@@ -23,18 +23,18 @@
 
 namespace OCC {
 
-static const int Spacing = IonosTheme::LoginPageSpacer();
+static const int Spacing = WhitelabelTheme::getInstance::LoginPageSpacer();
 static const int SlideDuration = 1000;
 static const int SlideDistance = 400;
 
 SlideShow::SlideShow(QWidget *parent) : QWidget(parent)
 {
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-    setStyleSheet(IonosTheme::fontConfigurationCss(
-        IonosTheme::settingsFont(),
-        IonosTheme::onboardingTitle(),
-        IonosTheme::settingsTitleWeight400(),
-        IonosTheme::titleColor()
+    setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
+        WhitelabelTheme::getInstance::settingsFont(),
+        WhitelabelTheme::getInstance::onboardingTitle(),
+        WhitelabelTheme::getInstance::settingsTitleWeight400(),
+        WhitelabelTheme::getInstance::titleColor()
     ));
 }
 
