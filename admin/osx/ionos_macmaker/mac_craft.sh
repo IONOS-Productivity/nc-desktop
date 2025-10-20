@@ -8,15 +8,15 @@ while getopts "b:p:s:n:k:civtu" opt; do
     b )REL_BASE_DIR=$OPTARG;;
     p )REL_PATH_TO_PKG=$OPTARG ;;
     s )IONOS_TEAM_IDENTIFIER=$OPTARG ;;
-    n )NC_TEAM_IDENTIFIER==$OPTARG ;;
-    k )SPARKLE_KEY=$OPTARG ;;
+    n )NC_TEAM_IDENTIFIER=$OPTARG ;;
+    k )SPARKLE_KEY=$OPTARG ;;   # not used
     c )CLEAN_REBUILD=true ;;
     i )PACKAGE_INSTALLER=true ;;
     v )VERBOSE=true ;; 
     t )TEAM_PATCHING=true ;;
     u )BUILD_UPDATER=true ;;
     \? )
-      echo "Usage: mac_craft.sh [-b <base_dir>] [-p <path_to_pkg>] [-s <code_sign_identity>] [-c clean-rebuild] [-i build-installer] [-v verbose]"
+      echo "Usage: mac_craft.sh [-b <REL_BASE_DIR>] [-p <REL_PATH_TO_PKG>] [-s <IONOS_TEAM_IDENTIFIER>] [-n <NC_TEAM_IDENTIFIER>] [-k <SPARKLE_KEY>] [-c CLEAN_REBUILD] [-i PACKAGE_INSTALLER] [-v VERBOSE] [-t TEAM_PATCHING] [-u BUILD_UPDATER]"
       exit 1
       ;;
   esac
@@ -27,13 +27,24 @@ if [ "$VERBOSE" = true ]; then
   set -xe
 fi
 
-# if [ "$BUILD_UPDATER" == "true" ] && [ -z "$SPARKLE_KEY" ]; then
-#   echo "SPARKLE_KEY not set. Exiting."
-#   exit 0
-# fi
-
 if [ "$TEAM_PATCHING" == "true" ] && [ -z "$NC_TEAM_IDENTIFIER" ]; then
   echo "Patching aktivated, but NC_TEAM_IDENTIFIER not set. Exiting."
+  exit 0
+fi
+
+# Check if CODE_SIGN_IDENTITY is set, if not exit
+if [ -z "$IONOS_TEAM_IDENTIFIER" ]; then
+  echo "IONOS_TEAM_IDENTIFIER not set. Exiting."
+  exit 0
+fi
+
+if [ -z "$REL_BASE_DIR" ]; then
+  echo "REL_BASE_DIR not set. Exiting."
+  exit 0
+fi
+
+if [ -z "$REL_PATH_TO_PKG" ]; then
+  echo "REL_PATH_TO_PKG not set. Exiting."
   exit 0
 fi
 
@@ -126,12 +137,7 @@ fi
 # ---------------------------------------------------
 # Sign the client
 
-# Check if CODE_SIGN_IDENTITY is set, if not exit
-if [ -z "$CODE_SIGN_IDENTITY" ]; then
-  echo "Code sign identity not set. Exiting."
-  open $BASE_DIR
-  exit 0
-fi
+
 
 echo "start signing the client"
 
@@ -162,9 +168,9 @@ if [ -z "$PACKAGE_INSTALLER" ]; then
 fi
 
 echo "Renew BOM"
-mkbom $PAYLOAD_DIR $INNER_PKG/Bom
+mkbom "$PAYLOAD_DIR $INNER_PKG/Bom"
 echo "Reassembling the package..."
-(cd $PAYLOAD_DIR && \
+(cd "$PAYLOAD_DIR" && \
  find . | cpio -o --format odc | gzip -c) > $PAYLOAD_DIR.new
 
 rm -rf $PAYLOAD_DIR
@@ -189,11 +195,10 @@ mv $INNER_PKG.signed $INNER_PKG
   --package-path ex \
   $INSTALLER_PKG.unsigned)
 
-RESIGNED_PKG="${BASE_DIR%/}/$PKG_FILENAME.resigned.pkg"
-productsign --timestamp --sign "$INSTALLER_CERT" $INSTALLER_PKG.unsigned "$RESIGNED_PKG"
+productsign --timestamp --sign "$INSTALLER_CERT" $INSTALLER_PKG.unsigned "$PACKAGE_PATH"
 
 # catch the output of the notarytool command
-OUTPUT=$(xcrun notarytool submit --wait "$RESIGNED_PKG"\
+OUTPUT=$(xcrun notarytool submit --wait "$PACKAGE_PATH"\
   --keychain-profile "IONOS SE HiDrive Next")
 
 SUBMISSION_STATUS=$(echo $OUTPUT | grep -o 'status: [^ ]*' | cut -d ' ' -f 2)
@@ -206,20 +211,18 @@ if [ $SUBMISSION_STATUS != "Accepted" ]; then
 fi
 
 # staple
-xcrun stapler staple "$RESIGNED_PKG"
-xcrun stapler validate "$RESIGNED_PKG"
+xcrun stapler staple "$PACKAGE_PATH"
+xcrun stapler validate "$PACKAGE_PATH"
 
 
 # Sparkle
 
-# PACKAGE_PATH="$BASE_DIR$PKG_FILENAME.resigned.pkg"
-SPARKLE_TBZ_PATH="${RESIGNED_PKG}.tbz"
+SPARKLE_TBZ_PATH="${PACKAGE_PATH}.tbz"
 
 echo "Creating Sparkle package archive: $SPARKLE_TBZ_PATH"
 
 # Load Sparkle
 
-echo "HIER"
 if [ "$BUILD_UPDATER" == "true" ]; then
   echo "Creating Sparkle package archive: $SPARKLE_TBZ_PATH"
 
@@ -236,7 +239,7 @@ if [ "$BUILD_UPDATER" == "true" ]; then
   wget $SPARKLE_DOWNLOAD_URI -O ${SPARKLE_DIR%/}/Sparkle.tar.xz
   tar -xvf ${SPARKLE_DIR%/}/Sparkle.tar.xz -C $SPARKLE_DIR
 
-  if tar cf "$SPARKLE_TBZ_PATH" "$RESIGNED_PKG"; then
+  if tar cf "$SPARKLE_TBZ_PATH" "$PACKAGE_PATH"; then
       echo "✅ Sparkle package created successfully."
   else
       echo "❌ Could not create Sparkle package tbz!" >&2
@@ -244,7 +247,6 @@ if [ "$BUILD_UPDATER" == "true" ]; then
   fi
 
   echo "Signing Sparkle package: $SPARKLE_TBZ_PATH"
-# -s $SPARKLE_KEY 
   if "${SPARKLE_DIR%/}/bin/sign_update" "$SPARKLE_TBZ_PATH"; then
       echo "✅ Sparkle package signed successfully."
   else

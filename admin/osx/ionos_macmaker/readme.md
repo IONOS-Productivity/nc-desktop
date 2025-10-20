@@ -1,104 +1,126 @@
-# sign.sh - IONOS HiDrive Next - macOS Resign and Notarization Script
+# mac_craft.sh
 
-This script automates the **patching**, **re-signing**, **packaging**, **notarization**, and **stapling** of the `IONOS HiDrive Next` macOS `.pkg` installer.
-
----
-
-## 🔧 What it does
-
-1. **Expands** a `.pkg` installer.
-2. **Patches** the Team Identifier in `.plist` files and binaries if required.
-3. **Code-signs** all components of the `.app` bundle and related scripts.
-4. **Reassembles** and **signs** the final `.pkg` installer.
-5. **Submits** the `.pkg` for notarization.
-6. **Staples** the notarization ticket onto the package.
+This script automates the build and signing process for the **IONOS HiDrive Next** macOS client installer. It takes an existing `.pkg` package, optionally patches team identifiers, resigns the app, reassembles the installer, notarizes it with Apple, and finally creates a **Sparkle update package** for distribution.
 
 ---
 
-## 📝 Usage
+## Features
+
+* **Expand** a given `.pkg` file into a working directory
+* **Patch** identifiers if required (team patching mode)
+* **Resign** the app with the correct `Developer ID` certificates
+* **Reassemble** the installer package with updated files
+* **Notarize and staple** the final package with Apple’s notarization service
+* **Build Sparkle update** archives for app updates
+
+---
+
+## Usage
 
 ```bash
-./sign.sh -b <base_dir> -p <path_to_pkg> -s <signing_identity> [-c] [-i] [-v]
-````
+./mac_craft.sh [-b <REL_BASE_DIR>] [-p <REL_PATH_TO_PKG>] [-s <IONOS_TEAM_IDENTIFIER>] [-n <NC_TEAM_IDENTIFIER>] [-k <SPARKLE_KEY>] [-c] [-i] [-v] [-t] [-u]
+```
 
-### Parameters
+### Options
 
-| Flag | Description                                                               |
-| ---- | ------------------------------------------------------------------------- |
-| `-b` | **Base directory** where output and working directories will be stored.   |
-| `-p` | **Path to the original `.pkg`** to be processed.                          |
-| `-s` | **Code signing identity** (common name of your Developer ID certificate). |
-| `-c` | Optional: Perform a **clean rebuild** of the expanded `.pkg`.             |
-| `-i` | Optional: Enable **installer creation** (required for final output).      |
-| `-v` | Optional: Enable **verbose mode** for detailed logging.                   |
-| `-t` | Optional: Enable patching of the Team Identifer in Binaries               |
+* `-b <REL_BASE_DIR>` : Base directory for build and output
+* `-p <REL_PATH_TO_PKG>` : Path to the original `.pkg` installer
+* `-s <IONOS_TEAM_IDENTIFIER>` : IONOS Team Identifier (required for signing)
+* `-n <NC_TEAM_IDENTIFIER>` : Old Team Identifier (used for patching if needed)
+* `-k <SPARKLE_KEY>` : Sparkle signing key (**currently unused**)
+* `-c` : Clean rebuild (delete old extracted directory before expanding)
+* `-i` : Enable installer packaging (otherwise exits after signing)
+* `-v` : Verbose mode (print debug output)
+* `-t` : Enable team patching mode (replaces `NC_TEAM_IDENTIFIER` with `IONOS_TEAM_IDENTIFIER`)
+* `-u` : Build Sparkle updater package
 
 ---
 
-## 📦 Example
+## Workflow
+
+1. **Expand Original Package**
+
+   * The `.pkg` is expanded into a working directory (`pkgutil --expand-full`).
+   * If `-c` is set, any previous working directory is removed first.
+
+2. **Patch Identifiers (Optional)**
+
+   * If `-t` is used, the script searches `.plist` and binary files for the old team identifier.
+   * It replaces it with the new `IONOS_TEAM_IDENTIFIER`.
+   * Both IDs must have the same character length to ensure safe binary patching.
+
+3. **Resign Application**
+
+   * The client `.app` is signed using the `mac-crafter` tool.
+   * Codesign identity: `Developer ID Application: IONOS SE (TEAM_ID)`
+   * Verifies that the signed app’s TeamIdentifier matches the expected one.
+
+4. **Reassemble Installer**
+
+   * Recreates the package payload (`mkbom`, `cpio`, `pkgutil --flatten`).
+   * Signs the installer with:
+     `Developer ID Installer: IONOS SE (TEAM_ID)`
+   * Uses `productbuild` and `productsign` to generate the final signed package.
+
+5. **Notarization & Stapling**
+
+   * Submits the package to Apple’s Notary Service (`xcrun notarytool`).
+   * Waits for the result, validates acceptance.
+   * Applies a **staple** to the installer (`xcrun stapler staple`).
+
+6. **Sparkle Update Build (Optional)**
+
+   * Downloads Sparkle if not available.
+   * Archives the signed package as `.tbz`.
+   * Signs the archive using Sparkle’s `sign_update` tool.
+
+---
+
+## Example
 
 ```bash
-./sign.sh -b ~/Desktop/build -p ./IONOS_HiDrive.pkg -s "IONOS SE (SAMPLE_ID)" -c -i -v
+./mac_craft.sh \
+  -b /Users/developer/build \
+  -p ./IONOS.pkg \
+  -s ABC123XYZ \
+  -n OLDTEAMID \
+  -i -c -t -u -v
 ```
 
----
+This command will:
 
-## 📁 Output
-
-After successful execution, you’ll find the final notarized and stapled installer here:
-
-```
-<base_dir>/<original_pkg_name>.resigned.pkg
-```
-
----
-
-## 🔐 Code Signing Notes
-
-* `APPLICATION_CERT` is used to sign the `.app`, its frameworks, and extensions.
-* `INSTALLER_CERT` is used to sign the final `.pkg` with `productsign`.
-* `TEAM_IDENTIFIER` is **validated** in the final app signature to ensure it matches expectations.
+* Clean and rebuild the working directory
+* Expand `IONOS.pkg`
+* Patch from `OLDTEAMID` → `ABC123XYZ`
+* Resign the app and installer
+* Notarize and staple the package
+* Build a signed Sparkle update archive
+* Run in verbose mode
 
 ---
 
-## 🧩 Patch Logic
+## Requirements
 
-If the script detects the **old Team Identifier** (`NC_TEAM_IDENTIFIER`) inside any `.plist` or binary:
+* macOS with Xcode tools installed
+* Apple Developer account with:
 
-* It **replaces** it with the new identifier (`IONOS_TEAM_IDENTIFIER`), only if the lengths match.
-* Ensures a **binary-safe patch** using `perl` and `sed`.
-* Only files with actual matches are patched.
-
----
-
-## 🍏 Notarization
-
-The script uses:
-
-```bash
-xcrun notarytool submit --wait --keychain-profile "IONOS SE HiDrive Next"
-```
-
-Make sure the keychain profile is **set up properly** and can access your notarization credentials.
+  * **Developer ID Application** certificate
+  * **Developer ID Installer** certificate
+* `mac-crafter` tool (Swift package, provided by Nextcloud)
+* `pkgutil`, `productbuild`, `productsign`, `notarytool`, `stapler`, `xcrun`, `grep`, `sed`, `mkbom`, `cpio`, `gzip`
+* `wget`, `tar`, `perl` for Sparkle integration
 
 ---
 
-## 🛠 Requirements
+## Output
 
-* macOS with Xcode Command Line Tools installed
-* Access to a valid **Developer ID Application** and **Installer certificate**
-* A configured **notarytool profile** in your keychain
-* Tools used:
+* Final notarized installer:
 
-  * `pkgutil`, `codesign`, `productsign`, `productbuild`, `xcrun`, `plutil`, `grep`, `sed`, `perl`, `mkbom`, `cpio`, `gzip`
+  ```
+  <BASE_DIR>/<PKG_FILENAME>.resigned.pkg
+  ```
+* Sparkle update archive (if `-u` enabled):
 
----
-
-## 🛡️ Safety Checks
-
-* Team ID patching only happens if both IDs are the **same length**.
-* Binary patching is skipped unless needed.
-* Final code signature is checked for correct TeamIdentifier.
-* If notarization fails, the script exits with an error.
-
----
+  ```
+  <BASE_DIR>/<PKG_FILENAME>.resigned.pkg.tbz
+  ```
