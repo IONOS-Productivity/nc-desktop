@@ -1,5 +1,5 @@
-#ifndef _IONOSTHEME_H
-#define _IONOSTHEME_H
+#ifndef _STRATOTHEME_H
+#define _STRATOTHEME_H
 
 #include <QFont>
 #include <QString>
@@ -7,7 +7,7 @@
 
 namespace OCC {
 
-class IonosTheme :: Theme {
+class StratoTheme :: Theme{
 public:
 
     //Icons
@@ -331,7 +331,7 @@ public:
 
 
 private:
-    IonosTheme() {}
+    StratoTheme() {}
 };
 }
-#endif // _IONOSTHEME_H
+#endif // _STRATOTHEME_H
