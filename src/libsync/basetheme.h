@@ -14,12 +14,17 @@ public:
     // Base theme prefix (can be overridden)
     virtual QString themePrefix() const { return QStringLiteral(":/theme/"); }
 
-    // Common interface for icons, fonts, colors, etc.
-    virtual QString avatarIcon() const = 0;
+    virtual QString avatarIcon() const {
+        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-folderIcon.svg");
+    }
 
-    virtual QString folderIcon() const = 0;
+    virtual QString folderIcon() const {
+        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-folderIcon.svg");
+    }
 
-    virtual QString syncArrows() const = 0;
+    virtual QString syncArrows() const {
+        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-syncArrows.svg");
+    }
 
     virtual QString questionCircleIcon() const {
         return QString(Theme::themePrefix) + QStringLiteral("ses/ses-questionMark.svg");
@@ -28,7 +33,6 @@ public:
     virtual QString liveBackupPlusIcon() const {
         return QString(Theme::themePrefix) + QStringLiteral("ses/ses-addlivebackup.svg");
     }
-    
 
     virtual QString plusIcon() const {
         return QStringLiteral("qrc:///client/theme/ses/ses-darkPlus.svg");
@@ -329,6 +333,4 @@ public:
     }
 };
 }
-
-
 #endif // _BASETHEME_H
