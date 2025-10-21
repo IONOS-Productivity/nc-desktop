@@ -52,7 +52,7 @@
 #include <QDir>
 #include <QMessageBox>
 #include <QSignalMapper>
-#include <ionostheme.h>
+#include <whitelabeltheme.h>
 #ifdef WITH_LIBCLOUDPROVIDERS
 #include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusInterface>
@@ -94,7 +94,7 @@ ownCloudGui::ownCloudGui(Application *parent)
     _tray = Systray::instance();
     _tray->setTrayEngine(new QQmlApplicationEngine(this));
     // for the beginning, set the offline icon until the account was verified
-    _tray->setIcon(QIcon(WhitelabelTheme::getInstance::syncOfflineIcon()));
+    _tray->setIcon(QIcon(WhitelabelTheme::instance().syncOfflineIcon()));
 
     _tray->show();
 

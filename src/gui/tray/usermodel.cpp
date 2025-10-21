@@ -1653,17 +1653,17 @@ int UserModel::findUserIdForAccount(AccountState *account) const
 void UserModel::styleMessageBox(QMessageBox &messageBox, QPushButton *yesButton){ 
 
     messageBox.setStyleSheet(QStringLiteral("QMessageBox { background-color: %1; } QMessageBox QLabel { %2 } ").arg(
-        WhitelabelTheme::getInstance::dialogBackgroundColor(),
-        WhitelabelTheme::getInstance::fontConfigurationCss(
-            WhitelabelTheme::getInstance::settingsFont(),
-            WhitelabelTheme::getInstance::settingsTextSize(),
-            WhitelabelTheme::getInstance::settingsTextWeight(),
-            WhitelabelTheme::getInstance::titleColor()
+        WhitelabelTheme::instance().dialogBackgroundColor(),
+        WhitelabelTheme::instance().fontConfigurationCss(
+            WhitelabelTheme::instance().settingsFont(),
+            WhitelabelTheme::instance().settingsTextSize(),
+            WhitelabelTheme::instance().settingsTextWeight(),
+            WhitelabelTheme::instance().titleColor()
         )
         )
     );
 
-    messageBox.setIconPixmap(QPixmap(WhitelabelTheme::getInstance::questionCircleIcon()));
+    messageBox.setIconPixmap(QPixmap(WhitelabelTheme::instance().questionCircleIcon()));
     
     yesButton->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Primary));
 

@@ -247,7 +247,7 @@ void OwncloudAdvancedSetupPage::initializePage()
 
 void OwncloudAdvancedSetupPage::SetAvatarIcon()
 {
-    const auto icon = QIcon(WhitelabelTheme::getInstance::avatarIcon());
+    const auto icon = QIcon(WhitelabelTheme::instance().avatarIcon());
      _ui.lServerIcon->setPixmap(icon.pixmap(32));
 }
 
@@ -536,7 +536,7 @@ void OwncloudAdvancedSetupPage::slotSelectiveSyncClicked()
     dlg->setAttribute(Qt::WA_DeleteOnClose);
 
     dlg->setStyleSheet(QStringLiteral("QDialog { background-color: %1; } QWidget { background-color: %1; }").arg(
-        WhitelabelTheme::getInstance::dialogBackgroundColor()));
+        WhitelabelTheme::instance().dialogBackgroundColor()));
 
     connect(dlg, &SelectiveSyncDialog::finished, this, [this, dlg]{
         const int result = dlg->result();
@@ -550,11 +550,11 @@ void OwncloudAdvancedSetupPage::slotSelectiveSyncClicked()
             _selectiveSyncBlacklist = dlg->createBlackList();
             updateBlacklist = true;
             // commented out for https://bmjira.atlassian.net/browse/SES-282
-            // _ui.confCheckBoxExternal->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
-            //     WhitelabelTheme::getInstance::settingsFont(),
-            //     WhitelabelTheme::getInstance::settingsTextSize(),
-            //     WhitelabelTheme::getInstance::settingsTextWeight(),
-            //     WhitelabelTheme::getInstance::loginWizardFontLightGrey()
+            // _ui.confCheckBoxExternal->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
+            //     WhitelabelTheme::instance().settingsFont(),
+            //     WhitelabelTheme::instance().settingsTextSize(),
+            //     WhitelabelTheme::instance().settingsTextWeight(),
+            //     WhitelabelTheme::instance().loginWizardFontLightGrey()
             // ));
 
             _ui.confCheckBoxSize->setDisabled(true);
@@ -599,11 +599,11 @@ void OwncloudAdvancedSetupPage::slotVirtualFileSyncClicked()
         });
     }
 // commented out for https://bmjira.atlassian.net/browse/SES-282
-    // _ui.confCheckBoxExternal->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
-    //             WhitelabelTheme::getInstance::settingsFont(),
-    //             WhitelabelTheme::getInstance::settingsTextSize(),
-    //             WhitelabelTheme::getInstance::settingsTextWeight(),
-    //             WhitelabelTheme::getInstance::loginWizardFontLightGrey()
+    // _ui.confCheckBoxExternal->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
+    //             WhitelabelTheme::instance().settingsFont(),
+    //             WhitelabelTheme::instance().settingsTextSize(),
+    //             WhitelabelTheme::instance().settingsTextWeight(),
+    //             WhitelabelTheme::instance().loginWizardFontLightGrey()
     //         ));
 
     _ui.confCheckBoxSize->setDisabled(true);
@@ -619,11 +619,11 @@ void OwncloudAdvancedSetupPage::slotSyncEverythingClicked()
     setErrorString(errorStr);
 
 // commented out for https://bmjira.atlassian.net/browse/SES-282
-    // _ui.confCheckBoxExternal->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
-    //     WhitelabelTheme::getInstance::settingsFont(),
-    //     WhitelabelTheme::getInstance::settingsTextSize(),
-    //     WhitelabelTheme::getInstance::settingsTextWeight(),
-    //     WhitelabelTheme::getInstance::titleColor()
+    // _ui.confCheckBoxExternal->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
+    //     WhitelabelTheme::instance().settingsFont(),
+    //     WhitelabelTheme::instance().settingsTextSize(),
+    //     WhitelabelTheme::instance().settingsTextWeight(),
+    //     WhitelabelTheme::instance().titleColor()
     // ));
 }
 
@@ -709,62 +709,62 @@ void OwncloudAdvancedSetupPage::customizeStyle()
 
     setStyleSheet(
         "QRadioButton {" +
-            WhitelabelTheme::getInstance::fontConfigurationCss(
-                WhitelabelTheme::getInstance::settingsFont(),
-                WhitelabelTheme::getInstance::settingsTextSize(),
-                WhitelabelTheme::getInstance::settingsTextWeight(),
-                WhitelabelTheme::getInstance::titleColor()
+            WhitelabelTheme::instance().fontConfigurationCss(
+                WhitelabelTheme::instance().settingsFont(),
+                WhitelabelTheme::instance().settingsTextSize(),
+                WhitelabelTheme::instance().settingsTextWeight(),
+                WhitelabelTheme::instance().titleColor()
             ) + "} QCheckBox {" +
-            WhitelabelTheme::getInstance::fontConfigurationCss(
-                WhitelabelTheme::getInstance::settingsFont(),
-                WhitelabelTheme::getInstance::settingsTextSize(),
-                WhitelabelTheme::getInstance::settingsTextWeight(),
-                WhitelabelTheme::getInstance::titleColor()
+            WhitelabelTheme::instance().fontConfigurationCss(
+                WhitelabelTheme::instance().settingsFont(),
+                WhitelabelTheme::instance().settingsTextSize(),
+                WhitelabelTheme::instance().settingsTextWeight(),
+                WhitelabelTheme::instance().titleColor()
             ) + "}"
     );
 
-    _ui.userNameLabel->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
-        WhitelabelTheme::getInstance::settingsFont(),
-        WhitelabelTheme::getInstance::settingsTextSize(),
-        WhitelabelTheme::getInstance::settingsTextWeight(),
-        WhitelabelTheme::getInstance::titleColor()
+    _ui.userNameLabel->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
+        WhitelabelTheme::instance().settingsFont(),
+        WhitelabelTheme::instance().settingsTextSize(),
+        WhitelabelTheme::instance().settingsTextWeight(),
+        WhitelabelTheme::instance().titleColor()
     ));
 
-    _ui.serverAddressLabel->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
-        WhitelabelTheme::getInstance::settingsFont(),
-        WhitelabelTheme::getInstance::settingsTextSize(),
-        WhitelabelTheme::getInstance::settingsTextWeight(),
-        WhitelabelTheme::getInstance::loginWizardFontGrey()
+    _ui.serverAddressLabel->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
+        WhitelabelTheme::instance().settingsFont(),
+        WhitelabelTheme::instance().settingsTextSize(),
+        WhitelabelTheme::instance().settingsTextWeight(),
+        WhitelabelTheme::instance().loginWizardFontGrey()
     ));
 
-    _ui.localFolderDescriptionLabel->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
-        WhitelabelTheme::getInstance::settingsFont(),
-        WhitelabelTheme::getInstance::settingsTextSize(),
-        WhitelabelTheme::getInstance::settingsTextWeight(),
-        WhitelabelTheme::getInstance::titleColor()
+    _ui.localFolderDescriptionLabel->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
+        WhitelabelTheme::instance().settingsFont(),
+        WhitelabelTheme::instance().settingsTextSize(),
+        WhitelabelTheme::instance().settingsTextWeight(),
+        WhitelabelTheme::instance().titleColor()
     ));
 
-    _filePathLabel->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
-        WhitelabelTheme::getInstance::settingsFont(),
-        WhitelabelTheme::getInstance::settingsTextSize(),
-        WhitelabelTheme::getInstance::settingsTextWeight(),
-        WhitelabelTheme::getInstance::loginWizardFontGrey()
+    _filePathLabel->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
+        WhitelabelTheme::instance().settingsFont(),
+        WhitelabelTheme::instance().settingsTextSize(),
+        WhitelabelTheme::instance().settingsTextWeight(),
+        WhitelabelTheme::instance().loginWizardFontGrey()
     ));
 
-    _ui.lFreeSpace->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
-        WhitelabelTheme::getInstance::settingsFont(),
-        WhitelabelTheme::getInstance::settingsTextSize(),
-        WhitelabelTheme::getInstance::settingsTextWeight(),
-        WhitelabelTheme::getInstance::loginWizardFontGrey()
+    _ui.lFreeSpace->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
+        WhitelabelTheme::instance().settingsFont(),
+        WhitelabelTheme::instance().settingsTextSize(),
+        WhitelabelTheme::instance().settingsTextWeight(),
+        WhitelabelTheme::instance().loginWizardFontGrey()
     ));
 
     #ifdef Q_OS_MAC
     _ui.syncModeLabel->setStyleSheet(
-                        WhitelabelTheme::getInstance::fontConfigurationCss(
-                        WhitelabelTheme::getInstance::settingsFont(),
-                        WhitelabelTheme::getInstance::settingsTextSize(),
-                        WhitelabelTheme::getInstance::settingsTitleWeight600(),
-                        WhitelabelTheme::getInstance::titleColor()
+                        WhitelabelTheme::instance().fontConfigurationCss(
+                        WhitelabelTheme::instance().settingsFont(),
+                        WhitelabelTheme::instance().settingsTextSize(),
+                        WhitelabelTheme::instance().settingsTitleWeight600(),
+                        WhitelabelTheme::instance().titleColor()
                         )
                 );
     #endif
@@ -773,7 +773,7 @@ void OwncloudAdvancedSetupPage::customizeStyle()
 
 void OwncloudAdvancedSetupPage::styleLocalFolderLabel()
 {
-    const auto icon = QIcon(WhitelabelTheme::getInstance::folderIcon());
+    const auto icon = QIcon(WhitelabelTheme::instance().folderIcon());
      _ui.lLocal->setPixmap(icon.pixmap(32));
 }
 
@@ -815,7 +815,7 @@ void OwncloudAdvancedSetupPage::updateMacOsFileProviderRelatedViews()
 
 void OwncloudAdvancedSetupPage::styleSyncLogo()
 {
-    const auto syncArrowIcon = QIcon(WhitelabelTheme::getInstance::syncArrows());
+    const auto syncArrowIcon = QIcon(WhitelabelTheme::instance().syncArrows());
     // const auto syncArrowIcon = Theme::createColorAwareIcon(QLatin1String(":/client/theme/sync-arrow.svg"), palette());
     _ui.syncLogoLabel->setPixmap(syncArrowIcon.pixmap(QSize(32,32)));
     _ui.syncLogoLabel->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
