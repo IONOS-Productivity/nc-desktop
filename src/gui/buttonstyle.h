@@ -118,7 +118,7 @@ public:
 
     QString buttonFocusedBorderColor() const override 
     {
-        return OCC::WLTheme.black();
+        return OCC::WLTheme.buttonPrimaryFocusedBorderColor();
     }
 
     // Font
@@ -152,7 +152,7 @@ public:
     // Default
     QString buttonDefaultColor() const override 
     {
-        return OCC::WLTheme.white();
+        return OCC::WLTheme.buttonSecondaryColor();
     }
 
     QString buttonDefaultBorderColor() const override 
@@ -201,7 +201,7 @@ public:
 
     QString buttonFocusedBorderColor() const override 
     { 
-        return OCC::WLTheme.black();
+        return OCC::WLTheme.buttonSecondaryFocusedBorderColor();
     }
 
     // Font
