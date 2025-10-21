@@ -48,6 +48,9 @@ public:
     // Font
     virtual QString buttonDisabledFontColor() const = 0;
     virtual QString buttonFontColor() const = 0;
+    //Icon
+    virtual QString buttonIconDefaultColor() const = 0;
+    virtual QString buttonIconHoverColor() const = 0;
 };
 
 class PrimaryButtonStyle : public ButtonStyle {
@@ -128,6 +131,17 @@ public:
     }
 
     QString buttonFontColor() const override 
+    {
+        return OCC::WLTheme.white();
+    }
+
+    // Icon (Three Dots)
+    QString buttonIconDefaultColor() const override
+    {
+        return OCC::WLTheme.white();
+    }
+
+    QString buttonIconHoverColor() const override
     {
         return OCC::WLTheme.white();
     }
@@ -214,6 +228,17 @@ public:
     {
         return OCC::WLTheme.black();
     }
+
+    // Icon (Three Dots)
+    QString buttonIconDefaultColor() const override
+    {
+        return OCC::WLTheme.white();
+    }
+
+    QString buttonIconHoverColor() const override
+    {
+        return OCC::WLTheme.white();
+    }
 };
 
 class MoreOptionsButtonStyle : public ButtonStyle {
@@ -296,6 +321,17 @@ public:
     QString buttonFontColor() const override 
     {
         return OCC::WLTheme.black();
+    }
+
+    // Icon (Three Dots)
+    QString buttonIconDefaultColor() const
+    {
+        return OCC::WLTheme.buttonIconColor();
+    }
+
+    QString buttonIconHoverColor() const
+    {
+        return OCC::WLTheme.buttonIconHoverColor();
     }
 };
 }
