@@ -96,11 +96,11 @@ void MoreOptionsButtonStyleHelper::adjustIconColor(QStyleOptionButton *option, c
     }
     else if(option->state & QStyle::State_MouseOver)
     {
-        iconColor = QColor(style.buttonDefaultColor());
+        iconColor = QColor(style.buttonIconHoverColor());
     }
     else
     {
-        iconColor = QColor(style.buttonHoverColor());
+        iconColor = QColor(style.buttonIconDefaultColor());
     }
 
     QIcon icon = option->icon;

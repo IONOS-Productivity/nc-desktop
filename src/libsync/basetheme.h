@@ -296,6 +296,14 @@ public:
         return "16px";
     }
 
+    virtual QString buttonIconColor() const {
+        return "#1474C4";
+    }
+
+    virtual QString buttonIconHoverColor() const {
+        return "#FFFFFF";
+    }
+
     virtual QString buttonPressedColor() const {
         return "#0B2A63";
     }
