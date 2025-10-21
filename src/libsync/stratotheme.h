@@ -11,6 +11,54 @@ namespace OCC {
 class StratoTheme : public BaseTheme {
 public:
     StratoTheme() = default;
+    
+    QString buttonPrimaryColor() const override { 
+        return "#272CB2";
+    }
+
+    QString buttonPrimaryHoverColor() const override {
+        return "#115EA3";
+    }
+
+    QString buttonPrimaryPressedColor() const override {
+        return "#272CB2";
+    }
+
+    QString buttonPrimaryFocusedBorderColor() const override {
+        return "#CDD5E3";
+    }
+
+    QString buttonSecondaryColor() const override { 
+        return "#F7F7F9";
+    }
+
+    QString buttonSecondaryBorderColor() const override { 
+        return "#CDD5E3";
+    }
+
+    QString buttonSecondaryHoverColor() const override {
+        return "#EDEEF3";
+    }
+
+    QString buttonSecondaryPressedColor() const override {
+        return "#D6D6E4";
+    }
+
+    QString buttonSecondaryFocusedBorderColor() const override {
+        return "#8493B3";
+    }
+
+    QString buttonDisabledColor() const override {
+        return "#EDEEF3";
+    }
+
+    QString toolButtonHoveredColor() const override {
+        return "#EDEEF3";
+    }
+
+    QString toolButtonPressedColor() const override {
+        return "#D6D6E4";
+    }
 };
 }
 #endif // _STRATOTHEME_H
