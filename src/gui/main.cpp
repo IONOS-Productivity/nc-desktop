@@ -95,7 +95,7 @@ int main(int argc, char **argv)
         qmlStyle = QStringLiteral("FluentWinUI3");
         widgetsStyle = QStringLiteral("windows11");
     }
-    QApplication::setFont(WhitelabelTheme::instance().settingsFontDefault());
+    QApplication::setFont(WLTheme.settingsFontDefault());
 #endif
 
 #ifdef IONOS_BUILD

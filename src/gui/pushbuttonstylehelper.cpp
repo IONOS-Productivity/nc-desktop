@@ -58,15 +58,15 @@ void PushButtonStyleHelper::drawButtonShape(const QStyleOptionButton *option, QP
     painter->save();
     painter->setRenderHints(QPainter::Antialiasing);
     setupPainterForShape(option, painter, widget);
-    const int radius = OCC::WhitelabelTheme::instance().buttonRadiusInt();
+    const int radius = OCC::WLTheme.buttonRadiusInt();
     painter->drawRoundedRect(option->rect, radius, radius);
     painter->restore();
 }
 
 void PushButtonStyleHelper::setFont(QFont& font) const
 {
-    font.setWeight(OCC::WhitelabelTheme::instance().settingsTitleWeightDemiBold());
-    font.setPixelSize(OCC::WhitelabelTheme::instance().settingsTextPixel());
+    font.setWeight(OCC::WLTheme.settingsTitleWeightDemiBold());
+    font.setPixelSize(OCC::WLTheme.settingsTextPixel());
 }
 
 void PushButtonStyleHelper::recalculateContentSize(QSize &contentsSize, const QWidget *widget) const

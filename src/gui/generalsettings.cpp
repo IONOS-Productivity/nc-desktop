@@ -737,73 +737,73 @@ void GeneralSettings::customizeStyle()
     _ui->infoAndUpdatesLabel->setText(aboutText);
 
     this->setAutoFillBackground(true);
-    setPalette(QPalette(QPalette::Window, WhitelabelTheme::instance().dialogBackgroundColor()));
+    setPalette(QPalette(QPalette::Window, WLTheme.dialogBackgroundColor()));
 
     this->setStyleSheet(
         QStringLiteral("QGroupBox { border: %1; font-size: %2; font-weight: %3; color: %4; }").arg(
             Theme::instance()->systemPalette()["base"].value<QColor>().name(),
-            WhitelabelTheme::instance().settingsTitleSize(),
-            WhitelabelTheme::instance().settingsTitleWeight600(),
-            WhitelabelTheme::instance().black()
+            WLTheme.settingsTitleSize(),
+            WLTheme.settingsTitleWeight600(),
+            WLTheme.black()
         )
     );
 
     this->setStyleSheet(
         this->styleSheet() + QStringLiteral("QCheckBox { font-size: %1; font-weight: %2; margin-left: %3 px; color: %4; }").arg(
-            WhitelabelTheme::instance().settingsTextSize(),
-            WhitelabelTheme::instance().settingsTextWeight(),
-            WhitelabelTheme::instance().smallMargin(),
-            WhitelabelTheme::instance().black()
+            WLTheme.settingsTextSize(),
+            WLTheme.settingsTextWeight(),
+            WLTheme.smallMargin(),
+            WLTheme.black()
         )
     );
 
     this->setStyleSheet(
         this->styleSheet() + QStringLiteral("QLabel { font-size: %1; font-weight: %2; color: %3; }").arg(
-            WhitelabelTheme::instance().settingsTextSize(),
-            WhitelabelTheme::instance().settingsTitleWeight500(),
-            WhitelabelTheme::instance().black()
+            WLTheme.settingsTextSize(),
+            WLTheme.settingsTitleWeight500(),
+            WLTheme.black()
         )
     );
 
     this->setStyleSheet(
         this->styleSheet() + QStringLiteral("QFrame { font-size: %1; font-weight: %2; color: %3; }").arg(
-            WhitelabelTheme::instance().settingsTextSize(),
-            WhitelabelTheme::instance().settingsTitleWeight600(),
-            WhitelabelTheme::instance().black()
+            WLTheme.settingsTextSize(),
+            WLTheme.settingsTitleWeight600(),
+            WLTheme.black()
         )
     );
 
     _ui->sendNecessaryData_checkbox->setChecked(true);
     _ui->sendNecessaryData_checkbox->setStyleSheet(
         QStringLiteral("QCheckBox { font-size: %1; font-weight: %2; color: %3; }").arg(
-            WhitelabelTheme::instance().settingsTextSize(),
-            WhitelabelTheme::instance().settingsTitleWeight600(),
-            WhitelabelTheme::instance().folderWizardSubtitleColor()
+            WLTheme.settingsTextSize(),
+            WLTheme.settingsTitleWeight600(),
+            WLTheme.folderWizardSubtitleColor()
         )
     );
 
     _ui->sendAnonymousData_checkbox->setStyleSheet(
         QStringLiteral("QCheckBox { font-size: %1; font-weight: %2; color: %3; }").arg(
-            WhitelabelTheme::instance().settingsTextSize(),
-            WhitelabelTheme::instance().settingsTitleWeight600(),
-            WhitelabelTheme::instance().folderWizardSubtitleColor()
+            WLTheme.settingsTextSize(),
+            WLTheme.settingsTitleWeight600(),
+            WLTheme.folderWizardSubtitleColor()
         )
     );
 
     _ui->necessaryDataLabel->setStyleSheet(
         QStringLiteral("QLabel { font-size: %1; font-weight: %2; color: %3; margin-left: %4; }").arg(
-            WhitelabelTheme::instance().settingsTextSize(),
-            WhitelabelTheme::instance().settingsTextWeight(),
-            WhitelabelTheme::instance().black(),
+            WLTheme.settingsTextSize(),
+            WLTheme.settingsTextWeight(),
+            WLTheme.black(),
             "24"
         )
     );
 
     _ui->anonymousDataLabel->setStyleSheet(
         QStringLiteral("QLabel { font-size: %1; font-weight: %2; color: %3;  margin-left: %4; margin-bottom: %5; }").arg(
-            WhitelabelTheme::instance().settingsTextSize(),
-            WhitelabelTheme::instance().settingsTextWeight(),
-            WhitelabelTheme::instance().black(),
+            WLTheme.settingsTextSize(),
+            WLTheme.settingsTextWeight(),
+            WLTheme.black(),
             "24",
             "16"
 

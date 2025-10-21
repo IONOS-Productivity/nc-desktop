@@ -24,7 +24,7 @@ WebFlowCredentialsDialog::WebFlowCredentialsDialog(Account *account, bool useFlo
 {
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
-    setStyleSheet(QStringLiteral("QDialog { background-color: %1; }").arg(WhitelabelTheme::instance().dialogBackgroundColor()));
+    setStyleSheet(QStringLiteral("QDialog { background-color: %1; }").arg(WLTheme.dialogBackgroundColor()));
 
     setFixedWidth(646);
     setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum));
@@ -44,11 +44,11 @@ WebFlowCredentialsDialog::WebFlowCredentialsDialog(Account *account, bool useFlo
     _infoLabel->setAlignment(Qt::AlignCenter);
     _infoLabel->setWordWrap(true);
     _infoLabel->setContentsMargins(0, 32, 0, 0);
-    _infoLabel->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
-        WhitelabelTheme::instance().settingsFont(),
-        WhitelabelTheme::instance().settingsTextSize(),
-        WhitelabelTheme::instance().settingsTitleWeight600(),
-        WhitelabelTheme::instance().titleColor()
+    _infoLabel->setStyleSheet(WLTheme.fontConfigurationCss(
+        WLTheme.settingsFont(),
+        WLTheme.settingsTextSize(),
+        WLTheme.settingsTitleWeight600(),
+        WLTheme.titleColor()
     ));
     _containerLayout->addWidget(_infoLabel);
 

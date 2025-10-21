@@ -247,7 +247,7 @@ void OwncloudAdvancedSetupPage::initializePage()
 
 void OwncloudAdvancedSetupPage::SetAvatarIcon()
 {
-    const auto icon = QIcon(WhitelabelTheme::instance().avatarIcon());
+    const auto icon = QIcon(WLTheme.avatarIcon());
      _ui.lServerIcon->setPixmap(icon.pixmap(32));
 }
 
@@ -536,7 +536,7 @@ void OwncloudAdvancedSetupPage::slotSelectiveSyncClicked()
     dlg->setAttribute(Qt::WA_DeleteOnClose);
 
     dlg->setStyleSheet(QStringLiteral("QDialog { background-color: %1; } QWidget { background-color: %1; }").arg(
-        WhitelabelTheme::instance().dialogBackgroundColor()));
+        WLTheme.dialogBackgroundColor()));
 
     connect(dlg, &SelectiveSyncDialog::finished, this, [this, dlg]{
         const int result = dlg->result();
@@ -550,11 +550,11 @@ void OwncloudAdvancedSetupPage::slotSelectiveSyncClicked()
             _selectiveSyncBlacklist = dlg->createBlackList();
             updateBlacklist = true;
             // commented out for https://bmjira.atlassian.net/browse/SES-282
-            // _ui.confCheckBoxExternal->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
-            //     WhitelabelTheme::instance().settingsFont(),
-            //     WhitelabelTheme::instance().settingsTextSize(),
-            //     WhitelabelTheme::instance().settingsTextWeight(),
-            //     WhitelabelTheme::instance().loginWizardFontLightGrey()
+            // _ui.confCheckBoxExternal->setStyleSheet(WLTheme.fontConfigurationCss(
+            //     WLTheme.settingsFont(),
+            //     WLTheme.settingsTextSize(),
+            //     WLTheme.settingsTextWeight(),
+            //     WLTheme.loginWizardFontLightGrey()
             // ));
 
             _ui.confCheckBoxSize->setDisabled(true);
@@ -599,11 +599,11 @@ void OwncloudAdvancedSetupPage::slotVirtualFileSyncClicked()
         });
     }
 // commented out for https://bmjira.atlassian.net/browse/SES-282
-    // _ui.confCheckBoxExternal->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
-    //             WhitelabelTheme::instance().settingsFont(),
-    //             WhitelabelTheme::instance().settingsTextSize(),
-    //             WhitelabelTheme::instance().settingsTextWeight(),
-    //             WhitelabelTheme::instance().loginWizardFontLightGrey()
+    // _ui.confCheckBoxExternal->setStyleSheet(WLTheme.fontConfigurationCss(
+    //             WLTheme.settingsFont(),
+    //             WLTheme.settingsTextSize(),
+    //             WLTheme.settingsTextWeight(),
+    //             WLTheme.loginWizardFontLightGrey()
     //         ));
 
     _ui.confCheckBoxSize->setDisabled(true);
@@ -619,11 +619,11 @@ void OwncloudAdvancedSetupPage::slotSyncEverythingClicked()
     setErrorString(errorStr);
 
 // commented out for https://bmjira.atlassian.net/browse/SES-282
-    // _ui.confCheckBoxExternal->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
-    //     WhitelabelTheme::instance().settingsFont(),
-    //     WhitelabelTheme::instance().settingsTextSize(),
-    //     WhitelabelTheme::instance().settingsTextWeight(),
-    //     WhitelabelTheme::instance().titleColor()
+    // _ui.confCheckBoxExternal->setStyleSheet(WLTheme.fontConfigurationCss(
+    //     WLTheme.settingsFont(),
+    //     WLTheme.settingsTextSize(),
+    //     WLTheme.settingsTextWeight(),
+    //     WLTheme.titleColor()
     // ));
 }
 
@@ -709,62 +709,62 @@ void OwncloudAdvancedSetupPage::customizeStyle()
 
     setStyleSheet(
         "QRadioButton {" +
-            WhitelabelTheme::instance().fontConfigurationCss(
-                WhitelabelTheme::instance().settingsFont(),
-                WhitelabelTheme::instance().settingsTextSize(),
-                WhitelabelTheme::instance().settingsTextWeight(),
-                WhitelabelTheme::instance().titleColor()
+            WLTheme.fontConfigurationCss(
+                WLTheme.settingsFont(),
+                WLTheme.settingsTextSize(),
+                WLTheme.settingsTextWeight(),
+                WLTheme.titleColor()
             ) + "} QCheckBox {" +
-            WhitelabelTheme::instance().fontConfigurationCss(
-                WhitelabelTheme::instance().settingsFont(),
-                WhitelabelTheme::instance().settingsTextSize(),
-                WhitelabelTheme::instance().settingsTextWeight(),
-                WhitelabelTheme::instance().titleColor()
+            WLTheme.fontConfigurationCss(
+                WLTheme.settingsFont(),
+                WLTheme.settingsTextSize(),
+                WLTheme.settingsTextWeight(),
+                WLTheme.titleColor()
             ) + "}"
     );
 
-    _ui.userNameLabel->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
-        WhitelabelTheme::instance().settingsFont(),
-        WhitelabelTheme::instance().settingsTextSize(),
-        WhitelabelTheme::instance().settingsTextWeight(),
-        WhitelabelTheme::instance().titleColor()
+    _ui.userNameLabel->setStyleSheet(WLTheme.fontConfigurationCss(
+        WLTheme.settingsFont(),
+        WLTheme.settingsTextSize(),
+        WLTheme.settingsTextWeight(),
+        WLTheme.titleColor()
     ));
 
-    _ui.serverAddressLabel->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
-        WhitelabelTheme::instance().settingsFont(),
-        WhitelabelTheme::instance().settingsTextSize(),
-        WhitelabelTheme::instance().settingsTextWeight(),
-        WhitelabelTheme::instance().loginWizardFontGrey()
+    _ui.serverAddressLabel->setStyleSheet(WLTheme.fontConfigurationCss(
+        WLTheme.settingsFont(),
+        WLTheme.settingsTextSize(),
+        WLTheme.settingsTextWeight(),
+        WLTheme.loginWizardFontGrey()
     ));
 
-    _ui.localFolderDescriptionLabel->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
-        WhitelabelTheme::instance().settingsFont(),
-        WhitelabelTheme::instance().settingsTextSize(),
-        WhitelabelTheme::instance().settingsTextWeight(),
-        WhitelabelTheme::instance().titleColor()
+    _ui.localFolderDescriptionLabel->setStyleSheet(WLTheme.fontConfigurationCss(
+        WLTheme.settingsFont(),
+        WLTheme.settingsTextSize(),
+        WLTheme.settingsTextWeight(),
+        WLTheme.titleColor()
     ));
 
-    _filePathLabel->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
-        WhitelabelTheme::instance().settingsFont(),
-        WhitelabelTheme::instance().settingsTextSize(),
-        WhitelabelTheme::instance().settingsTextWeight(),
-        WhitelabelTheme::instance().loginWizardFontGrey()
+    _filePathLabel->setStyleSheet(WLTheme.fontConfigurationCss(
+        WLTheme.settingsFont(),
+        WLTheme.settingsTextSize(),
+        WLTheme.settingsTextWeight(),
+        WLTheme.loginWizardFontGrey()
     ));
 
-    _ui.lFreeSpace->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
-        WhitelabelTheme::instance().settingsFont(),
-        WhitelabelTheme::instance().settingsTextSize(),
-        WhitelabelTheme::instance().settingsTextWeight(),
-        WhitelabelTheme::instance().loginWizardFontGrey()
+    _ui.lFreeSpace->setStyleSheet(WLTheme.fontConfigurationCss(
+        WLTheme.settingsFont(),
+        WLTheme.settingsTextSize(),
+        WLTheme.settingsTextWeight(),
+        WLTheme.loginWizardFontGrey()
     ));
 
     #ifdef Q_OS_MAC
     _ui.syncModeLabel->setStyleSheet(
-                        WhitelabelTheme::instance().fontConfigurationCss(
-                        WhitelabelTheme::instance().settingsFont(),
-                        WhitelabelTheme::instance().settingsTextSize(),
-                        WhitelabelTheme::instance().settingsTitleWeight600(),
-                        WhitelabelTheme::instance().titleColor()
+                        WLTheme.fontConfigurationCss(
+                        WLTheme.settingsFont(),
+                        WLTheme.settingsTextSize(),
+                        WLTheme.settingsTitleWeight600(),
+                        WLTheme.titleColor()
                         )
                 );
     #endif
@@ -773,7 +773,7 @@ void OwncloudAdvancedSetupPage::customizeStyle()
 
 void OwncloudAdvancedSetupPage::styleLocalFolderLabel()
 {
-    const auto icon = QIcon(WhitelabelTheme::instance().folderIcon());
+    const auto icon = QIcon(WLTheme.folderIcon());
      _ui.lLocal->setPixmap(icon.pixmap(32));
 }
 
@@ -815,7 +815,7 @@ void OwncloudAdvancedSetupPage::updateMacOsFileProviderRelatedViews()
 
 void OwncloudAdvancedSetupPage::styleSyncLogo()
 {
-    const auto syncArrowIcon = QIcon(WhitelabelTheme::instance().syncArrows());
+    const auto syncArrowIcon = QIcon(WLTheme.syncArrows());
     // const auto syncArrowIcon = Theme::createColorAwareIcon(QLatin1String(":/client/theme/sync-arrow.svg"), palette());
     _ui.syncLogoLabel->setPixmap(syncArrowIcon.pixmap(QSize(32,32)));
     _ui.syncLogoLabel->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));

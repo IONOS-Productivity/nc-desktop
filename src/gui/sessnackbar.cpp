@@ -104,7 +104,7 @@ namespace OCC {
         const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-snackbar-success.svg");
         m_iconLabel.setPixmap(logoIconFileName);
 
-        updateStyleSheet(WhitelabelTheme::instance().successBorderColor(), WhitelabelTheme::instance().successColor(), WhitelabelTheme::instance().black(), WhitelabelTheme::instance().black());
+        updateStyleSheet(WLTheme.successBorderColor(), WLTheme.successColor(), WLTheme.black(), WLTheme.black());
     }
 
     void sesSnackBar::warningStyle()
@@ -112,7 +112,7 @@ namespace OCC {
         const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-snackbar-warning.svg");
         m_iconLabel.setPixmap(logoIconFileName);
 
-        updateStyleSheet(WhitelabelTheme::instance().warningBorderColor(), WhitelabelTheme::instance().warningColor(), WhitelabelTheme::instance().black(), WhitelabelTheme::instance().black());
+        updateStyleSheet(WLTheme.warningBorderColor(), WLTheme.warningColor(), WLTheme.black(), WLTheme.black());
     }
 
     void sesSnackBar::errorStyle()
@@ -120,7 +120,7 @@ namespace OCC {
         const auto logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-snackbar-error.svg");
         m_iconLabel.setPixmap(logoIconFileName);
 
-        updateStyleSheet(WhitelabelTheme::instance().errorBorderColor(), WhitelabelTheme::instance().errorColor(), WhitelabelTheme::instance().black(), WhitelabelTheme::instance().black());
+        updateStyleSheet(WLTheme.errorBorderColor(), WLTheme.errorColor(), WLTheme.black(), WLTheme.black());
     }
 
     void sesSnackBar::updateStyleSheet(QColor frameBorderColor, QColor frameBackgroundColor, QColor frameColor, QColor labelColor) 

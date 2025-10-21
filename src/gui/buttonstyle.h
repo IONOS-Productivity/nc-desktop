@@ -69,67 +69,67 @@ public:
     // Default
     QString buttonDefaultColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonPrimaryColor();
+        return OCC::WLTheme.buttonPrimaryColor();
     }
 
     QString buttonDefaultBorderColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonPrimaryColor();
+        return OCC::WLTheme.buttonPrimaryColor();
     }
 
     //Hover
     QString buttonHoverColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonPrimaryHoverColor();
+        return OCC::WLTheme.buttonPrimaryHoverColor();
     }
 
     QString buttonHoverBorderColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonPrimaryHoverColor();
+        return OCC::WLTheme.buttonPrimaryHoverColor();
     }
 
     // Pressed
     QString buttonPressedColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonPrimaryPressedColor();
+        return OCC::WLTheme.buttonPrimaryPressedColor();
     }
 
     QString buttonPressedBorderColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonPrimaryPressedColor();
+        return OCC::WLTheme.buttonPrimaryPressedColor();
     }
 
     // Disabled
     QString buttonDisabledColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonDisabledColor();
+        return OCC::WLTheme.buttonDisabledColor();
     }
 
     QString buttonDisabledBorderColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonDisabledColor();
+        return OCC::WLTheme.buttonDisabledColor();
     }
 
     // Focused
     QString buttonFocusedColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonPrimaryColor();
+        return OCC::WLTheme.buttonPrimaryColor();
     }
 
     QString buttonFocusedBorderColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().black();
+        return OCC::WLTheme.black();
     }
 
     // Font
     QString buttonDisabledFontColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonDisabledFontColor();
+        return OCC::WLTheme.buttonDisabledFontColor();
     }
 
     QString buttonFontColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().white();
+        return OCC::WLTheme.white();
     }
 };
 
@@ -152,67 +152,67 @@ public:
     // Default
     QString buttonDefaultColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().white();
+        return OCC::WLTheme.white();
     }
 
     QString buttonDefaultBorderColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonSecondaryBorderColor();
+        return OCC::WLTheme.buttonSecondaryBorderColor();
     }
 
     // Hover
     QString buttonHoverColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonSecondaryHoverColor();
+        return OCC::WLTheme.buttonSecondaryHoverColor();
     }
 
     QString buttonHoverBorderColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonSecondaryBorderColor();
+        return OCC::WLTheme.buttonSecondaryBorderColor();
     }
 
     // Pressed
     QString buttonPressedColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonSecondaryPressedColor();
+        return OCC::WLTheme.buttonSecondaryPressedColor();
     }
 
     QString buttonPressedBorderColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonSecondaryBorderColor();
+        return OCC::WLTheme.buttonSecondaryBorderColor();
     }
 
     // Disabled
     QString buttonDisabledColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonDisabledColor();
+        return OCC::WLTheme.buttonDisabledColor();
     }
 
     QString buttonDisabledBorderColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonDisabledColor();
+        return OCC::WLTheme.buttonDisabledColor();
     }
 
     // Focused 
     QString buttonFocusedColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().white();
+        return OCC::WLTheme.white();
     }
 
     QString buttonFocusedBorderColor() const override 
     { 
-        return OCC::WhitelabelTheme::instance().black();
+        return OCC::WLTheme.black();
     }
 
     // Font
     QString buttonDisabledFontColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonDisabledFontColor();
+        return OCC::WLTheme.buttonDisabledFontColor();
     }
 
     QString buttonFontColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().black();
+        return OCC::WLTheme.black();
     }
 };
 
@@ -235,67 +235,67 @@ public:
     // Default
     QString buttonDefaultColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().white();
+        return OCC::WLTheme.white();
     }
 
     QString buttonDefaultBorderColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().white();
+        return OCC::WLTheme.white();
     }
 
     // Hover
     QString buttonHoverColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonHoveredColor();
+        return OCC::WLTheme.buttonHoveredColor();
     }
 
     QString buttonHoverBorderColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonHoveredColor();
+        return OCC::WLTheme.buttonHoveredColor();
     }
 
     // Pressed
     QString buttonPressedColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonPressedColor();
+        return OCC::WLTheme.buttonPressedColor();
     }
 
     QString buttonPressedBorderColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonPressedColor();
+        return OCC::WLTheme.buttonPressedColor();
     }
 
     // Disabled
     QString buttonDisabledColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonDisabledColor();
+        return OCC::WLTheme.buttonDisabledColor();
     }
 
     QString buttonDisabledBorderColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonDisabledColor();
+        return OCC::WLTheme.buttonDisabledColor();
     }
 
     // Focused 
     QString buttonFocusedColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().white();
+        return OCC::WLTheme.white();
     }
 
     QString buttonFocusedBorderColor() const override 
     { 
-        return OCC::WhitelabelTheme::instance().black();
+        return OCC::WLTheme.black();
     }
 
     // Font
     QString buttonDisabledFontColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().buttonDisabledFontColor();
+        return OCC::WLTheme.buttonDisabledFontColor();
     }
 
     QString buttonFontColor() const override 
     {
-        return OCC::WhitelabelTheme::instance().black();
+        return OCC::WLTheme.black();
     }
 };
 }

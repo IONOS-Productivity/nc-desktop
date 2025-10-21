@@ -94,7 +94,7 @@ ownCloudGui::ownCloudGui(Application *parent)
     _tray = Systray::instance();
     _tray->setTrayEngine(new QQmlApplicationEngine(this));
     // for the beginning, set the offline icon until the account was verified
-    _tray->setIcon(QIcon(WhitelabelTheme::instance().syncOfflineIcon()));
+    _tray->setIcon(QIcon(WLTheme.syncOfflineIcon()));
 
     _tray->show();
 

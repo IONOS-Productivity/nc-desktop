@@ -8,9 +8,9 @@ namespace OCC {
         : QLabel(parent)
     {
         setStyleSheet(QStringLiteral("QLabel { color: %1; text-decoration: underline; font-size: %2; font-weight: %3; }")
-            .arg(WhitelabelTheme::instance().settingsLinkColor()
-                , WhitelabelTheme::instance().settingsTextSize()
-                , WhitelabelTheme::instance().settingsTitleWeight600()
+            .arg(WLTheme.settingsLinkColor()
+                , WLTheme.settingsTextSize()
+                , WLTheme.settingsTitleWeight600()
             ));
 
         setCursor(Qt::PointingHandCursor);

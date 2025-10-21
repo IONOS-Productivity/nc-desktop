@@ -255,11 +255,11 @@ QVariant ActivityListModel::data(const QModelIndex &index, int role) const
             } else {
                 // File sync successful
                 if (a._fileAction == "file_created") {
-                    return WhitelabelTheme::instance().plusIcon();
+                    return WLTheme.plusIcon();
                 } else if (a._fileAction == "file_deleted") {
-                    return WhitelabelTheme::instance().deleteIcon();
+                    return WLTheme.deleteIcon();
                 } else {
-                    return WhitelabelTheme::instance().refreshIcon();
+                    return WLTheme.refreshIcon();
                 }
             }
         } else {
