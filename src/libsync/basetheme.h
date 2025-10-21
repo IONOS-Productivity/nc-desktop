@@ -224,6 +224,10 @@ public:
         return "#02306A";
     }
 
+    virtual QString quotaProgressColor() const {
+        return "#308cc6";
+    }
+
     virtual QString buttonPrimaryColor() const {
         return "#0F6CBD";
     }

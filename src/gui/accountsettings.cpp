@@ -1832,7 +1832,7 @@ void AccountSettings::customizeStyle()
     _ui->connectLabel->setText(msg);
 
     const auto color = palette().highlight().color();
-    _ui->quotaProgressBar->setStyleSheet(progressBarStyle().arg(WLTheme.dialogBackgroundColor(), color.name()));
+    _ui->quotaProgressBar->setStyleSheet(progressBarStyle().arg(WLTheme.dialogBackgroundColor(), WLTheme.quotaProgressColor()));
 
     _ui->quotaInfoLabel->setStyleSheet(
         WLTheme.fontConfigurationCss(
