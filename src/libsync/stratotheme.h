@@ -11,7 +11,7 @@ namespace OCC {
 class StratoTheme : public BaseTheme {
 public:
     StratoTheme() = default;
-    
+
     QString buttonPrimaryColor() const override { 
         return "#272CB2";
     }
@@ -50,6 +50,22 @@ public:
 
     QString buttonDisabledColor() const override {
         return "#EDEEF3";
+    }
+
+    QString buttonIconColor() const override {
+        return "#2f2f70";
+    }
+
+    QString buttonIconHoverColor() const override {
+        return "#2f2f70";
+    }
+
+    QString buttonHoveredColor() const override {
+        return "#eeeff9";
+    }
+
+    QString buttonPressedColor() const override {
+        return "#D6D6E4";
     }
 
     QString toolButtonHoveredColor() const override {
