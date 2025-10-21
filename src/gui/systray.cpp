@@ -210,11 +210,11 @@ void Systray::setupContextMenu()
         resumeAction->setEnabled(anyPaused);
     });
 
-    _contextMenu->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
-        WhitelabelTheme::instance().settingsFont(),
-        WhitelabelTheme::instance().settingsTextSize(),
-        WhitelabelTheme::instance().settingsTextWeight(),
-        WhitelabelTheme::instance().menuTextColor()));
+    _contextMenu->setStyleSheet(WLTheme.fontConfigurationCss(
+        WLTheme.settingsFont(),
+        WLTheme.settingsTextSize(),
+        WLTheme.settingsTextWeight(),
+        WLTheme.menuTextColor()));
 }
 
 void Systray::destroyDialog(QQuickWindow *dialog) const

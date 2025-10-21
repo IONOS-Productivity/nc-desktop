@@ -237,18 +237,18 @@ void Flow2AuthWidget::customizeStyle()
     _ui.horizontalLayout->setSpacing(32);
 #endif
 
-    _ui.statusLabel->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
-        WhitelabelTheme::instance().settingsFont(),
-        WhitelabelTheme::instance().settingsTextSize(),
-        WhitelabelTheme::instance().settingsTextWeight(),
-        WhitelabelTheme::instance().titleColor()
+    _ui.statusLabel->setStyleSheet(WLTheme.fontConfigurationCss(
+        WLTheme.settingsFont(),
+        WLTheme.settingsTextSize(),
+        WLTheme.settingsTextWeight(),
+        WLTheme.titleColor()
     ));
 
-    _ui.label->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
-        WhitelabelTheme::instance().settingsFont(),
-        WhitelabelTheme::instance().settingsTextSize(),
-        WhitelabelTheme::instance().settingsTextWeight(),
-        WhitelabelTheme::instance().titleColor()
+    _ui.label->setStyleSheet(WLTheme.fontConfigurationCss(
+        WLTheme.settingsFont(),
+        WLTheme.settingsTextSize(),
+        WLTheme.settingsTextWeight(),
+        WLTheme.titleColor()
     ));
 
     _ui.label->setText(tr("Switch to your browser to connect your account"));

@@ -3,7 +3,7 @@ find_package(Qt${QT_MAJOR_VERSION} REQUIRED COMPONENTS Widgets Svg Qml Quick Qui
 find_package(KF6Archive REQUIRED)
 find_package(KF6GuiAddons)
 
-if (NOT TARGET Qt::GuiPrivate)
+if (NOT TARGET Qt::Gui)
     message(FATAL_ERROR "Could not find GuiPrivate component of Qt. It might be shipped as a separate package, please check that.")
 endif()
 
@@ -563,7 +563,7 @@ target_link_libraries(nextcloudCore
   PUBLIC
   Nextcloud::sync
   Qt::Widgets
-  Qt::GuiPrivate
+  Qt::Gui
   Qt::Svg
   Qt::Network
   Qt::Xml
