@@ -10,10 +10,11 @@ namespace OCC {
 
 class StratoTheme : public BaseTheme {
 public:
+    StratoTheme() = default;
 
     //Icons
     QString avatarIcon() const override {
-        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-settingsAvatar.svg");
+        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-folderIcon.svg");
     }
 
     QString folderIcon() const override {
@@ -223,7 +224,7 @@ public:
     }
 
     QString buttonPrimaryColor() const override {
-        return "#0F6CBD";
+        return "#fa0000ff";
     }
 
     QString buttonSecondaryBorderColor() const override {
@@ -235,7 +236,7 @@ public:
     }
 
     QString buttonPrimaryHoverColor() const override {
-        return "#115EA3";
+        return "#05ec8cff";
     }
 
     QString buttonSecondaryHoverColor() const override {
@@ -243,7 +244,7 @@ public:
     }
 
     QString buttonPrimaryPressedColor() const override {
-        return "#0C3B5E";
+        return "#b8a850ff";
     }
 
     QString buttonSecondaryPressedColor() const override {
@@ -330,9 +331,6 @@ public:
         return "#E6F9FC";
     }
 
-
-private:
-    StratoTheme() {}
 };
 }
 #endif // _STRATOTHEME_H
