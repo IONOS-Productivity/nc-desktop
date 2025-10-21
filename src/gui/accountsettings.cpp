@@ -181,7 +181,7 @@ AccountSettings::AccountSettings(AccountState *accountState, QWidget *parent)
 {
     _ui->setupUi(this);
     this->setAutoFillBackground(true);
-    setPalette(QPalette(QPalette::Window, WhitelabelTheme::getInstance::dialogBackgroundColor()));
+    setPalette(QPalette(QPalette::Window, WhitelabelTheme::instance().dialogBackgroundColor()));
 
     _model->setAccountState(_accountState);
     _model->setParent(this);
@@ -191,7 +191,7 @@ AccountSettings::AccountSettings(AccountState *accountState, QWidget *parent)
     // Connect styleChanged events to our widgets, so they can adapt (Dark-/Light-Mode switching)
     connect(this, &AccountSettings::styleChanged, delegate, &FolderStatusDelegate::slotStyleChanged);
 
-    _ui->_folderList->setFont(WhitelabelTheme::getInstance::settingsFontDefault());
+    _ui->_folderList->setFont(WhitelabelTheme::instance().settingsFontDefault());
 
     _ui->_folderList->header()->hide();
     _ui->_folderList->setItemDelegate(delegate);
@@ -214,7 +214,7 @@ AccountSettings::AccountSettings(AccountState *accountState, QWidget *parent)
         fpSettingsLayout->addWidget(fpSettingsWidget);
         fileProviderTab->setLayout(fpSettingsLayout);
 
-        _ui->tabWidget->setStyleSheet(QStringLiteral("QTabWidget::pane { background-color: %1; }").arg(WhitelabelTheme::getInstance::white()));
+        _ui->tabWidget->setStyleSheet(QStringLiteral("QTabWidget::pane { background-color: %1; }").arg(WhitelabelTheme::instance().white()));
         _ui->tabWidget->tabBar()->setStyleSheet("QTabBar::tab {\
                                    color: #000000;\
                                }\
@@ -584,7 +584,7 @@ void AccountSettings::openIgnoredFilesDialog(const QString & absFolderPath)
     const QString ignoreFile{absFolderPath + ".sync-exclude.lst"};
     const auto layout = new QVBoxLayout();
     const auto ignoreListWidget = new IgnoreListTableWidget(this);
-    ignoreListWidget->setFont(WhitelabelTheme::getInstance::settingsFont());
+    ignoreListWidget->setFont(WhitelabelTheme::instance().settingsFont());
     ignoreListWidget->readIgnoreFile(ignoreFile);
     layout->addWidget(ignoreListWidget);
 
@@ -603,7 +603,7 @@ void AccountSettings::openIgnoredFilesDialog(const QString & absFolderPath)
     });
     connect(buttonBox, &QDialogButtonBox::rejected, dialog, &QDialog::close);
 
-    dialog->setPalette(QPalette(QPalette::Window, WhitelabelTheme::getInstance::white()));
+    dialog->setPalette(QPalette(QPalette::Window, WhitelabelTheme::instance().white()));
     dialog->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
     dialog->open();
@@ -725,14 +725,14 @@ void AccountSettings::styleCustomContextMenu(QMenu *menu) const
                 "border-radius: 8px; "
             "}"
         ).arg(
-            WhitelabelTheme::getInstance::white(),
-            WhitelabelTheme::getInstance::menuBorderColor(),
-            WhitelabelTheme::getInstance::menuTextColor(),
-            WhitelabelTheme::getInstance::menuSelectedItemColor(),
-            WhitelabelTheme::getInstance::menuBorderRadius(),
-            WhitelabelTheme::getInstance::contextMenuFont(),
-            WhitelabelTheme::getInstance::settingsTextSize(),
-            WhitelabelTheme::getInstance::settingsTextWeight()
+            WhitelabelTheme::instance().white(),
+            WhitelabelTheme::instance().menuBorderColor(),
+            WhitelabelTheme::instance().menuTextColor(),
+            WhitelabelTheme::instance().menuSelectedItemColor(),
+            WhitelabelTheme::instance().menuBorderRadius(),
+            WhitelabelTheme::instance().contextMenuFont(),
+            WhitelabelTheme::instance().settingsTextSize(),
+            WhitelabelTheme::instance().settingsTextWeight()
         )
     );
 }
@@ -982,13 +982,13 @@ void AccountSettings::slotRemoveCurrentFolder()
 
         messageBox->setStyleSheet(
             QStringLiteral("QMessageBox QLabel { %1; } QDialog { background-color: %2; }").arg(
-                WhitelabelTheme::getInstance::fontConfigurationCss(
-                    WhitelabelTheme::getInstance::settingsFont(),
-                    WhitelabelTheme::getInstance::settingsTextSize(),
-                    WhitelabelTheme::getInstance::settingsTextWeight(),
-                    WhitelabelTheme::getInstance::titleColor()
+                WhitelabelTheme::instance().fontConfigurationCss(
+                    WhitelabelTheme::instance().settingsFont(),
+                    WhitelabelTheme::instance().settingsTextSize(),
+                    WhitelabelTheme::instance().settingsTextWeight(),
+                    WhitelabelTheme::instance().titleColor()
                 ),
-                WhitelabelTheme::getInstance::dialogBackgroundColor()
+                WhitelabelTheme::instance().dialogBackgroundColor()
             )
         );
 
@@ -1117,13 +1117,13 @@ void AccountSettings::slotDisableVfsCurrentFolder()
 
     msgBox->setStyleSheet(QStringLiteral(
             "QMessageBox QLabel { %1 background-color: %2; }").arg(
-                WhitelabelTheme::getInstance::fontConfigurationCss(
-                    WhitelabelTheme::getInstance::settingsFont(),
-                    WhitelabelTheme::getInstance::settingsTextSize(),
-                    WhitelabelTheme::getInstance::settingsTextWeight(),
-                    WhitelabelTheme::getInstance::titleColor()
+                WhitelabelTheme::instance().fontConfigurationCss(
+                    WhitelabelTheme::instance().settingsFont(),
+                    WhitelabelTheme::instance().settingsTextSize(),
+                    WhitelabelTheme::instance().settingsTextWeight(),
+                    WhitelabelTheme::instance().titleColor()
                 ),
-                WhitelabelTheme::getInstance::white()
+                WhitelabelTheme::instance().white()
         )
     );
 
@@ -1341,11 +1341,11 @@ void AccountSettings::slotEnableCurrentFolder(bool terminate)
 
                 msgbox->setStyleSheet(
                     QStringLiteral("QMessageBox QLabel { %1; }").arg(
-                        WhitelabelTheme::getInstance::fontConfigurationCss(
-                            WhitelabelTheme::getInstance::settingsFont(),
-                            WhitelabelTheme::getInstance::settingsTextSize(),
-                            WhitelabelTheme::getInstance::settingsTextWeight(),
-                            WhitelabelTheme::getInstance::titleColor()
+                        WhitelabelTheme::instance().fontConfigurationCss(
+                            WhitelabelTheme::instance().settingsFont(),
+                            WhitelabelTheme::instance().settingsTextSize(),
+                            WhitelabelTheme::instance().settingsTextWeight(),
+                            WhitelabelTheme::instance().titleColor()
                         )
                     )
                 );
@@ -1832,40 +1832,40 @@ void AccountSettings::customizeStyle()
     _ui->connectLabel->setText(msg);
 
     const auto color = palette().highlight().color();
-    _ui->quotaProgressBar->setStyleSheet(progressBarStyle().arg(WhitelabelTheme::getInstance::dialogBackgroundColor(), color.name()));
+    _ui->quotaProgressBar->setStyleSheet(progressBarStyle().arg(WhitelabelTheme::instance().dialogBackgroundColor(), color.name()));
 
     _ui->quotaInfoLabel->setStyleSheet(
-        WhitelabelTheme::getInstance::fontConfigurationCss(
-            WhitelabelTheme::getInstance::settingsFont(),
-            WhitelabelTheme::getInstance::settingsTextSize(),
-            WhitelabelTheme::getInstance::settingsTitleWeight600(),
-            WhitelabelTheme::getInstance::titleColor()
+        WhitelabelTheme::instance().fontConfigurationCss(
+            WhitelabelTheme::instance().settingsFont(),
+            WhitelabelTheme::instance().settingsTextSize(),
+            WhitelabelTheme::instance().settingsTitleWeight600(),
+            WhitelabelTheme::instance().titleColor()
         )
     );
 
     _ui->quotaInfo2Label->setStyleSheet(
-        WhitelabelTheme::getInstance::fontConfigurationCss(
-            WhitelabelTheme::getInstance::settingsFont(),
-            WhitelabelTheme::getInstance::settingsSmallTextSize(),
-            WhitelabelTheme::getInstance::settingsTextWeight(),
-            WhitelabelTheme::getInstance::titleColor()
+        WhitelabelTheme::instance().fontConfigurationCss(
+            WhitelabelTheme::instance().settingsFont(),
+            WhitelabelTheme::instance().settingsSmallTextSize(),
+            WhitelabelTheme::instance().settingsTextWeight(),
+            WhitelabelTheme::instance().titleColor()
         )
     );
 
     _ui->_folderList->setStyleSheet(
         QStringLiteral("background: %1; %2;").arg(
-            WhitelabelTheme::getInstance::white(),
-            WhitelabelTheme::getInstance::fontConfigurationCss(
-                WhitelabelTheme::getInstance::settingsFont(),
-                WhitelabelTheme::getInstance::settingsTextSize(),
-                WhitelabelTheme::getInstance::settingsTextWeight(),
-                WhitelabelTheme::getInstance::titleColor()
+            WhitelabelTheme::instance().white(),
+            WhitelabelTheme::instance().fontConfigurationCss(
+                WhitelabelTheme::instance().settingsFont(),
+                WhitelabelTheme::instance().settingsTextSize(),
+                WhitelabelTheme::instance().settingsTextWeight(),
+                WhitelabelTheme::instance().titleColor()
             )
         )
     );
 
 #if defined(Q_OS_MAC)
-    _ui->selectiveSyncLabel->setStyleSheet(QString("color: %1;").arg(WhitelabelTheme::getInstance::black()));
+    _ui->selectiveSyncLabel->setStyleSheet(QString("color: %1;").arg(WhitelabelTheme::instance().black()));
     _ui->horizontalLayout->setSpacing(16);
 #endif
 

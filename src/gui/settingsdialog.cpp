@@ -104,7 +104,7 @@ SettingsDialog::SettingsDialog(ownCloudGui *gui, QWidget *parent)
 
     _ui->setupUi(this);
     _toolBar = new QToolBar;
-    _toolBar->setIconSize(QSize(WhitelabelTheme::getInstance::toolbarIconSize(), WhitelabelTheme::getInstance::toolbarIconSize()));
+    _toolBar->setIconSize(QSize(WhitelabelTheme::instance().toolbarIconSize(), WhitelabelTheme::instance().toolbarIconSize()));
     _toolBar->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     _toolBar->setFixedHeight(94);
     layout()->setMenuBar(_toolBar);
@@ -193,7 +193,7 @@ SettingsDialog::SettingsDialog(ownCloudGui *gui, QWidget *parent)
 
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     cfg.restoreGeometry(this);
-    resize(width() > WhitelabelTheme::getInstance::minimalSettingsDialogWidth() ? width(): WhitelabelTheme::getInstance::minimalSettingsDialogWidth(), 
+    resize(width() > WhitelabelTheme::instance().minimalSettingsDialogWidth() ? width(): WhitelabelTheme::instance().minimalSettingsDialogWidth(), 
         (height() > generalSettings->sizeHint().height() ? height(): generalSettings->sizeHint().height()) + 25);
 }
 
@@ -380,21 +380,21 @@ void SettingsDialog::customizeStyle()
     QVariantMap palette = Theme::instance()->systemPalette();
 
     QString white(palette["window"].value<QColor>().name());
-    QString hoverColor(WhitelabelTheme::getInstance::toolButtonHoveredColor());
-    QString pressedColor(WhitelabelTheme::getInstance::toolButtonPressedColor());
-    QString selectedColor(WhitelabelTheme::getInstance::menuSelectedItemColor());
+    QString hoverColor(WhitelabelTheme::instance().toolButtonHoveredColor());
+    QString pressedColor(WhitelabelTheme::instance().toolButtonPressedColor());
+    QString selectedColor(WhitelabelTheme::instance().menuSelectedItemColor());
 
     QString borderColor(palette["shadow"].value<QColor>().name());
     QString highlightTextColor(palette["highlightedText"].value<QColor>().name());
 
-    QString toolbarActionBorderRadius(WhitelabelTheme::getInstance::toolbarActionBorderRadius());
-    QString toolbarSideMargin (WhitelabelTheme::getInstance::toolbarSideMargin());
+    QString toolbarActionBorderRadius(WhitelabelTheme::instance().toolbarActionBorderRadius());
+    QString toolbarSideMargin (WhitelabelTheme::instance().toolbarSideMargin());
     QString toolButtonFont (
-        WhitelabelTheme::getInstance::fontConfigurationCss(
-                WhitelabelTheme::getInstance::settingsFont(),
-                WhitelabelTheme::getInstance::settingsTextSize(),
-                WhitelabelTheme::getInstance::settingsTextWeight(),
-                WhitelabelTheme::getInstance::menuTextColor()
+        WhitelabelTheme::instance().fontConfigurationCss(
+                WhitelabelTheme::instance().settingsFont(),
+                WhitelabelTheme::instance().settingsTextSize(),
+                WhitelabelTheme::instance().settingsTextWeight(),
+                WhitelabelTheme::instance().menuTextColor()
         )
     );
 

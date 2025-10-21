@@ -194,27 +194,27 @@ void FolderWizardLocalPath::changeEvent(QEvent *e)
 
 void FolderWizardLocalPath::changeStyle()
 {
-    _ui.title->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
-            WhitelabelTheme::getInstance::settingsFont(),
-            WhitelabelTheme::getInstance::settingsBigTitleSize(),
-            WhitelabelTheme::getInstance::settingsTitleWeight600(),
-            WhitelabelTheme::getInstance::titleColor()));
+    _ui.title->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
+            WhitelabelTheme::instance().settingsFont(),
+            WhitelabelTheme::instance().settingsBigTitleSize(),
+            WhitelabelTheme::instance().settingsTitleWeight600(),
+            WhitelabelTheme::instance().titleColor()));
 
     _ui.title->setProperty("text", tr("Add Folder Sync"));
 
-    _ui.subTitle->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
-            WhitelabelTheme::getInstance::settingsFont(),
-            WhitelabelTheme::getInstance::settingsTextSize(),
-            WhitelabelTheme::getInstance::settingsTitleWeight600(),
-            WhitelabelTheme::getInstance::folderWizardSubtitleColor()));
+    _ui.subTitle->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
+            WhitelabelTheme::instance().settingsFont(),
+            WhitelabelTheme::instance().settingsTextSize(),
+            WhitelabelTheme::instance().settingsTitleWeight600(),
+            WhitelabelTheme::instance().folderWizardSubtitleColor()));
 
     _ui.subTitle->setProperty("text", tr("Step 1 of 3: Select local folder"));
 
-    _ui.description->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
-            WhitelabelTheme::getInstance::settingsFont(),
-            WhitelabelTheme::getInstance::settingsTextSize(),
-            WhitelabelTheme::getInstance::settingsTextWeight(),
-            WhitelabelTheme::getInstance::titleColor()));
+    _ui.description->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
+            WhitelabelTheme::instance().settingsFont(),
+            WhitelabelTheme::instance().settingsTextSize(),
+            WhitelabelTheme::instance().settingsTextWeight(),
+            WhitelabelTheme::instance().titleColor()));
 
     _ui.description->setProperty("text",
         tr("Select a folder on your hard drive that should be permanetly connected to your %1. All files and "
@@ -223,13 +223,13 @@ void FolderWizardLocalPath::changeStyle()
     _ui.localFolderLineEdit->setStyleSheet(QString(
         "color: %1; font-family: %2; font-size: %3; font-weight: %4; border-radius: %5; border: 1px "
         "solid %6; padding: 0px 12px; text-align: left; vertical-align: middle; height: 40px; background: %7; ")
-        .arg(WhitelabelTheme::getInstance::folderWizardPathColor())
-        .arg(WhitelabelTheme::getInstance::settingsFont())
-        .arg(WhitelabelTheme::getInstance::settingsTextSize())
-        .arg(WhitelabelTheme::getInstance::settingsTextWeight())
-        .arg(WhitelabelTheme::getInstance::buttonRadius())
-        .arg(WhitelabelTheme::getInstance::menuBorderColor())
-        .arg(WhitelabelTheme::getInstance::white())
+        .arg(WhitelabelTheme::instance().folderWizardPathColor())
+        .arg(WhitelabelTheme::instance().settingsFont())
+        .arg(WhitelabelTheme::instance().settingsTextSize())
+        .arg(WhitelabelTheme::instance().settingsTextWeight())
+        .arg(WhitelabelTheme::instance().buttonRadius())
+        .arg(WhitelabelTheme::instance().menuBorderColor())
+        .arg(WhitelabelTheme::instance().white())
     );
 
     _ui.localFolderChooseBtn->setProperty("text", tr("Choose"));
@@ -238,11 +238,11 @@ void FolderWizardLocalPath::changeStyle()
 #if defined(Q_OS_MAC)
     _ui.localFolderChooseBtn->setStyleSheet(
         QStringLiteral("QPushButton { margin-left: 5px; margin-top: 12px; height: 40px; width: 80px; %1} ").arg(
-            WhitelabelTheme::getInstance::fontConfigurationCss(
-                WhitelabelTheme::getInstance::settingsFont(),
-                WhitelabelTheme::getInstance::settingsTextSize(),
-                WhitelabelTheme::getInstance::settingsTitleWeight500(),
-                WhitelabelTheme::getInstance::white()
+            WhitelabelTheme::instance().fontConfigurationCss(
+                WhitelabelTheme::instance().settingsFont(),
+                WhitelabelTheme::instance().settingsTextSize(),
+                WhitelabelTheme::instance().settingsTitleWeight500(),
+                WhitelabelTheme::instance().white()
             )
         )
     );
@@ -279,7 +279,7 @@ FolderWizardRemotePath::FolderWizardRemotePath(const AccountPtr &account)
     _ui.folderTreeWidget->header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
 
 #ifdef Q_OS_MAC
-    _ui.folderTreeWidget->setPalette(QPalette(WhitelabelTheme::getInstance::white()));
+    _ui.folderTreeWidget->setPalette(QPalette(WhitelabelTheme::instance().white()));
 #endif
 
     // Make sure that there will be a scrollbar when the contents is too wide
@@ -313,13 +313,13 @@ void FolderWizardRemotePath::slotAddRemoteFolder()
 
     dlg->setStyleSheet(
             QStringLiteral("QDialog { %1; background-color: %2; }").arg(
-                WhitelabelTheme::getInstance::fontConfigurationCss(
-                    WhitelabelTheme::getInstance::settingsFont(),
-                    WhitelabelTheme::getInstance::settingsTextSize(),
-                    WhitelabelTheme::getInstance::settingsTextWeight(),
-                    WhitelabelTheme::getInstance::titleColor()
+                WhitelabelTheme::instance().fontConfigurationCss(
+                    WhitelabelTheme::instance().settingsFont(),
+                    WhitelabelTheme::instance().settingsTextSize(),
+                    WhitelabelTheme::instance().settingsTextWeight(),
+                    WhitelabelTheme::instance().titleColor()
                 ),
-                WhitelabelTheme::getInstance::dialogBackgroundColor()
+                WhitelabelTheme::instance().dialogBackgroundColor()
             )
         );
 
@@ -327,22 +327,22 @@ void FolderWizardRemotePath::slotAddRemoteFolder()
         QStringLiteral(
             "color: %1; font-family: %2; font-size: %3; font-weight: %4; border-radius: %5; border: 1px "
             "solid %6; padding: 0px 12px; text-align: left; vertical-align: middle; height: 40px; background: %7; ").arg(
-                WhitelabelTheme::getInstance::folderWizardPathColor(),
-                WhitelabelTheme::getInstance::settingsFont(),
-                WhitelabelTheme::getInstance::settingsTextSize(),
-                WhitelabelTheme::getInstance::settingsTextWeight(),
-                WhitelabelTheme::getInstance::buttonRadius(),
-                WhitelabelTheme::getInstance::menuBorderColor(),
-                WhitelabelTheme::getInstance::white()
+                WhitelabelTheme::instance().folderWizardPathColor(),
+                WhitelabelTheme::instance().settingsFont(),
+                WhitelabelTheme::instance().settingsTextSize(),
+                WhitelabelTheme::instance().settingsTextWeight(),
+                WhitelabelTheme::instance().buttonRadius(),
+                WhitelabelTheme::instance().menuBorderColor(),
+                WhitelabelTheme::instance().white()
             )
     );
 
     dlg->findChild<QLabel*>()->setStyleSheet(
-        WhitelabelTheme::getInstance::fontConfigurationCss(
-            WhitelabelTheme::getInstance::settingsFont(),
-            WhitelabelTheme::getInstance::settingsTextSize(),
-            WhitelabelTheme::getInstance::settingsTextWeight(),
-            WhitelabelTheme::getInstance::titleColor())
+        WhitelabelTheme::instance().fontConfigurationCss(
+            WhitelabelTheme::instance().settingsFont(),
+            WhitelabelTheme::instance().settingsTextSize(),
+            WhitelabelTheme::instance().settingsTextWeight(),
+            WhitelabelTheme::instance().titleColor())
         );
 
     #ifdef Q_OS_MAC
@@ -350,7 +350,7 @@ void FolderWizardRemotePath::slotAddRemoteFolder()
 
         buttonBox->button(QDialogButtonBox::Ok)->setStyleSheet(
             buttonBox->button(QDialogButtonBox::Ok)->styleSheet() +
-            QStringLiteral(" color: %1; ").arg(WhitelabelTheme::getInstance::white())
+            QStringLiteral(" color: %1; ").arg(WhitelabelTheme::instance().white())
         );
     #endif
 }
@@ -709,27 +709,27 @@ void FolderWizardRemotePath::changeEvent(QEvent *e)
 
 void FolderWizardRemotePath::changeStyle()
 {
-    _ui.title->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
-        WhitelabelTheme::getInstance::settingsFont(),
-        WhitelabelTheme::getInstance::settingsBigTitleSize(),
-        WhitelabelTheme::getInstance::settingsTitleWeight600(),
-        WhitelabelTheme::getInstance::titleColor()));
+    _ui.title->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
+        WhitelabelTheme::instance().settingsFont(),
+        WhitelabelTheme::instance().settingsBigTitleSize(),
+        WhitelabelTheme::instance().settingsTitleWeight600(),
+        WhitelabelTheme::instance().titleColor()));
 
     _ui.title->setProperty("text", tr("Add Folder Sync"));
 
-    _ui.subTitle->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
-        WhitelabelTheme::getInstance::settingsFont(),
-        WhitelabelTheme::getInstance::settingsTextSize(),
-        WhitelabelTheme::getInstance::settingsTitleWeight600(),
-        WhitelabelTheme::getInstance::folderWizardSubtitleColor()));
+    _ui.subTitle->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
+        WhitelabelTheme::instance().settingsFont(),
+        WhitelabelTheme::instance().settingsTextSize(),
+        WhitelabelTheme::instance().settingsTitleWeight600(),
+        WhitelabelTheme::instance().folderWizardSubtitleColor()));
 
     _ui.subTitle->setProperty("text", tr("Step 2 of 3: Directory in your %1").arg(Theme::instance()->appNameGUI()));
 
-    _ui.description1->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
-        WhitelabelTheme::getInstance::settingsFont(),
-        WhitelabelTheme::getInstance::settingsTextSize(),
-        WhitelabelTheme::getInstance::settingsTextWeight(),
-        WhitelabelTheme::getInstance::titleColor()));
+    _ui.description1->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
+        WhitelabelTheme::instance().settingsFont(),
+        WhitelabelTheme::instance().settingsTextSize(),
+        WhitelabelTheme::instance().settingsTextWeight(),
+        WhitelabelTheme::instance().titleColor()));
 
     _ui.description1->setProperty("text",
         tr("Please now select or create a target folder in your %1 where the content should be uploaded and synchronized.").arg(Theme::instance()->appNameGUI()));
@@ -737,36 +737,36 @@ void FolderWizardRemotePath::changeStyle()
     _ui.description2->setProperty("text",
         tr("Both folders are permanently linked and the respective contents are automatically synchronized and updated."));
 
-    _ui.description2->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
-        WhitelabelTheme::getInstance::settingsFont(),
-        WhitelabelTheme::getInstance::settingsTextSize(),
-        WhitelabelTheme::getInstance::settingsTextWeight(),
-        WhitelabelTheme::getInstance::titleColor()));
+    _ui.description2->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
+        WhitelabelTheme::instance().settingsFont(),
+        WhitelabelTheme::instance().settingsTextSize(),
+        WhitelabelTheme::instance().settingsTextWeight(),
+        WhitelabelTheme::instance().titleColor()));
 
     _ui.folderEntry->setStyleSheet(
         QStringLiteral("color: %1; font-family: %2; font-size: %3; font-weight: %4; border-radius: %5; border: 1px "
         "solid %6; padding: 0px 12px; text-align: left; vertical-align: middle; height: 40px;")
-        .arg(WhitelabelTheme::getInstance::folderWizardPathColor())
-        .arg(WhitelabelTheme::getInstance::settingsFont())
-        .arg(WhitelabelTheme::getInstance::settingsTextSize())
-        .arg(WhitelabelTheme::getInstance::settingsTextWeight())
-        .arg(WhitelabelTheme::getInstance::buttonRadius())
-        .arg(WhitelabelTheme::getInstance::menuBorderColor()));
+        .arg(WhitelabelTheme::instance().folderWizardPathColor())
+        .arg(WhitelabelTheme::instance().settingsFont())
+        .arg(WhitelabelTheme::instance().settingsTextSize())
+        .arg(WhitelabelTheme::instance().settingsTextWeight())
+        .arg(WhitelabelTheme::instance().buttonRadius())
+        .arg(WhitelabelTheme::instance().menuBorderColor()));
 
     _ui.folderTreeWidget->setStyleSheet(
         QStringLiteral(" %1; background: %2; ").arg(
-            WhitelabelTheme::getInstance::fontConfigurationCss(
-                WhitelabelTheme::getInstance::settingsFont(),
-                WhitelabelTheme::getInstance::settingsTextSize(),
-                WhitelabelTheme::getInstance::settingsTextWeight(),
-                WhitelabelTheme::getInstance::titleColor()
+            WhitelabelTheme::instance().fontConfigurationCss(
+                WhitelabelTheme::instance().settingsFont(),
+                WhitelabelTheme::instance().settingsTextSize(),
+                WhitelabelTheme::instance().settingsTextWeight(),
+                WhitelabelTheme::instance().titleColor()
             ),
-            WhitelabelTheme::getInstance::white()
+            WhitelabelTheme::instance().white()
         )
     );
 
     _ui.folderTreeWidget->setStyleSheet(
-        _ui.folderTreeWidget->styleSheet() + QStringLiteral("QTreeWidget { background: %1; }").arg(WhitelabelTheme::getInstance::white())
+        _ui.folderTreeWidget->styleSheet() + QStringLiteral("QTreeWidget { background: %1; }").arg(WhitelabelTheme::instance().white())
     );
 
     _ui.refreshButton->setProperty("text", tr("Refresh"));
@@ -803,34 +803,34 @@ FolderWizardSelectiveSync::FolderWizardSelectiveSync(const AccountPtr &account)
 
             QFont f;
             QFont::Weight w;
-            f.setFamily(WhitelabelTheme::getInstance::settingsFont());
+            f.setFamily(WhitelabelTheme::instance().settingsFont());
             f.setWeight( QFont::Weight::Normal);
-            f.setPixelSize(WhitelabelTheme::getInstance::settingsTextPixel());
+            f.setPixelSize(WhitelabelTheme::instance().settingsTextPixel());
             _virtualFilesCheckBox->setFont(f);
         #endif
         
         layout->addLayout(_virtualFilesHBox);
     }
 
-    _selectiveSync->setStyleSheet(QStringLiteral(" %1; background: %2; ").arg(WhitelabelTheme::getInstance::fontConfigurationCss(
-        WhitelabelTheme::getInstance::settingsFont(),
-        WhitelabelTheme::getInstance::settingsTextSize(),
-        WhitelabelTheme::getInstance::settingsTextWeight(),
-        WhitelabelTheme::getInstance::titleColor()),
-        WhitelabelTheme::getInstance::white()));
+    _selectiveSync->setStyleSheet(QStringLiteral(" %1; background: %2; ").arg(WhitelabelTheme::instance().fontConfigurationCss(
+        WhitelabelTheme::instance().settingsFont(),
+        WhitelabelTheme::instance().settingsTextSize(),
+        WhitelabelTheme::instance().settingsTextWeight(),
+        WhitelabelTheme::instance().titleColor()),
+        WhitelabelTheme::instance().white()));
 
-    _uiSelectiveSync.title->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
-            WhitelabelTheme::getInstance::settingsFont(),
-            WhitelabelTheme::getInstance::settingsBigTitleSize(),
-            WhitelabelTheme::getInstance::settingsTitleWeight600(),
-            WhitelabelTheme::getInstance::titleColor()));
+    _uiSelectiveSync.title->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
+            WhitelabelTheme::instance().settingsFont(),
+            WhitelabelTheme::instance().settingsBigTitleSize(),
+            WhitelabelTheme::instance().settingsTitleWeight600(),
+            WhitelabelTheme::instance().titleColor()));
     _uiSelectiveSync.title->setProperty("text", tr("Add Folder Sync"));
 
-    _uiSelectiveSync.subTitle->setStyleSheet(WhitelabelTheme::getInstance::fontConfigurationCss(
-        WhitelabelTheme::getInstance::settingsFont(),
-        WhitelabelTheme::getInstance::settingsTextSize(),
-        WhitelabelTheme::getInstance::settingsTitleWeight600(),
-        WhitelabelTheme::getInstance::folderWizardSubtitleColor()));
+    _uiSelectiveSync.subTitle->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
+        WhitelabelTheme::instance().settingsFont(),
+        WhitelabelTheme::instance().settingsTextSize(),
+        WhitelabelTheme::instance().settingsTitleWeight600(),
+        WhitelabelTheme::instance().folderWizardSubtitleColor()));
 
     _uiSelectiveSync.subTitle->setProperty("text", tr("Step 3 of 3: Selektive Synchronisation"));
 }
@@ -869,11 +869,11 @@ void FolderWizardSelectiveSync::setupVirtualFilesCheckbox(){
 
     _virtualFilesCheckBoxLabel->setStyleSheet(
         QStringLiteral("QLabel { %1; }").arg(
-            WhitelabelTheme::getInstance::fontConfigurationCss(
-                WhitelabelTheme::getInstance::settingsFont(),
-                WhitelabelTheme::getInstance::settingsTextSize(),
-                WhitelabelTheme::getInstance::settingsTextWeight(),
-                WhitelabelTheme::getInstance::titleColor()
+            WhitelabelTheme::instance().fontConfigurationCss(
+                WhitelabelTheme::instance().settingsFont(),
+                WhitelabelTheme::instance().settingsTextSize(),
+                WhitelabelTheme::instance().settingsTextWeight(),
+                WhitelabelTheme::instance().titleColor()
             )
         )
     );
@@ -1028,7 +1028,7 @@ void FolderWizard::customizeStyle()
 
     // Set background colors
     auto wizardPalette = palette();
-    const auto backgroundColor = QColor(WhitelabelTheme::getInstance::dialogBackgroundColor());
+    const auto backgroundColor = QColor(WhitelabelTheme::instance().dialogBackgroundColor());
 
     // Set Color of upper part
     wizardPalette.setColor(QPalette::Base, backgroundColor);
@@ -1044,7 +1044,7 @@ void FolderWizard::customizeStyle()
 
 void FolderWizard::adjustWizardSize()
 {
-    setFixedSize(QSize(WhitelabelTheme::getInstance::wizardFixedWidth(), WhitelabelTheme::getInstance::wizardFixedHeight()));
+    setFixedSize(QSize(WhitelabelTheme::instance().wizardFixedWidth(), WhitelabelTheme::instance().wizardFixedHeight()));
 }
 
 } // end namespace

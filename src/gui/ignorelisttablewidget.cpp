@@ -187,35 +187,35 @@ void IgnoreListTableWidget::customizeIgnoreListDialogStyle(){
 
     ui->tableWidget->setStyleSheet(
         QStringLiteral("QTableWidget { background-color: %1; color: %2; } ").arg(
-            WhitelabelTheme::getInstance::white(), 
-            WhitelabelTheme::getInstance::black()
+            WhitelabelTheme::instance().white(), 
+            WhitelabelTheme::instance().black()
         ) + 
-        WhitelabelTheme::getInstance::fontConfigurationCss(
-            WhitelabelTheme::getInstance::settingsFont(),
-            WhitelabelTheme::getInstance::settingsTextSize(),
-            WhitelabelTheme::getInstance::settingsTextWeight(),
-            WhitelabelTheme::getInstance::titleColor()
+        WhitelabelTheme::instance().fontConfigurationCss(
+            WhitelabelTheme::instance().settingsFont(),
+            WhitelabelTheme::instance().settingsTextSize(),
+            WhitelabelTheme::instance().settingsTextWeight(),
+            WhitelabelTheme::instance().titleColor()
         )
     );
     
     ui->descriptionLabel->setStyleSheet(
-        WhitelabelTheme::getInstance::fontConfigurationCss(
-            WhitelabelTheme::getInstance::settingsFont(),
-            WhitelabelTheme::getInstance::settingsTextSize(),
-            WhitelabelTheme::getInstance::settingsTextWeight(),
-            WhitelabelTheme::getInstance::titleColor()
+        WhitelabelTheme::instance().fontConfigurationCss(
+            WhitelabelTheme::instance().settingsFont(),
+            WhitelabelTheme::instance().settingsTextSize(),
+            WhitelabelTheme::instance().settingsTextWeight(),
+            WhitelabelTheme::instance().titleColor()
         )
     );
 
     ui->tableWidget->horizontalHeader()->setStyleSheet(
             QStringLiteral("QHeaderView::section { background-color: %1; color: %2; border-bottom: none; %3; }").arg(
-            WhitelabelTheme::getInstance::white(), 
-            WhitelabelTheme::getInstance::black(),
-            WhitelabelTheme::getInstance::fontConfigurationCss(
-                WhitelabelTheme::getInstance::settingsFont(),
-                WhitelabelTheme::getInstance::settingsTextSize(),
-                WhitelabelTheme::getInstance::settingsTextWeight(),
-                WhitelabelTheme::getInstance::titleColor()
+            WhitelabelTheme::instance().white(), 
+            WhitelabelTheme::instance().black(),
+            WhitelabelTheme::instance().fontConfigurationCss(
+                WhitelabelTheme::instance().settingsFont(),
+                WhitelabelTheme::instance().settingsTextSize(),
+                WhitelabelTheme::instance().settingsTextWeight(),
+                WhitelabelTheme::instance().titleColor()
             )
         )
     );
@@ -238,24 +238,24 @@ void IgnoreListTableWidget::customizeAddIgnorePatternDialogStyle(QInputDialog &i
     inputDialog.setContentsMargins(12,0,12,12);
     
     inputDialog.setStyleSheet( QStringLiteral("QDialog { %1; background: %2; }").arg(
-            WhitelabelTheme::getInstance::fontConfigurationCss(
-                WhitelabelTheme::getInstance::settingsFont(),
-                WhitelabelTheme::getInstance::settingsTextSize(),
-                WhitelabelTheme::getInstance::settingsTextWeight(),
-                WhitelabelTheme::getInstance::titleColor()
+            WhitelabelTheme::instance().fontConfigurationCss(
+                WhitelabelTheme::instance().settingsFont(),
+                WhitelabelTheme::instance().settingsTextSize(),
+                WhitelabelTheme::instance().settingsTextWeight(),
+                WhitelabelTheme::instance().titleColor()
             ),
-            WhitelabelTheme::getInstance::dialogBackgroundColor()
+            WhitelabelTheme::instance().dialogBackgroundColor()
         )
     );
 
     QLabel *label = inputDialog.findChild<QLabel*>();
     label->setAlignment(Qt::AlignCenter);
     label->setStyleSheet(
-         WhitelabelTheme::getInstance::fontConfigurationCss(
-            WhitelabelTheme::getInstance::settingsFont(),
-            WhitelabelTheme::getInstance::settingsTextSize(),
-            WhitelabelTheme::getInstance::settingsTextWeight(),
-            WhitelabelTheme::getInstance::titleColor()
+         WhitelabelTheme::instance().fontConfigurationCss(
+            WhitelabelTheme::instance().settingsFont(),
+            WhitelabelTheme::instance().settingsTextSize(),
+            WhitelabelTheme::instance().settingsTextWeight(),
+            WhitelabelTheme::instance().titleColor()
         )
     );
 
@@ -264,13 +264,13 @@ void IgnoreListTableWidget::customizeAddIgnorePatternDialogStyle(QInputDialog &i
         QStringLiteral(
             "color: %1; font-family: %2; font-size: %3; font-weight: %4; border-radius: %5; border: 1px "
             "solid %6; padding: 0px 12px; text-align: left; vertical-align: middle; height: 40px; background: %7; ")
-            .arg(WhitelabelTheme::getInstance::folderWizardPathColor(),
-                 WhitelabelTheme::getInstance::settingsFont(),
-                 WhitelabelTheme::getInstance::settingsTextSize(),
-                 WhitelabelTheme::getInstance::settingsTextWeight(),
-                 WhitelabelTheme::getInstance::buttonRadius(),
-                 WhitelabelTheme::getInstance::menuBorderColor(),
-                 WhitelabelTheme::getInstance::white()
+            .arg(WhitelabelTheme::instance().folderWizardPathColor(),
+                 WhitelabelTheme::instance().settingsFont(),
+                 WhitelabelTheme::instance().settingsTextSize(),
+                 WhitelabelTheme::instance().settingsTextWeight(),
+                 WhitelabelTheme::instance().buttonRadius(),
+                 WhitelabelTheme::instance().menuBorderColor(),
+                 WhitelabelTheme::instance().white()
             )
     );
 

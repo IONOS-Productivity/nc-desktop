@@ -61,11 +61,11 @@ namespace OCC{
 
         _ui->descriptionLabel->setStyleSheet(
             QStringLiteral("QLabel { %1; margin-left: %2; margin-right: %2; margin-bottom: %2; }").arg(
-                WhitelabelTheme::getInstance::fontConfigurationCss(
-                    WhitelabelTheme::getInstance::settingsFont(),
-                    WhitelabelTheme::getInstance::settingsTextSize(),
-                    WhitelabelTheme::getInstance::settingsTextWeight(),
-                    WhitelabelTheme::getInstance::black()
+                WhitelabelTheme::instance().fontConfigurationCss(
+                    WhitelabelTheme::instance().settingsFont(),
+                    WhitelabelTheme::instance().settingsTextSize(),
+                    WhitelabelTheme::instance().settingsTextWeight(),
+                    WhitelabelTheme::instance().black()
                 ),
                 "32"
             )

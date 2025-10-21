@@ -21,7 +21,7 @@ namespace OCC {
 FolderStatusView::FolderStatusView(QWidget *parent) : QTreeView(parent)
 {
     #ifdef Q_OS_MAC
-        setPalette(QPalette(QPalette::ButtonText, WhitelabelTheme::getInstance::white()));
+        setPalette(QPalette(QPalette::ButtonText, WhitelabelTheme::instance().white()));
     #endif
 }
 
