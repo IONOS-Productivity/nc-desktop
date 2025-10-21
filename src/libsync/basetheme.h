@@ -228,6 +228,10 @@ public:
         return "#0F6CBD";
     }
 
+    virtual QString buttonSecondaryColor() const {
+        return "#FFFFFF";
+    }
+
     virtual QString buttonSecondaryBorderColor() const {
         return "#D1D1D1";
     }
@@ -250,6 +254,14 @@ public:
 
     virtual QString buttonSecondaryPressedColor() const {
         return "#E0E0E0";
+    }
+
+    virtual QString buttonPrimaryFocusedBorderColor() const {
+        return "#000000";
+    }
+
+    virtual QString buttonSecondaryFocusedBorderColor() const {
+        return "#000000";
     }
 
     virtual QString buttonDisabledFontColor() const {
