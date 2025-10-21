@@ -12,6 +12,10 @@ class StratoTheme : public BaseTheme {
 public:
     StratoTheme() = default;
 
+    QString quotaProgressColor() const override {
+        return "#272CB2";
+    }
+
     QString buttonPrimaryColor() const override { 
         return "#272CB2";
     }
