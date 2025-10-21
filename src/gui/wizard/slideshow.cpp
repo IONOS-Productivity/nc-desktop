@@ -23,18 +23,18 @@
 
 namespace OCC {
 
-static const int Spacing = WhitelabelTheme::instance().LoginPageSpacer();
+static const int Spacing = WLTheme.LoginPageSpacer();
 static const int SlideDuration = 1000;
 static const int SlideDistance = 400;
 
 SlideShow::SlideShow(QWidget *parent) : QWidget(parent)
 {
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-    setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
-        WhitelabelTheme::instance().settingsFont(),
-        WhitelabelTheme::instance().onboardingTitle(),
-        WhitelabelTheme::instance().settingsTitleWeight400(),
-        WhitelabelTheme::instance().titleColor()
+    setStyleSheet(WLTheme.fontConfigurationCss(
+        WLTheme.settingsFont(),
+        WLTheme.onboardingTitle(),
+        WLTheme.settingsTitleWeight400(),
+        WLTheme.titleColor()
     ));
 }
 

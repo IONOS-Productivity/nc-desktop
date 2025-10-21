@@ -191,13 +191,13 @@ void ConflictDialog::customizeStyle()
 {
     this->setStyleSheet(
         QStringLiteral("QDialog {background-color: %1; color: %2;} QLabel{ %3;}").arg(
-            WhitelabelTheme::instance().dialogBackgroundColor(), 
-            WhitelabelTheme::instance().black(),
-            WhitelabelTheme::instance().fontConfigurationCss(
-                WhitelabelTheme::instance().settingsFont(),
-                WhitelabelTheme::instance().settingsTextSize(),
-                WhitelabelTheme::instance().settingsTextWeight(),
-                WhitelabelTheme::instance().titleColor()
+            WLTheme.dialogBackgroundColor(), 
+            WLTheme.black(),
+            WLTheme.fontConfigurationCss(
+                WLTheme.settingsFont(),
+                WLTheme.settingsTextSize(),
+                WLTheme.settingsTextWeight(),
+                WLTheme.titleColor()
             )
         )
     );
@@ -207,11 +207,11 @@ void ConflictDialog::customizeStyle()
         _ui->buttonBox->setLayoutDirection(Qt::LeftToRight);
 
         _ui->localVersionRadio->setStyleSheet(
-            QStringLiteral("QCheckBox {color: %1;}").arg(WhitelabelTheme::instance().black())
+            QStringLiteral("QCheckBox {color: %1;}").arg(WLTheme.black())
         );
 
         _ui->remoteVersionRadio->setStyleSheet(
-            QStringLiteral("QCheckBox {color: %1;}").arg(WhitelabelTheme::instance().black())
+            QStringLiteral("QCheckBox {color: %1;}").arg(WLTheme.black())
         );
     #endif
 }

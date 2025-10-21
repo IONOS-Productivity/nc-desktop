@@ -80,12 +80,12 @@ SelectiveSyncWidget::SelectiveSyncWidget(AccountPtr account, QWidget *parent)
     header->setText(tr("Deselect remote folders you do not wish to synchronize."));
     header->setWordWrap(true);
     header->setStyleSheet(
-        WhitelabelTheme::instance().fontConfigurationCss(
-            WhitelabelTheme::instance().settingsFont(),
-            WhitelabelTheme::instance().settingsTextSize(),
-            WhitelabelTheme::instance().settingsTextWeight(),
-            WhitelabelTheme::instance().titleColor())
-        + QStringLiteral("background-color: %1;").arg(WhitelabelTheme::instance().dialogBackgroundColor())
+        WLTheme.fontConfigurationCss(
+            WLTheme.settingsFont(),
+            WLTheme.settingsTextSize(),
+            WLTheme.settingsTextWeight(),
+            WLTheme.titleColor())
+        + QStringLiteral("background-color: %1;").arg(WLTheme.dialogBackgroundColor())
     );
     layout->addWidget(header);
 
@@ -111,33 +111,33 @@ SelectiveSyncWidget::SelectiveSyncWidget(AccountPtr account, QWidget *parent)
     "    background-color: white;" // Set the background color
     "    border: 1px solid #e6e6e6;"   // Optional: add a border
     "    padding-left: 4px;" 
-    +    QString(WhitelabelTheme::instance().fontConfigurationCss(
-            WhitelabelTheme::instance().settingsFont(),
-            WhitelabelTheme::instance().settingsTextSize(),
-            WhitelabelTheme::instance().settingsTextWeight(),
-            WhitelabelTheme::instance().titleColor())) 
+    +    QString(WLTheme.fontConfigurationCss(
+            WLTheme.settingsFont(),
+            WLTheme.settingsTextSize(),
+            WLTheme.settingsTextWeight(),
+            WLTheme.titleColor())) 
     +
     "}"
     );
 #else
     _folderTree->header()->setStyleSheet(
-        WhitelabelTheme::instance().fontConfigurationCss(
-            WhitelabelTheme::instance().settingsFont(),
-            WhitelabelTheme::instance().settingsTextSize(),
-            WhitelabelTheme::instance().settingsTextWeight(),
-            WhitelabelTheme::instance().titleColor()
+        WLTheme.fontConfigurationCss(
+            WLTheme.settingsFont(),
+            WLTheme.settingsTextSize(),
+            WLTheme.settingsTextWeight(),
+            WLTheme.titleColor()
     ));
 #endif
 
-    _folderTree->setStyleSheet(WhitelabelTheme::instance().fontConfigurationCss(
-        WhitelabelTheme::instance().settingsFont(),
-        WhitelabelTheme::instance().settingsTextSize(),
-        WhitelabelTheme::instance().settingsTextWeight(),
-        WhitelabelTheme::instance().titleColor()
+    _folderTree->setStyleSheet(WLTheme.fontConfigurationCss(
+        WLTheme.settingsFont(),
+        WLTheme.settingsTextSize(),
+        WLTheme.settingsTextWeight(),
+        WLTheme.titleColor()
     ));
 
 #ifdef Q_OS_MAC
-    _folderTree->setPalette(QPalette(WhitelabelTheme::instance().white()));
+    _folderTree->setPalette(QPalette(WLTheme.white()));
 #endif
 
     ConfigFile::setupDefaultExcludeFilePaths(_excludedFiles);
@@ -561,11 +561,11 @@ void SelectiveSyncDialog::init(const AccountPtr &account)
     button = buttonBox->addButton(QDialogButtonBox::Cancel);
     button->setStyleSheet(
         button->styleSheet() + QStringLiteral("QPushButton { %1; } ").arg(
-            WhitelabelTheme::instance().fontConfigurationCss(
-                WhitelabelTheme::instance().settingsFont(),
-                WhitelabelTheme::instance().settingsTextSize(),
-                WhitelabelTheme::instance().settingsTextWeight(),
-                WhitelabelTheme::instance().black()
+            WLTheme.fontConfigurationCss(
+                WLTheme.settingsFont(),
+                WLTheme.settingsTextSize(),
+                WLTheme.settingsTextWeight(),
+                WLTheme.black()
             )
         )
     );
@@ -578,23 +578,23 @@ void SelectiveSyncDialog::init(const AccountPtr &account)
 void SelectiveSyncDialog::customizeStyle()
 {
     this->setStyleSheet(
-        QStringLiteral("QWidget QTreeView{ background-color: %1; }").arg(WhitelabelTheme::instance().dialogBackgroundColor())
+        QStringLiteral("QWidget QTreeView{ background-color: %1; }").arg(WLTheme.dialogBackgroundColor())
     );
 
     _okButton->setStyleSheet(
         _okButton->styleSheet() + QStringLiteral("QPushButton { %1; } ").arg(
-            WhitelabelTheme::instance().fontConfigurationCss(
-                WhitelabelTheme::instance().settingsFont(),
-                WhitelabelTheme::instance().settingsTextSize(),
-                WhitelabelTheme::instance().settingsTitleWeight500(),
-                WhitelabelTheme::instance().white()
+            WLTheme.fontConfigurationCss(
+                WLTheme.settingsFont(),
+                WLTheme.settingsTextSize(),
+                WLTheme.settingsTitleWeight500(),
+                WLTheme.white()
             )
         )
     );
 
     // Set background colors
     auto dialogPalette = palette();
-    const auto backgroundColor = QColor(WhitelabelTheme::instance().dialogBackgroundColor());
+    const auto backgroundColor = QColor(WLTheme.dialogBackgroundColor());
 
     // Set Color of upper part
     dialogPalette.setColor(QPalette::Base, backgroundColor);

@@ -69,31 +69,31 @@ namespace OCC{
 
         _ui->necessaryDataCheckBox->setStyleSheet(
             QStringLiteral("QCheckBox { %1; }").arg(
-                WhitelabelTheme::instance().fontConfigurationCss(
-                    WhitelabelTheme::instance().settingsFont(),
-                    WhitelabelTheme::instance().settingsTextSize(),
-                    WhitelabelTheme::instance().settingsTitleWeight600(),
-                    WhitelabelTheme::instance().folderWizardSubtitleColor()
+                WLTheme.fontConfigurationCss(
+                    WLTheme.settingsFont(),
+                    WLTheme.settingsTextSize(),
+                    WLTheme.settingsTitleWeight600(),
+                    WLTheme.folderWizardSubtitleColor()
                 )
             ));
 
             _ui->anonymousDataCheckBox->setStyleSheet(
                 QStringLiteral("QCheckBox { %1; }").arg(
-                    WhitelabelTheme::instance().fontConfigurationCss(
-                        WhitelabelTheme::instance().settingsFont(),
-                        WhitelabelTheme::instance().settingsTextSize(),
-                        WhitelabelTheme::instance().settingsTitleWeight600(),
-                        WhitelabelTheme::instance().folderWizardSubtitleColor()
+                    WLTheme.fontConfigurationCss(
+                        WLTheme.settingsFont(),
+                        WLTheme.settingsTextSize(),
+                        WLTheme.settingsTitleWeight600(),
+                        WLTheme.folderWizardSubtitleColor()
                     )
                 ));
 
         _ui->descriptionLabel->setStyleSheet(
             QStringLiteral("QLabel { %1; margin-top: %2; margin-bottom: %2; }").arg(
-                WhitelabelTheme::instance().fontConfigurationCss(
-                    WhitelabelTheme::instance().settingsFont(),
-                    WhitelabelTheme::instance().settingsTextSize(),
-                    WhitelabelTheme::instance().settingsTextWeight(),
-                    WhitelabelTheme::instance().black()
+                WLTheme.fontConfigurationCss(
+                    WLTheme.settingsFont(),
+                    WLTheme.settingsTextSize(),
+                    WLTheme.settingsTextWeight(),
+                    WLTheme.black()
                 ),
                 "24"
             )
@@ -101,24 +101,24 @@ namespace OCC{
 
         _ui->necessaryDataLabel->setStyleSheet(
             QStringLiteral("QLabel { %1; margin-left: %2; margin-bottom: %3; }").arg(
-                WhitelabelTheme::instance().fontConfigurationCss(
-                    WhitelabelTheme::instance().settingsFont(),
-                    WhitelabelTheme::instance().settingsTextSize(),
-                    WhitelabelTheme::instance().settingsTextWeight(),
-                    WhitelabelTheme::instance().black()
+                WLTheme.fontConfigurationCss(
+                    WLTheme.settingsFont(),
+                    WLTheme.settingsTextSize(),
+                    WLTheme.settingsTextWeight(),
+                    WLTheme.black()
                 ),
                 "16", 
-                WhitelabelTheme::instance().smallMargin()
+                WLTheme.smallMargin()
             )
         );
 
         _ui->anonymousDataLabel->setStyleSheet(
             QStringLiteral("QLabel { %1; margin-left: %2; margin-bottom: %3; }").arg(
-                WhitelabelTheme::instance().fontConfigurationCss(
-                    WhitelabelTheme::instance().settingsFont(),
-                    WhitelabelTheme::instance().settingsTextSize(),
-                    WhitelabelTheme::instance().settingsTextWeight(),
-                    WhitelabelTheme::instance().black()
+                WLTheme.fontConfigurationCss(
+                    WLTheme.settingsFont(),
+                    WLTheme.settingsTextSize(),
+                    WLTheme.settingsTextWeight(),
+                    WLTheme.black()
                 ),
                 "16", 
                 "48"

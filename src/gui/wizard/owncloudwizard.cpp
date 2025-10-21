@@ -471,7 +471,7 @@ void OwncloudWizard::customizeStyle()
 
     // Set background colors
     auto wizardPalette = palette();
-    const auto backgroundColor = QColor(WhitelabelTheme::instance().dialogBackgroundColor());
+    const auto backgroundColor = QColor(WLTheme.dialogBackgroundColor());
     
     // Set Color of upper part
     wizardPalette.setColor(QPalette::Base, backgroundColor);
