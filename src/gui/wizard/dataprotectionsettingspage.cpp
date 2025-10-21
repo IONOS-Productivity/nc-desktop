@@ -69,31 +69,31 @@ namespace OCC{
 
         _ui->necessaryDataCheckBox->setStyleSheet(
             QStringLiteral("QCheckBox { %1; }").arg(
-                WhitelabelTheme::getInstance::fontConfigurationCss(
-                    WhitelabelTheme::getInstance::settingsFont(),
-                    WhitelabelTheme::getInstance::settingsTextSize(),
-                    WhitelabelTheme::getInstance::settingsTitleWeight600(),
-                    WhitelabelTheme::getInstance::folderWizardSubtitleColor()
+                WhitelabelTheme::instance().fontConfigurationCss(
+                    WhitelabelTheme::instance().settingsFont(),
+                    WhitelabelTheme::instance().settingsTextSize(),
+                    WhitelabelTheme::instance().settingsTitleWeight600(),
+                    WhitelabelTheme::instance().folderWizardSubtitleColor()
                 )
             ));
 
             _ui->anonymousDataCheckBox->setStyleSheet(
                 QStringLiteral("QCheckBox { %1; }").arg(
-                    WhitelabelTheme::getInstance::fontConfigurationCss(
-                        WhitelabelTheme::getInstance::settingsFont(),
-                        WhitelabelTheme::getInstance::settingsTextSize(),
-                        WhitelabelTheme::getInstance::settingsTitleWeight600(),
-                        WhitelabelTheme::getInstance::folderWizardSubtitleColor()
+                    WhitelabelTheme::instance().fontConfigurationCss(
+                        WhitelabelTheme::instance().settingsFont(),
+                        WhitelabelTheme::instance().settingsTextSize(),
+                        WhitelabelTheme::instance().settingsTitleWeight600(),
+                        WhitelabelTheme::instance().folderWizardSubtitleColor()
                     )
                 ));
 
         _ui->descriptionLabel->setStyleSheet(
             QStringLiteral("QLabel { %1; margin-top: %2; margin-bottom: %2; }").arg(
-                WhitelabelTheme::getInstance::fontConfigurationCss(
-                    WhitelabelTheme::getInstance::settingsFont(),
-                    WhitelabelTheme::getInstance::settingsTextSize(),
-                    WhitelabelTheme::getInstance::settingsTextWeight(),
-                    WhitelabelTheme::getInstance::black()
+                WhitelabelTheme::instance().fontConfigurationCss(
+                    WhitelabelTheme::instance().settingsFont(),
+                    WhitelabelTheme::instance().settingsTextSize(),
+                    WhitelabelTheme::instance().settingsTextWeight(),
+                    WhitelabelTheme::instance().black()
                 ),
                 "24"
             )
@@ -101,24 +101,24 @@ namespace OCC{
 
         _ui->necessaryDataLabel->setStyleSheet(
             QStringLiteral("QLabel { %1; margin-left: %2; margin-bottom: %3; }").arg(
-                WhitelabelTheme::getInstance::fontConfigurationCss(
-                    WhitelabelTheme::getInstance::settingsFont(),
-                    WhitelabelTheme::getInstance::settingsTextSize(),
-                    WhitelabelTheme::getInstance::settingsTextWeight(),
-                    WhitelabelTheme::getInstance::black()
+                WhitelabelTheme::instance().fontConfigurationCss(
+                    WhitelabelTheme::instance().settingsFont(),
+                    WhitelabelTheme::instance().settingsTextSize(),
+                    WhitelabelTheme::instance().settingsTextWeight(),
+                    WhitelabelTheme::instance().black()
                 ),
                 "16", 
-                WhitelabelTheme::getInstance::smallMargin()
+                WhitelabelTheme::instance().smallMargin()
             )
         );
 
         _ui->anonymousDataLabel->setStyleSheet(
             QStringLiteral("QLabel { %1; margin-left: %2; margin-bottom: %3; }").arg(
-                WhitelabelTheme::getInstance::fontConfigurationCss(
-                    WhitelabelTheme::getInstance::settingsFont(),
-                    WhitelabelTheme::getInstance::settingsTextSize(),
-                    WhitelabelTheme::getInstance::settingsTextWeight(),
-                    WhitelabelTheme::getInstance::black()
+                WhitelabelTheme::instance().fontConfigurationCss(
+                    WhitelabelTheme::instance().settingsFont(),
+                    WhitelabelTheme::instance().settingsTextSize(),
+                    WhitelabelTheme::instance().settingsTextWeight(),
+                    WhitelabelTheme::instance().black()
                 ),
                 "16", 
                 "48"
