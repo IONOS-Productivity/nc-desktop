@@ -3,212 +3,213 @@
 
 #include <QFont>
 #include <QString>
+#include "basetheme.h"
 #include "theme.h"
 
 namespace OCC {
 
-class StratoTheme :: Theme{
+class StratoTheme : public BaseTheme {
 public:
 
     //Icons
-    static QString avatarIcon() {
+    QString avatarIcon() const override {
         return QString(Theme::themePrefix) + QStringLiteral("ses/ses-settingsAvatar.svg");
     }
 
-    static QString folderIcon() {
+    QString folderIcon() const override {
         return QString(Theme::themePrefix) + QStringLiteral("ses/ses-folderIcon.svg");
     }
 
-    static QString syncArrows() {
+    QString syncArrows() const override {
         return QString(Theme::themePrefix) + QStringLiteral("ses/ses-syncArrows.svg");
     }
 
-    static QString questionCircleIcon() {
+    QString questionCircleIcon() const override {
         return QString(Theme::themePrefix) + QStringLiteral("ses/ses-questionMark.svg");
     }
 
-    static QString liveBackupPlusIcon() {
+    QString liveBackupPlusIcon() const override {
         return QString(Theme::themePrefix) + QStringLiteral("ses/ses-addlivebackup.svg");
     }
 
-    static QString plusIcon() {
+    QString plusIcon() const override {
         return QStringLiteral("qrc:///client/theme/ses/ses-darkPlus.svg");
     }
 
-    static QString deleteIcon() {
+    QString deleteIcon() const override {
         return QStringLiteral("qrc:///client/theme/ses/ses-accountDelete.svg");
     }
 
-    static QString refreshIcon() {
+    QString refreshIcon() const override {
         return QStringLiteral("qrc:///client/theme/ses/ses-refresh.svg");
     }
 
-    static QString syncSuccessIcon() {
+    QString syncSuccessIcon() const override {
         return QStringLiteral("qrc:///client/theme/ses/ses-syncstatus-success.svg");
     }
 
-    static QString syncWarnIcon() {
+    QString syncWarnIcon() const override {
         return QStringLiteral("qrc:///client/theme/ses/ses-syncstatus-warning.svg");
     }
 
-    static QString syncErrorIcon() {
+    QString syncErrorIcon() const override {
         return QStringLiteral("qrc:///client/theme/ses/ses-syncstatus-error.svg");
     }
 
-    static QString syncPausedIcon() {
+    QString syncPausedIcon() const override {
         return QStringLiteral("qrc:///client/theme/ses/ses-syncstatus-paused.svg");
     }
 
-    static QString syncingIcon() {
+    QString syncingIcon() const override {
         return QStringLiteral("qrc:///client/theme/ses/ses-syncstatus-syncing.svg");
     }
 
-    static QString syncOfflineIcon() {
+    QString syncOfflineIcon() const override {
         return QStringLiteral("qrc:///client/theme/ses/ses-state-offline.svg");
     }
 
-    static int treeViewIconSize() {
+    int treeViewIconSize() const override {
         return 32;
     }
 
     //Control Configuration: Sizes
-    static QString toolbarActionBorderRadius() {
+    QString toolbarActionBorderRadius() const override {
         return "8px";
     }
 
-    static QString toolbarSideMargin() {
+    QString toolbarSideMargin() const override {
         return "10px";
     }
 
-    static int toolbarIconSize(){
+    int toolbarIconSize() const override{
         return 24;
     }
 
-    static QString buttonRadius() {
+    QString buttonRadius() const override {
         return "4px";
     }
 
-    static int buttonRadiusInt() {
+    int buttonRadiusInt() const override {
         return 4;
     }
 
-    static QString buttonPadding() {
+    QString buttonPadding() const override {
         return "10px";
     }
 
-    static QString smallMargin() {
+    QString smallMargin() const override {
         return "8";
     }
 
-    static int minimalSettingsDialogWidth() {
+    int minimalSettingsDialogWidth() const override {
         return 740;
     }
 
-    static int wizardFixedWidth() {
+    int wizardFixedWidth() const override {
         return 576;
     }
 
-    static int wizardFixedHeight() {
+    int wizardFixedHeight() const override {
         return 704;
     }
 
-    static int LoginPageSpacer() {
+    int LoginPageSpacer() const override {
         return 45;
     }
 
     //Font Configuration
-    static QString settingsFont() {
+    QString settingsFont() const override {
         return "Segoe UI";
     }
 
-    static QString contextMenuFont() {
+    QString contextMenuFont() const override {
         return ":/client/fonts/OpenSans-Regular.ttf";
     }
 
-    static QString settingsSmallTextSize() {
+    QString settingsSmallTextSize() const override {
         return "14px";
     }
 
-    static int settingsTextPixel() {
+    int settingsTextPixel() const override {
         return 16;
     }
 
-    static QString settingsTextSize() {
+    QString settingsTextSize() const override {
         return QString::number(settingsTextPixel()) + "px";
     }
 
-    static int settingsTitlePixel() {
+    int settingsTitlePixel() const override {
         return 20;
     }
 
-    static QString settingsTitleSize() {
+    QString settingsTitleSize() const override {
         return QString::number(settingsTitlePixel()) + "px";
     }
 
-    static int settingsBigTitlePixel() {
+    int settingsBigTitlePixel() const override {
         return 24;
     }
 
-    static QString settingsBigTitleSize() {
+    QString settingsBigTitleSize() const override {
         return QString::number(settingsBigTitlePixel()) + "px";
     }
 
-    static QString onboardingTitle() {
+    QString onboardingTitle() const override {
         return "28px";
     }
 
-    static QString settingsTextWeight() {
+    QString settingsTextWeight() const override {
         return "400";
     }
 
-    static QString settingsTitleWeight400() {
+    QString settingsTitleWeight400() const override {
         return "400";
     }
 
-    static QString settingsTitleWeight500() {
+    QString settingsTitleWeight500() const override {
         return "500";
     }
 
-    static QString settingsTitleWeight600() {
+    QString settingsTitleWeight600() const override {
         return "600";
     }
 
-    static QFont::Weight settingsTitleWeightDemiBold() {
+    QFont::Weight settingsTitleWeightDemiBold() const override {
         return QFont::DemiBold;
     }
 
-    static QFont::Weight settingsTitleWeightNormal() {
+    QFont::Weight settingsTitleWeightNormal() const override {
         return QFont::Normal;
     }
 
-    static QFont settingsFontDefault(){
+    QFont settingsFontDefault() const override{
         QFont defaultFont(settingsFont());
         defaultFont.setPixelSize(settingsTextPixel());
         defaultFont.setWeight(settingsTitleWeightNormal());
         return defaultFont;
     }
 
-    static QString titleColor() {
+    QString titleColor() const override {
         return "#000000";
     }
 
-    static QString folderWizardSubtitleColor() {
+    QString folderWizardSubtitleColor() const override {
         return "#104996";
     }
 
-    static QString folderWizardPathColor() {
+    QString folderWizardPathColor() const override {
         return "#97A3B4";
     }
 
-    static QString loginWizardFontGrey() {
+    QString loginWizardFontGrey() const override {
         return "#616161";
     }
 
-    static QString loginWizardFontLightGrey() {
+    QString loginWizardFontLightGrey() const override {
         return "#BDBDBD";
     }
 
-    static QString fontConfigurationCss(QString font, QString size, QString weight, QString color) {
+    QString fontConfigurationCss(QString font, QString size, QString weight, QString color) const override {
         return QString("font-family: %1; font-size: %2; font-weight: %3; color: %4; ").arg(
             font,
             size,
@@ -217,115 +218,115 @@ public:
     }
 
     //Colors
-    static QString settingsLinkColor() {
+    QString settingsLinkColor() const override {
         return "#02306A";
     }
 
-    static QString buttonPrimaryColor() {
+    QString buttonPrimaryColor() const override {
         return "#0F6CBD";
     }
 
-    static QString buttonSecondaryBorderColor() {
+    QString buttonSecondaryBorderColor() const override {
         return "#D1D1D1";
     }
 
-    static QString buttonDisabledColor() {
+    QString buttonDisabledColor() const override {
         return "#F0F0F0";
     }
 
-    static QString buttonPrimaryHoverColor() {
+    QString buttonPrimaryHoverColor() const override {
         return "#115EA3";
     }
 
-    static QString buttonSecondaryHoverColor() {
+    QString buttonSecondaryHoverColor() const override {
         return "#F5F5F5";
     }
 
-    static QString buttonPrimaryPressedColor() {
+    QString buttonPrimaryPressedColor() const override {
         return "#0C3B5E";
     }
 
-    static QString buttonSecondaryPressedColor() {
+    QString buttonSecondaryPressedColor() const override {
         return "#E0E0E0";
     }
 
-    static QString buttonDisabledFontColor() {
+    QString buttonDisabledFontColor() const override {
         return "#BDBDBD";
     }
 
-    static QString white() {
+    QString white() const override {
         return "#FFFFFF";
     }
 
-    static QString black() {
+    QString black() const override {
         return "#000000";
     }
 
-    static QString dialogBackgroundColor() {
+    QString dialogBackgroundColor() const override {
         return "#FAFAFA";
     }
 
-    static QString menuBorderColor() {
+    QString menuBorderColor() const override {
         return "#2E4360";
     }
 
-    static QString menuTextColor() {
+    QString menuTextColor() const override {
         return "#001B41";
     }
 
-    static QString menuSelectedItemColor() {
+    QString menuSelectedItemColor() const override {
         return "#F4F7FA";
     }
 
-    static QString menuBorderRadius() {
+    QString menuBorderRadius() const override {
         return "16px";
     }
 
-    static QString buttonPressedColor() {
+    QString buttonPressedColor() const override {
         return "#0B2A63";
     }
 
-    static QString buttonHoveredColor() {
+    QString buttonHoveredColor() const override {
         return "#1474C4";
     }
 
-    static QString toolButtonHoveredColor() {
+    QString toolButtonHoveredColor() const override {
         return "#DBEDF8";
     }
 
-    static QString toolButtonPressedColor() {
+    QString toolButtonPressedColor() const override {
         return "#95CAEB";
     }
 
-    static QString errorBorderColor() {
+    QString errorBorderColor() const override {
         return "#EEACB2";
     }
 
-    static QString errorColor() {
+    QString errorColor() const override {
         return "#FDF3F4";
     }
 
-    static QString warningBorderColor() {
+    QString warningBorderColor() const override {
         return "#F4BFAB";
     }
 
-    static QString warningColor() {
+    QString warningColor() const override {
         return "#FDF6F3";
     }
 
-    static QString successBorderColor() {
+    QString successBorderColor() const override {
         return "#9FD89F";
     }
 
-    static QString successColor() {
+    QString successColor() const override {
         return "#F1FAF1";
     }
 
-    static QString infoBorderColor() {
+    QString infoBorderColor() const override {
         return "#11C7E6";
     }
 
-    static QString infoColor() {
+    QString infoColor() const override {
         return "#E6F9FC";
     }
 
