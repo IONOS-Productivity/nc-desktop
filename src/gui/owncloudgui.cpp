@@ -42,6 +42,7 @@
 #include "tray/syncstatussummary.h"
 #include "tray/unifiedsearchresultslistmodel.h"
 #include "filesystem.h"
+#include "whitelabeltheme.h"
 
 #ifdef WITH_LIBCLOUDPROVIDERS
 #include "cloudproviders/cloudprovidermanager.h"
@@ -164,6 +165,7 @@ ownCloudGui::ownCloudGui(Application *parent)
     qmlRegisterSingletonInstance("com.ionos.hidrivenext.desktopclient", 1, 0, "UserAppsModel", UserAppsModel::instance());
     qmlRegisterSingletonInstance("com.ionos.hidrivenext.desktopclient", 1, 0, "Theme", Theme::instance());
     qmlRegisterSingletonInstance("com.ionos.hidrivenext.desktopclient", 1, 0, "Systray", Systray::instance());
+    qmlRegisterSingletonInstance<BaseTheme>("com.ionos.hidrivenext.desktopclient", 1, 0, "WLTheme", &WLTheme);
 
 #ifdef BUILD_FILE_PROVIDER_MODULE
     qmlRegisterSingletonInstance("com.ionos.hidrivenext.desktopclient", 1, 0, "FileProviderSettingsController", Mac::FileProviderSettingsController::instance());
