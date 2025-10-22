@@ -25,7 +25,7 @@ public:
     }
 
     QString buttonPrimaryHoverColor() const override {
-        return "#115EA3";
+        return "#2944CC";
     }
 
     QString buttonPrimaryPressedColor() const override {
