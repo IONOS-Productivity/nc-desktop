@@ -246,6 +246,7 @@ QtObject {
     readonly property color sesIconDarkColor: "#001B41"
     readonly property color sesIconColor: "#1474C4"
 
+    readonly property color sesBackgroundColor: WLTheme.trayBackgroundColor
     readonly property color sesBorderColor: "#D7D7D7"
     readonly property color sesWhite: "#FFFFFF"
     readonly property color sesGray: "#465A75"
