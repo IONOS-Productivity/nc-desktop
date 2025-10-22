@@ -7,8 +7,13 @@
 
 namespace OCC {
 
-class BaseTheme {
+class BaseTheme : public QObject{
+    Q_OBJECT
+    Q_PROPERTY(QString dialogBackgroundColor READ dialogBackgroundColor CONSTANT)
+    
+
 public:
+
     virtual ~BaseTheme() = default;
 
     // Base theme prefix (can be overridden)
