@@ -89,7 +89,7 @@ ColumnLayout {
         }
 
         background: Rectangle {
-            color: Style.sesWhite
+            color: Style.sesBackgroundColor
         }
 
         anchors.centerIn: parent

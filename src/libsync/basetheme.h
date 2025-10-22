@@ -10,6 +10,7 @@ namespace OCC {
 class BaseTheme : public QObject{
     Q_OBJECT
     Q_PROPERTY(QString dialogBackgroundColor READ dialogBackgroundColor CONSTANT)
+    Q_PROPERTY(QString trayBackgroundColor READ trayBackgroundColor CONSTANT)
     Q_PROPERTY(QString toolButtonHoveredColor READ toolButtonHoveredColor CONSTANT)
     Q_PROPERTY(QString toolButtonPressedColor READ toolButtonPressedColor CONSTANT)
 
@@ -292,6 +293,10 @@ public:
 
     virtual QString dialogBackgroundColor() const {
         return "#FAFAFA";
+    }
+
+    virtual QString trayBackgroundColor() const {
+        return "#FFFFFF";
     }
 
     virtual QString menuBorderColor() const {

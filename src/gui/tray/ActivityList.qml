@@ -21,7 +21,7 @@ ScrollView {
     }
 
     background: Rectangle {
-        color: Style.sesWhite
+        color: Style.sesBackgroundColor
     }
 
     signal openFile(string filePath)
@@ -88,7 +88,7 @@ ScrollView {
         delegate: ActivityItem {
 
             background: Rectangle {
-                color: Style.sesWhite
+                color: Style.sesBackgroundColor
             }
 
             width: activityList.contentItem.width

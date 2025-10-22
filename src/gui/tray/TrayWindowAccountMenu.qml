@@ -74,7 +74,7 @@ Button {
 
         background: Rectangle {
             border.color: Style.sesBorderColor
-            color: Style.sesWhite
+            color: Style.sesBackgroundColor
             radius: Style.sesCornerRadius
         }
 

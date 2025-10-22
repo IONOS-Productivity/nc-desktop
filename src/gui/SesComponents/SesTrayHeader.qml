@@ -17,7 +17,7 @@ import com.ionos.hidrivenext.desktopclient
 Rectangle {
 
     height:         Style.sesTrayHeaderHeight + Style.sesHeaderTopMargin * 2 
-    color:          Style.sesWhite
+    color:          Style.sesBackgroundColor
     radius: 0.0
     clip: true
 

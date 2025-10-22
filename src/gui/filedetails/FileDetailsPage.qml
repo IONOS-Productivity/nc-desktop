@@ -74,7 +74,7 @@ Page {
     bottomPadding: intendedPadding
 
     background: Rectangle {
-        color: Style.sesWhite
+        color: Style.sesBackgroundColor
     }
 
     header: ColumnLayout {

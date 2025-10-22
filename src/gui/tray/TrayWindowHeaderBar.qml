@@ -17,7 +17,7 @@ import com.ionos.hidrivenext.desktopclient
 Rectangle {
 
     height:         Style.trayWindowHeaderHeight
-    color:          Style.sesWhite
+    color:          Style.sesBackgroundColor
     radius: 0.0
 
     RowLayout {
@@ -119,7 +119,7 @@ Rectangle {
 
                 background: Rectangle {
                     border.color: Style.sesBorderColor
-                    color: Style.sesWhite
+                    color: Style.sesBackgroundColor
                     radius: 2
                 }
 

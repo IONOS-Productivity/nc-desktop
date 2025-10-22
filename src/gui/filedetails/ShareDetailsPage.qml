@@ -192,7 +192,7 @@ Page {
     padding: Style.standardSpacing * 2
 
     background: Rectangle {
-        color: Style.sesWhite
+        color: Style.sesBackgroundColor
     }
 
     header: ColumnLayout {

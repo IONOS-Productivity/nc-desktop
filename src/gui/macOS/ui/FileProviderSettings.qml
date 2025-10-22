@@ -34,12 +34,12 @@ Page {
     font.family: Style.sesOpenSansRegular 
     font.pixelSize: Style.sesFontPixelSize 
     font.weight: Style.sesFontBoldWeight
-    palette.base: Style.sesWhite
+    palette.base: Style.sesBackgroundColor
     palette.windowText: Style.sesTrayFontColor
     palette.buttonText: Style.sesTrayFontColor
 
     background: Rectangle {
-        color: Style.sesWhite
+        color: Style.sesBackgroundColor
         border.width: root.showBorder ? Style.normalBorderWidth : 0
         border.color: root.palette.dark
     }

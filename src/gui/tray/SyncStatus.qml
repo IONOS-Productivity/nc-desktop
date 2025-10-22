@@ -14,7 +14,7 @@ RowLayout {
     spacing: Style.trayHorizontalMargin
 
     Rectangle{
-        color: Style.sesWhite
+        color: Style.sesBackgroundColor
 
         NC.SyncStatusSummary {
             id: syncStatus
