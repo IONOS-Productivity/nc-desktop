@@ -87,6 +87,14 @@ public:
     QString toolButtonPressedColor() const override {
         return "#D6D6E4";
     }
+
+    QString menuSelectedItemColor() const override {
+        return "#D6D6E4";
+    }
+
+    QString menuPressedItemColor() const override {
+        return "#5A6782";
+    }
 };
 }
 #endif // _STRATOTHEME_H
