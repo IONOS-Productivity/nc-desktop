@@ -36,12 +36,12 @@ ApplicationWindow {
     font.family: Style.sesOpenSansRegular 
     font.pixelSize: Style.sesFontPixelSize 
     font.weight: Style.sesFontBoldWeight
-    palette.base: Style.sesWhite
+    palette.base: Style.sesBackgroundColor
     palette.windowText: Style.sesTrayFontColor
     palette.buttonText: Style.sesTrayFontColor
 
     title: qsTr("Evict materialised files")
-    color: Style.sesWhite
+    color: Style.sesBackgroundColor
     flags: Qt.Dialog | Qt.WindowStaysOnTopHint
     width: 640
     height: 480

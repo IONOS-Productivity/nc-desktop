@@ -16,6 +16,10 @@ public:
         return "#F7F7F9";
     }
 
+    QString trayBackgroundColor() const override {
+        return "#F7F7F9";
+    }
+
     QString settingsLinkColor() const override {
         return "#272CB2";
     }

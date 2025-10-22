@@ -46,7 +46,7 @@ ApplicationWindow {
     font.family: Style.sesOpenSansRegular 
     font.pixelSize: Style.sesFontPixelSize 
     font.weight: Style.sesFontBoldWeight
-    palette.base: Style.sesWhite
+    palette.base: Style.sesBackgroundColor
     palette.windowText: Style.sesTrayFontColor
  
     // TODO: Rather than setting all these palette colours manually, 
@@ -89,7 +89,7 @@ ApplicationWindow {
         radius: 0.0
         border.width: Style.trayWindowBorderWidth
         border.color: palette.dark
-        color: Style.sesWhite
+        color: Style.sesBackgroundColor
     }
 
     Connections {
