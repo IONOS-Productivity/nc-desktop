@@ -24,6 +24,10 @@ public:
         return "#272CB2";
     }
 
+    QString syncProgressColor() const override {
+        return "#009850";
+    }
+
     QString buttonPrimaryColor() const override { 
         return "#272CB2";
     }
