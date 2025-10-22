@@ -10,7 +10,8 @@ namespace OCC {
 class BaseTheme : public QObject{
     Q_OBJECT
     Q_PROPERTY(QString dialogBackgroundColor READ dialogBackgroundColor CONSTANT)
-    
+    Q_PROPERTY(QString toolButtonHoveredColor READ toolButtonHoveredColor CONSTANT)
+    Q_PROPERTY(QString toolButtonPressedColor READ toolButtonPressedColor CONSTANT)
 
 public:
 
