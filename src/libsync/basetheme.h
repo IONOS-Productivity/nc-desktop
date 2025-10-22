@@ -296,6 +296,10 @@ public:
         return "#F4F7FA";
     }
 
+    virtual QString menuPressedItemColor() const {
+        return "#F4F7FA";
+    }
+
     virtual QString menuBorderRadius() const {
         return "16px";
     }
