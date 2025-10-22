@@ -254,8 +254,8 @@ QtObject {
     readonly property color sesActionHover: "#1474C4"
     readonly property color sesActionPressed: "#0B2A63"
     readonly property color sesSelectedColor: "#F4F7FA"
-    readonly property color sesButtonPressed: "#95CAEB"
-    readonly property color sesAccountMenuHover: "#DBEDF8"
+    readonly property color sesButtonPressed: WLTheme.toolButtonPressedColor
+    readonly property color sesAccountMenuHover: WLTheme.toolButtonHoveredColor
     readonly property color sesDarkGreen: "#096B35"
     readonly property color sesDarkBlue: "#001B41"
     readonly property color sesTrayFontColor: "#001B41"
