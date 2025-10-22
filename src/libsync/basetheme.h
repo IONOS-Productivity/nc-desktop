@@ -292,6 +292,10 @@ public:
         return "#001B41";
     }
 
+    virtual QString menuPressedTextColor() const {
+        return "#001B41";
+    }
+
     virtual QString menuSelectedItemColor() const {
         return "#F4F7FA";
     }

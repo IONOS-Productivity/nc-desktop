@@ -708,10 +708,10 @@ void AccountSettings::styleCustomContextMenu(QMenu *menu) const
                 "background-color: %1; "
                 "border: 1px solid %2; "
                 "padding: 15px; "
-                "border-radius: %6; "
-                "font-family: %7; "
-                "font-size: %8; "
-                "font-weight: %9; "
+                "border-radius: %7; "
+                "font-family: %8; "
+                "font-size: %9; "
+                "font-weight: %10; "
             "}"
             "QMenu::item  {"
                 "background-color: transparent;"
@@ -720,19 +720,20 @@ void AccountSettings::styleCustomContextMenu(QMenu *menu) const
                 "border-radius: 8px; "
             "}"
             "QMenu::item:selected  {"
-                "background-color: %4; "
+                "background-color: %5; "
                 "color: %3; "
                 "border-radius: 8px; "
             "}"
             "QMenu::item:pressed  {"
-                "background-color: %5; "
-                "color: %3; "
+                "background-color: %6; "
+                "color: %4; "
                 "border-radius: 8px; "
             "}"
         ).arg(
             WLTheme.white(),
             WLTheme.menuBorderColor(),
             WLTheme.menuTextColor(),
+            WLTheme.menuPressedTextColor(),
             WLTheme.menuSelectedItemColor(),
             WLTheme.menuPressedItemColor(),
             WLTheme.menuBorderRadius(),
