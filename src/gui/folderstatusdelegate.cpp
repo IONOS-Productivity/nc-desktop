@@ -373,6 +373,7 @@ void FolderStatusDelegate::drawSyncProgressBar(QPainter *painter, const QStyleOp
     progressBarOpt.rect = QStyle::visualRect(option.direction, option.rect, progressBarRect);
     QPalette paletteTmp = progressBarOpt.palette;
     paletteTmp.setColor(QPalette::Base, WLTheme.white());
+    paletteTmp.setColor(QPalette::Highlight, WLTheme.syncProgressColor());
     progressBarOpt.palette = paletteTmp;
 
 #ifdef Q_OS_MACOS
