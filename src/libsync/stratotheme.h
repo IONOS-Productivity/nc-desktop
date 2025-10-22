@@ -88,8 +88,16 @@ public:
         return "#D6D6E4";
     }
 
+    QString menuTextColor() const override {
+        return "#29294d";
+    }
+
     QString menuSelectedItemColor() const override {
         return "#D6D6E4";
+    }
+
+    QString menuPressedTextColor() const override {
+        return "#FFFFFF";
     }
 
     QString menuPressedItemColor() const override {
