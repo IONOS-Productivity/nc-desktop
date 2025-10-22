@@ -233,6 +233,10 @@ public:
         return "#308cc6";
     }
 
+    virtual QString syncProgressColor() const {
+        return "#359ada";
+    }
+
     virtual QString buttonPrimaryColor() const {
         return "#0F6CBD";
     }
