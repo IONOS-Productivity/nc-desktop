@@ -1,7 +1,7 @@
 #ifndef WHITELABELTHEME_H
 #define WHITELABELTHEME_H
-// #define WHITELABEL_IONOS
-#define WHITELABEL_STRATO
+// // #define WHITELABEL_IONOS
+// #define WHITELABEL_STRATO
 
 #include "basetheme.h"
 #include "stratotheme.h"
@@ -10,9 +10,9 @@
 namespace OCC {
 
 
-#if defined(WHITELABEL_IONOS)
+#if defined(IONOS_WL_BUILD)
     static IonosTheme WLTheme;    
-#elif defined(WHITELABEL_STRATO)
+#elif defined(STRATO_WL_BUILD)
     static StratoTheme WLTheme;
 #else
     static BaseTheme WLTheme;
