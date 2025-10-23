@@ -20,6 +20,10 @@ public:
         return "#2F2F70";
     }
 
+    QString trayBorderColor() const override {
+        return "#8493B3";
+    }
+
     QString trayBackgroundColor() const override {
         return "#F7F7F9";
     }

@@ -11,6 +11,7 @@ class BaseTheme : public QObject{
     Q_OBJECT
     Q_PROPERTY(QString dialogBackgroundColor READ dialogBackgroundColor CONSTANT)
     Q_PROPERTY(QString trayFontColor READ trayFontColor CONSTANT)
+    Q_PROPERTY(QString trayBorderColor READ trayBorderColor CONSTANT)
     Q_PROPERTY(QString trayBackgroundColor READ trayBackgroundColor CONSTANT)
     Q_PROPERTY(QString buttonIconColor READ buttonIconColor CONSTANT)
     Q_PROPERTY(QString buttonHoveredColor READ buttonHoveredColor CONSTANT)
@@ -229,6 +230,10 @@ public:
 
     virtual QString trayFontColor() const {
         return "#001B41";
+    }
+
+    virtual QString trayBorderColor() const {
+        return "#D7D7D7";
     }
 
     virtual QString fontConfigurationCss(QString font, QString size, QString weight, QString color) const {
