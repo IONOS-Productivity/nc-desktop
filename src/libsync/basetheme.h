@@ -11,6 +11,9 @@ class BaseTheme : public QObject{
     Q_OBJECT
     Q_PROPERTY(QString dialogBackgroundColor READ dialogBackgroundColor CONSTANT)
     Q_PROPERTY(QString trayBackgroundColor READ trayBackgroundColor CONSTANT)
+    Q_PROPERTY(QString buttonIconColor READ buttonIconColor CONSTANT)
+    Q_PROPERTY(QString buttonHoveredColor READ buttonHoveredColor CONSTANT)
+    Q_PROPERTY(QString buttonPressedColor READ buttonPressedColor CONSTANT)
     Q_PROPERTY(QString toolButtonHoveredColor READ toolButtonHoveredColor CONSTANT)
     Q_PROPERTY(QString toolButtonPressedColor READ toolButtonPressedColor CONSTANT)
 
