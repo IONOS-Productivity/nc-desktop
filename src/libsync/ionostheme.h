@@ -13,6 +13,10 @@ public:
     IonosTheme() = default;
 
      QString additionalThemePrefix() const override { return QStringLiteral(""); }
+
+    QString sesHeaderLogoIcon() const override {
+        return QStringLiteral("qrc:///client/theme/ses/ses-IONOS-logo.svg");
+    }
 };
 }
 #endif // _IONOSTHEME_H
