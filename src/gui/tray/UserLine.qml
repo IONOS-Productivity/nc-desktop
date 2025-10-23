@@ -110,7 +110,7 @@ AbstractButton {
             property bool isActive: userMoreButton.pressed || userMoreButtonMenu.visible
 
             iconSource: Style.sesMore
-            iconSourceHovered: Style.sesMoreWhite
+            iconSourceHovered: Style.sesMoreHover
 
             Accessible.role: Accessible.ButtonMenu
             Accessible.name: qsTr("Account actions")

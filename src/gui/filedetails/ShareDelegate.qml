@@ -238,7 +238,7 @@ GridLayout {
             toolTipText: qsTr("Share options")
 
             iconSource: Style.sesMore
-            iconSourceHovered: Style.sesMoreWhite
+            iconSourceHovered: Style.sesMoreHover
             width: Style.smallIconSize
             height: Style.smallIconSize
 

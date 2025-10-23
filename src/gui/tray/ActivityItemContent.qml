@@ -173,7 +173,7 @@ RowLayout {
                     width: Style.activityListButtonWidth
                     height: Style.activityListButtonHeight
                     iconSource: Style.sesMore
-                    iconSourceHovered: Style.sesMoreWhite
+                    iconSourceHovered: Style.sesMoreHover
                     
                     icon.width: Style.activityListButtonIconSize
                     icon.height: Style.activityListButtonIconSize
