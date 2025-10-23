@@ -11,6 +11,8 @@ namespace OCC {
 class IonosTheme : public BaseTheme {
 public:
     IonosTheme() = default;
+
+     QString additionalThemePrefix() const override { return QStringLiteral(""); }
 };
 }
 #endif // _IONOSTHEME_H

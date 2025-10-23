@@ -12,6 +12,8 @@ class StratoTheme : public BaseTheme {
 public:
     StratoTheme() = default;
 
+    QString additionalThemePrefix() const override { return QStringLiteral("strato/"); }
+
     QString dialogBackgroundColor() const override {
         return "#F7F7F9";
     }
