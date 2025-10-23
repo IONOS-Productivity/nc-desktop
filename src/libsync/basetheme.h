@@ -29,27 +29,26 @@ public:
 
     virtual ~BaseTheme() = default;
 
-    // Base theme prefix (can be overridden)
-    virtual QString themePrefix() const { return QStringLiteral(":/theme/"); }
+    virtual QString additionalThemePrefix() const { return QStringLiteral(""); }
 
     virtual QString avatarIcon() const {
-        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-folderIcon.svg");
+        return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-settingsAvatar.svg");
     }
 
     virtual QString folderIcon() const {
-        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-folderIcon.svg");
+        return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-folderIcon.svg");
     }
 
     virtual QString syncArrows() const {
-        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-syncArrows.svg");
+        return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-syncArrows.svg");
     }
 
     virtual QString questionCircleIcon() const {
-        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-questionMark.svg");
+        return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-questionMark.svg");
     }
 
     virtual QString liveBackupPlusIcon() const {
-        return QString(Theme::themePrefix) + QStringLiteral("ses/ses-addlivebackup.svg");
+        return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-addlivebackup.svg");
     }
 
     virtual QString plusIcon() const {
@@ -421,6 +420,9 @@ public:
     virtual QString infoColor() const {
         return "#E6F9FC";
     }
+
+    private:
+    inline static const QString _sesFolder = QStringLiteral("ses/");
 };
 }
 #endif // _BASETHEME_H
