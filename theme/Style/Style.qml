@@ -241,7 +241,7 @@ QtObject {
     readonly property string sesOfflineIcon: "qrc:///client/theme/ses/ses-state-offline.svg"
     readonly property string sesChevron: "qrc:///client/theme/ses/ses-chevron.svg" 
     readonly property string sesMore: "qrc:///client/theme/ses/ses-more.svg" 
-    readonly property string sesMoreWhite: "qrc:///client/theme/ses/ses-more-white.svg" 
+    readonly property string sesMoreHover: "qrc:///client/theme/ses/ses-more-hover.svg" 
 
     readonly property color sesIconDarkColor: "#001B41"
     readonly property color sesIconColor: WLTheme.buttonIconColor
