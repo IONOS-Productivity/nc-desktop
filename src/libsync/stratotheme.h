@@ -153,6 +153,10 @@ public:
     QString trayErrorTextColor() const override {
         return "#CC0052";
     }
+
+    QString sesHeaderLogoIcon() const override {
+        return QStringLiteral("qrc:///client/theme/ses/strato/ses-STRATO-logo.svg");
+    }
 };
 }
 #endif // _STRATOTHEME_H
