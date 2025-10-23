@@ -123,6 +123,22 @@ public:
     QString menuPressedItemColor() const override {
         return "#5A6782";
     }
+
+    QString errorColor() const override {
+        return "#FFE0ED";
+    }
+
+    QString errorBorderColor() const override {
+        return "#FF004C";
+    }
+
+    QString trayErrorBorderColor() const override {
+        return "#FF004C";
+    }
+
+    QString trayErrorTextColor() const override {
+        return "#CC0052";
+    }
 };
 }
 #endif // _STRATOTHEME_H
