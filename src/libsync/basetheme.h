@@ -16,6 +16,9 @@ class BaseTheme : public QObject{
     Q_PROPERTY(QString buttonPressedColor READ buttonPressedColor CONSTANT)
     Q_PROPERTY(QString toolButtonHoveredColor READ toolButtonHoveredColor CONSTANT)
     Q_PROPERTY(QString toolButtonPressedColor READ toolButtonPressedColor CONSTANT)
+    Q_PROPERTY(QString pillButtonPrimaryColor READ pillButtonPrimaryColor CONSTANT)
+    Q_PROPERTY(QString pillButtonSecondaryColor READ pillButtonSecondaryColor CONSTANT)
+    Q_PROPERTY(QString pillButtonBorderColor READ pillButtonBorderColor CONSTANT)
 
 public:
 
@@ -284,6 +287,18 @@ public:
 
     virtual QString buttonDisabledFontColor() const {
         return "#BDBDBD";
+    }
+
+    virtual QString pillButtonPrimaryColor() const {
+        return "#0B2A63";
+    }
+
+    virtual QString pillButtonSecondaryColor() const {
+        return "#FFFFFF";
+    }
+
+    virtual QString pillButtonBorderColor() const {
+        return "#0B2A63";
     }
 
     virtual QString white() const {
