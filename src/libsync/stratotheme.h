@@ -24,6 +24,10 @@ public:
         return "#8493B3";
     }
 
+    QString trayInputFieldBorderColor() const override {
+        return "#8493B3";
+    }
+
     QString trayBackgroundColor() const override {
         return "#F7F7F9";
     }
