@@ -305,9 +305,9 @@ QtObject {
     property int sesTrayHeaderMargin: 11
     property int sesTrayWindowWidth: 464
 
-    property color sesPillButtonPrimaryBackgroundColor: "#0B2A63"
-    property color sesPillButtonSecondaryBackgroundColor: "white"
-    property color sesPillButtonBorderColor: "#0B2A63"
+    property color sesPillButtonPrimaryBackgroundColor: WLTheme.pillButtonPrimaryColor
+    property color sesPillButtonSecondaryBackgroundColor: WLTheme.pillButtonSecondaryColor
+    property color sesPillButtonBorderColor: WLTheme.pillButtonBorderColor
     property real sesPillIconSize: 16
     property int sesPillButtonVerticalPadding: 4
     property int sesPillButtonHorizontalPadding: 10
