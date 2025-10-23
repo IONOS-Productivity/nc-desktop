@@ -260,8 +260,8 @@ QtObject {
     readonly property color sesDarkGreen: "#096B35"
     readonly property color sesDarkBlue: "#001B41"
     readonly property color sesTrayFontColor: "#001B41"
-    readonly property color sesErrorBoxBorder: "#F50C00"
-    readonly property color sesErrorBoxText: "#C80A00"
+    readonly property color sesErrorBoxBorder: WLTheme.trayErrorBorderColor
+    readonly property color sesErrorBoxText: WLTheme.trayErrorTextColor
     readonly property color sesMenuBorder: "#2E4360"
     readonly property color sesSearchFieldContent: "#97A3B4"
 
