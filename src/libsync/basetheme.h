@@ -66,26 +66,6 @@ public:
         return QStringLiteral("qrc:///client/theme/ses/ses-refresh.svg");
     }
 
-    virtual QString syncSuccessIcon() const {
-        return QStringLiteral("qrc:///client/theme/ses/ses-syncstatus-success.svg");
-    }
-
-    virtual QString syncWarnIcon() const {
-        return QStringLiteral("qrc:///client/theme/ses/ses-syncstatus-warning.svg");
-    }
-
-    virtual QString syncErrorIcon() const {
-        return QStringLiteral("qrc:///client/theme/ses/ses-syncstatus-error.svg");
-    }
-
-    virtual QString syncPausedIcon() const {
-        return QStringLiteral("qrc:///client/theme/ses/ses-syncstatus-paused.svg");
-    }
-
-    virtual QString syncingIcon() const {
-        return QStringLiteral("qrc:///client/theme/ses/ses-syncstatus-syncing.svg");
-    }
-
     virtual QString syncOfflineIcon() const {
         return QStringLiteral("qrc:///client/theme/ses/ses-state-offline.svg");
     }
