@@ -72,6 +72,18 @@ public:
         return "#EDEEF3";
     }
 
+    QString pillButtonPrimaryColor() const override {
+        return "#272CB2";
+    }
+
+    QString pillButtonSecondaryColor() const override {
+        return "#E4E4ED";
+    }
+
+    QString pillButtonBorderColor() const override {
+        return "#FFFFFF";
+    }
+
     QString buttonIconColor() const override {
         return "#2f2f70";
     }
