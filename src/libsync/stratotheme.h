@@ -16,6 +16,10 @@ public:
         return "#F7F7F9";
     }
 
+    QString trayFontColor() const override {
+        return "#2F2F70";
+    }
+
     QString trayBackgroundColor() const override {
         return "#F7F7F9";
     }
