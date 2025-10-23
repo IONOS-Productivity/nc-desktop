@@ -24,6 +24,7 @@ class BaseTheme : public QObject{
     Q_PROPERTY(QString pillButtonBorderColor READ pillButtonBorderColor CONSTANT)
     Q_PROPERTY(QString trayErrorBorderColor READ trayErrorBorderColor CONSTANT)
     Q_PROPERTY(QString trayErrorTextColor READ trayErrorTextColor CONSTANT)
+    Q_PROPERTY(QString sesHeaderLogoIcon READ sesHeaderLogoIcon CONSTANT)
 
 public:
 
@@ -54,6 +55,8 @@ public:
     virtual QString plusIcon() const {
         return QStringLiteral("qrc:///client/theme/ses/ses-darkPlus.svg");
     }
+    
+    virtual QString sesHeaderLogoIcon() const = 0;
 
     virtual QString deleteIcon() const {
         return QStringLiteral("qrc:///client/theme/ses/ses-accountDelete.svg");
