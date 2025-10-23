@@ -1,16 +1,6 @@
 set( APPLICATION_REV_DOMAIN "com.ionos.hidrivenext.desktopclient" )
 
-if("${WHITELABEL_NAME}" STREQUAL "strato")
-    set( APPLICATION_VENDOR     "STRATO SE" )
-elseif("${WHITELABEL_NAME}" STREQUAL "ionos")
-    set( APPLICATION_VENDOR     "IONOS SE" )
-endif()
-
-## Theming options
-set( APPLICATION_WIZARD_HEADER_TITLE_COLOR "#000000" CACHE STRING "Hex color of the text in the wizard header" FORCE)
-
 option(LOCALBUILD "Local developer build" OFF)
-
 
 if(LOCALBUILD)
     ## Only needed for local build
@@ -65,7 +55,9 @@ if(APPLE AND "${APPLICATION_NAME}" MATCHES "HiDrive Next")
 endif()
 
 if(APPLICATION_NAME STREQUAL "STRATO HiDrive Next")
+    set( APPLICATION_VENDOR     "STRATO SE" )
     add_compile_definitions(STRATO_WL_BUILD)
 elseif(APPLICATION_NAME STREQUAL "IONOS HiDrive Next")
+    set( APPLICATION_VENDOR     "IONOS SE" )
     add_compile_definitions(IONOS_WL_BUILD)
 endif()
