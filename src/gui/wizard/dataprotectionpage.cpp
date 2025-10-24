@@ -38,7 +38,15 @@ namespace OCC{
             _ocWizard->next();
         });
 
-        _ui->logoLabel->setPixmap(Theme::hidpiFileName(":/client/theme/colored/data-protection-logo.png"));
+        QString dataProtectionLogo = QString();
+
+#if defined(IONOS_WL_BUILD)
+    dataProtectionLogo = Theme::hidpiFileName(":/client/theme/colored/ionos-data-protection-logo.png");
+#else defined(STRATO_WL_BUILD)
+    dataProtectionLogo = Theme::hidpiFileName(":/client/theme/colored/strato-data-protection-logo.png");
+#endif
+
+        _ui->logoLabel->setPixmap(Theme::hidpiFileName(dataProtectionLogo));
         _ui->descriptionLabel->setText(tr("This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. <br/> <br/>Information on data processing and more can be found in our <a href='https://wl.hidrive.com/easy/0005'>privacy policy</a>."));
         _ui->descriptionLabel->setOpenExternalLinks(true);
         _ui->descriptionLabel->setTextFormat(Qt::RichText);

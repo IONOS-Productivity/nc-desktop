@@ -9,7 +9,8 @@
         <file alias="theme/colored/@APPLICATION_ICON_NAME@-icon-256.png">theme/colored/256-@APPLICATION_ICON_NAME@-icon.png</file>
         <file alias="theme/colored/@APPLICATION_ICON_NAME@-icon-512.png">theme/colored/512-@APPLICATION_ICON_NAME@-icon.png</file>
         <file alias="theme/colored/@APPLICATION_ICON_NAME@-icon-1024.png">theme/colored/1024-@APPLICATION_ICON_NAME@-icon.png</file>
-        <file>theme/colored/data-protection-logo.png</file>
+        <file>theme/colored/ionos-data-protection-logo.png</file>
+        <file>theme/colored/strato-data-protection-logo.png</file>
         <file>theme/colored/state-error-32.png</file>
         <file>theme/colored/state-error-64.png</file>
         <file>theme/colored/state-error-128.png</file>
@@ -274,7 +275,7 @@
         <file>theme/ses/ses-snackbar-warning.svg</file>
         <file>theme/ses/ses-snackbar-error.svg</file>
         <file>theme/ses/ses-more.svg</file>
-        <file>theme/ses/ses-more-white.svg</file>
+        <file>theme/ses/ses-more-hover.svg</file>
         <file>theme/ses/ses-questionmark.svg</file>
         <file>theme/ses/ses-refresh.svg</file>
         <file>theme/ses/ses-settings.svg</file>
@@ -312,7 +313,7 @@
         <file>theme/ses/strato/ses-snackbar-warning.svg</file>
         <file>theme/ses/strato/ses-snackbar-error.svg</file>
         <file>theme/ses/strato/ses-more.svg</file>
-        <file>theme/ses/strato/ses-more-white.svg</file>
+        <file>theme/ses/strato/ses-more-hover.svg</file>
         <file>theme/ses/strato/ses-questionmark.svg</file>
         <file>theme/ses/strato/ses-refresh.svg</file>
         <file>theme/ses/strato/ses-settings.svg</file>
