@@ -247,7 +247,7 @@ void OwncloudAdvancedSetupPage::initializePage()
 
 void OwncloudAdvancedSetupPage::SetAvatarIcon()
 {
-    const auto icon = QIcon(WLTheme.avatarIcon());
+    const auto icon = QIcon(WLTheme.roundAvatarIcon());
      _ui.lServerIcon->setPixmap(icon.pixmap(32));
 }
 

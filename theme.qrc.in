@@ -280,6 +280,7 @@
         <file>theme/ses/ses-refresh.svg</file>
         <file>theme/ses/ses-settings.svg</file>
         <file>theme/ses/ses-settingsAvatar.svg</file>
+        <file>theme/ses/ses-settingsAvatarRound.svg</file>
         <file>theme/ses/ses-info.svg</file>
         <file>theme/ses/ses-syncArrows.svg</file>
         <file>theme/ses/ses-external.svg</file>
@@ -318,6 +319,7 @@
         <file>theme/ses/strato/ses-refresh.svg</file>
         <file>theme/ses/strato/ses-settings.svg</file>
         <file>theme/ses/strato/ses-settingsAvatar.svg</file>
+        <file>theme/ses/strato/ses-settingsAvatarRound.svg</file>
         <file>theme/ses/strato/ses-info.svg</file>
         <file>theme/ses/strato/ses-syncArrows.svg</file>
         <file>theme/ses/strato/ses-external.svg</file>
