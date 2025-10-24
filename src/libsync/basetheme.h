@@ -36,6 +36,10 @@ public:
         return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-settingsAvatar.svg");
     }
 
+    virtual QString roundAvatarIcon() const {
+        return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-settingsAvatarRound.svg");
+    }
+
     virtual QString folderIcon() const {
         return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-folderIcon.svg");
     }
