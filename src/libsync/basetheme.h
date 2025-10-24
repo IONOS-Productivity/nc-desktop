@@ -53,7 +53,11 @@ public:
     }
 
     virtual QString plusIcon() const {
-        return QStringLiteral("qrc:///client/theme/ses/ses-darkPlus.svg");
+        return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-darkPlus.svg");
+    }
+
+    virtual QString settingsIcon() const {
+        return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-settings.svg");
     }
     
     virtual QString sesHeaderLogoIcon() const = 0;
