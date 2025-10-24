@@ -56,9 +56,15 @@ void WelcomePage::setLoginButtonDefault()
 
 void WelcomePage::styleSlideShow()
 {
-    const auto ionosLogoFileName = Theme::hidpiFileName(":/client/theme/colored/IONOS_logo_w_suffix_frontend.png");
+    auto WhitelabelLogoFileName = QString();
+    
+#if defined(IONOS_WL_BUILD)
+    WhitelabelLogoFileName = Theme::hidpiFileName(":/client/theme/colored/IONOS_logo_w_suffix_frontend.png");
+#else defined(STRATO_WL_BUILD)
+    WhitelabelLogoFileName = Theme::hidpiFileName(":/client/theme/colored/STRATO_logo_w_suffix_frontend.png");
+#endif
 
-    _ui->slideShow->addSlide(ionosLogoFileName, tr("Keep your data secure and under your control")); 
+    _ui->slideShow->addSlide(WhitelabelLogoFileName, tr("Keep your data secure and under your control"));
 }
 
 void WelcomePage::setupSlideShow()
