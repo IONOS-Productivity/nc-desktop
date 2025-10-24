@@ -130,7 +130,7 @@ SettingsDialog::SettingsDialog(ownCloudGui *gui, QWidget *parent)
     _actionGroup->setExclusive(true);
     connect(_actionGroup, &QActionGroup::triggered, this, &SettingsDialog::slotSwitchPage);
 
-    QAction *newAccountAction = createColorAwareAction(QLatin1String(":/client/theme/ses/ses-darkPlus.svg"), tr("New account"));
+    QAction *newAccountAction = createColorAwareAction(WLTheme.plusIcon(), tr("New account"));
     _actionGroup->addAction(newAccountAction);
     _toolBar->addAction(newAccountAction);
     connect(newAccountAction, &QAction::triggered, _gui, &ownCloudGui::slotNewAccountWizard);
@@ -143,7 +143,7 @@ SettingsDialog::SettingsDialog(ownCloudGui *gui, QWidget *parent)
     _toolBar->addWidget(spacer);
 #endif
 
-    QAction *generalAction = createColorAwareAction(QLatin1String(":/client/theme/ses/ses-settings.svg"), tr("General"));
+    QAction *generalAction = createColorAwareAction(WLTheme.settingsIcon(), tr("General"));
     _actionGroup->addAction(generalAction);
     _toolBar->addAction(generalAction);
     auto *generalSettings = new GeneralSettings;
@@ -271,7 +271,7 @@ void SettingsDialog::accountAdded(AccountState *s)
     bool brandingSingleAccount = !Theme::instance()->multiAccount();
 
     const auto actionText = brandingSingleAccount ? tr("Account") : s->account()->displayName();
-    const auto accountAction = createColorAwareAction(QLatin1String(":/client/theme/ses/ses-settingsAvatar.svg"), actionText);
+    const auto accountAction = createColorAwareAction(WLTheme.avatarIcon(), actionText);
 
     if (!brandingSingleAccount) {
         accountAction->setToolTip(s->account()->displayName());
