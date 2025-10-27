@@ -239,7 +239,7 @@ QtObject {
     readonly property string sesErrorBoxIcon: "qrc:///client/theme/ses/ses-snackbar-error.svg"
     readonly property string sesSyncSuccessIcon: "qrc:///client/theme/ses/ses-syncstate-success.svg"
     readonly property string sesOfflineIcon: "qrc:///client/theme/ses/ses-state-offline.svg"
-    readonly property string sesChevron: "qrc:///client/theme/ses/ses-chevron.svg" 
+    readonly property string sesChevron: WLTheme.chevronIcon
     readonly property string sesMore: WLTheme.moreIcon 
     readonly property string sesMoreHover: WLTheme.moreHoverIcon
 
