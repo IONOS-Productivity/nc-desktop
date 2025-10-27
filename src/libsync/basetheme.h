@@ -128,6 +128,10 @@ public:
         return QStringLiteral("qrc:///client/theme/ses/ses-refresh.svg");
     }
 
+    virtual QString infoIcon() const {
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-info.svg");
+    }
+
     virtual QString syncOfflineIcon() const {
         return QStringLiteral("qrc:///client/theme/ses/ses-state-offline.svg");
     }

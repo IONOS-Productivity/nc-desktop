@@ -250,7 +250,7 @@ QVariant ActivityListModel::data(const QModelIndex &index, int role) const
                 colorIconPath.append("state-warning.svg");
                 return colorIconPath;
             } else if (a._syncFileItemStatus == SyncFileItem::FileIgnored) {
-                colorIconPath = QStringLiteral("qrc:///client/theme/ses/ses-info.svg");
+                colorIconPath = WLTheme.infoIcon();
                 return colorIconPath;
             } else {
                 // File sync successful
