@@ -1,4 +1,5 @@
 #include "sesFileIconProvider.h"
+#include "whitelabeltheme.h"
 
 #include <QFileIconProvider>
 #include <QIcon>
@@ -9,7 +10,7 @@ QIcon SesFileIconProvider::icon(const QFileInfo &info) const
 
     if (info.isDir())
     {
-        return QIcon(":/client/theme/ses/ses-folderIconBright.svg");
+        return QIcon(OCC::WLTheme.folderIcon());
     }
 
     if (info.suffix().isEmpty())
