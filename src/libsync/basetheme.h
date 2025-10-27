@@ -45,6 +45,7 @@ class BaseTheme : public QObject{
     Q_PROPERTY(QString syncErrorIcon READ syncErrorIcon CONSTANT)
     Q_PROPERTY(QString syncOfflineIcon READ syncOfflineIcon CONSTANT)
     Q_PROPERTY(QString snackbarErrorIcon READ snackbarErrorIcon CONSTANT)
+    Q_PROPERTY(QString activityIcon READ activityIcon CONSTANT)
 
 public:
 
@@ -166,6 +167,10 @@ public:
 
     virtual QString snackbarErrorIcon() const {
         return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-snackbar-error.svg");
+    }
+
+    virtual QString activityIcon() const {
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-activity.svg");
     }
 
     virtual int treeViewIconSize() const {
