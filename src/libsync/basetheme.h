@@ -128,7 +128,7 @@ public:
     }
 
     virtual QString refreshIcon() const {
-        return QStringLiteral("qrc:///client/theme/ses/ses-refresh.svg");
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-refresh.svg");
     }
 
     virtual QString infoIcon() const {
@@ -144,7 +144,7 @@ public:
     }
 
     virtual QString syncOfflineIcon() const {
-        return QStringLiteral("qrc:///client/theme/ses/ses-state-offline.svg");
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-state-offline.svg");
     }
 
     virtual int treeViewIconSize() const {
