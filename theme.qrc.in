@@ -251,6 +251,7 @@
         <file>fonts/OpenSans-SemiBold.ttf</file>
         <file>fonts/OpenSans-Regular.ttf</file>
         <file>theme/ses/ses-accountDelete.svg</file>
+        <file>theme/ses/ses-activityDelete.svg</file>
         <file>theme/ses/ses-accountLogout.svg</file>
         <file>theme/ses/ses-accountPause.svg</file>
         <file>theme/ses/ses-accountQuit.svg</file>
@@ -290,6 +291,7 @@
         <file>theme/colored/STRATO_logo_w_suffix_frontend@2x.png</file>
         <file>theme/colored/STRATO_logo_w_suffix_frontend.svg</file>
         <file>theme/ses/strato/ses-accountDelete.svg</file>
+        <file>theme/ses/strato/ses-activityDelete.svg</file>
         <file>theme/ses/strato/ses-accountLogout.svg</file>
         <file>theme/ses/strato/ses-accountPause.svg</file>
         <file>theme/ses/strato/ses-accountQuit.svg</file>
