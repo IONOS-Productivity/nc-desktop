@@ -14,6 +14,7 @@ class BaseTheme : public QObject{
     Q_PROPERTY(QString trayBorderColor READ trayBorderColor CONSTANT)
     Q_PROPERTY(QString trayInputFieldBorderColor READ trayInputFieldBorderColor CONSTANT)
     Q_PROPERTY(QString trayBackgroundColor READ trayBackgroundColor CONSTANT)
+    Q_PROPERTY(QString iconDarkColor READ iconDarkColor CONSTANT)
     Q_PROPERTY(QString buttonIconColor READ buttonIconColor CONSTANT)
     Q_PROPERTY(QString buttonHoveredColor READ buttonHoveredColor CONSTANT)
     Q_PROPERTY(QString buttonPressedColor READ buttonPressedColor CONSTANT)
@@ -376,6 +377,10 @@ public:
     }
 
     virtual QString menuPressedTextColor() const {
+        return "#001B41";
+    }
+
+    virtual QString iconDarkColor() const {
         return "#001B41";
     }
 
