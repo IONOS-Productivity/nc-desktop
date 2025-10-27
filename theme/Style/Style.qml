@@ -242,6 +242,7 @@ QtObject {
     readonly property string sesChevron: WLTheme.chevronIcon
     readonly property string sesMore: WLTheme.moreIcon 
     readonly property string sesMoreHover: WLTheme.moreHoverIcon
+    readonly property string sesActivity: WLTheme.activityIcon
 
     readonly property color sesIconDarkColor: WLTheme.iconDarkColor
     readonly property color sesIconColor: WLTheme.buttonIconColor
