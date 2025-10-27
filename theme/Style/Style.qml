@@ -225,11 +225,11 @@ QtObject {
  
     readonly property string sesAvatar: WLTheme.avatarIcon
  
-    readonly property string sesAccountQuit: "qrc:///client/theme/ses/ses-accountQuit.svg"
-    readonly property string sesAccountPause: "qrc:///client/theme/ses/ses-accountPause.svg"
+    readonly property string sesAccountQuit: WLTheme.quitIcon
+    readonly property string sesAccountPause: WLTheme.pauseIcon
     readonly property string sesDarkPlus: WLTheme.plusIcon
     readonly property string sesLightPlus: "qrc:///client/theme/ses/ses-lightPlus.svg" 
-    readonly property string sesAccountSettings: "qrc:///client/theme/ses/ses-settings.svg" 
+    readonly property string sesAccountSettings: WLTheme.settingsIcon
     readonly property string sesAccountResume: "qrc:///client/theme/ses/ses-accountResume.svg" 
     readonly property string sesLogout: "qrc:///client/theme/ses/ses-accountLogout.svg" 
     readonly property string sesDelete: "qrc:///client/theme/ses/ses-accountDelete.svg"

@@ -143,7 +143,7 @@ SettingsDialog::SettingsDialog(ownCloudGui *gui, QWidget *parent)
     _toolBar->addWidget(spacer);
 #endif
 
-    QAction *generalAction = createColorAwareAction(WLTheme.settingsIcon(), tr("General"));
+    QAction *generalAction = createColorAwareAction(WLTheme.settingsIcon("qtwidget"), tr("General"));
     _actionGroup->addAction(generalAction);
     _toolBar->addAction(generalAction);
     auto *generalSettings = new GeneralSettings;
