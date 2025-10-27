@@ -228,13 +228,13 @@ QtObject {
     readonly property string sesAccountQuit: WLTheme.quitIcon
     readonly property string sesAccountPause: WLTheme.pauseIcon
     readonly property string sesDarkPlus: WLTheme.plusIcon
-    readonly property string sesLightPlus: "qrc:///client/theme/ses/ses-lightPlus.svg" 
+    readonly property string sesLightPlus: WLTheme.lightPlusIcon
     readonly property string sesAccountSettings: WLTheme.settingsIcon
     readonly property string sesAccountResume: WLTheme.resumeIcon
     readonly property string sesLogout: WLTheme.logoutIcon
     readonly property string sesDelete: WLTheme.deleteIcon
     readonly property string sesClipboard: WLTheme.clipboardIcon
-    readonly property string sesLightClipboard: "qrc:///client/theme/ses/ses-lightClipboard.svg" 
+    readonly property string sesLightClipboard: WLTheme.lightClipboardIcon
     readonly property string sesSyncErrorIcon: WLTheme.syncErrorIcon
     readonly property string sesErrorBoxIcon: WLTheme.snackbarErrorIcon
     readonly property string sesSyncSuccessIcon: WLTheme.syncSuccessIcon
