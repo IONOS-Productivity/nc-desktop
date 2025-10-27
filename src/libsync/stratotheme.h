@@ -98,6 +98,10 @@ public:
         return "#FFFFFF";
     }
 
+    QString clipboardBackgroundColor() const override {
+        return "#f7f7f9";
+    }
+
     QString buttonIconColor() const override {
         return "#2f2f70";
     }
