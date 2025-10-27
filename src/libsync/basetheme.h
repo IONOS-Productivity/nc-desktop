@@ -29,6 +29,7 @@ class BaseTheme : public QObject{
     Q_PROPERTY(QString folderIcon READ folderIcon CONSTANT)
     Q_PROPERTY(QString moreIcon READ moreIcon CONSTANT)
     Q_PROPERTY(QString moreHoverIcon READ moreHoverIcon CONSTANT)
+    Q_PROPERTY(QString avatarIcon READ avatarIcon CONSTANT)
 
 public:
 
@@ -36,8 +37,12 @@ public:
 
     virtual QString additionalThemePrefix() const { return QStringLiteral(""); }
 
-    virtual QString avatarIcon() const {
+    virtual QString avatarIcon(QString context = "qml") const {
+        if (context != "qml") {
         return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-settingsAvatar.svg");
+    }
+
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-settingsAvatar.svg");
     }
 
     virtual QString roundAvatarIcon() const {
