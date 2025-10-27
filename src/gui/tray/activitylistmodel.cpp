@@ -257,7 +257,7 @@ QVariant ActivityListModel::data(const QModelIndex &index, int role) const
                 if (a._fileAction == "file_created") {
                     return WLTheme.plusIcon();
                 } else if (a._fileAction == "file_deleted") {
-                    return WLTheme.deleteIcon();
+                    return WLTheme.activityDeleteIcon();
                 } else {
                     return WLTheme.refreshIcon();
                 }
