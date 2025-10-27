@@ -230,15 +230,15 @@ QtObject {
     readonly property string sesDarkPlus: WLTheme.plusIcon
     readonly property string sesLightPlus: "qrc:///client/theme/ses/ses-lightPlus.svg" 
     readonly property string sesAccountSettings: WLTheme.settingsIcon
-    readonly property string sesAccountResume: "qrc:///client/theme/ses/ses-accountResume.svg" 
+    readonly property string sesAccountResume: WLTheme.resumeIcon
     readonly property string sesLogout: WLTheme.logoutIcon
     readonly property string sesDelete: WLTheme.deleteIcon
     readonly property string sesClipboard: WLTheme.clipboardIcon
     readonly property string sesLightClipboard: "qrc:///client/theme/ses/ses-lightClipboard.svg" 
-    readonly property string sesSyncErrorIcon: "qrc:///client/theme/ses/ses-syncstate-error.svg" 
-    readonly property string sesErrorBoxIcon: "qrc:///client/theme/ses/ses-snackbar-error.svg"
-    readonly property string sesSyncSuccessIcon: "qrc:///client/theme/ses/ses-syncstate-success.svg"
-    readonly property string sesOfflineIcon: "qrc:///client/theme/ses/ses-state-offline.svg"
+    readonly property string sesSyncErrorIcon: WLTheme.syncErrorIcon
+    readonly property string sesErrorBoxIcon: WLTheme.snackbarErrorIcon
+    readonly property string sesSyncSuccessIcon: WLTheme,syncSuccessIcon
+    readonly property string sesOfflineIcon: WLTheme.syncOfflineIcon
     readonly property string sesChevron: WLTheme.chevronIcon
     readonly property string sesMore: WLTheme.moreIcon 
     readonly property string sesMoreHover: WLTheme.moreHoverIcon
