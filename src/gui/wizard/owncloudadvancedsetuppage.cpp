@@ -773,7 +773,7 @@ void OwncloudAdvancedSetupPage::customizeStyle()
 
 void OwncloudAdvancedSetupPage::styleLocalFolderLabel()
 {
-    const auto icon = QIcon(WLTheme.folderIcon());
+    const auto icon = QIcon(WLTheme.folderIcon("qtwidget"));
      _ui.lLocal->setPixmap(icon.pixmap(32));
 }
 

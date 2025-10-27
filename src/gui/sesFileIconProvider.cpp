@@ -10,7 +10,7 @@ QIcon SesFileIconProvider::icon(const QFileInfo &info) const
 
     if (info.isDir())
     {
-        return QIcon(OCC::WLTheme.folderIcon());
+        return QIcon(OCC::WLTheme.folderIcon("qtwidget"));
     }
 
     if (info.suffix().isEmpty())
