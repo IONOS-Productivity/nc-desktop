@@ -34,12 +34,17 @@ class BaseTheme : public QObject{
     Q_PROPERTY(QString avatarIcon READ avatarIcon CONSTANT)
     Q_PROPERTY(QString plusIcon READ plusIcon CONSTANT)
     Q_PROPERTY(QString quitIcon READ quitIcon CONSTANT)
+    Q_PROPERTY(QString resumeIcon READ resumeIcon CONSTANT)
     Q_PROPERTY(QString pauseIcon READ pauseIcon CONSTANT)
     Q_PROPERTY(QString settingsIcon READ settingsIcon CONSTANT)
     Q_PROPERTY(QString logoutIcon READ logoutIcon CONSTANT)
     Q_PROPERTY(QString deleteIcon READ deleteIcon CONSTANT)
     Q_PROPERTY(QString clipboardIcon READ clipboardIcon CONSTANT)
     Q_PROPERTY(QString chevronIcon READ chevronIcon CONSTANT)
+    Q_PROPERTY(QString syncSuccessIcon READ syncSuccessIcon CONSTANT)
+    Q_PROPERTY(QString syncErrorIcon READ syncErrorIcon CONSTANT)
+    Q_PROPERTY(QString syncOfflineIcon READ syncOfflineIcon CONSTANT)
+    Q_PROPERTY(QString snackbarErrorIcon READ snackbarErrorIcon CONSTANT)
 
 public:
 
@@ -102,6 +107,10 @@ public:
         return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-accountQuit.svg");
     }
 
+    virtual QString resumeIcon() const {
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-accountResume.svg");
+    }
+
     virtual QString pauseIcon() const {
         return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-accountPause.svg");
     }
@@ -143,8 +152,20 @@ public:
         return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-chevron.svg");
     }
 
+    virtual QString syncSuccessIcon() const {
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-syncstate-success.svg");
+    }
+
+    virtual QString syncErrorIcon() const {
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-syncstate-error.svg");
+    }
+
     virtual QString syncOfflineIcon() const {
         return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-state-offline.svg");
+    }
+
+    virtual QString snackbarErrorIcon() const {
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-snackbar-error.svg");
     }
 
     virtual int treeViewIconSize() const {
