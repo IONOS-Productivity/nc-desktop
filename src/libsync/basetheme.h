@@ -36,6 +36,7 @@ class BaseTheme : public QObject{
     Q_PROPERTY(QString pauseIcon READ pauseIcon CONSTANT)
     Q_PROPERTY(QString settingsIcon READ settingsIcon CONSTANT)
     Q_PROPERTY(QString logoutIcon READ logoutIcon CONSTANT)
+    Q_PROPERTY(QString deleteIcon READ deleteIcon CONSTANT)
 
 public:
 
@@ -116,7 +117,11 @@ public:
     virtual QString sesHeaderLogoIcon() const = 0;
 
     virtual QString deleteIcon() const {
-        return QStringLiteral("qrc:///client/theme/ses/ses-accountDelete.svg");
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-accountDelete.svg");
+    }
+
+    virtual QString activityDeleteIcon() const {
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-activityDelete.svg");
     }
 
     virtual QString refreshIcon() const {
