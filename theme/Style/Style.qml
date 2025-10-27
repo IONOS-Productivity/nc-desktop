@@ -233,7 +233,7 @@ QtObject {
     readonly property string sesAccountResume: "qrc:///client/theme/ses/ses-accountResume.svg" 
     readonly property string sesLogout: WLTheme.logoutIcon
     readonly property string sesDelete: WLTheme.deleteIcon
-    readonly property string sesClipboard: "qrc:///client/theme/ses/ses-clipboard.svg" 
+    readonly property string sesClipboard: WLTheme.clipboardIcon
     readonly property string sesLightClipboard: "qrc:///client/theme/ses/ses-lightClipboard.svg" 
     readonly property string sesSyncErrorIcon: "qrc:///client/theme/ses/ses-syncstate-error.svg" 
     readonly property string sesErrorBoxIcon: "qrc:///client/theme/ses/ses-snackbar-error.svg"
