@@ -4,7 +4,6 @@
 #include <QFont>
 #include <QString>
 #include "theme.h"
-#include <iostream>
 
 namespace OCC {
 
