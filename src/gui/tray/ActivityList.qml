@@ -156,7 +156,7 @@ ScrollView {
                 verticalAlignment: Image.AlignVCenter
                 horizontalAlignment: Image.AlignHCenter
                 fillMode: Image.PreserveAspectFit
-                source: "qrc:///client/theme/ses/ses-activity.svg"
+                source: Style.sesActivity
                 sourceSize.height: 32
                 sourceSize.width: 22
             }
