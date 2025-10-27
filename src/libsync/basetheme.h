@@ -39,6 +39,7 @@ class BaseTheme : public QObject{
     Q_PROPERTY(QString logoutIcon READ logoutIcon CONSTANT)
     Q_PROPERTY(QString deleteIcon READ deleteIcon CONSTANT)
     Q_PROPERTY(QString clipboardIcon READ clipboardIcon CONSTANT)
+    Q_PROPERTY(QString chevronIcon READ chevronIcon CONSTANT)
 
 public:
 
@@ -136,6 +137,10 @@ public:
 
     virtual QString clipboardIcon() const {
         return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-clipboard.svg");
+    }
+
+    virtual QString chevronIcon() const {
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-chevron.svg");
     }
 
     virtual QString syncOfflineIcon() const {
