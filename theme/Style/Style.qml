@@ -227,7 +227,7 @@ QtObject {
  
     readonly property string sesAccountQuit: "qrc:///client/theme/ses/ses-accountQuit.svg"
     readonly property string sesAccountPause: "qrc:///client/theme/ses/ses-accountPause.svg"
-    readonly property string sesDarkPlus: "qrc:///client/theme/ses/ses-darkPlus.svg" 
+    readonly property string sesDarkPlus: WLTheme.plusIcon
     readonly property string sesLightPlus: "qrc:///client/theme/ses/ses-lightPlus.svg" 
     readonly property string sesAccountSettings: "qrc:///client/theme/ses/ses-settings.svg" 
     readonly property string sesAccountResume: "qrc:///client/theme/ses/ses-accountResume.svg" 
