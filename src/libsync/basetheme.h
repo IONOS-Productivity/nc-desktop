@@ -33,6 +33,7 @@ class BaseTheme : public QObject{
     Q_PROPERTY(QString moreHoverIcon READ moreHoverIcon CONSTANT)
     Q_PROPERTY(QString avatarIcon READ avatarIcon CONSTANT)
     Q_PROPERTY(QString plusIcon READ plusIcon CONSTANT)
+    Q_PROPERTY(QString lightPlusIcon READ lightPlusIcon CONSTANT)
     Q_PROPERTY(QString quitIcon READ quitIcon CONSTANT)
     Q_PROPERTY(QString resumeIcon READ resumeIcon CONSTANT)
     Q_PROPERTY(QString pauseIcon READ pauseIcon CONSTANT)
@@ -40,6 +41,7 @@ class BaseTheme : public QObject{
     Q_PROPERTY(QString logoutIcon READ logoutIcon CONSTANT)
     Q_PROPERTY(QString deleteIcon READ deleteIcon CONSTANT)
     Q_PROPERTY(QString clipboardIcon READ clipboardIcon CONSTANT)
+    Q_PROPERTY(QString lightClipboardIcon READ lightClipboardIcon CONSTANT)
     Q_PROPERTY(QString chevronIcon READ chevronIcon CONSTANT)
     Q_PROPERTY(QString syncSuccessIcon READ syncSuccessIcon CONSTANT)
     Q_PROPERTY(QString syncErrorIcon READ syncErrorIcon CONSTANT)
@@ -104,6 +106,10 @@ public:
         return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-darkPlus.svg");
     }
 
+    virtual QString lightPlusIcon() const {
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-lightPlus.svg");
+    }
+
     virtual QString quitIcon() const {
         return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-accountQuit.svg");
     }
@@ -147,6 +153,10 @@ public:
 
     virtual QString clipboardIcon() const {
         return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-clipboard.svg");
+    }
+
+    virtual QString lightClipboardIcon() const {
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-lightClipboard.svg");
     }
 
     virtual QString chevronIcon() const {
