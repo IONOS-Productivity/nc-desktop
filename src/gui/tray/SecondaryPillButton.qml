@@ -14,6 +14,7 @@ Button{
   property bool isMouseOver: false
   property bool removeBorder: false
   property color textColor: "black"
+  property color backgroundColor: Style.sesPillButtonSecondaryBackgroundColor
 
   contentItem: Row {
     spacing: Style.sesPillButtonVerticalPadding
@@ -36,7 +37,7 @@ Button{
   }
 
   background: Rectangle {
-    color: Style.sesPillButtonSecondaryBackgroundColor
+    color: backgroundColor
     opacity: root.isMouseOver ? Style.sesPillButtonHoverOpacity : 1.0
     border.width: root.removeBorder ? 0 : 2
     border.color: Style.sesPillButtonBorderColor
