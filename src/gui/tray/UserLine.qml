@@ -69,7 +69,7 @@ AbstractButton {
                 text: name
                 elide: Text.ElideRight
                 font: userLine.font
-                color: Style.sesDarkBlue
+                color: Style.sesTrayFontColor
             }
 
             RowLayout {
@@ -144,7 +144,7 @@ AbstractButton {
                     property bool isHovered: logInOutButton.hovered || logInOutButton.visualFocus
                     property bool isActive: logInOutButton.pressed
 
-                    palette.text: Style.sesDarkBlue
+                    palette.text: Style.sesTrayFontColor
 
                     Component.onCompleted: {
                         if (contentItem && contentItem.hasOwnProperty("color")) {
@@ -198,7 +198,7 @@ AbstractButton {
                     property bool isHovered: removeAccountButton.hovered || removeAccountButton.visualFocus
                     property bool isActive: removeAccountButton.pressed
 
-                    palette.text: Style.sesDarkBlue
+                    palette.text: Style.sesTrayFontColor
 
                     Component.onCompleted: {
                         if (contentItem && contentItem.hasOwnProperty("color")) {
