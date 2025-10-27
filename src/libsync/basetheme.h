@@ -30,6 +30,7 @@ class BaseTheme : public QObject{
     Q_PROPERTY(QString moreIcon READ moreIcon CONSTANT)
     Q_PROPERTY(QString moreHoverIcon READ moreHoverIcon CONSTANT)
     Q_PROPERTY(QString avatarIcon READ avatarIcon CONSTANT)
+    Q_PROPERTY(QString plusIcon READ plusIcon CONSTANT)
 
 public:
 
@@ -39,8 +40,8 @@ public:
 
     virtual QString avatarIcon(QString context = "qml") const {
         if (context != "qml") {
-        return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-settingsAvatar.svg");
-    }
+            return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-settingsAvatar.svg");
+        }
 
         return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-settingsAvatar.svg");
     }
@@ -51,8 +52,8 @@ public:
 
     virtual QString folderIcon(QString context = "qml") const {
         if (context != "qml") {
-        return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-folderIcon.svg");
-    }
+            return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-folderIcon.svg");
+        }
 
         return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-folderIcon.svg");
     }
@@ -81,8 +82,11 @@ public:
         return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-more-hover.svg");
     }
 
-    virtual QString plusIcon() const {
-        return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-darkPlus.svg");
+    virtual QString plusIcon(QString context = "qml") const {
+        if (context != "qml") {
+            return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-darkPlus.svg");
+        }
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-darkPlus.svg");
     }
 
     virtual QString settingsIcon() const {
