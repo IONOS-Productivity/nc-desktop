@@ -223,7 +223,7 @@ QtObject {
     readonly property string sesFolderIcon: WLTheme.folderIcon
     readonly property string sesHeaderLogoIcon: WLTheme.sesHeaderLogoIcon
  
-    readonly property string sesAvatar: "qrc:///client/theme/ses/ses-settingsAvatar.svg" 
+    readonly property string sesAvatar: WLTheme.avatarIcon
  
     readonly property string sesAccountQuit: "qrc:///client/theme/ses/ses-accountQuit.svg"
     readonly property string sesAccountPause: "qrc:///client/theme/ses/ses-accountPause.svg"

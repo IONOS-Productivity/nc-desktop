@@ -271,7 +271,7 @@ void SettingsDialog::accountAdded(AccountState *s)
     bool brandingSingleAccount = !Theme::instance()->multiAccount();
 
     const auto actionText = brandingSingleAccount ? tr("Account") : s->account()->displayName();
-    const auto accountAction = createColorAwareAction(WLTheme.avatarIcon(), actionText);
+    const auto accountAction = createColorAwareAction(WLTheme.avatarIcon("qtwidget"), actionText);
 
     if (!brandingSingleAccount) {
         accountAction->setToolTip(s->account()->displayName());
