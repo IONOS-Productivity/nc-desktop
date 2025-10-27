@@ -4,6 +4,7 @@
 #include <QFont>
 #include <QString>
 #include "theme.h"
+#include <iostream>
 
 namespace OCC {
 
@@ -25,6 +26,10 @@ class BaseTheme : public QObject{
     Q_PROPERTY(QString trayErrorBorderColor READ trayErrorBorderColor CONSTANT)
     Q_PROPERTY(QString trayErrorTextColor READ trayErrorTextColor CONSTANT)
     Q_PROPERTY(QString sesHeaderLogoIcon READ sesHeaderLogoIcon CONSTANT)
+    Q_PROPERTY(QString websiteIcon READ websiteIcon CONSTANT)
+    Q_PROPERTY(QString folderIcon READ folderIcon CONSTANT)
+    Q_PROPERTY(QString moreIcon READ moreIcon CONSTANT)
+    Q_PROPERTY(QString moreHoverIcon READ moreHoverIcon CONSTANT)
 
 public:
 
@@ -54,6 +59,18 @@ public:
 
     virtual QString liveBackupPlusIcon() const {
         return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-addlivebackup.svg");
+    }
+
+    virtual QString websiteIcon(QString context = "qml") const {
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-website.svg");
+    }
+
+    virtual QString moreIcon() const {
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-more.svg");
+    }
+
+    virtual QString moreHoverIcon() const {
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-more-hover.svg");
     }
 
     virtual QString plusIcon() const {
