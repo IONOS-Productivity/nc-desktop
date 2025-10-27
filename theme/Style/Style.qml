@@ -219,8 +219,8 @@ QtObject {
     }
 
     // SES
-    readonly property string sesWebsiteIcon: "qrc:///client/theme/ses/ses-website.svg"
-    readonly property string sesFolderIcon: "qrc:///client/theme/ses/ses-folderIcon.svg"  
+    readonly property string sesWebsiteIcon: WLTheme.websiteIcon
+    readonly property string sesFolderIcon: WLTheme.folderIcon
     readonly property string sesHeaderLogoIcon: WLTheme.sesHeaderLogoIcon
  
     readonly property string sesAvatar: "qrc:///client/theme/ses/ses-settingsAvatar.svg" 
@@ -240,8 +240,8 @@ QtObject {
     readonly property string sesSyncSuccessIcon: "qrc:///client/theme/ses/ses-syncstate-success.svg"
     readonly property string sesOfflineIcon: "qrc:///client/theme/ses/ses-state-offline.svg"
     readonly property string sesChevron: "qrc:///client/theme/ses/ses-chevron.svg" 
-    readonly property string sesMore: "qrc:///client/theme/ses/ses-more.svg" 
-    readonly property string sesMoreHover: "qrc:///client/theme/ses/ses-more-hover.svg" 
+    readonly property string sesMore: WLTheme.moreIcon 
+    readonly property string sesMoreHover: WLTheme.moreHoverIcon
 
     readonly property color sesIconDarkColor: "#001B41"
     readonly property color sesIconColor: WLTheme.buttonIconColor
