@@ -243,7 +243,7 @@ QtObject {
     readonly property string sesMore: WLTheme.moreIcon 
     readonly property string sesMoreHover: WLTheme.moreHoverIcon
 
-    readonly property color sesIconDarkColor: "#001B41"
+    readonly property color sesIconDarkColor: WLTheme.iconDarkColor
     readonly property color sesIconColor: WLTheme.buttonIconColor
 
     readonly property color sesBackgroundColor: WLTheme.trayBackgroundColor

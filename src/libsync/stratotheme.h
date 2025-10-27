@@ -134,6 +134,10 @@ public:
         return "#FFFFFF";
     }
 
+    QString iconDarkColor() const override {
+        return "#2F2F70";
+    }
+
     QString menuPressedItemColor() const override {
         return "#5A6782";
     }
