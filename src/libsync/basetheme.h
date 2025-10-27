@@ -31,6 +31,9 @@ class BaseTheme : public QObject{
     Q_PROPERTY(QString moreHoverIcon READ moreHoverIcon CONSTANT)
     Q_PROPERTY(QString avatarIcon READ avatarIcon CONSTANT)
     Q_PROPERTY(QString plusIcon READ plusIcon CONSTANT)
+    Q_PROPERTY(QString quitIcon READ quitIcon CONSTANT)
+    Q_PROPERTY(QString pauseIcon READ pauseIcon CONSTANT)
+    Q_PROPERTY(QString settingsIcon READ settingsIcon CONSTANT)
 
 public:
 
@@ -89,8 +92,19 @@ public:
         return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-darkPlus.svg");
     }
 
-    virtual QString settingsIcon() const {
-        return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-settings.svg");
+    virtual QString quitIcon() const {
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-accountQuit.svg");
+    }
+
+    virtual QString pauseIcon() const {
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-accountPause.svg");
+    }
+
+    virtual QString settingsIcon(QString context = "qml") const {
+        if (context != "qml") {
+            return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-settings.svg");
+        }
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-settings.svg");
     }
     
     virtual QString sesHeaderLogoIcon() const = 0;
