@@ -259,7 +259,6 @@ QtObject {
     readonly property color sesButtonPressed: WLTheme.toolButtonPressedColor
     readonly property color sesAccountMenuHover: WLTheme.toolButtonHoveredColor
     readonly property color sesDarkGreen: "#096B35"
-    readonly property color sesDarkBlue: "#001B41"
     readonly property color sesTrayFontColor: WLTheme.trayFontColor
     readonly property color sesErrorBoxBorder: WLTheme.trayErrorBorderColor
     readonly property color sesErrorBoxText: WLTheme.trayErrorTextColor

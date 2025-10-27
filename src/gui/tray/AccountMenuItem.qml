@@ -14,7 +14,7 @@ MenuItem {
     property bool isActive: accountMenuItem.pressed
 
     font.pixelSize: Style.sesFontPixelSize
-    palette.text: Style.sesDarkBlue
+    palette.text: Style.sesTrayFontColor
 
     hoverEnabled: true
     leftPadding: Style.sesMediumMargin
