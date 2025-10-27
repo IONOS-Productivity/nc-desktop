@@ -49,8 +49,12 @@ public:
         return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-settingsAvatarRound.svg");
     }
 
-    virtual QString folderIcon() const {
+    virtual QString folderIcon(QString context = "qml") const {
+        if (context != "qml") {
         return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-folderIcon.svg");
+    }
+
+        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-folderIcon.svg");
     }
 
     virtual QString syncArrows() const {
