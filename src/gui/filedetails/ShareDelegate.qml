@@ -197,6 +197,7 @@ GridLayout {
 
             text: shareLinkCopied ? qsTr("Copied!") : ""
             textColor: Style.sesDarkGreen
+            backgroundColor: Style.clipboardBackgroundColor
 
             iconSource: shareLinkCopied ? Style.sesSyncSuccessIcon + Style.positiveColor :
                                            Style.sesClipboard + palette.brightText

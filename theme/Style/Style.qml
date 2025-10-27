@@ -308,6 +308,7 @@ QtObject {
     property color sesPillButtonPrimaryBackgroundColor: WLTheme.pillButtonPrimaryColor
     property color sesPillButtonSecondaryBackgroundColor: WLTheme.pillButtonSecondaryColor
     property color sesPillButtonBorderColor: WLTheme.pillButtonBorderColor
+    property color clipboardBackgroundColor: WLTheme.clipboardBackgroundColor
     property real sesPillIconSize: 16
     property int sesPillButtonVerticalPadding: 4
     property int sesPillButtonHorizontalPadding: 10

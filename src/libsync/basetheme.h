@@ -23,6 +23,7 @@ class BaseTheme : public QObject{
     Q_PROPERTY(QString pillButtonPrimaryColor READ pillButtonPrimaryColor CONSTANT)
     Q_PROPERTY(QString pillButtonSecondaryColor READ pillButtonSecondaryColor CONSTANT)
     Q_PROPERTY(QString pillButtonBorderColor READ pillButtonBorderColor CONSTANT)
+    Q_PROPERTY(QString clipboardBackgroundColor READ clipboardBackgroundColor CONSTANT)
     Q_PROPERTY(QString trayErrorBorderColor READ trayErrorBorderColor CONSTANT)
     Q_PROPERTY(QString trayErrorTextColor READ trayErrorTextColor CONSTANT)
     Q_PROPERTY(QString sesHeaderLogoIcon READ sesHeaderLogoIcon CONSTANT)
@@ -369,6 +370,10 @@ public:
 
     virtual QString pillButtonBorderColor() const {
         return "#0B2A63";
+    }
+
+    virtual QString clipboardBackgroundColor() const {
+        return "#FFFFFF";
     }
 
     virtual QString white() const {
