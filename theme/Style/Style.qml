@@ -237,7 +237,7 @@ QtObject {
     readonly property string sesLightClipboard: "qrc:///client/theme/ses/ses-lightClipboard.svg" 
     readonly property string sesSyncErrorIcon: WLTheme.syncErrorIcon
     readonly property string sesErrorBoxIcon: WLTheme.snackbarErrorIcon
-    readonly property string sesSyncSuccessIcon: WLTheme,syncSuccessIcon
+    readonly property string sesSyncSuccessIcon: WLTheme.syncSuccessIcon
     readonly property string sesOfflineIcon: WLTheme.syncOfflineIcon
     readonly property string sesChevron: WLTheme.chevronIcon
     readonly property string sesMore: WLTheme.moreIcon 
