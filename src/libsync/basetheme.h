@@ -53,14 +53,17 @@ public:
 
     virtual ~BaseTheme() = default;
 
+    virtual QString themePrefix(QString context = "qml") const {
+        if (context == "qml") {
+            return QString("qrc:///client/theme/");
+        }
+        return QString(Theme::themePrefix);
+    }
+
     virtual QString additionalThemePrefix() const { return QStringLiteral(""); }
 
     virtual QString avatarIcon(QString context = "qml") const {
-        if (context != "qml") {
-            return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-settingsAvatar.svg");
-        }
-
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-settingsAvatar.svg");
+        return themePrefix(context) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-settingsAvatar.svg");
     }
 
     virtual QString roundAvatarIcon() const {
@@ -68,11 +71,7 @@ public:
     }
 
     virtual QString folderIcon(QString context = "qml") const {
-        if (context != "qml") {
-            return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-folderIcon.svg");
-        }
-
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-folderIcon.svg");
+        return themePrefix(context) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-folderIcon.svg");
     }
 
     virtual QString syncArrows() const {
@@ -88,99 +87,93 @@ public:
     }
 
     virtual QString websiteIcon(QString context = "qml") const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-website.svg");
+        return themePrefix(context) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-website.svg");
     }
 
     virtual QString moreIcon() const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-more.svg");
+        return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-more.svg");
     }
 
     virtual QString moreHoverIcon() const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-more-hover.svg");
+        return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-more-hover.svg");
     }
 
     virtual QString plusIcon(QString context = "qml") const {
-        if (context != "qml") {
-            return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-darkPlus.svg");
-        }
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-darkPlus.svg");
+        return themePrefix(context) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-darkPlus.svg");
     }
 
     virtual QString lightPlusIcon() const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-lightPlus.svg");
+        return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-lightPlus.svg");
     }
 
     virtual QString quitIcon() const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-accountQuit.svg");
+        return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-accountQuit.svg");
     }
 
     virtual QString resumeIcon() const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-accountResume.svg");
+        return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-accountResume.svg");
     }
 
     virtual QString pauseIcon() const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-accountPause.svg");
+        return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-accountPause.svg");
     }
 
     virtual QString settingsIcon(QString context = "qml") const {
-        if (context != "qml") {
-            return QString(Theme::themePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-settings.svg");
-        }
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-settings.svg");
+        return themePrefix(context) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-settings.svg");
     }
 
     virtual QString logoutIcon() const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-accountLogout.svg");
+        return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-accountLogout.svg");
     }
     
     virtual QString sesHeaderLogoIcon() const = 0;
 
     virtual QString deleteIcon() const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-accountDelete.svg");
+        return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-accountDelete.svg");
     }
 
     virtual QString activityDeleteIcon() const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-activityDelete.svg");
+        return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-activityDelete.svg");
     }
 
     virtual QString refreshIcon() const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-refresh.svg");
+        return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-refresh.svg");
     }
 
     virtual QString infoIcon() const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-info.svg");
+        return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-info.svg");
     }
 
     virtual QString clipboardIcon() const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-clipboard.svg");
+        return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-clipboard.svg");
     }
 
     virtual QString lightClipboardIcon() const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-lightClipboard.svg");
+        return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-lightClipboard.svg");
     }
 
     virtual QString chevronIcon() const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-chevron.svg");
+        return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-chevron.svg");
     }
 
     virtual QString syncSuccessIcon() const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-syncstate-success.svg");
+        return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-syncstate-success.svg");
     }
 
     virtual QString syncErrorIcon() const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-syncstate-error.svg");
+        return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-syncstate-error.svg");
     }
 
     virtual QString syncOfflineIcon() const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-state-offline.svg");
+        return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-state-offline.svg");
     }
 
     virtual QString snackbarErrorIcon() const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-snackbar-error.svg");
+        return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-snackbar-error.svg");
     }
 
     virtual QString activityIcon() const {
-        return QString(Theme::qmlThemePrefix) + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-activity.svg");
+        return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-activity.svg");
     }
 
     virtual int treeViewIconSize() const {
@@ -238,6 +231,7 @@ public:
     }
 
     virtual QString contextMenuFont() const {
+        //TODO
         return ":/client/fonts/OpenSans-Regular.ttf";
     }
 

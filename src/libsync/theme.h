@@ -620,7 +620,6 @@ public:
     static QColor defaultColor();
 
     static constexpr const char *themePrefix = ":/client/theme/";
-    static constexpr const char *qmlThemePrefix = "qrc:///client/theme/";
 
     [[nodiscard]] QVariantMap systemPalette() const;
     [[nodiscard]] bool darkMode() const;
