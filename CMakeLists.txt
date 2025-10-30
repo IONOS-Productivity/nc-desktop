@@ -221,7 +221,7 @@ if(OWNCLOUD_5XX_NO_BLACKLIST)
 endif()
 
 if(APPLE)
-  set( SOCKETAPI_TEAM_IDENTIFIER_PREFIX "5TDLCVD243" CACHE STRING "SocketApi prefix (including a following dot) that must match the codesign key's TeamIdentifier/Organizational Unit" )
+  set( SOCKETAPI_TEAM_IDENTIFIER_PREFIX "5TDLCVD243." CACHE STRING "SocketApi prefix (including a following dot) that must match the codesign key's TeamIdentifier/Organizational Unit" )
 endif()
 
 if(BUILD_CLIENT)
