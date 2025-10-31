@@ -149,6 +149,10 @@ set(client_SRCS
     sslerrordialog.cpp
     syncrunfilelog.h
     syncrunfilelog.cpp
+    ionostheme.h
+    whitelabeltheme.h
+    stratotheme.h
+    basetheme.h
     systray.h
     systray.cpp
     EncryptionTokenSelectionWindow.qml

@@ -117,10 +117,6 @@ set(libsync_SRCS
     syncoptions.cpp
     theme.h
     theme.cpp
-    ionostheme.h
-    whitelabeltheme.h
-    stratotheme.h
-    basetheme.h
     updatee2eefoldermetadatajob.h
     updatee2eefoldermetadatajob.cpp
     updatemigratede2eemetadatajob.h
