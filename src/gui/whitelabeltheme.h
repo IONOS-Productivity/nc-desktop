@@ -12,10 +12,8 @@ namespace OCC {
 
 #if defined(IONOS_WL_BUILD)
     static IonosTheme WLTheme;    
-#elif defined(STRATO_WL_BUILD)
-    static StratoTheme WLTheme;
 #else
-    static BaseTheme WLTheme;
+    static StratoTheme WLTheme;
 #endif
 
 } // namespace OCC
