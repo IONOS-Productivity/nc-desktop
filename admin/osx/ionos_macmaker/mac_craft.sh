@@ -168,7 +168,7 @@ if [ -z "$PACKAGE_INSTALLER" ]; then
 fi
 
 echo "Renew BOM"
-mkbom "$PAYLOAD_DIR $INNER_PKG/Bom"
+mkbom "$PAYLOAD_DIR" "$INNER_PKG/Bom"
 echo "Reassembling the package..."
 (cd "$PAYLOAD_DIR" && \
  find . | cpio -o --format odc | gzip -c) > $PAYLOAD_DIR.new
@@ -239,7 +239,7 @@ if [ "$BUILD_UPDATER" == "true" ]; then
   wget $SPARKLE_DOWNLOAD_URI -O ${SPARKLE_DIR%/}/Sparkle.tar.xz
   tar -xvf ${SPARKLE_DIR%/}/Sparkle.tar.xz -C $SPARKLE_DIR
 
-  if tar cf "$SPARKLE_TBZ_PATH" "$PACKAGE_PATH"; then
+  if tar cf "$SPARKLE_TBZ_PATH" -C "$(dirname "$PACKAGE_PATH")" "$(basename "$PACKAGE_PATH")"; then
       echo "✅ Sparkle package created successfully."
   else
       echo "❌ Could not create Sparkle package tbz!" >&2
