@@ -120,7 +120,6 @@ bool FolderWizardLocalPath::isComplete() const
     QUrl serverUrl = _account->url();
     serverUrl.setUserName(_account->credentials()->user());
 
-
     SyncDirValidator syncDirValidator(_ui.localFolderLineEdit->text());
     if (!syncDirValidator.isValidDir()) {
         _ui.sesSnackBar->show();
@@ -162,16 +161,19 @@ void FolderWizardLocalPath::slotChooseLocalFolder()
         tr("Select the source folder"),
         sf);
 
-    SyncDirValidator syncDirValidator(_ui.localFolderLineEdit->text());
-    if (!syncDirValidator.isValidDir() && !dir.isEmpty()) {
-        _ui.sesSnackBar->show();
-        _ui.sesSnackBar->setError(syncDirValidator.message());
-        return;
-    }
     if (!dir.isEmpty()) {
         // set the last directory component name as alias
         _ui.localFolderLineEdit->setText(QDir::toNativeSeparators(dir));
     }
+
+    SyncDirValidator syncDirValidator(_ui.localFolderLineEdit->text());
+    if (!syncDirValidator.isValidDir() && !dir.isEmpty()) {
+        _ui.sesSnackBar->show();
+        _ui.sesSnackBar->setError(syncDirValidator.message());
+        emit completeChanged();
+        return;
+    }
+
     emit completeChanged();
 }
 
