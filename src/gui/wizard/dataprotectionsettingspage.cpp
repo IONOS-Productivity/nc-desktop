@@ -26,7 +26,6 @@ namespace OCC{
 
     void DataProtectionSettingsPage::initializePage()
     {
-        _ui->anonymousDataCheckBox->setChecked(true);
         customizeStyle();
     }
 
@@ -35,7 +34,7 @@ namespace OCC{
         ConfigFile cfgFile;
 
         connect(_ui->backButton, &QPushButton::clicked, this, [this, &cfgFile]() {
-            _ui->anonymousDataCheckBox->setChecked(true);
+            _ui->anonymousDataCheckBox->setChecked(false);
             _ocWizard->back();
         });
 
@@ -50,7 +49,7 @@ namespace OCC{
 
         _ui->descriptionLabel->setText(tr("We collect anonymized data to optimize our app. We use software solutions from various partners for this purpose. We want to give you full transparency and freedom of choice regarding the collection and processing of your anonymized usage. You can change your settings at any time under the menu item Data Protection."));
     
-        _ui->anonymousDataCheckBox->setChecked(true);
+        _ui->anonymousDataCheckBox->setChecked(false);
     }
 
     int DataProtectionSettingsPage::nextId() const
@@ -64,7 +63,7 @@ namespace OCC{
 
         _ui->mainVBox->setContentsMargins(32, 0, 32, 0);
 
-        //_ui->necessaryDataCheckBox->setEnabled(false);
+        _ui->necessaryDataCheckBox->setEnabled(false);
         _ui->necessaryDataCheckBox->setChecked(true);
 
         _ui->necessaryDataCheckBox->setStyleSheet(
