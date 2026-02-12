@@ -604,8 +604,8 @@ void AccountSettings::openIgnoredFilesDialog(const QString & absFolderPath)
     connect(buttonBox, &QDialogButtonBox::rejected, dialog, &QDialog::close);
 
     dialog->setPalette(QPalette(QPalette::Window, WLTheme.white()));
-    dialog->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
-
+    dialog->setWindowFlag(Qt::WindowContextHelpButtonHint, false);
+    
     dialog->open();
 }
 
