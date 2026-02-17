@@ -293,6 +293,7 @@ GeneralSettings::GeneralSettings(QWidget *parent)
 
     // accountAdded means the wizard was finished and the wizard might change some options.
     connect(AccountManager::instance(), &AccountManager::accountAdded, this, &GeneralSettings::loadMiscSettings);
+    connect(_ui->checkUpdateLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotUpdateCheckNow);
     connect(_ui->moreInfoLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenMoreInformationLink);
     connect(_ui->legalNoticeLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenLegalNoticeLink);
     connect(_ui->openSourceLinkButton, &OCC::LinkButton::clicked, this, &GeneralSettings::slotOpenOpenSourceLink);
@@ -473,6 +474,7 @@ void GeneralSettings::slotUpdateInfo()
             Utility::openBrowser(QUrl(link));
         });
         _ui->updateStateLabel->setText(status);
+        _ui->updateStateLabel->setVisible(true);
         _ui->restartButton->setVisible(ocupdater->downloadState() == OCUpdater::DownloadComplete);
         _ui->updateButton->setEnabled(ocupdater->downloadState() != OCUpdater::CheckingServer &&
                                       ocupdater->downloadState() != OCUpdater::Downloading &&
@@ -591,6 +593,7 @@ void GeneralSettings::slotUpdateCheckNow()
 
     if (updater) {
         _ui->updateButton->setEnabled(false);
+        _ui->updateStateLabel->setVisible(false);
 
         updater->checkForUpdate();
     }
@@ -791,6 +794,16 @@ void GeneralSettings::customizeStyle()
     );
 
     _ui->necessaryDataLabel->setStyleSheet(
+        QStringLiteral("QLabel { font-size: %1; font-weight: %2; color: %3; margin-left: %4; }").arg(
+            WLTheme.settingsTextSize(),
+            WLTheme.settingsTextWeight(),
+            WLTheme.black(),
+            "24"
+        )
+    );
+
+    
+    _ui->updateStateLabel->setStyleSheet(
         QStringLiteral("QLabel { font-size: %1; font-weight: %2; color: %3; margin-left: %4; }").arg(
             WLTheme.settingsTextSize(),
             WLTheme.settingsTextWeight(),
