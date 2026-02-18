@@ -117,7 +117,20 @@ QString GAnalyticsWorker::getScreenResolution()
  */
 QString GAnalyticsWorker::getUserAgent()
 {
-    return QString("%1/%2").arg(m_appName).arg(m_appVersion);
+    QString osPart;
+
+    #ifdef Q_OS_WIN
+        osPart = "Windows NT 10.0; Win64; x64";
+    #elif defined(Q_OS_LINUX)
+        osPart = "X11; Linux x86_64";
+    #elif defined(Q_OS_MAC)
+        osPart = "Macintosh; Intel Mac OS X 13_0";
+    #endif
+
+    return QString(
+        "Mozilla/5.0 (%1) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 %2/%3"
+    ).arg(osPart, m_appName, m_appVersion);
 }
 
 
