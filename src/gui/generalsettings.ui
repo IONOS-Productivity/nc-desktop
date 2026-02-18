@@ -128,7 +128,7 @@
                                 <item>
                                     <widget class="OCC::LinkButton" name="checkUpdateLinkButton">
                                         <property name="text">
-                                            <string>Check now</string>
+                                            <string>Check Now</string>
                                         </property>
                                     </widget>
                                 </item>                                
