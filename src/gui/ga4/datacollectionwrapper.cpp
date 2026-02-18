@@ -1,9 +1,16 @@
 #include "datacollectionwrapper.h"
 
 #ifdef BUILDTYPE_RELWITHDEBINFO
-    const QString GA_MEASUREMENT_ID = "G-P9KD4TLW0V";  // Verwende diesen String nur wenn wir in Debug bauen
+    // const QString GA_MEASUREMENT_ID = "G-P9KD4TLW0V";  // Verwende diesen String nur wenn wir in Debug bauen
+    const QString GA_MEASUREMENT_ID = "G-5XHQT73DSV";  // Verwende diesen String nur wenn wir in Debug bauen
 #else
-    const QString GA_MEASUREMENT_ID = "G-270CYZ49V0";  // Verwende diesen String nur wenn wir in Release bauen
+    #ifdef Q_OS_WIN
+        const QString GA_MEASUREMENT_ID = "G-270CYZ49V0";  // Verwende diesen String nur wenn wir in Release bauen
+    #elif defined(Q_OS_LINUX)
+        const QString GA_MEASUREMENT_ID = "G-5XHQT73DSV";  // Verwende diesen String nur wenn wir in Release bauen
+    #elif defined(Q_OS_MAC)
+        const QString GA_MEASUREMENT_ID = "G-270CYZ49V0";  // Verwende diesen String nur wenn wir in Release bauen
+    #endif
 #endif
 
 
@@ -54,6 +61,6 @@ void DataCollectionWrapper::initDataCollection() {
     GAnalytics* ga = &GAnalytics::getInstance();
     ga->setMeasurementId(GA_MEASUREMENT_ID);
     ga->setSendInterval(3000);
-    ga->setLogLevel(GAnalytics::Info);
+    ga->setLogLevel(GAnalytics::Debug);
     ga->enableValidation(false);
 }
