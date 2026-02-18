@@ -12,6 +12,7 @@
 #include <map>
 #include "account.h"
 
+Q_DECLARE_LOGGING_CATEGORY(lcGAnalyticsWorker)
 struct QueryBuffer
 {
     QString eventValue;
