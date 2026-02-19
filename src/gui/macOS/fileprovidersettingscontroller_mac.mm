@@ -52,7 +52,7 @@ namespace OCC {
 
 namespace Mac {
 
-Q_LOGGING_CATEGORY(lcFileProviderSettingsController, "nextcloud.gui.mac.fileprovider.settingscontroller")
+Q_LOGGING_CATEGORY(lcFileProviderSettingsController, "hidrivenext.gui.mac.fileprovider.settingscontroller")
 
 class FileProviderSettingsController::MacImplementation : public QObject
 {
@@ -367,11 +367,19 @@ bool FileProviderSettingsController::vfsEnabledForAccount(const QString &userIdA
     return d->vfsEnabledForAccount(userIdAtHost);
 }
 
-void FileProviderSettingsController::setVfsEnabledForAccount(const QString &userIdAtHost, const bool setEnabled)
+void FileProviderSettingsController::setVfsEnabledForAccount(const QString &userIdAtHost, const bool setEnabled, const bool showInformationDialog)
 {
     const auto enabledAccountsAction = d->setVfsEnabledForAccount(userIdAtHost, setEnabled);
     if (enabledAccountsAction == MacImplementation::VfsAccountsAction::VfsAccountsEnabledChanged) {
         emit vfsEnabledAccountsChanged();
+
+        if (setEnabled && showInformationDialog) {
+            QMessageBox::information(nullptr,
+                                     tr("macOS virtual files enabled"),
+                                     tr("Virtual files have been enabled for this account.\n"
+                                        "Files are accessible in Finder via an entry under the \"Locations\" section.\n"
+                                        "Please note that on macOS, virtual and classic sync folders are separate.\n"));
+        }
     }
 }
 

@@ -20,7 +20,7 @@ import Style 1.0
 import "../../filedetails"
 import "../../tray"
 
-import com.nextcloud.desktopclient 1.0
+import com.ionos.hidrivenext.desktopclient
 
 ApplicationWindow {
     id: root
@@ -33,8 +33,15 @@ ApplicationWindow {
     LayoutMirroring.enabled: Application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
 
+    font.family: Style.sesOpenSansRegular 
+    font.pixelSize: Style.sesFontPixelSize 
+    font.weight: Style.sesFontBoldWeight
+    palette.base: Style.sesBackgroundColor
+    palette.windowText: Style.sesTrayFontColor
+    palette.buttonText: Style.sesTrayFontColor
+
     title: qsTr("Evict materialised files")
-    color: palette.base
+    color: Style.sesBackgroundColor
     flags: Qt.Dialog | Qt.WindowStaysOnTopHint
     width: 640
     height: 480
