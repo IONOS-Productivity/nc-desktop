@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 
 import Style
-import com.nextcloud.desktopclient as NC
+import com.ionos.hidrivenext.desktopclient as NC
 
 ScrollView {
     id: controlRoot
@@ -18,6 +18,10 @@ ScrollView {
     function scrollToTop() {
         // Triggers activation of repeating upward flick timer
         scrollingToTop = true
+    }
+
+    background: Rectangle {
+        color: Style.sesBackgroundColor
     }
 
     signal openFile(string filePath)
@@ -65,7 +69,7 @@ ScrollView {
         highlight: Rectangle {
             id: activityHover
             anchors.fill: activityList.currentItem
-            color: palette.highlight
+            color: Style.sesHover
             radius: Style.mediumRoundedButtonRadius
             visible: activityList.activeFocus
         }
@@ -82,7 +86,11 @@ ScrollView {
         }
 
         delegate: ActivityItem {
-            background: null
+
+            background: Rectangle {
+                color: Style.sesBackgroundColor
+            }
+
             width: activityList.contentItem.width
 
             isFileActivityList: controlRoot.isFileActivityList
@@ -148,13 +156,15 @@ ScrollView {
                 verticalAlignment: Image.AlignVCenter
                 horizontalAlignment: Image.AlignHCenter
                 fillMode: Image.PreserveAspectFit
-                source: "image://svgimage-custom-color/activity.svg/" + palette.windowText
+                source: Style.sesActivity
+                sourceSize.height: 32
+                sourceSize.width: 22
             }
 
             EnforcedPlainTextLabel {
                width: parent.width
                text: qsTr("No activities yet")
-               font.bold: true
+               color: Style.sesTrayFontColor
                wrapMode: Text.Wrap
                horizontalAlignment: Text.AlignHCenter
                verticalAlignment: Text.AlignVCenter

@@ -16,7 +16,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 
-import com.nextcloud.desktopclient
+import com.ionos.hidrivenext.desktopclient
 import Style
 
 StackView {
@@ -31,7 +31,7 @@ StackView {
     property bool backgroundsVisible: true
 
     background: Rectangle {
-        color: palette.base
+        color: palette.window
         visible: root.backgroundsVisible
     }
 
