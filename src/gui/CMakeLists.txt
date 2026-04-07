@@ -22,6 +22,11 @@ configure_file(${CMAKE_SOURCE_DIR}/theme.qrc.in ${CMAKE_SOURCE_DIR}/theme.qrc)
 configure_file(${CMAKE_SOURCE_DIR}/ionos-theme.qrc.in ${CMAKE_SOURCE_DIR}/ionos-theme.qrc)
 set(theme_dir ${CMAKE_SOURCE_DIR}/theme)
 
+set(client_UI_SRCS_IONOS
+    wizard/dataprotectionpage.ui
+    wizard/dataprotectionsettingspage.ui
+)
+
 set(client_UI_SRCS
     accountsettings.ui
     conflictdialog.ui
@@ -50,11 +55,47 @@ set(client_UI_SRCS
     wizard/termsofservicecheckwidget.ui
     wizard/webview.ui
     wizard/welcomepage.ui
-    wizard/dataprotectionpage.ui
-    wizard/dataprotectionsettingspage.ui
 )
 
+list(APPEND client_UI_SRCS ${client_UI_SRCS_IONOS})
 qt_add_resources(client_UI_SRCS ../../resources.qrc ../../ionos.qrc ${CMAKE_SOURCE_DIR}/theme.qrc ${CMAKE_SOURCE_DIR}/ionos-theme.qrc)
+
+
+# The following files are separated to minimize merge conflicts.
+# (See <attachments> above for file contents. You may not need to search or read the file again.)
+set(client_SRCS_IONOS
+    clickablelabel.h
+    buttonstyle.h
+    ionostheme.h
+    whitelabeltheme.h
+    stratotheme.h
+    basetheme.h
+    wizard/dataprotectionpage.h
+    wizard/dataprotectionpage.cpp
+    wizard/dataprotectionsettingspage.h
+    wizard/dataprotectionsettingspage.cpp
+    ga4/datacollectionwrapper.cpp
+    ga4/datacollectionwrapper.h
+    ga4/ganalytics_worker.cpp
+    ga4/ganalytics_worker.h
+    ga4/ganalytics.cpp
+    ga4/ganalytics.h
+    sessnackbar.h
+    sessnackbar.cpp
+    sesstyle.h
+    sesstyle.cpp
+    linkbutton.h
+    linkbutton.cpp
+    buttonstylestrategy.h
+    sesFileIconProvider.h
+    sesFileIconProvider.cpp
+    pushbuttonstylehelper.h
+    pushbuttonstylehelper.cpp
+    moreoptionsbuttonstylehelper.h
+    moreoptionsbuttonstylehelper.cpp
+    SesComponents/syncdirvalidation.h
+    SesComponents/syncdirvalidation.cpp
+)
 
 set(client_SRCS
     accountmanager.h
@@ -103,7 +144,6 @@ set(client_SRCS
     folderwatcher.cpp
     folderwizard.h
     folderwizard.cpp
-    clickablelabel.h
     generalsettings.h
     generalsettings.cpp
     legalnotice.h
@@ -150,14 +190,9 @@ set(client_SRCS
     sslerrordialog.cpp
     syncrunfilelog.h
     syncrunfilelog.cpp
-    ionostheme.h
-    whitelabeltheme.h
-    stratotheme.h
-    basetheme.h
     systray.h
     systray.cpp
     EncryptionTokenSelectionWindow.qml
-    buttonstyle.h
     userinfo.h
     userinfo.cpp
     vfsdownloaderrordialog.h
@@ -233,27 +268,6 @@ set(client_SRCS
     creds/webflowcredentials.cpp
     creds/webflowcredentialsdialog.h
     creds/webflowcredentialsdialog.cpp
-    ga4/datacollectionwrapper.cpp
-    ga4/datacollectionwrapper.h
-    ga4/ganalytics_worker.cpp
-    ga4/ganalytics_worker.h
-    ga4/ganalytics.cpp
-    ga4/ganalytics.h
-    sessnackbar.h
-    sessnackbar.cpp
-    sesstyle.h
-    sesstyle.cpp
-    linkbutton.h
-    linkbutton.cpp
-    buttonstylestrategy.h
-    sesFileIconProvider.h
-    sesFileIconProvider.cpp
-    pushbuttonstylehelper.h
-    pushbuttonstylehelper.cpp
-    moreoptionsbuttonstylehelper.h
-    moreoptionsbuttonstylehelper.cpp
-    SesComponents/syncdirvalidation.h
-    SesComponents/syncdirvalidation.cpp
     wizard/postfixlineedit.h
     wizard/postfixlineedit.cpp
     wizard/abstractcredswizardpage.h
@@ -282,13 +296,12 @@ set(client_SRCS
     wizard/slideshow.cpp
     wizard/welcomepage.h
     wizard/welcomepage.cpp
-    wizard/dataprotectionpage.h
-    wizard/dataprotectionpage.cpp
-    wizard/dataprotectionsettingspage.h
-    wizard/dataprotectionsettingspage.cpp
     wizard/linklabel.h
     wizard/linklabel.cpp
-    )
+)
+
+# Append separated sources to main sources
+list(APPEND client_SRCS ${client_SRCS_IONOS})
 
 if (WITH_WEBENGINE)
   list(APPEND client_SRCS
