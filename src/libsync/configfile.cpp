@@ -89,6 +89,7 @@ static constexpr char notifyExistingFoldersOverLimitC[] = "notifyExistingFolders
 static constexpr char stopSyncingExistingFoldersOverLimitC[] = "stopSyncingExistingFoldersOverLimit";
 static constexpr char confirmExternalStorageC[] = "confirmExternalStorage";
 static constexpr char moveToTrashC[] = "moveToTrash";
+static constexpr char sendDataC[] = "sendData";
 
 static constexpr char forceLoginV2C[] = "forceLoginV2";
 
@@ -258,7 +259,7 @@ qint64 ConfigFile::chunkSize() const
 qint64 ConfigFile::maxChunkSize() const
 {
     QSettings settings(configFile(), QSettings::IniFormat);
-    return settings.value(QLatin1String(maxChunkSizeC), 100LL * 1024LL * 1024LL).toLongLong(); // default to 100 MiB
+    return settings.value(QLatin1String(maxChunkSizeC), 20LL * 1024LL * 1024LL).toLongLong(); // default to 20 MiB (SES-406)
 }
 
 qint64 ConfigFile::minChunkSize() const
@@ -985,13 +986,13 @@ void ConfigFile::setNewBigFolderSizeLimit(bool isChecked, qint64 mbytes)
 
 bool ConfigFile::confirmExternalStorage() const
 {
-    const auto fallback = getValue(confirmExternalStorageC, QString(), true);
+    const auto fallback = getValue(confirmExternalStorageC, QString(), false);
     return getPolicySetting(QLatin1String(confirmExternalStorageC), fallback).toBool();
 }
 
 bool ConfigFile::useNewBigFolderSizeLimit() const
 {
-    const auto fallback = getValue(useNewBigFolderSizeLimitC, QString(), true);
+    const auto fallback = getValue(useNewBigFolderSizeLimitC, QString(), false);
     return getPolicySetting(QLatin1String(useNewBigFolderSizeLimitC), fallback).toBool();
 }
 
@@ -1021,6 +1022,16 @@ void ConfigFile::setStopSyncingExistingFoldersOverLimit(const bool stopSyncing)
 void ConfigFile::setConfirmExternalStorage(bool isChecked)
 {
     setValue(confirmExternalStorageC, isChecked);
+}
+
+bool ConfigFile::sendData() const
+{
+    return getValue(sendDataC, QString(), false).toBool();
+}
+
+void ConfigFile::setSendData(bool isChecked)
+{
+    setValue(sendDataC, isChecked);
 }
 
 bool ConfigFile::moveToTrash() const
