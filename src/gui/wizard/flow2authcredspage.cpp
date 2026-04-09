@@ -22,7 +22,7 @@ Flow2AuthCredsPage::Flow2AuthCredsPage()
     : AbstractCredentialsWizardPage()
 {
     _layout = new QVBoxLayout(this);
-
+    _layout->setContentsMargins(0, 0, 0, 0);
     _flow2AuthWidget = new Flow2AuthWidget();
     _layout->addWidget(_flow2AuthWidget);
 
@@ -100,6 +100,9 @@ int Flow2AuthCredsPage::nextId() const
         return WizardCommon::Page_TermsOfService;
     }
 
+#ifdef IONOS_BUILD
+    return WizardCommon::Page_DataProtection;
+#endif
     return WizardCommon::Page_AdvancedSetup;
 }
 

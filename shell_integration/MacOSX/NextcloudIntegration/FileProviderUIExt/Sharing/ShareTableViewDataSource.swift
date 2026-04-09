@@ -37,7 +37,7 @@ class ShareTableViewDataSource: NSObject, NSTableViewDataSource, NSTableViewDele
     private(set) var shares: [NKShare] = [] {
         didSet { Task { @MainActor in sharesTableView?.reloadData() } }
     }
-    private(set) var userAgent: String = "Nextcloud-macOS/FileProviderUIExt"
+    private(set) var userAgent: String = "IONOS HiDrive Next/FileProviderUIExt"
     private(set) var account: Account? {
         didSet {
             guard let account = account else { return }

@@ -20,7 +20,8 @@
 
 namespace OCC {
 
-Q_LOGGING_CATEGORY(lcMacFileProviderDomainManager, "nextcloud.gui.macfileproviderdomainmanager", QtInfoMsg)
+Q_LOGGING_CATEGORY(lcMacFileProviderDomainManager, "hidrivenext.gui.macfileproviderdomainmanager", QtInfoMsg)
+
 
 }
 
@@ -128,6 +129,7 @@ inline QString accountIdFromDomain(NSFileProviderDomain * const domain)
 }
 
 namespace OCC {
+
 
 namespace Mac {
 

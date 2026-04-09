@@ -11,7 +11,7 @@
 
 #include <QWidget>
 #include <QPointer>
-
+#include "ga4/datacollectionwrapper.h"
 namespace OCC {
 class IgnoreListEditor;
 class SyncLogDialog;
@@ -55,6 +55,11 @@ private slots:
     void loadMiscSettings();
     void slotShowLegalNotice();
     void slotRemotePollIntervalChanged(int seconds);
+    void slotOpenMoreInformationLink();
+    void slotOpenLegalNoticeLink();
+    void slotOpenPrivacyLink();
+    void slotOpenOpenSourceLink();
+    void slotToggleSendData();
     void updatePollIntervalVisibility();
 #if defined(BUILD_UPDATER)
     void slotUpdateInfo();
@@ -65,8 +70,9 @@ private slots:
 #endif
 
 private:
+    void connectToTracking();
     void customizeStyle();
-
+    DataCollectionWrapper _dcw;
     Ui::GeneralSettings *_ui;
     QPointer<IgnoreListEditor> _ignoreEditor;
     bool _currentlyLoading = false;

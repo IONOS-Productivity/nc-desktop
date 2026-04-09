@@ -100,7 +100,7 @@ extension FileProviderExtension: NSFileProviderServicing, ChangeNotificationInte
         userId: String,
         serverUrl: String,
         password: String,
-        userAgent: String = "Nextcloud-macOS/FileProviderExt"
+        userAgent: String = "IONOS HiDrive Next/FileProviderExt"
     ) {
         let account = Account(user: user, id: userId, serverUrl: serverUrl, password: password)
         guard account != ncAccount, user != "", userId != "", serverUrl != "", password != "" else {
