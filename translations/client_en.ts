@@ -123,11 +123,11 @@
         <source>Syncing %1 of %2</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Syncing %1 of %2 (%3 left)</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>ConflictDelegate</name>
     <message>
@@ -337,11 +337,11 @@ macOS may ignore or delay this request.</source>
         <source>Reopen Browser</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Switch to your browser to connect your account</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>FolderWizardSelectiveSync</name>
     <message>
@@ -359,7 +359,7 @@ macOS may ignore or delay this request.</source>
         <source>&amp;Choose</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Add Folder Sync</source>
         <translation type="unfinished" />
     </message>
@@ -371,7 +371,7 @@ macOS may ignore or delay this request.</source>
         <source>Step 1 of 3: Select local folder</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>FolderWizardTargetPage</name>
     <message>
@@ -382,7 +382,7 @@ macOS may ignore or delay this request.</source>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Create folder</source>
         <translation type="unfinished" />
     </message>
@@ -402,7 +402,7 @@ macOS may ignore or delay this request.</source>
         <source>Step 2 of 3: Directory in your %1</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>MainWindow</name>
     <message>
@@ -637,7 +637,7 @@ Should the account be imported?</source>
         <source>Expand Memory</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Folder creation failed</source>
         <translation type="unfinished" />
     </message>
@@ -836,7 +836,7 @@ Would you like to do this now?</source>
         <source>https://wl.hidrive.com/easy/0057</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::AccountSetupFromCommandLineJob</name>
     <message>
@@ -2105,11 +2105,11 @@ For advanced users: this issue might be related to multiple sync database files 
         <source>File</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Synchronize any other local folder with your %1</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::FolderStatusModel</name>
     <message>
@@ -2274,7 +2274,7 @@ For advanced users: this issue might be related to multiple sync database files 
         <source>Choose</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Click to select a local folder to sync.</source>
         <translation type="unfinished" />
     </message>
@@ -2294,7 +2294,7 @@ For advanced users: this issue might be related to multiple sync database files 
         <source>Step 1 of 3: Select local folder</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::FolderWizardRemotePath</name>
     <message>
@@ -2487,7 +2487,7 @@ Downgrading versions is not possible immediately: changing from stable to enterp
         <source>More Information</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Move removed files to trash</source>
         <translation type="unfinished" />
     </message>
@@ -2642,7 +2642,7 @@ Downgrading versions is not possible immediately: changing from stable to enterp
         <source>stable</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::GETFileJob</name>
     <message>
@@ -4124,11 +4124,11 @@ This is a new, experimental mode. If you decide to use it, please report any iss
         <source>Success</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Warning</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::SettingsDialog</name>
     <message>
@@ -4434,7 +4434,7 @@ Server replied with error: %2</source>
         <source>The connection is not secure</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>This connection is NOT secure as it is not encrypted.</source>
         <translation type="unfinished" />
     </message>
@@ -4442,7 +4442,7 @@ Server replied with error: %2</source>
         <source>This connection is encrypted using %1 bit %2.</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::SslErrorDialog</name>
     <message>
@@ -4707,11 +4707,11 @@ Server replied with error: %2</source>
         <source>&lt;p&gt;This release was supplied by %1.&lt;/p&gt;</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>easy/0118</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::UnifiedSearchResultsListModel</name>
     <message>
@@ -5353,7 +5353,7 @@ Server replied with error: %2</source>
         <source>The directory %1 cannot be part of your sync directory. Please choose another folder.</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>The file is too big to upload. You might need to choose a smaller file or contact your server administrator for assistance.</source>
         <translation type="unfinished" />
     </message>
@@ -5457,7 +5457,7 @@ Server replied with error: %2</source>
         <source>now</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>ResolveConflictsDialog</name>
     <message numerus="yes">
@@ -5510,11 +5510,11 @@ Server replied with error: %2</source>
         <source>Open local or group folders</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Website</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>ShareDelegate</name>
     <message>
@@ -5767,7 +5767,7 @@ Server replied with error: %2</source>
         <source>Account switcher and settings menu</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Add account</source>
         <translation type="unfinished" />
     </message>
@@ -5803,7 +5803,7 @@ Server replied with error: %2</source>
         <source>Settings</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>TrayWindowHeader</name>
     <message>
@@ -5829,7 +5829,7 @@ Server replied with error: %2</source>
         <source>Open %1 in browser</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Open Nextcloud Talk in browser</source>
         <translation type="unfinished" />
     </message>
@@ -5845,7 +5845,7 @@ Server replied with error: %2</source>
         <source>Website</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>UnifiedSearchInputContainer</name>
     <message>
