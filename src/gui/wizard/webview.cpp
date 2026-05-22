@@ -78,10 +78,7 @@ WebView::WebView(QWidget *parent)
       _ui()
 {
     _ui.setupUi(this);
-#if QT_VERSION >= 0x051200
-    QWebEngineUrlScheme _ncsheme("nc");
-    QWebEngineUrlScheme::registerScheme(_ncsheme);
-#endif
+    // nc:// scheme is registered in main.cpp before QApplication (Qt6 requirement)
     _webview = new QWebEngineView(this);
     _profile = new QWebEngineProfile(this);
     _page = new WebEnginePage(_profile);
