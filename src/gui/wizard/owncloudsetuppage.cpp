@@ -85,7 +85,9 @@ OwncloudSetupPage::OwncloudSetupPage(QWidget *parent)
 
 void OwncloudSetupPage::setLogo()
 {
+#ifndef IONOS_BUILD
     _ui.logoLabel->setPixmap(Theme::instance()->wizardApplicationLogo());
+#endif
 }
 
 void OwncloudSetupPage::setupServerAddressDescriptionLabel()
