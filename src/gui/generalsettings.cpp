@@ -705,6 +705,15 @@ void GeneralSettings::slotToggleQuotaWarningNotifications(bool enable)
     cfgFile.setShowQuotaWarningNotifications(enable);
 }
 
+#ifdef IONOS_BUILD
+void GeneralSettings::slotOpenMoreInformationLink() {}
+void GeneralSettings::slotOpenLegalNoticeLink() {}
+void GeneralSettings::slotOpenPrivacyLink() {}
+void GeneralSettings::slotOpenOpenSourceLink() {}
+void GeneralSettings::slotToggleSendData() {}
+void GeneralSettings::connectToTracking() {}
+#endif
+
 void GeneralSettings::slotShowInExplorerNavigationPane(bool checked)
 {
     ConfigFile cfgFile;

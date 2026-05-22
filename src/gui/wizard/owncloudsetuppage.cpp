@@ -384,6 +384,10 @@ void OwncloudSetupPage::setErrorString(const QString &err, bool retryHTTPonly)
     stopSpinner();
 }
 
+#ifdef IONOS_BUILD
+void OwncloudSetupPage::setConnectionError(const QString &, bool) {}
+#endif
+
 void OwncloudSetupPage::startSpinner()
 {
     _ui.progressLayout->setEnabled(true);
