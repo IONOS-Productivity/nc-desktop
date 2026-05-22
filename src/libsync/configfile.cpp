@@ -70,6 +70,7 @@ static constexpr char proxyUserC[] = "Proxy/user";
 static constexpr char proxyPassC[] = "Proxy/pass";
 static constexpr char proxyNeedsAuthC[] = "Proxy/needsAuth";
 static constexpr char forceLoginV2C[] = "forceLoginV2";
+static constexpr char sendDataC[] = "sendData";
 
 static constexpr char certPath[] = "http_certificatePath";
 static constexpr char certPasswd[] = "http_certificatePasswd";
@@ -1011,6 +1012,16 @@ void ConfigFile::setStopSyncingExistingFoldersOverLimit(const bool stopSyncing)
 void ConfigFile::setConfirmExternalStorage(bool isChecked)
 {
     setValue(confirmExternalStorageC, isChecked);
+}
+
+bool ConfigFile::sendData() const
+{
+    return getValue(sendDataC, QString(), false).toBool();
+}
+
+void ConfigFile::setSendData(bool isChecked)
+{
+    setValue(sendDataC, isChecked);
 }
 
 bool ConfigFile::moveToTrash() const
