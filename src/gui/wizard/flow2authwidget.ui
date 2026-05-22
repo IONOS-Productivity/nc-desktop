@@ -199,6 +199,11 @@
             <header>wizard/linklabel.h</header>
             <container>1</container>
         </customwidget>
+        <customwidget>
+            <class>OCC::sesSnackBar</class>
+            <extends>QFrame</extends>
+            <header>sessnackbar.h</header>
+        </customwidget>
     </customwidgets>
     <resources/>
     <connections/>

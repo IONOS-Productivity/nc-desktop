@@ -170,6 +170,13 @@
             </item>
         </layout>
     </widget>
+    <customwidgets>
+        <customwidget>
+            <class>OCC::sesSnackBar</class>
+            <extends>QFrame</extends>
+            <header>sessnackbar.h</header>
+        </customwidget>
+    </customwidgets>
     <resources />
     <connections />
 </ui>
