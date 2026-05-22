@@ -5,6 +5,7 @@
  */
 
 #include <QtGlobal>
+#include <QtWebEngineCore/QtWebEngineCore>
 
 #include <cmath>
 #include <csignal>
@@ -114,10 +115,12 @@ int main(int argc, char **argv)
     QQuickStyle::setStyle(qmlStyle);
     QQuickStyle::setFallbackStyle(QStringLiteral("Fusion"));
 
+    QtWebEngineCore::initialize();
     OCC::Application app(argc, argv);
 #else
     QQuickStyle::setStyle(qmlStyle);
 
+    QtWebEngineCore::initialize();
     OCC::Application app(argc, argv);
 
     if (!widgetsStyle.isEmpty()) {
