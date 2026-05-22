@@ -31,6 +31,8 @@
 #include "version.h"
 #include "csync_exclude.h"
 #include "common/vfs.h"
+#include "ga4/datacollectionwrapper.h"
+#include "sesstyle.h"
 
 #include "config.h"
 
@@ -54,6 +56,8 @@
 #include <QPushButton>
 #include <QAbstractButton>
 #include <QFileOpenEvent>
+#include <QStyleFactory>
+#include <QCryptographicHash>
 
 #include <iostream>
 
@@ -323,6 +327,13 @@ Application::Application(int &argc, char **argv)
 
     setupLogging();
     setupTranslations();
+#ifdef IONOS_BUILD
+#ifdef STRATO_WL_BUILD
+    _theme->setOverrideServerUrl(QCoreApplication::translate("OCC::Theme", "Login_URL_STRATO"));
+#else
+    _theme->setOverrideServerUrl(QCoreApplication::translate("OCC::Theme", "Login_URL"));
+#endif
+#endif
 
     // try to migrate legacy accounts and folders from a previous client version
     // only copy the settings and check what should be skipped
@@ -390,6 +401,10 @@ Application::Application(int &argc, char **argv)
     connect(&_singleApp, &OCC::SingleInstanceManager::messageReceived, this, &Application::slotParseMessage);
 #else
     connect(&_singleApp, &KDSingleApplication::messageReceived, this, &Application::slotParseMessage);
+#endif
+
+#ifdef IONOS_BUILD
+    setStyle(new sesStyle(QStyleFactory::create("WindowsVista")));
 #endif
 
     // create accounts and folders from a legacy desktop client or from the current config file
@@ -503,6 +518,30 @@ Application::~Application()
     disconnect(AccountManager::instance(), &AccountManager::accountRemoved,
         this, &Application::slotAccountStateRemoved);
     AccountManager::instance()->shutdown();
+}
+
+void Application::startTracking()
+{
+    DataCollectionWrapper dcw;
+    dcw.initDataCollection();
+    AccountPtr account = AccountManager::instance()->accounts().first()->account();
+    QByteArray byteArray = account->credentials()->user().toUtf8();
+    QByteArray hash = QCryptographicHash::hash(byteArray, QCryptographicHash::Sha256);
+
+    ConfigFile cfg;
+    dcw.setSendData(cfg.sendData());
+    dcw.setAccount(account);
+
+    dcw.setClientID(hash.toHex());
+    dcw.login();
+}
+
+void Application::stopTracking()
+{
+    DataCollectionWrapper dcw;
+    dcw.accountRemoved();
+    dcw.setClientID(QString());
+    dcw.setAccount(nullptr);
 }
 
 void Application::setupAccountsAndFolders()
@@ -656,6 +695,12 @@ void Application::slotAccountStateRemoved(AccountState *accountState)
             _folderManager.data(), &FolderMan::slotServerVersionChanged);
     }
 
+    if(AccountManager::instance()->accounts().isEmpty()) {
+        stopTracking();
+    } else {
+        startTracking();
+    }
+
     // if there is no more account, show the wizard.
     if (_gui && AccountManager::instance()->accounts().isEmpty()) {
         // allow to add a new account if there is non any more. Always think
@@ -676,6 +721,8 @@ void Application::slotAccountStateAdded(AccountState *accountState)
         _folderManager.data(), &FolderMan::slotAccountStateChanged);
     connect(accountState->account().data(), &Account::serverVersionChanged,
         _folderManager.data(), &FolderMan::slotServerVersionChanged);
+
+    startTracking();
 
     _gui->slotTrayMessageIfServerUnsupported(accountState->account());
 }
@@ -761,7 +808,7 @@ void Application::setupLogging()
     logger->setLogDebug(true);
 #endif
 
-    logger->enterNextLogFile(QStringLiteral("nextcloud.log"), OCC::Logger::LogType::Log);
+    logger->enterNextLogFile(QStringLiteral("hidrivenext.log"), OCC::Logger::LogType::Log);
     logger->enterNextLogFile(QStringLiteral("permanent_delete.log"), OCC::Logger::LogType::DeleteLog);
 
     qCInfo(lcApplication) << "##################" << _theme->appName()
