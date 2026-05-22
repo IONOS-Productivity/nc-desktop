@@ -115,7 +115,7 @@ int main(int argc, char **argv)
     QQuickStyle::setFallbackStyle(QStringLiteral("Fusion"));
 
     OCC::Application app(argc, argv);
-#elif
+#else
     QQuickStyle::setStyle(qmlStyle);
 
     OCC::Application app(argc, argv);
