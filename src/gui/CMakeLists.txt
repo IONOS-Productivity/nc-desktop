@@ -9,6 +9,9 @@ find_package(KF6GuiAddons)
 if(CMAKE_BUILD_TYPE MATCHES Debug)
     add_definitions(-DQT_QML_DEBUG)
 endif()
+if(CMAKE_BUILD_TYPE MATCHES "RelWithDebInfo")
+    add_definitions(-DBUILDTYPE_RELWITHDEBINFO)
+endif()
 
 IF(BUILD_UPDATER)
     add_subdirectory(updater)
@@ -21,6 +24,7 @@ if(APPLICATION_NAME STREQUAL "Nextcloud")
 endif()
 
 configure_file(${CMAKE_SOURCE_DIR}/theme.qrc.in ${CMAKE_SOURCE_DIR}/theme.qrc)
+configure_file(${CMAKE_SOURCE_DIR}/ionos-theme.qrc.in ${CMAKE_SOURCE_DIR}/ionos-theme.qrc)
 set(theme_dir ${CMAKE_SOURCE_DIR}/theme)
 
 set(client_UI_SRCS
@@ -53,7 +57,12 @@ set(client_UI_SRCS
     wizard/proxysettings.ui
 )
 
-qt_add_resources(client_UI_SRCS ../../resources.qrc ${CMAKE_SOURCE_DIR}/theme.qrc)
+list(APPEND client_UI_SRCS
+    wizard/dataprotectionpage.ui
+    wizard/dataprotectionsettingspage.ui
+)
+
+qt_add_resources(client_UI_SRCS ../../resources.qrc ../../ionos.qrc ${CMAKE_SOURCE_DIR}/theme.qrc ${CMAKE_SOURCE_DIR}/ionos-theme.qrc)
 
 set(client_SRCS
     accountmanager.h
@@ -265,6 +274,40 @@ if (NOT DISABLE_ACCOUNT_MIGRATION)
         legacyaccountselectiondialog.cpp
     )
 endif()
+
+list(APPEND client_SRCS
+    clickablelabel.h
+    buttonstyle.h
+    ionostheme.h
+    whitelabeltheme.h
+    stratotheme.h
+    basetheme.h
+    wizard/dataprotectionpage.h
+    wizard/dataprotectionpage.cpp
+    wizard/dataprotectionsettingspage.h
+    wizard/dataprotectionsettingspage.cpp
+    ga4/datacollectionwrapper.cpp
+    ga4/datacollectionwrapper.h
+    ga4/ganalytics_worker.cpp
+    ga4/ganalytics_worker.h
+    ga4/ganalytics.cpp
+    ga4/ganalytics.h
+    sessnackbar.h
+    sessnackbar.cpp
+    sesstyle.h
+    sesstyle.cpp
+    linkbutton.h
+    linkbutton.cpp
+    buttonstylestrategy.h
+    sesFileIconProvider.h
+    sesFileIconProvider.cpp
+    pushbuttonstylehelper.h
+    pushbuttonstylehelper.cpp
+    moreoptionsbuttonstylehelper.h
+    moreoptionsbuttonstylehelper.cpp
+    SesComponents/syncdirvalidation.h
+    SesComponents/syncdirvalidation.cpp
+)
 
 if (WITH_WEBENGINE)
   list(APPEND client_SRCS
