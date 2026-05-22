@@ -51,7 +51,7 @@ void WelcomePage::styleSlideShow()
     
 #if defined(IONOS_WL_BUILD)
     WhitelabelLogoFileName = Theme::hidpiFileName(":/client/theme/colored/IONOS_logo_w_suffix_frontend.png");
-#else defined(STRATO_WL_BUILD)
+#elif defined(STRATO_WL_BUILD)
     WhitelabelLogoFileName = Theme::hidpiFileName(":/client/theme/colored/STRATO_logo_w_suffix_frontend.png");
 #endif
 

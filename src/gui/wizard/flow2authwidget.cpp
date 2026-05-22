@@ -53,7 +53,7 @@ void Flow2AuthWidget::setLogo()
 
 #if defined(IONOS_WL_BUILD)
     logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/ses-external.svg");
-#else defined(STRATO_WL_BUILD)
+#elif defined(STRATO_WL_BUILD)
     logoIconFileName = Theme::hidpiFileName(":/client/theme/ses/strato/ses-external.svg");
 #endif
 

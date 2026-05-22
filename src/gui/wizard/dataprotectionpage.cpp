@@ -45,7 +45,7 @@ namespace OCC{
 
 #if defined(IONOS_WL_BUILD)
     dataProtectionLogo = Theme::hidpiFileName(":/client/theme/colored/ionos-data-protection-logo.png");
-#else defined(STRATO_WL_BUILD)
+#elif defined(STRATO_WL_BUILD)
     dataProtectionLogo = Theme::hidpiFileName(":/client/theme/colored/strato-data-protection-logo.png");
 #endif
 
