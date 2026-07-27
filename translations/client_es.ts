@@ -124,14 +124,10 @@
         <translation>Sincronizando %1 de %2</translation>
     </message>
     <message>
-        <source>Syncing %1 of %2  (%3 left)</source>
-        <translation>Sincronizando %1 de %2  (%3 restantes)</translation>
-    </message>
-<message>
         <source>Syncing %1 of %2 (%3 left)</source>
         <translation type="unfinished">Sicronizando %1 de %2 (quedan %3)</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>ConflictDelegate</name>
     <message>
@@ -221,18 +217,10 @@
 <context>
     <name>FileDetailsPage</name>
     <message>
-        <source>Activity</source>
-        <translation>Actividad</translation>
-    </message>
-    <message>
         <source>Dismiss</source>
         <translation type="unfinished">Descartar</translation>
     </message>
-<message>
-        <source>Sharing</source>
-        <translation>Compartir</translation>
-    </message>
-    </context>
+</context>
 <context>
     <name>FileDetailsWindow</name>
     <message>
@@ -342,7 +330,7 @@ macOS podría ignorar o demorar esta solicitud.</translation>
         <source>Copy Link</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Logo</source>
         <translation>Logo</translation>
     </message>
@@ -350,7 +338,7 @@ macOS podría ignorar o demorar esta solicitud.</translation>
         <source>Switch to your browser to connect your account</source>
         <translation>Cambiar al navegador para conectar con tu cuenta</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>FolderWizardSelectiveSync</name>
     <message>
@@ -368,17 +356,9 @@ macOS podría ignorar o demorar esta solicitud.</translation>
         <source>&amp;Choose</source>
         <translation type="unfinished" />
     </message>
-<message>
-        <source>&amp;Choose …</source>
-        <translation>&amp;Seleccionar …</translation>
-    </message>
     <message>
         <source>Add Folder Sync</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Pick a local folder on your computer to sync</source>
-        <translation>Seleccione una carpeta local en su equipo para sincronizar</translation>
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
@@ -388,7 +368,7 @@ macOS podría ignorar o demorar esta solicitud.</translation>
         <source>Step 1 of 3: Select local folder</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>FolderWizardTargetPage</name>
     <message>
@@ -399,7 +379,7 @@ macOS podría ignorar o demorar esta solicitud.</translation>
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Create folder</source>
         <translation>Crear carpeta </translation>
     </message>
@@ -416,14 +396,10 @@ macOS podría ignorar o demorar esta solicitud.</translation>
         <translation>Actualizar</translation>
     </message>
     <message>
-        <source>Select a remote destination folder</source>
-        <translation>Seleccionar una carpeta remota de destino</translation>
-    </message>
-    <message>
         <source>Step 2 of 3: Directory in your %1</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>MainWindow</name>
     <message>
@@ -659,7 +635,7 @@ Should the account be imported?</source>
         <source>Expand Memory</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Folder creation failed</source>
         <translation>Ha fallado la creación de la carpeta</translation>
     </message>
@@ -792,24 +768,12 @@ Should the account be imported?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>There are folders that were not synchronized because they are external storages: </source>
-        <translation>Hay carpetas que no se han sincronizado porque están en el almacenamiento externo:</translation>
-    </message>
-    <message>
         <source>There are folders that were not synchronized because they are too big or external storages:</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>There are folders that were not synchronized because they are too big or external storages: </source>
-        <translation>Hay carpetas que no se han sincronizado porque son demasiado grandes o están en el almacenamiento externo:</translation>
-    </message>
-    <message>
         <source>There are folders that were not synchronized because they are too big:</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>There are folders that were not synchronized because they are too big: </source>
-        <translation>Hay carpetas que no se han sincronizado porque son demasiado grandes:</translation>
     </message>
     <message>
         <source>This account supports end-to-end encryption, but it needs to be set up first.</source>
@@ -873,7 +837,7 @@ Would you like to do this now?</source>
         <source>You seem to have the Virtual Files feature enabled on this folder. At the moment, it is not possible to implicitly download virtual files that are end-to-end encrypted. To get the best experience with virtual files and end-to-end encryption, make sure the encrypted folder is marked with &quot;Make always available locally&quot;.</source>
         <translation>Parece que tiene la función de Archivos Virtuales activada en esta carpeta. Por el momento, no es posible descargar implícitamente los archivos virtuales que están cifrados de extremo a extremo. Para obtener la mejor experiencia con los archivos virtuales y el cifrado de extremo a extremo, asegúrese de que la carpeta cifrada está marcada con &quot;Hacer que esté siempre disponible localmente&quot;.</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::AccountSetupFromCommandLineJob</name>
     <message>
@@ -1450,11 +1414,11 @@ Would you like to do this now?</source>
         <source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;.</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;._STRATO</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::DataProtectionSettingsPage</name>
     <message>
@@ -1892,12 +1856,6 @@ Esto podría ser un problema con tu librería OpenSSL</translation>
         <translation>%1 está actualmente bloqueado.</translation>
     </message>
     <message>
-        <source>A folder from an external storage has been added.
-</source>
-        <translation>Una carpeta de almacenamiento externo ha sido añadida.
-</translation>
-    </message>
-    <message>
         <source>A folder from an external storage has been added.</source>
         <translation type="unfinished" />
     </message>
@@ -1922,12 +1880,6 @@ Alternatively, you can restore all deleted files by downloading them from the se
         <translation>Han sido eliminados un gran número de archivos en su carpeta local &apos;%1&apos;.
 Por favor, confirma si quiere continuar con estas eliminaciones.
 Alternativamente, puede restaurar todos los archivos borrados descargándolos del servidor.</translation>
-    </message>
-    <message>
-        <source>A new folder larger than %1 MB has been added: %2.
-</source>
-        <translation>Una carpeta mayor de %1 MB ha sido añadida: %2.
-</translation>
     </message>
     <message>
         <source>A new folder larger than %1 MB has been added: %2.</source>
@@ -2048,16 +2000,8 @@ Esto significa que el cliente de sincronización podría no subir inmediatamente
         <translation>%1 (Sincronización en pausa)</translation>
     </message>
     <message>
-        <source> (backup %1)</source>
-        <translation>(copia de seguridad %1)</translation>
-    </message>
-    <message>
         <source>(backup %1)</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source> (backup)</source>
-        <translation>(copia de seguridad)</translation>
     </message>
     <message>
         <source>(backup)</source>
@@ -2179,18 +2123,14 @@ Para usuarios avanzados: Este problema puede estar relacionado a múltiples arch
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Add Folder Sync Connection</source>
-        <translation>Añadir conexión para el directorio de sincronización</translation>
-    </message>
-    <message>
         <source>File</source>
         <translation>Archivo</translation>
     </message>
-<message>
+    <message>
         <source>Synchronize any other local folder with your %1</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::FolderStatusModel</name>
     <message>
@@ -2355,7 +2295,7 @@ Para usuarios avanzados: Este problema puede estar relacionado a múltiples arch
         <source>Choose</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Click to select a local folder to sync.</source>
         <translation>Haga clic para seleccionar una carpeta local que sincronizar.</translation>
     </message>
@@ -2375,7 +2315,7 @@ Para usuarios avanzados: Este problema puede estar relacionado a múltiples arch
         <source>Step 1 of 3: Select local folder</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::FolderWizardRemotePath</name>
     <message>
@@ -2561,10 +2501,6 @@ Cambiar a una versión anterior no es inmediatamente posible: cambiar de estable
         <translation>Ajustes generales</translation>
     </message>
     <message>
-        <source>Info</source>
-        <translation>Información</translation>
-    </message>
-    <message>
         <source>Legal Notice</source>
         <translation>Aviso Legal</translation>
     </message>
@@ -2577,7 +2513,7 @@ Cambiar a una versión anterior no es inmediatamente posible: cambiar de estable
         <source>More Information</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Move removed files to trash</source>
         <translation>Mover archivos eliminados a la papelera</translation>
     </message>
@@ -2714,7 +2650,7 @@ Cambiar a una versión anterior no es inmediatamente posible: cambiar de estable
         <source>stable</source>
         <translation>stable</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::GETFileJob</name>
     <message>
@@ -2808,10 +2744,6 @@ Cambiar a una versión anterior no es inmediatamente posible: cambiar de estable
     <message>
         <source>Add</source>
         <translation>Añadir</translation>
-    </message>
-    <message>
-        <source>Add Ignore Pattern</source>
-        <translation>Añadir patrón de ignorados</translation>
     </message>
     <message>
         <source>Add a new ignore pattern:</source>
@@ -4213,11 +4145,11 @@ Esta es un modo nuevo y experimental. Si decides usarlo, por favor, informa de c
         <source>Success</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Warning</source>
         <translation type="unfinished">Aviso</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::SettingsDialog</name>
     <message>
@@ -4530,20 +4462,8 @@ El servidor respondió con el error: %2</translation>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>This connection is NOT secure as it is not encrypted.
-</source>
-        <translation>Esta conexión NO ES SEGURA, pues no está cifrada.
-</translation>
-    </message>
-    <message>
         <source>This connection is encrypted using %1 bit %2.</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>This connection is encrypted using %1 bit %2.
-</source>
-        <translation>Esta conexión está cifrada con %1 bit %2.
-</translation>
     </message>
 </context>
 <context>
@@ -4862,11 +4782,11 @@ El servidor respondió con el error: %2</translation>
         <source>Privacy-Link</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Privacy-Link_STRATO</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::UnifiedSearchResultsListModel</name>
     <message>
@@ -5156,17 +5076,9 @@ El servidor respondió con el error: %2</translation>
         <source>&lt;b&gt;You have been logged out of your account %1 at %2. Please login again.&lt;/b&gt;</source>
         <translation type="unfinished" />
     </message>
-<message>
-        <source>You have been logged out of your account %1 at %2. Please login again.</source>
-        <translation>Ha cerrado la sesión de su cuenta %1 en %2. Por favor, inicie sesión de nuevo.</translation>
-    </message>
-    </context>
+</context>
 <context>
     <name>OCC::WelcomePage</name>
-    <message>
-        <source>Easy-to-use web mail, calendaring &amp; contacts</source>
-        <translation>Correo web, calendario y contactos fáciles de usar</translation>
-    </message>
     <message>
         <source>Form</source>
         <translation>Formulario</translation>
@@ -5182,14 +5094,6 @@ El servidor respondió con el error: %2</translation>
     <message>
         <source>Log in</source>
         <translation>Iniciar sesión</translation>
-    </message>
-    <message>
-        <source>Screensharing, online meetings &amp; web conferences</source>
-        <translation>Compartir pantalla, reuniones online y conferencias web</translation>
-    </message>
-    <message>
-        <source>Secure collaboration &amp; file exchange</source>
-        <translation>Colaboración segura e intercambio de archivos</translation>
     </message>
     <message>
         <source>Sign up with provider</source>
@@ -5233,10 +5137,6 @@ El servidor respondió con el error: %2</translation>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Si esta casilla está marcada, el contenido existente en el directorio local será eliminado para comenzar una sincronización limpia desde el servidor.&lt;/p&gt;&lt;p&gt;No marque esta casilla si el contenido local debería subirse al directorio del servidor.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Ask before syncing external storages</source>
-        <translation>Preguntar antes sincronizar almacenamientos externos</translation>
     </message>
     <message>
         <source>Ask before syncing folders larger than</source>
@@ -5297,10 +5197,6 @@ El servidor respondió con el error: %2</translation>
 </context>
 <context>
     <name>OwncloudSetupPage</name>
-    <message>
-        <source>Logo</source>
-        <translation>Logo</translation>
-    </message>
     <message>
         <source>Server address</source>
         <translation>Nombre del servidor</translation>
@@ -5532,7 +5428,7 @@ El servidor respondió con el error: %2</translation>
         <source>The directory %1 cannot be part of your sync directory. Please choose another folder.</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>The file is too big to upload. You might need to choose a smaller file or contact your server administrator for assistance.</source>
         <translation>El archivo es demasiado grande para ser cargado. Podría necesitar escoger un archivo más pequeño, o, contactar al administrador de su servidor para que le asista.</translation>
     </message>
@@ -5636,7 +5532,7 @@ El servidor respondió con el error: %2</translation>
         <source>now</source>
         <translation>ahora</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>ResolveConflictsDialog</name>
     <message numerus="yes">
@@ -5689,11 +5585,11 @@ El servidor respondió con el error: %2</translation>
         <source>Open local or team folders</source>
         <translation type="unfinished">Abrir carpetas locales o de equipo</translation>
     </message>
-<message>
+    <message>
         <source>Website</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>ShareDelegate</name>
     <message>
@@ -5732,10 +5628,6 @@ El servidor respondió con el error: %2</translation>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Edit share</source>
-        <translation>Editar recurso compartido</translation>
-    </message>
-    <message>
         <source>Enter a note for the recipient</source>
         <translation>Ingrese una nota para el destinatario</translation>
     </message>
@@ -5758,10 +5650,6 @@ El servidor respondió con el error: %2</translation>
     <message>
         <source>Set expiration date</source>
         <translation>Fijar fecha de caducidad</translation>
-    </message>
-    <message>
-        <source>Share label</source>
-        <translation>Etiqueta del recurso compartido</translation>
     </message>
     <message>
         <source>Share link copied!</source>
@@ -5946,7 +5834,7 @@ El servidor respondió con el error: %2</translation>
         <source>Account switcher and settings menu</source>
         <translation type="unfinished">Menú para cambio de cuentas y ajustes</translation>
     </message>
-<message>
+    <message>
         <source>Add account</source>
         <translation type="unfinished" />
     </message>
@@ -5982,7 +5870,7 @@ El servidor respondió con el error: %2</translation>
         <source>Settings</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>TrayWindowHeader</name>
     <message>
@@ -6008,7 +5896,7 @@ El servidor respondió con el error: %2</translation>
         <source>Open %1 in browser</source>
         <translation type="unfinished">Abrir %1 en el navegador</translation>
     </message>
-<message>
+    <message>
         <source>Open Nextcloud in browser</source>
         <translation type="unfinished" />
     </message>
@@ -6020,7 +5908,7 @@ El servidor respondió con el error: %2</translation>
         <source>Website</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>UnifiedSearchInputContainer</name>
     <message>
@@ -6077,14 +5965,6 @@ El servidor respondió con el error: %2</translation>
         <translation>Acciones de la cuenta</translation>
     </message>
     <message>
-        <source>Current account status is do not disturb</source>
-        <translation>El estado actual de la cuenta es no molestar</translation>
-    </message>
-    <message>
-        <source>Current account status is online</source>
-        <translation>El estado actual de la cuenta es en línea</translation>
-    </message>
-    <message>
         <source>Log in</source>
         <translation>Iniciar sesión</translation>
     </message>
@@ -6095,14 +5975,6 @@ El servidor respondió con el error: %2</translation>
     <message>
         <source>Remove account</source>
         <translation type="unfinished">Eliminar cuenta</translation>
-    </message>
-    <message>
-        <source>Set status</source>
-        <translation>Establecer estado</translation>
-    </message>
-    <message>
-        <source>Status message</source>
-        <translation>Mensaje de estado</translation>
     </message>
     <message>
         <source>Switch to account</source>
