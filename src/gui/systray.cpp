@@ -7,6 +7,7 @@
 #include "accountmanager.h"
 #include "systray.h"
 #include "theme.h"
+#include "whitelabeltheme.h"
 #include "config.h"
 #include "common/utility.h"
 #include "tray/svgimageprovider.h"
@@ -208,6 +209,12 @@ void Systray::setupContextMenu()
         resumeAction->setVisible(anyPaused);
         resumeAction->setEnabled(anyPaused);
     });
+
+    _contextMenu->setStyleSheet(WLTheme.fontConfigurationCss(
+        WLTheme.settingsFont(),
+        WLTheme.settingsTextSize(),
+        WLTheme.settingsTextWeight(),
+        WLTheme.menuTextColor()));
 }
 
 void Systray::destroyDialog(QQuickWindow *dialog) const
@@ -446,6 +453,10 @@ void Systray::createFileActivityDialog(const QString &localPath)
 
 void Systray::presentShareViewInTray(const QString &localPath)
 {
+    if (localPath.isEmpty()) {
+        return;
+    }
+
     const auto folder = FolderMan::instance()->folderForPath(localPath);
     if (!folder) {
         qCWarning(lcSystray) << "Could not open file details view in tray for" << localPath << "no responsible folder found";

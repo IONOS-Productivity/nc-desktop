@@ -17,6 +17,7 @@
 #include "application.h"
 #include "cocoainitializer.h"
 #include "theme.h"
+#include "whitelabeltheme.h"
 #include "common/utility.h"
 
 #if defined(BUILD_UPDATER)
@@ -32,6 +33,8 @@
 #include <QQuickWindow>
 #include <QSurfaceFormat>
 #include <QOperatingSystemVersion>
+#include "ga4/ganalytics.h"
+#include "ga4/datacollectionwrapper.h"
 
 using namespace OCC;
 
@@ -66,6 +69,8 @@ int main(int argc, char **argv)
 
     Q_INIT_RESOURCE(resources);
     Q_INIT_RESOURCE(theme);
+    Q_INIT_RESOURCE(ionos);
+    Q_INIT_RESOURCE(ionos_theme);
 
     // OpenSSL 1.1.0: No explicit initialisation or de-initialisation is necessary.
 #ifdef Q_OS_MACOS
@@ -87,6 +92,7 @@ int main(int argc, char **argv)
     if (const auto osVersion = QOperatingSystemVersion::current().version(); osVersion < QOperatingSystemVersion::Windows11.version()) {
         qmlStyle = QStringLiteral("Universal");
         widgetsStyle = QStringLiteral("Fusion");
+        #ifndef IONOS_BUILD
         if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_UNIVERSAL_THEME")) {
             // initialise theme with the light/dark mode setting from the OS
             qputenv("QT_QUICK_CONTROLS_UNIVERSAL_THEME", "System");
@@ -96,12 +102,20 @@ int main(int argc, char **argv)
             // for Windows Server 2016 to display text as expected, see #8064
             qputenv("QT_QPA_PLATFORM", "windows:nodirectwrite");
         }
+        #endif
     } else {
         qmlStyle = QStringLiteral("FluentWinUI3");
         widgetsStyle = QStringLiteral("windows11");
     }
+    QApplication::setFont(WLTheme.settingsFontDefault());
 #endif
 
+#ifdef IONOS_BUILD
+    QQuickStyle::setStyle(qmlStyle);
+    QQuickStyle::setFallbackStyle(QStringLiteral("Fusion"));
+
+    OCC::Application app(argc, argv);
+#elif
     QQuickStyle::setStyle(qmlStyle);
 
     OCC::Application app(argc, argv);
@@ -109,6 +123,7 @@ int main(int argc, char **argv)
     if (!widgetsStyle.isEmpty()) {
         QApplication::setStyle(QStyleFactory::create(widgetsStyle));
     }
+#endif
 
 #ifndef Q_OS_WIN
     signal(SIGPIPE, SIG_IGN);
@@ -208,6 +223,13 @@ int main(int argc, char **argv)
             }
         }
     }
+
+    QString clientID;
+    if (clientID.isEmpty()) {
+        clientID = QUuid::createUuid().toString();
+    }
+
+
 
     return app.exec();
 }
