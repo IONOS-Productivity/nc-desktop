@@ -11,8 +11,8 @@ import Style 1.0
 import "../../filedetails"
 import "../../tray"
 
-import com.nextcloud.desktopclient 1.0
-
+import com.strato.hidrivenext.desktopclient
+ 
 Page {
     id: root
 
@@ -22,8 +22,15 @@ Page {
 
     title: qsTr("Virtual files settings")
 
+    font.family: Style.sesOpenSansRegular 
+    font.pixelSize: Style.sesFontPixelSize 
+    font.weight: Style.sesFontBoldWeight
+    palette.base: Style.sesBackgroundColor
+    palette.windowText: Style.sesTrayFontColor
+    palette.buttonText: Style.sesTrayFontColor
+
     background: Rectangle {
-        color: palette.base
+        color: Style.sesBackgroundColor
         border.width: root.showBorder ? Style.normalBorderWidth : 0
         border.color: root.palette.dark
     }
@@ -100,8 +107,15 @@ Page {
                 }
 
                 Button {
+                    id: resetVfsButton
                     text: qsTr("Reset virtual files environment")
                     onPressed: root.controller.resetVfsForAccount(root.accountUserIdAtHost);
+
+                    background: Rectangle {
+                        color: resetVfsButton.hovered ? resetVfsButton.pressed ? Style.sesButtonPressed : Style.sesHover : Style.sesBackgroundColor
+                        border.width: 1
+                        border.color: Style.sesBorderColor
+                    }
                 }
             }
         }
