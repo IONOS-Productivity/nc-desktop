@@ -8,11 +8,13 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import Style
-import com.nextcloud.desktopclient
+import com.strato.hidrivenext.desktopclient
 
 ItemDelegate {
     id: root
 
+    leftPadding: Style.sesActivityItemDistanceToFrame
+    rightPadding: Style.sesActivityItemDistanceToFrame
     property Flickable flickable
 
     property int iconSize: Style.trayListItemIconSize
@@ -29,10 +31,24 @@ ItemDelegate {
     Accessible.name: (model.path !== "" && model.displayPath !== "") ? qsTr("Open %1 locally").arg(model.displayPath) : model.message
     Accessible.onPressAction: root.clicked()
 
+    background: Rectangle {
+        color: root.hovered ? root.down ? Style.sesWhite : Style.sesHover : Style.sesWhite
+        radius: Style.mediumRoundedButtonRadius
+    }
+
     ToolTip {
         popupType: Qt.platform.os === "windows" ? Popup.Item : Popup.Native
         visible: root.hovered && !activityContent.childHovered && model.displayLocation !== ""
-        text: qsTr("In %1").arg(model.displayLocation)
+        background: Rectangle {
+                            color: Style.sesBackgroundColor
+                            border.color: Style.sesBorderColor
+                            border.width: 1
+                            radius: 4
+        }
+        contentItem: Text {
+            text: qsTr("In %1").arg(model.displayLocation)
+            color: Style.sesTrayFontColor
+        }
     }
 
     // TODO: the current style does not support customization of this control
