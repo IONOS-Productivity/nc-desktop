@@ -49,8 +49,8 @@ struct Build: AsyncParsableCommand {
     var buildType = "RelWithDebInfo"
     
     @Option(name: [.long], help: "The application's branded name.")
-    var appName = "Nextcloud"
-    
+    var appName = "IONOS HiDrive Next"
+
     @Option(name: [.long], help: "Sparkle download URL.")
     var sparkleDownloadUrl =
     "https://github.com/sparkle-project/Sparkle/releases/download/2.6.4/Sparkle-2.6.4.tar.xz"

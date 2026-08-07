@@ -11,7 +11,7 @@ import Style 1.0
 import "../../filedetails"
 import "../../tray"
 
-import com.nextcloud.desktopclient 1.0
+import com.strato.hidrivenext.desktopclient
 
 GridLayout {
     id: root
@@ -44,11 +44,18 @@ GridLayout {
     }
 
     Button {
+        id: storageInfoButton
         Layout.row: 0
         Layout.column: 2
         Layout.alignment: Layout.AlignRight | Layout.AlignVCenter
         text: qsTr("Free up space …")
         onPressed: root.evictDialogRequested()
+        
+        background: Rectangle {
+            color: storageInfoButton.hovered ? storageInfoButton.pressed ? Style.sesButtonPressed : Style.sesHover : Style.sesBackgroundColor
+            border.width: 1
+            border.color: Style.sesBorderColor
+        }
     }
 
     ProgressBar {

@@ -6,6 +6,8 @@ cmake_policy(SET CMP0071 NEW) # Enable use of QtQuick compiler/generated code
 
 project(client)
 
+add_compile_definitions(IONOS_BUILD)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 if(APPLE)
     set(CMAKE_OSX_DEPLOYMENT_TARGET "12.0" CACHE STRING "Minimum OSX deployment version")
 endif()
@@ -15,10 +17,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED 20)
 
 include(FeatureSummary)
 
-find_program(CLANG_TIDY_EXE NAMES "clang-tidy")
-if (CLANG_TIDY_EXE)
-    set(CMAKE_CXX_CLANG_TIDY ${CLANG_TIDY_EXE} -checks=-*,modernize-use-auto,modernize-use-using,modernize-use-nodiscard,modernize-use-nullptr,modernize-use-override,cppcoreguidelines-pro-type-static-cast-downcast,modernize-use-default-member-init,cppcoreguidelines-pro-type-member-init,cppcoreguidelines-init-variables)
-endif()
+# find_program(CLANG_TIDY_EXE NAMES "clang-tidy")
+# if (CLANG_TIDY_EXE)
+#     set(CMAKE_CXX_CLANG_TIDY ${CLANG_TIDY_EXE} -checks=-*,modernize-use-auto,modernize-use-using,modernize-use-nodiscard,modernize-use-nullptr,modernize-use-override,cppcoreguidelines-pro-type-static-cast-downcast,modernize-use-default-member-init,cppcoreguidelines-pro-type-member-init,cppcoreguidelines-init-variables)
+# endif()
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     set(CMAKE_XCODE_ATTRIBUTE_ENABLE_HARDENED_RUNTIME NO)
@@ -29,26 +31,36 @@ endif()
 set(BIN_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 
 include(${CMAKE_SOURCE_DIR}/NEXTCLOUD.cmake)
+include(${CMAKE_SOURCE_DIR}/IONOS.cmake)
 
 set(QT_VERSION_MAJOR "6")
 set(REQUIRED_QT_VERSION "6.8.0")
 
 # CfAPI Shell Extensions
 set( CFAPI_SHELL_EXTENSIONS_LIB_NAME CfApiShellExtensions )
-    
-set( CFAPI_SHELLEXT_APPID_REG "{E314A650-DCA4-416E-974E-18EA37C213EA}")
-set( CFAPI_SHELLEXT_APPID_DISPLAY_NAME "${APPLICATION_NAME} CfApi Shell Extensions" )
 
-set( CFAPI_SHELLEXT_CUSTOM_STATE_HANDLER_CLASS_ID "1E62D59A-6EA4-476C-B707-4A32E88ED822" )
+if(APPLICATION_NAME STREQUAL "IONOS HiDrive Next")
+    set( CFAPI_SHELLEXT_APPID_REG "{8DA6F907-784F-4A7A-A704-83342A8C205E}")
+    set( CFAPI_SHELLEXT_CUSTOM_STATE_HANDLER_CLASS_ID "A748032D-2EBF-40A3-BDC1-94C19D28A108" )
+    set( CFAPI_SHELLEXT_THUMBNAIL_HANDLER_CLASS_ID "F8CE69E3-B804-4738-BF31-3CBD0E9A6674" )
+    set( APPLICATION_URI_HANDLER_SCHEME "ionos")
+elseif(APPLICATION_NAME STREQUAL "STRATO HiDrive Next")
+    set( CFAPI_SHELLEXT_APPID_REG "{7D9A4B29-A898-4425-8CC6-E12C45D39D78}")
+    set( CFAPI_SHELLEXT_CUSTOM_STATE_HANDLER_CLASS_ID "02D43837-7958-4DFB-9CB3-B7FB10276012" )
+    set( CFAPI_SHELLEXT_THUMBNAIL_HANDLER_CLASS_ID "57822EDA-7186-4AD6-A113-5A7471A1F917" )
+    set( APPLICATION_URI_HANDLER_SCHEME "strato")
+else()
+    set( CFAPI_SHELLEXT_APPID_REG "{E314A650-DCA4-416E-974E-18EA37C213EA}")
+    set( CFAPI_SHELLEXT_CUSTOM_STATE_HANDLER_CLASS_ID "1E62D59A-6EA4-476C-B707-4A32E88ED822" )
+    set( CFAPI_SHELLEXT_THUMBNAIL_HANDLER_CLASS_ID "6FF9B5B6-389F-444A-9FDD-A286C36EA079" )
+    set( APPLICATION_URI_HANDLER_SCHEME "nc")
+endif()
+
+set( CFAPI_SHELLEXT_APPID_DISPLAY_NAME "${APPLICATION_NAME} CfApi Shell Extensions" )
 set( CFAPI_SHELLEXT_CUSTOM_STATE_HANDLER_CLASS_ID_REG "{${CFAPI_SHELLEXT_CUSTOM_STATE_HANDLER_CLASS_ID}}" )
 set( CFAPI_SHELLEXT_CUSTOM_STATE_HANDLER_DISPLAY_NAME "${APPLICATION_NAME} Custom State Handler" )
-
-set( CFAPI_SHELLEXT_THUMBNAIL_HANDLER_CLASS_ID "6FF9B5B6-389F-444A-9FDD-A286C36EA079" )
 set( CFAPI_SHELLEXT_THUMBNAIL_HANDLER_CLASS_ID_REG "{${CFAPI_SHELLEXT_THUMBNAIL_HANDLER_CLASS_ID}}" )
 set( CFAPI_SHELLEXT_THUMBNAIL_HANDLER_DISPLAY_NAME "${APPLICATION_NAME} Thumbnail Handler" )
-
-# URI Handler Scheme for Local File Editing
-set( APPLICATION_URI_HANDLER_SCHEME "nc")
 
 # Default suffix if the theme doesn't define one
 if(NOT DEFINED APPLICATION_VIRTUALFILE_SUFFIX)
@@ -99,10 +111,6 @@ include(ECMEnableSanitizers)
 
 include(ECMCoverageOption)
 
-if(NOT CRASHREPORTER_EXECUTABLE)
-    set(CRASHREPORTER_EXECUTABLE "${APPLICATION_EXECUTABLE}_crash_reporter")
-endif()
-
 include(Warnings)
 
 if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
@@ -119,15 +127,6 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_CURRENT_BINARY_DIR}/src
 )
-
-# disable the crashreporter if libcrashreporter-qt is not available or we're building for ARM
-if( CMAKE_SYSTEM_PROCESSOR MATCHES "arm" OR NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/3rdparty/libcrashreporter-qt/CMakeLists.txt")
-    set( WITH_CRASHREPORTER OFF )
-endif()
-
-if(NOT WITH_CRASHREPORTER)
-    message(STATUS "Build of crashreporter disabled.")
-endif()
 
 include(GNUInstallDirs)
 include(DefineInstallationPaths)
@@ -238,7 +237,7 @@ if(OWNCLOUD_5XX_NO_BLACKLIST)
 endif()
 
 if(APPLE)
-  set( SOCKETAPI_TEAM_IDENTIFIER_PREFIX "" CACHE STRING "SocketApi prefix (including a following dot) that must match the codesign key's TeamIdentifier/Organizational Unit" )
+  set( SOCKETAPI_TEAM_IDENTIFIER_PREFIX "5TDLCVD243." CACHE STRING "SocketApi prefix (including a following dot) that must match the codesign key's TeamIdentifier/Organizational Unit" )
 endif()
 
 if(BUILD_CLIENT)

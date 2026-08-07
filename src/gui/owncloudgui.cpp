@@ -34,6 +34,7 @@
 #include "tray/syncstatussummary.h"
 #include "tray/unifiedsearchresultslistmodel.h"
 #include "filesystem.h"
+#include "whitelabeltheme.h"
 
 #ifdef WITH_LIBCLOUDPROVIDERS
 #include "cloudproviders/cloudprovidermanager.h"
@@ -44,6 +45,7 @@
 #include <QDir>
 #include <QMessageBox>
 #include <QSignalMapper>
+#include <whitelabeltheme.h>
 #ifdef WITH_LIBCLOUDPROVIDERS
 #include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusInterface>
@@ -68,7 +70,7 @@
 
 namespace OCC {
 
-Q_LOGGING_CATEGORY(lcOwnCloudGui, "com.nextcloud.owncloudgui")
+Q_LOGGING_CATEGORY(lcOwnCloudGui, "com.hidrivenext.owncloudgui")
 
 const char propertyAccountC[] = "oc_account";
 
@@ -85,7 +87,7 @@ ownCloudGui::ownCloudGui(Application *parent)
     _tray = Systray::instance();
     _tray->setTrayEngine(new QQmlApplicationEngine(this));
     // for the beginning, set the offline icon until the account was verified
-    _tray->setIcon(Theme::instance()->folderOfflineIcon(/*systray?*/ true));
+    _tray->setIcon(QIcon(WLTheme.syncOfflineIcon("tray")));
 
     _tray->show();
 
@@ -120,28 +122,29 @@ ownCloudGui::ownCloudGui(Application *parent)
     connect(Logger::instance(), &Logger::guiLog, this, &ownCloudGui::slotShowTrayMessage);
     connect(Logger::instance(), &Logger::guiMessage, this, &ownCloudGui::slotShowGuiMessage);
 
-    qmlRegisterType<SyncStatusSummary>("com.nextcloud.desktopclient", 1, 0, "SyncStatusSummary");
-    qmlRegisterType<EmojiModel>("com.nextcloud.desktopclient", 1, 0, "EmojiModel");
-    qmlRegisterType<UserStatusSelectorModel>("com.nextcloud.desktopclient", 1, 0, "UserStatusSelectorModel");
-    qmlRegisterType<ActivityListModel>("com.nextcloud.desktopclient", 1, 0, "ActivityListModel");
-    qmlRegisterType<FileActivityListModel>("com.nextcloud.desktopclient", 1, 0, "FileActivityListModel");
-    qmlRegisterType<SortedActivityListModel>("com.nextcloud.desktopclient", 1, 0, "SortedActivityListModel");
-    qmlRegisterType<WheelHandler>("com.nextcloud.desktopclient", 1, 0, "WheelHandler");
-    qmlRegisterType<CallStateChecker>("com.nextcloud.desktopclient", 1, 0, "CallStateChecker");
-    qmlRegisterType<Quick::DateFieldBackend>("com.nextcloud.desktopclient", 1, 0, "DateFieldBackend");
-    qmlRegisterType<FileDetails>("com.nextcloud.desktopclient", 1, 0, "FileDetails");
-    qmlRegisterType<ShareModel>("com.nextcloud.desktopclient", 1, 0, "ShareModel");
-    qmlRegisterType<ShareeModel>("com.nextcloud.desktopclient", 1, 0, "ShareeModel");
-    qmlRegisterType<SortedShareModel>("com.nextcloud.desktopclient", 1, 0, "SortedShareModel");
-    qmlRegisterType<SyncConflictsModel>("com.nextcloud.desktopclient", 1, 0, "SyncConflictsModel");
+    qmlRegisterType<SyncStatusSummary>("com.strato.hidrivenext.desktopclient", 1, 0, "SyncStatusSummary");
+    qmlRegisterType<EmojiModel>("com.strato.hidrivenext.desktopclient", 1, 0, "EmojiModel");
+    qmlRegisterType<UserStatusSelectorModel>("com.strato.hidrivenext.desktopclient", 1, 0, "UserStatusSelectorModel");
+    qmlRegisterType<ActivityListModel>("com.strato.hidrivenext.desktopclient", 1, 0, "ActivityListModel");
+    qmlRegisterType<FileActivityListModel>("com.strato.hidrivenext.desktopclient", 1, 0, "FileActivityListModel");
+    qmlRegisterType<SortedActivityListModel>("com.strato.hidrivenext.desktopclient", 1, 0, "SortedActivityListModel");
+    qmlRegisterType<WheelHandler>("com.strato.hidrivenext.desktopclient", 1, 0, "WheelHandler");
+    qmlRegisterType<CallStateChecker>("com.strato.hidrivenext.desktopclient", 1, 0, "CallStateChecker");
+    qmlRegisterType<Quick::DateFieldBackend>("com.strato.hidrivenext.desktopclient", 1, 0, "DateFieldBackend");
+    qmlRegisterType<FileDetails>("com.strato.hidrivenext.desktopclient", 1, 0, "FileDetails");
+    qmlRegisterType<ShareModel>("com.strato.hidrivenext.desktopclient", 1, 0, "ShareModel");
+    qmlRegisterType<ShareeModel>("com.strato.hidrivenext.desktopclient", 1, 0, "ShareeModel");
+    qmlRegisterType<SortedShareModel>("com.strato.hidrivenext.desktopclient", 1, 0, "SortedShareModel");
+    qmlRegisterType<SyncConflictsModel>("com.strato.hidrivenext.desktopclient", 1, 0, "SyncConflictsModel");
 
-    qmlRegisterUncreatableType<QAbstractItemModel>("com.nextcloud.desktopclient", 1, 0, "QAbstractItemModel", "QAbstractItemModel");
-    qmlRegisterUncreatableType<Activity>("com.nextcloud.desktopclient", 1, 0, "activity", "Activity");
-    qmlRegisterUncreatableType<TalkNotificationData>("com.nextcloud.desktopclient", 1, 0, "talkNotificationData", "TalkNotificationData");
-    qmlRegisterUncreatableType<UnifiedSearchResultsListModel>("com.nextcloud.desktopclient", 1, 0, "UnifiedSearchResultsListModel", "UnifiedSearchResultsListModel");
-    qmlRegisterUncreatableType<UserStatus>("com.nextcloud.desktopclient", 1, 0, "userStatus", "Access to Status enum");
-    qmlRegisterUncreatableType<Sharee>("com.nextcloud.desktopclient", 1, 0, "sharee", "Access to Type enum");
-    qmlRegisterUncreatableType<ClientSideEncryptionTokenSelector>("com.nextcloud.desktopclient", 1, 0, "ClientSideEncryptionTokenSelector", "Access to the certificate selector");
+// TODO SES-459 check casing / spelling
+    qmlRegisterUncreatableType<QAbstractItemModel>("com.strato.hidrivenext.desktopclient", 1, 0, "QAbstractItemModel", "QAbstractItemModel");
+    qmlRegisterUncreatableType<Activity>("com.strato.hidrivenext.desktopclient", 1, 0, "activity", "Activity");
+    qmlRegisterUncreatableType<TalkNotificationData>("com.strato.hidrivenext.desktopclient", 1, 0, "talkNotificationData", "TalkNotificationData");
+    qmlRegisterUncreatableType<UnifiedSearchResultsListModel>("com.strato.hidrivenext.desktopclient", 1, 0, "UnifiedSearchResultsListModel", "UnifiedSearchResultsListModel");
+    qmlRegisterUncreatableType<UserStatus>("com.strato.hidrivenext.desktopclient", 1, 0, "userStatus", "Access to Status enum");
+    qmlRegisterUncreatableType<Sharee>("com.strato.hidrivenext.desktopclient", 1, 0, "sharee", "Access to Type enum");
+    qmlRegisterUncreatableType<ClientSideEncryptionTokenSelector>("com.strato.hidrivenext.desktopclient", 1, 0, "ClientSideEncryptionTokenSelector", "Access to the certificate selector");
 
     qRegisterMetaType<ActivityListModel *>("ActivityListModel*");
     qRegisterMetaType<UnifiedSearchResultsListModel *>("UnifiedSearchResultsListModel*");
@@ -151,13 +154,14 @@ ownCloudGui::ownCloudGui(Application *parent)
     qRegisterMetaType<Sharee>("Sharee");
     qRegisterMetaType<OCC::ActivityList>("ActivityList");
 
-    qmlRegisterSingletonInstance("com.nextcloud.desktopclient", 1, 0, "UserModel", UserModel::instance());
-    qmlRegisterSingletonInstance("com.nextcloud.desktopclient", 1, 0, "UserAppsModel", UserAppsModel::instance());
-    qmlRegisterSingletonInstance("com.nextcloud.desktopclient", 1, 0, "Theme", Theme::instance());
-    qmlRegisterSingletonInstance("com.nextcloud.desktopclient", 1, 0, "Systray", Systray::instance());
+    qmlRegisterSingletonInstance("com.strato.hidrivenext.desktopclient", 1, 0, "UserModel", UserModel::instance());
+    qmlRegisterSingletonInstance("com.strato.hidrivenext.desktopclient", 1, 0, "UserAppsModel", UserAppsModel::instance());
+    qmlRegisterSingletonInstance("com.strato.hidrivenext.desktopclient", 1, 0, "Theme", Theme::instance());
+    qmlRegisterSingletonInstance("com.strato.hidrivenext.desktopclient", 1, 0, "Systray", Systray::instance());
+    qmlRegisterSingletonInstance<BaseTheme>("com.strato.hidrivenext.desktopclient", 1, 0, "WLTheme", &WLTheme);
 
 #ifdef BUILD_FILE_PROVIDER_MODULE
-    qmlRegisterSingletonInstance("com.nextcloud.desktopclient", 1, 0, "FileProviderSettingsController", Mac::FileProviderSettingsController::instance());
+    qmlRegisterSingletonInstance("com.strato.hidrivenext.desktopclient", 1, 0, "FileProviderSettingsController", Mac::FileProviderSettingsController::instance());
 #endif
 }
 
@@ -247,7 +251,7 @@ void ownCloudGui::slotSyncStateChange(Folder *folder)
         || result.status() == SyncResult::Problem
         || result.status() == SyncResult::SyncAbortRequested
         || result.status() == SyncResult::Error) {
-        Logger::instance()->enterNextLogFile(QStringLiteral("nextcloud.log"), OCC::Logger::LogType::Log);
+        Logger::instance()->enterNextLogFile(QStringLiteral("hidrivenext.log"), OCC::Logger::LogType::Log);
     }
 }
 
@@ -280,6 +284,27 @@ void ownCloudGui::slotNeedToAcceptTermsOfService(const OCC::AccountPtr &account,
         QDesktopServices::openUrl(account->url());
     }
 }
+
+#ifdef IONOS_BUILD
+static QIcon trayIconForStatus(SyncResult::Status status)
+{
+    switch (status) {
+    case SyncResult::NotYetStarted:
+    case SyncResult::SyncPrepare:
+    case SyncResult::SyncRunning:
+        return QIcon(WLTheme.syncSyncingIcon("tray"));
+    case SyncResult::SyncAbortRequested:
+    case SyncResult::Paused:
+        return QIcon(WLTheme.syncPausedIcon("tray"));
+    case SyncResult::Success:
+        return QIcon(WLTheme.syncSuccessIcon("tray"));
+    case SyncResult::Problem:
+        return QIcon(WLTheme.syncWarningIcon("tray"));
+    default:
+        return QIcon(WLTheme.syncErrorIcon("tray"));
+    }
+}
+#endif
 
 void ownCloudGui::slotComputeOverallSyncStatus()
 {
@@ -352,7 +377,11 @@ void ownCloudGui::slotComputeOverallSyncStatus()
 #endif
 
     if (!problemAccounts.empty()) {
+#ifdef IONOS_BUILD
+        _tray->setIcon(QIcon(WLTheme.syncOfflineIcon("tray")));
+#else
         _tray->setIcon(Theme::instance()->folderOfflineIcon(true));
+#endif
 #ifdef Q_OS_WIN
         // Windows has a 128-char tray tooltip length limit.
         QStringList accountNames;
@@ -377,11 +406,19 @@ void ownCloudGui::slotComputeOverallSyncStatus()
     }
 
     if (allSignedOut) {
+#ifdef IONOS_BUILD
+        _tray->setIcon(QIcon(WLTheme.syncOfflineIcon("tray")));
+#else
         _tray->setIcon(Theme::instance()->folderOfflineIcon(true));
+#endif
         _tray->setToolTip(tr("Please sign in"));
         return;
     } else if (allPaused) {
+#ifdef IONOS_BUILD
+        _tray->setIcon(QIcon(WLTheme.syncPausedIcon("tray")));
+#else
         _tray->setIcon(Theme::instance()->syncStateIcon(SyncResult::Paused, true));
+#endif
         _tray->setToolTip(tr("Account synchronization is disabled"));
         return;
     }
@@ -426,8 +463,11 @@ void ownCloudGui::slotComputeOverallSyncStatus()
         iconStatus = SyncResult::Problem;
     }
 
-    QIcon statusIcon = Theme::instance()->syncStateIcon(iconStatus, true);
-    _tray->setIcon(statusIcon);
+#ifdef IONOS_BUILD
+    _tray->setIcon(trayIconForStatus(iconStatus));
+#else
+    _tray->setIcon(Theme::instance()->syncStateIcon(iconStatus, true));
+#endif
 
     // create the tray blob message, check if we have an defined state
 #ifdef BUILD_FILE_PROVIDER_MODULE
@@ -617,6 +657,9 @@ void ownCloudGui::slotShowSettings()
 #ifdef Q_OS_MACOS
         auto *fgbg = new ForegroundBackground();
         _settingsDialog->installEventFilter(fgbg);
+#else
+        _settingsDialog->setStyleSheet(QStringLiteral("QDialog {background: %1}")
+            .arg(Theme::instance()->systemPalette()["base"].value<QColor>().name()));        
 #endif
 
         connect(_tray.data(), &Systray::hideSettingsDialog,

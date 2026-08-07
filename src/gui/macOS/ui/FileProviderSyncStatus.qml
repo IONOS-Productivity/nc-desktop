@@ -11,7 +11,7 @@ import Style 1.0
 import "../../filedetails"
 import "../../tray"
 
-import com.nextcloud.desktopclient 1.0
+import com.strato.hidrivenext.desktopclient
 
 GridLayout {
     id: root
@@ -44,9 +44,8 @@ GridLayout {
         Layout.column: 1
         Layout.columnSpan: root.syncStatus.syncing ? 2 : 1
         Layout.fillWidth: true
-        font.bold: true
-        font.pointSize: Style.headerFontPtSize
         text: root.syncStatus.syncing ? qsTr("Syncing") : qsTr("All synced!")
+        color: Style.sesTrayFontColor
     }
 
     NCProgressBar {
@@ -63,9 +62,25 @@ GridLayout {
         visible: !root.syncStatus.syncing
         hoverEnabled: true
         onClicked: root.domainSignalRequested()
-
-        ToolTip.visible: hovered
-        ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
-        ToolTip.text: qsTr("Request a sync of changes for the VFS environment.\nmacOS may ignore or delay this request.")
+        ToolTip {
+            visible: requestSyncButton.hovered
+            delay: Qt.styleHints.mousePressAndHoldInterval
+            contentItem: Text {
+                text: qsTr("Request a sync of changes for the VFS environment.\nmacOS may ignore or delay this request.")
+                color: Style.sesTrayFontColor
+                wrapMode: Text.Wrap
+            }
+            background: Rectangle {
+                color: Style.sesBackgroundColor
+                border.width: 1
+                border.color: Style.sesBorderColor
+                radius: 4
+            }
+        }
+        background: Rectangle {
+            color: requestSyncButton.hovered ? requestSyncButton.pressed ? Style.sesButtonPressed : Style.sesHover : Style.sesBackgroundColor
+            border.width: 1
+            border.color: Style.sesBorderColor
+        }
     }
 }
