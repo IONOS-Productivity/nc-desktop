@@ -373,11 +373,23 @@ Application::Application(int &argc, char **argv)
     setupLogging();
     setupTranslations();
 #ifdef IONOS_BUILD
+    // "Login_URL" is a data lookup rather than a sentence: with no translation catalog loaded,
+    // translate() hands the key itself back and we would end up using it as a server URL
+    // (e.g. "https://Login_URL"). Only override when we actually got a value.
+    // The keys are spelled out literally in both branches so that lupdate keeps extracting them.
 #ifdef STRATO_WL_BUILD
-    _theme->setOverrideServerUrl(QCoreApplication::translate("OCC::Theme", "Login_URL_STRATO"));
+    const auto loginUrlKey = QStringLiteral("Login_URL_STRATO");
+    const auto loginUrl = QCoreApplication::translate("OCC::Theme", "Login_URL_STRATO");
 #else
-    _theme->setOverrideServerUrl(QCoreApplication::translate("OCC::Theme", "Login_URL"));
+    const auto loginUrlKey = QStringLiteral("Login_URL");
+    const auto loginUrl = QCoreApplication::translate("OCC::Theme", "Login_URL");
 #endif
+    if (loginUrl != loginUrlKey) {
+        _theme->setOverrideServerUrl(loginUrl);
+    } else {
+        qCWarning(lcApplication) << "No translation found for" << loginUrlKey
+                                 << "- not overriding the server URL. Is the translation catalog missing?";
+    }
 #endif
 
     // try to migrate legacy accounts and folders from a previous client version

@@ -671,6 +671,22 @@ else()
     install(FILES ${qtbase_I18N} DESTINATION ${QM_DIR})
     file(GLOB qtkeychain_I18N ${QT_TRANSLATIONS_DIR}/qtkeychain*.qm)
     install(FILES ${qtkeychain_I18N} DESTINATION ${QM_DIR})
+
+    # The install() rules above only run on "cmake --install", so a plain build left the bundle
+    # without Contents/Resources/Translations. Application::setupTranslations() bails out when that
+    # folder is missing, which makes data lookups such as "Login_URL" fall back to their own key.
+    # Copy the catalogs into the bundle at build time so a freshly built app behaves like an installed one.
+    set(bundle_I18N ${client_I18N} ${qt_I18N} ${qtbase_I18N} ${qtkeychain_I18N})
+    if(bundle_I18N)
+        add_custom_command(TARGET nextcloud POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E make_directory
+                    "$<TARGET_BUNDLE_CONTENT_DIR:nextcloud>/Resources/Translations"
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different ${bundle_I18N}
+                    "$<TARGET_BUNDLE_CONTENT_DIR:nextcloud>/Resources/Translations"
+            COMMENT "Copying translation catalogs into the app bundle"
+            VERBATIM
+        )
+    endif()
 endif()
 
 IF(BUILD_UPDATER)
