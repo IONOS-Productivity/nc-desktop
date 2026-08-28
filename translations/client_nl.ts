@@ -579,7 +579,7 @@ Should the account be imported?</source>
 <context>
     <name>OCC::AccountSettings</name>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1531" />
+        <location filename="../src/gui/accountsettings.cpp" line="1529" />
         <source>%1 as %2</source>
         <translation>%1 als %2</translation>
     </message>
@@ -636,17 +636,17 @@ Should the account be imported?</source>
         <translation>Bevestig het verwijderen van de verbinding voor mapsynchronisatie</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1542" />
+        <location filename="../src/gui/accountsettings.cpp" line="1540" />
         <source>Connected to %1 (%2).</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1540" />
+        <location filename="../src/gui/accountsettings.cpp" line="1538" />
         <source>Connected to %1.</source>
         <translation>Verbonden met %1.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1560" />
+        <location filename="../src/gui/accountsettings.cpp" line="1558" />
         <source>Connecting to %1 …</source>
         <translation>Verbinden met %1 ...</translation>
     </message>
@@ -750,7 +750,7 @@ Should the account be imported?</source>
         <translation>End-to-end versleuteling met virtuele bestanden</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1965" />
+        <location filename="../src/gui/accountsettings.cpp" line="1963" />
         <source>End-to-end encryption has been initialized on this account with another device.&lt;br&gt;Enter the unique mnemonic to have the encrypted folders synchronize on this device as well.</source>
         <translation type="unfinished" />
     </message>
@@ -795,12 +795,12 @@ Should the account be imported?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1771" />
+        <location filename="../src/gui/accountsettings.cpp" line="1769" />
         <source>Migrate certificate to a new one</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1580" />
+        <location filename="../src/gui/accountsettings.cpp" line="1578" />
         <source>No %1 connection configured.</source>
         <translation>Geen %1 connectie geconfigureerd.</translation>
     </message>
@@ -851,32 +851,32 @@ Should the account be imported?</source>
         <translation>Synchronisatie hervatten</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1554" />
+        <location filename="../src/gui/accountsettings.cpp" line="1552" />
         <source>Server %1 is currently being redirected, or your connection is behind a captive portal.</source>
         <translation>Server %1 wordt momenteel doorgestuurd of je verbinding zit achter een &apos;captive portal&apos;.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1551" />
+        <location filename="../src/gui/accountsettings.cpp" line="1549" />
         <source>Server %1 is currently in maintenance mode.</source>
         <translation>Server %1 is momenteel in onderhoudsmodus.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1548" />
+        <location filename="../src/gui/accountsettings.cpp" line="1546" />
         <source>Server %1 is temporarily unavailable.</source>
         <translation>Server %1 is tijdelijk niet beschikbaar.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1567" />
+        <location filename="../src/gui/accountsettings.cpp" line="1565" />
         <source>Server configuration error: %1 at %2.</source>
         <translation>Serverconfiguratiefout: %1 op %2.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="2036" />
+        <location filename="../src/gui/accountsettings.cpp" line="2034" />
         <source>Set up encryption</source>
         <translation>Versleuteling instellen</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1557" />
+        <location filename="../src/gui/accountsettings.cpp" line="1555" />
         <source>Signed out from %1.</source>
         <translation>Uitgelogd van %1.</translation>
     </message>
@@ -896,7 +896,7 @@ Should the account be imported?</source>
         <translation>De map heeft een synchronisatiefout. Versleuteling van de map is mogelijk als de synchronisatie gelukt is.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1538" />
+        <location filename="../src/gui/accountsettings.cpp" line="1536" />
         <source>The server version %1 is unsupported! Proceed at your own risk.</source>
         <translation>De serverversie %1 wordt niet ondersteund! Verdergaan is op eigen risico.</translation>
     </message>
@@ -906,33 +906,33 @@ Should the account be imported?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="2028" />
+        <location filename="../src/gui/accountsettings.cpp" line="2026" />
         <source>The virtual files integration does not support end-to-end encryption yet.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1881" />
+        <location filename="../src/gui/accountsettings.cpp" line="1879" />
         <source>There are folders that have grown in size beyond %1MB: %2</source>
         <translation>Er zijn bestanden die groter zijn geworden dan %1MB: %2</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1869" />
+        <location filename="../src/gui/accountsettings.cpp" line="1867" />
         <source>There are folders that were not synchronized because they are external storages:</source>
         <translation>Er zijn mappen die niet gesynchroniseerd zijn, omdat ze op externe opslag staan:</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1870" />
+        <location filename="../src/gui/accountsettings.cpp" line="1868" />
         <source>There are folders that were not synchronized because they are too big or external storages:</source>
         <translation>Er zijn mappen die niet gesynchroniseerd zijn, omdat ze te groot zijn of op externe opslag staan:</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1868" />
+        <location filename="../src/gui/accountsettings.cpp" line="1866" />
         <source>There are folders that were not synchronized because they are too big:</source>
         <translation>Er zijn mappen die niet gesynchroniseerd zijn, omdat ze te groot zijn:</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="2027" />
-        <location filename="../src/gui/accountsettings.cpp" line="2030" />
+        <location filename="../src/gui/accountsettings.cpp" line="2025" />
+        <location filename="../src/gui/accountsettings.cpp" line="2028" />
         <source>This account supports end-to-end encryption, but it needs to be set up first.</source>
         <translation type="unfinished" />
     </message>
@@ -962,7 +962,7 @@ Dit zal alle synchronisaties, die op dit moment bezig zijn, afbreken.</translati
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1564" />
+        <location filename="../src/gui/accountsettings.cpp" line="1562" />
         <source>Unable to connect to %1.</source>
         <translation>Kan niet verbinden met %1.</translation>
     </message>
@@ -989,7 +989,7 @@ Would you like to do this now?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1575" />
+        <location filename="../src/gui/accountsettings.cpp" line="1573" />
         <source>You need to accept the terms of service at %1.</source>
         <translation type="unfinished" />
     </message>
@@ -3998,72 +3998,72 @@ Merk op dat het gebruik van logging-opdrachtregel opties deze instelling zal ove
 <context>
     <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="332" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="367" />
         <source>%1 folder &quot;%2&quot; is synced to local folder &quot;%3&quot;</source>
         <translation>%1 map &quot;%2&quot; is gesynchroniseerd naar de lokale map &quot;%3&quot;</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="353" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="796" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="388" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="831" />
         <source>%1 free space</source>
         <comment>%1 gets replaced with the size and a matching unit. Example: 3 MB or 5 GB</comment>
         <translation>%1 vrije ruimte</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="569" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="630" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="604" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="665" />
         <source>(%1)</source>
         <translation>(%1)</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="111" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="297" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="146" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="332" />
         <source>(experimental)</source>
         <translation>(experimenteel)</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="76" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="111" />
         <source>Connect</source>
         <translation>Verbinden</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="794" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="829" />
         <source>In Finder&apos;s &quot;Locations&quot; sidebar section</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="509" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="544" />
         <source>Local Sync Folder</source>
         <translation>Lokale synchronisatiemap</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="335" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="370" />
         <source>Sync the folder &quot;%1&quot;</source>
         <translation>Synchroniseer de map &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="656" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="691" />
         <source>There isn&apos;t enough free space in the local folder!</source>
         <translation>Er is niet genoeg ruimte beschikbaar in de lokale map!</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="126" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="299" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="161" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="334" />
         <source>Use &amp;virtual files instead of downloading content immediately %1</source>
         <translation>Gebruik &amp;virtuele bestanden in plaats van direct downloaden content%1</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="440" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="475" />
         <source>Virtual files are not supported at the selected location</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="291" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="326" />
         <source>Virtual files are not supported for Windows partition roots as local folder. Please choose a valid subfolder under drive letter.</source>
         <translation>Virtuele bestanden worden niet ondersteund voor Windows-partitie-hoofdmappen als lokale map. Kies een geldige submap onder de stationsletter.</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="340" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="375" />
         <source>Warning: The local folder is not empty. Pick a resolution!</source>
         <translation>Waarschuwing: De lokale map is niet leeg. Maak een keuze!</translation>
     </message>
@@ -5974,12 +5974,12 @@ Server antwoordde met fout: %2</translation>
 <context>
     <name>OCC::Theme</name>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1677" />
+        <location filename="../src/gui/accountsettings.cpp" line="1675" />
         <source>ExpandMemory-Link</source>
         <translation type="unfinished">https://wl.hidrive.com/easy/0097</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1675" />
+        <location filename="../src/gui/accountsettings.cpp" line="1673" />
         <source>ExpandMemory-Link_STRATO</source>
         <translation type="unfinished">https://static.hidrive.com/next/1045</translation>
     </message>

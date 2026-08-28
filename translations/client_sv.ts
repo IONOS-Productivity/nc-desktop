@@ -580,7 +580,7 @@ Ska kontot importeras?</translation>
 <context>
     <name>OCC::AccountSettings</name>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1531" />
+        <location filename="../src/gui/accountsettings.cpp" line="1529" />
         <source>%1 as %2</source>
         <translation>%1 som %2</translation>
     </message>
@@ -637,17 +637,17 @@ Ska kontot importeras?</translation>
         <translation>Bekräfta borttagning av synkroniseringskoppling för mapp</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1542" />
+        <location filename="../src/gui/accountsettings.cpp" line="1540" />
         <source>Connected to %1 (%2).</source>
         <translation>Ansluten till %1 (%2).</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1540" />
+        <location filename="../src/gui/accountsettings.cpp" line="1538" />
         <source>Connected to %1.</source>
         <translation>Ansluten till %1.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1560" />
+        <location filename="../src/gui/accountsettings.cpp" line="1558" />
         <source>Connecting to %1 …</source>
         <translation>Ansluter till %1 …</translation>
     </message>
@@ -751,7 +751,7 @@ Ska kontot importeras?</translation>
         <translation>ände-till-ände-kryptering med virtuella filer</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1965" />
+        <location filename="../src/gui/accountsettings.cpp" line="1963" />
         <source>End-to-end encryption has been initialized on this account with another device.&lt;br&gt;Enter the unique mnemonic to have the encrypted folders synchronize on this device as well.</source>
         <translation>Ände-till-ände-kryptering har initierats på det här kontot med en annan enhet.&lt;br&gt;Ange den unika minnesfrasen för att synkronisera de krypterade mapparna även på den här enheten.</translation>
     </message>
@@ -796,12 +796,12 @@ Ska kontot importeras?</translation>
         <translation>Bevilja åtkomst till synkroniseringsmappen</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1771" />
+        <location filename="../src/gui/accountsettings.cpp" line="1769" />
         <source>Migrate certificate to a new one</source>
         <translation>Migrera certifikat till ett nytt</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1580" />
+        <location filename="../src/gui/accountsettings.cpp" line="1578" />
         <source>No %1 connection configured.</source>
         <translation>Ingen %1 anslutning konfigurerad.</translation>
     </message>
@@ -852,32 +852,32 @@ Ska kontot importeras?</translation>
         <translation>Återuppta synkronisering</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1554" />
+        <location filename="../src/gui/accountsettings.cpp" line="1552" />
         <source>Server %1 is currently being redirected, or your connection is behind a captive portal.</source>
         <translation>Server %1 omdirigeras för närvarande, eller så ligger din anslutning bakom en inloggningsportal.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1551" />
+        <location filename="../src/gui/accountsettings.cpp" line="1549" />
         <source>Server %1 is currently in maintenance mode.</source>
         <translation>Servern %1 är för närvarande i underhållsläge.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1548" />
+        <location filename="../src/gui/accountsettings.cpp" line="1546" />
         <source>Server %1 is temporarily unavailable.</source>
         <translation>Servern %1 är för tillfället inte tillgänglig.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1567" />
+        <location filename="../src/gui/accountsettings.cpp" line="1565" />
         <source>Server configuration error: %1 at %2.</source>
         <translation>Felaktig serverkonfiguration: %1 vid %2.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="2036" />
+        <location filename="../src/gui/accountsettings.cpp" line="2034" />
         <source>Set up encryption</source>
         <translation>Aktivera kryptering</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1557" />
+        <location filename="../src/gui/accountsettings.cpp" line="1555" />
         <source>Signed out from %1.</source>
         <translation>Utloggad från %1.</translation>
     </message>
@@ -897,7 +897,7 @@ Ska kontot importeras?</translation>
         <translation>Mappen har ett synkroniseringsfel. Kryptering av denna mapp kommer att vara möjlig när den väl har synkroniserats</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1538" />
+        <location filename="../src/gui/accountsettings.cpp" line="1536" />
         <source>The server version %1 is unsupported! Proceed at your own risk.</source>
         <translation>Serverversion %1 stöds inte! Fortsätt på egen risk.</translation>
     </message>
@@ -907,33 +907,33 @@ Ska kontot importeras?</translation>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="2028" />
+        <location filename="../src/gui/accountsettings.cpp" line="2026" />
         <source>The virtual files integration does not support end-to-end encryption yet.</source>
         <translation>Integrationen av virtuella filer stöder ännu inte ände-till-ände-kryptering.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1881" />
+        <location filename="../src/gui/accountsettings.cpp" line="1879" />
         <source>There are folders that have grown in size beyond %1MB: %2</source>
         <translation>Det finns mappar som har vuxit i storlek större än %1MB: %2</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1869" />
+        <location filename="../src/gui/accountsettings.cpp" line="1867" />
         <source>There are folders that were not synchronized because they are external storages:</source>
         <translation>Det finns mappar som inte synkroniserades eftersom de är externa lagringsutrymmen:</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1870" />
+        <location filename="../src/gui/accountsettings.cpp" line="1868" />
         <source>There are folders that were not synchronized because they are too big or external storages:</source>
         <translation>Det finns mappar som inte synkroniserades eftersom de är för stora eller externa lagringsutrymmen:</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1868" />
+        <location filename="../src/gui/accountsettings.cpp" line="1866" />
         <source>There are folders that were not synchronized because they are too big:</source>
         <translation>Det finns mappar som inte synkroniserades eftersom de är för stora:</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="2027" />
-        <location filename="../src/gui/accountsettings.cpp" line="2030" />
+        <location filename="../src/gui/accountsettings.cpp" line="2025" />
+        <location filename="../src/gui/accountsettings.cpp" line="2028" />
         <source>This account supports end-to-end encryption, but it needs to be set up first.</source>
         <translation>Det här kontot stöder ände-till-ände-kryptering, men det måste konfigureras först.</translation>
     </message>
@@ -963,7 +963,7 @@ Den här åtgärden avbryter alla pågående synkroniseringar.</translation>
         <translation>För att skydda din kryptografiska identitet krypterar vi den med en minnesfras bestående av 12 ord från en ordlista. Skriv ner den och förvara den säkert. Du kommer att behöva den för att konfigurera synkronisering av krypterade mappar på dina andra enheter.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1564" />
+        <location filename="../src/gui/accountsettings.cpp" line="1562" />
         <source>Unable to connect to %1.</source>
         <translation>Kan inte ansluta till %1.</translation>
     </message>
@@ -992,7 +992,7 @@ Would you like to do this now?</source>
 Vill du konfigurera den nu?</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1575" />
+        <location filename="../src/gui/accountsettings.cpp" line="1573" />
         <source>You need to accept the terms of service at %1.</source>
         <translation>Du måste acceptera användarvillkoren på %1.</translation>
     </message>
@@ -4010,72 +4010,72 @@ Observera att om du använder kommandoradsalternativ för loggning kommer den h�
 <context>
     <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="332" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="367" />
         <source>%1 folder &quot;%2&quot; is synced to local folder &quot;%3&quot;</source>
         <translation>%1 mappen &quot;%2&quot; är synkroniserad mot den lokala mappen &quot;%3&quot;</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="353" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="796" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="388" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="831" />
         <source>%1 free space</source>
         <comment>%1 gets replaced with the size and a matching unit. Example: 3 MB or 5 GB</comment>
         <translation>%1 ledigt utrymme</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="569" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="630" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="604" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="665" />
         <source>(%1)</source>
         <translation>(%1)</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="111" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="297" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="146" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="332" />
         <source>(experimental)</source>
         <translation>(experimentell)</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="76" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="111" />
         <source>Connect</source>
         <translation>Anslut</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="794" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="829" />
         <source>In Finder&apos;s &quot;Locations&quot; sidebar section</source>
         <translation>I sidopanelens avsnitt “Platser” i Finder</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="509" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="544" />
         <source>Local Sync Folder</source>
         <translation>Lokal mapp för synkronisering</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="335" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="370" />
         <source>Sync the folder &quot;%1&quot;</source>
         <translation>Synkronisera mappen &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="656" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="691" />
         <source>There isn&apos;t enough free space in the local folder!</source>
         <translation>Det finns inte tillräckligt med ledigt utrymme i den lokala mappen!</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="126" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="299" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="161" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="334" />
         <source>Use &amp;virtual files instead of downloading content immediately %1</source>
         <translation>Använd &amp;virtuella filer istället för att ladda ner innehåll direkt %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="440" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="475" />
         <source>Virtual files are not supported at the selected location</source>
         <translation>Virtuella filer stöds inte på den valda platsen</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="291" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="326" />
         <source>Virtual files are not supported for Windows partition roots as local folder. Please choose a valid subfolder under drive letter.</source>
         <translation>Windows stödjer inte virtuella filer direkt i rotkataloger. Välj en underkatalog.</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="340" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="375" />
         <source>Warning: The local folder is not empty. Pick a resolution!</source>
         <translation>Varning: Den lokala mappen är inte tom. Välj en lösning!</translation>
     </message>
@@ -5986,12 +5986,12 @@ Servern svarade med fel: %2</translation>
 <context>
     <name>OCC::Theme</name>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1677" />
+        <location filename="../src/gui/accountsettings.cpp" line="1675" />
         <source>ExpandMemory-Link</source>
         <translation type="unfinished">https://static.hidrive.com/next/1045</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1675" />
+        <location filename="../src/gui/accountsettings.cpp" line="1673" />
         <source>ExpandMemory-Link_STRATO</source>
         <translation type="unfinished">https://static.hidrive.com/next/1044</translation>
     </message>
