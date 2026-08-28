@@ -24,10 +24,11 @@ Das Rebasedn der Translation-Branches lohnt sich eigentlich nicht, weil der next
 
 Beim Mergen eines `stable-x.y`-Branches (neue NC-Basisversion) in einen Feature-/Entwicklungs-Branch müssen die STRATO/IONOS-Übersetzungen erneut gegen die aktualisierte NC-Basis gemerged werden. Damit das nicht vergessen wird, gibt es den Hook `.githooks/post-merge`:
 
-- Läuft automatisch nach jedem lokalen `git merge`/`git pull`.
+- Läuft automatisch nach jedem lokalen `git merge`/`git pull` (`post-merge`) bzw. nach einem Merge-Commit, der Konflikte manuell aufgelöst hat (`post-commit`).
 - Erkennt anhand der Merge-Commit-Message, ob ein `stable-x.y`-Branch gemerged wurde (z.B. `Merge branch 'stable-33.0' into ...`).
-- Führt in diesem Fall automatisch `merge_translation.py all <branch>` aus (**ohne** `--auto-commit`).
-- Änderungen an `translations/client_*.ts` liegen danach ungestaged im Working Directory und müssen manuell geprüft und committet werden.
+- Führt in diesem Fall automatisch `merge_translation.py auto` aus (**ohne** `--auto-commit`).
+- Bei Erfolg werden die Änderungen an `translations/client_*.ts` automatisch gestaged (`git add`), aber nicht committet. Ein `prepare-commit-msg`-Hook (`.githooks/prepare-commit-msg`) schlägt beim nächsten `git commit` (ohne `-m`) automatisch die Message `[Git-Hook] run translations script after merge` vor - Diff vor dem Commit trotzdem prüfen (`git diff --cached` in `translations/`).
+- Meldet die Skript-Ausgabe der `merge_translation.py` das Skript einen Fehler (Exit-Code ≠ 0), wird **nichts** gestaged - dann liegen die Änderungen ungestaged im Working Directory und müssen manuell geprüft werden.
 
 **Einmalige Aktivierung pro Clone:**
 

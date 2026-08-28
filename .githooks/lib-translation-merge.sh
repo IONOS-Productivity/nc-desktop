@@ -3,7 +3,10 @@
 # Detects whether a commit message denotes a merge of a stable-* branch
 # (the NC release base) and, if so, re-runs the STRATO/IONOS translation
 # merge (translation_scripts/merge_translation.py) against it so
-# translations/client_*.ts stay in sync.
+# translations/client_*.ts stay in sync. On success, the result is staged
+# and a commit message is suggested via .githooks/prepare-commit-msg.
+
+TRANSLATION_MERGE_SUGGESTED_MSG_FILE_NAME=TRANSLATION_MERGE_SUGGESTED_MSG
 
 translation_merge_run_if_stable() {
     hook_name="$1"
@@ -48,9 +51,26 @@ translation_merge_run_if_stable() {
     if [ "$status" -ne 0 ]; then
         msg="$hook_name: translation merge script reported problems (exit $status). Review translations/ before committing."
         echo "$msg" >&2
-    else
-        msg="$hook_name: translation merge finished. Review 'git status'/'git diff' in translations/ and commit manually."
-        echo "$msg"
+        echo "$msg" >> "$log_file"
+        return 0
     fi
+
+    # Stage the result so it shows up ready-to-commit in any client. Only
+    # suggest a commit message (via prepare-commit-msg) if that staging
+    # actually produced a diff - an empty re-run shouldn't hijack the next
+    # unrelated commit's message.
+    git -C "$repo_root" add -- translations/client_*.ts
+
+    if git -C "$repo_root" diff --cached --quiet -- translations/; then
+        msg="$hook_name: translation merge finished, no changes to translations/."
+        echo "$msg"
+        echo "$msg" >> "$log_file"
+        return 0
+    fi
+
+    echo "[Git-Hook] run translations script after merge" > "$repo_root/.git/$TRANSLATION_MERGE_SUGGESTED_MSG_FILE_NAME"
+
+    msg="$hook_name: translation merge finished and staged. Suggested commit message will be pre-filled on your next commit - review 'git diff --cached' in translations/ first."
+    echo "$msg"
     echo "$msg" >> "$log_file"
 }
