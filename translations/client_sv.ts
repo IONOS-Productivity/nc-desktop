@@ -3,12 +3,141 @@
 <context>
     <name>ActivityItem</name>
     <message>
-        <location filename="../src/gui/tray/ActivityItem.qml" line="49" />
-        <source>In %1</source>
-        <translation type="unfinished" />
+        <location filename="../src/gui/wizard/browserreauthcontroller.cpp" line="131"/>
+        <source>Unable to open the Browser, please copy the link to your Browser.</source>
+        <translation>Det gick inte att öppna webbläsaren. Kopiera länken till webbläsaren.</translation>
     </message>
     <message>
-        <location filename="../src/gui/tray/ActivityItem.qml" line="31" />
+        <location filename="../src/gui/wizard/qml/AccountWizardWindow.qml" line="135"/>
+        <source>Secure connection failed</source>
+        <translation>Säker anslutning misslyckades</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AccountWizardWindow.qml" line="138"/>
+        <source>Connect to %1?</source>
+        <translation>Anslut till %1?</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AccountWizardWindow.qml" line="148"/>
+        <source>The secure connection failed. You can retry without encryption, or add a client certificate and try again.</source>
+        <translation>Den säkra anslutningen misslyckades. Du kan försöka igen utan kryptering eller lägga till ett klientcertifikat och försöka igen.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AccountWizardWindow.qml" line="149"/>
+        <source>The secure connection failed. You can add a client certificate and try again.</source>
+        <translation>Den säkra anslutningen misslyckades. Du kan lägga till ett klientcertifikat och försöka igen.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AccountWizardWindow.qml" line="170"/>
+        <location filename="../src/gui/wizard/qml/AccountWizardWindow.qml" line="248"/>
+        <location filename="../src/gui/wizard/qml/BrowserAuthFooter.qml" line="20"/>
+        <source>Cancel</source>
+        <translation>Avbryt</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AccountWizardWindow.qml" line="180"/>
+        <source>Connect without TLS</source>
+        <translation>Anslut utan TLS</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AccountWizardWindow.qml" line="192"/>
+        <source>Use client certificate</source>
+        <translation>Använd klientcertifikat</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AccountWizardWindow.qml" line="249"/>
+        <source>Back</source>
+        <translation>Tillbaka</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AccountWizardWindow.qml" line="262"/>
+        <source>Set up later</source>
+        <translation>Konfigurera senare</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AccountWizardWindow.qml" line="273"/>
+        <source>Advanced</source>
+        <translation>Avancerat</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AccountWizardWindow.qml" line="282"/>
+        <source>Sign up</source>
+        <translation>Registrera dig</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AccountWizardWindow.qml" line="292"/>
+        <source>Self-host</source>
+        <translation>Egen server</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AccountWizardWindow.qml" line="307"/>
+        <source>Proxy settings</source>
+        <translation>Proxyinställningar</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/BrowserAuthFooter.qml" line="27"/>
+        <source>Copy link</source>
+        <translation>Kopiera länk</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/BrowserAuthFooter.qml" line="37"/>
+        <source>Open</source>
+        <translation>Öppna</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AccountWizardWindow.qml" line="358"/>
+        <source>Connect</source>
+        <translation>Anslut</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AccountWizardWindow.qml" line="360"/>
+        <source>Done</source>
+        <translation>Klar</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AccountWizardWindow.qml" line="362"/>
+        <source>Log in</source>
+        <translation>Logga in</translation>
+    </message>
+</context>
+<context>
+    <name>ActivitiesWindow</name>
+    <message>
+        <location filename="../src/gui/activity/qml/ActivitiesWindow.qml" line="20"/>
+        <source>Activities</source>
+        <translation>Aktiviteter</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/activity/qml/ActivitiesWindow.qml" line="127"/>
+        <source>New activities</source>
+        <translation>Nya aktiviteter</translation>
+    </message>
+</context>
+<context>
+    <name>ActivityFileMenu</name>
+    <message>
+        <location filename="../src/gui/activity/qml/ActivityFileMenu.qml" line="25"/>
+        <source>File details</source>
+        <translation>Fildetaljer</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/activity/qml/ActivityFileMenu.qml" line="32"/>
+        <source>File actions</source>
+        <translation>Filåtgärder</translation>
+    </message>
+</context>
+<context>
+    <name>ActivityFileMenuButton</name>
+    <message>
+        <location filename="../src/gui/activity/qml/ActivityFileMenuButton.qml" line="34"/>
+        <source>Open file details</source>
+        <translation>Öppna fildetaljer</translation>
+    </message>
+</context>
+<context>
+    <name>ActivityItem</name>
+    <message>
+        <location filename="../src/gui/activity/qml/ActivityItem.qml" line="32"/>
         <source>Open %1 locally</source>
         <translation>Öppna %1 lokalt</translation>
     </message>
@@ -368,40 +497,60 @@
         <translation>Lägg till mappsynkronisering</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizardselectivesync.ui" line="53" />
-        <source>Step 3 of 3: Selektive Synchronisation</source>
-        <translation>Steg 3 av 3: Selektiv synkronisering</translation>
+        <location filename="../src/gui/GovernanceLabelsDialog.qml" line="196"/>
+        <source>Assign labels to the file to manage its sensitivity, retention, and legal hold policies.</source>
+        <translation>Tilldela etiketter till filen för att hantera policyer för känslighet, bevarande och juridisk spärr.</translation>
     </message>
 </context>
 <context>
     <name>FolderWizardSourcePage</name>
     <message>
-        <location filename="../src/gui/folderwizardsourcepage.ui" line="127" />
-        <source>&amp;Choose</source>
-        <translation>&amp;Välj</translation>
+        <location filename="../src/gui/GovernanceLabelsDialog.qml" line="214"/>
+        <source>Sensitivity labels</source>
+        <translation>Känslighetsetiketter</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizardsourcepage.ui" line="37" />
-        <source>Add Folder Sync</source>
-        <translation>Lägg till mappsynkronisering</translation>
+        <location filename="../src/gui/GovernanceLabelsDialog.qml" line="241"/>
+        <source>Retention labels</source>
+        <translation>Bevarandeetiketter</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizardsourcepage.ui" line="88" />
-        <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
-        <translation>Välj en mapp på din hårddisk som ska vara permanent ansluten till din %1. Alla filer och undermappar laddas upp och synkroniseras automatiskt.</translation>
+        <location filename="../src/gui/GovernanceLabelsDialog.qml" line="268"/>
+        <source>Legal hold labels</source>
+        <translation>Etiketter för juridisk spärr</translation>
     </message>
     <message>
-        <location filename="../src/gui/folderwizardsourcepage.ui" line="53" />
-        <source>Step 1 of 3: Select local folder</source>
-        <translation>Steg 1 av 3: Välj lokal mapp</translation>
+        <location filename="../src/gui/GovernanceLabelsDialog.qml" line="316"/>
+        <source>Reset</source>
+        <translation>Återställ</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/GovernanceLabelsDialog.qml" line="321"/>
+        <source>Apply</source>
+        <translation>Verkställ</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/GovernanceLabelsDialog.qml" line="224"/>
+        <source>Select sensitivity label</source>
+        <translation>Välj känslighetsetikett</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/GovernanceLabelsDialog.qml" line="251"/>
+        <source>Select retention label</source>
+        <translation>Välj etikett för lagringstid</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/GovernanceLabelsDialog.qml" line="277"/>
+        <source>Select legal hold label</source>
+        <translation>Välj etikett för rättsligt bevarande</translation>
     </message>
 </context>
 <context>
     <name>FolderWizardTargetPage</name>
     <message>
-        <location filename="../src/gui/folderwizardtargetpage.ui" line="37" />
-        <source>Add Folder Sync</source>
-        <translation type="unfinished">Lägg till mappsynkronisering</translation>
+        <location filename="../src/gui/localnetworkpermission.cpp" line="21"/>
+        <source>Local Network access is disabled. Enable it to connect to the server.</source>
+        <translation>Åtkomst till lokalt nätverk är inaktiverad. Aktivera den för att ansluta till servern.</translation>
     </message>
     <message>
         <location filename="../src/gui/folderwizardtargetpage.ui" line="109" />
@@ -472,37 +621,42 @@
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/tray/MainWindow.qml" line="558" />
-        <source>Send assistant question</source>
-        <translation type="unfinished" />
+        <location filename="../src/gui/common/NCContextMenuTextField.qml" line="20"/>
+        <source>Undo</source>
+        <translation>Ångra</translation>
     </message>
     <message>
-        <location filename="../src/gui/tray/MainWindow.qml" line="579" />
-        <source>Start a new assistant chat</source>
-        <translation type="unfinished" />
+        <location filename="../src/gui/common/NCContextMenuTextField.qml" line="26"/>
+        <source>Redo</source>
+        <translation>Gör om</translation>
     </message>
     <message>
-        <location filename="../src/gui/tray/MainWindow.qml" line="440" />
-        <source>Start new conversation?</source>
-        <translation type="unfinished">Starta ny konversation?</translation>
+        <location filename="../src/gui/common/NCContextMenuTextField.qml" line="34"/>
+        <source>Cut</source>
+        <translation>Klipp ut</translation>
     </message>
     <message>
-        <location filename="../src/gui/tray/MainWindow.qml" line="485" />
-        <source>This will clear the existing conversation.</source>
-        <translation type="unfinished">Detta kommer att rensa den befintliga konversationen.</translation>
+        <location filename="../src/gui/common/NCContextMenuTextField.qml" line="40"/>
+        <source>Copy</source>
+        <translation>Kopiera</translation>
     </message>
     <message>
-        <location filename="../src/gui/tray/MainWindow.qml" line="804" />
-        <source>Unified search results list</source>
-        <translation type="unfinished" />
+        <location filename="../src/gui/common/NCContextMenuTextField.qml" line="46"/>
+        <source>Paste</source>
+        <translation>Klistra in</translation>
     </message>
 </context>
 <context>
     <name>nextcloudTheme::aboutInfo()</name>
     <message>
-        <location filename="../src/libsync/theme.cpp" line="624" />
-        <source>&lt;p&gt;&lt;small&gt;Built from Git revision &lt;a href=&quot;%1&quot;&gt;%2&lt;/a&gt; on %3, %4 using Qt %5, %6&lt;/small&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;small&gt;Byggd från Git revision &lt;a href=&quot;%1&quot;&gt;%2&lt;/a&gt; den %3, %4 med Qt %5, %6&lt;/small&gt;&lt;/p&gt;</translation>
+        <location filename="../src/gui/common/NCContextMenuTextField.qml" line="52"/>
+        <source>Delete</source>
+        <translation>Ta bort</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/common/NCContextMenuTextField.qml" line="60"/>
+        <source>Select All</source>
+        <translation>Markera alla</translation>
     </message>
 </context>
 <context>
@@ -621,15 +775,15 @@ Ska kontot importeras?</translation>
         <translation>Tillgänglighet</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1059" />
-        <location filename="../src/gui/accountsettings.cpp" line="1066" />
-        <source>Bookmark Error</source>
-        <translation>Bokmärkesfel</translation>
+        <location filename="../src/gui/accountsettings.ui" line="505"/>
+        <source>If this account&apos;s files appear stuck, missing, or out of sync in Finder, reset its File Provider storage. Unsynced local changes are preserved.</source>
+        <translation>Om kontots filer verkar ha fastnat, saknas eller inte är synkroniserade i Finder, återställ dess File Provider-lagring. Osynkroniserade lokala ändringar bevaras.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="797" />
-        <source>Choose what to sync</source>
-        <translation>Välj vad som ska synkroniseras</translation>
+        <location filename="../src/gui/accountsettings.ui" line="521"/>
+        <location filename="../src/gui/accountsettings.cpp" line="2071"/>
+        <source>Reset File Provider Domain</source>
+        <translation>Återställ File Provider-domänen</translation>
     </message>
     <message>
         <location filename="../src/gui/accountsettings.cpp" line="988" />
@@ -951,21 +1105,19 @@ Den enda fördelen med att inaktivera stödet för virtuella filer är att funkt
 Den här åtgärden avbryter alla pågående synkroniseringar.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="121" />
-        <source>This will encrypt your folder and all files within it. These files will no longer be accessible without your encryption mnemonic key. 
-&lt;b&gt;This process is not reversible. Are you sure you want to proceed?&lt;/b&gt;</source>
-        <translation>Detta kommer att kryptera din mapp och alla filer den innehåller. Dessa filer kommer inte längre att vara tillgängliga utan dina krypteringsord.
-&lt;b&gt;Denna process går inte att ångra. Är du säker på att du vill fortsätta?&lt;/b&gt;</translation>
+        <location filename="../src/gui/accountsettings.cpp" line="2057"/>
+        <source>This resets the File Provider for %1 to its initial state. Use it when this account&apos;s files appear stuck, missing, or out of sync in Finder.</source>
+        <translation>Detta återställer File Provider för %1 till dess ursprungliga tillstånd. Använd detta när kontots filer verkar ha fastnat, saknas eller inte är synkroniserade i Finder.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1271" />
-        <source>To protect your Cryptographic Identity, we encrypt it with a mnemonic of 12 dictionary words. Please note it down and keep it safe. You will need it to set-up the synchronization of encrypted folders on your other devices.</source>
-        <translation>För att skydda din kryptografiska identitet krypterar vi den med en minnesfras bestående av 12 ord från en ordlista. Skriv ner den och förvara den säkert. Du kommer att behöva den för att konfigurera synkronisering av krypterade mappar på dina andra enheter.</translation>
+        <location filename="../src/gui/accountsettings.cpp" line="2061"/>
+        <source>The location will briefly disappear from and reappear in Finder. Any local changes that have not been uploaded yet are preserved and revealed in a folder in Finder.</source>
+        <translation>Platsen försvinner en kort stund från Finder och visas sedan igen. Lokala ändringar som ännu inte har laddats upp bevaras och visas i en mapp i Finder.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1564" />
-        <source>Unable to connect to %1.</source>
-        <translation>Kan inte ansluta till %1.</translation>
+        <location filename="../src/gui/accountsettings.cpp" line="2066"/>
+        <source>Reset File Provider Domain for this account?</source>
+        <translation>Återställa File Provider-domänen för det här kontot?</translation>
     </message>
     <message>
         <location filename="../src/gui/accountsettings.cpp" line="378" />
@@ -6549,9 +6701,9 @@ Servern svarade med fel: %2</translation>
         <translation>Fråga innan synkronisering av mappar större än</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="331" />
-        <source>Choose different folder</source>
-        <translation type="unfinished">Välj annan mapp</translation>
+        <location filename="../src/gui/owncloudgui.cpp" line="833"/>
+        <source>Select new location …</source>
+        <translation>Välj ny plats …</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="509" />
