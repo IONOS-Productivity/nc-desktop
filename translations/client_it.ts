@@ -383,7 +383,7 @@
     <message>
         <location filename="../src/gui/folderwizardsourcepage.ui" line="37" />
         <source>Add Folder Sync</source>
-        <translation>Aggiungi cartella di sincronizzazione</translation>
+        <translation type="unfinished">Aggiungi cartella di sincronizzazione</translation>
     </message>
     <message>
         <location filename="../src/gui/folderwizardsourcepage.ui" line="88" />

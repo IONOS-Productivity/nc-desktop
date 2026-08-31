@@ -383,7 +383,7 @@
     <message>
         <location filename="../src/gui/folderwizardsourcepage.ui" line="37" />
         <source>Add Folder Sync</source>
-        <translation>Añadir sincronización de carpetas</translation>
+        <translation type="unfinished">Añadir sincronización de carpetas</translation>
     </message>
     <message>
         <location filename="../src/gui/folderwizardsourcepage.ui" line="88" />
@@ -4970,7 +4970,7 @@ Esta es un modo nuevo y experimental. Si decides usarlo, por favor, informa de c
     <message>
         <location filename="../src/libsync/propagateremotemkdir.cpp" line="216" />
         <source>Failed to create encrypted folder.</source>
-        <translation>No se pudo crear la carpeta cifrada.</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/libsync/propagateremotemkdir.cpp" line="255" />
@@ -6050,7 +6050,7 @@ El servidor respondió con el error: %2</translation>
         <location filename="../src/libsync/theme.cpp" line="459" />
         <source>%1 Desktop Client Version %2</source>
         <comment>%1 is application name. %2 is the human version string.</comment>
-        <translation>%1 Versión del Cliente de Escritorio %2</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="642" />

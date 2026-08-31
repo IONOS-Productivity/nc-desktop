@@ -383,7 +383,7 @@
     <message>
         <location filename="../src/gui/folderwizardsourcepage.ui" line="37" />
         <source>Add Folder Sync</source>
-        <translation>Mapsynchronisatie toevoegen</translation>
+        <translation type="unfinished">Mapsynchronisatie toevoegen</translation>
     </message>
     <message>
         <location filename="../src/gui/folderwizardsourcepage.ui" line="88" />
@@ -5986,12 +5986,12 @@ Server antwoordde met fout: %2</translation>
     <message>
         <location filename="../src/gui/application.cpp" line="379" />
         <source>Login_URL</source>
-        <translation>https://storage.ionos.com</translation>
+        <translation>https://storage.ionos.co.uk</translation>
     </message>
     <message>
         <location filename="../src/gui/application.cpp" line="377" />
         <source>Login_URL_STRATO</source>
-        <translation>https://storage.ionos.com</translation>
+        <translation>https://storage.ionos.co.uk</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="400" />

@@ -4968,7 +4968,7 @@ Detta är ett nytt experimentellt läge. Om du bestämmer dig för att använda 
     <message>
         <location filename="../src/libsync/propagateremotemkdir.cpp" line="216" />
         <source>Failed to create encrypted folder.</source>
-        <translation>Det gick inte att skapa den krypterade mappen.</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/libsync/propagateremotemkdir.cpp" line="255" />
@@ -5946,7 +5946,7 @@ Servern svarade med fel: %2</translation>
     <message>
         <location filename="../src/gui/systray.cpp" line="248" />
         <source>Resume sync for all</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Återuppta synkronisering för alla</translation>
     </message>
     <message>
         <location filename="../src/gui/systray.cpp" line="234" />
@@ -5997,12 +5997,12 @@ Servern svarade med fel: %2</translation>
     <message>
         <location filename="../src/gui/application.cpp" line="379" />
         <source>Login_URL</source>
-        <translation>https://storage.ionos.com</translation>
+        <translation>https://storage.ionos.co.uk</translation>
     </message>
     <message>
         <location filename="../src/gui/application.cpp" line="377" />
         <source>Login_URL_STRATO</source>
-        <translation>https://storage.ionos.com</translation>
+        <translation>https://storage.ionos.co.uk</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="400" />
@@ -6048,7 +6048,7 @@ Servern svarade med fel: %2</translation>
         <location filename="../src/libsync/theme.cpp" line="459" />
         <source>%1 Desktop Client Version %2</source>
         <comment>%1 is application name. %2 is the human version string.</comment>
-        <translation>%1-skrivbordsklient, version %2</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="642" />

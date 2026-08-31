@@ -383,7 +383,7 @@
     <message>
         <location filename="../src/gui/folderwizardsourcepage.ui" line="37" />
         <source>Add Folder Sync</source>
-        <translation>Ajouter une synchronisation de dossiers</translation>
+        <translation type="unfinished">Ajouter une synchronisation de dossiers</translation>
     </message>
     <message>
         <location filename="../src/gui/folderwizardsourcepage.ui" line="88" />
@@ -4966,7 +4966,7 @@ Il s&apos;agit d&apos;un nouveau mode expérimental. Si vous décidez de l&apos;
     <message>
         <location filename="../src/libsync/propagateremotemkdir.cpp" line="216" />
         <source>Failed to create encrypted folder.</source>
-        <translation>Impossible de créer le dossier chiffré.</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/libsync/propagateremotemkdir.cpp" line="255" />
@@ -5933,7 +5933,7 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     <message>
         <location filename="../src/gui/systray.cpp" line="242" />
         <source>Pause sync for all</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Mettre en pause la synchronisation pour tout</translation>
     </message>
     <message>
         <location filename="../src/gui/systray.cpp" line="233" />
@@ -5944,7 +5944,7 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     <message>
         <location filename="../src/gui/systray.cpp" line="248" />
         <source>Resume sync for all</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Reprendre la synchronisation pour tout</translation>
     </message>
     <message>
         <location filename="../src/gui/systray.cpp" line="234" />
@@ -6046,7 +6046,7 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <location filename="../src/libsync/theme.cpp" line="459" />
         <source>%1 Desktop Client Version %2</source>
         <comment>%1 is application name. %2 is the human version string.</comment>
-        <translation>Client de bureau %1 version %2</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="642" />
