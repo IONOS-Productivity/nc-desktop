@@ -383,7 +383,7 @@
     <message>
         <location filename="../src/gui/folderwizardsourcepage.ui" line="37" />
         <source>Add Folder Sync</source>
-        <translation>Add Folder Sync</translation>
+        <translation type="unfinished">Add Folder Sync</translation>
     </message>
     <message>
         <location filename="../src/gui/folderwizardsourcepage.ui" line="88" />
@@ -4969,7 +4969,7 @@ This is a new, experimental mode. If you decide to use it, please report any iss
     <message>
         <location filename="../src/libsync/propagateremotemkdir.cpp" line="216" />
         <source>Failed to create encrypted folder.</source>
-        <translation>Failed to create encrypted folder.</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/libsync/propagateremotemkdir.cpp" line="255" />
@@ -6049,7 +6049,7 @@ Server replied with error: %2</translation>
         <location filename="../src/libsync/theme.cpp" line="459" />
         <source>%1 Desktop Client Version %2</source>
         <comment>%1 is application name. %2 is the human version string.</comment>
-        <translation>%1 Desktop Client Version %2</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="642" />

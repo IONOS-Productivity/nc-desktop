@@ -383,7 +383,7 @@
     <message>
         <location filename="../src/gui/folderwizardsourcepage.ui" line="37" />
         <source>Add Folder Sync</source>
-        <translation>Lägg till mappsynkronisering</translation>
+        <translation type="unfinished">Lägg till mappsynkronisering</translation>
     </message>
     <message>
         <location filename="../src/gui/folderwizardsourcepage.ui" line="88" />
@@ -484,12 +484,12 @@
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="440" />
         <source>Start new conversation?</source>
-        <translation type="unfinished">Starta ny konversation?</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="485" />
         <source>This will clear the existing conversation.</source>
-        <translation type="unfinished">Detta kommer att rensa den befintliga konversationen.</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="804" />
@@ -502,7 +502,7 @@
     <message>
         <location filename="../src/libsync/theme.cpp" line="624" />
         <source>&lt;p&gt;&lt;small&gt;Built from Git revision &lt;a href=&quot;%1&quot;&gt;%2&lt;/a&gt; on %3, %4 using Qt %5, %6&lt;/small&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;small&gt;Byggd från Git revision &lt;a href=&quot;%1&quot;&gt;%2&lt;/a&gt; den %3, %4 med Qt %5, %6&lt;/small&gt;&lt;/p&gt;</translation>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -624,12 +624,12 @@ Ska kontot importeras?</translation>
         <location filename="../src/gui/accountsettings.cpp" line="1059" />
         <location filename="../src/gui/accountsettings.cpp" line="1066" />
         <source>Bookmark Error</source>
-        <translation>Bokmärkesfel</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/gui/accountsettings.cpp" line="797" />
         <source>Choose what to sync</source>
-        <translation>Välj vad som ska synkroniseras</translation>
+        <translation type="unfinished">Välj vad som ska synkroniseras</translation>
     </message>
     <message>
         <location filename="../src/gui/accountsettings.cpp" line="988" />
@@ -954,18 +954,17 @@ Den här åtgärden avbryter alla pågående synkroniseringar.</translation>
         <location filename="../src/gui/accountsettings.cpp" line="121" />
         <source>This will encrypt your folder and all files within it. These files will no longer be accessible without your encryption mnemonic key. 
 &lt;b&gt;This process is not reversible. Are you sure you want to proceed?&lt;/b&gt;</source>
-        <translation>Detta kommer att kryptera din mapp och alla filer den innehåller. Dessa filer kommer inte längre att vara tillgängliga utan dina krypteringsord.
-&lt;b&gt;Denna process går inte att ångra. Är du säker på att du vill fortsätta?&lt;/b&gt;</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/gui/accountsettings.cpp" line="1271" />
         <source>To protect your Cryptographic Identity, we encrypt it with a mnemonic of 12 dictionary words. Please note it down and keep it safe. You will need it to set-up the synchronization of encrypted folders on your other devices.</source>
-        <translation>För att skydda din kryptografiska identitet krypterar vi den med en minnesfras bestående av 12 ord från en ordlista. Skriv ner den och förvara den säkert. Du kommer att behöva den för att konfigurera synkronisering av krypterade mappar på dina andra enheter.</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/gui/accountsettings.cpp" line="1562" />
         <source>Unable to connect to %1.</source>
-        <translation>Kan inte ansluta till %1.</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/gui/accountsettings.cpp" line="378" />
@@ -4969,7 +4968,7 @@ Detta är ett nytt experimentellt läge. Om du bestämmer dig för att använda 
     <message>
         <location filename="../src/libsync/propagateremotemkdir.cpp" line="216" />
         <source>Failed to create encrypted folder.</source>
-        <translation>Det gick inte att skapa den krypterade mappen.</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/libsync/propagateremotemkdir.cpp" line="255" />
@@ -5947,7 +5946,7 @@ Servern svarade med fel: %2</translation>
     <message>
         <location filename="../src/gui/systray.cpp" line="248" />
         <source>Resume sync for all</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Återuppta synkronisering för alla</translation>
     </message>
     <message>
         <location filename="../src/gui/systray.cpp" line="234" />
@@ -5998,12 +5997,12 @@ Servern svarade med fel: %2</translation>
     <message>
         <location filename="../src/gui/application.cpp" line="379" />
         <source>Login_URL</source>
-        <translation>https://storage.ionos.com</translation>
+        <translation>https://storage.ionos.co.uk</translation>
     </message>
     <message>
         <location filename="../src/gui/application.cpp" line="377" />
         <source>Login_URL_STRATO</source>
-        <translation>https://storage.ionos.com</translation>
+        <translation>https://storage.ionos.co.uk</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="400" />
@@ -6049,7 +6048,7 @@ Servern svarade med fel: %2</translation>
         <location filename="../src/libsync/theme.cpp" line="459" />
         <source>%1 Desktop Client Version %2</source>
         <comment>%1 is application name. %2 is the human version string.</comment>
-        <translation>%1-skrivbordsklient, version %2</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="642" />
@@ -6551,7 +6550,7 @@ Servern svarade med fel: %2</translation>
     <message>
         <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="331" />
         <source>Choose different folder</source>
-        <translation type="unfinished">Välj annan mapp</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="509" />
