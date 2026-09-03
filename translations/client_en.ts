@@ -3979,72 +3979,72 @@ Note that using any logging command line options will override this setting.</so
 <context>
     <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="336" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="371" />
         <source>%1 folder &quot;%2&quot; is synced to local folder &quot;%3&quot;</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="357" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="811" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="392" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="846" />
         <source>%1 free space</source>
         <comment>%1 gets replaced with the size and a matching unit. Example: 3 MB or 5 GB</comment>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="579" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="640" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="614" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="675" />
         <source>(%1)</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="115" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="301" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="150" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="336" />
         <source>(experimental)</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="80" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="115" />
         <source>Connect</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="809" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="844" />
         <source>In Finder&apos;s &quot;Locations&quot; sidebar section</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="519" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="554" />
         <source>Local Sync Folder</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="339" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="374" />
         <source>Sync the folder &quot;%1&quot;</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="671" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="706" />
         <source>There isn&apos;t enough free space in the local folder!</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="130" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="303" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="165" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="338" />
         <source>Use &amp;virtual files instead of downloading content immediately %1</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="444" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="479" />
         <source>Virtual files are not supported at the selected location</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="295" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="330" />
         <source>Virtual files are not supported for Windows partition roots as local folder. Please choose a valid subfolder under drive letter.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="344" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="379" />
         <source>Warning: The local folder is not empty. Pick a resolution!</source>
         <translation type="unfinished" />
     </message>
