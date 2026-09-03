@@ -19,6 +19,10 @@
 
  #include "buttonstyle.h"
 #include "account.h"
+#ifdef Q_OS_MACOS
+#include "common/utility_mac_sandbox.h"
+#endif
+#include "theme.h"
 #include "configfile.h"
 #include "creds/abstractcredentials.h"
 #include "whitelabeltheme.h"
@@ -541,6 +545,12 @@ void OwncloudAdvancedSetupPage::setRemoteFolder(const QString &remoteFolder)
 
 void OwncloudAdvancedSetupPage::slotSelectFolder()
 {
+    const auto homeDirectory =
+#ifdef Q_OS_MACOS
+        Utility::getRealHomeDirectory();
+#else
+        QDir::homePath();
+#endif
     QString dir = QFileDialog::getExistingDirectory(nullptr, tr("Local Sync Folder"), QDir::homePath());
         SyncDirValidator syncDirValidator(dir);
     if (!syncDirValidator.isValidDir()) {
@@ -679,8 +689,13 @@ void OwncloudAdvancedSetupPage::slotQuotaRetrievedWithError(QNetworkReply *reply
 qint64 OwncloudAdvancedSetupPage::availableLocalSpace() const
 {
     QString localDir = localFolder();
-    QString path = !QDir(localDir).exists() && localDir.contains(QDir::homePath()) ?
-                QDir::homePath() : localDir;
+    const auto homeDirectory =
+#ifdef Q_OS_MACOS
+        Utility::getRealHomeDirectory();
+#else
+        QDir::homePath();
+#endif
+    QString path = !QDir(localDir).exists() && localDir.contains(homeDirectory) ? homeDirectory : localDir;
     QStorageInfo storage(QDir::toNativeSeparators(path));
 
     return storage.bytesAvailable();

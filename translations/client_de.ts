@@ -1168,17 +1168,17 @@ Möchten Sie dies jetzt tun?</translation>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="79" />
         <source>An encrypted pkcs12 bundle is strongly recommended as a copy will be stored in the configuration file.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Ein verschlüsseltes pkcs12-Bundle wird dringend empfohlen, da eine Kopie in der Konfigurationsdatei gespeichert wird.</translation>
     </message>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="51" />
         <source>Browse …</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Durchsuchen …</translation>
     </message>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="35" />
         <source>Certificate &amp; Key (pkcs12):</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Zertifikat &amp; Schlüssel (pkcs12):</translation>
     </message>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="60" />
@@ -4009,72 +4009,72 @@ Beachten Sie, dass die Verwendung von Befehlszeilenoptionen für die Protokollie
 <context>
     <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="367" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="336" />
         <source>%1 folder &quot;%2&quot; is synced to local folder &quot;%3&quot;</source>
         <translation>%1 Ordner &quot;%2&quot; wird mit dem lokalen Ordner &quot;%3&quot; synchronisiert</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="388" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="831" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="357" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="811" />
         <source>%1 free space</source>
         <comment>%1 gets replaced with the size and a matching unit. Example: 3 MB or 5 GB</comment>
         <translation>%1 freier Platz</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="604" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="665" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="579" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="640" />
         <source>(%1)</source>
         <translation>(%1)</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="146" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="332" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="115" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="301" />
         <source>(experimental)</source>
         <translation>(experimentell)</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="111" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="80" />
         <source>Connect</source>
         <translation>Verbinden</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="829" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="809" />
         <source>In Finder&apos;s &quot;Locations&quot; sidebar section</source>
         <translation>In der Finder-Seitenleiste unter &quot;Orte&quot;</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="544" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="519" />
         <source>Local Sync Folder</source>
         <translation>Lokaler Ordner für die Synchronisierung</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="370" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="339" />
         <source>Sync the folder &quot;%1&quot;</source>
         <translation>Ordner &quot;%1&quot; synchronisieren</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="691" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="671" />
         <source>There isn&apos;t enough free space in the local folder!</source>
         <translation>Nicht genug freier Platz im lokalen Ordner vorhanden!</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="161" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="334" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="130" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="303" />
         <source>Use &amp;virtual files instead of downloading content immediately %1</source>
         <translation>&amp;Virtuelle Dateien verwenden, anstatt den Inhalt sofort herunterzuladen %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="475" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="444" />
         <source>Virtual files are not supported at the selected location</source>
         <translation>Virtuelle Dateien werden an dem ausgewählten Speicherort nicht unterstützt</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="326" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="295" />
         <source>Virtual files are not supported for Windows partition roots as local folder. Please choose a valid subfolder under drive letter.</source>
         <translation>Virtuelle Dateien werden für die Wurzel von Windows-Partitionen als lokaler Ordner nicht unterstützt. Bitte wählen Sie einen gültigen Unterordner unter dem Laufwerksbuchstaben.</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="375" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="344" />
         <source>Warning: The local folder is not empty. Pick a resolution!</source>
         <translation>Achtung: Der lokale Ordner ist nicht leer. Bitte wählen Sie eine entsprechende Lösung!</translation>
     </message>
@@ -4256,150 +4256,150 @@ Beachten Sie, dass die Verwendung von Befehlszeilenoptionen für die Protokollie
 <context>
     <name>OCC::OwncloudSetupWizard</name>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="729" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="738" />
         <source>&lt;font color=&quot;green&quot;&gt;&lt;b&gt;File Provider-based account %1 successfully created!&lt;/b&gt;&lt;/font&gt;</source>
         <translation type="unfinished">&lt;font color=&quot;green&quot;&gt;&lt;b&gt;Dateianbieter-basiertes Konto %1 erstellt!&lt;/b&gt;&lt;/font&gt;</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="771" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="780" />
         <source>&lt;font color=&quot;green&quot;&gt;&lt;b&gt;Local sync folder %1 successfully created!&lt;/b&gt;&lt;/font&gt;</source>
         <translation type="unfinished">&lt;font color=&quot;green&quot;&gt;&lt;b&gt;Lokaler Sync-Ordner %1 erstellt!&lt;/b&gt;&lt;/font&gt;</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="290" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="299" />
         <source>&lt;font color=&quot;green&quot;&gt;Successfully connected to %1: %2 version %3 (%4)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;</source>
         <translation type="unfinished">&lt;font color=&quot;green&quot;&gt;Erfolgreich mit  %1 verbunden: %2 Version %3 (%4)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="654" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="663" />
         <source>&lt;p&gt;&lt;font color=&quot;red&quot;&gt;Remote folder creation failed probably because the provided credentials are wrong.&lt;/font&gt;&lt;br/&gt;Please go back and check your credentials.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;p&gt;&lt;font color=&quot;red&quot;&gt;Die Erstellung des entfernten Ordners ist fehlgeschlagen, vermutlich sind die angegebenen Zugangsdaten falsch.&lt;/font&gt;&lt;br/&gt;Bitte gehen Sie zurück und überprüfen Sie Ihre Zugangsdaten.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="674" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="683" />
         <source>A sync connection from %1 to remote directory %2 was set up.</source>
         <translation type="unfinished">Eine Synchronisierungsverbindung für Ordner %1 zum entfernten Ordner %2 wurde eingerichtet.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="471" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="480" />
         <source>Access forbidden by server. To verify that you have proper access, &lt;a href=&quot;%1&quot;&gt;click here&lt;/a&gt; to access the service with your browser.</source>
         <translation type="unfinished">Zugriff durch Server verboten. Um zu überprüfen, ob Sie über den richtigen Zugriff verfügen, &lt;a href=&quot;%1&quot;&gt;klicken Sie hier&lt;/a&gt;, um mit Ihrem Browser auf den Dienst zuzugreifen.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="700" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="709" />
         <source>Cannot remove and back up the folder because the folder or a file in it is open in another program. Please close the folder or file and hit retry or cancel the setup.</source>
         <translation type="unfinished">Der Ordner kann nicht entfernt und gesichert werden, da der Ordner oder einer seiner Dateien in einem anderen Programm geöffnet ist. Bitte schließen Sie den Ordner oder die Datei und versuchen Sie es erneut oder beenden Sie die Installation.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="686" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="695" />
         <source>Connection to %1 could not be established. Please check again.</source>
         <translation type="unfinished">Die Verbindung zu %1 konnte nicht hergestellt werden. Bitte prüfen Sie die Einstellungen erneut.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="545" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="554" />
         <source>Could not create local folder %1</source>
         <translation type="unfinished">Der lokale Ordner %1 konnte nicht erstellt werden</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="537" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="546" />
         <source>Creating local sync folder %1 …</source>
         <translation type="unfinished">Lokaler Ordner %1 für die Synchronisierung wird erstellt …</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="611" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="620" />
         <source>Error: %1</source>
         <translation type="unfinished">Fehler: %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="322" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="331" />
         <source>Failed to connect to %1 at %2:&lt;br/&gt;%3</source>
         <translation type="unfinished">Die Verbindung zu %1 auf %2 konnte nicht hergestellt werden: &lt;br/&gt;%3</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="699" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="708" />
         <source>Folder rename failed</source>
         <translation type="unfinished">Ordner umbenennen fehlgeschlagen.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="320" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="329" />
         <source>Invalid URL</source>
         <translation type="unfinished">Ungültige URL</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="534" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="543" />
         <source>Local sync folder %1 already exists, setting it up for sync.&lt;br/&gt;&lt;br/&gt;</source>
         <translation type="unfinished">Lokaler Sync-Ordner %1 existiert bereits, aktiviere Synchronistation.&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="605" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="614" />
         <source>No remote folder specified!</source>
         <translation type="unfinished">Kein entfernter Ordner angegeben!</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="541" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="550" />
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="629" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="638" />
         <source>Remote folder %1 created successfully.</source>
         <translation type="unfinished">Entfernter Ordner %1 erstellt.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="659" />
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="660" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="668" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="669" />
         <source>Remote folder %1 creation failed with error &lt;tt&gt;%2&lt;/tt&gt;.</source>
         <translation type="unfinished">Entfernter Ordner %1 konnte mit folgendem Fehler nicht erstellt werden: &lt;tt&gt;%2&lt;/tt&gt;.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="679" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="688" />
         <source>Successfully connected to %1!</source>
         <translation type="unfinished">Erfolgreich mit %1 verbunden!</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="457" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="466" />
         <source>The authenticated request to the server was redirected to &quot;%1&quot;. The URL is bad, the server is misconfigured.</source>
         <translation type="unfinished">Die genehmigte Anfrage an den Server wurde an &quot;%1&quot; umgeleitet. Die URL ist fehlerhaft, der Server ist falsch konfiguriert.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="646" />
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="648" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="655" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="657" />
         <source>The folder creation resulted in HTTP error code %1</source>
         <translation type="unfinished">Das Erstellen des Ordners erzeugte den HTTP-Fehler-Code %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="644" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="653" />
         <source>The remote folder %1 already exists. Connecting it for syncing.</source>
         <translation type="unfinished">Der Ordner %1 ist auf dem Server bereits vorhanden. Verbinde zur Synchronisierung.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="650" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="659" />
         <source>The remote folder creation failed because the provided credentials are wrong!&lt;br/&gt;Please go back and check your credentials.&lt;/p&gt;</source>
         <translation type="unfinished">Die Erstellung des entfernten Ordners ist fehlgeschlagen, weil die angegebenen Zugangsdaten falsch sind. &lt;br/&gt;Bitte gehen Sie zurück und überprüfen Sie die Zugangsdaten.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="480" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="489" />
         <source>There was an invalid response to an authenticated WebDAV request</source>
         <translation type="unfinished">Es gab eine ungültige Antwort auf eine authentifizierte WebDAV-Anfrage</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="340" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="349" />
         <source>Timeout while trying to connect to %1 at %2.</source>
         <translation type="unfinished">Zeitüberschreitung beim Verbindungsversuch mit %1 unter %2.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="367" />
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="390" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="376" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="399" />
         <source>Trying to connect to %1 at %2 …</source>
         <translation type="unfinished">Verbindungsversuch mit %1 unter %2 …</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="624" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="633" />
         <source>creating folder on Nextcloud: %1</source>
         <translation type="unfinished">Erstelle Ordner auf Nextcloud: %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="543" />
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="552" />
         <source>failed.</source>
         <translation type="unfinished">fehlgeschlagen.</translation>
     </message>
@@ -5974,12 +5974,12 @@ Server antwortete mit Fehler: %2</translation>
     <message>
         <location filename="../src/gui/wizard/termsofservicecheckwidget.cpp" line="131" />
         <source>Polling</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Abfrage</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/termsofservicecheckwidget.cpp" line="125" />
         <source>Waiting for terms to be accepted</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Es wird auf die Bestätigung der Nutzungsbedingungen gewartet</translation>
     </message>
 </context>
 <context>
@@ -7272,22 +7272,22 @@ Server antwortete mit Fehler: %2</translation>
     <message>
         <location filename="../src/gui/tray/SyncStatus.qml" line="125" />
         <source>Open browser</source>
-        <translation>Browser öffnen</translation>
+        <translation type="unfinished">Browser öffnen</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/SyncStatus.qml" line="136" />
         <source>Open settings</source>
-        <translation>Einstellungen öffnen</translation>
+        <translation type="unfinished">Einstellungen öffnen</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/SyncStatus.qml" line="112" />
         <source>Resolve conflicts</source>
-        <translation>Konflikte lösen</translation>
+        <translation type="unfinished">Konflikte lösen</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/SyncStatus.qml" line="95" />
         <source>Sync now</source>
-        <translation>Jetzt synchronisieren</translation>
+        <translation type="unfinished">Jetzt synchronisieren</translation>
     </message>
 </context>
 <context>
