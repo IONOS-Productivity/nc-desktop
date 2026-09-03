@@ -8096,6 +8096,9 @@ Tai yra naujas, eksperimentinis režimas. Jei nuspręsite jį naudoti, prašome 
         <source>Select a certificate</source>
         <translation>Pasirinkti sertifikatą</translation>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
         <location filename="../src/gui/addcertificatedialog.cpp" line="33"/>
         <source>Certificate files (*.p12 *.pfx)</source>

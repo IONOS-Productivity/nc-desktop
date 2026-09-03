@@ -39,7 +39,7 @@
     <?define UpgradeCode = "@WIN_MSI_UPGRADE_CODE@" ?>
 
     <!-- UI resources -->
-    <?define UIBannerBmp = "banner.bmp" ?>
-    <?define UIDialogBmp = "dialog.bmp" ?>
+    <?define UIBannerBmp = "banner_2.bmp" ?>
+    <?define UIDialogBmp = "@WIN_MSI_UI_DIALOG_BMP@" ?>
 
 </Include>

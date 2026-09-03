@@ -9,7 +9,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import Style
 import Qt5Compat.GraphicalEffects
-import com.nextcloud.desktopclient
+import com.strato.hidrivenext.desktopclient
 
 RowLayout {
     id: root
@@ -33,12 +33,12 @@ RowLayout {
     Item {
         id: thumbnailItem
 
-        readonly property int imageWidth: width * (1 - Style.thumbnailImageSizeReduction)
-        readonly property int imageHeight: height * (1 - Style.thumbnailImageSizeReduction)
+        readonly property int imageWidth: Style.sesIconSize
+        readonly property int imageHeight: Style.sesIconSize
         readonly property int thumbnailRadius: model.thumbnail && model.thumbnail.isUserAvatar ? width / 2 : 3
 
-        implicitWidth: root.iconSize
-        implicitHeight: model.thumbnail && model.thumbnail.isMimeTypeIcon ? root.iconSize * 0.9 : root.iconSize
+        implicitWidth: Style.sesIconSize
+        implicitHeight: Style.sesIconSize
 
         Loader {
             id: thumbnailImageLoader
@@ -52,8 +52,8 @@ RowLayout {
 
                 Image {
                     id: thumbnailImage
-                    width: thumbnailItem.imageWidth
-                    height: thumbnailItem.imageHeight
+                    width: Style.sesIconSize
+                    height: Style.sesIconSize
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.left: parent.left
                     cache: true
@@ -85,8 +85,9 @@ RowLayout {
 
         Image {
             id: activityIcon
-            width: model.thumbnail !== undefined ? parent.width * 0.4 : thumbnailItem.imageWidth
-            height: model.thumbnail !== undefined ? width : width * 0.9
+
+            width: model.thumbnail !== undefined ? Style.sesIconSize * 0.6 : Style.sesIconSize
+            height: model.thumbnail !== undefined ? Style.sesIconSize * 0.6 : Style.sesIconSize
 
             // Prevent bad access into unloaded item properties
             readonly property int thumbnailPaintedWidth: thumbnailImageLoader.item ? thumbnailImageLoader.item.paintedWidth : 0
@@ -123,8 +124,8 @@ RowLayout {
 
         Layout.fillHeight: true
         Layout.fillWidth: true
-        Layout.maximumWidth: root.width - Style.standardSpacing - root.iconSize
-        implicitWidth: root.width - Style.standardSpacing - root.iconSize
+        Layout.maximumWidth: root.width - Style.standardSpacing - root.iconSize + Style.sesActivityItemWidthModifier
+        implicitWidth: root.width - Style.standardSpacing - root.iconSize + Style.sesActivityItemWidthModifier
 
         spacing: Style.smallSpacing
 
@@ -141,7 +142,6 @@ RowLayout {
                 elide: Text.ElideRight
                 wrapMode: Text.Wrap
                 maximumLineCount: 2
-                font.pixelSize: Style.topLinePixelSize
                 visible: text !== ""
                 color: root.adaptiveTextColor
             }
@@ -158,7 +158,8 @@ RowLayout {
                 height: (text === "") ? 0 : implicitHeight
 
                 text: root.activityData.dateTime
-                font.pixelSize: Style.subLinePixelSize
+                font.family: Style.sesOpenSansRegular
+                font.pixelSize: Style.sesFontHintPixelSize
                 visible: text !== ""
                 color: root.adaptiveTextColor
             }
@@ -167,13 +168,21 @@ RowLayout {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 spacing: Style.extraSmallSpacing
 
-                Button {
-                    id: fileDetailsButton
+                IconButton {
+                    id: fileDetailsButton   
+                 
+                    property bool isHovered: fileDetailsButton.hovered || fileDetailsButton.visualFocus
+                    property bool isActive: fileDetailsButton.pressed
+                    
+                    Layout.preferredWidth: Style.dismissButtonSize
+                    Layout.preferredHeight: Style.dismissButtonSize
+                    Layout.alignment: Qt.AlignTop | Qt.AlignRight
 
                     width: Style.activityListButtonWidth
                     height: Style.activityListButtonHeight
-
-                    icon.source: "image://svgimage-custom-color/more.svg/" + palette.buttonText
+                    iconSource: Style.sesMore
+                    iconSourceHovered: Style.sesMoreHover
+                    
                     icon.width: Style.activityListButtonIconSize
                     icon.height: Style.activityListButtonIconSize
 
@@ -181,9 +190,22 @@ RowLayout {
                         popupType: Qt.platform.os === "windows" ? Popup.Item : Qt.platform.os === "windows" ? Popup.Item : Popup.Native
                         text: qsTr("Open file details")
                         visible: parent.hovered
+                        background: Rectangle {
+                            color: Style.sesBackgroundColor
+                            border.color: Style.sesBorderColor
+                            border.width: 1
+                            radius: 4
+                        }
+                        contentItem: Text {
+                            text: qsTr("Open file details")
+                            color: Style.sesTrayFontColor
+                            font.family: Style.sesOpenSansRegular
+                        }
                     }
 
-                    display: Button.IconOnly
+                    leftPadding: 0
+                    rightPadding: 0
+
                     visible: model.showFileDetails
                     onClicked: fileMoreButtonMenu.visible ? fileMoreButtonMenu.close() : fileMoreButtonMenu.popup()
 
@@ -191,27 +213,89 @@ RowLayout {
                         id: fileMoreButtonMenu
                         closePolicy: Menu.CloseOnPressOutsideParent | Menu.CloseOnEscape
 
-                        MenuItem {
-                            height: visible ? implicitHeight : 0
-                            text: qsTr("File details")
-                            font.pixelSize: Style.topLinePixelSize
-                            hoverEnabled: true
-                            onClicked: Systray.presentShareViewInTray(model.openablePath)
+                        background: Rectangle {
+                            radius: Style.sesCornerRadius
+                            color: Style.sesBackgroundColor
+                            border.color: Style.sesBorderColor
                         }
 
                         MenuItem {
+                            id: fileDetailsMenuItem
+
+                            property bool isHovered: fileDetailsMenuItem.hovered || fileDetailsMenuItem.visualFocus
+                            property bool isActive: fileDetailsMenuItem.pressed
+
+                            height: visible ? implicitHeight : 0
+                            text: qsTr("File details")
+                            font.pixelSize: Style.topLinePixelSize
+                            palette.text: Style.sesTrayFontColor
+                            leftPadding: Style.sesMediumMargin
+                            topPadding: Style.sesAccountMenuItemPadding
+                            bottomPadding: Style.sesAccountMenuItemPadding
+                            hoverEnabled: true
+                            onClicked: Systray.presentShareViewInTray(model.openablePath)
+
+                            Component.onCompleted: {
+                                if (contentItem && contentItem.hasOwnProperty("color")) {
+                                    contentItem.color = Qt.binding(function() { return fileDetailsMenuItem.palette.text })
+                                }
+                            }
+
+                            background: Item {
+                                height: parent.height
+                                width: parent.menu.width
+                                Rectangle {
+                                    radius: 0
+                                    anchors.fill: parent
+                                    anchors.margins: 1
+                                    color: fileDetailsMenuItem.isActive ? Style.sesButtonPressed :
+                                           fileDetailsMenuItem.isHovered ? Style.sesAccountMenuHover : "transparent"
+                                }
+                            }
+                        }
+
+                        MenuItem {
+                            id: fileActionsMenuItem
+
+                            property bool isHovered: fileActionsMenuItem.hovered || fileActionsMenuItem.visualFocus
+                            property bool isActive: fileActionsMenuItem.pressed
+
                             visible: model.serverHasIntegration
                             height: visible ? implicitHeight : 0
                             text: qsTr("File actions")
                             font.pixelSize: Style.topLinePixelSize
+                            palette.text: Style.sesTrayFontColor
+                            leftPadding: Style.sesMediumMargin
+                            topPadding: Style.sesAccountMenuItemPadding
+                            bottomPadding: Style.sesAccountMenuItemPadding
                             hoverEnabled: true
                             onClicked: Systray.presentFileActionsViewInSystray(model.openablePath)
+
+                            Component.onCompleted: {
+                                if (contentItem && contentItem.hasOwnProperty("color")) {
+                                    contentItem.color = Qt.binding(function() { return fileActionsMenuItem.palette.text })
+                                }
+                            }
+
+                            background: Item {
+                                height: parent.height
+                                width: parent.menu.width
+                                Rectangle {
+                                    radius: 0
+                                    anchors.fill: parent
+                                    anchors.margins: 1
+                                    color: fileActionsMenuItem.isActive ? Style.sesButtonPressed :
+                                           fileActionsMenuItem.isHovered ? Style.sesAccountMenuHover : "transparent"
+                                }
+                            }
                         }
                     }
                 }
 
-                Button {
+                IconButton {
                     id: dismissActionButton
+
+                    customHoverEnabled: false
 
                     width: Style.activityListButtonWidth
                     height: Style.activityListButtonHeight
@@ -226,6 +310,12 @@ RowLayout {
                         popupType: Qt.platform.os === "windows" ? Popup.Item : Qt.platform.os === "windows" ? Popup.Item : Popup.Native
                         text: qsTr("Dismiss")
                         visible: parent.hovered
+                        background: Rectangle {
+                            color: Style.sesBackgroundColor
+                            border.color: Style.sesBorderColor
+                            border.width: 1
+                            radius: 4
+                        }
                     }
 
                     visible: root.showDismissButton
@@ -253,8 +343,9 @@ RowLayout {
                 height: (text === "") ? 0 : implicitHeight
                 elide: Text.ElideRight
                 wrapMode: Text.Wrap
-                maximumLineCount: 2
-                font.pixelSize: Style.subLinePixelSize
+                maximumLineCount: 10
+                font.family: Style.sesOpenSansRegular
+                font.pixelSize: Style.sesFontHintPixelSize
                 visible: text !== ""
                 color: root.adaptiveTextColor
             }
@@ -275,9 +366,8 @@ RowLayout {
                 elide: Text.ElideRight
                 wrapMode: Text.Wrap
                 maximumLineCount: 2
-                font.pixelSize: Style.topLinePixelSize
+                color: Style.sesTrayFontColor
                 visible: text !== ""
-                color: root.adaptiveTextColor
             }
 
             ActivityItemActions {
@@ -297,7 +387,7 @@ RowLayout {
 
                 maxActionButtons: activityModel.maxActionButtons
 
-                onTriggerAction: activityModel.slotTriggerAction(activityData.activityIndex, actionIndex)
+                onTriggerAction: (actionIndex) => activityModel.slotTriggerAction(activityData.activityIndex, actionIndex)
 
                 onShowReplyField: isTalkReplyOptionVisible = true
                 talkReplyButtonVisible: root.activityData.messageSent === "" && !isTalkReplyOptionVisible

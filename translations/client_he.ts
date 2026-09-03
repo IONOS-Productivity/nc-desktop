@@ -7981,6 +7981,9 @@ This is a new, experimental mode. If you decide to use it, please report any iss
         <source>Virtual files settings</source>
         <translation type="unfinished"/>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
         <location filename="../src/gui/macOS/ui/FileProviderSettings.qml" line="52"/>
         <source>Virtual files appear like regular files, but they do not use local storage space. The content downloads automatically when you open the file. Virtual files and classic sync can not be used at the same time.</source>
@@ -8135,6 +8138,9 @@ This is a new, experimental mode. If you decide to use it, please report any iss
         <source>Warning: The local folder is not empty. Pick a resolution!</source>
         <translation type="unfinished"/>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudConnectionMethodDialog</name>
     <message>
         <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="339"/>
         <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="653"/>
@@ -8147,6 +8153,9 @@ This is a new, experimental mode. If you decide to use it, please report any iss
         <source>Virtual files are not supported at the selected location</source>
         <translation type="unfinished"/>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudHttpCredsPage</name>
     <message>
         <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="490"/>
         <source>Local Sync Folder</source>

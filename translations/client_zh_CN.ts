@@ -633,7 +633,7 @@
     <message>
         <location filename="../src/gui/folderwizardsourcepage.ui" line="48"/>
         <source>&amp;Choose …</source>
-        <translation>选择(&amp;C)…</translation>
+        <translation>&amp;选择…</translation>
     </message>
 </context>
 <context>
@@ -6692,7 +6692,7 @@ Server replied with error: %2</source>
     <message>
         <location filename="../src/gui/wizard/qml/ProxySettingsDialog.qml" line="191"/>
         <source>Note: proxy settings have no effects for accounts on localhost</source>
-        <translation>注意：代理设置对本地主机上的账号没有影响</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/gui/wizard/qml/ProxySettingsDialog.qml" line="208"/>
@@ -8091,6 +8091,9 @@ This is a new, experimental mode. If you decide to use it, please report any iss
         <source>Select a certificate</source>
         <translation>选择证书</translation>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
         <location filename="../src/gui/addcertificatedialog.cpp" line="33"/>
         <source>Certificate files (*.p12 *.pfx)</source>

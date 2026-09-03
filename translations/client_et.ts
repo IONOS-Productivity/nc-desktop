@@ -8094,6 +8094,9 @@ Tegemist on uue ja katseise võimalusega. Kui otsustad seda kasutada, siis palun
         <source>Select a certificate</source>
         <translation>Vali sertifikaat</translation>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
         <location filename="../src/gui/addcertificatedialog.cpp" line="33"/>
         <source>Certificate files (*.p12 *.pfx)</source>

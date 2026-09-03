@@ -170,6 +170,7 @@ import OSLog
         }
 
         let progress = Progress()
+        
         Task {
             progress.totalUnitCount = 1
             if let item = await Item.storedItem(identifier: identifier, account: ncAccount, remoteInterface: ncKit, dbManager: dbManager, log: log), item.metadata.deleted == false {

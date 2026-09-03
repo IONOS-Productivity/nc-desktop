@@ -8029,6 +8029,9 @@ This is a new, experimental mode. If you decide to use it, please report any iss
         <source>Certificate &amp; Key (pkcs12):</source>
         <translation type="unfinished"/>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="51"/>
         <source>Browse …</source>
@@ -8127,6 +8130,9 @@ This is a new, experimental mode. If you decide to use it, please report any iss
         <source>%1 folder &quot;%2&quot; is synced to local folder &quot;%3&quot;</source>
         <translation type="unfinished"/>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudConnectionMethodDialog</name>
     <message>
         <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="321"/>
         <source>Sync the folder &quot;%1&quot;</source>

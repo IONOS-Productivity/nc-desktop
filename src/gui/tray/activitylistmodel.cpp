@@ -19,6 +19,8 @@
 #include "systray.h"
 #include "common/utility.h"
 
+#include "whitelabeltheme.h"
+
 #include <QtCore>
 #include <QAbstractListModel>
 #include <QDesktopServices>
@@ -224,17 +226,19 @@ QVariant ActivityListModel::data(const QModelIndex &index, int role) const
     };
 
     const auto generateIconPath = [&]() {
-        auto colorIconPath = QStringLiteral("image://svgimage-custom-color/%1");
+        auto colorIconPath = QStringLiteral("qrc:///client/theme/colored/");
         if (activity._type == Activity::NotificationType && !activity._talkNotificationData.userAvatar.isEmpty()) {
             return QStringLiteral("image://svgimage-custom-color/talk-bordered.svg");
         } else if (activity._type == Activity::SyncResultType) {
-            return colorIconPath.arg("error.svg");
+            colorIconPath = WLTheme.syncSuccessIcon();
+            return colorIconPath;
         } else if (activity._type == Activity::SyncFileItemType) {
             if (activity._syncFileItemStatus == SyncFileItem::NormalError
                 || activity._syncFileItemStatus == SyncFileItem::FatalError
                 || activity._syncFileItemStatus == SyncFileItem::DetailError
                 || activity._syncFileItemStatus == SyncFileItem::BlacklistedError) {
-                return colorIconPath.arg("error.svg");
+                colorIconPath = WLTheme.syncErrorIcon();
+                return colorIconPath;
             } else if (activity._syncFileItemStatus == SyncFileItem::SoftError
                 || activity._syncFileItemStatus == SyncFileItem::Conflict
                 || activity._syncFileItemStatus == SyncFileItem::Restoration
@@ -242,20 +246,19 @@ QVariant ActivityListModel::data(const QModelIndex &index, int role) const
                 || activity._syncFileItemStatus == SyncFileItem::FileNameInvalid
                 || activity._syncFileItemStatus == SyncFileItem::FileNameInvalidOnServer
                 || activity._syncFileItemStatus == SyncFileItem::FileNameClash) {
-                return colorIconPath.arg("warning.svg");
+                colorIconPath = WLTheme.syncWarningIcon();
+                return colorIconPath;
             } else if (activity._syncFileItemStatus == SyncFileItem::FileIgnored) {
-                return colorIconPath.arg("info.svg");
+                colorIconPath = WLTheme.infoIcon();
+                return colorIconPath;
             } else {
                 // File sync successful
                 if (activity._fileAction == "file_created") {
-                    return activity._previews.empty() ? colorIconPath.arg("add.svg")
-                                                      : colorIconPath.arg("add-bordered.svg");
+                    return WLTheme.coloredIcon(QStringLiteral("ses-darkPlus.svg"), WLTheme.iconDarkColor());
                 } else if (activity._fileAction == "file_deleted") {
-                    return activity._previews.empty() ? colorIconPath.arg("delete.svg")
-                                                      : colorIconPath.arg("delete-bordered.svg");
+                    return WLTheme.coloredIcon(QStringLiteral("ses-activityDelete.svg"), WLTheme.iconDarkColor());
                 } else {
-                    return activity._previews.empty() ? colorIconPath.arg("change.svg")
-                                                      : colorIconPath.arg("change-bordered.svg");
+                    return WLTheme.coloredIcon(QStringLiteral("ses-refresh.svg"), WLTheme.iconDarkColor());
                 }
             }
         } else {

@@ -11,7 +11,7 @@ import Style 1.0
 import "../../filedetails"
 import "../../tray"
 
-import com.nextcloud.desktopclient 1.0
+import com.strato.hidrivenext.desktopclient
 
 Item {
     id: root
@@ -87,6 +87,11 @@ Item {
 
             text: qsTr("Delete")
             onClicked: root.evictItem(root.identifier, root.domainIdentifier)
+            background: Rectangle {
+                color: deleteButton.hovered ? deleteButton.pressed ? Style.sesButtonPressed : Style.sesHover : Style.sesBackgroundColor
+                border.width: 1
+                border.color: Style.sesBorderColor
+            }
         }
     }
 }

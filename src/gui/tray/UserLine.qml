@@ -10,62 +10,57 @@ import QtQuick.Layouts
 
 // Custom qml modules are in /theme (and included by resources.qrc)
 import Style
-import com.nextcloud.desktopclient
+import com.strato.hidrivenext.desktopclient
 
 AbstractButton {
     id: userLine
 
+    property bool isHovered: userLine.hovered || userLine.visualFocus
+    property bool isActive: userLine.pressed
+
+    readonly property color statusItemColor: {
+        if (!userLine.parent)
+            return Style.sesTrayFontColor;
+        if (!userLine.parent.enabled)
+            return userLine.parent.palette.mid;
+        if ((userLine.parent.highlighted || userLine.parent.down) && Qt.platform.os !== "windows")
+            return userLine.parent.palette.highlightedText;
+        return userLine.parent.palette.text;
+    }
+
     signal showUserStatusSelector(int id)
     signal showUserStatusMessageSelector(int id)
+    signal requestCloseAccountMenu()
 
     property color parentBackgroundColor: userLine.palette.base
 
     Accessible.role: Accessible.MenuItem
     Accessible.name: qsTr("Switch to account") + " " + model.name
 
-    height: Style.trayWindowHeaderHeight
+    height: Style.sesAccountMenuHeight
+
+    leftPadding: Style.sesMediumMargin
+    topPadding: Style.sesSmallMargin
+    bottomPadding: Style.sesSmallMargin
+
+    background: Rectangle {
+        radius: 0
+        anchors.fill: parent
+        anchors.margins: 1
+        color: userLine.isHovered && !userMoreButton.isHovered ? Style.sesAccountMenuHover : "transparent"
+    }
 
     contentItem: RowLayout {
         id: userLineLayout
-        spacing: Style.userLineSpacing
+        spacing: Style.sesSmallMargin
 
         Image {
             id: accountAvatar
-            Layout.leftMargin: Style.accountIconsMenuMargin
             verticalAlignment: Qt.AlignCenter
             cache: false
-            source: model.avatar !== "" ? model.avatar : Style.darkMode ? "image://avatars/fallbackWhite" : "image://avatars/fallbackBlack"
-            Layout.preferredHeight: Style.accountAvatarSize
-            Layout.preferredWidth: Style.accountAvatarSize
-
-            Rectangle {
-                id: accountStatusIndicatorBackground
-                visible: model.isConnected && model.serverHasUserStatus
-                width: accountStatusIndicator.sourceSize.width + Style.trayFolderStatusIndicatorSizeOffset
-                height: width
-                readonly property bool isHighlighted: userLine.parent && (userLine.parent.highlighted || userLine.parent.down)
-                readonly property color menuBaseColor: Style.colorWithoutTransparency(
-                    userLine.parent && userLine.parent.palette ? userLine.parent.palette.base : userLine.parentBackgroundColor)
-                readonly property color menuHighlightColor: Style.colorWithoutTransparency(
-                    userLine.parent && userLine.parent.palette ? userLine.parent.palette.highlight : userLine.palette.highlight)
-                color: (isHighlighted && Qt.platform.os !== "windows") ? menuHighlightColor : menuBaseColor
-                anchors.bottom: accountAvatar.bottom
-                anchors.right: accountAvatar.right
-                radius: width * Style.trayFolderStatusIndicatorRadiusFactor
-            }
-
-            Image {
-                id: accountStatusIndicator
-                visible: model.isConnected && model.serverHasUserStatus
-                source: model.statusIcon
-                cache: false
-                anchors.centerIn: accountStatusIndicatorBackground
-                sourceSize.width: Style.accountAvatarStateIndicatorSize
-                sourceSize.height: Style.accountAvatarStateIndicatorSize
-
-                Accessible.role: Accessible.Indicator
-                Accessible.name: model.desktopNotificationsAllowed ? qsTr("Current account status is online") : qsTr("Current account status is do not disturb")
-            }
+            source: avatar !== "" ? avatar : Style.darkMode ? "image://avatars/fallbackWhite" : "image://avatars/fallbackBlack"
+            Layout.preferredHeight: Math.min(Style.accountAvatarSize, userLine.availableHeight)
+            Layout.preferredWidth: Math.min(Style.accountAvatarSize, userLine.availableHeight)
         }
 
         ColumnLayout {
@@ -81,30 +76,21 @@ AbstractButton {
                 verticalAlignment: Text.AlignBottom
                 text: name
                 elide: Text.ElideRight
-                font.pixelSize: Style.topLinePixelSize
-                font.bold: true
-
-                color: !userLine.parent.enabled
-                    ? userLine.parent.palette.mid
-                    : ((userLine.parent.highlighted || userLine.parent.down) && Qt.platform.os !== "windows"
-                        ? userLine.parent.palette.highlightedText
-                        : userLine.parent.palette.text)
+                font: userLine.font
+                color: Style.sesTrayFontColor
             }
 
             EnforcedPlainTextLabel {
                 id: accountServer
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+                Layout.bottomMargin: 5
                 verticalAlignment: Text.AlignTop
                 text: server
                 elide: Text.ElideRight
                 font.pixelSize: Style.subLinePixelSize
 
-                color: !userLine.parent.enabled
-                    ? userLine.parent.palette.mid
-                    : ((userLine.parent.highlighted || userLine.parent.down) && Qt.platform.os !== "windows"
-                        ? userLine.parent.palette.highlightedText
-                        : userLine.parent.palette.text)
+                color: Style.sesTrayFontColor
             }
 
             RowLayout {
@@ -120,11 +106,7 @@ AbstractButton {
                     visible: model.statusEmoji !== ""
                     text: statusEmoji
 
-                    color: !userLine.parent.enabled
-                        ? userLine.parent.palette.mid
-                        : ((userLine.parent.highlighted || userLine.parent.down) && Qt.platform.os !== "windows"
-                            ? userLine.parent.palette.highlightedText
-                            : userLine.parent.palette.text)
+                    color: userLine.statusItemColor
                 }
 
                 EnforcedPlainTextLabel {
@@ -133,19 +115,12 @@ AbstractButton {
                     visible: model.statusMessage !== ""
                     text: statusMessage
                     elide: Text.ElideRight
+                    leftPadding: Style.accountLabelsSpacing
                     font.pixelSize: Style.subLinePixelSize
 
-                    color: !userLine.parent.enabled
-                        ? userLine.parent.palette.mid
-                        : ((userLine.parent.highlighted || userLine.parent.down) && Qt.platform.os !== "windows"
-                            ? userLine.parent.palette.highlightedText
-                            : userLine.parent.palette.text)
+                    color: userLine.statusItemColor
                 }
             }
-        }
-
-        Item { // Spacer
-            Layout.fillWidth: true
         }
 
         Item {
@@ -167,94 +142,128 @@ AbstractButton {
             }
         }
 
-        Button {
+        IconButton {
             id: userMoreButton
             Layout.preferredWidth: Style.headerButtonIconSize
-            Layout.fillHeight: true
+            Layout.preferredHeight: Layout.preferredWidth
+            Layout.rightMargin: Style.sesMediumMargin
             flat: true
+
+            property bool isHovered: userMoreButton.hovered || userMoreButton.visualFocus
+            property bool isActive: userMoreButton.pressed || userMoreButtonMenu.visible
+
+            iconSource: Style.sesMore
+            iconSourceHovered: Style.sesMoreHover
 
             Accessible.role: Accessible.ButtonMenu
             Accessible.name: qsTr("Account actions")
-            Accessible.onPressAction: userMoreButtonMouseArea.clicked()
+            Accessible.onPressAction: userMoreButton.clicked()
 
-            onClicked: userMoreButtonMenu.visible ? userMoreButtonMenu.close() : userMoreButtonMenu.popup()
+            onClicked: userMoreButtonMenu.visible ? userMoreButtonMenu.close() : userMoreButtonMenu.open()
 
-            property var iconColor: !userLine.parent.enabled
-                ? userLine.parent.palette.mid
-                : (!hovered && ((userLine.parent.highlighted || userLine.parent.down) && Qt.platform.os !== "windows")
-                    ? userLine.parent.palette.highlightedText
-                    : userLine.parent.palette.text)
-            icon.source: "image://svgimage-custom-color/more.svg/" + iconColor
-
-            AutoSizingMenu {
+            Popup {
                 id: userMoreButtonMenu
-                closePolicy: Menu.CloseOnPressOutsideParent | Menu.CloseOnEscape
-                height: implicitHeight
+                width: Style.sesAccountMenuWidth
+                height: Math.min(implicitHeight, maxMenuHeight)
+                padding: 0
+                closePolicy: Popup.CloseOnPressOutsideParent | Popup.CloseOnEscape
 
-                MenuItem {
-                    id: setStatusButton
-                    enabled: model.isConnected && model.serverHasUserStatus
-                    text: qsTr("Set status")
-                    font.pixelSize: Style.topLinePixelSize
-                    hoverEnabled: true
+                background: Rectangle {
+                    radius: Style.sesCornerRadius
+                    color: Style.sesBackgroundColor
+                    border.color: Style.sesBorderColor
+                }
 
-                    onClicked: showUserStatusSelector(index)
+                contentItem: ColumnLayout {
+                    spacing: 0
 
-                    Accessible.role: Accessible.Button
-                    Accessible.name: text
-                    Accessible.onPressAction: setStatusButton.clicked()
-               }
+                    MenuItem {
+                        id: logInOutButton
+                        Layout.fillWidth: true
 
-                MenuItem {
-                    id: statusMessageButton
-                    enabled: model.isConnected && model.serverHasUserStatus
-                    text: qsTr("Status message")
-                    font.pixelSize: Style.topLinePixelSize
-                    hoverEnabled: true
+                        property bool isHovered: logInOutButton.hovered || logInOutButton.visualFocus
+                        property bool isActive: logInOutButton.pressed
 
-                    onClicked: showUserStatusMessageSelector(index)
+                        enabled: model.canLogout
+                        palette.text: Style.sesTrayFontColor
 
-                    Accessible.role: Accessible.Button
-                    Accessible.name: text
-                    Accessible.onPressAction: statusMessageButton.clicked()
-               }
-
-                MenuItem {
-                    id: logInOutButton
-                    enabled: model.canLogout
-                    text: model.isConnected ? qsTr("Log out") : qsTr("Log in")
-                    width: parent.width
-                    font.pixelSize: Style.topLinePixelSize
-                    hoverEnabled: true
-
-                    onClicked: {
-                        if (model.isConnected) {
-                            UserModel.logout(index)
-                        } else {
-                            UserModel.login(index)
+                        Component.onCompleted: {
+                            if (contentItem && contentItem.hasOwnProperty("color")) {
+                                contentItem.color = Qt.binding(function() { return logInOutButton.palette.text })
+                            }
                         }
-                        accountMenu.close()
+                        icon.source: Style.sesLogout
+                        icon.color: Style.sesIconDarkColor
+                        leftPadding: Style.sesMediumMargin
+                        topPadding: Style.sesAccountMenuItemPadding
+                        bottomPadding: Style.sesAccountMenuItemPadding
+                        spacing: Style.sesSmallMargin
+                        text: model.isConnected ? qsTr("Log out") : qsTr("Log in")
+                        font: userLine.font
+                        palette.windowText: Style.ncTextColor
+                        hoverEnabled: true
+
+                        onClicked: {
+                            model.isConnected ? UserModel.logout(index) : UserModel.login(index)
+                            userMoreButtonMenu.close()
+                            userLine.requestCloseAccountMenu()
+                        }
+
+                        Accessible.role: Accessible.Button
+                        Accessible.name: model.isConnected ? qsTr("Log out") : qsTr("Log in")
+
+                        background: Rectangle {
+                            radius: 0
+                            anchors.fill: parent
+                            anchors.margins: 1
+                            color: logInOutButton.isActive ? Style.sesButtonPressed :
+                                   logInOutButton.isHovered ? Style.sesAccountMenuHover : "transparent"
+                        }
                     }
 
-                    Accessible.role: Accessible.Button
-                    Accessible.name: text
-                    Accessible.onPressAction: logInOutButton.clicked()
-               }
+                    MenuItem {
+                        id: removeAccountButton
+                        Layout.fillWidth: true
 
-                MenuItem {
-                    id: removeAccountButton
-                    text: model.removeAccountText
-                    font.pixelSize: Style.topLinePixelSize
-                    hoverEnabled: true
-                    onClicked: {
-                        UserModel.removeAccount(index)
-                        accountMenu.close()
+                        property bool isHovered: removeAccountButton.hovered || removeAccountButton.visualFocus
+                        property bool isActive: removeAccountButton.pressed
+
+                        palette.text: Style.sesTrayFontColor
+
+                        Component.onCompleted: {
+                            if (contentItem && contentItem.hasOwnProperty("color")) {
+                                contentItem.color = Qt.binding(function() { return removeAccountButton.palette.text })
+                            }
+                        }
+                        icon.source: Style.sesDelete
+                        icon.color: Style.sesIconDarkColor
+                        leftPadding: Style.sesMediumMargin
+                        topPadding: Style.sesAccountMenuItemPadding
+                        bottomPadding: Style.sesAccountMenuItemPadding
+                        spacing: Style.sesSmallMargin
+                        text: qsTr("Remove account")
+                        font: userLine.font
+                        palette.windowText: Style.ncTextColor
+                        hoverEnabled: true
+                        onClicked: {
+                            UserModel.removeAccount(index)
+                            userMoreButtonMenu.close()
+                            userLine.requestCloseAccountMenu()
+                        }
+
+                        background: Rectangle {
+                            radius: 0
+                            anchors.fill: parent
+                            anchors.margins: 1
+                            color: removeAccountButton.isActive ? Style.sesButtonPressed :
+                                   removeAccountButton.isHovered ? Style.sesAccountMenuHover : "transparent"
+                        }
+
+                        Accessible.role: Accessible.MenuItem
+                        Accessible.name: text
+                        Accessible.onPressAction: removeAccountButton.clicked()
                     }
-
-                    Accessible.role: Accessible.Button
-                    Accessible.name: text
-                    Accessible.onPressAction: removeAccountButton.clicked()
-               }
+                }
             }
         }
     }

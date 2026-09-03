@@ -194,6 +194,12 @@ class ShareOptionsView: NSView {
                 caps.defaultPermissions & NKShare.Permission.update.rawValue != 0
                 ? .on : .off
 
+            groupShareMenuItem.isHidden = true
+            emailShareMenuItem.isHidden = false
+            federatedCloudShareMenuItem.isHidden = true
+            teamShare.isHidden = true
+            talkConversationShare.isHidden = true
+
             switch type {
             case .publicLink:
                 passwordProtectCheckbox.isHidden = false

@@ -190,6 +190,31 @@
         <source>No activities yet</source>
         <translation>Δεν υπάρχουν ακόμα δραστηριότητες</translation>
     </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AdvancedOptionsDialog.qml" line="44"/>
+        <source>Ask before syncing folders larger than</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AdvancedOptionsDialog.qml" line="62"/>
+        <source>Large folder threshold</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AdvancedOptionsDialog.qml" line="64"/>
+        <source>%1 MB</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AdvancedOptionsDialog.qml" line="71"/>
+        <source>Ask before syncing external storage</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/AdvancedOptionsDialog.qml" line="90"/>
+        <source>Done</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>AdvancedOptionsDialog</name>
@@ -327,6 +352,36 @@
         <location filename="../src/gui/tray/CallNotificationDialog.qml" line="241"/>
         <source>Decline Talk call notification</source>
         <translation>Απόρριψη ειδοποίησης κλήσης Talk</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/ClientCertificateDialog.qml" line="44"/>
+        <source>Select a PKCS#12 certificate file and enter its password.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/ClientCertificateDialog.qml" line="57"/>
+        <source>Certificate file</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/ClientCertificateDialog.qml" line="63"/>
+        <source>Choose</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/ClientCertificateDialog.qml" line="70"/>
+        <source>Certificate password</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/ClientCertificateDialog.qml" line="94"/>
+        <source>Cancel</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/ClientCertificateDialog.qml" line="104"/>
+        <source>Connect</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2644,6 +2699,37 @@ This can be an issue with your OpenSSL libraries.</source>
         <location filename="../src/libsync/encryptedfoldermetadatahandler.cpp" line="343"/>
         <source>Failed to upload metadata</source>
         <translation>Αποτυχία μεταφόρτωσης μεταδεδομένων</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/integration/fileactionsmodel.cpp" line="269"/>
+        <source>The file ID is empty for %1.</source>
+        <comment>file name</comment>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/integration/fileactionsmodel.cpp" line="277"/>
+        <source>The file type for %1 is not valid.</source>
+        <comment>file name</comment>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/integration/fileactionsmodel.cpp" line="289"/>
+        <source>No file actions were returned by the server for %1 files.</source>
+        <comment>file mimetype, e.g text/plain files</comment>
+        <extracomment>TRANSLATOR Placeholder contains file MIME type</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/integration/fileactionsmodel.cpp" line="372"/>
+        <source>%1 did not succeed, please try again later. If you need help, contact your server administrator.</source>
+        <comment>file action error message</comment>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/integration/fileactionsmodel.cpp" line="388"/>
+        <source>%1 done.</source>
+        <comment>file action success message</comment>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -6314,6 +6400,31 @@ Server replied with error: %2</source>
         <source>Quota Warning - %1 percent or more storage in use</source>
         <translation>Προειδοποίηση Ορίου - %1 τοις εκατό ή περισσότερος χώρος σε χρήση</translation>
     </message>
+    <message>
+        <location filename="../src/gui/tray/usermodel.cpp" line="1599"/>
+        <source>No supported assistant task types were returned.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/usermodel.cpp" line="1681"/>
+        <source>Waiting for the assistant response…</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/usermodel.cpp" line="1703"/>
+        <source>Assistant request failed (%1).</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/usermodel.cpp" line="1211"/>
+        <source>Quota is updated; %1 percent of the total space is used.</source>
+        <translation>Το όριο ενημερώθηκε· χρησιμοποιείται το %1 τοις εκατό του συνολικού χώρου.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/usermodel.cpp" line="1231"/>
+        <source>Quota Warning - %1 percent or more storage in use</source>
+        <translation>Προειδοποίηση Ορίου - %1 τοις εκατό ή περισσότερος χώρος σε χρήση</translation>
+    </message>
 </context>
 <context>
     <name>OCC::UserModel</name>
@@ -6992,6 +7103,21 @@ Server replied with error: %2</source>
         <location filename="../src/gui/ResolveConflictsDialog.qml" line="148"/>
         <source>Cancel</source>
         <translation>Ακύρωση</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/ServerPage.qml" line="38"/>
+        <source>Enter the link to your %1 web interface from the browser or the link to a folder shared with you.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/ServerPage.qml" line="182"/>
+        <source>Log in</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/qml/ServerPage.qml" line="197"/>
+        <source>Server address</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -8080,6 +8206,9 @@ This is a new, experimental mode. If you decide to use it, please report any iss
         <source>Certificate password:</source>
         <translation>Κωδικός πιστοποιητικού:</translation>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="79"/>
         <source>An encrypted pkcs12 bundle is strongly recommended as a copy will be stored in the configuration file.</source>

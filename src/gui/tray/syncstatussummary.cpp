@@ -4,6 +4,7 @@
  */
 
 #include "syncstatussummary.h"
+#include "whitelabeltheme.h"
 #include "accountfwd.h"
 #include "accountstate.h"
 #include "folderman.h"
@@ -200,7 +201,7 @@ void SyncStatusSummary::setSyncState(const SyncResult::Status state)
         setTotalFiles(0);
         setSyncStatusString(tr("Offline"));
         setSyncStatusDetailString("");
-        setSyncIcon(Theme::instance()->offline());
+        setSyncIcon(WLTheme.syncOfflineIcon());
         return;
     }
 
@@ -217,7 +218,7 @@ void SyncStatusSummary::setSyncState(const SyncResult::Status state)
             setTotalFiles(0);
             setSyncStatusString(tr("All synced!"));
             setSyncStatusDetailString("");
-            setSyncIcon(Theme::instance()->ok());
+            setSyncIcon(WLTheme.syncSuccessIcon());
         }
         break;
     case SyncResult::Error:
@@ -226,7 +227,7 @@ void SyncStatusSummary::setSyncState(const SyncResult::Status state)
         setTotalFiles(0);
         setSyncStatusString(tr("Some files couldn't be synced!"));
         setSyncStatusDetailString(tr("See below for errors"));
-        setSyncIcon(Theme::instance()->error());
+        setSyncIcon(WLTheme.syncErrorIcon());
         break;
     case SyncResult::SyncRunning:
     case SyncResult::NotYetStarted:
@@ -237,7 +238,7 @@ void SyncStatusSummary::setSyncState(const SyncResult::Status state)
             setSyncStatusString(tr("Syncing changes"));
         }
         setSyncStatusDetailString("");
-        setSyncIcon(Theme::instance()->sync());
+        setSyncIcon(WLTheme.syncSyncingIcon());
         break;
     case SyncResult::Paused:
     case SyncResult::SyncAbortRequested:
@@ -245,7 +246,7 @@ void SyncStatusSummary::setSyncState(const SyncResult::Status state)
         setTotalFiles(0);
         setSyncStatusString(tr("Sync paused"));
         setSyncStatusDetailString("");
-        setSyncIcon(Theme::instance()->pause());
+        setSyncIcon(WLTheme.syncPausedIcon());
         break;
     case SyncResult::Problem:
     case SyncResult::Undefined:
@@ -253,7 +254,7 @@ void SyncStatusSummary::setSyncState(const SyncResult::Status state)
         setTotalFiles(0);
         setSyncStatusString(tr("Some files could not be synced!"));
         setSyncStatusDetailString(tr("See below for warnings"));
-        setSyncIcon(Theme::instance()->warning());
+        setSyncIcon(WLTheme.syncWarningIcon());
         break;
     }
 }
