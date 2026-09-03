@@ -8095,6 +8095,9 @@ Ez egy új, kísérleti mód. Ha úgy dönt, hogy használja, akkor jelezze nek�
         <source>Select a certificate</source>
         <translation>Válasszon tanúsítványt</translation>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
         <location filename="../src/gui/addcertificatedialog.cpp" line="33"/>
         <source>Certificate files (*.p12 *.pfx)</source>

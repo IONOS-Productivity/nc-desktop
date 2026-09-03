@@ -7576,42 +7576,42 @@ Server replied with error: %2</source>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="99"/>
         <source>Online</source>
-        <translation type="unfinished"/>
+        <translation>온라인</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="108"/>
         <source>Away</source>
-        <translation type="unfinished"/>
+        <translation>자리 비움</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="118"/>
         <source>Busy</source>
-        <translation type="unfinished"/>
+        <translation>바쁨</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="127"/>
         <source>Do not disturb</source>
-        <translation type="unfinished"/>
+        <translation>방해 금지</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="128"/>
         <source>Mute all notifications</source>
-        <translation type="unfinished"/>
+        <translation>모든 알림을 음소거</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="139"/>
         <source>Invisible</source>
-        <translation type="unfinished"/>
+        <translation>숨겨짐</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="140"/>
         <source>Appear offline</source>
-        <translation type="unfinished"/>
+        <translation>오프라인으로 표시</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="156"/>
         <source>Status message</source>
-        <translation type="unfinished"/>
+        <translation>상태 메시지</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="182"/>
@@ -8079,6 +8079,9 @@ This is a new, experimental mode. If you decide to use it, please report any iss
         <source>Select a certificate</source>
         <translation>인증서 선택</translation>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
         <location filename="../src/gui/addcertificatedialog.cpp" line="33"/>
         <source>Certificate files (*.p12 *.pfx)</source>

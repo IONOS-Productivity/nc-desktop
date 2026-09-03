@@ -6695,7 +6695,7 @@ Sunucunun verdiği hata yanıtı: %2</translation>
     <message>
         <location filename="../src/gui/wizard/qml/ProxySettingsDialog.qml" line="191"/>
         <source>Note: proxy settings have no effects for accounts on localhost</source>
-        <translation>Not: Vekil sunucu ayarları localhost üzerindeki hesaplar için uygulanmaz</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/gui/wizard/qml/ProxySettingsDialog.qml" line="208"/>
@@ -8094,6 +8094,9 @@ Bu yeni ve deneysel bir özelliktir. Kullanmaya karar verirseniz, lütfen karş�
         <source>Select a certificate</source>
         <translation>Bir sertifika seçin</translation>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
         <location filename="../src/gui/addcertificatedialog.cpp" line="33"/>
         <source>Certificate files (*.p12 *.pfx)</source>

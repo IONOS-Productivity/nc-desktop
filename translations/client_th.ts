@@ -8149,6 +8149,9 @@ This is a new, experimental mode. If you decide to use it, please report any iss
         <source>Virtual files are not supported at the selected location</source>
         <translation type="unfinished"/>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudConnectionMethodDialog</name>
     <message>
         <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="490"/>
         <source>Local Sync Folder</source>

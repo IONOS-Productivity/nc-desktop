@@ -9,7 +9,7 @@ import QtQuick.Layouts
 import QtQuick.Controls
 import QtQuick.Window
 
-import com.nextcloud.desktopclient as NC
+import com.strato.hidrivenext.desktopclient as NC
 import Style
 
 import "./tray"
@@ -184,6 +184,14 @@ ColumnLayout {
                     if (userStatusSelectorModel) {
                         userStatusSelectorModel.setClearAt(currentValue)
                     }
+                }
+
+                indicator: Image {
+                    x: clearComboBox.width - width - clearComboBox.rightPadding
+                    y: clearComboBox.topPadding + (clearComboBox.availableHeight - height) / 2
+                    source: "image://svgimage-custom-color/caret-down.svg/" + Style.sesTrayFontColor
+                    sourceSize.width: 14
+                    sourceSize.height: 14
                 }
             }
         }

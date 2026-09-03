@@ -8095,6 +8095,9 @@ Is mód nua, turgnamhach é seo. Má shocraíonn tú é a úsáid, cuir aon fhad
         <source>Select a certificate</source>
         <translation>Roghnaigh teastas</translation>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
         <location filename="../src/gui/addcertificatedialog.cpp" line="33"/>
         <source>Certificate files (*.p12 *.pfx)</source>

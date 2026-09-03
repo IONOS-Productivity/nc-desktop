@@ -19,6 +19,5 @@
 		<string>@APPLICATION_REV_DOMAIN@-spks</string>
 		<string>@APPLICATION_REV_DOMAIN@-spki</string>
 	</array>
-@DEBUG_ENTITLEMENTS@
 </dict>
 </plist>

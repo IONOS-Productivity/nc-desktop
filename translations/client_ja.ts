@@ -6696,7 +6696,7 @@ Server replied with error: %2</source>
     <message>
         <location filename="../src/gui/wizard/qml/ProxySettingsDialog.qml" line="191"/>
         <source>Note: proxy settings have no effects for accounts on localhost</source>
-        <translation>注: プロキシ設定は、ローカルホストのアカウントには影響しません</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/gui/wizard/qml/ProxySettingsDialog.qml" line="208"/>
@@ -8095,6 +8095,9 @@ This is a new, experimental mode. If you decide to use it, please report any iss
         <source>Select a certificate</source>
         <translation>証明書を選択</translation>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
         <location filename="../src/gui/addcertificatedialog.cpp" line="33"/>
         <source>Certificate files (*.p12 *.pfx)</source>

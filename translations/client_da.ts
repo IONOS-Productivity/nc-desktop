@@ -8624,6 +8624,9 @@ Dette er en ny, eksperimentel tilstand. Hvis du beslutter at bruge det, bedes du
         <source>HTTP(S) proxy</source>
         <translation>HTTP- (S) - proxy</translation>
     </message>
+</context>
+<context>
+    <name>OwncloudAdvancedSetupPage</name>
     <message>
         <location filename="../src/gui/wizard/wizardproxysettingsdialog.cpp" line="30"/>
         <source>SOCKS5 proxy</source>

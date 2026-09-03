@@ -13,6 +13,7 @@
 #include <QStringList>
 #include <QQuickImageProvider>
 #include <QHash>
+#include <QMessageBox>
 #include <QPointer>
 #include <QTimer>
 #include <QVector>
@@ -364,6 +365,7 @@ private:
     void buildUserList();
     void addAccsToUserList();
     void setInitialUser();
+    void styleMessageBox(QMessageBox &messageBox, QPushButton *yesButton);
 };
 
 class ImageProvider : public QQuickAsyncImageProvider

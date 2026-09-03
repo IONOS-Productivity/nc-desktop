@@ -8095,6 +8095,9 @@ Este é um novo modo experimental. Se você decidir usá-lo, por favor, relate q
         <source>Select a certificate</source>
         <translation>Selecione um certificado</translation>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
         <location filename="../src/gui/addcertificatedialog.cpp" line="33"/>
         <source>Certificate files (*.p12 *.pfx)</source>

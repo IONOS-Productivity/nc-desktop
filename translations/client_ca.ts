@@ -7984,6 +7984,9 @@ This is a new, experimental mode. If you decide to use it, please report any iss
         <source>Virtual files settings</source>
         <translation type="unfinished"/>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
         <location filename="../src/gui/macOS/ui/FileProviderSettings.qml" line="52"/>
         <source>Virtual files appear like regular files, but they do not use local storage space. The content downloads automatically when you open the file. Virtual files and classic sync can not be used at the same time.</source>
@@ -8145,6 +8148,9 @@ This is a new, experimental mode. If you decide to use it, please report any iss
         <comment>%1 gets replaced with the size and a matching unit. Example: 3 MB or 5 GB</comment>
         <translation type="unfinished"/>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudConnectionMethodDialog</name>
     <message>
         <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="427"/>
         <source>Virtual files are not supported at the selected location</source>

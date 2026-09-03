@@ -7578,42 +7578,42 @@ Server replied with error: %2</source>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="99"/>
         <source>Online</source>
-        <translation type="unfinished"/>
+        <translation>توردا</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="108"/>
         <source>Away</source>
-        <translation type="unfinished"/>
+        <translation>يىراق</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="118"/>
         <source>Busy</source>
-        <translation type="unfinished"/>
+        <translation>ئالدىراش</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="127"/>
         <source>Do not disturb</source>
-        <translation type="unfinished"/>
+        <translation>بىئارام قىلماڭ</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="128"/>
         <source>Mute all notifications</source>
-        <translation type="unfinished"/>
+        <translation>بارلىق ئۇقتۇرۇشلارنىڭ ئاۋازسىزلىقىنى ئۆچۈرۈش</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="139"/>
         <source>Invisible</source>
-        <translation type="unfinished"/>
+        <translation>كۆرۈنمەس</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="140"/>
         <source>Appear offline</source>
-        <translation type="unfinished"/>
+        <translation>تورسىز كۆرۈنىدۇ</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="156"/>
         <source>Status message</source>
-        <translation type="unfinished"/>
+        <translation>ھالەت ئۇچۇرى</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="182"/>
@@ -8081,6 +8081,9 @@ This is a new, experimental mode. If you decide to use it, please report any iss
         <source>Select a certificate</source>
         <translation>گۇۋاھنامە تاللاڭ</translation>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
         <location filename="../src/gui/addcertificatedialog.cpp" line="33"/>
         <source>Certificate files (*.p12 *.pfx)</source>

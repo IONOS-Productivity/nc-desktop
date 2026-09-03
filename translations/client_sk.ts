@@ -7579,42 +7579,42 @@ Server odpovedal chybou: %2</translation>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="99"/>
         <source>Online</source>
-        <translation type="unfinished"/>
+        <translation>Pripojený</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="108"/>
         <source>Away</source>
-        <translation type="unfinished"/>
+        <translation>Preč</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="118"/>
         <source>Busy</source>
-        <translation type="unfinished"/>
+        <translation>Zaneprázdnený</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="127"/>
         <source>Do not disturb</source>
-        <translation type="unfinished"/>
+        <translation>Nerušiť</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="128"/>
         <source>Mute all notifications</source>
-        <translation type="unfinished"/>
+        <translation>Stlmiť všetky upozornenia</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="139"/>
         <source>Invisible</source>
-        <translation type="unfinished"/>
+        <translation>Neviditeľný</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="140"/>
         <source>Appear offline</source>
-        <translation type="unfinished"/>
+        <translation>Zdá sa byť offline</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="156"/>
         <source>Status message</source>
-        <translation type="unfinished"/>
+        <translation>Správa o stave</translation>
     </message>
     <message>
         <location filename="../src/gui/UserStatusWindow.qml" line="182"/>
@@ -8082,6 +8082,9 @@ This is a new, experimental mode. If you decide to use it, please report any iss
         <source>Select a certificate</source>
         <translation>Vybrať certifikát</translation>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
         <location filename="../src/gui/addcertificatedialog.cpp" line="33"/>
         <source>Certificate files (*.p12 *.pfx)</source>

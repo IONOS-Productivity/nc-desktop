@@ -792,6 +792,41 @@
         <source>Assistant</source>
         <translation type="unfinished"/>
     </message>
+    <message>
+        <location filename="../src/gui/tray/MainWindow.qml" line="458"/>
+        <source>This will clear the existing conversation.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/MainWindow.qml" line="503"/>
+        <source>Ask Assistant …</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/MainWindow.qml" line="503"/>
+        <source>Ask Assistant…</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/MainWindow.qml" line="531"/>
+        <source>Send assistant question</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/MainWindow.qml" line="552"/>
+        <source>Start a new assistant chat</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/MainWindow.qml" line="382"/>
+        <source>Unified search results list</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/tray/MainWindow.qml" line="446"/>
+        <source>New activities</source>
+        <translation>Activitats novèlas</translation>
+    </message>
 </context>
 <context>
     <name>NCContextMenuTextField</name>
@@ -8020,6 +8055,9 @@ This is a new, experimental mode. If you decide to use it, please report any iss
         <source>Certificate &amp; Key (pkcs12):</source>
         <translation>Certificat e clau (pkcs12) :</translation>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="51"/>
         <source>Browse …</source>
