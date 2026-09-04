@@ -4115,50 +4115,49 @@ Nota che l&apos;utilizzo di qualsiasi opzione della riga di comando di registraz
 <context>
     <name>OCC::ownCloudGui</name>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="596" />
-        <source>%1 (%2, %3)</source>
-        <translation>%1 (%2, %3)</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="409"/>
+        <source>New Version Available</source>
+        <translation>Nuova versione disponibile</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="500" />
-        <source>%1: %2</source>
-        <extracomment>Example text: &quot;Nextcloud: Syncing 25MB (3 minutes left)&quot; (%1 is the folder name to be synced, %2 a status message for that folder)</extracomment>
-        <translation>%1: %2</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="415"/>
+        <source>&lt;p&gt;A new version of the %1 Client is available.&lt;/p&gt;&lt;p&gt;&lt;b&gt;%2&lt;/b&gt; is available for download. The installed version is %3.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Una nuova versione del client %1 è disponibile.&lt;/p&gt;&lt;p&gt;&lt;b&gt;%2&lt;/b&gt; è disponibile per lo scaricamento. La versione installata è %3.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="406" />
-        <source>Account %1: %2</source>
-        <translation>Account %1: %2</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="456"/>
+        <source>Update Failed</source>
+        <translation>Aggiornamento non riuscito</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="432" />
-        <source>Account synchronization is disabled</source>
-        <translation>La sincronizzazione dell&apos;account è disabilitata</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="462"/>
+        <source>&lt;p&gt;A new version of the %1 Client is available but the updating process failed.&lt;/p&gt;&lt;p&gt;&lt;b&gt;%2&lt;/b&gt; has been downloaded. The installed version is %3. If you confirm restart and update, your computer may reboot to complete the installation.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Una nuova versione del client %1 è disponibile, ma il processo di aggiornamento non è riuscito.&lt;/p&gt;&lt;p&gt;&lt;b&gt;%2&lt;/b&gt; è stato scaricato. La versione installata è la %3. Se confermi di riavviare ed aggiornare, il computer potrebbe riavviarsi per completare l&apos;installazione.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="579" />
-        <source>Checking for changes in local &quot;%1&quot;</source>
-        <translation>Controllo delle modifiche in &quot;%1&quot; locale</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="475"/>
+        <source>Ask again later</source>
+        <translation>Chiedi ancora più tardi</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="576" />
-        <source>Checking for changes in remote &quot;%1&quot;</source>
-        <translation>Controllo delle modifiche in &quot;%1&quot; remoto</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="476"/>
+        <source>Restart and update</source>
+        <translation>Riavvia e aggiorna</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="401" />
-        <source>Disconnected from %1</source>
-        <translation>Disconnesso dal %1</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="477"/>
+        <source>Update manually</source>
+        <translation>Aggiorna manualmente</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="404" />
-        <source>Disconnected from accounts:</source>
-        <translation>Disconnesso dagli account:</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="428"/>
+        <source>Skip this time</source>
+        <translation>Salta questa volta</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudgui.cpp" line="424" />
-        <source>Please sign in</source>
-        <translation>Accedi</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="429"/>
+        <source>Get update</source>
+        <translation>Ottieni l&apos;aggiornamento</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudgui.cpp" line="289" />
@@ -4301,76 +4300,74 @@ Nota che l&apos;utilizzo di qualsiasi opzione della riga di comando di registraz
         <translation>Impossibile creare la cartella locale %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="546" />
-        <source>Creating local sync folder %1 …</source>
-        <translation>Creazione della cartella locale di sincronizzazione %1... </translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="157"/>
+        <source>Could not check for new updates.</source>
+        <translation>Impossibile verificare la presenza di nuovi aggiornamenti.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="620" />
-        <source>Error: %1</source>
-        <translation>Errore: %1</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="165"/>
+        <source>Checking update server …</source>
+        <translation>Controllo server degli aggiornamenti...</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="331" />
-        <source>Failed to connect to %1 at %2:&lt;br/&gt;%3</source>
-        <translation>Connessione a %1 su %2:&lt;br/&gt;%3</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="99"/>
+        <source>New %1 update ready</source>
+        <translation>Nuovo aggiornamento di %1 pronto</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="708" />
-        <source>Folder rename failed</source>
-        <translation>Rinomina della cartella non riuscita</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="100"/>
+        <source>A new update for %1 is about to be installed. The updater may ask for additional privileges during the process. Your computer may reboot to complete the installation.</source>
+        <translation>Un nuovo aggiornamento di %1 sta per essere installato. L&apos;aggiornamento potrebbe richiedere privilegi aggiuntivi durante l&apos;avanzamento. Il computer potrebbe riavviarsi per completare l&apos;installazione.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="329" />
-        <source>Invalid URL</source>
-        <translation>URL non valido</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="147"/>
+        <source>Downloading %1 …</source>
+        <translation>Scaricamento %1 …</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="543" />
-        <source>Local sync folder %1 already exists, setting it up for sync.&lt;br/&gt;&lt;br/&gt;</source>
-        <translation>La cartella di sincronizzazione locale %1 esiste già, impostata per la sincronizzazione.&lt;br/&gt;&lt;br/&gt;</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="149"/>
+        <source>%1 available. Restart application to start the update.</source>
+        <translation>%1 disponibile. Riavvia l&apos;applicazione per iniziare l&apos;aggiornamento.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="614" />
-        <source>No remote folder specified!</source>
-        <translation>Nessuna cartella remota specificata!</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="152"/>
+        <source>Could not download update. Please open &lt;a href=&apos;%1&apos;&gt;%1&lt;/a&gt; to download the update manually.</source>
+        <translation>Impossibile scaricare l&apos;aggiornamento. Apri &lt;a href=&apos;%1&apos;&gt;%1&lt;/a&gt; per scaricare l&apos;aggiornamento a mano.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="550" />
-        <source>OK</source>
-        <translation>OK</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="154"/>
+        <source>Could not download update. Please open %1 to download the update manually.</source>
+        <translation>Impossibile scaricare l&apos;aggiornamento. Apri %1 per scaricare l&apos;aggiornamento manualmente.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="638" />
-        <source>Remote folder %1 created successfully.</source>
-        <translation>La cartella remota %1 è stata creata correttamente.</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="160"/>
+        <source>New %1 is available. Please open &lt;a href=&apos;%2&apos;&gt;%2&lt;/a&gt; to download the update.</source>
+        <translation>Un nuovo %1 è disponibile. Apri &lt;a href=&apos;%2&apos;&gt;%2&lt;/a&gt; per scaricare l&apos;aggiornamento.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="668" />
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="669" />
-        <source>Remote folder %1 creation failed with error &lt;tt&gt;%2&lt;/tt&gt;.</source>
-        <translation>Creazione della cartella remota %1 non riuscita con errore &lt;tt&gt;%2&lt;/tt&gt;.</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="162"/>
+        <source>New %1 is available. Please open %2 to download the update.</source>
+        <translation>Il nuovo %1 è disponibile. Apri %2 per scaricare l&apos;aggiornamento.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="688" />
-        <source>Successfully connected to %1!</source>
-        <translation>Connesso con successo a %1!</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="167"/>
+        <source>Update status is unknown: Did not check for new updates.</source>
+        <translation>Lo stato di aggiornamento è sconosciuto. Non è possibile verificare la presenza di nuovi aggiornamenti.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="466" />
-        <source>The authenticated request to the server was redirected to &quot;%1&quot;. The URL is bad, the server is misconfigured.</source>
-        <translation>La richiesta autenticata al server è stata rediretta a &quot;%1&quot;. L&apos;URL è errato, il server non è configurato correttamente.</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="173"/>
+        <source>You are using the %1 update channel. Your installation is the latest version.</source>
+        <translation>Stai utilizzando il canale di aggiornamento %1. La tua installazione è alla versione più recente.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="655" />
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="657" />
-        <source>The folder creation resulted in HTTP error code %1</source>
-        <translation>La creazione della cartella ha restituito un codice di errore HTTP %1</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="177"/>
+        <source>No updates available. Your installation is the latest version.</source>
+        <translation>Nessun aggiornamento disponibile. La tua installazione è alla versione più recente.</translation>
     </message>
     <message>
-        <location filename="../src/gui/owncloudsetupwizard.cpp" line="653" />
-        <source>The remote folder %1 already exists. Connecting it for syncing.</source>
-        <translation>La cartella remota %1 esiste già. Connessione in corso per la sincronizzazione</translation>
+        <location filename="../src/gui/updater/ocupdater.cpp" line="197"/>
+        <source>Update Check</source>
+        <translation>Controllo aggiornamenti</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="659" />
@@ -4811,12 +4808,18 @@ This is a new, experimental mode. If you decide to use it, please report any iss
 <context>
     <name>OCC::PropagateItemJob</name>
     <message>
-        <location filename="../src/libsync/owncloudpropagator.cpp" line="233" />
+        <location filename="../src/libsync/owncloudpropagator.cpp" line="233"/>
         <source>; Restoration Failed: %1</source>
         <translation>; Ripristino non riuscito:  %1</translation>
     </message>
     <message>
-        <location filename="../src/libsync/owncloudpropagator.cpp" line="305" />
+        <location filename="../src/libsync/owncloudpropagator.cpp" line="233"/>
+        <source>%1. Restoration failed: %2</source>
+        <comment>%1 is the generic error string, the file restoration error (%2) will be appended here</comment>
+        <translation>%1. Ripristino non è riuscito: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/libsync/owncloudpropagator.cpp" line="300"/>
         <source>A file or folder was removed from a read only share, but restoring failed: %1</source>
         <translation>Un file o una cartella è stato rimosso da una condivisione in sola lettura, ma il ripristino non è riuscito: %1</translation>
     </message>
@@ -6070,9 +6073,114 @@ Il server ha risposto con errore: %2</translation>
     </message>
     </context>
 <context>
+    <name>OCC::UnifiedSearchPeopleModel</name>
+    <message>
+        <location filename="../src/gui/search/unifiedsearchpeoplemodel.cpp" line="112"/>
+        <location filename="../src/gui/search/unifiedsearchpeoplemodel.cpp" line="121"/>
+        <location filename="../src/gui/search/unifiedsearchpeoplemodel.cpp" line="130"/>
+        <location filename="../src/gui/search/unifiedsearchpeoplemodel.cpp" line="156"/>
+        <source>People search is unavailable.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/unifiedsearchpeoplemodel.cpp" line="192"/>
+        <source>Could not load people. Try again.</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
     <name>OCC::UnifiedSearchResultsListModel</name>
     <message>
-        <location filename="../src/gui/tray/unifiedsearchresultslistmodel.cpp" line="398" />
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="228"/>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="242"/>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="537"/>
+        <source>Search is unavailable while this account is offline.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="533"/>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="580"/>
+        <source>Failed to fetch search providers.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="653"/>
+        <source>No search providers are available.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="687"/>
+        <source>Search cleared</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="727"/>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="1230"/>
+        <source>Searching</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="949"/>
+        <source>Partial matches</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="1218"/>
+        <source>Search failed for all available sources. Please try again.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="1240"/>
+        <source>%1 results in %2</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="1242"/>
+        <source>No matching results</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="1244"/>
+        <source>%1 results. Some sources are unavailable.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="1246"/>
+        <source>%1 results</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="1420"/>
+        <source>Today</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="1423"/>
+        <source>Last 7 days</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="1426"/>
+        <source>Last 30 days</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="1430"/>
+        <source>This year</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="1434"/>
+        <source>Last year</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="1454"/>
+        <source>%1 – %2</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/unifiedsearchresultslistmodel.cpp" line="457"/>
         <source>Failed to fetch providers.</source>
         <translation>Recupero dei fornitori non riuscito.</translation>
     </message>
@@ -7091,6 +7199,37 @@ Il server ha risposto con errore: %2</translation>
         <source>Error</source>
         <translation type="unfinished" />
     </message>
+    <message>
+        <location filename="../src/gui/search/SearchWindow.qml" line="158"/>
+        <source>Remove %1 filter</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/SearchWindow.qml" line="182"/>
+        <location filename="../src/gui/search/SearchWindow.qml" line="251"/>
+        <source>Retry</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/SearchWindow.qml" line="215"/>
+        <source>Search results</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/SearchWindow.qml" line="250"/>
+        <source>Some sources unavailable</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/SearchWindow.qml" line="258"/>
+        <source>Less from connected services</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/SearchWindow.qml" line="258"/>
+        <source>More from connected services</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>SesTrayHeader</name>
@@ -7478,11 +7617,164 @@ Il server ha risposto con errore: %2</translation>
     </message>
 </context>
 <context>
+    <name>UnifiedSearchCustomDateRangeDialog</name>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchCustomDateRangeDialog.qml" line="22"/>
+        <source>Custom date range</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchCustomDateRangeDialog.qml" line="34"/>
+        <source>Cancel</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchCustomDateRangeDialog.qml" line="40"/>
+        <source>Apply</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchCustomDateRangeDialog.qml" line="52"/>
+        <source>Start date (YYYY-MM-DD)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchCustomDateRangeDialog.qml" line="59"/>
+        <location filename="../src/gui/search/UnifiedSearchCustomDateRangeDialog.qml" line="70"/>
+        <source>YYYY-MM-DD</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchCustomDateRangeDialog.qml" line="63"/>
+        <source>End date (YYYY-MM-DD)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchCustomDateRangeDialog.qml" line="75"/>
+        <source>Enter valid dates with the start date before the end date.</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>UnifiedSearchDetailHeader</name>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchDetailHeader.qml" line="28"/>
+        <source>Back</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchDetailHeader.qml" line="35"/>
+        <source>Back to all search results</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>UnifiedSearchFilterBar</name>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchFilterBar.qml" line="50"/>
+        <source>Type</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchFilterBar.qml" line="57"/>
+        <source>Filter by type</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchFilterBar.qml" line="101"/>
+        <source>Date</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchFilterBar.qml" line="109"/>
+        <source>Filter by date</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchFilterBar.qml" line="110"/>
+        <source>No search source supports date filtering</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchFilterBar.qml" line="121"/>
+        <source>Today</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchFilterBar.qml" line="125"/>
+        <source>Last 7 days</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchFilterBar.qml" line="129"/>
+        <source>Last 30 days</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchFilterBar.qml" line="133"/>
+        <source>This year</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchFilterBar.qml" line="137"/>
+        <source>Last year</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchFilterBar.qml" line="142"/>
+        <source>Custom range …</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchFilterBar.qml" line="146"/>
+        <source>Clear date</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchFilterBar.qml" line="157"/>
+        <source>People</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchFilterBar.qml" line="165"/>
+        <source>Filter by person</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchFilterBar.qml" line="166"/>
+        <source>No search source supports people filtering</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
     <name>UnifiedSearchInputContainer</name>
     <message>
         <location filename="../src/gui/tray/UnifiedSearchInputContainer.qml" line="35" />
         <source>Search files, messages, events …</source>
         <translation>Cerca file, messaggi, eventi …</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchInputContainer.qml" line="85"/>
+        <source>Clear search</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchInputContainer.qml" line="86"/>
+        <source>Keeps the active filters</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>UnifiedSearchPeoplePopup</name>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchPeoplePopup.qml" line="45"/>
+        <source>Search people</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchPeoplePopup.qml" line="57"/>
+        <source>Retry</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -7491,6 +7783,34 @@ Il server ha risposto con errore: %2</translation>
         <location filename="../src/gui/tray/UnifiedSearchPlaceholderView.qml" line="30" />
         <source>Start typing to search</source>
         <translation>Inizia a digitare per cercare</translation>
+    </message>
+</context>
+<context>
+    <name>UnifiedSearchResultDelegate</name>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchResultDelegate.qml" line="83"/>
+        <source>More from %1  →</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchResultDelegate.qml" line="130"/>
+        <source>Partial matches</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchResultDelegate.qml" line="193"/>
+        <source>Loading more results …</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchResultDelegate.qml" line="195"/>
+        <source>Retry loading more results</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/gui/search/UnifiedSearchResultDelegate.qml" line="195"/>
+        <source>Load more results</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -7794,6 +8114,745 @@ Il server ha risposto con errore: %2</translation>
         <location filename="../src/common/checksums.cpp" line="298" />
         <source>The downloaded file does not match the checksum, it will be resumed. &quot;%1&quot; != &quot;%2&quot;</source>
         <translation type="unfinished">Il file scaricato non verifica il codice di controllo, sarà ripristinato. &quot;%1&quot; != &quot;%2&quot;</translation>
+    </message>
+</context>
+<context>
+    <name>OCC::AddCertificateDialog</name>
+    <message>
+        <location filename="../src/gui/addcertificatedialog.ui" line="17"/>
+        <source>SSL client certificate authentication</source>
+        <translation>Autenticazione con certificato client SSL</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/addcertificatedialog.ui" line="23"/>
+        <source>This server probably requires a SSL client certificate.</source>
+        <translation>Questo server richiede probabilmente un certificato client SSL.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/addcertificatedialog.ui" line="35"/>
+        <source>Certificate &amp; Key (pkcs12):</source>
+        <translation>Certificato e chiave (pkcs12):</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/addcertificatedialog.ui" line="51"/>
+        <source>Browse …</source>
+        <translation>Sfoglia...</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/addcertificatedialog.ui" line="60"/>
+        <source>Certificate password:</source>
+        <translation>Password del certificato:</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/addcertificatedialog.ui" line="79"/>
+        <source>An encrypted pkcs12 bundle is strongly recommended as a copy will be stored in the configuration file.</source>
+        <translation>Si consiglia vivamente un bundle pkcs12 cifrato poiché una copia sarà archiviata nel file di configurazione.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/addcertificatedialog.cpp" line="33"/>
+        <source>Select a certificate</source>
+        <translation>Seleziona un certificato</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/addcertificatedialog.cpp" line="33"/>
+        <source>Certificate files (*.p12 *.pfx)</source>
+        <translation>File di certificato (*.p12 *.pfx)</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/addcertificatedialog.cpp" line="44"/>
+        <source>Could not access the selected certificate file.</source>
+        <translation>Impossibile accedere al file del certificato selezionato.</translation>
+    </message>
+</context>
+<context>
+    <name>OCC::Flow2AuthWidget</name>
+    <message>
+        <location filename="../src/gui/wizard/flow2authwidget.cpp" line="91"/>
+        <source>Unable to open the Browser, please copy the link to your Browser.</source>
+        <translation>Impossibile aprire il browser, copia il collegamento nel tuo browser.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/flow2authwidget.cpp" line="154"/>
+        <source>Waiting for authorization</source>
+        <translation>In attesa di autorizzazione</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/flow2authwidget.cpp" line="159"/>
+        <source>Polling for authorization</source>
+        <translation>Richiesta di autorizzazione</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/flow2authwidget.cpp" line="164"/>
+        <source>Starting authorization</source>
+        <translation>Avvio autorizzazione</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/flow2authwidget.cpp" line="168"/>
+        <source>Link copied to clipboard.</source>
+        <translation>Collegamento copiato negli appunti.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/flow2authwidget.cpp" line="215"/>
+        <source>Open Browser</source>
+        <translation>Apri il browser</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/flow2authwidget.cpp" line="217"/>
+        <source>Copy Link</source>
+        <translation>Copia collegamento</translation>
+    </message>
+</context>
+<context>
+    <name>OCC::OwncloudAdvancedSetupPage</name>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="69"/>
+        <source>Connect</source>
+        <translation>Connetti</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="106"/>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="286"/>
+        <source>(experimental)</source>
+        <translation>(sperimentale)</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="121"/>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="288"/>
+        <source>Use &amp;virtual files instead of downloading content immediately %1</source>
+        <translation>Usa i file &amp;virtuali invece di scaricare immediatamente il contenuto %1</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="280"/>
+        <source>Virtual files are not supported for Windows partition roots as local folder. Please choose a valid subfolder under drive letter.</source>
+        <translation>I file virtuali non sono supportati per le radici delle partizioni di Windows come cartelle locali. Scegli una sottocartella valida sotto la lettera del disco.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="321"/>
+        <source>%1 folder &quot;%2&quot; is synced to local folder &quot;%3&quot;</source>
+        <translation>La cartella &quot;%2&quot; di %1 è sincronizzata con la cartella locale &quot;%3&quot;</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="324"/>
+        <source>Sync the folder &quot;%1&quot;</source>
+        <translation>Sincronizza la cartella &quot;%1&quot;</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="329"/>
+        <source>Warning: The local folder is not empty. Pick a resolution!</source>
+        <translation>Attenzione: la cartella locale non è vuota. Scegli una soluzione!</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="342"/>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="667"/>
+        <source>%1 free space</source>
+        <comment>%1 gets replaced with the size and a matching unit. Example: 3 MB or 5 GB</comment>
+        <translation>Spazio libero di %1</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="430"/>
+        <source>Virtual files are not supported at the selected location</source>
+        <translation>I file virtuali non sono supportati nella posizione selezionata</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="499"/>
+        <source>Local Sync Folder</source>
+        <translation>Cartella locale di sincronizzazione</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="542"/>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="583"/>
+        <source>(%1)</source>
+        <translation>(%1)</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="614"/>
+        <source>There isn&apos;t enough free space in the local folder!</source>
+        <translation>Non c&apos;è spazio libero sufficiente nella cartella locale!</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="665"/>
+        <source>In Finder&apos;s &quot;Locations&quot; sidebar section</source>
+        <translation>Nella sezione &quot;Posizioni&quot; della barra laterale del Finder</translation>
+    </message>
+</context>
+<context>
+    <name>OCC::OwncloudConnectionMethodDialog</name>
+    <message>
+        <location filename="../src/gui/wizard/owncloudconnectionmethoddialog.ui" line="14"/>
+        <source>Connection failed</source>
+        <translation>Connessione non riuscita</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudconnectionmethoddialog.ui" line="43"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Failed to connect to the secure server address specified. How do you wish to proceed?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Connessione all&apos;indirizzo sicuro del server specificato non riuscita. Come desideri procedere?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudconnectionmethoddialog.ui" line="55"/>
+        <source>Select a different URL</source>
+        <translation>Seleziona un URL diverso</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudconnectionmethoddialog.ui" line="62"/>
+        <source>Retry unencrypted over HTTP (insecure)</source>
+        <translation>Riprova senza cifratura su HTTP (non sicuro)</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudconnectionmethoddialog.ui" line="69"/>
+        <source>Configure client-side TLS certificate</source>
+        <translation>Configura certificato TLS lato client</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudconnectionmethoddialog.cpp" line="24"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Failed to connect to the secure server address &lt;em&gt;%1&lt;/em&gt;. How do you wish to proceed?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Connessione all&apos;indirizzo sicuro del server &lt;em&gt;%1&lt;/em&gt; non riuscita. Come desideri procedere?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>OCC::OwncloudHttpCredsPage</name>
+    <message>
+        <location filename="../src/gui/wizard/owncloudhttpcredspage.cpp" line="39"/>
+        <source>&amp;Email</source>
+        <translation>Posta &amp;elettronica</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudhttpcredspage.cpp" line="49"/>
+        <source>Connect to %1</source>
+        <translation>Connetti a %1</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudhttpcredspage.cpp" line="50"/>
+        <source>Enter user credentials</source>
+        <translation>Digita le credenziali dell&apos;utente</translation>
+    </message>
+</context>
+<context>
+    <name>OCC::OwncloudSetupPage</name>
+    <message>
+        <location filename="../src/gui/wizard/owncloudsetuppage.cpp" line="94"/>
+        <source>The link to your %1 web interface when you open it in the browser.</source>
+        <comment>%1 will be replaced with the application name</comment>
+        <translation>Il collegamento all&apos;interfaccia web di %1 quando lo apri nel browser.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudsetuppage.cpp" line="254"/>
+        <source>&amp;Next &gt;</source>
+        <translation>Ava&amp;nti &gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudsetuppage.cpp" line="314"/>
+        <source>Server address does not seem to be valid</source>
+        <translation>L&apos;indirizzo del server non sembra essere valido</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudsetuppage.cpp" line="429"/>
+        <source>Could not load certificate. Maybe wrong password?</source>
+        <translation>Impossibile caricare il certificato. Forse la password è errata?</translation>
+    </message>
+</context>
+<context>
+    <name>OCC::OwncloudSetupWizard</name>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="299"/>
+        <source>&lt;font color=&quot;green&quot;&gt;Successfully connected to %1: %2 version %3 (%4)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;</source>
+        <translation>&lt;font color=&quot;green&quot;&gt;Connesso correttamente a %1: %2 versione %3 (%4)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="329"/>
+        <source>Invalid URL</source>
+        <translation>URL non valido</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="331"/>
+        <source>Failed to connect to %1 at %2:&lt;br/&gt;%3</source>
+        <translation>Connessione a %1 su %2:&lt;br/&gt;%3</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="349"/>
+        <source>Timeout while trying to connect to %1 at %2.</source>
+        <translation>Tempo scaduto durante il tentativo di connessione a %1 su %2.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="376"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="399"/>
+        <source>Trying to connect to %1 at %2 …</source>
+        <translation>Tentativo di connessione a %1 su %2...</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="466"/>
+        <source>The authenticated request to the server was redirected to &quot;%1&quot;. The URL is bad, the server is misconfigured.</source>
+        <translation>La richiesta autenticata al server è stata rediretta a &quot;%1&quot;. L&apos;URL è errato, il server non è configurato correttamente.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="480"/>
+        <source>Access forbidden by server. To verify that you have proper access, &lt;a href=&quot;%1&quot;&gt;click here&lt;/a&gt; to access the service with your browser.</source>
+        <translation>Accesso negato dal server. Per verificare di avere i permessi appropriati, &lt;a href=&quot;%1&quot;&gt;fai clic qui&lt;/a&gt; per accedere al servizio con il tuo browser.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="489"/>
+        <source>There was an invalid response to an authenticated WebDAV request</source>
+        <translation>Ricevuta una risposta non valida a una richiesta WebDAV autenticata</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="543"/>
+        <source>Local sync folder %1 already exists, setting it up for sync.&lt;br/&gt;&lt;br/&gt;</source>
+        <translation>La cartella di sincronizzazione locale %1 esiste già, impostata per la sincronizzazione.&lt;br/&gt;&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="546"/>
+        <source>Creating local sync folder %1 …</source>
+        <translation>Creazione della cartella locale di sincronizzazione %1... </translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="550"/>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="552"/>
+        <source>failed.</source>
+        <translation>non riuscita.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="554"/>
+        <source>Could not create local folder %1</source>
+        <translation>Impossibile creare la cartella locale %1</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="614"/>
+        <source>No remote folder specified!</source>
+        <translation>Nessuna cartella remota specificata!</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="620"/>
+        <source>Error: %1</source>
+        <translation>Errore: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="633"/>
+        <source>creating folder on Nextcloud: %1</source>
+        <translation>creazione cartella su Nextcloud: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="638"/>
+        <source>Remote folder %1 created successfully.</source>
+        <translation>La cartella remota %1 è stata creata correttamente.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="653"/>
+        <source>The remote folder %1 already exists. Connecting it for syncing.</source>
+        <translation>La cartella remota %1 esiste già. Connessione in corso per la sincronizzazione</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="655"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="657"/>
+        <source>The folder creation resulted in HTTP error code %1</source>
+        <translation>La creazione della cartella ha restituito un codice di errore HTTP %1</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="659"/>
+        <source>The remote folder creation failed because the provided credentials are wrong!&lt;br/&gt;Please go back and check your credentials.&lt;/p&gt;</source>
+        <translation>La creazione della cartella remota non è riuscita poiché le credenziali fornite sono errate!&lt;br/&gt;Torna indietro e verifica le credenziali.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="663"/>
+        <source>&lt;p&gt;&lt;font color=&quot;red&quot;&gt;Remote folder creation failed probably because the provided credentials are wrong.&lt;/font&gt;&lt;br/&gt;Please go back and check your credentials.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;&lt;font color=&quot;red&quot;&gt;La creazione della cartella remota non è riuscita probabilmente perché le credenziali fornite non sono corrette.&lt;/font&gt;&lt;br/&gt;Torna indietro e controlla le credenziali inserite.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="668"/>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="669"/>
+        <source>Remote folder %1 creation failed with error &lt;tt&gt;%2&lt;/tt&gt;.</source>
+        <translation>Creazione della cartella remota %1 non riuscita con errore &lt;tt&gt;%2&lt;/tt&gt;.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="683"/>
+        <source>A sync connection from %1 to remote directory %2 was set up.</source>
+        <translation>Una connessione di sincronizzazione da %1 alla cartella remota %2 è stata stabilita.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="688"/>
+        <source>Successfully connected to %1!</source>
+        <translation>Connesso con successo a %1!</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="695"/>
+        <source>Connection to %1 could not be established. Please check again.</source>
+        <translation>La connessione a %1 non può essere stabilita. Prova ancora.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="708"/>
+        <source>Folder rename failed</source>
+        <translation>Rinomina della cartella non riuscita</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="709"/>
+        <source>Cannot remove and back up the folder because the folder or a file in it is open in another program. Please close the folder or file and hit retry or cancel the setup.</source>
+        <translation>Impossibile rimuovere o copiare la cartella poiché la cartella o un file contenuto in essa è aperto in un altro programma. Chiudi la cartella o il file e premi Riprova o annulla la configurazione.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="738"/>
+        <source>&lt;font color=&quot;green&quot;&gt;&lt;b&gt;File Provider-based account %1 successfully created!&lt;/b&gt;&lt;/font&gt;</source>
+        <translation>&lt;font color=&quot;green&quot;&gt;&lt;b&gt;Account basato sul provider di file %1creato con successo!&lt;/b&gt;&lt;/font&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/owncloudsetupwizard.cpp" line="780"/>
+        <source>&lt;font color=&quot;green&quot;&gt;&lt;b&gt;Local sync folder %1 successfully created!&lt;/b&gt;&lt;/font&gt;</source>
+        <translation>&lt;font color=&quot;green&quot;&gt;&lt;b&gt;Cartella locale %1 creata correttamente!&lt;/b&gt;&lt;/font&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>OCC::OwncloudWizard</name>
+    <message>
+        <location filename="../src/gui/wizard/owncloudwizard.cpp" line="99"/>
+        <source>Add %1 account</source>
+        <translation>Aggiungi account %1</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudwizard.cpp" line="103"/>
+        <source>Skip folders configuration</source>
+        <translation>Salta la configurazione delle cartelle</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudwizard.cpp" line="104"/>
+        <source>Cancel</source>
+        <translation>Annulla</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudwizard.cpp" line="105"/>
+        <source>Proxy Settings</source>
+        <comment>Proxy Settings button text in new account wizard</comment>
+        <translation>Impostazioni proxy</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudwizard.cpp" line="107"/>
+        <source>Next</source>
+        <comment>Next button text in new account wizard</comment>
+        <translation>Avanti</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudwizard.cpp" line="108"/>
+        <source>Back</source>
+        <comment>Next button text in new account wizard</comment>
+        <translation>Indietro</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudwizard.cpp" line="512"/>
+        <source>Enable experimental feature?</source>
+        <translation>Vuoi abilitare la funzionalità sperimentale?</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudwizard.cpp" line="513"/>
+        <source>When the &quot;virtual files&quot; mode is enabled no files will be downloaded initially. Instead, a tiny &quot;%1&quot; file will be created for each file that exists on the server. The contents can be downloaded by running these files or by using their context menu.
+
+The virtual files mode is mutually exclusive with selective sync. Currently unselected folders will be translated to online-only folders and your selective sync settings will be reset.
+
+Switching to this mode will abort any currently running synchronization.
+
+This is a new, experimental mode. If you decide to use it, please report any issues that come up.</source>
+        <translation>Quando la modalità &quot;file virtuali&quot; è abilitata, nessun file sarà scaricato inizialmente. Sarà invece creato un piccolo file &quot;%1&quot; per ogni file esistente sul server. I contenuti possono essere scaricati eseguendo questi file o utilizzando il loro menu contestuale. La modalità dei file virtuali si esclude a vicenda con la sincronizzazione selettiva. Le cartelle attualmente non selezionate saranno tradotte in cartelle solo in linea e le impostazioni di sincronizzazione selettiva saranno ripristinate. Il passaggio a questa modalità interromperà qualsiasi sincronizzazione attualmente in esecuzione. Questa è una nuova modalità sperimentale. Se decidi di utilizzarlo, segnala eventuali problemi che si presentano.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudwizard.cpp" line="527"/>
+        <source>Enable experimental placeholder mode</source>
+        <translation>Attiva la modalità segnaposto sperimentale</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudwizard.cpp" line="528"/>
+        <source>Stay safe</source>
+        <translation>Rimani al sicuro</translation>
+    </message>
+</context>
+<context>
+    <name>OCC::TermsOfServiceCheckWidget</name>
+    <message>
+        <location filename="../src/gui/wizard/termsofservicecheckwidget.cpp" line="125"/>
+        <source>Waiting for terms to be accepted</source>
+        <translation>In attesa che i termini vengano accettati</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/termsofservicecheckwidget.cpp" line="131"/>
+        <source>Polling</source>
+        <translation>Sondaggio</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/termsofservicecheckwidget.cpp" line="137"/>
+        <source>Link copied to clipboard.</source>
+        <translation>Collegamento copiato negli appunti.</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/termsofservicecheckwidget.cpp" line="178"/>
+        <source>Open Browser</source>
+        <translation>Apri browser</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/termsofservicecheckwidget.cpp" line="180"/>
+        <source>Copy Link</source>
+        <translation>Copia collegamento</translation>
+    </message>
+</context>
+<context>
+    <name>OCC::WebEnginePage</name>
+    <message>
+        <location filename="../src/gui/wizard/webview.cpp" line="239"/>
+        <source>Invalid certificate detected</source>
+        <translation>Rilevato certificato non valido</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/webview.cpp" line="240"/>
+        <source>The host &quot;%1&quot; provided an invalid certificate. Continue?</source>
+        <translation>L&apos;host &quot;%1&quot; ha fornito un certificato non valido. Vuoi continuare?</translation>
+    </message>
+</context>
+<context>
+    <name>OCC::WelcomePage</name>
+    <message>
+        <location filename="../src/gui/wizard/welcomepage.ui" line="20"/>
+        <source>Form</source>
+        <translation>Modulo</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/welcomepage.ui" line="143"/>
+        <source>Log in</source>
+        <translation>Accedi</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/welcomepage.ui" line="156"/>
+        <source>Sign up with provider</source>
+        <translation>Registrati a un fornitore</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/welcomepage.cpp" line="59"/>
+        <source>Keep your data secure and under your control</source>
+        <translation>Mantieni i tuoi dati sicuri e sotto il tuo controllo</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/welcomepage.cpp" line="60"/>
+        <source>Secure collaboration &amp; file exchange</source>
+        <translation>Collaborazione sicura e scambio di file</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/welcomepage.cpp" line="61"/>
+        <source>Easy-to-use web mail, calendaring &amp; contacts</source>
+        <translation>Web mail, calendario e contatti facili da usare</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/welcomepage.cpp" line="62"/>
+        <source>Screensharing, online meetings &amp; web conferences</source>
+        <translation>Condivisione schermo, riunioni in linea e conferenze via web</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/welcomepage.cpp" line="102"/>
+        <source>Host your own server</source>
+        <translation>Ospita il tuo server</translation>
+    </message>
+</context>
+<context>
+    <name>OCC::WizardProxySettingsDialog</name>
+    <message>
+        <location filename="../src/gui/wizard/wizardproxysettingsdialog.cpp" line="23"/>
+        <source>Proxy Settings</source>
+        <comment>Dialog window title for proxy settings</comment>
+        <translation>Impostazioni proxy</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/wizardproxysettingsdialog.cpp" line="25"/>
+        <source>Hostname of proxy server</source>
+        <translation>Nome host del server proxy</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/wizardproxysettingsdialog.cpp" line="26"/>
+        <source>Username for proxy server</source>
+        <translation>Nome utente per il server proxy</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/wizardproxysettingsdialog.cpp" line="27"/>
+        <source>Password for proxy server</source>
+        <translation>Password per il server proxy</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/wizardproxysettingsdialog.cpp" line="29"/>
+        <source>HTTP(S) proxy</source>
+        <translation>Proxy HTTP(S)</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/wizardproxysettingsdialog.cpp" line="30"/>
+        <source>SOCKS5 proxy</source>
+        <translation>Proxy SOCKS5</translation>
+    </message>
+</context>
+<context>
+    <name>OwncloudAdvancedSetupPage</name>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="77"/>
+        <source>&amp;Local Folder</source>
+        <translation>Carte&amp;lla locale</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="98"/>
+        <source>Username</source>
+        <translation>Nome utente</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="116"/>
+        <source>Local Folder</source>
+        <translation>Cartella locale</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="135"/>
+        <source>Choose different folder</source>
+        <translation>Scegli una cartella diversa</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="228"/>
+        <source>Server address</source>
+        <translation>Indirizzo del server</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="244"/>
+        <source>Sync Logo</source>
+        <translation>Sincronizza logo</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="304"/>
+        <source>Synchronize everything from server</source>
+        <translation>Sincronizza tutto dal server</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="360"/>
+        <source>Ask before syncing folders larger than</source>
+        <translation>Chiedi prima di sincronizzare cartelle più grandi di</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="386"/>
+        <source>MB</source>
+        <extracomment>Trailing part of &quot;Ask confirmation before syncing folder larger than&quot; </extracomment>
+        <translation>MB</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="432"/>
+        <source>Ask before syncing external storages</source>
+        <translation>Chiedi prima di sincronizzare archiviazioni esterne</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="475"/>
+        <source>Choose what to sync</source>
+        <translation>Scegli cosa sincronizzare</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="612"/>
+        <source>Keep local data</source>
+        <translation>Mantieni i dati locali</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="628"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Se questa casella è marcata, il contenuto della cartella locale sarà cancellato per avviare una nuova sincronizzazione dal server.&lt;/p&gt;&lt;p&gt;Non marcarla se il contenuto locale deve essere caricato nella cartella del server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="631"/>
+        <source>Erase local folder and start a clean sync</source>
+        <translation>Elimina la cartella locale e inizia una sincronizzazione pulita</translation>
+    </message>
+</context>
+<context>
+    <name>OwncloudHttpCredsPage</name>
+    <message>
+        <location filename="../src/gui/wizard/owncloudhttpcredspage.ui" line="73"/>
+        <source>&amp;Username</source>
+        <translation>Nome &amp;utente</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudhttpcredspage.ui" line="83"/>
+        <source>&amp;Password</source>
+        <translation>&amp;Password</translation>
+    </message>
+</context>
+<context>
+    <name>OwncloudSetupPage</name>
+    <message>
+        <location filename="../src/gui/wizard/owncloudsetupnocredspage.ui" line="73"/>
+        <source>Logo</source>
+        <translation>Logo</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudsetupnocredspage.ui" line="182"/>
+        <source>Server address</source>
+        <translation>Indirizzo del server</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/owncloudsetupnocredspage.ui" line="261"/>
+        <source>This is the link to your %1 web interface when you open it in the browser.</source>
+        <translation>Questo è il collegamento all&apos;interfaccia web di %1 quando lo apri nel browser.</translation>
+    </message>
+</context>
+<context>
+    <name>ProxySettings</name>
+    <message>
+        <location filename="../src/gui/wizard/proxysettings.ui" line="14"/>
+        <source>Form</source>
+        <translation>Modulo</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/proxysettings.ui" line="29"/>
+        <source>Proxy Settings</source>
+        <translation>Impostazioni proxy</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/proxysettings.ui" line="35"/>
+        <source>Manually specify proxy</source>
+        <translation>Specificare manualmente il proxy</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/proxysettings.ui" line="91"/>
+        <source>Host</source>
+        <translation>Host</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/proxysettings.ui" line="142"/>
+        <source>Proxy server requires authentication</source>
+        <translation>Il server proxy richiede l&apos;autenticazione</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/proxysettings.ui" line="205"/>
+        <source>Note: proxy settings have no effects for accounts on localhost</source>
+        <translation>Nota: le impostazioni proxy non hanno effetto sugli account su localhost</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/proxysettings.ui" line="230"/>
+        <source>Use system proxy</source>
+        <translation>Utilizza il proxy di sistema</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/proxysettings.ui" line="237"/>
+        <source>No proxy</source>
+        <translation>Nessun proxy</translation>
+    </message>
+</context>
+<context>
+    <name>SyncJournalDb</name>
+    <message>
+        <location filename="../src/common/syncjournaldb.cpp" line="1061"/>
+        <source>Failed to connect database.</source>
+        <translation>Connessione al database non riuscita.</translation>
+    </message>
+</context>
+<context>
+    <name>TermsOfServiceCheckWidget</name>
+    <message>
+        <location filename="../src/gui/wizard/termsofservicecheckwidget.ui" line="26"/>
+        <source>Terms of Service</source>
+        <translation>Termini di servizio</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/termsofservicecheckwidget.ui" line="47"/>
+        <source>Logo</source>
+        <translation>Logo</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/wizard/termsofservicecheckwidget.ui" line="76"/>
+        <source>Switch to your browser to accept the terms of service</source>
+        <translation>Passa al tuo browser per accettare i termini di servizio</translation>
     </message>
 </context>
 </TS>
