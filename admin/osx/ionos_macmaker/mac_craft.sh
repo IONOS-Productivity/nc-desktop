@@ -107,12 +107,63 @@ if [ -d "$EXTRACTED_DIR" ]; then
     rm -rf "$EXTRACTED_DIR"
     pkgutil --expand-full "$PATH_TO_PKG" "$EXTRACTED_DIR"
   fi
-else 
+else
   pkgutil --expand-full "$PATH_TO_PKG" "$EXTRACTED_DIR"
 fi
 
 # ---------------------------------------------------
-# Patch Team Identifier 
+# Extract extension entitlements
+
+# mac-crafter's "codesign" command now requires explicit entitlements manifests for the three
+# app extensions (see admin/osx/mac-crafter/Sources/Commands/Codesign.swift). Until commit
+# 4861c0d07a, mac-crafter derived these itself at signing time by reading the entitlements
+# already embedded in the extension currently being signed and stripping the debug-only
+# "get-task-allow" entitlement before reapplying them (see saveCodesignEntitlements() in the
+# pre-4861c0d07a admin/osx/mac-crafter/Sources/Utils/Codesigning.swift). That step was
+# externalized to the caller. Since this script resigns an already-built installer and must not
+# depend on a local CMake configure/build to resolve the *.entitlements.cmake templates, we
+# replicate that extraction here, reading straight from the .pkg's currently-signed extensions.
+
+echo "Extracting entitlements from app extensions..."
+
+ENTITLEMENTS_DIR="${EXTRACTED_DIR%/}/entitlements"
+mkdir -p "$ENTITLEMENTS_DIR"
+
+FILE_PROVIDER_EXT_PATH="$APP_PATH/Contents/PlugIns/FileProviderExt.appex"
+FILE_PROVIDER_UI_EXT_PATH="$APP_PATH/Contents/PlugIns/FileProviderUIExt.appex"
+FINDER_SYNC_EXT_PATH="$APP_PATH/Contents/PlugIns/FinderSyncExt.appex"
+
+FILE_PROVIDER_ENTITLEMENTS="$ENTITLEMENTS_DIR/FileProviderExt.entitlements"
+FILE_PROVIDER_UI_ENTITLEMENTS="$ENTITLEMENTS_DIR/FileProviderUIExt.entitlements"
+FINDER_SYNC_ENTITLEMENTS="$ENTITLEMENTS_DIR/FinderSyncExt.entitlements"
+
+extract_entitlements() {
+  local bundle_path=$1
+  local out_path=$2
+
+  if [ ! -d "$bundle_path" ]; then
+    echo "Expected extension bundle not found: $bundle_path. Exiting."
+    open "$BASE_DIR"
+    exit 1
+  fi
+
+  if ! codesign -d --entitlements "$out_path" --xml "$bundle_path" || [ ! -s "$out_path" ]; then
+    echo "Could not extract entitlements from $bundle_path. Exiting."
+    open "$BASE_DIR"
+    exit 1
+  fi
+
+  # Notarization rejects the debug-only get-task-allow entitlement; strip it like mac-crafter
+  # used to before this extraction step was externalized (see comment above).
+  /usr/libexec/PlistBuddy -c "Delete :com.apple.security.get-task-allow" "$out_path" >/dev/null 2>&1 || true
+}
+
+extract_entitlements "$FILE_PROVIDER_EXT_PATH" "$FILE_PROVIDER_ENTITLEMENTS"
+extract_entitlements "$FILE_PROVIDER_UI_EXT_PATH" "$FILE_PROVIDER_UI_ENTITLEMENTS"
+extract_entitlements "$FINDER_SYNC_EXT_PATH" "$FINDER_SYNC_ENTITLEMENTS"
+
+# ---------------------------------------------------
+# Patch Team Identifier
 
 # check wether patching is needed. ".com" is important because otherwise the ID in the signature will be found
 
@@ -146,6 +197,15 @@ if [[ -n "$TEAM_PATCHING" ]]; then
   else
     echo "Nothing to patch"
   fi
+
+  # The extracted extension entitlements live outside $APP_PATH (see above), so they are not
+  # covered by the find/grep patching above and need to be patched explicitly.
+  echo "Replacing Team Identifier in extracted entitlements..."
+  for entitlements_file in "$FILE_PROVIDER_ENTITLEMENTS" "$FILE_PROVIDER_UI_ENTITLEMENTS" "$FINDER_SYNC_ENTITLEMENTS"; do
+    if grep -q "$NC_TEAM_IDENTIFIER" "$entitlements_file"; then
+      sed -i '' "s/$NC_TEAM_IDENTIFIER/$IONOS_TEAM_IDENTIFIER/g" "$entitlements_file"
+    fi
+  done
 fi
 
 # ---------------------------------------------------
@@ -157,9 +217,12 @@ echo "start signing the client"
 
 swift run --package-path "$MACCRAFTER_DIR" \
     mac-crafter codesign \
-    -c "$CODE_SIGN_IDENTITY" \
-    -e "$ADMIN_OSX" \
-    "$APP_PATH"
+    "$APP_PATH" \
+    "$CODE_SIGN_IDENTITY" \
+    "$ADMIN_OSX" \
+    "$FILE_PROVIDER_ENTITLEMENTS" \
+    "$FILE_PROVIDER_UI_ENTITLEMENTS" \
+    "$FINDER_SYNC_ENTITLEMENTS"
 
 # Validate that the key used for signing the binary matches the expected TeamIdentifier
 # needed to pass the SocketApi through the sandbox for communication with virtual file system
