@@ -5,7 +5,7 @@
     <message>
         <location filename="../src/gui/tray/ActivityItem.qml" line="49" />
         <source>In %1</source>
-        <translation type="unfinished" />
+        <translation>In %1</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/ActivityItem.qml" line="31" />
@@ -439,62 +439,62 @@
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="530" />
         <source>Ask Assistant…</source>
-        <translation type="unfinished" />
+        <translation>Den Assistenten fragen …</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="464" />
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="357" />
         <source>Issue with account %1</source>
-        <translation type="unfinished" />
+        <translation>Probleme mit dem Konto %1</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="359" />
         <source>Issues with several accounts</source>
-        <translation type="unfinished" />
+        <translation>Probleme mit mehreren Konten</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="271" />
         <source>Main content</source>
-        <translation type="unfinished" />
+        <translation>Hauptinhalt</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="875" />
         <source>New activities</source>
-        <translation type="unfinished">Neue Aktivitäten</translation>
+        <translation>Neue Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="460" />
         <source>New conversation</source>
-        <translation type="unfinished" />
+        <translation>Neue Unterhaltung</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="558" />
         <source>Send assistant question</source>
-        <translation type="unfinished" />
+        <translation>Frage an Assistenten senden</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="579" />
         <source>Start a new assistant chat</source>
-        <translation type="unfinished" />
+        <translation>Einen neuen Assistenten-Chat starten</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="440" />
         <source>Start new conversation?</source>
-        <translation type="unfinished">Neue Unterhaltung beginnen?</translation>
+        <translation>Neue Unterhaltung beginnen?</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="485" />
         <source>This will clear the existing conversation.</source>
-        <translation type="unfinished">Dadurch wird die bestehende Unterhaltung geleert.</translation>
+        <translation>Dadurch wird die bestehende Unterhaltung geleert.</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="804" />
         <source>Unified search results list</source>
-        <translation type="unfinished" />
+        <translation>Einheitliche Suchergebnisliste</translation>
     </message>
 </context>
 <context>
@@ -502,7 +502,7 @@
     <message>
         <location filename="../src/libsync/theme.cpp" line="624" />
         <source>&lt;p&gt;&lt;small&gt;Built from Git revision &lt;a href=&quot;%1&quot;&gt;%2&lt;/a&gt; on %3, %4 using Qt %5, %6&lt;/small&gt;&lt;/p&gt;</source>
-        <translation type="unfinished" />
+        <translation>&lt;p&gt;&lt;small&gt;Erstellt aus der Git-Revision &lt;a href=&quot;%1&quot;&gt;%2&lt;/a&gt; auf %3, %4  unter Verwendung von Qt %5, %6&lt;/small&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -904,7 +904,7 @@ Soll das Konto importiert werden?</translation>
     <message>
         <location filename="../src/gui/accountsettings.cpp" line="1412" />
         <source>The syncing operation is running.&lt;br/&gt;Do you want to terminate it?</source>
-        <translation type="unfinished" />
+        <translation>Die Synchronisierung läuft gerade.&lt;br/&gt;Soll diese beendet werden?</translation>
     </message>
     <message>
         <location filename="../src/gui/accountsettings.cpp" line="2026" />
@@ -1135,17 +1135,17 @@ Möchten Sie dies jetzt tun?</translation>
     <message>
         <location filename="../src/gui/tray/activitylistmodel.cpp" line="510" />
         <source>Fetching activities …</source>
-        <translation type="unfinished" />
+        <translation>Aktivitäten abrufen…</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/activitylistmodel.cpp" line="490" />
         <source>For more activities please open the Activity app.</source>
-        <translation type="unfinished" />
+        <translation>Um weitere Aktivitäten anzusehen, bitte die Activity-App öffnen.</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/activitylistmodel.cpp" line="617" />
         <source>Network error occurred: client will retry syncing.</source>
-        <translation type="unfinished" />
+        <translation>Netzwerkfehler aufgetreten: Client startet die Synchronisation neu</translation>
     </message>
 </context>
 <context>
@@ -1168,17 +1168,17 @@ Möchten Sie dies jetzt tun?</translation>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="79" />
         <source>An encrypted pkcs12 bundle is strongly recommended as a copy will be stored in the configuration file.</source>
-        <translation type="unfinished">Ein verschlüsseltes pkcs12-Bundle wird dringend empfohlen, da eine Kopie in der Konfigurationsdatei gespeichert wird.</translation>
+        <translation>Ein verschlüsseltes pkcs12-Bundle wird dringend empfohlen, da eine Kopie in der Konfigurationsdatei gespeichert wird.</translation>
     </message>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="51" />
         <source>Browse …</source>
-        <translation type="unfinished">Durchsuchen …</translation>
+        <translation>Durchsuchen …</translation>
     </message>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="35" />
         <source>Certificate &amp; Key (pkcs12):</source>
-        <translation type="unfinished">Zertifikat &amp; Schlüssel (pkcs12):</translation>
+        <translation>Zertifikat &amp; Schlüssel (pkcs12):</translation>
     </message>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="60" />
@@ -1286,12 +1286,12 @@ Möchten Sie dies jetzt tun?</translation>
     <message>
         <location filename="../src/gui/authenticationdialog.cpp" line="30" />
         <source>&amp;Password:</source>
-        <translation type="unfinished" />
+        <translation>&amp;Passwort:</translation>
     </message>
     <message>
         <location filename="../src/gui/authenticationdialog.cpp" line="29" />
         <source>&amp;Username:</source>
-        <translation type="unfinished" />
+        <translation>&amp;Benutzername:</translation>
     </message>
     <message>
         <location filename="../src/gui/authenticationdialog.cpp" line="22" />
@@ -1724,7 +1724,7 @@ Möchten Sie dies jetzt tun?</translation>
     <message>
         <location filename="../src/gui/connectionvalidator.cpp" line="165" />
         <source>Authentication error: Either username or password are wrong.</source>
-        <translation type="unfinished">Authentifizierungsfehler: Benutzername oder Passwort ist falsch.</translation>
+        <translation>Authentifizierungsfehler: Benutzername oder Passwort ist falsch.</translation>
     </message>
     <message>
         <location filename="../src/gui/connectionvalidator.cpp" line="46" />
@@ -1735,7 +1735,7 @@ Möchten Sie dies jetzt tun?</translation>
     <message>
         <location filename="../src/gui/connectionvalidator.cpp" line="214" />
         <source>The provided credentials are not correct</source>
-        <translation type="unfinished">Die zur Verfügung gestellten Anmeldeinformationen sind nicht korrekt</translation>
+        <translation>Die zur Verfügung gestellten Anmeldeinformationen sind nicht korrekt</translation>
     </message>
     <message>
         <location filename="../src/gui/connectionvalidator.cpp" line="177" />
@@ -1819,12 +1819,12 @@ Möchten Sie dies jetzt tun?</translation>
     <message>
         <location filename="../src/libsync/discoveryphase.cpp" line="192" />
         <source>Error while canceling deletion of %1</source>
-        <translation type="unfinished">Fehler beim Abbrechen des Löschens von %1</translation>
+        <translation>Fehler beim Abbrechen des Löschens von %1</translation>
     </message>
     <message>
         <location filename="../src/libsync/discoveryphase.cpp" line="191" />
         <source>Error while canceling deletion of a file</source>
-        <translation type="unfinished">Fehler beim Abbrechen des Löschens einer Datei</translation>
+        <translation>Fehler beim Abbrechen des Löschens einer Datei</translation>
     </message>
 </context>
 <context>
@@ -2421,17 +2421,17 @@ Dies bedeutet, dass der Synchronisierungs-Client lokale Änderungen möglicherwe
     <message>
         <location filename="../src/gui/folder.cpp" line="241" />
         <source>Please choose a different location. %1 isn&apos;t a readable folder.</source>
-        <translation type="unfinished" />
+        <translation>Bitte wählen Sie einen anderen Speicherort. %1 ist kein lesbarer Ordner.</translation>
     </message>
     <message>
         <location filename="../src/gui/folder.cpp" line="239" />
         <source>Please choose a different location. %1 isn&apos;t a valid folder.</source>
-        <translation type="unfinished" />
+        <translation>Bitte wählen Sie einen anderen Speicherort. %1 ist kein gültiger Ordner.</translation>
     </message>
     <message>
         <location filename="../src/gui/folder.cpp" line="237" />
         <source>Please choose a different location. The folder %1 doesn&apos;t exist.</source>
-        <translation type="unfinished" />
+        <translation>Bitte wählen Sie einen anderen Speicherort. Der Ordner %1 ist nicht vorhanden.</translation>
     </message>
     <message>
         <location filename="../src/gui/folder.cpp" line="1474" />
@@ -3257,7 +3257,7 @@ Ein Downgrade von Versionen ist nicht sofort möglich: Der Wechsel von Beta auf 
     <message>
         <location filename="../src/gui/generalsettings.ui" line="60" />
         <source>General settings</source>
-        <translation type="unfinished" />
+        <translation>Allgemeine Einstellungen</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.ui" line="546" />
@@ -4258,150 +4258,150 @@ Beachten Sie, dass die Verwendung von Befehlszeilenoptionen für die Protokollie
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="738" />
         <source>&lt;font color=&quot;green&quot;&gt;&lt;b&gt;File Provider-based account %1 successfully created!&lt;/b&gt;&lt;/font&gt;</source>
-        <translation type="unfinished">&lt;font color=&quot;green&quot;&gt;&lt;b&gt;Dateianbieter-basiertes Konto %1 erstellt!&lt;/b&gt;&lt;/font&gt;</translation>
+        <translation>&lt;font color=&quot;green&quot;&gt;&lt;b&gt;Dateianbieter-basiertes Konto %1 erstellt!&lt;/b&gt;&lt;/font&gt;</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="780" />
         <source>&lt;font color=&quot;green&quot;&gt;&lt;b&gt;Local sync folder %1 successfully created!&lt;/b&gt;&lt;/font&gt;</source>
-        <translation type="unfinished">&lt;font color=&quot;green&quot;&gt;&lt;b&gt;Lokaler Sync-Ordner %1 erstellt!&lt;/b&gt;&lt;/font&gt;</translation>
+        <translation>&lt;font color=&quot;green&quot;&gt;&lt;b&gt;Lokaler Sync-Ordner %1 erstellt!&lt;/b&gt;&lt;/font&gt;</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="299" />
         <source>&lt;font color=&quot;green&quot;&gt;Successfully connected to %1: %2 version %3 (%4)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;</source>
-        <translation type="unfinished">&lt;font color=&quot;green&quot;&gt;Erfolgreich mit  %1 verbunden: %2 Version %3 (%4)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;</translation>
+        <translation>&lt;font color=&quot;green&quot;&gt;Erfolgreich mit  %1 verbunden: %2 Version %3 (%4)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="663" />
         <source>&lt;p&gt;&lt;font color=&quot;red&quot;&gt;Remote folder creation failed probably because the provided credentials are wrong.&lt;/font&gt;&lt;br/&gt;Please go back and check your credentials.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;&lt;font color=&quot;red&quot;&gt;Die Erstellung des entfernten Ordners ist fehlgeschlagen, vermutlich sind die angegebenen Zugangsdaten falsch.&lt;/font&gt;&lt;br/&gt;Bitte gehen Sie zurück und überprüfen Sie Ihre Zugangsdaten.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;font color=&quot;red&quot;&gt;Die Erstellung des entfernten Ordners ist fehlgeschlagen, vermutlich sind die angegebenen Zugangsdaten falsch.&lt;/font&gt;&lt;br/&gt;Bitte gehen Sie zurück und überprüfen Sie Ihre Zugangsdaten.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="683" />
         <source>A sync connection from %1 to remote directory %2 was set up.</source>
-        <translation type="unfinished">Eine Synchronisierungsverbindung für Ordner %1 zum entfernten Ordner %2 wurde eingerichtet.</translation>
+        <translation>Eine Synchronisierungsverbindung für Ordner %1 zum entfernten Ordner %2 wurde eingerichtet.</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="480" />
         <source>Access forbidden by server. To verify that you have proper access, &lt;a href=&quot;%1&quot;&gt;click here&lt;/a&gt; to access the service with your browser.</source>
-        <translation type="unfinished">Zugriff durch Server verboten. Um zu überprüfen, ob Sie über den richtigen Zugriff verfügen, &lt;a href=&quot;%1&quot;&gt;klicken Sie hier&lt;/a&gt;, um mit Ihrem Browser auf den Dienst zuzugreifen.</translation>
+        <translation>Zugang vom Server nicht erlaubt. &lt;a href=&quot;%1&quot;&gt;Klicken Sie hier&lt;/a&gt; zum Zugriff auf den Dienst mithilfe Ihres Browsers, so dass Sie sicherstellen können, dass Ihr Zugang ordnungsgemäß funktioniert.</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="709" />
         <source>Cannot remove and back up the folder because the folder or a file in it is open in another program. Please close the folder or file and hit retry or cancel the setup.</source>
-        <translation type="unfinished">Der Ordner kann nicht entfernt und gesichert werden, da der Ordner oder einer seiner Dateien in einem anderen Programm geöffnet ist. Bitte schließen Sie den Ordner oder die Datei und versuchen Sie es erneut oder beenden Sie die Installation.</translation>
+        <translation>Der Ordner kann nicht entfernt und gesichert werden, da der Ordner oder einer seiner Dateien in einem anderen Programm geöffnet ist. Bitte schließen Sie den Ordner oder die Datei und versuchen Sie es erneut oder beenden Sie die Installation.</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="695" />
         <source>Connection to %1 could not be established. Please check again.</source>
-        <translation type="unfinished">Die Verbindung zu %1 konnte nicht hergestellt werden. Bitte prüfen Sie die Einstellungen erneut.</translation>
+        <translation>Die Verbindung zu %1 konnte nicht hergestellt werden. Bitte prüfen Sie die Einstellungen erneut.</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="554" />
         <source>Could not create local folder %1</source>
-        <translation type="unfinished">Der lokale Ordner %1 konnte nicht erstellt werden</translation>
+        <translation>Der lokale Ordner %1 konnte nicht erstellt werden</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="546" />
         <source>Creating local sync folder %1 …</source>
-        <translation type="unfinished">Lokaler Ordner %1 für die Synchronisierung wird erstellt …</translation>
+        <translation>Lokaler Ordner %1 für die Synchronisierung wird erstellt …</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="620" />
         <source>Error: %1</source>
-        <translation type="unfinished">Fehler: %1</translation>
+        <translation>Fehler: %1</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="331" />
         <source>Failed to connect to %1 at %2:&lt;br/&gt;%3</source>
-        <translation type="unfinished">Die Verbindung zu %1 auf %2 konnte nicht hergestellt werden: &lt;br/&gt;%3</translation>
+        <translation>Die Verbindung zu %1 auf %2 konnte nicht hergestellt werden: &lt;br/&gt;%3</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="708" />
         <source>Folder rename failed</source>
-        <translation type="unfinished">Ordner umbenennen fehlgeschlagen.</translation>
+        <translation>Ordner umbenennen fehlgeschlagen.</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="329" />
         <source>Invalid URL</source>
-        <translation type="unfinished">Ungültige URL</translation>
+        <translation>Ungültige URL</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="543" />
         <source>Local sync folder %1 already exists, setting it up for sync.&lt;br/&gt;&lt;br/&gt;</source>
-        <translation type="unfinished">Lokaler Sync-Ordner %1 existiert bereits, aktiviere Synchronistation.&lt;br/&gt;&lt;br/&gt;</translation>
+        <translation>Lokaler Sync-Ordner %1 existiert bereits, aktiviere Synchronistation.&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="614" />
         <source>No remote folder specified!</source>
-        <translation type="unfinished">Kein entfernter Ordner angegeben!</translation>
+        <translation>Kein entfernter Ordner angegeben!</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="550" />
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="638" />
         <source>Remote folder %1 created successfully.</source>
-        <translation type="unfinished">Entfernter Ordner %1 erstellt.</translation>
+        <translation>Entfernter Ordner %1 erstellt.</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="668" />
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="669" />
         <source>Remote folder %1 creation failed with error &lt;tt&gt;%2&lt;/tt&gt;.</source>
-        <translation type="unfinished">Entfernter Ordner %1 konnte mit folgendem Fehler nicht erstellt werden: &lt;tt&gt;%2&lt;/tt&gt;.</translation>
+        <translation>Entfernter Ordner %1 konnte mit folgendem Fehler nicht erstellt werden: &lt;tt&gt;%2&lt;/tt&gt;.</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="688" />
         <source>Successfully connected to %1!</source>
-        <translation type="unfinished">Erfolgreich mit %1 verbunden!</translation>
+        <translation>Erfolgreich mit %1 verbunden!</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="466" />
         <source>The authenticated request to the server was redirected to &quot;%1&quot;. The URL is bad, the server is misconfigured.</source>
-        <translation type="unfinished">Die genehmigte Anfrage an den Server wurde an &quot;%1&quot; umgeleitet. Die URL ist fehlerhaft, der Server ist falsch konfiguriert.</translation>
+        <translation>Die Authentifizierungs-Anfrage an den Server wurde weitergeleitet an &quot;%1&quot;. Diese Adresse ist ungültig, der Server ist falsch konfiguriert.</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="655" />
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="657" />
         <source>The folder creation resulted in HTTP error code %1</source>
-        <translation type="unfinished">Das Erstellen des Ordners erzeugte den HTTP-Fehler-Code %1</translation>
+        <translation>Das Erstellen des Ordners erzeugte den HTTP-Fehler-Code %1</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="653" />
         <source>The remote folder %1 already exists. Connecting it for syncing.</source>
-        <translation type="unfinished">Der Ordner %1 ist auf dem Server bereits vorhanden. Verbinde zur Synchronisierung.</translation>
+        <translation>Der Ordner %1 ist auf dem Server bereits vorhanden. Verbinde zur Synchronisierung.</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="659" />
         <source>The remote folder creation failed because the provided credentials are wrong!&lt;br/&gt;Please go back and check your credentials.&lt;/p&gt;</source>
-        <translation type="unfinished">Die Erstellung des entfernten Ordners ist fehlgeschlagen, weil die angegebenen Zugangsdaten falsch sind. &lt;br/&gt;Bitte gehen Sie zurück und überprüfen Sie die Zugangsdaten.&lt;/p&gt;</translation>
+        <translation>Die Erstellung des entfernten Ordners ist fehlgeschlagen, weil die angegebenen Zugangsdaten falsch sind. &lt;br/&gt;Bitte gehen Sie zurück und überprüfen Sie die Zugangsdaten.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="489" />
         <source>There was an invalid response to an authenticated WebDAV request</source>
-        <translation type="unfinished">Es gab eine ungültige Antwort auf eine authentifizierte WebDAV-Anfrage</translation>
+        <translation>Ungültige Antwort auf eine WebDAV-Authentifizierungs-Anfrage</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="349" />
         <source>Timeout while trying to connect to %1 at %2.</source>
-        <translation type="unfinished">Zeitüberschreitung beim Verbindungsversuch mit %1 unter %2.</translation>
+        <translation>Zeitüberschreitung beim Verbindungsversuch mit %1 unter %2.</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="376" />
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="399" />
         <source>Trying to connect to %1 at %2 …</source>
-        <translation type="unfinished">Verbindungsversuch mit %1 unter %2 …</translation>
+        <translation>Verbindungsversuch mit %1 unter %2 …</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="633" />
         <source>creating folder on Nextcloud: %1</source>
-        <translation type="unfinished">Erstelle Ordner auf Nextcloud: %1</translation>
+        <translation>Erstelle Ordner auf Nextcloud: %1</translation>
     </message>
     <message>
         <location filename="../src/gui/owncloudsetupwizard.cpp" line="552" />
         <source>failed.</source>
-        <translation type="unfinished">fehlgeschlagen.</translation>
+        <translation>fehlgeschlagen.</translation>
     </message>
 </context>
 <context>
@@ -4409,50 +4409,50 @@ Beachten Sie, dass die Verwendung von Befehlszeilenoptionen für die Protokollie
     <message>
         <location filename="../src/gui/wizard/owncloudwizard.cpp" line="108" />
         <source>Add %1 account</source>
-        <translation type="unfinished">%1 Konto hinzufügen</translation>
+        <translation>%1 Konto hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/owncloudwizard.cpp" line="117" />
         <source>Back</source>
         <comment>Next button text in new account wizard</comment>
-        <translation type="unfinished">Zurück</translation>
+        <translation>Zurück</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/owncloudwizard.cpp" line="113" />
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/owncloudwizard.cpp" line="532" />
         <source>Enable experimental feature?</source>
-        <translation type="unfinished">Experimentelle Funktion aktivieren?</translation>
+        <translation>Experimentelle Funktion aktivieren?</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/owncloudwizard.cpp" line="547" />
         <source>Enable experimental placeholder mode</source>
-        <translation type="unfinished">Experimentellen Platzhaltermodus aktivieren</translation>
+        <translation>Experimentellen Platzhaltermodus aktivieren</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/owncloudwizard.cpp" line="116" />
         <source>Next</source>
         <comment>Next button text in new account wizard</comment>
-        <translation type="unfinished">Weiter</translation>
+        <translation>Weiter</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/owncloudwizard.cpp" line="114" />
         <source>Proxy Settings</source>
         <comment>Proxy Settings button text in new account wizard</comment>
-        <translation type="unfinished">Proxyeinstellungen</translation>
+        <translation>Proxyeinstellungen</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/owncloudwizard.cpp" line="112" />
         <source>Skip folders configuration</source>
-        <translation type="unfinished">Ordner-Konfiguration überspringen</translation>
+        <translation>Ordner-Konfiguration überspringen</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/owncloudwizard.cpp" line="548" />
         <source>Stay safe</source>
-        <translation type="unfinished">Bleiben Sie sicher</translation>
+        <translation>Bleiben Sie sicher</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/owncloudwizard.cpp" line="533" />
@@ -4463,7 +4463,7 @@ The virtual files mode is mutually exclusive with selective sync. Currently unse
 Switching to this mode will abort any currently running synchronization.
 
 This is a new, experimental mode. If you decide to use it, please report any issues that come up.</source>
-        <translation type="unfinished">Wenn der Modus &quot;Virtuelle Dateien&quot; aktiviert ist, werden zunächst keine Dateien heruntergeladen. Stattdessen wird für jede Datei, die auf dem Server existiert, eine winzige &quot;%1&quot;-Datei erstellt. Der Inhalt kann heruntergeladen werden, indem diese Dateien ausgeführt werden oder indem deren Kontextmenü verwendet wird.
+        <translation>Wenn der Modus &quot;Virtuelle Dateien&quot; aktiviert ist, werden zunächst keine Dateien heruntergeladen. Stattdessen wird für jede Datei, die auf dem Server existiert, eine winzige &quot;%1&quot;-Datei erstellt. Der Inhalt kann heruntergeladen werden, indem diese Dateien ausgeführt werden oder indem deren Kontextmenü verwendet wird.
 
 Der Modus &quot;Virtuelle Dateien&quot; schließt sich mit der ausgewählten Synchronisierung gegenseitig aus. Derzeit nicht ausgewählte Ordner werden in reine Online-Ordner umgewandelt und Ihre Einstellungen für die selektive Synchronisierung werden zurückgesetzt.
 
@@ -4477,12 +4477,12 @@ Dies ist ein neuer, experimenteller Modus. Wenn Sie sich entscheiden, ihn zu ver
     <message>
         <location filename="../src/gui/passwordinputdialog.ui" line="23" />
         <source>Password for share required</source>
-        <translation type="unfinished">Passwort für die Freigabe erforderlich</translation>
+        <translation>Passwort für die Freigabe erforderlich</translation>
     </message>
     <message>
         <location filename="../src/gui/passwordinputdialog.ui" line="35" />
         <source>Please enter a password for your share:</source>
-        <translation type="unfinished" />
+        <translation>Bitte vergeben sie für die Freigabe ein Passwort:</translation>
     </message>
 </context>
 <context>
@@ -4490,7 +4490,7 @@ Dies ist ein neuer, experimenteller Modus. Wenn Sie sich entscheiden, ihn zu ver
     <message>
         <location filename="../src/libsync/propagateupload.cpp" line="143" />
         <source>Invalid JSON reply from the poll URL</source>
-        <translation type="unfinished" />
+        <translation>Ungültige JSON-Antwort von der Poll-URL</translation>
     </message>
 </context>
 <context>
@@ -4501,207 +4501,207 @@ Dies ist ein neuer, experimenteller Modus. Wenn Sie sich entscheiden, ihn zu ver
         <location filename="../src/libsync/discovery.cpp" line="439" />
         <location filename="../src/libsync/discovery.cpp" line="481" />
         <source>Cannot be renamed or uploaded.</source>
-        <translation type="unfinished">Kann nicht umbenannt oder hochgeladen werden.</translation>
+        <translation>Kann nicht umbenannt oder hochgeladen werden.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="1935" />
         <source>Cannot modify encrypted item because the selected certificate is not valid.</source>
-        <translation type="unfinished">Das verschlüsselte Element kann nicht geändert werden, da das ausgewählte Zertifikat nicht gültig ist.</translation>
+        <translation>Das verschlüsselte Element kann nicht geändert werden, da das ausgewählte Zertifikat nicht gültig ist.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="1231" />
         <source>Cannot sync due to invalid modification time</source>
-        <translation type="unfinished">Synchronisierung wegen ungültiger Änderungszeit nicht möglich</translation>
+        <translation>Synchronisierung wegen ungültiger Änderungszeit nicht möglich</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="457" />
         <source>Case Clash Conflict: Server file downloaded and renamed to avoid clash.</source>
-        <translation type="unfinished">Problem der Groß- und Kleinschreibung: Serverdatei heruntergeladen und umbenannt, um Konflikte zu vermeiden.</translation>
+        <translation>Problem der Groß- und Kleinschreibung: Serverdatei heruntergeladen und umbenannt, um Konflikte zu vermeiden.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="453" />
         <source>Conflict: Server version downloaded, local copy renamed and not uploaded.</source>
-        <translation type="unfinished">Konflikt: Serverversion heruntergeladen, lokale Kopie umbenannt und nicht hochgeladen.</translation>
+        <translation>Konflikt: Serverversion heruntergeladen, lokale Kopie umbenannt und nicht hochgeladen.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="1266" />
         <source>Could not upload file, because it is open in &quot;%1&quot;.</source>
-        <translation type="unfinished">Datei konnte nicht hochgeladen werden, da sie in &quot;%1&quot; geöffnet ist.</translation>
+        <translation>Datei konnte nicht hochgeladen werden, da sie in &quot;%1&quot; geöffnet ist.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="1319" />
         <source>Error while deleting file record %1 from the database</source>
-        <translation type="unfinished">Fehler beim Löschen des Dateidatensatzes %1 aus der Datenbank</translation>
+        <translation>Fehler beim Löschen des Dateidatensatzes %1 aus der Datenbank</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="2265" />
         <source>Error while reading the database</source>
-        <translation type="unfinished">Fehler beim Lesen der Datenbank</translation>
+        <translation>Fehler beim Lesen der Datenbank</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="622" />
         <source>File has extension reserved for virtual files.</source>
-        <translation type="unfinished">Die Endung der Datei ist für virtuelle Dateien reserviert.</translation>
+        <translation>Die Endung der Datei ist für virtuelle Dateien reserviert.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="391" />
         <source>File is listed on the ignore list.</source>
-        <translation type="unfinished">Die Datei ist in der Ignorierliste aufgeführt.</translation>
+        <translation>Die Datei ist in der Ignorierliste aufgeführt.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="795" />
         <source>File is not accessible on the server.</source>
         <comment>server error</comment>
-        <translation type="unfinished">Auf die Datei kann auf dem Server nicht zugegriffen werden.</translation>
+        <translation>Auf die Datei kann auf dem Server nicht zugegriffen werden.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="412" />
         <source>File name contains at least one invalid character</source>
-        <translation type="unfinished">Der Dateiname enthält mindestens ein ungültiges Zeichen</translation>
+        <translation>Der Dateiname enthält mindestens ein ungültiges Zeichen</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="416" />
         <source>File name is a reserved name on this file system.</source>
-        <translation type="unfinished">Der Dateiname ist ein reservierter Name auf diesem Dateisystem.</translation>
+        <translation>Der Dateiname ist ein reservierter Name auf diesem Dateisystem.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="408" />
         <source>File names containing the character &quot;%1&quot; are not supported on this file system.</source>
         <comment>%1: the invalid character</comment>
-        <translation type="unfinished">Dateinamen, die das Zeichen &quot;%1&quot; enthalten, werden von diesem Dateisystem nicht unterstützt.</translation>
+        <translation>Dateinamen, die das Zeichen &quot;%1&quot; enthalten, werden von diesem Dateisystem nicht unterstützt.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="395" />
         <source>File names ending with a period are not supported on this file system.</source>
-        <translation type="unfinished">Dateinamen, die mit einem Punkt enden, werden von diesem Dateisystem nicht unterstützt.</translation>
+        <translation>Dateinamen, die mit einem Punkt enden, werden von diesem Dateisystem nicht unterstützt.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="447" />
         <source>File/Folder is ignored because it&apos;s hidden.</source>
-        <translation type="unfinished">Datei/Ordner wird ignoriert, weil sie unsichtbar ist.</translation>
+        <translation>Datei/Ordner wird ignoriert, weil sie unsichtbar ist.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="436" />
         <source>Filename contains leading and trailing spaces.</source>
-        <translation type="unfinished">Dateiname enthält Leerzeichen am Anfang und am Ende.</translation>
+        <translation>Dateiname enthält Leerzeichen am Anfang und am Ende.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="429" />
         <source>Filename contains leading spaces.</source>
-        <translation type="unfinished">Dateiname enthält Leerzeichen am Anfang.</translation>
+        <translation>Dateiname enthält Leerzeichen am Anfang.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="422" />
         <source>Filename contains trailing spaces.</source>
-        <translation type="unfinished">Dateiname enthält Leerzeichen am Ende.</translation>
+        <translation>Dateiname enthält Leerzeichen am Ende.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="443" />
         <source>Filename is too long.</source>
-        <translation type="unfinished">Der Dateiname ist zu lang.</translation>
+        <translation>Der Dateiname ist zu lang.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="794" />
         <source>Folder is not accessible on the server.</source>
         <comment>server error</comment>
-        <translation type="unfinished">Auf den Ordner kann auf dem Server nicht zugegriffen werden.</translation>
+        <translation>Auf den Ordner kann auf dem Server nicht zugegriffen werden.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="411" />
         <source>Folder name contains at least one invalid character</source>
-        <translation type="unfinished">Ordnername enthält mindestens ein ungültiges Zeichen</translation>
+        <translation>Ordnername enthält mindestens ein ungültiges Zeichen</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="415" />
         <source>Folder name is a reserved name on this file system.</source>
-        <translation type="unfinished">Der Ordnername ist ein reservierter Name in diesem Dateisystem.</translation>
+        <translation>Der Ordnername ist ein reservierter Name in diesem Dateisystem.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="407" />
         <source>Folder names containing the character &quot;%1&quot; are not supported on this file system.</source>
         <comment>%1: the invalid character</comment>
-        <translation type="unfinished">Ordnernamen, die das Zeichen &quot;%1&quot; enthalten, werden von diesem Dateisystem nicht unterstützt.</translation>
+        <translation>Ordnernamen, die das Zeichen &quot;%1&quot; enthalten, werden von diesem Dateisystem nicht unterstützt.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="2004" />
         <source>Ignored because of the &quot;choose what to sync&quot; blacklist</source>
-        <translation type="unfinished">Ignoriert wegen der &quot;Choose what to sync&quot;-Blacklist</translation>
+        <translation>Ignoriert wegen der &quot;Choose what to sync&quot;-Blacklist</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="1607" />
         <location filename="../src/libsync/discovery.cpp" line="2080" />
         <source>Moved to invalid target, restoring</source>
-        <translation type="unfinished">Auf ungültiges Ziel verschoben, wiederherstellen.</translation>
+        <translation>Auf ungültiges Ziel verschoben, wiederherstellen.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="2044" />
         <source>Not allowed because you don&apos;t have permission to add files in that folder</source>
-        <translation type="unfinished">Nicht erlaubt, da Sie keine Berechtigung zum Hinzufügen von Dateien in diesen Ordner haben.</translation>
+        <translation>Nicht erlaubt, da Sie keine Berechtigung zum Hinzufügen von Dateien in diesen Ordner haben.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="2038" />
         <source>Not allowed because you don&apos;t have permission to add subfolders to that folder</source>
-        <translation type="unfinished">Nicht erlaubt, da Sie nicht die Berechtigung haben, Unterordner zu diesem Ordner hinzuzufügen.</translation>
+        <translation>Nicht erlaubt, da Sie nicht die Berechtigung haben, Unterordner zu diesem Ordner hinzuzufügen.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="2094" />
         <source>Not allowed to remove, restoring</source>
-        <translation type="unfinished">Entfernen nicht erlaubt, wiederherstellen.</translation>
+        <translation>Entfernen nicht erlaubt, wiederherstellen.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="2058" />
         <source>Not allowed to upload this file because it is read-only on the server, restoring</source>
-        <translation type="unfinished">Das Hochladen dieser Datei ist nicht erlaubt, da die Datei auf dem Server schreibgeschützt ist. Wiederherstellen.</translation>
+        <translation>Das Hochladen dieser Datei ist nicht erlaubt, da die Datei auf dem Server schreibgeschützt ist. Wiederherstellen.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="467" />
         <source>Reason: the entire filename is forbidden.</source>
-        <translation type="unfinished">Grund: Der gesamte Dateiname ist unzulässig.</translation>
+        <translation>Grund: Der gesamte Dateiname ist unzulässig.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="473" />
         <source>Reason: the file has a forbidden extension (.%1).</source>
-        <translation type="unfinished">Grund: Die Datei hat eine unzulässige Erweiterung (.%1).</translation>
+        <translation>Grund: Die Datei hat eine unzulässige Erweiterung (.%1).</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="476" />
         <source>Reason: the filename contains a forbidden character (%1).</source>
-        <translation type="unfinished">Grund: Der Dateiname enthält ein unzulässiges Zeichen (%1).</translation>
+        <translation>Grund: Der Dateiname enthält ein unzulässiges Zeichen (%1).</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="470" />
         <source>Reason: the filename has a forbidden base name (filename start).</source>
-        <translation type="unfinished" />
+        <translation>Grund: Der Dateiname hat einen unzulässigen Basisnamen (Beginn des Dateinamens).</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="450" />
         <source>Stat failed.</source>
-        <translation type="unfinished" />
+        <translation>Stat fehlgeschlagen.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="382" />
         <source>Symbolic links are not supported in syncing.</source>
-        <translation type="unfinished" />
+        <translation>Symbolische Verknüpfungen werden bei der Synchronisierung nicht unterstützt.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="461" />
         <source>The filename cannot be encoded on your file system.</source>
-        <translation type="unfinished" />
+        <translation>Der Dateiname kann auf Ihrem Dateisystem nicht entschlüsselt werden.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="464" />
         <source>The filename is blacklisted on the server.</source>
-        <translation type="unfinished" />
+        <translation>Der Dateiname steht auf dem Server auf einer schwarzen Liste.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="1250" />
         <source>Upload of %1 exceeds %2 of space left in folder %3.</source>
-        <translation type="unfinished" />
+        <translation>Hochladen von %1 übersteigt %2 des in dem Ordner %3 verfügbaren Speicherplatzes.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="1247" />
         <source>Upload of %1 exceeds %2 of space left in personal files.</source>
-        <translation type="unfinished" />
+        <translation>Hochladen von %1 übersteigt %2 des in den persönlichen Dateien verfügbaren Speicherplatzes.</translation>
     </message>
 </context>
 <context>
@@ -4968,7 +4968,7 @@ Dies ist ein neuer, experimenteller Modus. Wenn Sie sich entscheiden, ihn zu ver
     <message>
         <location filename="../src/libsync/propagateremotemkdir.cpp" line="216" />
         <source>Failed to create encrypted folder.</source>
-        <translation type="unfinished" />
+        <translation>Fehler beim Erstellen eines verschlüsselten Ordners</translation>
     </message>
     <message>
         <location filename="../src/libsync/propagateremotemkdir.cpp" line="255" />
@@ -5073,7 +5073,7 @@ Dies ist ein neuer, experimenteller Modus. Wenn Sie sich entscheiden, ihn zu ver
     <message>
         <location filename="../src/libsync/propagateupload.cpp" line="435" />
         <source>Local file changed during syncing. It will be resumed.</source>
-        <translation type="unfinished">Lokale Datei hat sich während der Synchronisierung geändert. Die Synchronisierung wird wieder aufgenommen.</translation>
+        <translation>Lokale Datei hat sich während der Synchronisierung geändert. Die Synchronisierung wird wiederaufgenommen.</translation>
     </message>
     <message>
         <location filename="../src/libsync/propagateupload.cpp" line="850" />
@@ -5811,19 +5811,19 @@ Server antwortete mit Fehler: %2</translation>
     <message>
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="344" />
         <source>%1 of %2</source>
-        <translation type="unfinished" />
+        <translation>%1 von %2</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="340" />
         <source>%1 of %2 · %3 left</source>
-        <translation type="unfinished" />
+        <translation>%1 von %2 · %3 verbleiben</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="219" />
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="455" />
         <location filename="../src/gui/tray/syncstatussummary.h" line="98" />
         <source>All synced!</source>
-        <translation type="unfinished">Alles synchronisiert!</translation>
+        <translation>Alles synchronisiert!</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="236" />
@@ -5840,7 +5840,7 @@ Server antwortete mit Fehler: %2</translation>
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="202" />
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="449" />
         <source>Offline</source>
-        <translation type="unfinished" />
+        <translation>Offline</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="167" />
@@ -5913,12 +5913,12 @@ Server antwortete mit Fehler: %2</translation>
     <message>
         <location filename="../src/gui/systray.cpp" line="236" />
         <source>Exit %1</source>
-        <translation type="unfinished" />
+        <translation>%1 beenden</translation>
     </message>
     <message>
         <location filename="../src/gui/systray.cpp" line="235" />
         <source>Help</source>
-        <translation type="unfinished">Hilfe</translation>
+        <translation>Hilfe</translation>
     </message>
     <message>
         <location filename="../src/gui/systray.cpp" line="229" />
@@ -5935,7 +5935,7 @@ Server antwortete mit Fehler: %2</translation>
     <message>
         <location filename="../src/gui/systray.cpp" line="242" />
         <source>Pause sync for all</source>
-        <translation type="unfinished">Synchronisierung für alle pausieren</translation>
+        <translation>Synchronisierung für alle pausieren</translation>
     </message>
     <message>
         <location filename="../src/gui/systray.cpp" line="233" />
@@ -5946,7 +5946,7 @@ Server antwortete mit Fehler: %2</translation>
     <message>
         <location filename="../src/gui/systray.cpp" line="248" />
         <source>Resume sync for all</source>
-        <translation type="unfinished">Synchronisierung für alle fortsetzen</translation>
+        <translation>Synchronisierung für alle fortsetzen</translation>
     </message>
     <message>
         <location filename="../src/gui/systray.cpp" line="234" />
@@ -5969,17 +5969,17 @@ Server antwortete mit Fehler: %2</translation>
     <message>
         <location filename="../src/gui/wizard/termsofservicecheckwidget.cpp" line="178" />
         <source>Open Browser</source>
-        <translation type="unfinished">Im Browser öffnen</translation>
+        <translation>Browser öffnen</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/termsofservicecheckwidget.cpp" line="131" />
         <source>Polling</source>
-        <translation type="unfinished">Abfrage</translation>
+        <translation>Abfrage</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/termsofservicecheckwidget.cpp" line="125" />
         <source>Waiting for terms to be accepted</source>
-        <translation type="unfinished">Es wird auf die Bestätigung der Nutzungsbedingungen gewartet</translation>
+        <translation>Es wird auf die Bestätigung der Nutzungsbedingungen gewartet</translation>
     </message>
 </context>
 <context>
@@ -6048,7 +6048,7 @@ Server antwortete mit Fehler: %2</translation>
         <location filename="../src/libsync/theme.cpp" line="459" />
         <source>%1 Desktop Client Version %2</source>
         <comment>%1 is application name. %2 is the human version string.</comment>
-        <translation type="unfinished" />
+        <translation>%1 Desktop-Client Version %2</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="642" />
@@ -6216,18 +6216,18 @@ Server antwortete mit Fehler: %2</translation>
     <message>
         <location filename="../src/gui/tray/usermodel.cpp" line="1115" />
         <source>Rename file</source>
-        <translation type="unfinished">Datei umbenennen</translation>
+        <translation>Datei umbenennen</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/usermodel.cpp" line="963" />
         <location filename="../src/gui/tray/usermodel.cpp" line="1125" />
         <source>Resolve conflict</source>
-        <translation type="unfinished" />
+        <translation>Konflikt lösen</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/usermodel.cpp" line="912" />
         <source>Retry all uploads</source>
-        <translation type="unfinished" />
+        <translation>Alle Uploads neu starten</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/usermodel.cpp" line="1512" />
@@ -6237,7 +6237,7 @@ Server antwortete mit Fehler: %2</translation>
     <message>
         <location filename="../src/gui/tray/usermodel.cpp" line="313" />
         <source>Trigger the migration</source>
-        <translation type="unfinished" />
+        <translation>Starten der Migration</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/usermodel.cpp" line="1686" />
@@ -6866,7 +6866,7 @@ Server antwortete mit Fehler: %2</translation>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="203" />
         <source>Could not remove existing file at destination!</source>
-        <translation type="unfinished" />
+        <translation>Vorhandene Datei konnte am Zielort nicht entfernt werden!</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="137" />
@@ -7034,13 +7034,13 @@ Server antwortete mit Fehler: %2</translation>
     <message>
         <location filename="../src/libsync/filesystem.cpp" line="333" />
         <source>Error deleting the file</source>
-        <translation type="unfinished" />
+        <translation>Fehler beim Löschen der Datei</translation>
     </message>
     <message>
         <location filename="../src/libsync/syncresult.cpp" line="131" />
         <source>%1: %2</source>
         <extracomment>this displays an error string (%2) for a file %1</extracomment>
-        <translation type="unfinished">%1: %2</translation>
+        <translation>%1: %2</translation>
     </message>
     <message>
         <location filename="../src/libsync/vfs/cfapi/cfapiwrapper.cpp" line="62" />
@@ -7272,22 +7272,22 @@ Server antwortete mit Fehler: %2</translation>
     <message>
         <location filename="../src/gui/tray/SyncStatus.qml" line="125" />
         <source>Open browser</source>
-        <translation type="unfinished">Browser öffnen</translation>
+        <translation>Browser öffnen</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/SyncStatus.qml" line="136" />
         <source>Open settings</source>
-        <translation type="unfinished">Einstellungen öffnen</translation>
+        <translation>Einstellungen öffnen</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/SyncStatus.qml" line="112" />
         <source>Resolve conflicts</source>
-        <translation type="unfinished">Konflikte lösen</translation>
+        <translation>Konflikte lösen</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/SyncStatus.qml" line="95" />
         <source>Sync now</source>
-        <translation type="unfinished">Jetzt synchronisieren</translation>
+        <translation>Jetzt synchronisieren</translation>
     </message>
 </context>
 <context>
@@ -7336,42 +7336,42 @@ Server antwortete mit Fehler: %2</translation>
     <message>
         <location filename="../src/libsync/theme.cpp" line="117" />
         <source>Preparing to sync</source>
-        <translation type="unfinished" />
+        <translation>Synchronisierung wird vorbereitet</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="120" />
         <source>Stopping sync</source>
-        <translation type="unfinished" />
+        <translation>Beende Synchronisierung</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="123" />
         <source>Sync is paused</source>
-        <translation type="unfinished" />
+        <translation>Synchronisierung ist angehalten.</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="102" />
         <source>Sync is running</source>
-        <translation type="unfinished" />
+        <translation>Synchronisierung läuft</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="96" />
         <source>Sync status is unknown</source>
-        <translation type="unfinished" />
+        <translation>Synchronisierungsstatus ist unbekannt</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="105" />
         <source>Sync was successful</source>
-        <translation type="unfinished" />
+        <translation>Synchronisierung war erfolgreich</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="108" />
         <source>Sync was successful but some files were ignored</source>
-        <translation type="unfinished" />
+        <translation>Synchronisierung war erfolgreich, aber einige Dateien wurden ignoriert</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="99" />
         <source>Waiting to start syncing</source>
-        <translation type="unfinished" />
+        <translation>Warte auf Beginn der Synchronisierung.</translation>
     </message>
 </context>
 <context>
@@ -7480,7 +7480,7 @@ Server antwortete mit Fehler: %2</translation>
     <message>
         <location filename="../src/gui/tray/TrayWindowHeader.qml" line="68" />
         <source>Open local or team folders</source>
-        <translation type="unfinished">Lokale Ordner oder Team-Ordner öffnen</translation>
+        <translation>Lokale Ordner oder Team-Ordner öffnen</translation>
     </message>
 </context>
 <context>
@@ -7799,7 +7799,7 @@ Server antwortete mit Fehler: %2</translation>
     <message>
         <location filename="../src/common/checksums.cpp" line="298" />
         <source>The downloaded file does not match the checksum, it will be resumed. &quot;%1&quot; != &quot;%2&quot;</source>
-        <translation type="unfinished">Die heruntergeladene Datei stimmt nicht mit der Prüfsumme überein, sie wird fortgesetzt. &quot;%1&quot; != &quot;%2&quot;</translation>
+        <translation>Die heruntergeladene Datei stimmt nicht mit der Prüfsumme überein, sie wird fortgesetzt. &quot;%1&quot; != &quot;%2&quot;</translation>
     </message>
 </context>
 </TS>

@@ -31,7 +31,30 @@ translation_merge_run_if_stable() {
     echo "$hook_name: detected merge of '$branch' - re-running STRATO/IONOS translation merge..."
     echo "$hook_name: full log also written to .githooks/post-merge.log"
 
-    command -v python3 >/dev/null 2>&1 && PY=python3 || PY=python
+    # command -v only checks PATH presence, not that the command actually
+    # works. On Windows, `python3`/`python` often exist as Microsoft Store
+    # app-execution-alias stubs that resolve fine but fail at runtime (exit
+    # 49, "Python wurde nicht gefunden...") when no Store Python is
+    # installed - even though a real interpreter is reachable under the
+    # other name. Verify with --version instead of trusting command -v.
+    if command -v python3 >/dev/null 2>&1 && python3 --version >/dev/null 2>&1; then
+        PY=python3
+    elif command -v python >/dev/null 2>&1 && python --version >/dev/null 2>&1; then
+        PY=python
+    else
+        echo "$hook_name: no working python/python3 interpreter found on PATH - skipping translation merge" >&2
+        return 0
+    fi
+
+    # post-merge/post-commit only fire once the merge is already finished,
+    # but .git/MERGE_HEAD can apparently still be lingering at that exact
+    # moment. `git commit` auto-detects MERGE_HEAD and silently adds it as
+    # an extra parent to whatever it commits next - so the *first* commit
+    # merge_translation.py makes below (Step 0) would otherwise turn into a
+    # spurious second merge of the same stable branch tip. Clear it: the
+    # merge already completed, this bookkeeping has served its purpose.
+    git_dir=$(git rev-parse --git-dir)
+    rm -f "$git_dir/MERGE_HEAD" "$git_dir/MERGE_MSG" "$git_dir/MERGE_MODE"
 
     # 'auto' runs steps 1-5 directly against the already-merged working tree
     # (which now contains both the NC base and our STRATO source) - unlike

@@ -5,7 +5,7 @@
     <message>
         <location filename="../src/gui/tray/ActivityItem.qml" line="49" />
         <source>In %1</source>
-        <translation type="unfinished" />
+        <translation>En %1</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/ActivityItem.qml" line="31" />
@@ -903,7 +903,7 @@ Should the account be imported?</source>
     <message>
         <location filename="../src/gui/accountsettings.cpp" line="1412" />
         <source>The syncing operation is running.&lt;br/&gt;Do you want to terminate it?</source>
-        <translation type="unfinished" />
+        <translation>La operación de sincronización está en curso. &lt;br/&gt;¿Deseas terminarla?</translation>
     </message>
     <message>
         <location filename="../src/gui/accountsettings.cpp" line="2026" />
@@ -1133,17 +1133,17 @@ Would you like to do this now?</source>
     <message>
         <location filename="../src/gui/tray/activitylistmodel.cpp" line="510" />
         <source>Fetching activities …</source>
-        <translation type="unfinished" />
+        <translation>Obteniendo actividades …</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/activitylistmodel.cpp" line="490" />
         <source>For more activities please open the Activity app.</source>
-        <translation type="unfinished" />
+        <translation>Para más actividades, por favor abra la aplicación de actividades.</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/activitylistmodel.cpp" line="617" />
         <source>Network error occurred: client will retry syncing.</source>
-        <translation type="unfinished" />
+        <translation>Ocurrió un error de red: el cliente reintentará la sincronización.</translation>
     </message>
 </context>
 <context>
@@ -1151,7 +1151,7 @@ Would you like to do this now?</source>
     <message>
         <location filename="../src/gui/addcertificatedialog.cpp" line="34" />
         <source>Certificate files (*.p12 *.pfx)</source>
-        <translation type="unfinished">Archivos de certificado (*.p12 *.pfx)</translation>
+        <translation>Archivos de certificado (*.p12 *.pfx)</translation>
     </message>
     <message>
         <location filename="../src/gui/addcertificatedialog.cpp" line="45" />
@@ -1166,17 +1166,17 @@ Would you like to do this now?</source>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="79" />
         <source>An encrypted pkcs12 bundle is strongly recommended as a copy will be stored in the configuration file.</source>
-        <translation type="unfinished">Es altamente recomendado un paquete de cifrado pkcs12 dado que una copia se guardará en el archivo de configuración.</translation>
+        <translation>Es altamente recomendado un paquete de cifrado pkcs12 dado que una copia se guardará en el archivo de configuración.</translation>
     </message>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="51" />
         <source>Browse …</source>
-        <translation type="unfinished">Navegar …</translation>
+        <translation>Navegar …</translation>
     </message>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="35" />
         <source>Certificate &amp; Key (pkcs12):</source>
-        <translation type="unfinished">Certificado y llave (pkcs12):</translation>
+        <translation>Certificado y llave (pkcs12):</translation>
     </message>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="60" />
@@ -1284,12 +1284,12 @@ Would you like to do this now?</source>
     <message>
         <location filename="../src/gui/authenticationdialog.cpp" line="30" />
         <source>&amp;Password:</source>
-        <translation type="unfinished" />
+        <translation>&amp;Contraseña:</translation>
     </message>
     <message>
         <location filename="../src/gui/authenticationdialog.cpp" line="29" />
         <source>&amp;Username:</source>
-        <translation type="unfinished" />
+        <translation>&amp;Usuario:</translation>
     </message>
     <message>
         <location filename="../src/gui/authenticationdialog.cpp" line="22" />
@@ -1818,12 +1818,12 @@ Para ello, utilizamos soluciones de software de distintos socios. Deseamos trans
     <message>
         <location filename="../src/libsync/discoveryphase.cpp" line="192" />
         <source>Error while canceling deletion of %1</source>
-        <translation type="unfinished">Error al cancelar la eliminación de %1</translation>
+        <translation>Error al cancelar la eliminación de %1</translation>
     </message>
     <message>
         <location filename="../src/libsync/discoveryphase.cpp" line="191" />
         <source>Error while canceling deletion of a file</source>
-        <translation type="unfinished">Error al cancelar la eliminación de un archivo</translation>
+        <translation>Error al cancelar la eliminación de un archivo</translation>
     </message>
 </context>
 <context>
@@ -4399,7 +4399,7 @@ Tenga en cuenta que usar la línea de comandos para el registro anulará esta co
     <message>
         <location filename="../src/gui/wizard/owncloudwizard.cpp" line="108" />
         <source>Add %1 account</source>
-        <translation type="unfinished">Añadir %1 cuenta</translation>
+        <translation>Añadir %1 cuenta</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/owncloudwizard.cpp" line="117" />
@@ -4666,22 +4666,22 @@ Este es un modo nuevo y experimental. Si decide usarlo, por favor informe cualqu
     <message>
         <location filename="../src/libsync/discovery.cpp" line="450" />
         <source>Stat failed.</source>
-        <translation type="unfinished" />
+        <translation>Error de estado.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="382" />
         <source>Symbolic links are not supported in syncing.</source>
-        <translation type="unfinished" />
+        <translation>Los enlaces simbólicos no están soportados en la sincronización.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="461" />
         <source>The filename cannot be encoded on your file system.</source>
-        <translation type="unfinished" />
+        <translation>El nombre de archivo no se puede codificar en su sistema de archivos.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="464" />
         <source>The filename is blacklisted on the server.</source>
-        <translation type="unfinished" />
+        <translation>El nombre de archivo está prohibido en el servidor.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="1250" />
@@ -5063,7 +5063,7 @@ Este es un modo nuevo y experimental. Si decide usarlo, por favor informe cualqu
     <message>
         <location filename="../src/libsync/propagateupload.cpp" line="435" />
         <source>Local file changed during syncing. It will be resumed.</source>
-        <translation type="unfinished">El archivo local cambió durante la sincronización. Se reanudará.</translation>
+        <translation>El archivo local cambió durante la sincronización. Se resumirá. </translation>
     </message>
     <message>
         <location filename="../src/libsync/propagateupload.cpp" line="850" />
@@ -5801,19 +5801,19 @@ El servidor respondió con el error: %2</translation>
     <message>
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="344" />
         <source>%1 of %2</source>
-        <translation type="unfinished" />
+        <translation>%1 de %2</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="340" />
         <source>%1 of %2 · %3 left</source>
-        <translation type="unfinished" />
+        <translation>%1 de %2 · %3 restantes</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="219" />
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="455" />
         <location filename="../src/gui/tray/syncstatussummary.h" line="98" />
         <source>All synced!</source>
-        <translation type="unfinished">¡Todo está sincronizado!</translation>
+        <translation>¡Todo está sincronizado!</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="236" />
@@ -5830,7 +5830,7 @@ El servidor respondió con el error: %2</translation>
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="202" />
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="449" />
         <source>Offline</source>
-        <translation type="unfinished" />
+        <translation>Sin conexión</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="167" />
@@ -5903,12 +5903,12 @@ El servidor respondió con el error: %2</translation>
     <message>
         <location filename="../src/gui/systray.cpp" line="236" />
         <source>Exit %1</source>
-        <translation type="unfinished" />
+        <translation>Salir de %1</translation>
     </message>
     <message>
         <location filename="../src/gui/systray.cpp" line="235" />
         <source>Help</source>
-        <translation type="unfinished">Ayuda</translation>
+        <translation>Ayuda</translation>
     </message>
     <message>
         <location filename="../src/gui/systray.cpp" line="229" />
@@ -5925,7 +5925,7 @@ El servidor respondió con el error: %2</translation>
     <message>
         <location filename="../src/gui/systray.cpp" line="242" />
         <source>Pause sync for all</source>
-        <translation type="unfinished">Pausar sincronización para todos</translation>
+        <translation>Pausar sincronización para todos</translation>
     </message>
     <message>
         <location filename="../src/gui/systray.cpp" line="233" />
@@ -5936,7 +5936,7 @@ El servidor respondió con el error: %2</translation>
     <message>
         <location filename="../src/gui/systray.cpp" line="248" />
         <source>Resume sync for all</source>
-        <translation type="unfinished">Reanudar sincronización para todos</translation>
+        <translation>Reanudar sincronización para todos</translation>
     </message>
     <message>
         <location filename="../src/gui/systray.cpp" line="234" />
@@ -6212,12 +6212,12 @@ El servidor respondió con el error: %2</translation>
         <location filename="../src/gui/tray/usermodel.cpp" line="963" />
         <location filename="../src/gui/tray/usermodel.cpp" line="1125" />
         <source>Resolve conflict</source>
-        <translation type="unfinished" />
+        <translation>Resolver conflicto</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/usermodel.cpp" line="912" />
         <source>Retry all uploads</source>
-        <translation type="unfinished" />
+        <translation>Reintentar todas las subidas</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/usermodel.cpp" line="1512" />
@@ -6297,70 +6297,70 @@ El servidor respondió con el error: %2</translation>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="356" />
         <source>1 hour</source>
-        <translation type="unfinished" />
+        <translation>1 hora</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="353" />
         <source>30 minutes</source>
-        <translation type="unfinished" />
+        <translation>30 minutos</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="359" />
         <source>4 hours</source>
-        <translation type="unfinished" />
+        <translation>4 horas</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="163" />
         <source>Could not clear status message. Make sure you are connected to the server.</source>
-        <translation type="unfinished" />
+        <translation>No se pudo limpiar el mensaje de estado. Asegúrese de estar conectado al servidor.</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="143" />
         <source>Could not fetch predefined statuses. Make sure you are connected to the server.</source>
-        <translation type="unfinished">No se pudieron obtener los estados predefinidos. Asegúrese de estar conectado al servidor.</translation>
+        <translation>No se pudieron obtener los estados predefinidos. Asegúrese de estar conectado al servidor.</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="147" />
         <source>Could not fetch status. Make sure you are connected to the server.</source>
-        <translation type="unfinished">No se pudo obtener el estado. Asegúrese de estar conectado al servidor.</translation>
+        <translation>No se pudo obtener el estado. Asegúrese de estar conectado al servidor.</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="159" />
         <source>Could not set status. Make sure you are connected to the server.</source>
-        <translation type="unfinished">No se pudo establecer el estado. Asegúrese de estar conectado al servidor.</translation>
+        <translation>No se pudo establecer el estado. Asegúrese de estar conectado al servidor.</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="350" />
         <location filename="../src/gui/userstatusselectormodel.cpp" line="453" />
         <source>Don&apos;t clear</source>
-        <translation type="unfinished">No limpiar</translation>
+        <translation>No limpiar</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="155" />
         <source>Emojis are not supported. Some status functionality may not work.</source>
-        <translation type="unfinished">Los emoticonos no están soportados. Algunas funcionalidades de estado pueden no funcionar.</translation>
+        <translation>Los emoticonos no están soportados. Algunas funcionalidades de estado pueden no funcionar.</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="408" />
         <source>Less than a minute</source>
-        <translation type="unfinished">Menos de un minuto</translation>
+        <translation>Menos de un minuto</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="151" />
         <source>Status feature is not supported. You will not be able to set your status.</source>
-        <translation type="unfinished">La característica de estados no está soportada. No podrá establecer su estado.</translation>
+        <translation>La característica de estados no está soportada. No podrá establecer su estado.</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="365" />
         <location filename="../src/gui/userstatusselectormodel.cpp" line="444" />
         <source>This week</source>
-        <translation type="unfinished">Esta semana</translation>
+        <translation>Esta semana</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="362" />
         <location filename="../src/gui/userstatusselectormodel.cpp" line="442" />
         <source>Today</source>
-        <translation type="unfinished">Hoy</translation>
+        <translation>Hoy</translation>
     </message>
 </context>
 <context>
@@ -6540,7 +6540,7 @@ El servidor respondió con el error: %2</translation>
     <message>
         <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="331" />
         <source>Choose different folder</source>
-        <translation type="unfinished">Elegir una carpeta diferente</translation>
+        <translation>Elegir una carpeta diferente</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="509" />
@@ -7030,7 +7030,7 @@ El servidor respondió con el error: %2</translation>
         <location filename="../src/libsync/syncresult.cpp" line="131" />
         <source>%1: %2</source>
         <extracomment>this displays an error string (%2) for a file %1</extracomment>
-        <translation type="unfinished">%1: %2</translation>
+        <translation>%1: %2</translation>
     </message>
     <message>
         <location filename="../src/libsync/vfs/cfapi/cfapiwrapper.cpp" line="62" />
@@ -7272,12 +7272,12 @@ El servidor respondió con el error: %2</translation>
     <message>
         <location filename="../src/gui/tray/SyncStatus.qml" line="112" />
         <source>Resolve conflicts</source>
-        <translation type="unfinished">Resolver conflictos</translation>
+        <translation>Resolver conflictos</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/SyncStatus.qml" line="95" />
         <source>Sync now</source>
-        <translation type="unfinished">Sincronizar ahora</translation>
+        <translation>Sincronizar ahora</translation>
     </message>
 </context>
 <context>
@@ -7326,42 +7326,42 @@ El servidor respondió con el error: %2</translation>
     <message>
         <location filename="../src/libsync/theme.cpp" line="117" />
         <source>Preparing to sync</source>
-        <translation type="unfinished" />
+        <translation>Preparando para sincronizar</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="120" />
         <source>Stopping sync</source>
-        <translation type="unfinished" />
+        <translation>Deteniendo la sincronización</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="123" />
         <source>Sync is paused</source>
-        <translation type="unfinished" />
+        <translation>La sincronización está pausada</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="102" />
         <source>Sync is running</source>
-        <translation type="unfinished" />
+        <translation>La Sincronización está en curso</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="96" />
         <source>Sync status is unknown</source>
-        <translation type="unfinished" />
+        <translation>Estado de sincronización desconocido</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="105" />
         <source>Sync was successful</source>
-        <translation type="unfinished" />
+        <translation>La sincronización fue exitosa</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="108" />
         <source>Sync was successful but some files were ignored</source>
-        <translation type="unfinished" />
+        <translation>La sincronización fue exitosa pero algunos archivos fueron ignorados</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="99" />
         <source>Waiting to start syncing</source>
-        <translation type="unfinished" />
+        <translation>Esperando para empezar la sincronización</translation>
     </message>
 </context>
 <context>
@@ -7789,7 +7789,7 @@ El servidor respondió con el error: %2</translation>
     <message>
         <location filename="../src/common/checksums.cpp" line="298" />
         <source>The downloaded file does not match the checksum, it will be resumed. &quot;%1&quot; != &quot;%2&quot;</source>
-        <translation type="unfinished">El archivo descargado no coincide con la suma de comprobación, se reanudará. &quot;%1&quot; != &quot;%2&quot;</translation>
+        <translation>El archivo descargado no coincide con la suma de comprobación, se reanudará. &quot;%1&quot; != &quot;%2&quot;</translation>
     </message>
 </context>
 </TS>

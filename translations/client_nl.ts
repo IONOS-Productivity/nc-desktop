@@ -5,7 +5,7 @@
     <message>
         <location filename="../src/gui/tray/ActivityItem.qml" line="49" />
         <source>In %1</source>
-        <translation type="unfinished" />
+        <translation>In %1</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/ActivityItem.qml" line="31" />
@@ -444,17 +444,17 @@
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="464" />
         <source>Cancel</source>
-        <translation type="unfinished">Annuleren</translation>
+        <translation>Annuleren</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="357" />
         <source>Issue with account %1</source>
-        <translation type="unfinished" />
+        <translation>Probleem met account %1</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="359" />
         <source>Issues with several accounts</source>
-        <translation type="unfinished" />
+        <translation>Problemen met diverse accounts</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="271" />
@@ -464,12 +464,12 @@
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="875" />
         <source>New activities</source>
-        <translation type="unfinished" />
+        <translation>Nieuwe activiteiten</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="460" />
         <source>New conversation</source>
-        <translation type="unfinished" />
+        <translation>Nieuwe conversatie</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="558" />
@@ -484,12 +484,12 @@
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="440" />
         <source>Start new conversation?</source>
-        <translation type="unfinished" />
+        <translation>Start nieuwe conversatie?</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="485" />
         <source>This will clear the existing conversation.</source>
-        <translation type="unfinished" />
+        <translation>Dit zal het bestaande gesprek wissen</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/MainWindow.qml" line="804" />
@@ -903,7 +903,7 @@ Should the account be imported?</source>
     <message>
         <location filename="../src/gui/accountsettings.cpp" line="1412" />
         <source>The syncing operation is running.&lt;br/&gt;Do you want to terminate it?</source>
-        <translation type="unfinished" />
+        <translation>Bezig met synchroniseren.&lt;br/&gt;Wil je stoppen met synchroniseren?</translation>
     </message>
     <message>
         <location filename="../src/gui/accountsettings.cpp" line="2026" />
@@ -1132,17 +1132,17 @@ Would you like to do this now?</source>
     <message>
         <location filename="../src/gui/tray/activitylistmodel.cpp" line="510" />
         <source>Fetching activities …</source>
-        <translation type="unfinished" />
+        <translation>Ophalen activiteiten...</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/activitylistmodel.cpp" line="490" />
         <source>For more activities please open the Activity app.</source>
-        <translation type="unfinished" />
+        <translation>Voor meer activiteiten open de Activiteit app.</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/activitylistmodel.cpp" line="617" />
         <source>Network error occurred: client will retry syncing.</source>
-        <translation type="unfinished" />
+        <translation>Netwerkfout opgetreden: cliënt probeert synchronisatie opnieuw.</translation>
     </message>
 </context>
 <context>
@@ -1150,7 +1150,7 @@ Would you like to do this now?</source>
     <message>
         <location filename="../src/gui/addcertificatedialog.cpp" line="34" />
         <source>Certificate files (*.p12 *.pfx)</source>
-        <translation type="unfinished">Certificaat bestanden (*.p12 *.pfx)</translation>
+        <translation>Certificaat bestanden (*.p12 *.pfx)</translation>
     </message>
     <message>
         <location filename="../src/gui/addcertificatedialog.cpp" line="45" />
@@ -1165,17 +1165,17 @@ Would you like to do this now?</source>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="79" />
         <source>An encrypted pkcs12 bundle is strongly recommended as a copy will be stored in the configuration file.</source>
-        <translation type="unfinished">Een versleutelde pkcs12-bundel wordt sterk aanbevolen, aangezien er een kopie wordt opgeslagen in het configuratiebestand.</translation>
+        <translation>Een versleutelde pkcs12-bundel wordt sterk aanbevolen, aangezien er een kopie wordt opgeslagen in het configuratiebestand.</translation>
     </message>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="51" />
         <source>Browse …</source>
-        <translation type="unfinished">Bladeren ...</translation>
+        <translation>Bladeren ...</translation>
     </message>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="35" />
         <source>Certificate &amp; Key (pkcs12):</source>
-        <translation type="unfinished">Certificaat &amp; Sleutel (pkcs12):</translation>
+        <translation>Certificaat &amp; Sleutel (pkcs12):</translation>
     </message>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="60" />
@@ -1283,12 +1283,12 @@ Would you like to do this now?</source>
     <message>
         <location filename="../src/gui/authenticationdialog.cpp" line="30" />
         <source>&amp;Password:</source>
-        <translation type="unfinished" />
+        <translation>&amp;Wachtwoord:</translation>
     </message>
     <message>
         <location filename="../src/gui/authenticationdialog.cpp" line="29" />
         <source>&amp;Username:</source>
-        <translation type="unfinished" />
+        <translation>&amp;Gebruikersnaam:</translation>
     </message>
     <message>
         <location filename="../src/gui/authenticationdialog.cpp" line="22" />
@@ -1816,12 +1816,12 @@ Would you like to do this now?</source>
     <message>
         <location filename="../src/libsync/discoveryphase.cpp" line="192" />
         <source>Error while canceling deletion of %1</source>
-        <translation type="unfinished">Fout bij annuleren verwijderen van %1</translation>
+        <translation>Fout bij annuleren verwijderen van %1</translation>
     </message>
     <message>
         <location filename="../src/libsync/discoveryphase.cpp" line="191" />
         <source>Error while canceling deletion of a file</source>
-        <translation type="unfinished">Fout bij het annuleren van verwijdering van een bestand</translation>
+        <translation>Fout bij het annuleren van verwijdering van een bestand</translation>
     </message>
 </context>
 <context>
@@ -4398,7 +4398,7 @@ Merk op dat het gebruik van logging-opdrachtregel opties deze instelling zal ove
     <message>
         <location filename="../src/gui/wizard/owncloudwizard.cpp" line="108" />
         <source>Add %1 account</source>
-        <translation type="unfinished">Toevoegen %1 account</translation>
+        <translation>Toevoegen %1 account</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/owncloudwizard.cpp" line="117" />
@@ -4665,22 +4665,22 @@ Dit is een nieuwe, experimentele modus. Als je besluit het te gebruiken, vragen 
     <message>
         <location filename="../src/libsync/discovery.cpp" line="450" />
         <source>Stat failed.</source>
-        <translation type="unfinished" />
+        <translation>Stat mislukt.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="382" />
         <source>Symbolic links are not supported in syncing.</source>
-        <translation type="unfinished" />
+        <translation>Symbolische links worden niet ondersteund bij het synchroniseren.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="461" />
         <source>The filename cannot be encoded on your file system.</source>
-        <translation type="unfinished" />
+        <translation>De bestandsnaam kan op je bestandssysteem niet worden gecodeerd.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="464" />
         <source>The filename is blacklisted on the server.</source>
-        <translation type="unfinished" />
+        <translation>De bestandsnaam staat op de negeerlijst van de server.</translation>
     </message>
     <message>
         <location filename="../src/libsync/discovery.cpp" line="1250" />
@@ -5062,7 +5062,7 @@ Dit is een nieuwe, experimentele modus. Als je besluit het te gebruiken, vragen 
     <message>
         <location filename="../src/libsync/propagateupload.cpp" line="435" />
         <source>Local file changed during syncing. It will be resumed.</source>
-        <translation type="unfinished">Lokaal bestand gewijzigd gedurende synchronisatie. Wordt opnieuw meegenomen.</translation>
+        <translation>Lokaal bestand gewijzigd gedurende sync. Wordt opnieuw meegenomen.</translation>
     </message>
     <message>
         <location filename="../src/libsync/propagateupload.cpp" line="850" />
@@ -5800,19 +5800,19 @@ Server antwoordde met fout: %2</translation>
     <message>
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="344" />
         <source>%1 of %2</source>
-        <translation type="unfinished" />
+        <translation>%1 van %2</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="340" />
         <source>%1 of %2 · %3 left</source>
-        <translation type="unfinished" />
+        <translation>%1 van %2 · %3 resterend</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="219" />
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="455" />
         <location filename="../src/gui/tray/syncstatussummary.h" line="98" />
         <source>All synced!</source>
-        <translation type="unfinished">Alles gesynchroniseerd!</translation>
+        <translation>Alles gesynchroniseerd!</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="236" />
@@ -5829,7 +5829,7 @@ Server antwoordde met fout: %2</translation>
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="202" />
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="449" />
         <source>Offline</source>
-        <translation type="unfinished" />
+        <translation>Offline</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/syncstatussummary.cpp" line="167" />
@@ -5902,12 +5902,12 @@ Server antwoordde met fout: %2</translation>
     <message>
         <location filename="../src/gui/systray.cpp" line="236" />
         <source>Exit %1</source>
-        <translation type="unfinished" />
+        <translation>%1 afsluiten</translation>
     </message>
     <message>
         <location filename="../src/gui/systray.cpp" line="235" />
         <source>Help</source>
-        <translation type="unfinished">Help</translation>
+        <translation>Help</translation>
     </message>
     <message>
         <location filename="../src/gui/systray.cpp" line="229" />
@@ -5924,7 +5924,7 @@ Server antwoordde met fout: %2</translation>
     <message>
         <location filename="../src/gui/systray.cpp" line="242" />
         <source>Pause sync for all</source>
-        <translation type="unfinished">Synchronisatie pauzeren voor alles</translation>
+        <translation>Pauzeer sync voor iedereen</translation>
     </message>
     <message>
         <location filename="../src/gui/systray.cpp" line="233" />
@@ -5935,7 +5935,7 @@ Server antwoordde met fout: %2</translation>
     <message>
         <location filename="../src/gui/systray.cpp" line="248" />
         <source>Resume sync for all</source>
-        <translation type="unfinished">Synchronisatie hervatten voor alles</translation>
+        <translation>Vervolg sync voor iedereen</translation>
     </message>
     <message>
         <location filename="../src/gui/systray.cpp" line="234" />
@@ -6205,18 +6205,18 @@ Server antwoordde met fout: %2</translation>
     <message>
         <location filename="../src/gui/tray/usermodel.cpp" line="1115" />
         <source>Rename file</source>
-        <translation type="unfinished">Bestand hernoemen</translation>
+        <translation>Bestand hernoemen</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/usermodel.cpp" line="963" />
         <location filename="../src/gui/tray/usermodel.cpp" line="1125" />
         <source>Resolve conflict</source>
-        <translation type="unfinished" />
+        <translation>Conflict oplossen...</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/usermodel.cpp" line="912" />
         <source>Retry all uploads</source>
-        <translation type="unfinished" />
+        <translation>Probeer alle uploads opnieuw</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/usermodel.cpp" line="1512" />
@@ -6296,70 +6296,70 @@ Server antwoordde met fout: %2</translation>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="356" />
         <source>1 hour</source>
-        <translation type="unfinished" />
+        <translation>1 uur</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="353" />
         <source>30 minutes</source>
-        <translation type="unfinished" />
+        <translation>30 minuten</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="359" />
         <source>4 hours</source>
-        <translation type="unfinished" />
+        <translation>4 uren</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="163" />
         <source>Could not clear status message. Make sure you are connected to the server.</source>
-        <translation type="unfinished" />
+        <translation>Kan het statusbericht niet wissen. Zorg ervoor dat je verbonden bent met de server.</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="143" />
         <source>Could not fetch predefined statuses. Make sure you are connected to the server.</source>
-        <translation type="unfinished">Kan vooraf gedefinieerde statussen niet ophalen. Zorg ervoor dat je verbonden bent met de server.</translation>
+        <translation>Kan vooraf gedefinieerde statussen niet ophalen. Zorg ervoor dat je verbonden bent met de server.</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="147" />
         <source>Could not fetch status. Make sure you are connected to the server.</source>
-        <translation type="unfinished">Kan status niet ophalen. Zorg ervoor dat je verbonden bent met de server.</translation>
+        <translation>Kan status niet ophalen. Zorg ervoor dat je verbonden bent met de server.</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="159" />
         <source>Could not set status. Make sure you are connected to the server.</source>
-        <translation type="unfinished">Kan status niet instellen. Zorg ervoor dat je verbonden bent met de server.</translation>
+        <translation>Kan status niet instellen. Zorg ervoor dat je verbonden bent met de server.</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="350" />
         <location filename="../src/gui/userstatusselectormodel.cpp" line="453" />
         <source>Don&apos;t clear</source>
-        <translation type="unfinished">Niet wissen</translation>
+        <translation>Niet wissen</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="155" />
         <source>Emojis are not supported. Some status functionality may not work.</source>
-        <translation type="unfinished">Emoji&apos;s worden niet ondersteund. Sommige gebruikersstatusfuncties werken mogelijk niet.</translation>
+        <translation>Emoji&apos;s worden niet ondersteund. Sommige gebruikersstatusfuncties werken mogelijk niet.</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="408" />
         <source>Less than a minute</source>
-        <translation type="unfinished">Minder dan een minuut</translation>
+        <translation>Minder dan een minuut</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="151" />
         <source>Status feature is not supported. You will not be able to set your status.</source>
-        <translation type="unfinished">Gebruikersstatus functie wordt niet ondersteund. Je zult je gebruikersstatus niet kunnen instellen.</translation>
+        <translation>Gebruikersstatus functie wordt niet ondersteund. Je zult je gebruikersstatus niet kunnen instellen.</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="365" />
         <location filename="../src/gui/userstatusselectormodel.cpp" line="444" />
         <source>This week</source>
-        <translation type="unfinished">Deze week</translation>
+        <translation>Deze week</translation>
     </message>
     <message>
         <location filename="../src/gui/userstatusselectormodel.cpp" line="362" />
         <location filename="../src/gui/userstatusselectormodel.cpp" line="442" />
         <source>Today</source>
-        <translation type="unfinished">Vandaag</translation>
+        <translation>Vandaag</translation>
     </message>
 </context>
 <context>
@@ -6539,7 +6539,7 @@ Server antwoordde met fout: %2</translation>
     <message>
         <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="331" />
         <source>Choose different folder</source>
-        <translation type="unfinished">Kies een andere map</translation>
+        <translation>Kies een andere map</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/owncloudadvancedsetuppage.ui" line="509" />
@@ -7029,7 +7029,7 @@ Server antwoordde met fout: %2</translation>
         <location filename="../src/libsync/syncresult.cpp" line="131" />
         <source>%1: %2</source>
         <extracomment>this displays an error string (%2) for a file %1</extracomment>
-        <translation type="unfinished">%1: %2</translation>
+        <translation>%1: %2</translation>
     </message>
     <message>
         <location filename="../src/libsync/vfs/cfapi/cfapiwrapper.cpp" line="62" />
@@ -7266,17 +7266,17 @@ Server antwoordde met fout: %2</translation>
     <message>
         <location filename="../src/gui/tray/SyncStatus.qml" line="136" />
         <source>Open settings</source>
-        <translation type="unfinished">Open instellingen</translation>
+        <translation>Open instellingen</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/SyncStatus.qml" line="112" />
         <source>Resolve conflicts</source>
-        <translation type="unfinished">Los conflicten op</translation>
+        <translation>Los conflicten op</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/SyncStatus.qml" line="95" />
         <source>Sync now</source>
-        <translation type="unfinished">Nu synchroniseren</translation>
+        <translation>Nu synchroniseren</translation>
     </message>
 </context>
 <context>
@@ -7325,42 +7325,42 @@ Server antwoordde met fout: %2</translation>
     <message>
         <location filename="../src/libsync/theme.cpp" line="117" />
         <source>Preparing to sync</source>
-        <translation type="unfinished" />
+        <translation>Voorbereiden synchronisatie</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="120" />
         <source>Stopping sync</source>
-        <translation type="unfinished" />
+        <translation>Synchronisatie stoppen</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="123" />
         <source>Sync is paused</source>
-        <translation type="unfinished" />
+        <translation>Synchronisatie is gepauzeerd</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="102" />
         <source>Sync is running</source>
-        <translation type="unfinished" />
+        <translation>Bezig met synchroniseren</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="96" />
         <source>Sync status is unknown</source>
-        <translation type="unfinished" />
+        <translation>Synchronisatiestatus is onbekend</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="105" />
         <source>Sync was successful</source>
-        <translation type="unfinished" />
+        <translation>Synchronisatie was geslaagd</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="108" />
         <source>Sync was successful but some files were ignored</source>
-        <translation type="unfinished" />
+        <translation>Synchronisatie geslaagd, sommige bestanden werden genegeerd</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="99" />
         <source>Waiting to start syncing</source>
-        <translation type="unfinished" />
+        <translation>In afwachting van synchronisatie</translation>
     </message>
 </context>
 <context>
@@ -7788,7 +7788,7 @@ Server antwoordde met fout: %2</translation>
     <message>
         <location filename="../src/common/checksums.cpp" line="298" />
         <source>The downloaded file does not match the checksum, it will be resumed. &quot;%1&quot; != &quot;%2&quot;</source>
-        <translation type="unfinished">Het gedownloade bestand komt niet overeen met het controlegetal. Het wordt opnieuw verwerkt.  &quot;%1&quot; != &quot;%2&quot;</translation>
+        <translation>Het gedownloade bestand komt niet overeen met het controlegetal. Het wordt opnieuw verwerkt.  &quot;%1&quot; != &quot;%2&quot;</translation>
     </message>
 </context>
 </TS>
