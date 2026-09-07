@@ -8,7 +8,7 @@ import QtQuick.Window
 import QtQuick.Layouts
 import QtQuick.Controls
 
-import com.nextcloud.desktopclient
+import com.strato.hidrivenext.desktopclient
 import Style
 
 import "../tray"
@@ -17,6 +17,10 @@ ItemDelegate {
     id: root
 
     text: model.display
+
+    background: Rectangle {
+        color: root.hovered ? root.pressed ? Style.sesButtonPressed : Style.sesHover : Style.sesWhite
+    }
 
     contentItem: RowLayout {
         height: visible ? implicitHeight : 0
@@ -52,6 +56,10 @@ ItemDelegate {
             id: shareeLabel
             Layout.preferredHeight: unifiedSearchResultSkeletonItemDetails.iconWidth
             Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
+
+            color: Style.sesTrayFontColor
+            font.pixelSize: Style.sesFontPixelSize
+            font.weight: Style.sesFontNormalWeight
 
             Layout.fillWidth: true
 
