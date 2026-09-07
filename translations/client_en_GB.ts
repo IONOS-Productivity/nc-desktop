@@ -580,7 +580,7 @@ Should the account be imported?</translation>
 <context>
     <name>OCC::AccountSettings</name>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1529" />
+        <location filename="../src/gui/accountsettings.cpp" line="1531" />
         <source>%1 as %2</source>
         <translation>%1 as %2</translation>
     </message>
@@ -637,17 +637,17 @@ Should the account be imported?</translation>
         <translation>Confirm Folder Sync Connection Removal</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1540" />
+        <location filename="../src/gui/accountsettings.cpp" line="1542" />
         <source>Connected to %1 (%2).</source>
         <translation>Connected to %1 (%2).</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1538" />
+        <location filename="../src/gui/accountsettings.cpp" line="1540" />
         <source>Connected to %1.</source>
         <translation>Connected to %1.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1558" />
+        <location filename="../src/gui/accountsettings.cpp" line="1560" />
         <source>Connecting to %1 …</source>
         <translation>Connecting to %1 …</translation>
     </message>
@@ -751,7 +751,7 @@ Should the account be imported?</translation>
         <translation>End-to-end Encryption with Virtual Files</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1963" />
+        <location filename="../src/gui/accountsettings.cpp" line="1965" />
         <source>End-to-end encryption has been initialized on this account with another device.&lt;br&gt;Enter the unique mnemonic to have the encrypted folders synchronize on this device as well.</source>
         <translation>End-to-end encryption has been initialized on this account with another device.&lt;br&gt;Enter the unique mnemonic to have the encrypted folders synchronize on this device as well.</translation>
     </message>
@@ -796,12 +796,12 @@ Should the account be imported?</translation>
         <translation>Grant access to sync folder</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1769" />
+        <location filename="../src/gui/accountsettings.cpp" line="1771" />
         <source>Migrate certificate to a new one</source>
         <translation>Migrate certificate to a new one</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1578" />
+        <location filename="../src/gui/accountsettings.cpp" line="1580" />
         <source>No %1 connection configured.</source>
         <translation>No %1 connection configured.</translation>
     </message>
@@ -852,32 +852,32 @@ Should the account be imported?</translation>
         <translation>Resume sync</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1552" />
+        <location filename="../src/gui/accountsettings.cpp" line="1554" />
         <source>Server %1 is currently being redirected, or your connection is behind a captive portal.</source>
         <translation>Server %1 is currently being redirected, or your connection is behind a captive portal.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1549" />
+        <location filename="../src/gui/accountsettings.cpp" line="1551" />
         <source>Server %1 is currently in maintenance mode.</source>
         <translation>Server %1 is currently in maintenance mode.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1546" />
+        <location filename="../src/gui/accountsettings.cpp" line="1548" />
         <source>Server %1 is temporarily unavailable.</source>
         <translation>Server %1 is temporarily unavailable.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1565" />
+        <location filename="../src/gui/accountsettings.cpp" line="1567" />
         <source>Server configuration error: %1 at %2.</source>
         <translation>Server configuration error: %1 at %2.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="2034" />
+        <location filename="../src/gui/accountsettings.cpp" line="2036" />
         <source>Set up encryption</source>
         <translation>Set up encryption</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1555" />
+        <location filename="../src/gui/accountsettings.cpp" line="1557" />
         <source>Signed out from %1.</source>
         <translation>Signed out from %1.</translation>
     </message>
@@ -897,7 +897,7 @@ Should the account be imported?</translation>
         <translation>The folder has a sync error. Encryption of this folder will be possible once it has synced successfully</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1536" />
+        <location filename="../src/gui/accountsettings.cpp" line="1538" />
         <source>The server version %1 is unsupported! Proceed at your own risk.</source>
         <translation>The server version %1 is unsupported! Proceed at your own risk.</translation>
     </message>
@@ -907,33 +907,33 @@ Should the account be imported?</translation>
         <translation>The syncing operation is running.&lt;br/&gt;Do you want to terminate it?</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="2026" />
+        <location filename="../src/gui/accountsettings.cpp" line="2028" />
         <source>The virtual files integration does not support end-to-end encryption yet.</source>
         <translation>The virtual files integration does not support end-to-end encryption yet.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1879" />
+        <location filename="../src/gui/accountsettings.cpp" line="1881" />
         <source>There are folders that have grown in size beyond %1MB: %2</source>
         <translation>There are folders that have grown in size beyond %1MB: %2</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1867" />
+        <location filename="../src/gui/accountsettings.cpp" line="1869" />
         <source>There are folders that were not synchronized because they are external storages:</source>
         <translation>There are folders that were not synchronised because they are external storages:</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1868" />
+        <location filename="../src/gui/accountsettings.cpp" line="1870" />
         <source>There are folders that were not synchronized because they are too big or external storages:</source>
         <translation>There are folders that were not synchronised because they are too big or external storages:</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1866" />
+        <location filename="../src/gui/accountsettings.cpp" line="1868" />
         <source>There are folders that were not synchronized because they are too big:</source>
         <translation>There are folders that were not synchronised because they are too big:</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="2025" />
-        <location filename="../src/gui/accountsettings.cpp" line="2028" />
+        <location filename="../src/gui/accountsettings.cpp" line="2027" />
+        <location filename="../src/gui/accountsettings.cpp" line="2030" />
         <source>This account supports end-to-end encryption, but it needs to be set up first.</source>
         <translation>This account supports end-to-end encryption, but it needs to be set up first.</translation>
     </message>
@@ -963,7 +963,7 @@ This action will abort any currently running synchronization.</translation>
         <translation>To protect your Cryptographic Identity, we encrypt it with a mnemonic of 12 dictionary words. Please note it down and keep it safe. You will need it to set-up the synchronization of encrypted folders on your other devices.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1562" />
+        <location filename="../src/gui/accountsettings.cpp" line="1564" />
         <source>Unable to connect to %1.</source>
         <translation>Unable to connect to %1.</translation>
     </message>
@@ -992,7 +992,7 @@ Would you like to do this now?</source>
 Would you like to do this now?</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1573" />
+        <location filename="../src/gui/accountsettings.cpp" line="1575" />
         <source>You need to accept the terms of service at %1.</source>
         <translation>You need to accept the terms of service at %1.</translation>
     </message>
@@ -4010,72 +4010,72 @@ Note that using any logging command line options will override this setting.</tr
 <context>
     <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="371" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="336" />
         <source>%1 folder &quot;%2&quot; is synced to local folder &quot;%3&quot;</source>
         <translation>%1 folder &quot;%2&quot; is synced to local folder &quot;%3&quot;</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="392" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="846" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="357" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="811" />
         <source>%1 free space</source>
         <comment>%1 gets replaced with the size and a matching unit. Example: 3 MB or 5 GB</comment>
         <translation>%1 free space</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="614" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="675" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="579" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="640" />
         <source>(%1)</source>
         <translation>(%1)</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="150" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="336" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="115" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="301" />
         <source>(experimental)</source>
         <translation>(experimental)</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="115" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="80" />
         <source>Connect</source>
         <translation>Connect</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="844" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="809" />
         <source>In Finder&apos;s &quot;Locations&quot; sidebar section</source>
         <translation>In Finder&apos;s &quot;Locations&quot; sidebar section</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="554" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="519" />
         <source>Local Sync Folder</source>
         <translation>Local Sync Folder</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="374" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="339" />
         <source>Sync the folder &quot;%1&quot;</source>
         <translation>Sync the folder &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="706" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="671" />
         <source>There isn&apos;t enough free space in the local folder!</source>
         <translation>There isn&apos;t enough free space in the local folder!</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="165" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="338" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="130" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="303" />
         <source>Use &amp;virtual files instead of downloading content immediately %1</source>
         <translation>Use &amp;virtual files instead of downloading content immediately %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="479" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="444" />
         <source>Virtual files are not supported at the selected location</source>
         <translation>Virtual files are not supported at the selected location</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="330" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="295" />
         <source>Virtual files are not supported for Windows partition roots as local folder. Please choose a valid subfolder under drive letter.</source>
         <translation>Virtual files are not supported for Windows partition roots as local folder. Please choose a valid subfolder under drive letter.</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="379" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="344" />
         <source>Warning: The local folder is not empty. Pick a resolution!</source>
         <translation>Warning: The local folder is not empty. Pick a resolution!</translation>
     </message>
@@ -5986,12 +5986,12 @@ Server replied with error: %2</translation>
 <context>
     <name>OCC::Theme</name>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1675" />
+        <location filename="../src/gui/accountsettings.cpp" line="1677" />
         <source>ExpandMemory-Link</source>
         <translation type="unfinished">https://wl.hidrive.com/easy/0057</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1673" />
+        <location filename="../src/gui/accountsettings.cpp" line="1675" />
         <source>ExpandMemory-Link_STRATO</source>
         <translation type="unfinished">https://static.hidrive.com/next/1046</translation>
     </message>
