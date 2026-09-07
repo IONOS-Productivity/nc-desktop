@@ -8031,6 +8031,9 @@ This is a new, experimental mode. If you decide to use it, please report any iss
         <source>Certificate &amp; Key (pkcs12):</source>
         <translation type="unfinished"/>
     </message>
+</context>
+<context>
+    <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="51"/>
         <source>Browse …</source>

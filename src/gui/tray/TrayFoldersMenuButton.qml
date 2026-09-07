@@ -20,6 +20,11 @@ HeaderButton {
     property bool userHasGroupFolders: currentUser.groupFolders.length > 0
     property color parentBackgroundColor: "transparent"
 
+    icon.source: Style.sesFolderIcon
+    icon.color: Style.sesIconColor
+
+    text: qsTr("Files")
+
     function openMenu() {
         foldersMenuLoader.openMenu()
     }
@@ -56,30 +61,35 @@ HeaderButton {
         popupType: Qt.platform.os === "windows" ? Popup.Item : Popup.Native
         visible: root.hovered && !foldersMenuLoader.isMenuVisible
         text: root.userHasGroupFolders ? qsTr("Open local or team folders") : qsTr("Open local folder")
+        background: Rectangle {
+            color: Style.sesBackgroundColor
+            border.color: Style.sesBorderColor
+            border.width: 1
+            radius: 4
+        }    
+        contentItem: Text {
+            text: tooltip.text
+            color: Style.sesTrayFontColor
+            font.family: Style.sesOpenSansRegular
+        }
     }
 
 
-    Item {
+    contentItem: Item {
         id: rootContent
-
-        anchors.fill: parent
-
-        Item {
-            id: contentContainer
-            anchors.centerIn: parent
-
-            implicitWidth: openLocalFolderButtonCaretIconLoader.active ? openLocalFolderButtonIcon.width + openLocalFolderButtonCaretIconLoader.width : openLocalFolderButtonIcon.width
-            implicitHeight: openLocalFolderButtonIcon.height
 
             Image {
                 id: openLocalFolderButtonIcon
 
-                property int imageWidth: rootContent.width * Style.trayFoldersMenuButtonMainIconSizeFraction
-                property int imageHeight: rootContent.width * Style.trayFoldersMenuButtonMainIconSizeFraction
+                anchors.horizontalCenter: rootContent.horizontalCenter
+                anchors.top: rootContent.top
+                anchors.topMargin: 10
 
+                property int imageWidth: root.icon.width
+                property int imageHeight: root.icon.height
                 cache: true
 
-                source: "image://svgimage-custom-color/folder.svg/" + palette.windowText
+                source: root.icon.source
                 sourceSize {
                     width: imageWidth
                     height: imageHeight
@@ -87,10 +97,16 @@ HeaderButton {
 
                 width: imageWidth
                 height: imageHeight
-
-                anchors.verticalCenter: parent.verticalCenter
             }
 
+            Text {
+                anchors.horizontalCenter: openLocalFolderButtonIcon.horizontalCenter
+                anchors.top: openLocalFolderButtonIcon.bottom
+                anchors.topMargin: 5
+                text: root.text
+                font: root.font
+                color: Style.sesTrayFontColor
+            }
 
             Loader {
                 id: openLocalFolderButtonCaretIconLoader
@@ -118,9 +134,7 @@ HeaderButton {
 
                 width: openLocalFolderButtonCaretIconLoader.imageWidth
                 height: openLocalFolderButtonCaretIconLoader.imageHeight
-
             }
-        }
     }
 
     Loader {

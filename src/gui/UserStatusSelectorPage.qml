@@ -8,7 +8,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import Style
 
-import com.nextcloud.desktopclient as NC
+import com.strato.hidrivenext.desktopclient as NC
 
 Page {
     id: page
