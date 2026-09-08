@@ -85,7 +85,6 @@ PAYLOAD_DIR=$EXTRACTED_DIR/$UNDERSCORE_PRODUCT_NAME.pkg/Payload
 INSTALLER_PKG=${BASE_DIR%/}/INSTALLER.pkg
 APP_PATH=$PRODUCT_DIR/$PRODUCT_NAME.app
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-ADMIN_OSX="$( cd "$SCRIPT_DIR/.." && pwd )/macosx.entitlements.cmake"
 MACCRAFTER_DIR="$( cd "$SCRIPT_DIR/../mac-crafter" && pwd )"
 
 
@@ -112,19 +111,19 @@ else
 fi
 
 # ---------------------------------------------------
-# Extract extension entitlements
+# Extract entitlements
 
-# mac-crafter's "codesign" command now requires explicit entitlements manifests for the three
-# app extensions (see admin/osx/mac-crafter/Sources/Commands/Codesign.swift). Until commit
-# 4861c0d07a, mac-crafter derived these itself at signing time by reading the entitlements
-# already embedded in the extension currently being signed and stripping the debug-only
-# "get-task-allow" entitlement before reapplying them (see saveCodesignEntitlements() in the
-# pre-4861c0d07a admin/osx/mac-crafter/Sources/Utils/Codesigning.swift). That step was
-# externalized to the caller. Since this script resigns an already-built installer and must not
-# depend on a local CMake configure/build to resolve the *.entitlements.cmake templates, we
-# replicate that extraction here, reading straight from the .pkg's currently-signed extensions.
+# mac-crafter's "codesign" command now requires explicit, already-resolved entitlements
+# manifests for the app and its three extensions (see
+# admin/osx/mac-crafter/Sources/Commands/Codesign.swift) instead of deriving them itself.
+# The app's own admin/osx/macosx.entitlements.cmake is a CMake template (@DEVELOPMENT_TEAM@,
+# @APPLICATION_REV_DOMAIN@ placeholders) that only a local CMake configure resolves. Since
+# this script resigns an already-built installer and must not depend on such a local build,
+# we instead read the resolved entitlements straight off the currently-signed bundles in the
+# .pkg - they were baked in correctly at original build time - for the app itself and for the
+# three extensions alike.
 
-echo "Extracting entitlements from app extensions..."
+echo "Extracting entitlements from app and extensions..."
 
 ENTITLEMENTS_DIR="${EXTRACTED_DIR%/}/entitlements"
 mkdir -p "$ENTITLEMENTS_DIR"
@@ -133,6 +132,7 @@ FILE_PROVIDER_EXT_PATH="$APP_PATH/Contents/PlugIns/FileProviderExt.appex"
 FILE_PROVIDER_UI_EXT_PATH="$APP_PATH/Contents/PlugIns/FileProviderUIExt.appex"
 FINDER_SYNC_EXT_PATH="$APP_PATH/Contents/PlugIns/FinderSyncExt.appex"
 
+APP_ENTITLEMENTS="$ENTITLEMENTS_DIR/$UNDERSCORE_PRODUCT_NAME.entitlements"
 FILE_PROVIDER_ENTITLEMENTS="$ENTITLEMENTS_DIR/FileProviderExt.entitlements"
 FILE_PROVIDER_UI_ENTITLEMENTS="$ENTITLEMENTS_DIR/FileProviderUIExt.entitlements"
 FINDER_SYNC_ENTITLEMENTS="$ENTITLEMENTS_DIR/FinderSyncExt.entitlements"
@@ -142,7 +142,7 @@ extract_entitlements() {
   local out_path=$2
 
   if [ ! -d "$bundle_path" ]; then
-    echo "Expected extension bundle not found: $bundle_path. Exiting."
+    echo "Expected bundle not found: $bundle_path. Exiting."
     open "$BASE_DIR"
     exit 1
   fi
@@ -158,6 +158,7 @@ extract_entitlements() {
   /usr/libexec/PlistBuddy -c "Delete :com.apple.security.get-task-allow" "$out_path" >/dev/null 2>&1 || true
 }
 
+extract_entitlements "$APP_PATH" "$APP_ENTITLEMENTS"
 extract_entitlements "$FILE_PROVIDER_EXT_PATH" "$FILE_PROVIDER_ENTITLEMENTS"
 extract_entitlements "$FILE_PROVIDER_UI_EXT_PATH" "$FILE_PROVIDER_UI_ENTITLEMENTS"
 extract_entitlements "$FINDER_SYNC_EXT_PATH" "$FINDER_SYNC_ENTITLEMENTS"
@@ -198,10 +199,10 @@ if [[ -n "$TEAM_PATCHING" ]]; then
     echo "Nothing to patch"
   fi
 
-  # The extracted extension entitlements live outside $APP_PATH (see above), so they are not
-  # covered by the find/grep patching above and need to be patched explicitly.
+  # The extracted entitlements live outside $APP_PATH (see above), so they are not covered
+  # by the find/grep patching above and need to be patched explicitly.
   echo "Replacing Team Identifier in extracted entitlements..."
-  for entitlements_file in "$FILE_PROVIDER_ENTITLEMENTS" "$FILE_PROVIDER_UI_ENTITLEMENTS" "$FINDER_SYNC_ENTITLEMENTS"; do
+  for entitlements_file in "$APP_ENTITLEMENTS" "$FILE_PROVIDER_ENTITLEMENTS" "$FILE_PROVIDER_UI_ENTITLEMENTS" "$FINDER_SYNC_ENTITLEMENTS"; do
     if grep -q "$NC_TEAM_IDENTIFIER" "$entitlements_file"; then
       sed -i '' "s/$NC_TEAM_IDENTIFIER/$IONOS_TEAM_IDENTIFIER/g" "$entitlements_file"
     fi
@@ -219,7 +220,7 @@ swift run --package-path "$MACCRAFTER_DIR" \
     mac-crafter codesign \
     "$APP_PATH" \
     "$CODE_SIGN_IDENTITY" \
-    "$ADMIN_OSX" \
+    "$APP_ENTITLEMENTS" \
     "$FILE_PROVIDER_ENTITLEMENTS" \
     "$FILE_PROVIDER_UI_ENTITLEMENTS" \
     "$FINDER_SYNC_ENTITLEMENTS"
