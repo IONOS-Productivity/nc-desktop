@@ -203,3 +203,6 @@ ionos-theme.qrc
 .idea/
 
 shell_integration/MacOSX/NextcloudIntegration/NextcloudIntegration.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/
+
+# Python
+__pycache__/

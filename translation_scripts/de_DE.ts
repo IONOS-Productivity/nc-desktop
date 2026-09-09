@@ -182,16 +182,16 @@ Should the accounts be imported?</source>
       <translation>Speicher erweitern</translation>
     </message>
     <message>
-      <source>Force sync now</source>
-      <translation>Synchronisierung jetzt erzwingen</translation>
-    </message>
-    <message>
       <source>ExpandMemory-Link</source>
       <translation>https://wl.hidrive.com/easy/0097</translation>
     </message>
     <message>
       <source>ExpandMemory-Link_STRATO</source>
       <translation>https://static.hidrive.com/next/1041</translation>
+    </message>
+    <message>
+      <source>Force sync now</source>
+      <translation>Synchronisierung jetzt erzwingen</translation>
     </message>
     <message>
       <source>Storage space %1% occupied</source>
@@ -241,16 +241,20 @@ Should the accounts be imported?</source>
   <context>
     <name>OCC::DiscoverySingleDirectoryJob</name>
     <message>
-      <source>Encrypted metadata setup error: initial signature from server is empty.</source>
-      <translation>Fehler bei der Einrichtung der verschlüsselten Metadaten: Die ursprüngliche Signatur vom Server ist leer.</translation>
-    </message>
-    <message>
       <source>Encrypted metadata setup error!</source>
       <translation>Einrichtungsfehler für verschlüsselte Metadaten!</translation>
+    </message>
+    <message>
+      <source>Encrypted metadata setup error: initial signature from server is empty.</source>
+      <translation>Fehler bei der Einrichtung der verschlüsselten Metadaten: Die ursprüngliche Signatur vom Server ist leer.</translation>
     </message>
   </context>
   <context>
     <name>OCC::Flow2AuthWidget</name>
+    <message>
+      <source>Copy Link</source>
+      <translation>Link kopieren</translation>
+    </message>
     <message>
       <source>Open Browser</source>
       <translation>Im Browser öffnen</translation>
@@ -436,6 +440,13 @@ Objekte, die gelöscht werden dürfen, werden gelöscht, wenn sie das Löschen e
     </message>
   </context>
   <context>
+    <name>OCC::sesSnackBar</name>
+    <message>
+      <source>Success</source>
+      <translation>Erfolg</translation>
+    </message>
+  </context>
+  <context>
     <name>OCC::SettingsDialog</name>
     <message>
       <source>New account</source>
@@ -445,12 +456,12 @@ Objekte, die gelöscht werden dürfen, werden gelöscht, wenn sie das Löschen e
   <context>
     <name>OCC::SslButton</name>
     <message>
-      <source>This connection is encrypted using %1 bit %2.</source>
-      <translation>Diese Verbindung ist verschlüsselt mit %1 Bit %2.</translation>
-    </message>
-    <message>
       <source>This connection is NOT secure as it is not encrypted.</source>
       <translation>Diese Verbindung ist NICHT sicher, da diese nicht verschlüsselt ist.</translation>
+    </message>
+    <message>
+      <source>This connection is encrypted using %1 bit %2.</source>
+      <translation>Diese Verbindung ist verschlüsselt mit %1 Bit %2.</translation>
     </message>
   </context>
   <context>
@@ -464,6 +475,14 @@ Objekte, die gelöscht werden dürfen, werden gelöscht, wenn sie das Löschen e
       <translation>https://static.hidrive.com/next/1011</translation>
     </message>
     <message>
+      <source>LegalNotice-Link</source>
+      <translation>https://wl.hidrive.com/easy/0044</translation>
+    </message>
+    <message>
+      <source>LegalNotice-Link_STRATO</source>
+      <translation>https://static.hidrive.com/next/1021</translation>
+    </message>
+    <message>
       <source>Login_URL</source>
       <translation>https://storage.ionos.de</translation>
     </message>
@@ -472,20 +491,12 @@ Objekte, die gelöscht werden dürfen, werden gelöscht, wenn sie das Löschen e
       <translation>https://storage.ionos.de</translation>
     </message>
     <message>
-      <source>Privacy-Link</source>
-      <translation>https://wl.hidrive.com/easy/0045</translation>
+      <source>MoreInformation-Link</source>
+      <translation>https://wl.hidrive.com/easy/0047</translation>
     </message>
     <message>
-      <source>Privacy-Link_STRATO</source>
-      <translation>https://static.hidrive.com/next/1001</translation>
-    </message>
-    <message>
-      <source>LegalNotice-Link</source>
-      <translation>https://wl.hidrive.com/easy/0044</translation>
-    </message>
-     <message>
-      <source>LegalNotice-Link_STRATO</source>
-      <translation>https://static.hidrive.com/next/1021</translation>
+      <source>MoreInformation-Link_STRATO</source>
+      <translation>https://static.hidrive.com/next/1011</translation>
     </message>
     <message>
       <source>OpenSource-Link</source>
@@ -493,15 +504,15 @@ Objekte, die gelöscht werden dürfen, werden gelöscht, wenn sie das Löschen e
     </message>
     <message>
       <source>OpenSource-Link_STRATO</source>
-      <translation> https://static.hidrive.com/next/1031</translation>
+      <translation>https://static.hidrive.com/next/1031</translation>
     </message>
     <message>
-      <source>MoreInformation-Link</source>
-      <translation>https://wl.hidrive.com/easy/0047</translation>
+      <source>Privacy-Link</source>
+      <translation>https://wl.hidrive.com/easy/0045</translation>
     </message>
     <message>
-      <source>MoreInformation-Link_STRATO</source>
-      <translation>https://static.hidrive.com/next/1011</translation>
+      <source>Privacy-Link_STRATO</source>
+      <translation>https://static.hidrive.com/next/1001</translation>
     </message>
   </context>
   <context>
@@ -537,17 +548,21 @@ Objekte, die gelöscht werden dürfen, werden gelöscht, wenn sie das Löschen e
     </message>
   </context>
   <context>
-    <name>OCC::sesSnackBar</name>
-    <message>
-      <source>Success</source>
-      <translation>Erfolg</translation>
-    </message>
-  </context>
-  <context>
     <name>OwncloudAdvancedSetupPage</name>
     <message>
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
       <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wenn diese Option gesetzt ist, werden bestehende Inhalte im lokalen Ordner gelöscht, um eine saubere Synchronisierung nur der Serverdaten zu ermöglichen.&lt;/p&gt;&lt;p&gt;Wählen Sie diese Option nicht, wenn die lokalen Inhalte auf den Server übertragen werden sollen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+  </context>
+  <context>
+    <name>progress</name>
+    <message>
+      <source>Updated local virtual files metadata</source>
+      <translation>Aktualisierte Metadaten für lokale virtuelle Dateien</translation>
+    </message>
+    <message>
+      <source>updating local virtual files metadata</source>
+      <translation>Aktualisierung der Metadaten lokaler virtueller Dateien</translation>
     </message>
   </context>
   <context>
@@ -605,23 +620,16 @@ Objekte, die gelöscht werden dürfen, werden gelöscht, wenn sie das Löschen e
   <context>
     <name>TrayWindowAccountMenu</name>
     <message>
+      <source>Add account</source>
+      <translation>Konto hinzufügen</translation>
+    </message>
+    <message>
       <source>Pause sync for all</source>
       <translation>Synchronisierung für alle pausieren</translation>
     </message>
     <message>
       <source>Resume sync for all</source>
       <translation>Synchronisierung für alle fortsetzen</translation>
-    </message>
-  </context>
-  <context>
-    <name>progress</name>
-    <message>
-      <source>Updated local virtual files metadata</source>
-      <translation>Aktualisierte Metadaten für lokale virtuelle Dateien</translation>
-    </message>
-    <message>
-      <source>updating local virtual files metadata</source>
-      <translation>Aktualisierung der Metadaten lokaler virtueller Dateien</translation>
     </message>
   </context>
 </TS>

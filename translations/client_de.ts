@@ -6032,7 +6032,7 @@ Server antwortete mit Fehler: %2</translation>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="407" />
         <source>OpenSource-Link_STRATO</source>
-        <translation> https://static.hidrive.com/next/1031</translation>
+        <translation>https://static.hidrive.com/next/1031</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="418" />
@@ -7422,7 +7422,7 @@ Server antwortete mit Fehler: %2</translation>
     <message>
         <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="129" />
         <source>Add account</source>
-        <translation type="unfinished">Konto hinzufügen</translation>
+        <translation>Konto hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="22" />

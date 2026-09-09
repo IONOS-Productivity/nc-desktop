@@ -182,16 +182,16 @@ Bör kontona importeras?</translation>
       <translation>Expandera minnet</translation>
     </message>
     <message>
-      <source>Force sync now</source>
-      <translation>Tvinga synkronisering nu</translation>
-    </message>
-    <message>
       <source>ExpandMemory-Link</source>
       <translation>https://static.hidrive.com/next/1045</translation>
     </message>
     <message>
       <source>ExpandMemory-Link_STRATO</source>
       <translation>https://static.hidrive.com/next/1044</translation>
+    </message>
+    <message>
+      <source>Force sync now</source>
+      <translation>Tvinga synkronisering nu</translation>
     </message>
     <message>
       <source>Storage space %1% occupied</source>
@@ -241,23 +241,23 @@ Bör kontona importeras?</translation>
   <context>
     <name>OCC::DiscoverySingleDirectoryJob</name>
     <message>
-      <source>Encrypted metadata setup error: initial signature from server is empty.</source>
-      <translation>Fel vid inställning av krypterade metadata: den ursprungliga signaturen från servern är tom.</translation>
-    </message>
-    <message>
       <source>Encrypted metadata setup error!</source>
       <translation>Fel i installationen av krypterade metadata!</translation>
+    </message>
+    <message>
+      <source>Encrypted metadata setup error: initial signature from server is empty.</source>
+      <translation>Fel vid inställning av krypterade metadata: den ursprungliga signaturen från servern är tom.</translation>
     </message>
   </context>
   <context>
     <name>OCC::Flow2AuthWidget</name>
     <message>
-      <source>Open Browser</source>
-      <translation>Öppna webbläsaren</translation>
-    </message>
-    <message>
       <source>Copy Link</source>
       <translation>Kopiera länk</translation>
+    </message>
+    <message>
+      <source>Open Browser</source>
+      <translation>Öppna webbläsaren</translation>
     </message>
   </context>
   <context>
@@ -440,6 +440,13 @@ Objekt där radering är tillåten raderas om de förhindrar att en katalog tas 
     </message>
   </context>
   <context>
+    <name>OCC::sesSnackBar</name>
+    <message>
+      <source>Success</source>
+      <translation>Framgång</translation>
+    </message>
+  </context>
+  <context>
     <name>OCC::SettingsDialog</name>
     <message>
       <source>New account</source>
@@ -449,12 +456,12 @@ Objekt där radering är tillåten raderas om de förhindrar att en katalog tas 
   <context>
     <name>OCC::SslButton</name>
     <message>
-      <source>This connection is encrypted using %1 bit %2.</source>
-      <translation>Denna anslutning är krypterad med %1 bit %2.</translation>
-    </message>
-    <message>
       <source>This connection is NOT secure as it is not encrypted.</source>
       <translation>Denna anslutning är INTE säker eftersom den inte är krypterad.</translation>
+    </message>
+    <message>
+      <source>This connection is encrypted using %1 bit %2.</source>
+      <translation>Denna anslutning är krypterad med %1 bit %2.</translation>
     </message>
   </context>
   <context>
@@ -468,6 +475,14 @@ Objekt där radering är tillåten raderas om de förhindrar att en katalog tas 
       <translation>https://static.hidrive.com/next/1014</translation>
     </message>
     <message>
+      <source>LegalNotice-Link</source>
+      <translation>https://static.hidrive.com/next/1024</translation>
+    </message>
+    <message>
+      <source>LegalNotice-Link_STRATO</source>
+      <translation>https://static.hidrive.com/next/1024</translation>
+    </message>
+    <message>
       <source>Login_URL</source>
       <translation>https://storage.ionos.co.uk</translation>
     </message>
@@ -476,20 +491,12 @@ Objekt där radering är tillåten raderas om de förhindrar att en katalog tas 
       <translation>https://storage.ionos.co.uk</translation>
     </message>
     <message>
-      <source>Privacy-Link</source>
-      <translation>https://static.hidrive.com/next/1004</translation>
+      <source>MoreInformation-Link</source>
+      <translation>https://strato.se</translation>
     </message>
     <message>
-      <source>Privacy-Link_STRATO</source>
-      <translation>https://static.hidrive.com/next/1004</translation>
-    </message>
-    <message>
-      <source>LegalNotice-Link</source>
-      <translation>https://static.hidrive.com/next/1024</translation>
-    </message>
-    <message>
-      <source>LegalNotice-Link_STRATO</source>
-      <translation>https://static.hidrive.com/next/1024</translation>
+      <source>MoreInformation-Link_STRATO</source>
+      <translation>https://static.hidrive.com/next/1014</translation>
     </message>
     <message>
       <source>OpenSource-Link</source>
@@ -500,12 +507,12 @@ Objekt där radering är tillåten raderas om de förhindrar att en katalog tas 
       <translation>https://static.hidrive.com/next/1031</translation>
     </message>
     <message>
-      <source>MoreInformation-Link</source>
-      <translation>https://strato.se</translation>
+      <source>Privacy-Link</source>
+      <translation>https://static.hidrive.com/next/1004</translation>
     </message>
     <message>
-      <source>MoreInformation-Link_STRATO</source>
-      <translation>https://static.hidrive.com/next/1014</translation>
+      <source>Privacy-Link_STRATO</source>
+      <translation>https://static.hidrive.com/next/1004</translation>
     </message>
   </context>
   <context>
@@ -541,17 +548,21 @@ Objekt där radering är tillåten raderas om de förhindrar att en katalog tas 
     </message>
   </context>
   <context>
-    <name>OCC::sesSnackBar</name>
-    <message>
-      <source>Success</source>
-      <translation>Framgång</translation>
-    </message>
-  </context>
-  <context>
     <name>OwncloudAdvancedSetupPage</name>
     <message>
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
       <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Om den här rutan är markerad kommer befintligt innehåll i den lokala mappen att raderas för att starta en ren synkronisering från servern.&lt;/p&gt;&lt;p&gt;Markera inte den här om det lokala innehållet ska laddas upp till servermappen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+  </context>
+  <context>
+    <name>progress</name>
+    <message>
+      <source>Updated local virtual files metadata</source>
+      <translation>Uppdaterade metadata för lokala virtuella filer</translation>
+    </message>
+    <message>
+      <source>updating local virtual files metadata</source>
+      <translation>Uppdatering av metadata för lokala virtuella filer</translation>
     </message>
   </context>
   <context>
@@ -609,27 +620,16 @@ Objekt där radering är tillåten raderas om de förhindrar att en katalog tas 
   <context>
     <name>TrayWindowAccountMenu</name>
     <message>
+      <source>Add account</source>
+      <translation>Lägg till konto</translation>
+    </message>
+    <message>
       <source>Pause sync for all</source>
       <translation>Pausa synkronisering för alla</translation>
     </message>
     <message>
       <source>Resume sync for all</source>
       <translation>Synkronisering av CV för alla</translation>
-    </message>
-    <message>
-      <source>Add account</source>
-      <translation>Lägg till konto</translation>
-    </message>
-  </context>
-  <context>
-    <name>progress</name>
-    <message>
-      <source>Updated local virtual files metadata</source>
-      <translation>Uppdaterade metadata för lokala virtuella filer</translation>
-    </message>
-    <message>
-      <source>updating local virtual files metadata</source>
-      <translation>Uppdatering av metadata för lokala virtuella filer</translation>
     </message>
   </context>
 </TS>
