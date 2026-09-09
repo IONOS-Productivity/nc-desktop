@@ -15,10 +15,10 @@ Ein frischer Clone von nc-desktop braucht mehrere manuelle Schritte, bevor gebau
 
 2. **Voraussetzungen-Check (read-only, immer automatisch):**
    - `git --version`, `python3 --version` (bzw. `python --version` auf Windows)
-   - Windows: Visual Studio Build Tools vorhanden? (`vswhere` falls verfügbar, sonst `Get-ChildItem "C:\Program Files (x86)\Microsoft Visual Studio\2022"` o.ä.), `$env:WindowsSDKVersion`, Windows Developer Mode Status (`Get-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock -Name AllowDevelopmentWithoutDevLicense` falls lesbar)
+   - Windows: Visual Studio Build Tools vorhanden? (`vswhere` falls verfügbar, sonst `Get-ChildItem "C:\Program Files (x86)\Microsoft Visual Studio\2022"` o.ä.), `$env:WindowsSDKVersion`, Windows Developer Mode Status (`Get-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock -Name AllowDevelopmentWithoutDevLicense` falls lesbar), Inkscape vorhanden (`Get-Command inkscape -ErrorAction SilentlyContinue` bzw. `Test-Path "C:\Program Files\Inkscape\bin\inkscape.exe"`) — wird zur Icon-Generierung gebraucht, `cmake`-Konfiguration bricht sonst mit `FATAL_ERROR` ab
    - macOS: `xcode-select -p` (Command Line Tools), `xcodebuild -version` (volles Xcode), `brew --version`
    - Linux: `dpkg -l | grep -E 'build-essential|cmake|ninja-build'` (Kernpakete aus dem Linux-Build-Runbook, Abschnitt 3.1)
-   - Craft vorhanden: `Test-Path C:\Craft64` (Windows) bzw. `test -d ~/Craft64` (macOS) bzw. `test -d ~/linux-gcc-x86_64` (Linux)
+   - Craft vorhanden: `Test-Path C:\Craft64` oder `Test-Path C:\CraftRoot` (Windows, beide Pfade sind laut Confluence gültige Installationsziele) bzw. `test -d ~/Craft64` (macOS) bzw. `test -d ~/linux-gcc-x86_64` (Linux)
    - Ergebnis als Checkliste (✅/❌ pro Punkt) ausgeben, bevor der nächste Schritt beginnt.
 
 3. **Lokale Git-Konfiguration (automatisch, ohne Rückfrage — repo-lokal, reversibel, keine Systemänderung):**
@@ -37,6 +37,10 @@ Ein frischer Clone von nc-desktop braucht mehrere manuelle Schritte, bevor gebau
    **Windows** (Quelle: Confluence "Craft Installation (Windows)"):
    - Prüfen/hinweisen: Windows Developer Modus aktiv? Falls nicht, Nutzer bitten, ihn manuell in den Windows-Einstellungen zu aktivieren (kein Automatisierungspfad ohne Admin-Registry-Eingriff, den dieser Skill nicht selbstständig vornimmt).
    - VS 2022 Build Tools fehlt? → Download-Link nennen (`https://my.visualstudio.com/Downloads?q=visual%20studio%202022`), NICHT automatisch installieren (Workload-Auswahl "Desktop development with C++" ist interaktiv).
+   - Inkscape fehlt? Wird zur Icon-Generierung gebraucht (siehe Confluence "Windows", Abschnitt "Weitere benötigte Tools") und ist kein Craft-Paket — nach Bestätigung:
+     ```powershell
+     winget install -e --id Inkscape.Inkscape --source winget
+     ```
    - Craft-Bootstrap nur nach Bestätigung:
      ```powershell
      iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/KDE/craft/master/setup/install_craft.ps1'))
@@ -98,7 +102,19 @@ Ein frischer Clone von nc-desktop braucht mehrere manuelle Schritte, bevor gebau
    - `.vscode/settings.json`/`launch.json` enthalten eingecheckte Windows-Pfade — lokal auf `~/linux-gcc-x86_64` umbiegen und `git update-index --skip-worktree .vscode/settings.json .vscode/launch.json` setzen, NICHT committen (Runbook, Problem #8/#9).
    - Bekannte Probleme/Fixes: siehe Runbook-Tabelle "4. Bekannte Probleme & Lösungen" — bei einem der dort gelisteten Fehlerbilder direkt auf den passenden Tabelleneintrag verweisen statt neu zu debuggen.
 
-5. **Abschluss:** Zusammenfassen was automatisch erledigt wurde, was der Nutzer selbst bestätigt/ausgeführt hat, und was noch manuell offen ist (z.B. Xcode-Erststart, Windows Developer Modus, AppleId). Für den eigentlichen Build/Start danach auf den Skill `run` bzw. die Confluence-Seite "HiDrive Next mit Visual Studio Code" verweisen — nicht selbst bauen oder die App starten.
+5. **VS Code Extensions installieren (nach Bestätigung, plattformübergreifend):**
+   - Vorhandene prüfen: `code --list-extensions --show-versions`
+   - Fehlende der folgenden nach Bestätigung installieren:
+     ```
+     code --install-extension ms-vscode.cpptools
+     code --install-extension ms-vscode.cpptools-extension-pack
+     code --install-extension ms-vscode.cpptools-themes
+     code --install-extension ms-vscode.cmake-tools
+     code --install-extension ms-vscode.cpp-devtools
+     ```
+   - Weiterführende Konfiguration (CMake-Kit, Compiler-Pfad) siehe Confluence "HiDrive Next mit Visual Studio Code" (`604996038`) — hier nur Installation der Extensions, keine Workspace-Konfiguration.
+
+6. **Abschluss:** Zusammenfassen was automatisch erledigt wurde, was der Nutzer selbst bestätigt/ausgeführt hat, und was noch manuell offen ist (z.B. Xcode-Erststart, Windows Developer Modus, AppleId). Für den eigentlichen Build/Start danach auf den Skill `run` bzw. die Confluence-Seite "HiDrive Next mit Visual Studio Code" verweisen — nicht selbst bauen oder die App starten.
 
 ## Abgrenzung
 
