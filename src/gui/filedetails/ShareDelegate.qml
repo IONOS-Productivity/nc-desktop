@@ -188,7 +188,7 @@ GridLayout {
             backgroundColor: Style.clipboardBackgroundColor
 
             iconSource: shareLinkCopied ? Style.sesSyncSuccessIcon + Style.positiveColor :
-                                           Style.sesClipboard + palette.brightText
+                                           Style.sesClipboardColored
 
             icon.width: Style.smallIconSize
             icon.height: Style.smallIconSize

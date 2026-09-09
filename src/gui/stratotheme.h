@@ -111,10 +111,6 @@ public:
         return "#FFFFFF";
     }
 
-    QString clipboardBackgroundColor() const override {
-        return "#f7f7f9";
-    }
-
     QString buttonIconColor() const override {
         return themedColor("#2f2f70", "#C9CBEF");
     }
@@ -173,6 +169,16 @@ public:
 
     QString sesHeaderLogoIcon() const override {
         return QStringLiteral("qrc:///client/theme/ses/strato/ses-STRATO-logo.svg");
+    }
+
+    // Use the IONOS copy-to-clipboard icon for STRATO too - the strato/ variant is a
+    // different icon design and STRATO should match IONOS here.
+    QString clipboardIcon() const override {
+        return QStringLiteral("qrc:///client/theme/ses/ses-clipboard.svg");
+    }
+
+    QString lightClipboardIcon() const override {
+        return QStringLiteral("qrc:///client/theme/ses/ses-lightClipboard.svg");
     }
 };
 }

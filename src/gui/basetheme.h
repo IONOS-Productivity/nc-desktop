@@ -46,6 +46,7 @@ class BaseTheme : public QObject{
     Q_PROPERTY(QString deleteIcon READ deleteIcon CONSTANT)
     Q_PROPERTY(QString clipboardIcon READ clipboardIcon CONSTANT)
     Q_PROPERTY(QString lightClipboardIcon READ lightClipboardIcon CONSTANT)
+    Q_PROPERTY(QString clipboardIconColored READ clipboardIconColored NOTIFY themeColorsChanged)
     Q_PROPERTY(QString chevronIcon READ chevronIcon CONSTANT)
     Q_PROPERTY(QString syncSuccessIcon READ syncSuccessIcon CONSTANT)
     Q_PROPERTY(QString syncErrorIcon READ syncErrorIcon CONSTANT)
@@ -166,6 +167,14 @@ public:
 
     virtual QString lightClipboardIcon() const {
         return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-lightClipboard.svg");
+    }
+
+    // Recolored via the svgimage-custom-color provider (see SvgImageProvider) instead of
+    // picking between clipboardIcon()/lightClipboardIcon()'s two separately-baked SVGs, so
+    // it always matches the current theme. Hardcoded to the base "ses/" icon (bypassing
+    // additionalThemePrefix()) to keep the IONOS artwork on every brand, per clipboardIcon().
+    virtual QString clipboardIconColored() const {
+        return QStringLiteral("image://svgimage-custom-color/ses/ses-clipboard.svg/") + themedColor("#001B41", "#FFFFFF");
     }
 
     virtual QString chevronIcon() const {
@@ -437,7 +446,7 @@ public:
     }
 
     virtual QString clipboardBackgroundColor() const {
-        return "#FFFFFF";
+        return "transparent";
     }
 
     virtual QString white() const {

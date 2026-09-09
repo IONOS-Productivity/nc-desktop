@@ -252,6 +252,7 @@ QtObject {
     readonly property string sesDelete: WLTheme.deleteIcon
     readonly property string sesClipboard: WLTheme.clipboardIcon
     readonly property string sesLightClipboard: WLTheme.lightClipboardIcon
+    readonly property string sesClipboardColored: WLTheme.clipboardIconColored
     readonly property string sesSyncErrorIcon: WLTheme.syncErrorIcon
     readonly property string sesErrorBoxIcon: WLTheme.snackbarErrorIcon
     readonly property string sesSyncSuccessIcon: WLTheme.syncSuccessIcon
