@@ -15,7 +15,7 @@ Ein frischer Clone von nc-desktop braucht mehrere manuelle Schritte, bevor gebau
 
 2. **Voraussetzungen-Check (read-only, immer automatisch):**
    - `git --version`, `python3 --version` (bzw. `python --version` auf Windows)
-   - Windows: Visual Studio Build Tools vorhanden? (`vswhere` falls verfügbar, sonst `Get-ChildItem "C:\Program Files (x86)\Microsoft Visual Studio\2022"` o.ä.), `$env:WindowsSDKVersion`, Windows Developer Mode Status (`Get-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock -Name AllowDevelopmentWithoutDevLicense` falls lesbar), Inkscape vorhanden (`Get-Command inkscape -ErrorAction SilentlyContinue` bzw. `Test-Path "C:\Program Files\Inkscape\bin\inkscape.exe"`) — wird zur Icon-Generierung gebraucht, `cmake`-Konfiguration bricht sonst mit `FATAL_ERROR` ab
+   - Windows: Visual Studio Build Tools vorhanden? (`vswhere` falls verfügbar, sonst `Get-ChildItem "C:\Program Files (x86)\Microsoft Visual Studio\2022"` o.ä.), `$env:WindowsSDKVersion`, Windows Developer Mode Status (`Get-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock -Name AllowDevelopmentWithoutDevLicense` falls lesbar), Inkscape vorhanden (`Get-Command inkscape -ErrorAction SilentlyContinue` bzw. `Test-Path "C:\Program Files\Inkscape\bin\inkscape.exe"`) — wird zur Icon-Generierung gebraucht, `cmake`-Konfiguration bricht sonst mit `FATAL_ERROR` ab; png2ico vorhanden (`Get-Command png2ico -ErrorAction SilentlyContinue`, erst nach Craft-Setup sinnvoll prüfbar, siehe Schritt 4)
    - macOS: `xcode-select -p` (Command Line Tools), `xcodebuild -version` (volles Xcode), `brew --version`
    - Linux: `dpkg -l | grep -E 'build-essential|cmake|ninja-build'` (Kernpakete aus dem Linux-Build-Runbook, Abschnitt 3.1)
    - Craft vorhanden: `Test-Path C:\Craft64` oder `Test-Path C:\CraftRoot` (Windows, beide Pfade sind laut Confluence gültige Installationsziele) bzw. `test -d ~/Craft64` (macOS) bzw. `test -d ~/linux-gcc-x86_64` (Linux)
@@ -54,6 +54,7 @@ Ein frischer Clone von nc-desktop braucht mehrere manuelle Schritte, bevor gebau
      craft craft
      craft --install-deps nextcloud-client
      ```
+   - Danach prüfen: `Get-Command png2ico -ErrorAction SilentlyContinue` (siehe Confluence "Windows", Abschnitt "Weitere benötigte Tools"). Sollte als Blueprint-Abhängigkeit von `nextcloud-client` mit installiert worden und über `.craft\craftenv.ps1` im PATH sein — falls trotzdem nicht gefunden, keinen automatischen Installationsweg annehmen, sondern auf `cmake/modules/FindPng2Ico.cmake` (Bezugsquellen winterdrache.de/kdewin) verweisen und Nutzer fragen, wie weiter vorgegangen werden soll.
    - Bekannter Stolperstein (Windows SDK): siehe Confluence-Seite, Abschnitt "Trouble Shooting" — bei `LNK2001 guard_check_icall` `$env:WindowsSDKVersion` auf ein installiertes SDK (`ls "C:\Program Files (x86)\Windows Kits\10\Lib"`) umbiegen, nicht blind versuchen zu reparieren, sondern die dort dokumentierten 4 Variablen (`WindowsSDKVersion`, `INCLUDE`, `LIB`, `LIBPATH`) einzeln zeigen und Anpassung bestätigen lassen.
    - Nächster Schritt danach: Confluence "HiDrive Next mit Visual Studio Code" (`604996038`).
 
