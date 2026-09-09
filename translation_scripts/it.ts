@@ -182,16 +182,16 @@ Should the accounts be imported?</source>
       <translation>Upgrade Storage </translation>
     </message>
     <message>
-      <source>Force sync now</source>
-      <translation>Forza ora la sincronizzazione</translation>
-    </message>
-    <message>
       <source>ExpandMemory-Link</source>
       <translation>https://wl.hidrive.com/easy/0087</translation>
     </message>
     <message>
       <source>ExpandMemory-Link_STRATO</source>
       <translation>https://static.hidrive.com/next/1046</translation>
+    </message>
+    <message>
+      <source>Force sync now</source>
+      <translation>Forza ora la sincronizzazione</translation>
     </message>
     <message>
       <source>Storage space %1% occupied</source>
@@ -241,12 +241,12 @@ Should the accounts be imported?</source>
   <context>
     <name>OCC::DiscoverySingleDirectoryJob</name>
     <message>
-      <source>Encrypted metadata setup error: initial signature from server is empty.</source>
-      <translation>Errore di configurazione dei metadati crittografati: la firma iniziale del server è vuota.</translation>
-    </message>
-    <message>
       <source>Encrypted metadata setup error!</source>
       <translation>Eerrore nell'impostazione dei metadati di crittografia!</translation>
+    </message>
+    <message>
+      <source>Encrypted metadata setup error: initial signature from server is empty.</source>
+      <translation>Errore di configurazione dei metadati crittografati: la firma iniziale del server è vuota.</translation>
     </message>
   </context>
   <context>
@@ -436,6 +436,13 @@ Items where deletion is allowed will be deleted if they prevent a directory from
     </message>
   </context>
   <context>
+    <name>OCC::sesSnackBar</name>
+    <message>
+      <source>Success</source>
+      <translation> successo</translation>
+    </message>
+  </context>
+  <context>
     <name>OCC::SettingsDialog</name>
     <message>
       <source>New account</source>
@@ -445,12 +452,12 @@ Items where deletion is allowed will be deleted if they prevent a directory from
   <context>
     <name>OCC::SslButton</name>
     <message>
-      <source>This connection is encrypted using %1 bit %2.</source>
-      <translation>Questa connessione è cifrata utilizzando %1 bit %2.</translation>
-    </message>
-    <message>
       <source>This connection is NOT secure as it is not encrypted.</source>
       <translation>Questa connessione NON è sicura poiché non è cifrata.</translation>
+    </message>
+    <message>
+      <source>This connection is encrypted using %1 bit %2.</source>
+      <translation>Questa connessione è cifrata utilizzando %1 bit %2.</translation>
     </message>
   </context>
   <context>
@@ -464,6 +471,14 @@ Items where deletion is allowed will be deleted if they prevent a directory from
       <translation>https://static.hidrive.com/next/1016</translation>
     </message>
     <message>
+      <source>LegalNotice-Link</source>
+      <translation>https://wl.hidrive.com/easy/0034</translation>
+    </message>
+    <message>
+      <source>LegalNotice-Link_STRATO</source>
+      <translation>https://static.hidrive.com/next/1026</translation>
+    </message>
+    <message>
       <source>Login_URL</source>
       <translation>https://storage.ionos.it</translation>
     </message>
@@ -472,20 +487,12 @@ Items where deletion is allowed will be deleted if they prevent a directory from
       <translation>https://storage.ionos.it</translation>
     </message>
     <message>
-      <source>Privacy-Link</source>
-      <translation>https://wl.hidrive.com/easy/0035</translation>
+      <source>MoreInformation-Link</source>
+      <translation>https://wl.hidrive.com/easy/0037</translation>
     </message>
     <message>
-      <source>Privacy-Link_STRATO</source>
-      <translation>https://static.hidrive.com/next/1004</translation>
-    </message>
-    <message>
-      <source>LegalNotice-Link</source>
-      <translation>https://wl.hidrive.com/easy/0034</translation>
-    </message>
-    <message>
-      <source>LegalNotice-Link_STRATO</source>
-      <translation>https://static.hidrive.com/next/1026</translation>
+      <source>MoreInformation-Link_STRATO</source>
+      <translation>https://static.hidrive.com/next/1016</translation>
     </message>
     <message>
       <source>OpenSource-Link</source>
@@ -496,12 +503,12 @@ Items where deletion is allowed will be deleted if they prevent a directory from
       <translation> https://static.hidrive.com/next/1031</translation>
     </message>
     <message>
-      <source>MoreInformation-Link</source>
-      <translation>https://wl.hidrive.com/easy/0037</translation>
+      <source>Privacy-Link</source>
+      <translation>https://wl.hidrive.com/easy/0035</translation>
     </message>
     <message>
-      <source>MoreInformation-Link_STRATO</source>
-      <translation>https://static.hidrive.com/next/1016</translation>
+      <source>Privacy-Link_STRATO</source>
+      <translation>https://static.hidrive.com/next/1004</translation>
     </message>
   </context>
   <context>
@@ -537,17 +544,21 @@ Items where deletion is allowed will be deleted if they prevent a directory from
     </message>
   </context>
   <context>
-    <name>OCC::sesSnackBar</name>
-    <message>
-      <source>Success</source>
-      <translation> successo</translation>
-    </message>
-  </context>
-  <context>
     <name>OwncloudAdvancedSetupPage</name>
     <message>
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
       <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Se questa casella è marcata, il contenuto della cartella locale sarà cancellato per avviare una nuova sincronizzazione dal server.&lt;/p&gt;&lt;p&gt;Non marcarla se il contenuto locale deve essere caricato nella cartella del server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+  </context>
+  <context>
+    <name>progress</name>
+    <message>
+      <source>Updated local virtual files metadata</source>
+      <translation>Metadati dei file virtuali locali aggiornati</translation>
+    </message>
+    <message>
+      <source>updating local virtual files metadata</source>
+      <translation>Aggiornamento dei metadati dei file virtuali locali</translation>
     </message>
   </context>
   <context>
@@ -611,17 +622,6 @@ Items where deletion is allowed will be deleted if they prevent a directory from
     <message>
       <source>Resume sync for all</source>
       <translation>Riprendi la sincronizzazione per tutti</translation>
-    </message>
-  </context>
-  <context>
-    <name>progress</name>
-    <message>
-      <source>Updated local virtual files metadata</source>
-      <translation>Metadati dei file virtuali locali aggiornati</translation>
-    </message>
-    <message>
-      <source>updating local virtual files metadata</source>
-      <translation>Aggiornamento dei metadati dei file virtuali locali</translation>
     </message>
   </context>
 </TS>

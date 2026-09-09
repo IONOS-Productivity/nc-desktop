@@ -189,16 +189,16 @@ Doivent-ils être importés ?</translation>
       <translation>Augmenter la mémoire</translation>
     </message>
     <message>
-      <source>Force sync now</source>
-      <translation>Forcer la synchronisation maintenant</translation>
-    </message>
-    <message>
       <source>ExpandMemory-Link</source>
       <translation>https://wl.hidrive.com/easy/0077</translation>
     </message>
     <message>
       <source>ExpandMemory-Link_STRATO</source>
       <translation>https://static.hidrive.com/next/1042</translation>
+    </message>
+    <message>
+      <source>Force sync now</source>
+      <translation>Forcer la synchronisation maintenant</translation>
     </message>
     <message>
       <source>Storage space %1% occupied</source>
@@ -248,12 +248,12 @@ Doivent-ils être importés ?</translation>
   <context>
     <name>OCC::DiscoverySingleDirectoryJob</name>
     <message>
-      <source>Encrypted metadata setup error: initial signature from server is empty.</source>
-      <translation>Erreur de configuration des métadonnées cryptées : la signature initiale du serveur est vide.</translation>
-    </message>
-    <message>
       <source>Encrypted metadata setup error!</source>
       <translation>Erreur de configuration des métadonnées chiffrées !</translation>
+    </message>
+    <message>
+      <source>Encrypted metadata setup error: initial signature from server is empty.</source>
+      <translation>Erreur de configuration des métadonnées cryptées : la signature initiale du serveur est vide.</translation>
     </message>
   </context>
   <context>
@@ -443,6 +443,13 @@ Les objets autorisés à être supprimés le seront s'ils empêchent la suppress
     </message>
   </context>
   <context>
+    <name>OCC::sesSnackBar</name>
+    <message>
+      <source>Success</source>
+      <translation>Réussite</translation>
+    </message>
+  </context>
+  <context>
     <name>OCC::SettingsDialog</name>
     <message>
       <source>New account</source>
@@ -452,12 +459,12 @@ Les objets autorisés à être supprimés le seront s'ils empêchent la suppress
   <context>
     <name>OCC::SslButton</name>
     <message>
-      <source>This connection is encrypted using %1 bit %2.</source>
-      <translation>Cette connexion est chiffrée en utilisant %1 bit %2.</translation>
-    </message>
-    <message>
       <source>This connection is NOT secure as it is not encrypted.</source>
       <translation>Cette connexion n'est PAS sécurisée car elle n'est pas chiffrée.</translation>
+    </message>
+    <message>
+      <source>This connection is encrypted using %1 bit %2.</source>
+      <translation>Cette connexion est chiffrée en utilisant %1 bit %2.</translation>
     </message>
   </context>
   <context>
@@ -471,6 +478,14 @@ Les objets autorisés à être supprimés le seront s'ils empêchent la suppress
       <translation>https://static.hidrive.com/next/1012</translation>
     </message>
     <message>
+      <source>LegalNotice-Link</source>
+      <translation>https://wl.hidrive.com/easy/0024</translation>
+    </message>
+    <message>
+      <source>LegalNotice-Link_STRATO</source>
+      <translation>https://static.hidrive.com/next/1022</translation>
+    </message>
+    <message>
       <source>Login_URL</source>
       <translation>https://storage.ionos.fr</translation>
     </message>
@@ -479,20 +494,12 @@ Les objets autorisés à être supprimés le seront s'ils empêchent la suppress
       <translation>https://storage.ionos.fr</translation>
     </message>
     <message>
-      <source>Privacy-Link</source>
-      <translation>https://wl.hidrive.com/easy/0025</translation>
+      <source>MoreInformation-Link</source>
+      <translation>https://wl.hidrive.com/easy/0027</translation>
     </message>
     <message>
-      <source>Privacy-Link_STRATO</source>
-      <translation>https://static.hidrive.com/next/1002</translation>
-    </message>
-    <message>
-      <source>LegalNotice-Link</source>
-      <translation>https://wl.hidrive.com/easy/0024</translation>
-    </message>
-    <message>
-      <source>LegalNotice-Link_STRATO</source>
-      <translation>https://static.hidrive.com/next/1022</translation>
+      <source>MoreInformation-Link_STRATO</source>
+      <translation>https://static.hidrive.com/next/1012</translation>
     </message>
     <message>
       <source>OpenSource-Link</source>
@@ -503,12 +510,12 @@ Les objets autorisés à être supprimés le seront s'ils empêchent la suppress
       <translation> https://static.hidrive.com/next/1031</translation>
     </message>
     <message>
-      <source>MoreInformation-Link</source>
-      <translation>https://wl.hidrive.com/easy/0027</translation>
+      <source>Privacy-Link</source>
+      <translation>https://wl.hidrive.com/easy/0025</translation>
     </message>
     <message>
-      <source>MoreInformation-Link_STRATO</source>
-      <translation>https://static.hidrive.com/next/1012</translation>
+      <source>Privacy-Link_STRATO</source>
+      <translation>https://static.hidrive.com/next/1002</translation>
     </message>
   </context>
   <context>
@@ -544,17 +551,21 @@ Les objets autorisés à être supprimés le seront s'ils empêchent la suppress
     </message>
   </context>
   <context>
-    <name>OCC::sesSnackBar</name>
-    <message>
-      <source>Success</source>
-      <translation>Réussite</translation>
-    </message>
-  </context>
-  <context>
     <name>OwncloudAdvancedSetupPage</name>
     <message>
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
       <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Si cette case est cochée, le contenu existant du dossier local sera supprimé pour démarrer une synchronisation propre depuis le serveur.&lt;/p&gt;&lt;p&gt;Ne pas cocher si le contenu local doit être téléversé vers le serveur.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+  </context>
+  <context>
+    <name>progress</name>
+    <message>
+      <source>Updated local virtual files metadata</source>
+      <translation>Métadonnées des fichiers virtuels locaux mises à jour</translation>
+    </message>
+    <message>
+      <source>updating local virtual files metadata</source>
+      <translation>Mise à jour des métadonnées des fichiers virtuels locaux</translation>
     </message>
   </context>
   <context>
@@ -618,17 +629,6 @@ Les objets autorisés à être supprimés le seront s'ils empêchent la suppress
     <message>
       <source>Resume sync for all</source>
       <translation>Reprendre la synchronisation pour tous</translation>
-    </message>
-  </context>
-  <context>
-    <name>progress</name>
-    <message>
-      <source>Updated local virtual files metadata</source>
-      <translation>Métadonnées des fichiers virtuels locaux mises à jour</translation>
-    </message>
-    <message>
-      <source>updating local virtual files metadata</source>
-      <translation>Mise à jour des métadonnées des fichiers virtuels locaux</translation>
     </message>
   </context>
 </TS>

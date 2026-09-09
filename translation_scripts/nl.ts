@@ -182,16 +182,16 @@ Moeten de accounts worden geïmporteerd?</translation>
       <translation>Geheugen uitbreiden</translation>
     </message>
     <message>
-      <source>Force sync now</source>
-      <translation>Synchronisatie nu forceren</translation>
-    </message>
-    <message>
       <source>ExpandMemory-Link</source>
       <translation>https://wl.hidrive.com/easy/0097</translation>
     </message>
     <message>
       <source>ExpandMemory-Link_STRATO</source>
       <translation>https://static.hidrive.com/next/1045</translation>
+    </message>
+    <message>
+      <source>Force sync now</source>
+      <translation>Synchronisatie nu forceren</translation>
     </message>
     <message>
       <source>Storage space %1% occupied</source>
@@ -241,12 +241,12 @@ Moeten de accounts worden geïmporteerd?</translation>
   <context>
     <name>OCC::DiscoverySingleDirectoryJob</name>
     <message>
-      <source>Encrypted metadata setup error: initial signature from server is empty.</source>
-      <translation>Fout bij opzetten versleutelde metagegevens: initiële handtekening van server is leeg.</translation>
-    </message>
-    <message>
       <source>Encrypted metadata setup error!</source>
       <translation>Encrypted metadata setup error!</translation>
+    </message>
+    <message>
+      <source>Encrypted metadata setup error: initial signature from server is empty.</source>
+      <translation>Fout bij opzetten versleutelde metagegevens: initiële handtekening van server is leeg.</translation>
     </message>
   </context>
   <context>
@@ -436,6 +436,13 @@ Objecten die verwijderd mogen worden, worden verwijderd als ze zouden verhindere
     </message>
   </context>
   <context>
+    <name>OCC::sesSnackBar</name>
+    <message>
+      <source>Success</source>
+      <translation>Succes</translation>
+    </message>
+  </context>
+  <context>
     <name>OCC::SettingsDialog</name>
     <message>
       <source>New account</source>
@@ -445,12 +452,12 @@ Objecten die verwijderd mogen worden, worden verwijderd als ze zouden verhindere
   <context>
     <name>OCC::SslButton</name>
     <message>
-      <source>This connection is encrypted using %1 bit %2.</source>
-      <translation>Deze verbinding is versleuteld via %1 bit %2.</translation>
-    </message>
-    <message>
       <source>This connection is NOT secure as it is not encrypted.</source>
       <translation>Deze verbinding is NIET veilig, omdat deze niet versleuteld is.</translation>
+    </message>
+    <message>
+      <source>This connection is encrypted using %1 bit %2.</source>
+      <translation>Deze verbinding is versleuteld via %1 bit %2.</translation>
     </message>
   </context>
   <context>
@@ -464,14 +471,6 @@ Objecten die verwijderd mogen worden, worden verwijderd als ze zouden verhindere
       <translation>https://static.hidrive.com/next/1015</translation>
     </message>
     <message>
-      <source>Login_URL</source>
-      <translation>https://storage.ionos.co.uk</translation>
-    </message>
-    <message>
-      <source>Login_URL_STRATO</source>
-      <translation>https://storage.ionos.co.uk</translation>
-    </message>
-    <message>
       <source>LegalNotice-Link</source>
       <translation>https://wl.hidrive.com/easy/0004</translation>
     </message>
@@ -480,12 +479,20 @@ Objecten die verwijderd mogen worden, worden verwijderd als ze zouden verhindere
       <translation>https://static.hidrive.com/next/1025</translation>
     </message>
     <message>
-      <source>Privacy-Link</source>
-      <translation>https://wl.hidrive.com/easy/0005</translation>
+      <source>Login_URL</source>
+      <translation>https://storage.ionos.co.uk</translation>
     </message>
     <message>
-      <source>Privacy-Link_STRATO</source>
-      <translation>https://static.hidrive.com/next/1005</translation>
+      <source>Login_URL_STRATO</source>
+      <translation>https://storage.ionos.co.uk</translation>
+    </message>
+    <message>
+      <source>MoreInformation-Link</source>
+      <translation>https://wl.hidrive.com/easy/0007</translation>
+    </message>
+    <message>
+      <source>MoreInformation-Link_STRATO</source>
+      <translation>https://static.hidrive.com/next/1015</translation>
     </message>
     <message>
       <source>OpenSource-Link</source>
@@ -496,12 +503,12 @@ Objecten die verwijderd mogen worden, worden verwijderd als ze zouden verhindere
       <translation> https://static.hidrive.com/next/1031</translation>
     </message>
     <message>
-      <source>MoreInformation-Link</source>
-      <translation>https://wl.hidrive.com/easy/0007</translation>
+      <source>Privacy-Link</source>
+      <translation>https://wl.hidrive.com/easy/0005</translation>
     </message>
     <message>
-      <source>MoreInformation-Link_STRATO</source>
-      <translation>https://static.hidrive.com/next/1015</translation>
+      <source>Privacy-Link_STRATO</source>
+      <translation>https://static.hidrive.com/next/1005</translation>
     </message>
   </context>
   <context>
@@ -537,17 +544,21 @@ Objecten die verwijderd mogen worden, worden verwijderd als ze zouden verhindere
     </message>
   </context>
   <context>
-    <name>OCC::sesSnackBar</name>
-    <message>
-      <source>Success</source>
-      <translation>Succes</translation>
-    </message>
-  </context>
-  <context>
     <name>OwncloudAdvancedSetupPage</name>
     <message>
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
       <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Als deze checkbox is aangevinkt zullen bestaande bestanden in de lokale map worden gewist om een schone sync vanaf de server te starten.&lt;/p&gt;&lt;p&gt;Vink dit niet aan als de lokale bestanden naar de map op de server zouden moeten worden geüploadet.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+  </context>
+  <context>
+    <name>progress</name>
+    <message>
+      <source>Updated local virtual files metadata</source>
+      <translation>Metagegevens van lokale virtuele bestanden bijgewerkt</translation>
+    </message>
+    <message>
+      <source>updating local virtual files metadata</source>
+      <translation>Metagegevens van lokale virtuele bestanden bijwerken</translation>
     </message>
   </context>
   <context>
@@ -611,17 +622,6 @@ Objecten die verwijderd mogen worden, worden verwijderd als ze zouden verhindere
     <message>
       <source>Resume sync for all</source>
       <translation>Synchronisatie hervatten voor alles</translation>
-    </message>
-  </context>
-  <context>
-    <name>progress</name>
-    <message>
-      <source>Updated local virtual files metadata</source>
-      <translation>Metagegevens van lokale virtuele bestanden bijgewerkt</translation>
-    </message>
-    <message>
-      <source>updating local virtual files metadata</source>
-      <translation>Metagegevens van lokale virtuele bestanden bijwerken</translation>
     </message>
   </context>
 </TS>
