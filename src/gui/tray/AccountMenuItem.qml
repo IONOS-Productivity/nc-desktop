@@ -17,6 +17,10 @@ MenuItem {
     palette.text: Style.sesTrayFontColor
 
     hoverEnabled: true
+    // The menu's contentItem is a plain ListView (see TrayWindowAccountMenu.qml), which lays
+    // out delegates by height regardless of visible - an invisible item would otherwise still
+    // reserve its full height and leave a gap in the menu.
+    height: visible ? implicitHeight : 0
     leftPadding: Style.sesMediumMargin
     topPadding: Style.sesAccountMenuItemPadding
     bottomPadding: Style.sesAccountMenuItemPadding
