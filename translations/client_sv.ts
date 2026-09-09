@@ -1,117 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TS version="2.1" language="sv">
 <context>
-    <name>AccountWizardController</name>
-    <message>
-        <source>Unable to open the Browser, please copy the link to your Browser.</source>
-        <translation>Det gick inte att öppna webbläsaren. Kopiera länken till webbläsaren.</translation>
-    </message>
-</context>
-<context>
-    <name>AccountWizardWindow</name>
-    <message>
-        <source>Advanced</source>
-        <translation>Avancerat</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation>Tillbaka</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>Avbryt</translation>
-    </message>
-    <message>
-        <source>Connect</source>
-        <translation>Anslut</translation>
-    </message>
-    <message>
-        <source>Connect to %1?</source>
-        <translation>Anslut till %1?</translation>
-    </message>
-    <message>
-        <source>Connect without TLS</source>
-        <translation>Anslut utan TLS</translation>
-    </message>
-    <message>
-        <source>Copy link</source>
-        <translation>Kopiera länk</translation>
-    </message>
-    <message>
-        <source>Done</source>
-        <translation>Klar</translation>
-    </message>
-    <message>
-        <source>Log in</source>
-        <translation>Logga in</translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation>Öppna</translation>
-    </message>
-    <message>
-        <source>Proxy settings</source>
-        <translation>Proxyinställningar</translation>
-    </message>
-    <message>
-        <source>Secure connection failed</source>
-        <translation>Säker anslutning misslyckades</translation>
-    </message>
-    <message>
-        <source>Self-host</source>
-        <translation>Egen server</translation>
-    </message>
-    <message>
-        <source>Set up later</source>
-        <translation>Konfigurera senare</translation>
-    </message>
-    <message>
-        <source>Sign up</source>
-        <translation>Registrera dig</translation>
-    </message>
-    <message>
-        <source>The secure connection failed. You can add a client certificate and try again.</source>
-        <translation>Den säkra anslutningen misslyckades. Du kan lägga till ett klientcertifikat och försöka igen.</translation>
-    </message>
-    <message>
-        <source>The secure connection failed. You can retry without encryption, or add a client certificate and try again.</source>
-        <translation>Den säkra anslutningen misslyckades. Du kan försöka igen utan kryptering eller lägga till ett klientcertifikat och försöka igen.</translation>
-    </message>
-    <message>
-        <source>Use client certificate</source>
-        <translation>Använd klientcertifikat</translation>
-    </message>
-</context>
-<context>
-    <name>ActivitiesWindow</name>
-    <message>
-        <source>Activities</source>
-        <translation>Aktiviteter</translation>
-    </message>
-    <message>
-        <source>New activities</source>
-        <translation>Nya aktiviteter</translation>
-    </message>
-</context>
-<context>
-    <name>ActivityFileMenu</name>
-    <message>
-        <source>File actions</source>
-        <translation>Filåtgärder</translation>
-    </message>
-    <message>
-        <source>File details</source>
-        <translation>Fildetaljer</translation>
-    </message>
-</context>
-<context>
-    <name>ActivityFileMenuButton</name>
-    <message>
-        <source>Open file details</source>
-        <translation>Öppna fildetaljer</translation>
-    </message>
-</context>
-<context>
     <name>ActivityItem</name>
     <message>
         <source>In %1</source>
@@ -157,98 +46,6 @@
     </message>
 </context>
 <context>
-    <name>AdvancedOptionsDialog</name>
-    <message>
-        <source>%1 MB</source>
-        <translation>%1 MB</translation>
-    </message>
-    <message>
-        <source>Advanced options</source>
-        <translation>Avancerade inställningar</translation>
-    </message>
-    <message>
-        <source>Ask before syncing external storage</source>
-        <translation>Fråga innan extern lagring synkroniseras</translation>
-    </message>
-    <message>
-        <source>Ask before syncing folders larger than</source>
-        <translation>Fråga innan synkronisering av mappar större än</translation>
-    </message>
-    <message>
-        <source>Done</source>
-        <translation>Klar</translation>
-    </message>
-    <message>
-        <source>Large folder threshold</source>
-        <translation>Gräns för stora mappar</translation>
-    </message>
-</context>
-<context>
-    <name>AssistantWindow</name>
-    <message>
-        <source>Ask Assistant …</source>
-        <translation>Fråga assistenten …</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>Avbryt</translation>
-    </message>
-    <message>
-        <source>New conversation</source>
-        <translation>Ny konversation</translation>
-    </message>
-    <message>
-        <source>Nextcloud Assistant</source>
-        <translation>Nextcloud Assistant</translation>
-    </message>
-    <message>
-        <source>Send</source>
-        <translation>Skicka</translation>
-    </message>
-    <message>
-        <source>Start new conversation?</source>
-        <translation>Starta ny konversation?</translation>
-    </message>
-    <message>
-        <source>This will clear the existing conversation.</source>
-        <translation>Detta kommer att rensa den befintliga konversationen.</translation>
-    </message>
-</context>
-<context>
-    <name>BasicAuthPage</name>
-    <message>
-        <source>Connect public share</source>
-        <translation>Anslut offentlig delning</translation>
-    </message>
-    <message>
-        <source>Enter credentials</source>
-        <translation>Ange inloggningsuppgifter</translation>
-    </message>
-    <message>
-        <source>Enter the share password if the link is password protected.</source>
-        <translation>Ange delningens lösenord om länken är lösenordsskyddad.</translation>
-    </message>
-    <message>
-        <source>Enter the username and password for this server.</source>
-        <translation>Ange användarnamn och lösenord för servern.</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation>Lösenord</translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation>Användarnamn</translation>
-    </message>
-</context>
-<context>
-    <name>BrowserAuthPage</name>
-    <message>
-        <source>Switch to your browser</source>
-        <translation>Byt till din webbläsare</translation>
-    </message>
-</context>
-<context>
     <name>CallNotificationDialog</name>
     <message>
         <source>Answer Talk call notification</source>
@@ -265,37 +62,6 @@
     <message>
         <source>Talk notification caller avatar</source>
         <translation>Avatar för samtalsavisering</translation>
-    </message>
-</context>
-<context>
-    <name>ClientCertificateDialog</name>
-    <message>
-        <source>Cancel</source>
-        <translation>Avbryt</translation>
-    </message>
-    <message>
-        <source>Certificate file</source>
-        <translation>Certifikatfil</translation>
-    </message>
-    <message>
-        <source>Certificate password</source>
-        <translation>Certifikatlösenord</translation>
-    </message>
-    <message>
-        <source>Choose</source>
-        <translation>Välj</translation>
-    </message>
-    <message>
-        <source>Client certificate</source>
-        <translation>Klientcertifikat</translation>
-    </message>
-    <message>
-        <source>Connect</source>
-        <translation>Anslut</translation>
-    </message>
-    <message>
-        <source>Select a PKCS#12 certificate file and enter its password.</source>
-        <translation>Välj en PKCS#12-certifikatfil och ange dess lösenord.</translation>
     </message>
 </context>
 <context>
@@ -366,14 +132,10 @@
         <translation>Synkroniserar %1 av %2</translation>
     </message>
     <message>
-        <source>Syncing %1 of %2  (%3 left)</source>
-        <translation>Synkroniserar %1 av %2  (%3 kvar)</translation>
-    </message>
-<message>
         <source>Syncing %1 of %2 (%3 left)</source>
         <translation type="unfinished">Synkroniserar %1 av %2 (%3 kvar)</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>ConflictDelegate</name>
     <message>
@@ -442,16 +204,8 @@
 <context>
     <name>EmojiPicker</name>
     <message>
-        <source>No emojis found</source>
-        <translation>Inga emojier hittades</translation>
-    </message>
-    <message>
         <source>No recent emojis</source>
         <translation>Inga senaste emojier</translation>
-    </message>
-    <message>
-        <source>Search emoji</source>
-        <translation>Sök emoji</translation>
     </message>
 </context>
 <context>
@@ -478,18 +232,10 @@
 <context>
     <name>FileDetailsPage</name>
     <message>
-        <source>Activity</source>
-        <translation>Aktivitet</translation>
-    </message>
-    <message>
         <source>Dismiss</source>
         <translation type="unfinished">Avfärda</translation>
     </message>
-<message>
-        <source>Sharing</source>
-        <translation>Delning</translation>
-    </message>
-    </context>
+</context>
 <context>
     <name>FileDetailsWindow</name>
     <message>
@@ -540,7 +286,7 @@
         <source>Copy Link</source>
         <translation type="unfinished">Kopiera länk</translation>
     </message>
-<message>
+    <message>
         <source>Logo</source>
         <translation>Logotyp</translation>
     </message>
@@ -548,7 +294,7 @@
         <source>Switch to your browser to connect your account</source>
         <translation>Använd din webbläsare för att få åtkomst till ditt konto</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>FolderWizardSelectiveSync</name>
     <message>
@@ -566,17 +312,9 @@
         <source>&amp;Choose</source>
         <translation type="unfinished" />
     </message>
-<message>
-        <source>&amp;Choose …</source>
-        <translation>&amp;Välj …</translation>
-    </message>
     <message>
         <source>Add Folder Sync</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Pick a local folder on your computer to sync</source>
-        <translation>Välj en lokal mapp på din dator för synkronisering</translation>
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
@@ -586,7 +324,7 @@
         <source>Step 1 of 3: Select local folder</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>FolderWizardTargetPage</name>
     <message>
@@ -597,7 +335,7 @@
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Create folder</source>
         <translation>Skapa mapp</translation>
     </message>
@@ -614,88 +352,15 @@
         <translation>Uppdatera</translation>
     </message>
     <message>
-        <source>Select a remote destination folder</source>
-        <translation>Välj en målmapp på servern</translation>
-    </message>
-    <message>
         <source>Step 2 of 3: Directory in your %1</source>
         <translation type="unfinished" />
-    </message>
-    </context>
-<context>
-    <name>GovernanceLabelsDialog</name>
-    <message>
-        <source>Apply</source>
-        <translation>Verkställ</translation>
-    </message>
-    <message>
-        <source>Apply labels</source>
-        <translation>Tillämpa etiketter</translation>
-    </message>
-    <message>
-        <source>Assign labels to the file to manage its sensitivity, retention, and legal hold policies.</source>
-        <translation>Tilldela etiketter till filen för att hantera policyer för känslighet, bevarande och juridisk spärr.</translation>
-    </message>
-    <message>
-        <source>Legal hold labels</source>
-        <translation>Etiketter för juridisk spärr</translation>
-    </message>
-    <message>
-        <source>Reset</source>
-        <translation>Återställ</translation>
-    </message>
-    <message>
-        <source>Retention labels</source>
-        <translation>Bevarandeetiketter</translation>
-    </message>
-    <message>
-        <source>Select legal hold label</source>
-        <translation>Välj etikett för rättsligt bevarande</translation>
-    </message>
-    <message>
-        <source>Select retention label</source>
-        <translation>Välj etikett för lagringstid</translation>
-    </message>
-    <message>
-        <source>Select sensitivity label</source>
-        <translation>Välj känslighetsetikett</translation>
-    </message>
-    <message>
-        <source>Sensitivity labels</source>
-        <translation>Känslighetsetiketter</translation>
-    </message>
-</context>
-<context>
-    <name>LocalNetworkPermission</name>
-    <message>
-        <source>Local Network access is disabled. Enable it to connect to the server.</source>
-        <translation>Åtkomst till lokalt nätverk är inaktiverad. Aktivera den för att ansluta till servern.</translation>
-    </message>
-</context>
-<context>
-    <name>main.cpp</name>
-    <message>
-        <source>%1 requires on a working system tray. If you are running XFCE, please follow &lt;a href=&quot;http://docs.xfce.org/xfce/xfce4-panel/systray&quot;&gt;these instructions&lt;/a&gt;. Otherwise, please install a system tray application such as &quot;trayer&quot; and try again.</source>
-        <translation>%1 kräver ett fungerande systemfält. Om du kör XFCE, följ &lt;a href=&quot;http://docs.xfce.org/xfce/xfce4-panel/systray&quot;&gt;dessa instruktioner&lt;/a&gt;. Annars, installera ett systemfälts-program som &quot;trayer&quot; och försök igen.</translation>
-    </message>
-    <message>
-        <source>System Tray not available</source>
-        <translation>Systemfältet är inte tillgängligt</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Ask Assistant …</source>
-        <translation>Fråga assistenten …</translation>
-    </message>
-    <message>
         <source>Ask Assistant…</source>
         <translation>Fråga assistenten...</translation>
-    </message>
-    <message>
-        <source>Assistant</source>
-        <translation>Assistent</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -740,37 +405,6 @@
     <message>
         <source>Unified search results list</source>
         <translation>Sammanlagda sökresultat</translation>
-    </message>
-</context>
-<context>
-    <name>NCContextMenuTextField</name>
-    <message>
-        <source>Copy</source>
-        <translation>Kopiera</translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <translation>Klipp ut</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Ta bort</translation>
-    </message>
-    <message>
-        <source>Paste</source>
-        <translation>Klistra in</translation>
-    </message>
-    <message>
-        <source>Redo</source>
-        <translation>Gör om</translation>
-    </message>
-    <message>
-        <source>Select All</source>
-        <translation>Markera alla</translation>
-    </message>
-    <message>
-        <source>Undo</source>
-        <translation>Ångra</translation>
     </message>
 </context>
 <context>
@@ -856,10 +490,6 @@ Ska kontot importeras?</translation>
     <message>
         <source>(experimental)</source>
         <translation>(experimentell)</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Could not add the folder sync connection for &lt;i&gt;%1&lt;/i&gt;.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Det gick inte att lägga till synkroniseringskopplingen för mappen &lt;i&gt;%1&lt;/i&gt;.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;Could not create local folder &lt;i&gt;%1&lt;/i&gt;.&lt;/p&gt;</source>
@@ -1014,10 +644,6 @@ Ska kontot importeras?</translation>
         <translation>Krypteringsord för ände-till-ände-kryptering</translation>
     </message>
     <message>
-        <source>File Provider is enabled, but this account still has classic sync folders. The Finder integration stays unavailable until this is resolved.</source>
-        <translation>File Provider är aktiverat, men kontot har fortfarande klassiska synkroniseringsmappar. Finder-integreringen är inte tillgänglig förrän detta har åtgärdats.</translation>
-    </message>
-    <message>
         <source>Folder creation failed</source>
         <translation>Kunde inte skapa mappen</translation>
     </message>
@@ -1040,26 +666,6 @@ Ska kontot importeras?</translation>
     <message>
         <source>Grant access to sync folder</source>
         <translation>Bevilja åtkomst till synkroniseringsmappen</translation>
-    </message>
-    <message>
-        <source>If this account&apos;s files appear stuck, missing, or out of sync in Finder, reset its File Provider storage. Unsynced local changes are preserved.</source>
-        <translation>Om kontots filer verkar ha fastnat, saknas eller inte är synkroniserade i Finder, återställ dess File Provider-lagring. Osynkroniserade lokala ändringar bevaras.</translation>
-    </message>
-    <message>
-        <source>Leave share</source>
-        <translation>Lämna delning</translation>
-    </message>
-    <message>
-        <source>Log in</source>
-        <translation>Logga in</translation>
-    </message>
-    <message>
-        <source>Log out</source>
-        <translation>Logga ut</translation>
-    </message>
-    <message>
-        <source>Log out, log back in, or remove this account from the client.</source>
-        <translation>Logga ut, logga in igen eller ta bort kontot från klienten.</translation>
     </message>
     <message>
         <source>Migrate certificate to a new one</source>
@@ -1094,28 +700,8 @@ Ska kontot importeras?</translation>
         <translation>Ta bort synkroniseringskoppling för mapp</translation>
     </message>
     <message>
-        <source>Remove account</source>
-        <translation>Ta bort konto</translation>
-    </message>
-    <message>
         <source>Remove folder sync connection</source>
         <translation>Ta bort synkroniseringskoppling för mapp</translation>
-    </message>
-    <message>
-        <source>Remove this public share connection from the client.</source>
-        <translation>Ta bort anslutningen till den offentliga delningen från klienten.</translation>
-    </message>
-    <message>
-        <source>Reset File Provider Domain</source>
-        <translation>Återställ File Provider-domänen</translation>
-    </message>
-    <message>
-        <source>Reset File Provider Domain for this account?</source>
-        <translation>Återställa File Provider-domänen för det här kontot?</translation>
-    </message>
-    <message>
-        <source>Resolve…</source>
-        <translation>Åtgärda …</translation>
     </message>
     <message>
         <source>Restart sync</source>
@@ -1162,20 +748,12 @@ Ska kontot importeras?</translation>
         <translation>Synkronisera inga</translation>
     </message>
     <message>
-        <source>The File Provider extension does not support end-to-end encryption yet.</source>
-        <translation>File Provider-tillägget stöder ännu inte ände-till-ände-kryptering.</translation>
-    </message>
-    <message>
         <source>The folder has a minor sync problem. Encryption of this folder will be possible once it has synced successfully</source>
         <translation>Mappen har ett mindre synkroniseringsproblem. Kryptering av denna mapp kommer att vara möjlig när den väl har synkroniserats</translation>
     </message>
     <message>
         <source>The folder has a sync error. Encryption of this folder will be possible once it has synced successfully</source>
         <translation>Mappen har ett synkroniseringsfel. Kryptering av denna mapp kommer att vara möjlig när den väl har synkroniserats</translation>
-    </message>
-    <message>
-        <source>The location will briefly disappear from and reappear in Finder. Any local changes that have not been uploaded yet are preserved and revealed in a folder in Finder.</source>
-        <translation>Platsen försvinner en kort stund från Finder och visas sedan igen. Lokala ändringar som ännu inte har laddats upp bevaras och visas i en mapp i Finder.</translation>
     </message>
     <message>
         <source>The server version %1 is unsupported! Proceed at your own risk.</source>
@@ -1198,24 +776,12 @@ Ska kontot importeras?</translation>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>There are folders that were not synchronized because they are external storages: </source>
-        <translation>Det finns mappar som inte synkroniserats för att de är externa lagringsytor:</translation>
-    </message>
-    <message>
         <source>There are folders that were not synchronized because they are too big or external storages:</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>There are folders that were not synchronized because they are too big or external storages: </source>
-        <translation>Det finns mappar som inte blivit synkroniserade på grund av att de är för stora eller är externa lagringsytor: </translation>
-    </message>
-    <message>
         <source>There are folders that were not synchronized because they are too big:</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>There are folders that were not synchronized because they are too big: </source>
-        <translation>Dessa mappar har inte synkroniserats för att de är för stora:</translation>
     </message>
     <message>
         <source>This account supports end-to-end encryption, but it needs to be set up first.</source>
@@ -1232,10 +798,6 @@ This action will abort any currently running synchronization.</source>
 Den enda fördelen med att inaktivera stödet för virtuella filer är att funktionen för selektiv synkronisering blir tillgänglig igen.
 
 Den här åtgärden avbryter alla pågående synkroniseringar.</translation>
-    </message>
-    <message>
-        <source>This resets the File Provider for %1 to its initial state. Use it when this account&apos;s files appear stuck, missing, or out of sync in Finder.</source>
-        <translation>Detta återställer File Provider för %1 till dess ursprungliga tillstånd. Använd detta när kontots filer verkar ha fastnat, saknas eller inte är synkroniserade i Finder.</translation>
     </message>
     <message>
         <source>This will encrypt your folder and all files within it. These files will no longer be accessible without your encryption mnemonic key. 
@@ -1351,164 +913,6 @@ Vill du konfigurera den nu?</translation>
     </message>
 </context>
 <context>
-    <name>OCC::AccountWizardController</name>
-    <message>
-        <source>%1 free space</source>
-        <comment>%1 gets replaced with the size and a matching unit. Example: 3 MB or 5 GB</comment>
-        <translation>%1 ledigt utrymme</translation>
-    </message>
-    <message>
-        <source>Access forbidden by server. To verify that you have proper access, open the service in your browser.</source>
-        <translation>Servern nekade åtkomst. Öppna tjänsten i webbläsaren för att kontrollera att du har rätt behörighet.</translation>
-    </message>
-    <message>
-        <source>Account connected.</source>
-        <translation>Kontot anslöts.</translation>
-    </message>
-    <message>
-        <source>Account setup failed while creating the sync folder.</source>
-        <translation>Kontokonfigurationen misslyckades när synkroniseringsmappen skapades.</translation>
-    </message>
-    <message>
-        <source>Certificate files (*.p12 *.pfx)</source>
-        <translation>Certifikatfiler (*.p12 *.pfx)</translation>
-    </message>
-    <message>
-        <source>Checking account access</source>
-        <translation>Kontrollerar kontoåtkomst</translation>
-    </message>
-    <message>
-        <source>Checking remote folder</source>
-        <translation>Kontrollerar fjärrmappen</translation>
-    </message>
-    <message>
-        <source>Checking server address</source>
-        <translation>Kontrollerar serveradressen</translation>
-    </message>
-    <message>
-        <source>Could not access the selected certificate file.</source>
-        <translation>Det gick inte att öppna den valda certifikatfilen.</translation>
-    </message>
-    <message>
-        <source>Could not create local folder %1</source>
-        <translation>Kunde inte skapa lokal mapp %1</translation>
-    </message>
-    <message>
-        <source>Could not create the sync folder.</source>
-        <translation>Det gick inte att skapa synkroniseringsmappen.</translation>
-    </message>
-    <message>
-        <source>Could not load certificate. Maybe wrong password?</source>
-        <translation>Kunde inte läsa in certifikatet. Felaktigt lösenord?</translation>
-    </message>
-    <message>
-        <source>Creating remote folder</source>
-        <translation>Skapar fjärrmapp</translation>
-    </message>
-    <message>
-        <source>Error: %1</source>
-        <translation>Fel: %1</translation>
-    </message>
-    <message>
-        <source>Failed to connect to %1 at %2:
-%3</source>
-        <translation>Det gick inte att ansluta till %1 på %2:
-%3</translation>
-    </message>
-    <message>
-        <source>Invalid URL</source>
-        <translation>Ogiltig URL</translation>
-    </message>
-    <message>
-        <source>Link copied to clipboard.</source>
-        <translation>Länken kopierad till urklipp.</translation>
-    </message>
-    <message>
-        <source>Local Sync Folder</source>
-        <translation>Lokal mapp för synkronisering</translation>
-    </message>
-    <message>
-        <source>No remote folder specified!</source>
-        <translation>Ingen fjärrmapp har angetts!</translation>
-    </message>
-    <message>
-        <source>Please choose a local sync folder.</source>
-        <translation>Välj en lokal synkroniseringsmapp.</translation>
-    </message>
-    <message>
-        <source>Please choose an empty local sync folder.</source>
-        <translation>Välj en tom lokal synkroniseringsmapp.</translation>
-    </message>
-    <message>
-        <source>Preparing browser login</source>
-        <translation>Förbereder inloggning i webbläsaren</translation>
-    </message>
-    <message>
-        <source>Proxy settings are incomplete.</source>
-        <translation>Proxyinställningarna är ofullständiga.</translation>
-    </message>
-    <message>
-        <source>Remote folder %1 creation failed with error &lt;tt&gt;%2&lt;/tt&gt;.</source>
-        <translation>Misslyckades skapa fjärrmapp %1 med fel &lt;tt&gt;%2&lt;/tt&gt;.</translation>
-    </message>
-    <message>
-        <source>Select a certificate</source>
-        <translation>Välj ett certifikat</translation>
-    </message>
-    <message>
-        <source>Server address does not seem to be valid</source>
-        <translation>Serveradressen verkar vara ogiltig</translation>
-    </message>
-    <message>
-        <source>Starting authorization</source>
-        <translation>Startar auktorisering</translation>
-    </message>
-    <message>
-        <source>The authenticated request to the server was redirected to &quot;%1&quot;. The URL is bad, the server is misconfigured.</source>
-        <translation>Den autentiserade begäran till servern omdirigerades till &quot;%1&quot;. URL:en är felaktig, servern är felkonfigurerad.</translation>
-    </message>
-    <message>
-        <source>The folder creation resulted in HTTP error code %1</source>
-        <translation>Skapande av mapp resulterade i HTTP felkod %1</translation>
-    </message>
-    <message>
-        <source>The remote folder creation failed because the provided credentials are wrong. Please go back and check your credentials.</source>
-        <translation>Fjärrmappen kunde inte skapas eftersom de angivna inloggningsuppgifterna är felaktiga. Gå tillbaka och kontrollera uppgifterna.</translation>
-    </message>
-    <message>
-        <source>There isn&apos;t enough free space in the local folder!</source>
-        <translation>Det finns inte tillräckligt med ledigt utrymme i den lokala mappen!</translation>
-    </message>
-    <message>
-        <source>There was an invalid response to an authenticated WebDAV request</source>
-        <translation>Det kom ett felaktigt svar på en autentiserad WebDAV-begäran</translation>
-    </message>
-    <message>
-        <source>Timeout while trying to connect to %1 at %2.</source>
-        <translation>Försök att ansluta till %1 på %2 tog för lång tid.</translation>
-    </message>
-    <message>
-        <source>Unable to open the Browser, please copy the link to your Browser.</source>
-        <translation>Det går inte att öppna webbläsaren, kopiera länken till din webbläsare.</translation>
-    </message>
-    <message>
-        <source>Username must not be empty.</source>
-        <translation>Användarnamnet får inte vara tomt.</translation>
-    </message>
-    <message>
-        <source>Waiting for authorization</source>
-        <translation>Väntar på auktorisation</translation>
-    </message>
-    <message>
-        <source>Will require %1 of storage</source>
-        <translation>Kräver %1 lagringsutrymme</translation>
-    </message>
-    <message>
-        <source>Will require local storage</source>
-        <translation>Kräver lokal lagring</translation>
-    </message>
-</context>
-<context>
     <name>OCC::ActivityListModel</name>
     <message>
         <source>Fetching activities …</source>
@@ -1560,78 +964,6 @@ Vill du konfigurera den nu?</translation>
     <message>
         <source>This server probably requires a SSL client certificate.</source>
         <translation>Denna server kräver förmodligen ett SSL klientcertifikat</translation>
-    </message>
-</context>
-<context>
-    <name>OCC::AdvancedSettings</name>
-    <message>
-        <source>Advanced</source>
-        <translation>Avancerat</translation>
-    </message>
-    <message>
-        <source>Ask for confirmation before synchronizing external storages</source>
-        <translation>Fråga innan synkronisering av externa lagringsytor</translation>
-    </message>
-    <message>
-        <source>Ask for confirmation before synchronizing new folders larger than</source>
-        <translation>Fråga innan du synkroniserar nya mappar större än</translation>
-    </message>
-    <message>
-        <source>Automatically disable synchronisation of folders that overcome limit</source>
-        <translation>Inaktivera automatiskt synkronisering av mappar som överskrider gränsen</translation>
-    </message>
-    <message>
-        <source>Could not access the selected location. Please try again or choose a different location.</source>
-        <translation>Det gick inte att komma åt den valda platsen. Vänligen försök igen eller välj en annan plats.</translation>
-    </message>
-    <message>
-        <source>Create Debug Archive</source>
-        <translation>Skapa felsökningsarkiv</translation>
-    </message>
-    <message>
-        <source>Debug Archive Created</source>
-        <translation>Felsökningsarkiv skapat</translation>
-    </message>
-    <message>
-        <source>Edit &amp;Ignored Files</source>
-        <translation>Ändra &amp;ignorerade filer</translation>
-    </message>
-    <message>
-        <source>Failed to Access File</source>
-        <translation>Det gick inte att öppna filen</translation>
-    </message>
-    <message>
-        <source>MB</source>
-        <extracomment>Trailing part of &quot;Ask confirmation before syncing folder larger than&quot;</extracomment>
-        <translation>MB</translation>
-    </message>
-    <message>
-        <source>Move removed files to trash</source>
-        <translation>Flytta borttagna filer till papperskorgen</translation>
-    </message>
-    <message>
-        <source>Notify when synchronised folders grow larger than specified limit</source>
-        <translation>Meddela när synkroniserade mappar växer sig större än den angivna gränsen</translation>
-    </message>
-    <message>
-        <source>Redact information deemed sensitive before sharing! Debug archive created at %1</source>
-        <translation>Redigera information som anses känslig innan du delar! Felsökningsarkiv skapat på %1</translation>
-    </message>
-    <message>
-        <source>Server poll interval</source>
-        <translation>Serverns uppdateringsintervall</translation>
-    </message>
-    <message>
-        <source>Show sync folders in &amp;Explorer&apos;s navigation pane</source>
-        <translation>Visa synkroniseringsmappar i &amp;utforskarens navigeringsfönster</translation>
-    </message>
-    <message>
-        <source>Zip Archives</source>
-        <translation>Zip-arkiv</translation>
-    </message>
-    <message>
-        <source>seconds (if &lt;a href=&quot;https://github.com/nextcloud/notify_push&quot;&gt;Client Push&lt;/a&gt; is unavailable)</source>
-        <translation>sekunder (om &lt;a href=&quot;https://github.com/nextcloud/notify_push&quot;&gt;Client Push&lt;/a&gt; inte är tillgängligt)</translation>
     </message>
 </context>
 <context>
@@ -2090,11 +1422,11 @@ Vill du konfigurera den nu?</translation>
         <source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;.</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;._STRATO</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::DataProtectionSettingsPage</name>
     <message>
@@ -2566,12 +1898,6 @@ Det kan vara problem med dina OpenSSL-bibliotek.</translation>
         <translation>%1 är för närvarande låst.</translation>
     </message>
     <message>
-        <source>A folder from an external storage has been added.
-</source>
-        <translation>En mapp från en extern lagringsyta har lagts till.
-</translation>
-    </message>
-    <message>
         <source>A folder from an external storage has been added.</source>
         <translation type="unfinished" />
     </message>
@@ -2596,12 +1922,6 @@ Alternatively, you can restore all deleted files by downloading them from the se
         <translation>Ett stort antal filer i den lokala &apos;%1&apos; mappen har tagits bort.
 Bekräfta om du vill fortsätta med dessa raderingar.
 Alternativt kan du återställa alla raderade filer genom att ladda ner dem från servern.</translation>
-    </message>
-    <message>
-        <source>A new folder larger than %1 MB has been added: %2.
-</source>
-        <translation>En ny mapp större än %1 MB har lagts till: %2.
-</translation>
     </message>
     <message>
         <source>A new folder larger than %1 MB has been added: %2.</source>
@@ -2722,16 +2042,8 @@ Det betyder att synkroniseringsklienten inte kan ladda upp lokala ändringar ome
         <translation>%1 (synkronisering pausad)</translation>
     </message>
     <message>
-        <source> (backup %1)</source>
-        <translation>(säkerhetkopia %1)</translation>
-    </message>
-    <message>
         <source>(backup %1)</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source> (backup)</source>
-        <translation>(säkerhetskopia)</translation>
     </message>
     <message>
         <source>(backup)</source>
@@ -2857,10 +2169,6 @@ För avancerade användare: det här problemet kan vara relaterat till flera syn
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Add Folder Sync Connection</source>
-        <translation>Lägg till synkroniseringskoppling för mapp</translation>
-    </message>
-    <message>
         <source>File</source>
         <translation>Fil</translation>
     </message>
@@ -2868,11 +2176,11 @@ För avancerade användare: det här problemet kan vara relaterat till flera syn
         <source>Grant access</source>
         <translation>Ge åtkomst</translation>
     </message>
-<message>
+    <message>
         <source>Synchronize any other local folder with your %1</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::FolderStatusModel</name>
     <message>
@@ -3041,7 +2349,7 @@ För avancerade användare: det här problemet kan vara relaterat till flera syn
         <source>Choose</source>
         <translation type="unfinished">Välj</translation>
     </message>
-<message>
+    <message>
         <source>Click to select a local folder to sync.</source>
         <translation>Klicka för att välja en lokal mapp att synkronisera.</translation>
     </message>
@@ -3061,7 +2369,7 @@ För avancerade användare: det här problemet kan vara relaterat till flera syn
         <source>Step 1 of 3: Select local folder</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::FolderWizardRemotePath</name>
     <message>
@@ -3243,44 +2551,12 @@ Det är inte möjligt att nedgradera versioner omedelbart: att byta från stabil
         <translation>Skrivbordsklient x.x.x</translation>
     </message>
     <message>
-        <source>Disable File Provider</source>
-        <translation>Inaktivera File Provider</translation>
-    </message>
-    <message>
-        <source>Disable File Provider?</source>
-        <translation>Inaktivera File Provider?</translation>
-    </message>
-    <message>
         <source>Edit &amp;Ignored Files</source>
         <translation>Ändra &amp;ignorerade filer</translation>
     </message>
     <message>
-        <source>Enable &amp;File Provider</source>
-        <translation>Aktivera &amp;File Provider</translation>
-    </message>
-    <message>
-        <source>Enable File Provider</source>
-        <translation>Aktivera File Provider</translation>
-    </message>
-    <message>
-        <source>Enable File Provider?</source>
-        <translation>Aktivera File Provider?</translation>
-    </message>
-    <message>
         <source>Failed to Access File</source>
         <translation>Det gick inte att öppna filen</translation>
-    </message>
-    <message>
-        <source>File Provider will be enabled for all accounts. Your files will appear in Finder under the &quot;Locations&quot; section. Accounts added later will also be set up as File Providers.</source>
-        <translation>File Provider aktiveras för alla konton. Dina filer visas i Finder under avsnittet &quot;Platser&quot;. Konton som läggs till senare konfigureras också med File Provider.</translation>
-    </message>
-    <message>
-        <source>File Provider will be turned off for all accounts, and your files will no longer be available in Finder under the &quot;Locations&quot; section.</source>
-        <translation>File Provider inaktiveras för alla konton och dina filer är inte längre tillgängliga i Finder under avsnittet &quot;Platser&quot;.</translation>
-    </message>
-    <message>
-        <source>Files appear in Finder under the &quot;Locations&quot; section and do not use local storage space; contents download automatically when you open a file. Applies to all accounts and replaces classic sync folders and their Finder integration.</source>
-        <translation>Filer visas i Finder under avsnittet &quot;Platser&quot; och använder inget lokalt lagringsutrymme. Innehållet hämtas automatiskt när du öppnar en fil. Detta gäller alla konton och ersätter klassiska synkroniseringsmappar och deras Finder-integrering.</translation>
     </message>
     <message>
         <source>For System Tray</source>
@@ -3289,14 +2565,6 @@ Det är inte möjligt att nedgradera versioner omedelbart: att byta från stabil
     <message>
         <source>General settings</source>
         <translation>Allmänna inställningar</translation>
-    </message>
-    <message>
-        <source>Info</source>
-        <translation>Info</translation>
-    </message>
-    <message>
-        <source>Items that were not uploaded yet will be preserved and shown to you. Classic sync folders are not set up again automatically — you can add folder sync connections afterwards in each account&apos;s settings.</source>
-        <translation>Objekt som ännu inte har laddats upp bevaras och visas för dig. Klassiska synkroniseringsmappar konfigureras inte automatiskt på nytt – du kan lägga till synkroniseringskopplingar för mappar i respektive kontos inställningar efteråt.</translation>
     </message>
     <message>
         <source>Legal Notice</source>
@@ -3315,7 +2583,7 @@ Det är inte möjligt att nedgradera versioner omedelbart: att byta från stabil
         <source>More Information</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Move removed files to trash</source>
         <translation>Flytta borttagna filer till papperskorgen</translation>
     </message>
@@ -3396,10 +2664,6 @@ Det är inte möjligt att nedgradera versioner omedelbart: att byta från stabil
         <translation>Visa synkroniseringsmappar i &amp;utforskarens navigeringsfönster</translation>
     </message>
     <message>
-        <source>Synced files stay on your computer, but they will no longer be kept up to date and settings such as selective sync are discarded.</source>
-        <translation>Synkroniserade filer finns kvar på datorn, men hålls inte längre uppdaterade och inställningar som selektiv synkronisering tas bort.</translation>
-    </message>
-    <message>
         <source>The channel determines which upgrades will be offered to install:
 - stable: contains tested versions considered reliable
 </source>
@@ -3415,14 +2679,6 @@ Det är inte möjligt att nedgradera versioner omedelbart: att byta från stabil
     <message>
         <source>This helps us to optimize the software and to better identify system crashes and unexpected errors.</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>This removes classic sync folder connections from the following accounts:</source>
-        <translation>Detta tar bort klassiska synkroniseringskopplingar för mappar från följande konton:</translation>
-    </message>
-    <message>
-        <source>Unknown account</source>
-        <translation>Okänt konto</translation>
     </message>
     <message>
         <source>Update channel</source>
@@ -3468,7 +2724,7 @@ Det är inte möjligt att nedgradera versioner omedelbart: att byta från stabil
         <source>stable</source>
         <translation>stabil</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::GETFileJob</name>
     <message>
@@ -3564,10 +2820,6 @@ Det är inte möjligt att nedgradera versioner omedelbart: att byta från stabil
         <translation>Lägg till</translation>
     </message>
     <message>
-        <source>Add Ignore Pattern</source>
-        <translation>Lägg till ignorera mönster</translation>
-    </message>
-    <message>
         <source>Add a new ignore pattern:</source>
         <translation>Lägg till ett nytt ignorera mönster:</translation>
     </message>
@@ -3606,106 +2858,6 @@ Objekt där radering är tillåtet raderas om de förhindrar att en mapp tas bor
     <message>
         <source>Remove all</source>
         <translation>Ta bort alla</translation>
-    </message>
-</context>
-<context>
-    <name>OCC::InfoSettings</name>
-    <message>
-        <source>&amp;Automatically check for updates</source>
-        <translation>&amp;Automatisk kontroll av uppdateringar</translation>
-    </message>
-    <message>
-        <source>&amp;Restart &amp;&amp; Update</source>
-        <translation>&amp;Starta om &amp;&amp; Uppdatera</translation>
-    </message>
-    <message>
-        <source>- beta: contains versions with new features that may not be tested thoroughly
-- daily: contains versions created daily only for testing and development
-
-Downgrading versions is not possible immediately: changing from beta to stable means waiting for the new stable version.</source>
-        <comment>list of available update channels to non enterprise users and downgrading warning</comment>
-        <translation>- beta: innehåller versioner med nya funktioner som kanske inte testats ordentligt
-- daily: innehåller versioner som skapas dagligen endast för testning och utveckling
-
-Nedgradering av versioner är inte möjligt omedelbart: att byta från beta till stabil innebär att vänta på den nya stabila versionen.</translation>
-    </message>
-    <message>
-        <source>- enterprise: contains stable versions for customers.
-
-Downgrading versions is not possible immediately: changing from stable to enterprise means waiting for the new enterprise version.</source>
-        <comment>list of available update channels to enterprise users and downgrading warning</comment>
-        <translation>- enterprise: innehåller stabila versioner för kunder.
-
-Det är inte möjligt att nedgradera versioner omedelbart: att byta från stabil till enterprise innebär att man väntar på den nya enterprise-versionen.</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>Avbryt</translation>
-    </message>
-    <message>
-        <source>Change update channel</source>
-        <translation>Ändra uppdateringskanal</translation>
-    </message>
-    <message>
-        <source>Changing update channel?</source>
-        <translation>Ändra uppdateringskanal?</translation>
-    </message>
-    <message>
-        <source>Check Now</source>
-        <translation>Kontrollera nu</translation>
-    </message>
-    <message>
-        <source>Connected to an enterprise system. Update channel (%1) cannot be changed.</source>
-        <translation>Ansluten till ett företagssystem. Uppdateringskanalen (%1) kan inte ändras.</translation>
-    </message>
-    <message>
-        <source>Desktop client x.x.x</source>
-        <translation>Skrivbordsklient x.x.x</translation>
-    </message>
-    <message>
-        <source>Legal Notice</source>
-        <translation>Juridiskt meddelande</translation>
-    </message>
-    <message>
-        <source>Restore &amp;Default</source>
-        <translation>Återställ &amp;Standard</translation>
-    </message>
-    <message>
-        <source>Restore to &amp;%1</source>
-        <translation>Återställ till &amp;%1</translation>
-    </message>
-    <message>
-        <source>The channel determines which upgrades will be offered to install:
-- stable: contains tested versions considered reliable
-</source>
-        <comment>starts list of available update channels, stable is always available</comment>
-        <translation>Kanalen avgör vilka uppgraderingar som kommer att erbjudas att installera:
-- stable: innehåller testade versioner som anses tillförlitliga
-</translation>
-    </message>
-    <message>
-        <source>Update channel</source>
-        <translation>Uppdateringskanal</translation>
-    </message>
-    <message>
-        <source>Usage Documentation</source>
-        <translation>Användardokumentation</translation>
-    </message>
-    <message>
-        <source>beta</source>
-        <translation>beta</translation>
-    </message>
-    <message>
-        <source>daily</source>
-        <translation>dagligen</translation>
-    </message>
-    <message>
-        <source>enterprise</source>
-        <translation>enterprise</translation>
-    </message>
-    <message>
-        <source>stable</source>
-        <translation>stabil</translation>
     </message>
 </context>
 <context>
@@ -4192,24 +3344,12 @@ Observera att om du använder kommandoradsalternativ för loggning kommer den h�
         <translation>Bortkopplad från dessa konton:</translation>
     </message>
     <message>
-        <source>Internal link copied</source>
-        <translation>Intern länk kopierad</translation>
-    </message>
-    <message>
         <source>Please sign in</source>
         <translation>Vänliga logga in</translation>
     </message>
     <message>
-        <source>Select new location …</source>
-        <translation>Välj ny plats …</translation>
-    </message>
-    <message>
         <source>Terms of service</source>
         <translation>Användarvillkor</translation>
-    </message>
-    <message>
-        <source>The internal link has been copied to the clipboard.</source>
-        <translation>Den interna länken har kopierats till urklipp.</translation>
     </message>
     <message>
         <source>The server on account %1 runs an unsupported version %2. Using this client with unsupported server versions is untested and potentially dangerous. Proceed at your own risk.</source>
@@ -4230,10 +3370,6 @@ Observera att om du använder kommandoradsalternativ för loggning kommer den h�
     <message>
         <source>macOS VFS for %1: A problem was encountered.</source>
         <translation>macOS VFS för %1: Ett problem påträffades.</translation>
-    </message>
-    <message>
-        <source>macOS VFS for %1: An error was encountered.</source>
-        <translation>macOS VFS for %1: Ett problem påträffades.</translation>
     </message>
     <message>
         <source>macOS VFS for %1: Last sync was successful.</source>
@@ -4524,10 +3660,6 @@ Detta är ett nytt experimentellt läge. Om du bestämmer dig för att använda 
         <translation>Filen är listad i undantagslistan.</translation>
     </message>
     <message>
-        <source>File is locked by another application.</source>
-        <translation>Filen är låst av ett annat program.</translation>
-    </message>
-    <message>
         <source>File is not accessible on the server.</source>
         <comment>server error</comment>
         <translation>Filen är inte åtkomlig på servern.</translation>
@@ -4736,11 +3868,6 @@ Detta är ett nytt experimentellt läge. Om du bestämmer dig för att använda 
 </context>
 <context>
     <name>OCC::PropagateItemJob</name>
-    <message>
-        <source>%1. Restoration failed: %2</source>
-        <comment>%1 is the generic error string, the file restoration error (%2) will be appended here</comment>
-        <translation>%1. Återställning misslyckades: %2</translation>
-    </message>
     <message>
         <source>; Restoration Failed: %1</source>
         <translation>; Återställning misslyckades: %1</translation>
@@ -4961,11 +4088,6 @@ Detta är ett nytt experimentellt läge. Om du bestämmer dig för att använda 
 <context>
     <name>OCC::PropagateUploadFileNG</name>
     <message>
-        <source>File is locked preventing syncing it</source>
-        <comment>Generic warning message when a locked file cannot be synced</comment>
-        <translation>Filen är låst och kan inte synkroniseras</translation>
-    </message>
-    <message>
         <source>File is not accessible on the server.</source>
         <comment>server error</comment>
         <translation>Filen är inte åtkomlig på servern.</translation>
@@ -4998,11 +4120,6 @@ Detta är ett nytt experimentellt läge. Om du bestämmer dig för att använda 
 </context>
 <context>
     <name>OCC::PropagateUploadFileV1</name>
-    <message>
-        <source>File is locked preventing syncing it</source>
-        <comment>Generic warning message when a locked file cannot be synced</comment>
-        <translation>Filen är låst och kan inte synkroniseras</translation>
-    </message>
     <message>
         <source>Local file changed during sync.</source>
         <translation>Lokal fil ändrades under synkronisering.</translation>
@@ -5098,11 +4215,11 @@ Detta är ett nytt experimentellt läge. Om du bestämmer dig för att använda 
         <source>Success</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Warning</source>
         <translation type="unfinished">Varning</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::SettingsDialog</name>
     <message>
@@ -5115,16 +4232,8 @@ Detta är ett nytt experimentellt läge. Om du bestämmer dig för att använda 
         <translation>Konto</translation>
     </message>
     <message>
-        <source>Advanced</source>
-        <translation>Avancerat</translation>
-    </message>
-    <message>
         <source>General</source>
         <translation>Allmänt</translation>
-    </message>
-    <message>
-        <source>Info</source>
-        <translation>Info</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -5160,10 +4269,6 @@ Detta är ett nytt experimentellt läge. Om du bestämmer dig för att använda 
 </context>
 <context>
     <name>OCC::ShareModel</name>
-    <message>
-        <source>%1 day</source>
-        <translation>%1 dag</translation>
-    </message>
     <message>
         <source>%1 days</source>
         <translation>%1 dagar</translation>
@@ -5206,10 +4311,6 @@ Detta är ett nytt experimentellt läge. Om du bestämmer dig för att använda 
     <message>
         <source>Activity</source>
         <translation>Aktivitet</translation>
-    </message>
-    <message>
-        <source>Apply labels</source>
-        <translation>Tillämpa etiketter</translation>
     </message>
     <message>
         <source>Context menu share</source>
@@ -5431,20 +4532,8 @@ Servern svarade med fel: %2</translation>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>This connection is NOT secure as it is not encrypted.
-</source>
-        <translation>Denna anslutningen är INTE säker eftersom den inte är krypterad.
-</translation>
-    </message>
-    <message>
         <source>This connection is encrypted using %1 bit %2.</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>This connection is encrypted using %1 bit %2.
-</source>
-        <translation>Denna anslutningen är krypterad med %1 bit %2
-</translation>
     </message>
 </context>
 <context>
@@ -5571,13 +4660,6 @@ Servern svarade med fel: %2</translation>
     </message>
 </context>
 <context>
-    <name>OCC::SyncJournalDb</name>
-    <message>
-        <source>Failed to connect database.</source>
-        <translation>Det gick inte att ansluta till databasen.</translation>
-    </message>
-</context>
-<context>
     <name>OCC::SyncStatusSummary</name>
     <message>
         <source>%1 of %2</source>
@@ -5678,10 +4760,6 @@ Servern svarade med fel: %2</translation>
     <message>
         <source>Pause sync for all</source>
         <translation>Pausa synkronisering för alla</translation>
-    </message>
-    <message>
-        <source>Quit</source>
-        <translation>Avsluta</translation>
     </message>
     <message>
         <source>Resume sync</source>
@@ -5786,41 +4864,13 @@ Servern svarade med fel: %2</translation>
         <source>Privacy-Link</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Privacy-Link_STRATO</source>
         <translation type="unfinished" />
-    </message>
-    </context>
-<context>
-    <name>OCC::UnifiedSearchPeopleModel</name>
-    <message>
-        <source>Could not load people. Try again.</source>
-        <translation>Det gick inte att läsa in personer. Försök igen.</translation>
-    </message>
-    <message>
-        <source>People search is unavailable.</source>
-        <translation>Personsökning är inte tillgänglig.</translation>
     </message>
 </context>
 <context>
     <name>OCC::UnifiedSearchResultsListModel</name>
-    <message>
-        <source>%1 results</source>
-        <translation>%1 resultat</translation>
-    </message>
-    <message>
-        <source>%1 results in %2</source>
-        <extracomment>%1 is the number of search results. %2 is the search provider name, for example &quot;Files&quot;.</extracomment>
-        <translation>%1 resultat i %2</translation>
-    </message>
-    <message>
-        <source>%1 results. Some sources are unavailable.</source>
-        <translation>%1 resultat. Vissa källor är inte tillgängliga.</translation>
-    </message>
-    <message>
-        <source>%1 – %2</source>
-        <translation>%1 – %2</translation>
-    </message>
     <message>
         <source>Failed to fetch providers.</source>
         <translation>Kunde inte hämta leverantörer</translation>
@@ -5830,64 +4880,12 @@ Servern svarade med fel: %2</translation>
         <translation>Det gick inte att hämta sökleverantörer för &apos;%1&apos;. Fel: %2</translation>
     </message>
     <message>
-        <source>Failed to fetch search providers.</source>
-        <translation>Det gick inte att hämta sökleverantörer.</translation>
-    </message>
-    <message>
-        <source>Last 30 days</source>
-        <translation>Senaste 30 dagarna</translation>
-    </message>
-    <message>
-        <source>Last 7 days</source>
-        <translation>Senaste 7 dagarna</translation>
-    </message>
-    <message>
-        <source>Last year</source>
-        <translation>Förra året</translation>
-    </message>
-    <message>
-        <source>No matching results</source>
-        <translation>Inga matchande resultat</translation>
-    </message>
-    <message>
-        <source>No search providers are available.</source>
-        <translation>Det finns inga tillgängliga sökleverantörer.</translation>
-    </message>
-    <message>
-        <source>Partial matches</source>
-        <translation>Delvisa träffar</translation>
-    </message>
-    <message>
-        <source>Search cleared</source>
-        <translation>Sökningen rensades</translation>
-    </message>
-    <message>
-        <source>Search failed for all available sources. Please try again.</source>
-        <translation>Sökningen misslyckades i alla tillgängliga källor. Försök igen.</translation>
-    </message>
-    <message>
         <source>Search has failed for &apos;%1&apos;. Error: %2</source>
         <translation>Sökningen &quot;%1&apos;. Fel: %2.</translation>
     </message>
     <message>
         <source>Search has failed for &apos;%2&apos;.</source>
         <translation>Sökningen &quot;%2&apos; misslyckades.</translation>
-    </message>
-    <message>
-        <source>Search is unavailable while this account is offline.</source>
-        <translation>Sökning är inte tillgänglig när kontot är frånkopplat.</translation>
-    </message>
-    <message>
-        <source>Searching</source>
-        <translation>Söker</translation>
-    </message>
-    <message>
-        <source>This year</source>
-        <translation>I år</translation>
-    </message>
-    <message>
-        <source>Today</source>
-        <translation>I dag</translation>
     </message>
 </context>
 <context>
@@ -5954,18 +4952,6 @@ Servern svarade med fel: %2</translation>
         <translation>End-to-end-certifikatet måste migreras till ett nytt</translation>
     </message>
     <message>
-        <source>Insufficient storage on the server.</source>
-        <translation>Otillräckligt lagringsutrymme på servern.</translation>
-    </message>
-    <message>
-        <source>Insufficient storage on the server. The file requires %1 but only %2 are available.</source>
-        <translation>Otillräckligt lagringsutrymme på servern. Filen kräver %1 men endast %2 är tillgängligt.</translation>
-    </message>
-    <message>
-        <source>Insufficient storage on the server. The file requires %1.</source>
-        <translation>Otillräckligt lagringsutrymme på servern. Filen kräver %1.</translation>
-    </message>
-    <message>
         <source>No response yet. Please try again later.</source>
         <translation>Inget svar ännu. Försök igen senare.</translation>
     </message>
@@ -6003,20 +4989,8 @@ Servern svarade med fel: %2</translation>
         <translation>Försök ladda upp igen</translation>
     </message>
     <message>
-        <source>Sending your request …</source>
-        <translation>Skickar din förfrågan …</translation>
-    </message>
-    <message>
         <source>Sending your request…</source>
         <translation>Skickar din begäran...</translation>
-    </message>
-    <message>
-        <source>Sync conflicts</source>
-        <translation>Synkroniseringskonflikter</translation>
-    </message>
-    <message>
-        <source>There is insufficient space available on the server for some uploads.</source>
-        <translation>Det finns inte tillräckligt med utrymme på servern för vissa uppladdningar.</translation>
     </message>
     <message>
         <source>Trigger the migration</source>
@@ -6025,10 +4999,6 @@ Servern svarade med fel: %2</translation>
     <message>
         <source>Waiting for the assistant response…</source>
         <translation>Väntar på svar från assistenten...</translation>
-    </message>
-    <message>
-        <source>“%1” was not synchronized</source>
-        <translation>“%1” synkroniserades inte</translation>
     </message>
 </context>
 <context>
@@ -6211,17 +5181,9 @@ Servern svarade med fel: %2</translation>
         <source>&lt;b&gt;You have been logged out of your account %1 at %2. Please login again.&lt;/b&gt;</source>
         <translation type="unfinished" />
     </message>
-<message>
-        <source>You have been logged out of your account %1 at %2. Please login again.</source>
-        <translation>Du har loggats ut från ditt konto %1 på %2. Logga in igen.</translation>
-    </message>
-    </context>
+</context>
 <context>
     <name>OCC::WelcomePage</name>
-    <message>
-        <source>Easy-to-use web mail, calendaring &amp; contacts</source>
-        <translation>Simpel e-post-, kalender- och kontakthantering</translation>
-    </message>
     <message>
         <source>Form</source>
         <translation>Formulär</translation>
@@ -6237,14 +5199,6 @@ Servern svarade med fel: %2</translation>
     <message>
         <source>Log in</source>
         <translation>Logga in</translation>
-    </message>
-    <message>
-        <source>Screensharing, online meetings &amp; web conferences</source>
-        <translation>Skärmdelning, onlinemöten och webkonferenser</translation>
-    </message>
-    <message>
-        <source>Secure collaboration &amp; file exchange</source>
-        <translation>Säkert samarbete &amp; filöverföringar</translation>
     </message>
     <message>
         <source>Sign up with provider</source>
@@ -6288,10 +5242,6 @@ Servern svarade med fel: %2</translation>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Om denna ruta är kryssad så kommer befintligt innehåll i den lokala mappen tas bort så att en ren synkronisering från servern kan startas.&lt;/p&gt;&lt;p&gt;Kryssa inte i denna ruta om du vill ladda upp det lokala innehållet till serverns mapp.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Ask before syncing external storages</source>
-        <translation>Fråga innan synkronisering av externa enheter</translation>
     </message>
     <message>
         <source>Ask before syncing folders larger than</source>
@@ -6352,10 +5302,6 @@ Servern svarade med fel: %2</translation>
 </context>
 <context>
     <name>OwncloudSetupPage</name>
-    <message>
-        <source>Logo</source>
-        <translation>Logotyp</translation>
-    </message>
     <message>
         <source>Server address</source>
         <translation>Serveradress</translation>
@@ -6496,69 +5442,6 @@ Servern svarade med fel: %2</translation>
     </message>
 </context>
 <context>
-    <name>ProxySettingsDialog</name>
-    <message>
-        <source>Cancel</source>
-        <translation>Avbryt</translation>
-    </message>
-    <message>
-        <source>Done</source>
-        <translation>Klar</translation>
-    </message>
-    <message>
-        <source>HTTP(S) proxy</source>
-        <translation>HTTP(S) proxy</translation>
-    </message>
-    <message>
-        <source>Hostname of proxy server</source>
-        <translation>Värdnamn för proxyserver</translation>
-    </message>
-    <message>
-        <source>Manually specify proxy</source>
-        <translation>Ange proxy manuellt</translation>
-    </message>
-    <message>
-        <source>No proxy</source>
-        <translation>Ingen proxy</translation>
-    </message>
-    <message>
-        <source>Note: proxy settings have no effects for accounts on localhost</source>
-        <translation>Observera: proxyinställningarna påverkar inte konton på localhost</translation>
-    </message>
-    <message>
-        <source>Password for proxy server</source>
-        <translation>Lösenord för proxyserver</translation>
-    </message>
-    <message>
-        <source>Proxy port</source>
-        <translation>Proxyport</translation>
-    </message>
-    <message>
-        <source>Proxy server requires authentication</source>
-        <translation>Proxyservern kräver autentisering</translation>
-    </message>
-    <message>
-        <source>Proxy settings</source>
-        <translation>Proxyinställningar</translation>
-    </message>
-    <message>
-        <source>Proxy type</source>
-        <translation>Proxytyp</translation>
-    </message>
-    <message>
-        <source>SOCKS5 proxy</source>
-        <translation>SOCKS5 proxy</translation>
-    </message>
-    <message>
-        <source>Use system proxy</source>
-        <translation>Använd systemets proxyinställning</translation>
-    </message>
-    <message>
-        <source>Username for proxy server</source>
-        <translation>Användarnamn för proxyserver</translation>
-    </message>
-</context>
-<context>
     <name>QObject</name>
     <message>
         <source>%1: %2</source>
@@ -6597,10 +5480,6 @@ Servern svarade med fel: %2</translation>
     <message>
         <source>An unexpected error occurred. Please try syncing again or contact your server administrator if the issue continues.</source>
         <translation>Ett oväntat fel uppstod. Försök att synkronisera igen eller kontakta din serveradministratör om problemet kvarstår.</translation>
-    </message>
-    <message>
-        <source>Answer</source>
-        <translation>Svar</translation>
     </message>
     <message>
         <source>Could not create debug archive in selected location!</source>
@@ -6666,7 +5545,7 @@ Servern svarade med fel: %2</translation>
         <source>The directory %1 cannot be part of your sync directory. Please choose another folder.</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>The file is too big to upload. You might need to choose a smaller file or contact your server administrator for assistance.</source>
         <translation>Filen är för stor för att laddas upp. Du kan behöva välja en mindre fil eller kontakta din serveradministratör för hjälp.</translation>
     </message>
@@ -6770,7 +5649,7 @@ Servern svarade med fel: %2</translation>
         <source>now</source>
         <translation>nu</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>ResolveConflictsDialog</name>
     <message numerus="yes">
@@ -6807,68 +5686,6 @@ Servern svarade med fel: %2</translation>
     </message>
 </context>
 <context>
-    <name>SearchWindow</name>
-    <message>
-        <source>Less from connected services</source>
-        <translation>Mindre från anslutna tjänster</translation>
-    </message>
-    <message>
-        <source>More from connected services</source>
-        <translation>Mer från anslutna tjänster</translation>
-    </message>
-    <message>
-        <source>Remove %1 filter</source>
-        <translation>Ta bort filtret %1</translation>
-    </message>
-    <message>
-        <source>Retry</source>
-        <translation>Försök igen</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation>Sök</translation>
-    </message>
-    <message>
-        <source>Search files, messages, events …</source>
-        <translation>Sök efter filer, meddelanden och händelser …</translation>
-    </message>
-    <message>
-        <source>Search is available when this account is connected</source>
-        <translation>Sökning är tillgänglig när kontot är anslutet</translation>
-    </message>
-    <message>
-        <source>Search results</source>
-        <translation>Sökresultat</translation>
-    </message>
-    <message>
-        <source>Search results list</source>
-        <translation>Lista över sökresultat</translation>
-    </message>
-    <message>
-        <source>Some sources unavailable</source>
-        <translation>Vissa källor är inte tillgängliga</translation>
-    </message>
-</context>
-<context>
-    <name>ServerPage</name>
-    <message>
-        <source>Enter the link to your %1 web interface from the browser or the link to a folder shared with you.</source>
-        <translation>Ange länken till %1-webbgränssnittet från webbläsaren eller länken till en mapp som har delats med dig.</translation>
-    </message>
-    <message>
-        <source>Log in</source>
-        <translation>Logga in</translation>
-    </message>
-    <message>
-        <source>Log in to %1</source>
-        <translation>Logga in på %1</translation>
-    </message>
-    <message>
-        <source>Server address</source>
-        <translation>Serveradress</translation>
-    </message>
-</context>
-<context>
     <name>SesErrorBox</name>
     <message>
         <source>Error</source>
@@ -6885,11 +5702,11 @@ Servern svarade med fel: %2</translation>
         <source>Open local or team folders</source>
         <translation type="unfinished">Öppna lokala eller teammappar</translation>
     </message>
-<message>
+    <message>
         <source>Website</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>ShareDelegate</name>
     <message>
@@ -6928,10 +5745,6 @@ Servern svarade med fel: %2</translation>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Edit share</source>
-        <translation>Redigera delning</translation>
-    </message>
-    <message>
         <source>Enter a note for the recipient</source>
         <translation>Ange en notering till mottagaren</translation>
     </message>
@@ -6954,10 +5767,6 @@ Servern svarade med fel: %2</translation>
     <message>
         <source>Set expiration date</source>
         <translation>Välj utgångsdatum</translation>
-    </message>
-    <message>
-        <source>Share label</source>
-        <translation>Delningsetikett</translation>
     </message>
     <message>
         <source>Share link copied!</source>
@@ -7019,37 +5828,6 @@ Servern svarade med fel: %2</translation>
     <message>
         <source>Failed to connect database.</source>
         <translation>Kunde inte koppla mot databasen.</translation>
-    </message>
-</context>
-<context>
-    <name>SyncOptionsPage</name>
-    <message>
-        <source>Choose</source>
-        <translation>Välj</translation>
-    </message>
-    <message>
-        <source>Choose what to sync</source>
-        <translation>Välj vad som ska synkroniseras</translation>
-    </message>
-    <message>
-        <source>Download files on-demand</source>
-        <translation>Hämta filer vid behov</translation>
-    </message>
-    <message>
-        <source>File Provider</source>
-        <translation>File Provider</translation>
-    </message>
-    <message>
-        <source>Local sync folder</source>
-        <translation>Lokal synkroniseringsmapp</translation>
-    </message>
-    <message>
-        <source>Synchronize everything</source>
-        <translation>Synkronisera allt</translation>
-    </message>
-    <message>
-        <source>Virtual files</source>
-        <translation>Virtuella filer</translation>
     </message>
 </context>
 <context>
@@ -7141,53 +5919,10 @@ Servern svarade med fel: %2</translation>
     </message>
 </context>
 <context>
-    <name>TrayAccountPopup</name>
-    <message>
-        <source>More activity…</source>
-        <translation>Mer aktivitet …</translation>
-    </message>
-    <message>
-        <source>No apps available</source>
-        <translation>Inga appar tillgängliga</translation>
-    </message>
-    <message>
-        <source>No recent activity</source>
-        <translation>Ingen senaste aktivitet</translation>
-    </message>
-    <message>
-        <source>Notifications</source>
-        <translation>Aviseringar</translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation>Öppna</translation>
-    </message>
-    <message>
-        <source>Recent activity</source>
-        <translation>Senaste aktivitet</translation>
-    </message>
-    <message>
-        <source>Resolve: %1</source>
-        <translation>Åtgärda: %1</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation>Sök</translation>
-    </message>
-    <message>
-        <source>User status</source>
-        <translation>Användarstatus</translation>
-    </message>
-</context>
-<context>
     <name>TrayFoldersMenuButton</name>
     <message>
         <source>Files</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Local folder</source>
-        <translation>Lokal mapp</translation>
     </message>
     <message>
         <source>Open %1 in file explorer</source>
@@ -7220,7 +5955,7 @@ Servern svarade med fel: %2</translation>
         <source>Account switcher and settings menu</source>
         <translation type="unfinished">Kontobytare och inställningsmeny</translation>
     </message>
-<message>
+    <message>
         <source>Add account</source>
         <translation type="unfinished">Lägg till konto</translation>
     </message>
@@ -7256,13 +5991,9 @@ Servern svarade med fel: %2</translation>
         <source>Settings</source>
         <translation type="unfinished">Inställningar</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>TrayWindowHeader</name>
-    <message>
-        <source>Apps</source>
-        <translation>Appar</translation>
-    </message>
     <message>
         <source>More apps</source>
         <translation>Fler appar</translation>
@@ -7277,134 +6008,10 @@ Servern svarade med fel: %2</translation>
     </message>
 </context>
 <context>
-    <name>UnifiedSearchCustomDateRangeDialog</name>
-    <message>
-        <source>Apply</source>
-        <translation>Tillämpa</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>Avbryt</translation>
-    </message>
-    <message>
-        <source>Custom date range</source>
-        <translation>Anpassat datumintervall</translation>
-    </message>
-    <message>
-        <source>End date (YYYY-MM-DD)</source>
-        <translation>Slutdatum (ÅÅÅÅ-MM-DD)</translation>
-    </message>
-    <message>
-        <source>Enter valid dates with the start date before the end date.</source>
-        <translation>Ange giltiga datum där startdatumet är före slutdatumet.</translation>
-    </message>
-    <message>
-        <source>Start date (YYYY-MM-DD)</source>
-        <translation>Startdatum (ÅÅÅÅ-MM-DD)</translation>
-    </message>
-    <message>
-        <source>YYYY-MM-DD</source>
-        <translation>ÅÅÅÅ-MM-DD</translation>
-    </message>
-</context>
-<context>
-    <name>UnifiedSearchDetailHeader</name>
-    <message>
-        <source>Back</source>
-        <translation>Tillbaka</translation>
-    </message>
-    <message>
-        <source>Back to all search results</source>
-        <translation>Tillbaka till alla sökresultat</translation>
-    </message>
-</context>
-<context>
-    <name>UnifiedSearchFilterBar</name>
-    <message>
-        <source>Clear date</source>
-        <translation>Rensa datum</translation>
-    </message>
-    <message>
-        <source>Custom range …</source>
-        <translation>Anpassat intervall …</translation>
-    </message>
-    <message>
-        <source>Date</source>
-        <translation>Datum</translation>
-    </message>
-    <message>
-        <source>Filter by date</source>
-        <translation>Filtrera efter datum</translation>
-    </message>
-    <message>
-        <source>Filter by person</source>
-        <translation>Filtrera efter person</translation>
-    </message>
-    <message>
-        <source>Filter by type</source>
-        <translation>Filtrera efter typ</translation>
-    </message>
-    <message>
-        <source>Last 30 days</source>
-        <translation>Senaste 30 dagarna</translation>
-    </message>
-    <message>
-        <source>Last 7 days</source>
-        <translation>Senaste 7 dagarna</translation>
-    </message>
-    <message>
-        <source>Last year</source>
-        <translation>Förra året</translation>
-    </message>
-    <message>
-        <source>No search source supports date filtering</source>
-        <translation>Ingen sökkälla har stöd för datumfiltrering</translation>
-    </message>
-    <message>
-        <source>No search source supports people filtering</source>
-        <translation>Ingen sökkälla har stöd för personfiltrering</translation>
-    </message>
-    <message>
-        <source>People</source>
-        <translation>Personer</translation>
-    </message>
-    <message>
-        <source>This year</source>
-        <translation>I år</translation>
-    </message>
-    <message>
-        <source>Today</source>
-        <translation>I dag</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Typ</translation>
-    </message>
-</context>
-<context>
     <name>UnifiedSearchInputContainer</name>
-    <message>
-        <source>Clear search</source>
-        <translation>Rensa sökning</translation>
-    </message>
-    <message>
-        <source>Keeps the active filters</source>
-        <translation>Behåller de aktiva filtren</translation>
-    </message>
     <message>
         <source>Search files, messages, events …</source>
         <translation>Sök efter filer, meddelanden, händelser...</translation>
-    </message>
-</context>
-<context>
-    <name>UnifiedSearchPeoplePopup</name>
-    <message>
-        <source>Retry</source>
-        <translation>Försök igen</translation>
-    </message>
-    <message>
-        <source>Search people</source>
-        <translation>Sök personer</translation>
     </message>
 </context>
 <context>
@@ -7412,29 +6019,6 @@ Servern svarade med fel: %2</translation>
     <message>
         <source>Start typing to search</source>
         <translation>Börja skriva för att söka</translation>
-    </message>
-</context>
-<context>
-    <name>UnifiedSearchResultDelegate</name>
-    <message>
-        <source>Load more results</source>
-        <translation>Läs in fler resultat</translation>
-    </message>
-    <message>
-        <source>Loading more results …</source>
-        <translation>Läser in fler resultat …</translation>
-    </message>
-    <message>
-        <source>More from %1  →</source>
-        <translation>Mer från %1  →</translation>
-    </message>
-    <message>
-        <source>Partial matches</source>
-        <translation>Delvisa träffar</translation>
-    </message>
-    <message>
-        <source>Retry loading more results</source>
-        <translation>Försök läsa in fler resultat igen</translation>
     </message>
 </context>
 <context>
@@ -7473,17 +6057,6 @@ Servern svarade med fel: %2</translation>
     </message>
 </context>
 <context>
-    <name>UriSchemeHandler</name>
-    <message>
-        <source>Adding another account is not allowed in this client.</source>
-        <translation>Det är inte tillåtet att lägga till ytterligare ett konto i klienten.</translation>
-    </message>
-    <message>
-        <source>Could not handle link</source>
-        <translation>Det gick inte att hantera länken</translation>
-    </message>
-</context>
-<context>
     <name>UserLine</name>
     <message>
         <source>Account actions</source>
@@ -7492,14 +6065,6 @@ Servern svarade med fel: %2</translation>
     <message>
         <source>Account sync status requires attention</source>
         <translation>Kontots synkroniseringsstatus kräver uppmärksamhet</translation>
-    </message>
-    <message>
-        <source>Current account status is do not disturb</source>
-        <translation>Aktuell kontostatus är stör ej</translation>
-    </message>
-    <message>
-        <source>Current account status is online</source>
-        <translation>Aktuell kontostatus är online</translation>
     </message>
     <message>
         <source>Log in</source>
@@ -7512,14 +6077,6 @@ Servern svarade med fel: %2</translation>
     <message>
         <source>Remove account</source>
         <translation type="unfinished">Ta bort konto</translation>
-    </message>
-    <message>
-        <source>Set status</source>
-        <translation>Välj status</translation>
-    </message>
-    <message>
-        <source>Status message</source>
-        <translation>Statusmeddelande</translation>
     </message>
     <message>
         <source>Switch to account</source>
@@ -7590,73 +6147,6 @@ Servern svarade med fel: %2</translation>
     <message>
         <source>Status message</source>
         <translation>Statusmeddelande</translation>
-    </message>
-</context>
-<context>
-    <name>UserStatusWindow</name>
-    <message>
-        <source>Appear offline</source>
-        <translation>Visa som frånkopplad</translation>
-    </message>
-    <message>
-        <source>Away</source>
-        <translation>Borta</translation>
-    </message>
-    <message>
-        <source>Busy</source>
-        <translation>Upptagen</translation>
-    </message>
-    <message>
-        <source>Choose emoji</source>
-        <translation>Välj emoji</translation>
-    </message>
-    <message>
-        <source>Clear status after</source>
-        <translation>Rensa status efter</translation>
-    </message>
-    <message>
-        <source>Clear status message</source>
-        <translation>Rensa statusmeddelande</translation>
-    </message>
-    <message>
-        <source>Do not disturb</source>
-        <translation>Stör ej</translation>
-    </message>
-    <message>
-        <source>Invisible</source>
-        <translation>Osynlig</translation>
-    </message>
-    <message>
-        <source>Mute all notifications</source>
-        <translation>Stäng av alla aviseringar</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>Online</translation>
-    </message>
-    <message>
-        <source>Online status</source>
-        <translation>Onlinestatus</translation>
-    </message>
-    <message>
-        <source>Set status message</source>
-        <translation>Sätt statusmeddelande</translation>
-    </message>
-    <message>
-        <source>Status message</source>
-        <translation>Statusmeddelande</translation>
-    </message>
-    <message>
-        <source>What is your status?</source>
-        <translation>Vad är din status?</translation>
-    </message>
-</context>
-<context>
-    <name>UserStatusWindowPredefinedStatusRow</name>
-    <message>
-        <source>%1, resets after %2</source>
-        <extracomment>%1 is the status text and %2 is a time string.</extracomment>
-        <translation>%1, återställs efter %2</translation>
     </message>
 </context>
 <context>
@@ -7747,14 +6237,6 @@ Servern svarade med fel: %2</translation>
         <translation>För närvarande tillgänglig lokalt</translation>
     </message>
     <message>
-        <source>Enable experimental feature?</source>
-        <translation>Aktivera experimentell funktion?</translation>
-    </message>
-    <message>
-        <source>Enable experimental placeholder mode</source>
-        <translation>Aktivera experimentellt platshållarläge</translation>
-    </message>
-    <message>
         <source>Free up local space</source>
         <translation>Frigör lokalt utrymme</translation>
     </message>
@@ -7767,32 +6249,12 @@ Servern svarade med fel: %2</translation>
         <translation>Vissa endast tillgängliga online</translation>
     </message>
     <message>
-        <source>Stay safe</source>
-        <translation>Var försiktig</translation>
-    </message>
-    <message>
         <source>There was an error when launching the browser to go to URL %1. Maybe no default browser is configured?</source>
         <translation>Det uppstod ett fel när webbläsaren öppnades för webbadressen %1. Kanske det inte finns någon standard webbläsare vald?</translation>
     </message>
     <message>
         <source>There was an error when launching the email client to create a new message. Maybe no default email client is configured?</source>
         <translation>Det uppstod ett fel när e-postklienten skulle startas för att skapa ett nytt meddelande. Kanske är ingen standard-e-postklient konfigurerad?</translation>
-    </message>
-    <message>
-        <source>When the &quot;virtual files&quot; mode is enabled no files will be downloaded initially. Instead, a tiny &quot;%1&quot; file will be created for each file that exists on the server. The contents can be downloaded by running these files or by using their context menu.
-
-The virtual files mode is mutually exclusive with selective sync. Currently unselected folders will be translated to online-only folders and your selective sync settings will be reset.
-
-Switching to this mode will abort any currently running synchronization.
-
-This is a new, experimental mode. If you decide to use it, please report any issues that come up.</source>
-        <translation>När läget &quot;virtuella filer&quot; är aktiverat kommer inga filer att laddas ner initialt. Istället kommer en liten &quot;%1&quot;-fil att skapas för varje fil som finns på servern. Innehållet kan laddas ner genom att köra dessa filer eller genom att använda klientens snabbmeny.
-
-Läget för virtuella filer är ömsesidigt uteslutande med selektiv synkronisering. Befintliga omarkerade mappar kommer att översättas till mappar som endast är online och dina selektiva synkroniseringsinställningar återställs.
-
-Om du byter till det här läget avbryts all pågående synkronisering.
-
-Detta är ett nytt experimentellt läge. Om du bestämmer dig för att använda det, rapportera eventuella problem som dyker upp.</translation>
     </message>
 </context>
 <context>
@@ -7808,13 +6270,6 @@ Detta är ett nytt experimentellt läge. Om du bestämmer dig för att använda 
     <message>
         <source>The downloaded file does not match the checksum, it will be resumed. &quot;%1&quot; != &quot;%2&quot;</source>
         <translation>Den nedladdade filen matchar inte kontrollsumman, den kommer att återupptas. &quot;%1&quot; != &quot;%2&quot;</translation>
-    </message>
-</context>
-<context>
-    <name>WindowAccountHeader</name>
-    <message>
-        <source>Account avatar</source>
-        <translation>Kontoavatar</translation>
     </message>
 </context>
 </TS>
