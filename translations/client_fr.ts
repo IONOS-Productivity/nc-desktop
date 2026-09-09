@@ -1,6 +1,49 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TS version="2.1" language="fr">
-<context><name /><message><source>Agree</source><translation>Accepter</translation></message><message><source>Back</source><translation>Retour</translation></message><message><source>Necessary data</source><translation>Données indispensables</translation></message><message><source>Required to ensure that the software can be used as expected</source><translation>Nécessaire pour s&apos;assurer que le logiciel peut être utilisé comme prévu</translation></message><message><source>Save Settings</source><translation>Sauvegarder les paramètres</translation></message><message><source>Send anonymous use</source><translation>Envoyer utilisation anonyme</translation></message><message><source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;.</source><translation>Cette application utilise des technologies de suivi. En cliquant sur Accepter, vous acceptez le traitement de vos données anonymes. Vous pouvez modifier vos choix à tout moment via les paramètres. &lt;br/&gt; &lt;br/&gt;Des informations sur le traitement des données et autres peuvent être trouvées dans notre &lt;a href=&apos;https://wl.hidrive.com/easy/0025&apos;&gt;politique de confidentialité&lt;/a&gt;.</translation></message><message><source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;._STRATO</source><translation>Cette application utilise des technologies de suivi. En cliquant sur Accepter, vous acceptez le traitement de vos données anonymes. Vous pouvez modifier vos choix à tout moment via les paramètres. &lt;br/&gt; &lt;br/&gt;Des informations sur le traitement des données et autres peuvent être trouvées dans notre &lt;a href=&apos;https://static.hidrive.com/next/1002&apos;&gt;politique de confidentialité&lt;/a&gt;.</translation></message><message><source>This helps us to optimize the software and to better identify system crashes and unexpected errors.</source><translation>Cela nous aide à optimiser le logiciel et à mieux identifier les pannes de système et les erreurs inattendues.</translation></message><message><source>We collect anonymized data to optimize our app. We use software solutions from various partners for this purpose. We want to give you full transparency and freedom of choice regarding the collection and processing of your anonymized usage. You can change your settings at any time under the menu item Data Protection.</source><translation>Nous collectons des données anonymes pour optimiser notre application. Nous utilisons à cet effet des solutions logicielles de différents partenaires. Nous souhaitons vous offrir une transparence totale et une liberté de choix en ce qui concerne la collecte et le traitement de votre utilisation anonyme. Vous pouvez modifier vos paramètres à tout moment dans le menu Protection des données.</translation></message></context><context>
+<context>
+    <name />
+    <message>
+        <source>Agree</source>
+        <translation>Accepter</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Retour</translation>
+    </message>
+    <message>
+        <source>Necessary data</source>
+        <translation>Données indispensables</translation>
+    </message>
+    <message>
+        <source>Required to ensure that the software can be used as expected</source>
+        <translation>Nécessaire pour s&apos;assurer que le logiciel peut être utilisé comme prévu</translation>
+    </message>
+    <message>
+        <source>Save Settings</source>
+        <translation>Sauvegarder les paramètres</translation>
+    </message>
+    <message>
+        <source>Send anonymous use</source>
+        <translation>Envoyer utilisation anonyme</translation>
+    </message>
+    <message>
+        <source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;.</source>
+        <translation>Cette application utilise des technologies de suivi. En cliquant sur Accepter, vous acceptez le traitement de vos données anonymes. Vous pouvez modifier vos choix à tout moment via les paramètres. &lt;br/&gt; &lt;br/&gt;Des informations sur le traitement des données et autres peuvent être trouvées dans notre &lt;a href=&apos;https://wl.hidrive.com/easy/0025&apos;&gt;politique de confidentialité&lt;/a&gt;.</translation>
+    </message>
+    <message>
+        <source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;._STRATO</source>
+        <translation>Cette application utilise des technologies de suivi. En cliquant sur Accepter, vous acceptez le traitement de vos données anonymes. Vous pouvez modifier vos choix à tout moment via les paramètres. &lt;br/&gt; &lt;br/&gt;Des informations sur le traitement des données et autres peuvent être trouvées dans notre &lt;a href=&apos;https://static.hidrive.com/next/1002&apos;&gt;politique de confidentialité&lt;/a&gt;.</translation>
+    </message>
+    <message>
+        <source>This helps us to optimize the software and to better identify system crashes and unexpected errors.</source>
+        <translation>Cela nous aide à optimiser le logiciel et à mieux identifier les pannes de système et les erreurs inattendues.</translation>
+    </message>
+    <message>
+        <source>We collect anonymized data to optimize our app. We use software solutions from various partners for this purpose. We want to give you full transparency and freedom of choice regarding the collection and processing of your anonymized usage. You can change your settings at any time under the menu item Data Protection.</source>
+        <translation>Nous collectons des données anonymes pour optimiser notre application. Nous utilisons à cet effet des solutions logicielles de différents partenaires. Nous souhaitons vous offrir une transparence totale et une liberté de choix en ce qui concerne la collecte et le traitement de votre utilisation anonyme. Vous pouvez modifier vos paramètres à tout moment dans le menu Protection des données.</translation>
+    </message>
+</context>
+<context>
     <name>ActivityItem</name>
     <message>
         <source>In %1</source>
@@ -45,7 +88,14 @@
         <translation>Défiler vers le haut</translation>
     </message>
 </context>
-<context><name>BasicComboBox</name><message><source>Clear status message menu</source><translation>Menu d&apos;effacement du message de statut</translation></message></context><context>
+<context>
+    <name>BasicComboBox</name>
+    <message>
+        <source>Clear status message menu</source>
+        <translation>Menu d&apos;effacement du message de statut</translation>
+    </message>
+</context>
+<context>
     <name>CallNotificationDialog</name>
     <message>
         <source>Answer Talk call notification</source>
@@ -243,7 +293,14 @@
         <translation>Détails du fichier de %1 · %2</translation>
     </message>
 </context>
-<context><name>FileProviderFastEnumerationSettings</name><message><source>Fast sync will only sync changes in files and folders within folders that have been explored. This can significantly increase responsiveness on initial configuration of virtual files. However, it will cause redundant downloads of files moved to an unexplored folder.</source><translation>La synchronisation rapide va uniquement synchroniser les modifications des fichiers et des dossiers dans les dossiers qui ont été explorés. Ceci peut significativement augmenter la réactivité sur la configuration initiale des fichiers virtuelles. Cependant, cela va causer des téléchargements redondants de fichiers déplacés dans un dossier non exploré.</translation></message></context><context>
+<context>
+    <name>FileProviderFastEnumerationSettings</name>
+    <message>
+        <source>Fast sync will only sync changes in files and folders within folders that have been explored. This can significantly increase responsiveness on initial configuration of virtual files. However, it will cause redundant downloads of files moved to an unexplored folder.</source>
+        <translation>La synchronisation rapide va uniquement synchroniser les modifications des fichiers et des dossiers dans les dossiers qui ont été explorés. Ceci peut significativement augmenter la réactivité sur la configuration initiale des fichiers virtuelles. Cependant, cela va causer des téléchargements redondants de fichiers déplacés dans un dossier non exploré.</translation>
+    </message>
+</context>
+<context>
     <name>FileProviderFileDelegate</name>
     <message>
         <source>Delete</source>
@@ -252,7 +309,11 @@
 </context>
 <context>
     <name>FileProviderSettings</name>
-    <message><source>Signal file provider domain</source><translation>Indiquer le domaine du fournisseur de fichiers</translation></message><message>
+    <message>
+        <source>Signal file provider domain</source>
+        <translation>Indiquer le domaine du fournisseur de fichiers</translation>
+    </message>
+    <message>
         <source>Virtual files appear like regular files, but they do not use local storage space. The content downloads automatically when you open the file. Virtual files and classic sync can not be used at the same time.</source>
         <translation>Les fichiers virtuels apparaissent comme des fichiers classiques, sauf qu’ils n’occupent pas d’espace de stockage local. Leur contenu se télécharge automatiquement lors de l’ouverture. Les fichiers virtuels et la synchronisation classique ne peuvent pas être utilisés en même temps.</translation>
     </message>
@@ -261,7 +322,21 @@
         <translation>Paramètres des fichiers virtuels</translation>
     </message>
 </context>
-<context><name>FileProviderStorageInfo</name><message><source>Evict local copies...</source><translation>Supprimer les copies locales</translation></message></context><context><name>FileProviderSyncStatus</name><message><source>All synced!</source><translation>Tout est synchronisé !</translation></message></context><context>
+<context>
+    <name>FileProviderStorageInfo</name>
+    <message>
+        <source>Evict local copies...</source>
+        <translation>Supprimer les copies locales</translation>
+    </message>
+</context>
+<context>
+    <name>FileProviderSyncStatus</name>
+    <message>
+        <source>All synced!</source>
+        <translation>Tout est synchronisé !</translation>
+    </message>
+</context>
+<context>
     <name>FileSystem</name>
     <message>
         <source>Could not remove folder &quot;%1&quot;</source>
@@ -450,9 +525,13 @@
 </context>
 <context>
     <name>OCC::AccountManager</name>
-    <message><source>%1 accounts were detected from a legacy desktop client.
-Should the accounts be imported?</source><translation>%1 comptes ont été détectés à partir d&apos;un ancien client de bureau.
-Doivent-ils être importés ?</translation></message><message>
+    <message>
+        <source>%1 accounts were detected from a legacy desktop client.
+Should the accounts be imported?</source>
+        <translation>%1 comptes ont été détectés à partir d&apos;un ancien client de bureau.
+Doivent-ils être importés ?</translation>
+    </message>
+    <message>
         <source>An account was detected from a legacy desktop client.
 Should the account be imported?</source>
         <translation>Un compte a été détecté à partir d’un ancien client de synchronisation bureau. 
@@ -477,7 +556,11 @@ Le compte doit-il être importé ?</translation>
 </context>
 <context>
     <name>OCC::AccountSettings</name>
-    <message><source>%1 (%3%) of %2 in use. Some folders, including network mounted or shared folders, might have different limits.</source><translation>%1 (%3%) utilisés sur %2. Certains dossiers, montés depuis le réseau ou partagés, peuvent avoir des limites différentes.</translation></message><message>
+    <message>
+        <source>%1 (%3%) of %2 in use. Some folders, including network mounted or shared folders, might have different limits.</source>
+        <translation>%1 (%3%) utilisés sur %2. Certains dossiers, montés depuis le réseau ou partagés, peuvent avoir des limites différentes.</translation>
+    </message>
+    <message>
         <source>%1 as %2</source>
         <translation>%1 avec le compte %2</translation>
     </message>
@@ -645,7 +728,19 @@ Le compte doit-il être importé ?</translation>
         <source>End-to-end encryption mnemonic</source>
         <translation>Phrase secrète du chiffrement de bout en bout</translation>
     </message>
-    <message><source>Expand Memory</source><translation>Augmenter la mémoire</translation></message><message><source>ExpandMemory-Link</source><translation>https://wl.hidrive.com/easy/0077</translation></message><message><source>ExpandMemory-Link_STRATO</source><translation>https://static.hidrive.com/next/1042</translation></message><message>
+    <message>
+        <source>Expand Memory</source>
+        <translation>Augmenter la mémoire</translation>
+    </message>
+    <message>
+        <source>ExpandMemory-Link</source>
+        <translation>https://wl.hidrive.com/easy/0077</translation>
+    </message>
+    <message>
+        <source>ExpandMemory-Link_STRATO</source>
+        <translation>https://static.hidrive.com/next/1042</translation>
+    </message>
+    <message>
         <source>Folder creation failed</source>
         <translation>Échec de la création du dossier</translation>
     </message>
@@ -737,7 +832,11 @@ Le compte doit-il être importé ?</translation>
         <source>Signed out from %1.</source>
         <translation>Session sur %1 fermée.</translation>
     </message>
-    <message><source>Storage space %1% occupied</source><translation>Espace de stockage %1% occupé</translation></message><message>
+    <message>
+        <source>Storage space %1% occupied</source>
+        <translation>Espace de stockage %1% occupé</translation>
+    </message>
+    <message>
         <source>Sync Running</source>
         <translation>Synchronisation en cours</translation>
     </message>
@@ -810,7 +909,11 @@ Cette action entraînera l&apos;interruption de toute synchronisation en cours.<
         <source>To protect your Cryptographic Identity, we encrypt it with a mnemonic of 12 dictionary words. Please note it down and keep it safe. You will need it to set-up the synchronization of encrypted folders on your other devices.</source>
         <translation>Pour protéger votre identité cryptographique, nous la chiffrons avec une phrase secrète de 12 mots du dictionnaire. Veuillez la noter et la garder en sécurité. Elle sera nécessaire pour configurer la synchronisation de dossiers chiffrés sur vos autres appareils.</translation>
     </message>
-    <message><source>To protect your Cryptographic Identity, we encrypt it with a mnemonic of 12 dictionary words. Please note these down and keep them safe. They will be needed to add other devices to your account (like your mobile phone or laptop).</source><translation>Pour protéger votre identité cryptographique, nous la chiffrons avec une phrase secrète de 12 mots du dictionnaire. Veuillez la noter et la garder en sécurité. Elle sera nécessaire pour ajouter d’autres appareils à votre compte (comme votre smartphone ou votre ordinateur portable).</translation></message><message>
+    <message>
+        <source>To protect your Cryptographic Identity, we encrypt it with a mnemonic of 12 dictionary words. Please note these down and keep them safe. They will be needed to add other devices to your account (like your mobile phone or laptop).</source>
+        <translation>Pour protéger votre identité cryptographique, nous la chiffrons avec une phrase secrète de 12 mots du dictionnaire. Veuillez la noter et la garder en sécurité. Elle sera nécessaire pour ajouter d’autres appareils à votre compte (comme votre smartphone ou votre ordinateur portable).</translation>
+    </message>
+    <message>
         <source>Unable to connect to %1.</source>
         <translation>Impossible de se connecter à %1.</translation>
     </message>
@@ -2461,7 +2564,11 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
 </context>
 <context>
     <name>OCC::GeneralSettings</name>
-    <message><source>&amp;Analysis data collection for needs-based design</source><translation>&amp;Collecte des données d’analyse pour une conception basée sur les besoins</translation></message><message>
+    <message>
+        <source>&amp;Analysis data collection for needs-based design</source>
+        <translation>&amp;Collecte des données d’analyse pour une conception basée sur les besoins</translation>
+    </message>
+    <message>
         <source>&amp;Automatically check for updates</source>
         <translation>&amp;Vérifier automatiquement les mises à jour</translation>
     </message>
@@ -4234,7 +4341,11 @@ Il s&apos;agit d&apos;un nouveau mode expérimental. Si vous décidez de l&apos;
         <source>General</source>
         <translation>Général</translation>
     </message>
-    <message><source>New account</source><translation>Nouveau compte</translation></message><message>
+    <message>
+        <source>New account</source>
+        <translation>Nouveau compte</translation>
+    </message>
+    <message>
         <source>Settings</source>
         <translation>Paramètres</translation>
     </message>
@@ -4927,7 +5038,11 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
 </context>
 <context>
     <name>OCC::User</name>
-    <message><source>%1 notifications</source><translation>%1 notifications</translation></message><message numerus="yes">
+    <message>
+        <source>%1 notifications</source>
+        <translation>%1 notifications</translation>
+    </message>
+    <message numerus="yes">
         <source>%n notification(s)</source>
         <translation>
             <numerusform>%n notification</numerusform>
@@ -5404,7 +5519,11 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>Virtual file created</source>
         <translation>Fichier virtuel créé</translation>
     </message>
-<message><source>updating local virtual files metadata</source><translation>Mise à jour des métadonnées des fichiers virtuels locaux</translation></message></context>
+    <message>
+        <source>updating local virtual files metadata</source>
+        <translation>Mise à jour des métadonnées des fichiers virtuels locaux</translation>
+    </message>
+</context>
 <context>
     <name>ProxySettings</name>
     <message>
@@ -5747,7 +5866,11 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>Enter a note for the recipient</source>
         <translation>Saisir une note pour le destinataire</translation>
     </message>
-    <message><source>Enter the note to recipient</source><translation>Saisir la remarque à l’attention du destinataire</translation></message><message>
+    <message>
+        <source>Enter the note to recipient</source>
+        <translation>Saisir la remarque à l’attention du destinataire</translation>
+    </message>
+    <message>
         <source>File drop (upload only)</source>
         <translation>Dépôt de fichiers (téléversement seulement)</translation>
     </message>
