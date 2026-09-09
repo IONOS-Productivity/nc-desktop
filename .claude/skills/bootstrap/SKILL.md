@@ -52,8 +52,18 @@ Ein frischer Clone von nc-desktop braucht mehrere manuelle Schritte, bevor gebau
      .craft\craftenv.ps1
      craft --add-blueprint-repository [git]https://github.com/nextcloud/desktop-client-blueprints.git
      craft craft
+     ```
+   - **Qt-Version fixieren, bevor Dependencies gebaut werden:** Ohne Vorgabe zieht Craft die im Blueprint-Repo aktuell hinterlegte Qt6-Version, die von der für diesen Fork vorgesehenen abweichen kann. Maßgeblich ist `craftmaster.ini` (Repo-Root, Abschnitt `[BlueprintSettings]`, Schlüssel `libs/qt6.version`) — den Wert dort live nachschlagen, nicht aus diesem Skill-Text übernehmen, da er sich mit dem Nextcloud-Upstream ändert. Nach Bestätigung in `C:\Craft64\etc\CraftSettings.ini` ergänzen (Abschnitt/Datei ggf. neu anlegen):
+     ```ini
+     [BlueprintSettings]
+     libs/qt6.version = <aktueller Wert aus craftmaster.ini>
+     ```
+     Optional zusätzlich die übrigen in `craftmaster.ini` unter `[BlueprintSettings]` gepinnten Werte (`libs/zlib.version`, `libs/openssl.version`, `craft/craft-blueprints-kde.revision`) übernehmen, wenn reproduzierbare Ergebnisse wichtiger sind als der schnellste Weg.
+   - Danach:
+     ```powershell
      craft --install-deps nextcloud-client
      ```
+   - Nach der Installation die tatsächlich gebaute Qt-Version verifizieren (z.B. `& "C:\Craft64\bin\qmake6.exe" --version`, Pfad je nach Craft-Layout anpassen) und mit dem Wert aus `craftmaster.ini` abgleichen — bei Abweichung nicht einfach weiterbauen, sondern mit dem Nutzer klären.
    - Danach prüfen: `Get-Command png2ico -ErrorAction SilentlyContinue` (siehe Confluence "Windows", Abschnitt "Weitere benötigte Tools"). Sollte als Blueprint-Abhängigkeit von `nextcloud-client` mit installiert worden und über `.craft\craftenv.ps1` im PATH sein — falls trotzdem nicht gefunden, keinen automatischen Installationsweg annehmen, sondern auf `cmake/modules/FindPng2Ico.cmake` (Bezugsquellen winterdrache.de/kdewin) verweisen und Nutzer fragen, wie weiter vorgegangen werden soll.
    - Bekannter Stolperstein (Windows SDK): siehe Confluence-Seite, Abschnitt "Trouble Shooting" — bei `LNK2001 guard_check_icall` `$env:WindowsSDKVersion` auf ein installiertes SDK (`ls "C:\Program Files (x86)\Windows Kits\10\Lib"`) umbiegen, nicht blind versuchen zu reparieren, sondern die dort dokumentierten 4 Variablen (`WindowsSDKVersion`, `INCLUDE`, `LIB`, `LIBPATH`) einzeln zeigen und Anpassung bestätigen lassen.
    - Nächster Schritt danach: Confluence "HiDrive Next mit Visual Studio Code" (`604996038`).
@@ -70,8 +80,13 @@ Ein frischer Clone von nc-desktop braucht mehrere manuelle Schritte, bevor gebau
      export MAC_DEVELOPMENT_TARGET=12.0
      craft --add-blueprint-repository https://github.com/nextcloud/desktop-client-blueprints.git
      craft craft
+     ```
+   - **Qt-Version fixieren** wie im Windows-Abschnitt beschrieben: aktuellen Wert aus `craftmaster.ini` (`[BlueprintSettings]`, `libs/qt6.version`) live nachschlagen und nach Bestätigung in `~/Craft64/etc/CraftSettings.ini` unter `[BlueprintSettings]` eintragen, bevor `craft --install-deps` läuft.
+   - Danach:
+     ```bash
      craft --install-deps nextcloud-client
      ```
+   - Nach der Installation verifizieren (z.B. `~/Craft64/bin/qmake6 --version`) und mit `craftmaster.ini` abgleichen.
 
    **Linux** (Quelle: Confluence "Linux-Build-Runbook für nc-desktop" — Stand 14.08.2026, als internes Runbook mit "Offene Punkte" markiert, nicht als vollständig verifizierter Standardweg):
    - Nur relevant, wenn tatsächlich auf einer Linux-Maschine/VM gearbeitet wird — nicht versuchen, unter Windows/macOS eine Linux-Umgebung zu simulieren.
@@ -88,6 +103,7 @@ Ein frischer Clone von nc-desktop braucht mehrere manuelle Schritte, bevor gebau
        libfontconfig1-dev libfreetype-dev libdbus-1-dev libssl-dev
      sudo apt install -y librsvg2-bin
      ```
+   - Qt-Version: hier kein separater Fixierungsschritt nötig — `--config ~/nc-desktop/craftmaster.ini` unten übergibt dessen `[BlueprintSettings]` (inkl. `libs/qt6.version`) direkt an Craft.
    - Craftmaster-Setup (nach Bestätigung, Ziel-Branch/ABI vorher mit dem Nutzer abgleichen statt den im Runbook genannten Beispiel-Branch blind zu übernehmen):
      ```bash
      git clone --depth=1 https://invent.kde.org/packaging/craftmaster.git ~/craftmaster
