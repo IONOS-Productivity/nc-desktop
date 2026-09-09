@@ -236,7 +236,7 @@ Should the accounts be imported?</source>
     <name>OCC::DataProtectionPage</name>
     <message>
       <source>Settings</source>
-      <translation>Ajustes</translation>
+      <translation>Configuración</translation>
     </message>
   </context>
   <context>
@@ -505,7 +505,7 @@ Los objetos cuyo borrado esté permitido se eliminarán si impiden que se borre 
     </message>
     <message>
       <source>OpenSource-Link_STRATO</source>
-      <translation> https://static.hidrive.com/next/1031</translation>
+      <translation>https://static.hidrive.com/next/1031</translation>
     </message>
     <message>
       <source>Privacy-Link</source>
@@ -631,10 +631,6 @@ Los objetos cuyo borrado esté permitido se eliminarán si impiden que se borre 
     <message>
       <source>Resume sync for all</source>
       <translation>Reanudar sincronización para todos</translation>
-    </message>
-    <message>
-      <source>Settings</source>
-      <translation>Configuración</translation>
     </message>
   </context>
 </TS>

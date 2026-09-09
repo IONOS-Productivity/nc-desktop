@@ -259,6 +259,10 @@ Doivent-ils être importés ?</translation>
   <context>
     <name>OCC::Flow2AuthWidget</name>
     <message>
+      <source>Copy Link</source>
+      <translation>Copier le lien</translation>
+    </message>
+    <message>
       <source>Open Browser</source>
       <translation>Ouvrir le navigateur</translation>
     </message>
@@ -507,7 +511,7 @@ Les objets autorisés à être supprimés le seront s'ils empêchent la suppress
     </message>
     <message>
       <source>OpenSource-Link_STRATO</source>
-      <translation> https://static.hidrive.com/next/1031</translation>
+      <translation>https://static.hidrive.com/next/1031</translation>
     </message>
     <message>
       <source>Privacy-Link</source>
@@ -622,6 +626,10 @@ Les objets autorisés à être supprimés le seront s'ils empêchent la suppress
   </context>
   <context>
     <name>TrayWindowAccountMenu</name>
+    <message>
+      <source>Add account</source>
+      <translation>Ajouter un compte</translation>
+    </message>
     <message>
       <source>Pause sync for all</source>
       <translation>Mettre en pause la synchronisation pour tous</translation>

@@ -252,6 +252,10 @@ Should the accounts be imported?</translation>
   <context>
     <name>OCC::Flow2AuthWidget</name>
     <message>
+      <source>Copy Link</source>
+      <translation>Copy Link</translation>
+    </message>
+    <message>
       <source>Open Browser</source>
       <translation>Open Browser</translation>
     </message>
@@ -615,6 +619,10 @@ Items where deletion is allowed will be deleted if they prevent a directory from
   </context>
   <context>
     <name>TrayWindowAccountMenu</name>
+    <message>
+      <source>Add account</source>
+      <translation>Add Account</translation>
+    </message>
     <message>
       <source>Pause sync for all</source>
       <translation>Pause sync for all</translation>

@@ -252,6 +252,10 @@ Moeten de accounts worden geïmporteerd?</translation>
   <context>
     <name>OCC::Flow2AuthWidget</name>
     <message>
+      <source>Copy Link</source>
+      <translation>Kopieer Link</translation>
+    </message>
+    <message>
       <source>Open Browser</source>
       <translation>Browser openen</translation>
     </message>
@@ -500,7 +504,7 @@ Objecten die verwijderd mogen worden, worden verwijderd als ze zouden verhindere
     </message>
     <message>
       <source>OpenSource-Link_STRATO</source>
-      <translation> https://static.hidrive.com/next/1031</translation>
+      <translation>https://static.hidrive.com/next/1031</translation>
     </message>
     <message>
       <source>Privacy-Link</source>
@@ -615,6 +619,10 @@ Objecten die verwijderd mogen worden, worden verwijderd als ze zouden verhindere
   </context>
   <context>
     <name>TrayWindowAccountMenu</name>
+    <message>
+      <source>Add account</source>
+      <translation>Account toevoegen</translation>
+    </message>
     <message>
       <source>Pause sync for all</source>
       <translation>Synchronisatie pauzeren voor alles</translation>

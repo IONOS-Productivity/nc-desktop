@@ -252,6 +252,10 @@ Should the accounts be imported?</source>
   <context>
     <name>OCC::Flow2AuthWidget</name>
     <message>
+      <source>Copy Link</source>
+      <translation>Link kopieren</translation>
+    </message>
+    <message>
       <source>Open Browser</source>
       <translation>Im Browser öffnen</translation>
     </message>
@@ -500,7 +504,7 @@ Objekte, die gelöscht werden dürfen, werden gelöscht, wenn sie das Löschen e
     </message>
     <message>
       <source>OpenSource-Link_STRATO</source>
-      <translation> https://static.hidrive.com/next/1031</translation>
+      <translation>https://static.hidrive.com/next/1031</translation>
     </message>
     <message>
       <source>Privacy-Link</source>
@@ -615,6 +619,10 @@ Objekte, die gelöscht werden dürfen, werden gelöscht, wenn sie das Löschen e
   </context>
   <context>
     <name>TrayWindowAccountMenu</name>
+    <message>
+      <source>Add account</source>
+      <translation>Konto hinzufügen</translation>
+    </message>
     <message>
       <source>Pause sync for all</source>
       <translation>Synchronisierung für alle pausieren</translation>

@@ -46,7 +46,7 @@
     <name>BasicComboBox</name>
     <message>
       <source>Clear status message menu</source>
-      <translation> Cancella messaggio di stato</translation>
+      <translation>Cancella messaggio di stato</translation>
     </message>
   </context>
   <context>
@@ -179,7 +179,7 @@ Should the accounts be imported?</source>
     </message>
     <message>
       <source>Expand Memory</source>
-      <translation>Upgrade Storage </translation>
+      <translation>Upgrade Storage</translation>
     </message>
     <message>
       <source>ExpandMemory-Link</source>
@@ -251,6 +251,10 @@ Should the accounts be imported?</source>
   </context>
   <context>
     <name>OCC::Flow2AuthWidget</name>
+    <message>
+      <source>Copy Link</source>
+      <translation>Copia collegamento</translation>
+    </message>
     <message>
       <source>Open Browser</source>
       <translation>Apri il browser</translation>
@@ -439,7 +443,7 @@ Items where deletion is allowed will be deleted if they prevent a directory from
     <name>OCC::sesSnackBar</name>
     <message>
       <source>Success</source>
-      <translation> successo</translation>
+      <translation>successo</translation>
     </message>
   </context>
   <context>
@@ -500,7 +504,7 @@ Items where deletion is allowed will be deleted if they prevent a directory from
     </message>
     <message>
       <source>OpenSource-Link_STRATO</source>
-      <translation> https://static.hidrive.com/next/1031</translation>
+      <translation>https://static.hidrive.com/next/1031</translation>
     </message>
     <message>
       <source>Privacy-Link</source>
@@ -615,6 +619,10 @@ Items where deletion is allowed will be deleted if they prevent a directory from
   </context>
   <context>
     <name>TrayWindowAccountMenu</name>
+    <message>
+      <source>Add account</source>
+      <translation>Aggiungi account</translation>
+    </message>
     <message>
       <source>Pause sync for all</source>
       <translation>Sospendi la sincronizzazione per tutti</translation>
