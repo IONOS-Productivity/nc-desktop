@@ -111,7 +111,6 @@ QImage createSvgImageWithCustomColor(const QString &fileName,
     
     // find the first matching svg file
     const auto sourceSvg = findSvgFilePath(fileName, iconBaseColors);
-    Q_ASSERT(!sourceSvg.isEmpty());
 
     if (sourceSvg.isEmpty()) {
         qWarning(lcIconUtils) << "Failed to find base SVG file for" << fileName;
