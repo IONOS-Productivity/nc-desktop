@@ -62,7 +62,7 @@ translation_merge_run_if_stable() {
     #
     # Capture via command substitution (not a pipe) so $? below is the real
     # python exit status - portable across dash/bash.
-    output=$(cd "$repo_root/translation_scripts" && "$PY" merge_translation.py auto 2>&1)
+    output=$(cd "$repo_root/translation_scripts" && "$PY" merge_translation.py auto --auto-commit 2>&1)
     status=$?
 
     echo "$output"
