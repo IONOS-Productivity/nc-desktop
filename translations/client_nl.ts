@@ -2203,7 +2203,7 @@ Dit kan een probleem zijn met je OpenSSL-bibliotheken.</translation>
     <message>
         <location filename="../src/gui/wizard/flow2authwidget.cpp" line="231" />
         <source>Copy Link</source>
-        <translation>Kopiëren link </translation>
+        <translation>Kopieer Link</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/flow2authwidget.cpp" line="97" />
@@ -6021,7 +6021,7 @@ Server antwoordde met fout: %2</translation>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="407" />
         <source>OpenSource-Link_STRATO</source>
-        <translation> https://static.hidrive.com/next/1031</translation>
+        <translation>https://static.hidrive.com/next/1031</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="418" />
@@ -7411,7 +7411,7 @@ Server antwoordde met fout: %2</translation>
     <message>
         <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="129" />
         <source>Add account</source>
-        <translation type="unfinished" />
+        <translation>Account toevoegen</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="22" />

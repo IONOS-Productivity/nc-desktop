@@ -1768,7 +1768,7 @@ Would you like to do this now?</source>
     <message>
         <location filename="../src/gui/wizard/dataprotectionpage.ui" line="38" />
         <source>Settings</source>
-        <translation>Ajustes</translation>
+        <translation>Configuración</translation>
     </message>
     </context>
 <context>
@@ -6034,7 +6034,7 @@ El servidor respondió con el error: %2</translation>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="407" />
         <source>OpenSource-Link_STRATO</source>
-        <translation> https://static.hidrive.com/next/1031</translation>
+        <translation>https://static.hidrive.com/next/1031</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="418" />

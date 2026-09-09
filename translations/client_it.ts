@@ -5242,7 +5242,7 @@ This is a new, experimental mode. If you decide to use it, please report any iss
     <message>
         <location filename="../src/gui/sessnackbar.cpp" line="84" />
         <source>Success</source>
-        <translation> successo</translation>
+        <translation>successo</translation>
     </message>
     <message>
         <location filename="../src/gui/sessnackbar.cpp" line="77" />
@@ -6026,7 +6026,7 @@ Il server ha risposto con errore: %2</translation>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="407" />
         <source>OpenSource-Link_STRATO</source>
-        <translation> https://static.hidrive.com/next/1031</translation>
+        <translation>https://static.hidrive.com/next/1031</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="418" />
@@ -7416,7 +7416,7 @@ Il server ha risposto con errore: %2</translation>
     <message>
         <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="129" />
         <source>Add account</source>
-        <translation type="unfinished">Aggiungi account</translation>
+        <translation>Aggiungi account</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="22" />

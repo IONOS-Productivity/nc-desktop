@@ -191,7 +191,7 @@
     <message>
         <location filename="../src/gui/tray/CurrentAccountHeaderButton.qml" line="144" />
         <source>Add account</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Add Account</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/CurrentAccountHeaderButton.qml" line="148" />
@@ -347,7 +347,7 @@
     <message>
         <location filename="../src/gui/wizard/flow2authwidget.ui" line="139" />
         <source>Copy Link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Copy Link</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/flow2authwidget.ui" line="56" />
@@ -2195,7 +2195,7 @@ This can be an issue with your OpenSSL libraries.</source>
     <message>
         <location filename="../src/gui/wizard/flow2authwidget.cpp" line="231" />
         <source>Copy Link</source>
-        <translation type="unfinished" />
+        <translation>Copy Link</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/flow2authwidget.cpp" line="97" />
@@ -5865,7 +5865,7 @@ Server replied with error: %2</source>
     <message>
         <location filename="../src/gui/systray.cpp" line="227" />
         <source>Add account</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Add Account</translation>
     </message>
     <message>
         <location filename="../src/gui/systray.cpp" line="124" />
@@ -5921,7 +5921,7 @@ Server replied with error: %2</source>
     <message>
         <location filename="../src/gui/wizard/termsofservicecheckwidget.cpp" line="180" />
         <source>Copy Link</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Copy Link</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/termsofservicecheckwidget.cpp" line="137" />
@@ -7384,7 +7384,7 @@ Server replied with error: %2</source>
     <message>
         <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="129" />
         <source>Add account</source>
-        <translation type="unfinished" />
+        <translation>Add Account</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="22" />
