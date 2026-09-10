@@ -38,10 +38,11 @@ git config merge.nc-take-incoming.driver "cp -- '%B' '%A'"
 
 ### 2. `post-merge`/`post-commit` Hook
 
-- Läuft automatisch nach jedem lokalen `git merge`/`git pull` (bzw. nach dem manuellen Abschluss eines Merges, der wegen Konflikten in *anderen* Dateien als den Übersetzungen manuell committet werden musste).
+- Läuft automatisch nach jedem lokalen `git merge`/`git pull` (`post-merge`) bzw. nach einem Merge-Commit, der Konflikte manuell aufgelöst hat (`post-commit`).
 - Erkennt anhand der Merge-Commit-Message, ob ein `stable-x.y`-Branch gemerged wurde (z.B. `Merge branch 'stable-33.0' into ...`).
 - Führt in diesem Fall automatisch `merge_translation.py auto` aus (**ohne** `--auto-commit`, **ohne** Branch-Argument).
-- Änderungen an `translations/client_*.ts` liegen danach ungestaged im Working Directory und müssen manuell geprüft und committet werden.
+- Bei Erfolg werden die Änderungen an `translations/client_*.ts` automatisch gestaged (`git add`), aber nicht committet. Ein `prepare-commit-msg`-Hook (`.githooks/prepare-commit-msg`) schlägt beim nächsten `git commit` (ohne `-m`) automatisch die Message `[Git-Hook] run translations script after merge` vor – Diff vor dem Commit trotzdem prüfen (`git diff --cached` in `translations/`).
+- Meldet `merge_translation.py` einen Fehler (Exit-Code ≠ 0), wird **nichts** gestaged – die Änderungen liegen dann ungestaged im Working Directory und müssen manuell geprüft werden.
 
 `auto` durchläuft dabei Schritt 0 (jetzt nur noch Normalisieren/Sortieren der frisch eingemergten Datei, siehe unten) und Schritte 1–5 wie gewohnt.
 
