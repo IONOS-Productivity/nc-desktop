@@ -1,117 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TS version="2.1" language="fr">
 <context>
-    <name>AccountWizardController</name>
-    <message>
-        <source>Unable to open the Browser, please copy the link to your Browser.</source>
-        <translation>Impossible d’ouvrir le navigateur. Veuillez copier le lien dans votre navigateur web.</translation>
-    </message>
-</context>
-<context>
-    <name>AccountWizardWindow</name>
-    <message>
-        <source>Advanced</source>
-        <translation>Avancé</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation>Retour</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>Annuler</translation>
-    </message>
-    <message>
-        <source>Connect</source>
-        <translation>Se connecter</translation>
-    </message>
-    <message>
-        <source>Connect to %1?</source>
-        <translation>Se connecter à %1 ?</translation>
-    </message>
-    <message>
-        <source>Connect without TLS</source>
-        <translation>Se connecter sans TLS</translation>
-    </message>
-    <message>
-        <source>Copy link</source>
-        <translation>Copier le lien</translation>
-    </message>
-    <message>
-        <source>Done</source>
-        <translation>Terminé</translation>
-    </message>
-    <message>
-        <source>Log in</source>
-        <translation>Se connecter</translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation>Ouvrir</translation>
-    </message>
-    <message>
-        <source>Proxy settings</source>
-        <translation>Paramètres du proxy</translation>
-    </message>
-    <message>
-        <source>Secure connection failed</source>
-        <translation>Échec de la connexion sécurisée</translation>
-    </message>
-    <message>
-        <source>Self-host</source>
-        <translation>Auto-héberger</translation>
-    </message>
-    <message>
-        <source>Set up later</source>
-        <translation>Configurer plus tard</translation>
-    </message>
-    <message>
-        <source>Sign up</source>
-        <translation>S&apos;inscrire</translation>
-    </message>
-    <message>
-        <source>The secure connection failed. You can add a client certificate and try again.</source>
-        <translation>La connexion sécurisée a échoué. Vous pouvez ajouter un certificat client et réessayer.</translation>
-    </message>
-    <message>
-        <source>The secure connection failed. You can retry without encryption, or add a client certificate and try again.</source>
-        <translation>La connexion sécurisée a échoué. Vous pouvez réessayer sans chiffrement ou ajouter un certificat client et réessayer.</translation>
-    </message>
-    <message>
-        <source>Use client certificate</source>
-        <translation>Utiliser un certificat client</translation>
-    </message>
-</context>
-<context>
-    <name>ActivitiesWindow</name>
-    <message>
-        <source>Activities</source>
-        <translation>Activités</translation>
-    </message>
-    <message>
-        <source>New activities</source>
-        <translation>Nouvelles activités</translation>
-    </message>
-</context>
-<context>
-    <name>ActivityFileMenu</name>
-    <message>
-        <source>File actions</source>
-        <translation>Actions sur le fichier</translation>
-    </message>
-    <message>
-        <source>File details</source>
-        <translation>Détails du fichier</translation>
-    </message>
-</context>
-<context>
-    <name>ActivityFileMenuButton</name>
-    <message>
-        <source>Open file details</source>
-        <translation>Ouvrir les détails du fichier</translation>
-    </message>
-</context>
-<context>
     <name>ActivityItem</name>
     <message>
         <source>In %1</source>
@@ -157,185 +46,6 @@
     </message>
 </context>
 <context>
-    <name>AdvancedOptionsDialog</name>
-    <message>
-        <source>%1 MB</source>
-        <translation>%1 Mo</translation>
-    </message>
-    <message>
-        <source>Advanced options</source>
-        <translation>Options avancées</translation>
-    </message>
-    <message>
-        <source>Ask before syncing external storage</source>
-        <translation>Demander avant de synchroniser un stockage externe</translation>
-    </message>
-    <message>
-        <source>Ask before syncing folders larger than</source>
-        <translation>Demander avant de synchroniser des dossiers de plus de</translation>
-    </message>
-    <message>
-        <source>Done</source>
-        <translation>Terminé</translation>
-    </message>
-    <message>
-        <source>Large folder threshold</source>
-        <translation>Seuil des dossiers volumineux</translation>
-    </message>
-</context>
-<context>
-    <name>AssistantChatView</name>
-    <message>
-        <source>Assistant is thinking…</source>
-        <translation>L&apos;assistant réfléchit…</translation>
-    </message>
-    <message>
-        <source>New conversation</source>
-        <translation>Nouvelle conversation</translation>
-    </message>
-    <message>
-        <source>Reload conversations</source>
-        <translation>Recharger les conversations</translation>
-    </message>
-    <message>
-        <source>Retry response generation</source>
-        <translation>Réessayer la génération de réponse</translation>
-    </message>
-</context>
-<context>
-    <name>AssistantConversationPicker</name>
-    <message>
-        <source>No conversation selected</source>
-        <translation>Aucune conversation sélectionnée</translation>
-    </message>
-    <message>
-        <source>Selected conversation</source>
-        <translation>Conversation sélectionnée</translation>
-    </message>
-</context>
-<context>
-    <name>AssistantDeleteTaskDialog</name>
-    <message>
-        <source>Cancel</source>
-        <translation>Annuler</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Supprimer</translation>
-    </message>
-    <message>
-        <source>Delete assistant task?</source>
-        <translation>Supprimer la tâche d&apos;assistant ?</translation>
-    </message>
-    <message>
-        <source>This removes the task from the server.</source>
-        <translation>Cela supprime la tâche du serveur.</translation>
-    </message>
-</context>
-<context>
-    <name>AssistantMessageList</name>
-    <message>
-        <source>Start a conversation with Nextcloud Assistant.</source>
-        <translation>Commencer une conversation avec Nextcloud Assistant.</translation>
-    </message>
-</context>
-<context>
-    <name>AssistantTaskDelegate</name>
-    <message>
-        <source>%1 · %2</source>
-        <extracomment>%1 is the assistant task status and %2 is the task&apos;s date and time in the locale&apos;s short format.</extracomment>
-        <translation>%1 · %2</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Supprimer</translation>
-    </message>
-    <message>
-        <source>Retry</source>
-        <translation>Réessayer</translation>
-    </message>
-</context>
-<context>
-    <name>AssistantTaskList</name>
-    <message>
-        <source>No assistant tasks for this type.</source>
-        <translation>Aucune tâche d&apos;assistant pour ce type.</translation>
-    </message>
-</context>
-<context>
-    <name>AssistantWindow</name>
-    <message>
-        <source>AI can make mistakes. Review generated content before using it.</source>
-        <translation>L&apos;IA peut faire des erreurs. Examinez le contenu généré avant de vous en servir.</translation>
-    </message>
-    <message>
-        <source>Ask Assistant …</source>
-        <translation>Interroger Assistant…</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>Annuler</translation>
-    </message>
-    <message>
-        <source>New conversation</source>
-        <translation>Nouvelle conversation</translation>
-    </message>
-    <message>
-        <source>Nextcloud Assistant</source>
-        <translation>Nextcloud Assistant</translation>
-    </message>
-    <message>
-        <source>Send</source>
-        <translation>Envoyer</translation>
-    </message>
-    <message>
-        <source>Start new conversation?</source>
-        <translation>Commencer une nouvelle conversation ?</translation>
-    </message>
-    <message>
-        <source>This will clear the existing conversation.</source>
-        <translation>Cela effacera la conversation en cours.</translation>
-    </message>
-    <message>
-        <source>Type a message</source>
-        <translation>Tapez un message</translation>
-    </message>
-</context>
-<context>
-    <name>BasicAuthPage</name>
-    <message>
-        <source>Connect public share</source>
-        <translation>Se connecter à un partage public</translation>
-    </message>
-    <message>
-        <source>Enter credentials</source>
-        <translation>Saisir les identifiants</translation>
-    </message>
-    <message>
-        <source>Enter the share password if the link is password protected.</source>
-        <translation>Saisissez le mot de passe du partage si le lien est protégé.</translation>
-    </message>
-    <message>
-        <source>Enter the username and password for this server.</source>
-        <translation>Saisissez le nom d’utilisateur et le mot de passe de ce serveur.</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation>Mot de passe</translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation>Nom d’utilisateur</translation>
-    </message>
-</context>
-<context>
-    <name>BrowserAuthPage</name>
-    <message>
-        <source>Switch to your browser</source>
-        <translation>Bascule vers votre navigateur web</translation>
-    </message>
-</context>
-<context>
     <name>CallNotificationDialog</name>
     <message>
         <source>Answer Talk call notification</source>
@@ -352,37 +62,6 @@
     <message>
         <source>Talk notification caller avatar</source>
         <translation>Avatar de l&apos;appelant de la notification Talk</translation>
-    </message>
-</context>
-<context>
-    <name>ClientCertificateDialog</name>
-    <message>
-        <source>Cancel</source>
-        <translation>Annuler</translation>
-    </message>
-    <message>
-        <source>Certificate file</source>
-        <translation>Fichier de certificat</translation>
-    </message>
-    <message>
-        <source>Certificate password</source>
-        <translation>Mot de passe du certificat</translation>
-    </message>
-    <message>
-        <source>Choose</source>
-        <translation>Choisir</translation>
-    </message>
-    <message>
-        <source>Client certificate</source>
-        <translation>Certificat client</translation>
-    </message>
-    <message>
-        <source>Connect</source>
-        <translation>Se connecter</translation>
-    </message>
-    <message>
-        <source>Select a PKCS#12 certificate file and enter its password.</source>
-        <translation>Sélectionnez un fichier de certificat PKCS#12 et saisissez son mot de passe.</translation>
     </message>
 </context>
 <context>
@@ -453,14 +132,10 @@
         <translation>Synchronisation de %1 sur %2</translation>
     </message>
     <message>
-        <source>Syncing %1 of %2  (%3 left)</source>
-        <translation>Synchronisation de %1 sur %2 (%3 restant)</translation>
-    </message>
-<message>
         <source>Syncing %1 of %2 (%3 left)</source>
         <translation type="unfinished">Synchronisation de %1 sur %2 (%3 restant⸱s)</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>ConflictDelegate</name>
     <message>
@@ -529,16 +204,8 @@
 <context>
     <name>EmojiPicker</name>
     <message>
-        <source>No emojis found</source>
-        <translation>Aucun emoji trouvé</translation>
-    </message>
-    <message>
         <source>No recent emojis</source>
         <translation>Pas d&apos;émojis récents</translation>
-    </message>
-    <message>
-        <source>Search emoji</source>
-        <translation>Rechercher un emoji</translation>
     </message>
 </context>
 <context>
@@ -565,18 +232,10 @@
 <context>
     <name>FileDetailsPage</name>
     <message>
-        <source>Activity</source>
-        <translation>Activité</translation>
-    </message>
-    <message>
         <source>Dismiss</source>
         <translation type="unfinished" />
     </message>
-<message>
-        <source>Sharing</source>
-        <translation>Partage</translation>
-    </message>
-    </context>
+</context>
 <context>
     <name>FileDetailsWindow</name>
     <message>
@@ -627,7 +286,7 @@
         <source>Copy Link</source>
         <translation type="unfinished">Copier le lien</translation>
     </message>
-<message>
+    <message>
         <source>Logo</source>
         <translation>Logo</translation>
     </message>
@@ -635,7 +294,7 @@
         <source>Switch to your browser to connect your account</source>
         <translation>Basculez sur votre navigateur pour connecter votre compte</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>FolderWizardSelectiveSync</name>
     <message>
@@ -653,17 +312,9 @@
         <source>&amp;Choose</source>
         <translation type="unfinished" />
     </message>
-<message>
-        <source>&amp;Choose …</source>
-        <translation>&amp;Sélectionner …</translation>
-    </message>
     <message>
         <source>Add Folder Sync</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Pick a local folder on your computer to sync</source>
-        <translation>Sélectionnez un dossier local de votre ordinateur à synchroniser</translation>
     </message>
     <message>
         <source>Select a folder on your hard drive that should be permanetly connected to your %1. All files and subfolders are automatically uploaded and synchronized</source>
@@ -673,7 +324,7 @@
         <source>Step 1 of 3: Select local folder</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>FolderWizardTargetPage</name>
     <message>
@@ -684,7 +335,7 @@
         <source>Both folders are permanently linked and the respective contents are automatically synchronized and updated.</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Create folder</source>
         <translation>Créer un dossier</translation>
     </message>
@@ -701,73 +352,8 @@
         <translation>Rafraîchir</translation>
     </message>
     <message>
-        <source>Select a remote destination folder</source>
-        <translation>Veuillez sélectionner un dossier distant</translation>
-    </message>
-    <message>
         <source>Step 2 of 3: Directory in your %1</source>
         <translation type="unfinished" />
-    </message>
-    </context>
-<context>
-    <name>GovernanceLabelsDialog</name>
-    <message>
-        <source>Apply</source>
-        <translation>Appliquer</translation>
-    </message>
-    <message>
-        <source>Apply labels</source>
-        <translation>Appliquer des libellés</translation>
-    </message>
-    <message>
-        <source>Assign labels to the file to manage its sensitivity, retention, and legal hold policies.</source>
-        <translation>Attribuez des étiquettes au fichier pour gérer ses politiques de sensibilité, de conservation et de conservation à des fins juridiques.</translation>
-    </message>
-    <message>
-        <source>Legal hold labels</source>
-        <translation>Étiquettes de conservation à des fins juridiques</translation>
-    </message>
-    <message>
-        <source>Reset</source>
-        <translation>Réinitialiser</translation>
-    </message>
-    <message>
-        <source>Retention labels</source>
-        <translation>Étiquettes de conservation</translation>
-    </message>
-    <message>
-        <source>Select legal hold label</source>
-        <translation>Sélectionner un libellé de gel juridique</translation>
-    </message>
-    <message>
-        <source>Select retention label</source>
-        <translation>Sélectionner un libellé de conservation</translation>
-    </message>
-    <message>
-        <source>Select sensitivity label</source>
-        <translation>Sélectionner un libellé de sensibilité</translation>
-    </message>
-    <message>
-        <source>Sensitivity labels</source>
-        <translation>Étiquettes de sensibilité</translation>
-    </message>
-</context>
-<context>
-    <name>LocalNetworkPermission</name>
-    <message>
-        <source>Local Network access is disabled. Enable it to connect to the server.</source>
-        <translation>L&apos;accès au réseau local est désactivé. Activez-le pour vous connecter au serveur.</translation>
-    </message>
-</context>
-<context>
-    <name>main.cpp</name>
-    <message>
-        <source>%1 requires on a working system tray. If you are running XFCE, please follow &lt;a href=&quot;http://docs.xfce.org/xfce/xfce4-panel/systray&quot;&gt;these instructions&lt;/a&gt;. Otherwise, please install a system tray application such as &quot;trayer&quot; and try again.</source>
-        <translation>%1 nécessite une zone de notification système fonctionnelle. Si vous utiliser XFCE, veuillez suivre &lt;a href=&quot;http://docs.xfce.org/xfce/xfce4-panel/systray&quot;&gt;ces instructions&lt;/a&gt;. Sinon, installez une application de la barre d&apos;état système telle que &quot;trayer&quot; et réessayez.</translation>
-    </message>
-    <message>
-        <source>System Tray not available</source>
-        <translation>Zone de notification système non disponible</translation>
     </message>
 </context>
 <context>
@@ -775,10 +361,6 @@
     <message>
         <source>Ask Assistant…</source>
         <translation>Demander à l’assistant…</translation>
-    </message>
-    <message>
-        <source>Assistant</source>
-        <translation>Assistant</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -823,37 +405,6 @@
     <message>
         <source>Unified search results list</source>
         <translation>Liste des résultats de la recherche unifiée</translation>
-    </message>
-</context>
-<context>
-    <name>NCContextMenuTextField</name>
-    <message>
-        <source>Copy</source>
-        <translation>Copier</translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <translation>Couper</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Supprimer</translation>
-    </message>
-    <message>
-        <source>Paste</source>
-        <translation>Coller</translation>
-    </message>
-    <message>
-        <source>Redo</source>
-        <translation>Rétablir</translation>
-    </message>
-    <message>
-        <source>Select All</source>
-        <translation>Tout sélectionner</translation>
-    </message>
-    <message>
-        <source>Undo</source>
-        <translation>Annuler</translation>
     </message>
 </context>
 <context>
@@ -939,10 +490,6 @@ Le compte doit-il être importé ?</translation>
     <message>
         <source>(experimental)</source>
         <translation> (expérimental)</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Could not add the folder sync connection for &lt;i&gt;%1&lt;/i&gt;.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Impossible d&apos;ajouter la connexion de synchronisation du dossier pour &lt;i&gt;%1&lt;/i&gt;.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;Could not create local folder &lt;i&gt;%1&lt;/i&gt;.&lt;/p&gt;</source>
@@ -1097,10 +644,6 @@ Le compte doit-il être importé ?</translation>
         <translation>Phrase secrète du chiffrement de bout en bout</translation>
     </message>
     <message>
-        <source>File Provider is enabled, but this account still has classic sync folders. The Finder integration stays unavailable until this is resolved.</source>
-        <translation>Le fournisseur de fichiers est activé, mais ce compte utilise encore des dossiers de synchronisation classiques. L’intégration au Finder restera indisponible tant que ce problème ne sera pas résolu.</translation>
-    </message>
-    <message>
         <source>Folder creation failed</source>
         <translation>Échec de la création du dossier</translation>
     </message>
@@ -1123,26 +666,6 @@ Le compte doit-il être importé ?</translation>
     <message>
         <source>Grant access to sync folder</source>
         <translation>Accorder l’accès au dossier de synchronisation</translation>
-    </message>
-    <message>
-        <source>If this account&apos;s files appear stuck, missing, or out of sync in Finder, reset its File Provider storage. Unsynced local changes are preserved.</source>
-        <translation>Si les fichiers de ce compte semblent bloqués, manquants ou désynchronisés dans le Finder, réinitialisez son stockage File Provider. Les modifications locales non synchronisées seront conservées.</translation>
-    </message>
-    <message>
-        <source>Leave share</source>
-        <translation>Quitter le partage</translation>
-    </message>
-    <message>
-        <source>Log in</source>
-        <translation>Se connecter</translation>
-    </message>
-    <message>
-        <source>Log out</source>
-        <translation>Se déconnecter</translation>
-    </message>
-    <message>
-        <source>Log out, log back in, or remove this account from the client.</source>
-        <translation>Déconnectez-vous, reconnectez-vous ou retirez ce compte du client.</translation>
     </message>
     <message>
         <source>Migrate certificate to a new one</source>
@@ -1177,28 +700,8 @@ Le compte doit-il être importé ?</translation>
         <translation>Retirer la synchronisation de ce dossier</translation>
     </message>
     <message>
-        <source>Remove account</source>
-        <translation>Retirer le compte</translation>
-    </message>
-    <message>
         <source>Remove folder sync connection</source>
         <translation>Retirer la connexion de synchronisation de dossier</translation>
-    </message>
-    <message>
-        <source>Remove this public share connection from the client.</source>
-        <translation>Supprimer cette connexion à un partage public du client.</translation>
-    </message>
-    <message>
-        <source>Reset File Provider Domain</source>
-        <translation>Réinitialiser le domaine File Provider</translation>
-    </message>
-    <message>
-        <source>Reset File Provider Domain for this account?</source>
-        <translation>Réinitialiser le domaine File Provider pour ce compte ?</translation>
-    </message>
-    <message>
-        <source>Resolve…</source>
-        <translation>Résoudre…</translation>
     </message>
     <message>
         <source>Restart sync</source>
@@ -1245,20 +748,12 @@ Le compte doit-il être importé ?</translation>
         <translation>Ne rien synchroniser</translation>
     </message>
     <message>
-        <source>The File Provider extension does not support end-to-end encryption yet.</source>
-        <translation>L&apos;extension Fournisseur de fichiers ne prend pas encore en charge le chiffrement de bout en bout.</translation>
-    </message>
-    <message>
         <source>The folder has a minor sync problem. Encryption of this folder will be possible once it has synced successfully</source>
         <translation>Le dossier a un défaut de synchronisation mineur. Le chiffrement de ce dossier sera possible quand la synchronisation aura réussi.</translation>
     </message>
     <message>
         <source>The folder has a sync error. Encryption of this folder will be possible once it has synced successfully</source>
         <translation>Le dossier a une erreur de synchronisation. Le chiffrement de ce dossier sera possible quand la synchronisation aura réussi.</translation>
-    </message>
-    <message>
-        <source>The location will briefly disappear from and reappear in Finder. Any local changes that have not been uploaded yet are preserved and revealed in a folder in Finder.</source>
-        <translation>L’emplacement disparaîtra temporairement du Finder avant d’y réapparaître. Les modifications locales qui n’ont pas encore été téléversées seront conservées et affichées dans un dossier du Finder.</translation>
     </message>
     <message>
         <source>The server version %1 is unsupported! Proceed at your own risk.</source>
@@ -1282,24 +777,12 @@ Vous prenez vos propres risques.</translation>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>There are folders that were not synchronized because they are external storages: </source>
-        <translation>Certains dossiers n&apos;ont pas été synchronisés parce qu&apos;ils sont localisés sur un stockage externe :</translation>
-    </message>
-    <message>
         <source>There are folders that were not synchronized because they are too big or external storages:</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>There are folders that were not synchronized because they are too big or external storages: </source>
-        <translation>Certains dossiers n&apos;ont pas été synchronisés parce qu&apos;ils sont localisés sur un stockage externe ou qu&apos;ils sont de taille trop importante :</translation>
-    </message>
-    <message>
         <source>There are folders that were not synchronized because they are too big:</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>There are folders that were not synchronized because they are too big: </source>
-        <translation>Certains dossiers n&apos;ont pas été synchronisés parce qu&apos;ils sont de taille trop importante :</translation>
     </message>
     <message>
         <source>This account supports end-to-end encryption, but it needs to be set up first.</source>
@@ -1314,10 +797,6 @@ This action will abort any currently running synchronization.</source>
         <translation>Cette action désactivera la prise en charge du fichier virtuel. Par conséquent, les contenus des dossiers habituellement marqués comme &quot;disponibles en ligne seulement&quot; seront téléchargés.
 Le seul avantage de désactiver la prise en charge du fichier virtuel est que les fonctionnalités de synchronisation sélective seront de nouveau disponibles.
 Cette action entraînera l&apos;interruption de toute synchronisation en cours.</translation>
-    </message>
-    <message>
-        <source>This resets the File Provider for %1 to its initial state. Use it when this account&apos;s files appear stuck, missing, or out of sync in Finder.</source>
-        <translation>Cette opération réinitialise le File Provider de %1 à son état initial. Utilisez-la si les fichiers de ce compte semblent bloqués, manquants ou désynchronisés dans le Finder.</translation>
     </message>
     <message>
         <source>This will encrypt your folder and all files within it. These files will no longer be accessible without your encryption mnemonic key. 
@@ -1431,164 +910,6 @@ Would you like to do this now?</source>
     </message>
 </context>
 <context>
-    <name>OCC::AccountWizardController</name>
-    <message>
-        <source>%1 free space</source>
-        <comment>%1 gets replaced with the size and a matching unit. Example: 3 MB or 5 GB</comment>
-        <translation>%1 d&apos;espace libre</translation>
-    </message>
-    <message>
-        <source>Access forbidden by server. To verify that you have proper access, open the service in your browser.</source>
-        <translation>Accès refusé par le serveur. Pour vérifier vos droits d&apos;accès, ouvrez le service dans votre navigateur web.</translation>
-    </message>
-    <message>
-        <source>Account connected.</source>
-        <translation>Compte connecté.</translation>
-    </message>
-    <message>
-        <source>Account setup failed while creating the sync folder.</source>
-        <translation>La configuration du compte a échoué lors de la création du dossier de synchronisation.</translation>
-    </message>
-    <message>
-        <source>Certificate files (*.p12 *.pfx)</source>
-        <translation>Fichiers de certificat (*.p12 *.pfx)</translation>
-    </message>
-    <message>
-        <source>Checking account access</source>
-        <translation>Vérification de l&apos;accès au compte</translation>
-    </message>
-    <message>
-        <source>Checking remote folder</source>
-        <translation>Vérification du dossier distant</translation>
-    </message>
-    <message>
-        <source>Checking server address</source>
-        <translation>Vérification de l&apos;adresse du serveur</translation>
-    </message>
-    <message>
-        <source>Could not access the selected certificate file.</source>
-        <translation>Impossible d&apos;accéder au fichier de certificat sélectionné.</translation>
-    </message>
-    <message>
-        <source>Could not create local folder %1</source>
-        <translation>Impossible de créer le dossier local %1</translation>
-    </message>
-    <message>
-        <source>Could not create the sync folder.</source>
-        <translation>Impossible de créer le dossier de synchronisation.</translation>
-    </message>
-    <message>
-        <source>Could not load certificate. Maybe wrong password?</source>
-        <translation>Impossible de charger le certificat. Le mot de passe est peut-être incorrect.</translation>
-    </message>
-    <message>
-        <source>Creating remote folder</source>
-        <translation>Création du dossier distant</translation>
-    </message>
-    <message>
-        <source>Error: %1</source>
-        <translation>Erreur : %1</translation>
-    </message>
-    <message>
-        <source>Failed to connect to %1 at %2:
-%3</source>
-        <translation>Échec de la connexion à %1 sur %2 :
-%3</translation>
-    </message>
-    <message>
-        <source>Invalid URL</source>
-        <translation>URL invalide</translation>
-    </message>
-    <message>
-        <source>Link copied to clipboard.</source>
-        <translation>Lien copié dans le presse-papiers.</translation>
-    </message>
-    <message>
-        <source>Local Sync Folder</source>
-        <translation>Dossier local de synchronisation</translation>
-    </message>
-    <message>
-        <source>No remote folder specified!</source>
-        <translation>Aucun dossier distant spécifié !</translation>
-    </message>
-    <message>
-        <source>Please choose a local sync folder.</source>
-        <translation>Veuillez choisir un dossier de synchronisation local.</translation>
-    </message>
-    <message>
-        <source>Please choose an empty local sync folder.</source>
-        <translation>Veuillez choisir un dossier de synchronisation local vide.</translation>
-    </message>
-    <message>
-        <source>Preparing browser login</source>
-        <translation>Préparation de la connexion via le navigateur web</translation>
-    </message>
-    <message>
-        <source>Proxy settings are incomplete.</source>
-        <translation>Les paramètres du proxy sont incomplets.</translation>
-    </message>
-    <message>
-        <source>Remote folder %1 creation failed with error &lt;tt&gt;%2&lt;/tt&gt;.</source>
-        <translation>La création du dossier distant %1 a échoué avec l&apos;erreur &lt;tt&gt;%2&lt;/tt&gt;.</translation>
-    </message>
-    <message>
-        <source>Select a certificate</source>
-        <translation>Sélectionner un certificat</translation>
-    </message>
-    <message>
-        <source>Server address does not seem to be valid</source>
-        <translation>L&apos;adresse du serveur ne semble pas valide.</translation>
-    </message>
-    <message>
-        <source>Starting authorization</source>
-        <translation>Démarrage de l&apos;autorisation</translation>
-    </message>
-    <message>
-        <source>The authenticated request to the server was redirected to &quot;%1&quot;. The URL is bad, the server is misconfigured.</source>
-        <translation>La requête authentifiée vers le serveur a été redirigée vers « %1 ». L’URL est incorrecte ou le serveur est mal configuré.</translation>
-    </message>
-    <message>
-        <source>The folder creation resulted in HTTP error code %1</source>
-        <translation>La création du dossier a renvoyé le code d&apos;erreur HTTP %1</translation>
-    </message>
-    <message>
-        <source>The remote folder creation failed because the provided credentials are wrong. Please go back and check your credentials.</source>
-        <translation>La création du dossier distant a échoué car les identifiants fournis sont incorrects. Veuillez revenir en arrière et vérifier vos identifiants.</translation>
-    </message>
-    <message>
-        <source>There isn&apos;t enough free space in the local folder!</source>
-        <translation>L&apos;espace libre est insuffisant dans le dossier local !</translation>
-    </message>
-    <message>
-        <source>There was an invalid response to an authenticated WebDAV request</source>
-        <translation>Réponse invalide à une requête WebDAV authentifiée</translation>
-    </message>
-    <message>
-        <source>Timeout while trying to connect to %1 at %2.</source>
-        <translation>Délai d&apos;attente dépassé lors de la connexion à %1 sur %2.</translation>
-    </message>
-    <message>
-        <source>Unable to open the Browser, please copy the link to your Browser.</source>
-        <translation>Impossible d&apos;ouvrir le navigateur. Veuillez copier le lien dans votre navigateur web.</translation>
-    </message>
-    <message>
-        <source>Username must not be empty.</source>
-        <translation>Le nom d&apos;utilisateur ne peut pas être vide.</translation>
-    </message>
-    <message>
-        <source>Waiting for authorization</source>
-        <translation>En attente de l&apos;autorisation</translation>
-    </message>
-    <message>
-        <source>Will require %1 of storage</source>
-        <translation>Nécessitera %1 d&apos;espace de stockage</translation>
-    </message>
-    <message>
-        <source>Will require local storage</source>
-        <translation>Nécessitera un stockage local</translation>
-    </message>
-</context>
-<context>
     <name>OCC::ActivityListModel</name>
     <message>
         <source>Fetching activities …</source>
@@ -1640,78 +961,6 @@ Would you like to do this now?</source>
     <message>
         <source>This server probably requires a SSL client certificate.</source>
         <translation>Ce serveur requiert probablement un certificat SSL client.</translation>
-    </message>
-</context>
-<context>
-    <name>OCC::AdvancedSettings</name>
-    <message>
-        <source>Advanced</source>
-        <translation>Avancé</translation>
-    </message>
-    <message>
-        <source>Ask for confirmation before synchronizing external storages</source>
-        <translation>Demander une confirmation avant de synchroniser les stockages externes</translation>
-    </message>
-    <message>
-        <source>Ask for confirmation before synchronizing new folders larger than</source>
-        <translation>Demander une confirmation avant de synchroniser les nouveaux dossiers de plus de</translation>
-    </message>
-    <message>
-        <source>Automatically disable synchronisation of folders that overcome limit</source>
-        <translation>Désactiver automatiquement la synchronisation des dossiers qui dépassent cette limite</translation>
-    </message>
-    <message>
-        <source>Could not access the selected location. Please try again or choose a different location.</source>
-        <translation>Impossible d&apos;accéder à l&apos;emplacement sélectionné. Réessayez ou choisissez un autre emplacement.</translation>
-    </message>
-    <message>
-        <source>Create Debug Archive</source>
-        <translation>Créer une archive de débogage</translation>
-    </message>
-    <message>
-        <source>Debug Archive Created</source>
-        <translation>Archive de débogage créée</translation>
-    </message>
-    <message>
-        <source>Edit &amp;Ignored Files</source>
-        <translation>Modifier les fichiers &amp;ignorés</translation>
-    </message>
-    <message>
-        <source>Failed to Access File</source>
-        <translation>Échec de l&apos;accès au fichier</translation>
-    </message>
-    <message>
-        <source>MB</source>
-        <extracomment>Trailing part of &quot;Ask confirmation before syncing folder larger than&quot;</extracomment>
-        <translation>Mo</translation>
-    </message>
-    <message>
-        <source>Move removed files to trash</source>
-        <translation>Déplacer les fichiers supprimés dans la corbeille</translation>
-    </message>
-    <message>
-        <source>Notify when synchronised folders grow larger than specified limit</source>
-        <translation>Notifier lorsque les dossiers synchronisés dépassent la limite spécifiée</translation>
-    </message>
-    <message>
-        <source>Redact information deemed sensitive before sharing! Debug archive created at %1</source>
-        <translation>Masquez les informations sensibles avant de la partager ! L&apos;archive de débogage a été créée dans %1</translation>
-    </message>
-    <message>
-        <source>Server poll interval</source>
-        <translation>Intervalle d&apos;interrogation du serveur</translation>
-    </message>
-    <message>
-        <source>Show sync folders in &amp;Explorer&apos;s navigation pane</source>
-        <translation>Afficher les dossiers synchronisés dans le volet de navigation de l&apos;&amp;Explorateur</translation>
-    </message>
-    <message>
-        <source>Zip Archives</source>
-        <translation>Archives ZIP</translation>
-    </message>
-    <message>
-        <source>seconds (if &lt;a href=&quot;https://github.com/nextcloud/notify_push&quot;&gt;Client Push&lt;/a&gt; is unavailable)</source>
-        <translation>secondes (si &lt;a href=&quot;https://github.com/nextcloud/notify_push&quot;&gt;Client Push&lt;/a&gt; n&apos;est pas disponible)</translation>
     </message>
 </context>
 <context>
@@ -1782,57 +1031,6 @@ Would you like to do this now?</source>
         <source>older</source>
         <comment>older software version</comment>
         <translation>antérieures</translation>
-    </message>
-</context>
-<context>
-    <name>OCC::AssistantController</name>
-    <message>
-        <source>Assistant is already processing a request.</source>
-        <translation>L’assistant traite déjà une demande.</translation>
-    </message>
-    <message>
-        <source>Assistant is not available for this account.</source>
-        <translation>L’assistant n’est pas disponible pour ce compte.</translation>
-    </message>
-    <message>
-        <source>Assistant request failed (%1).</source>
-        <extracomment>%1 is the HTTP status code returned by the server.</extracomment>
-        <translation>La demande à l&apos;assistant a échoué (%1).</translation>
-    </message>
-    <message>
-        <source>Assistant task scheduled.</source>
-        <translation>Tâche d&apos;assistant programmée.</translation>
-    </message>
-    <message>
-        <source>No response yet. Please try again later.</source>
-        <translation>Aucune réponse pour le moment. Veuillez réessayer plus tard.</translation>
-    </message>
-    <message>
-        <source>No supported assistant task types were returned.</source>
-        <translation>Aucun type de tâche d’assistant pris en charge n’a été renvoyé.</translation>
-    </message>
-    <message>
-        <source>Scheduling assistant task…</source>
-        <translation>Programmation de la tâche d&apos;assistant…</translation>
-    </message>
-</context>
-<context>
-    <name>OCC::AssistantTaskModel</name>
-    <message>
-        <source>Completed</source>
-        <translation>Terminée</translation>
-    </message>
-    <message>
-        <source>Failed</source>
-        <translation>En échec</translation>
-    </message>
-    <message>
-        <source>In progress</source>
-        <translation>En cours</translation>
-    </message>
-    <message>
-        <source>Scheduled</source>
-        <translation>Programmée</translation>
     </message>
 </context>
 <context>
@@ -2221,11 +1419,11 @@ Would you like to do this now?</source>
         <source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;.</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;._STRATO</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::DataProtectionSettingsPage</name>
     <message>
@@ -2697,13 +1895,6 @@ Cela peut être un problème avec vos bibliothèques OpenSSL.</translation>
         <translation>%1 est actuellement verrouillé.</translation>
     </message>
     <message>
-        <source>A folder from an external storage has been added.
-</source>
-        <translation>Un nouveau dossier localisé sur un stockage externe a été ajouté.
-
-</translation>
-    </message>
-    <message>
         <source>A folder from an external storage has been added.</source>
         <translation type="unfinished" />
     </message>
@@ -2728,12 +1919,6 @@ Alternatively, you can restore all deleted files by downloading them from the se
         <translation>Un grand nombre de fichiers de votre dossier local &apos;%1&apos; ont été supprimés.
 Veuillez confirmer si vous souhaitez procéder à ces suppressions.
 Vous pouvez également restaurer tous les fichiers supprimés en les téléchargeant depuis le serveur.</translation>
-    </message>
-    <message>
-        <source>A new folder larger than %1 MB has been added: %2.
-</source>
-        <translation>Un nouveau dossier de taille supérieure à %1 Mo a été ajouté : %2.
-</translation>
     </message>
     <message>
         <source>A new folder larger than %1 MB has been added: %2.</source>
@@ -2854,16 +2039,8 @@ Cela signifie que le client de bureau ne va pas téléverser immédiatement les 
         <translation>%1 (Synchronisation en pause)</translation>
     </message>
     <message>
-        <source> (backup %1)</source>
-        <translation>(sauvegarde %1)</translation>
-    </message>
-    <message>
         <source>(backup %1)</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source> (backup)</source>
-        <translation>(sauvegarde)</translation>
     </message>
     <message>
         <source>(backup)</source>
@@ -2989,10 +2166,6 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Add Folder Sync Connection</source>
-        <translation>Ajouter une synchronisation de dossier</translation>
-    </message>
-    <message>
         <source>File</source>
         <translation>Fichier</translation>
     </message>
@@ -3000,11 +2173,11 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
         <source>Grant access</source>
         <translation>Accorder l’accès</translation>
     </message>
-<message>
+    <message>
         <source>Synchronize any other local folder with your %1</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::FolderStatusModel</name>
     <message>
@@ -3173,7 +2346,7 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
         <source>Choose</source>
         <translation type="unfinished">Choisir</translation>
     </message>
-<message>
+    <message>
         <source>Click to select a local folder to sync.</source>
         <translation>Cliquez pour choisir un dossier local à synchroniser.</translation>
     </message>
@@ -3193,7 +2366,7 @@ Pour les utilisateurs avancés: ce problème peut aussi venir de plusieurs fichi
         <source>Step 1 of 3: Select local folder</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::FolderWizardRemotePath</name>
     <message>
@@ -3375,44 +2548,12 @@ La rétrogradation des versions n&apos;est pas possible immédiatement: passer d
         <translation>Client de bureau x.x.x</translation>
     </message>
     <message>
-        <source>Disable File Provider</source>
-        <translation>Désactiver File Provider</translation>
-    </message>
-    <message>
-        <source>Disable File Provider?</source>
-        <translation>Désactiver File Provider ?</translation>
-    </message>
-    <message>
         <source>Edit &amp;Ignored Files</source>
         <translation>Modifier les fichiers exclus</translation>
     </message>
     <message>
-        <source>Enable &amp;File Provider</source>
-        <translation>Activer le &amp;fournisseur de fichiers</translation>
-    </message>
-    <message>
-        <source>Enable File Provider</source>
-        <translation>Activer File Provider</translation>
-    </message>
-    <message>
-        <source>Enable File Provider?</source>
-        <translation>Activer File Provider ?</translation>
-    </message>
-    <message>
         <source>Failed to Access File</source>
         <translation>Échec de l&apos;accès au fichier</translation>
-    </message>
-    <message>
-        <source>File Provider will be enabled for all accounts. Your files will appear in Finder under the &quot;Locations&quot; section. Accounts added later will also be set up as File Providers.</source>
-        <translation>File Provider sera activé pour tous les comptes. Vos fichiers apparaîtront dans le Finder, sous la section « Emplacements ». Les comptes ajoutés ultérieurement seront également configurés avec File Provider.</translation>
-    </message>
-    <message>
-        <source>File Provider will be turned off for all accounts, and your files will no longer be available in Finder under the &quot;Locations&quot; section.</source>
-        <translation>File Provider sera désactivé pour tous les comptes et vos fichiers ne seront plus disponibles dans le Finder, sous la section « Emplacements ».</translation>
-    </message>
-    <message>
-        <source>Files appear in Finder under the &quot;Locations&quot; section and do not use local storage space; contents download automatically when you open a file. Applies to all accounts and replaces classic sync folders and their Finder integration.</source>
-        <translation>Les fichiers apparaissent dans le Finder, sous la section « Emplacements », et n’occupent pas d’espace de stockage local ; leur contenu est téléchargé automatiquement lorsque vous ouvrez un fichier. Cette option s’applique à tous les comptes et remplace les dossiers de synchronisation classiques ainsi que leur intégration au Finder.</translation>
     </message>
     <message>
         <source>For System Tray</source>
@@ -3421,14 +2562,6 @@ La rétrogradation des versions n&apos;est pas possible immédiatement: passer d
     <message>
         <source>General settings</source>
         <translation>Paramètres généraux</translation>
-    </message>
-    <message>
-        <source>Info</source>
-        <translation>Informations</translation>
-    </message>
-    <message>
-        <source>Items that were not uploaded yet will be preserved and shown to you. Classic sync folders are not set up again automatically — you can add folder sync connections afterwards in each account&apos;s settings.</source>
-        <translation>Les éléments qui n’ont pas encore été téléversés seront conservés et vous seront présentés. Les dossiers de synchronisation classiques ne seront pas recréés automatiquement ; vous pourrez ensuite ajouter des connexions de synchronisation dans les paramètres de chaque compte.</translation>
     </message>
     <message>
         <source>Legal Notice</source>
@@ -3447,7 +2580,7 @@ La rétrogradation des versions n&apos;est pas possible immédiatement: passer d
         <source>More Information</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Move removed files to trash</source>
         <translation>Déplacer les fichiers supprimés vers la corbeille</translation>
     </message>
@@ -3528,10 +2661,6 @@ La rétrogradation des versions n&apos;est pas possible immédiatement: passer d
         <translation>Afficher les dossiers synchronisés dans le panneau de navigation de l&apos;&amp;Explorateur de fichiers</translation>
     </message>
     <message>
-        <source>Synced files stay on your computer, but they will no longer be kept up to date and settings such as selective sync are discarded.</source>
-        <translation>Les fichiers synchronisés restent sur votre ordinateur, mais ne seront plus mis à jour et les paramètres tels que la synchronisation sélective seront perdus.</translation>
-    </message>
-    <message>
         <source>The channel determines which upgrades will be offered to install:
 - stable: contains tested versions considered reliable
 </source>
@@ -3547,14 +2676,6 @@ La rétrogradation des versions n&apos;est pas possible immédiatement: passer d
     <message>
         <source>This helps us to optimize the software and to better identify system crashes and unexpected errors.</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>This removes classic sync folder connections from the following accounts:</source>
-        <translation>Cette opération supprime les connexions des dossiers de synchronisation classiques des comptes suivants :</translation>
-    </message>
-    <message>
-        <source>Unknown account</source>
-        <translation>Compte inconnu</translation>
     </message>
     <message>
         <source>Update channel</source>
@@ -3600,7 +2721,7 @@ La rétrogradation des versions n&apos;est pas possible immédiatement: passer d
         <source>stable</source>
         <translation>stable</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::GETFileJob</name>
     <message>
@@ -3696,10 +2817,6 @@ La rétrogradation des versions n&apos;est pas possible immédiatement: passer d
         <translation>Ajouter</translation>
     </message>
     <message>
-        <source>Add Ignore Pattern</source>
-        <translation>Ajouter un modèle d&apos;exclusion</translation>
-    </message>
-    <message>
         <source>Add a new ignore pattern:</source>
         <translation>Ajouter un nouveau modèle d&apos;exclusion :</translation>
     </message>
@@ -3737,106 +2854,6 @@ Les éléments dont la suppression est autorisée seront supprimés s&apos;ils e
     <message>
         <source>Remove all</source>
         <translation>Tout retirer</translation>
-    </message>
-</context>
-<context>
-    <name>OCC::InfoSettings</name>
-    <message>
-        <source>&amp;Automatically check for updates</source>
-        <translation>Rechercher &amp;automatiquement les mises à jour</translation>
-    </message>
-    <message>
-        <source>&amp;Restart &amp;&amp; Update</source>
-        <translation>&amp;Redémarrer et mettre à jour</translation>
-    </message>
-    <message>
-        <source>- beta: contains versions with new features that may not be tested thoroughly
-- daily: contains versions created daily only for testing and development
-
-Downgrading versions is not possible immediately: changing from beta to stable means waiting for the new stable version.</source>
-        <comment>list of available update channels to non enterprise users and downgrading warning</comment>
-        <translation>- bêta : contient des versions avec de nouvelles fonctionnalités qui peuvent ne pas avoir été entièrement testées
-- quotidien : contient des versions générées chaque jour, uniquement pour les tests et le développement
-
-Il n&apos;est pas possible de revenir immédiatement à une version antérieure : passer de bêta à stable implique d&apos;attendre la prochaine version stable.</translation>
-    </message>
-    <message>
-        <source>- enterprise: contains stable versions for customers.
-
-Downgrading versions is not possible immediately: changing from stable to enterprise means waiting for the new enterprise version.</source>
-        <comment>list of available update channels to enterprise users and downgrading warning</comment>
-        <translation>- enterprise : contient des versions stables destinées aux clients.
-
-Il n&apos;est pas possible de revenir immédiatement à une version antérieure : passer de stable à enterprise implique d&apos;attendre la prochaine version enterprise.</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>Annuler</translation>
-    </message>
-    <message>
-        <source>Change update channel</source>
-        <translation>Changer le canal de mise à jour</translation>
-    </message>
-    <message>
-        <source>Changing update channel?</source>
-        <translation>Changer le canal de mise à jour ?</translation>
-    </message>
-    <message>
-        <source>Check Now</source>
-        <translation>Vérifier maintenant</translation>
-    </message>
-    <message>
-        <source>Connected to an enterprise system. Update channel (%1) cannot be changed.</source>
-        <translation>Connecté à un système Enterprise. Le canal de mise à jour (%1) ne peut pas être modifié.</translation>
-    </message>
-    <message>
-        <source>Desktop client x.x.x</source>
-        <translation>Client de bureau x.x.x</translation>
-    </message>
-    <message>
-        <source>Legal Notice</source>
-        <translation>Mentions légales</translation>
-    </message>
-    <message>
-        <source>Restore &amp;Default</source>
-        <translation>Rétablir la valeur par &amp;défaut</translation>
-    </message>
-    <message>
-        <source>Restore to &amp;%1</source>
-        <translation>Rétablir le canal &amp;%1</translation>
-    </message>
-    <message>
-        <source>The channel determines which upgrades will be offered to install:
-- stable: contains tested versions considered reliable
-</source>
-        <comment>starts list of available update channels, stable is always available</comment>
-        <translation>Le canal détermine les mises à jour qui vous seront proposées :
-- stable : contient des versions testées considérées comme fiables
-</translation>
-    </message>
-    <message>
-        <source>Update channel</source>
-        <translation>Canal de mise à jour</translation>
-    </message>
-    <message>
-        <source>Usage Documentation</source>
-        <translation>Documentation d&apos;utilisation</translation>
-    </message>
-    <message>
-        <source>beta</source>
-        <translation>bêta</translation>
-    </message>
-    <message>
-        <source>daily</source>
-        <translation>quotidien</translation>
-    </message>
-    <message>
-        <source>enterprise</source>
-        <translation>enterprise</translation>
-    </message>
-    <message>
-        <source>stable</source>
-        <translation>stable</translation>
     </message>
 </context>
 <context>
@@ -4323,24 +3340,12 @@ Notez que l&apos;utilisation de toute option de ligne de commande de journalisat
         <translation>Déconnecté des comptes :</translation>
     </message>
     <message>
-        <source>Internal link copied</source>
-        <translation>Lien interne copié</translation>
-    </message>
-    <message>
         <source>Please sign in</source>
         <translation>Veuillez vous connecter</translation>
     </message>
     <message>
-        <source>Select new location …</source>
-        <translation>Sélectionnez le nouvel emplacement …</translation>
-    </message>
-    <message>
         <source>Terms of service</source>
         <translation>Conditions d&apos;utilisation</translation>
-    </message>
-    <message>
-        <source>The internal link has been copied to the clipboard.</source>
-        <translation>Le lien interne a été copié dans le presse-papiers.</translation>
     </message>
     <message>
         <source>The server on account %1 runs an unsupported version %2. Using this client with unsupported server versions is untested and potentially dangerous. Proceed at your own risk.</source>
@@ -4361,10 +3366,6 @@ Notez que l&apos;utilisation de toute option de ligne de commande de journalisat
     <message>
         <source>macOS VFS for %1: A problem was encountered.</source>
         <translation>macOS VFS pour %1: Une erreur est survenue.</translation>
-    </message>
-    <message>
-        <source>macOS VFS for %1: An error was encountered.</source>
-        <translation>Synchronisation de fichier virtuel macOS pour %1 : Une erreur s’est produite.</translation>
     </message>
     <message>
         <source>macOS VFS for %1: Last sync was successful.</source>
@@ -4655,10 +3656,6 @@ Il s&apos;agit d&apos;un nouveau mode expérimental. Si vous décidez de l&apos;
         <translation>Le fichier est présent dans la liste des fichiers exclus.</translation>
     </message>
     <message>
-        <source>File is locked by another application.</source>
-        <translation>Le fichier est verrouillé par une autre application.</translation>
-    </message>
-    <message>
         <source>File is not accessible on the server.</source>
         <comment>server error</comment>
         <translation>Fichier non accessible sur le serveur.</translation>
@@ -4867,11 +3864,6 @@ Il s&apos;agit d&apos;un nouveau mode expérimental. Si vous décidez de l&apos;
 </context>
 <context>
     <name>OCC::PropagateItemJob</name>
-    <message>
-        <source>%1. Restoration failed: %2</source>
-        <comment>%1 is the generic error string, the file restoration error (%2) will be appended here</comment>
-        <translation>%1. Restauration échouée : %2</translation>
-    </message>
     <message>
         <source>; Restoration Failed: %1</source>
         <translation>; Échec de la restauration : %1</translation>
@@ -5092,11 +4084,6 @@ Il s&apos;agit d&apos;un nouveau mode expérimental. Si vous décidez de l&apos;
 <context>
     <name>OCC::PropagateUploadFileNG</name>
     <message>
-        <source>File is locked preventing syncing it</source>
-        <comment>Generic warning message when a locked file cannot be synced</comment>
-        <translation>Le fichier est verrouillé, ce qui empêche sa synchronisation.</translation>
-    </message>
-    <message>
         <source>File is not accessible on the server.</source>
         <comment>server error</comment>
         <translation>Fichier non accessible sur le serveur.</translation>
@@ -5129,11 +4116,6 @@ Il s&apos;agit d&apos;un nouveau mode expérimental. Si vous décidez de l&apos;
 </context>
 <context>
     <name>OCC::PropagateUploadFileV1</name>
-    <message>
-        <source>File is locked preventing syncing it</source>
-        <comment>Generic warning message when a locked file cannot be synced</comment>
-        <translation>Le fichier est verrouillé, ce qui empêche sa synchronisation.</translation>
-    </message>
     <message>
         <source>Local file changed during sync.</source>
         <translation>Fichier local modifié pendant la synchronisation.</translation>
@@ -5229,11 +4211,11 @@ Il s&apos;agit d&apos;un nouveau mode expérimental. Si vous décidez de l&apos;
         <source>Success</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Warning</source>
         <translation type="unfinished">Attention</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OCC::SettingsDialog</name>
     <message>
@@ -5246,16 +4228,8 @@ Il s&apos;agit d&apos;un nouveau mode expérimental. Si vous décidez de l&apos;
         <translation>Compte</translation>
     </message>
     <message>
-        <source>Advanced</source>
-        <translation>Avancé</translation>
-    </message>
-    <message>
         <source>General</source>
         <translation>Général</translation>
-    </message>
-    <message>
-        <source>Info</source>
-        <translation>Informations</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -5291,10 +4265,6 @@ Il s&apos;agit d&apos;un nouveau mode expérimental. Si vous décidez de l&apos;
 </context>
 <context>
     <name>OCC::ShareModel</name>
-    <message>
-        <source>%1 day</source>
-        <translation>%1 jour</translation>
-    </message>
     <message>
         <source>%1 days</source>
         <translation>%1 jours</translation>
@@ -5337,10 +4307,6 @@ Il s&apos;agit d&apos;un nouveau mode expérimental. Si vous décidez de l&apos;
     <message>
         <source>Activity</source>
         <translation>Activité</translation>
-    </message>
-    <message>
-        <source>Apply labels</source>
-        <translation>Appliquer des libellés</translation>
     </message>
     <message>
         <source>Context menu share</source>
@@ -5562,20 +4528,8 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>This connection is NOT secure as it is not encrypted.
-</source>
-        <translation>Cette connexion n&apos;est PAS sécurisée car elle n&apos;est pas chiffrée.
-</translation>
-    </message>
-    <message>
         <source>This connection is encrypted using %1 bit %2.</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>This connection is encrypted using %1 bit %2.
-</source>
-        <translation>Cette connexion est chiffrée en utilisant %1 bit %2.
-</translation>
     </message>
 </context>
 <context>
@@ -5702,13 +4656,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     </message>
 </context>
 <context>
-    <name>OCC::SyncJournalDb</name>
-    <message>
-        <source>Failed to connect database.</source>
-        <translation>Échec de la connexion à la base de données.</translation>
-    </message>
-</context>
-<context>
     <name>OCC::SyncStatusSummary</name>
     <message>
         <source>%1 of %2</source>
@@ -5809,10 +4756,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     <message>
         <source>Pause sync for all</source>
         <translation>Suspendre toutes les synchros</translation>
-    </message>
-    <message>
-        <source>Quit</source>
-        <translation>Quitter</translation>
     </message>
     <message>
         <source>Resume sync</source>
@@ -5917,44 +4860,13 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>Privacy-Link</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>Privacy-Link_STRATO</source>
         <translation type="unfinished" />
-    </message>
-    </context>
-<context>
-    <name>OCC::UnifiedSearchPeopleModel</name>
-    <message>
-        <source>Could not load people. Try again.</source>
-        <translation>Impossible de charger les personnes. Réessayez.</translation>
-    </message>
-    <message>
-        <source>People search is unavailable.</source>
-        <translation>La recherche de personnes n&apos;est pas disponible.</translation>
     </message>
 </context>
 <context>
     <name>OCC::UnifiedSearchResultsListModel</name>
-    <message>
-        <source>%1 results</source>
-        <extracomment>%1 is the number of search results.</extracomment>
-        <translation>%1 résultats</translation>
-    </message>
-    <message>
-        <source>%1 results in %2</source>
-        <extracomment>%1 is the number of search results. %2 is the search provider name, for example &quot;Files&quot;.</extracomment>
-        <translation>%1 résultats en %2</translation>
-    </message>
-    <message>
-        <source>%1 results. Some sources are unavailable.</source>
-        <extracomment>%1 is the number of search results.</extracomment>
-        <translation>%1 résultats. Certaines sources ne sont pas disponibles.</translation>
-    </message>
-    <message>
-        <source>%1 – %2</source>
-        <extracomment>%1 is the start date and %2 is the end date of a custom search date range. Both use the locale&apos;s short date format.</extracomment>
-        <translation>%1 – %2</translation>
-    </message>
     <message>
         <source>Failed to fetch providers.</source>
         <translation>Échec de la récupération des fournisseurs.</translation>
@@ -5964,60 +4876,12 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <translation>Échec de la récupération des fournisseurs de recherche pour &apos;%1&apos;. Erreur : %2</translation>
     </message>
     <message>
-        <source>Failed to fetch search providers.</source>
-        <translation>Échec de la récupération des fournisseurs de recherche.</translation>
-    </message>
-    <message>
-        <source>Last 30 days</source>
-        <translation>30 derniers jours</translation>
-    </message>
-    <message>
-        <source>Last 7 days</source>
-        <translation>7 derniers jours</translation>
-    </message>
-    <message>
-        <source>No matching results</source>
-        <translation>Aucun résultat correspondant</translation>
-    </message>
-    <message>
-        <source>No search providers are available.</source>
-        <translation>Aucun fournisseur de recherche n&apos;est disponible.</translation>
-    </message>
-    <message>
-        <source>Partial matches</source>
-        <translation>Correspondances partielles</translation>
-    </message>
-    <message>
-        <source>Search cleared</source>
-        <translation>Recherche effacée</translation>
-    </message>
-    <message>
-        <source>Search failed for all available sources. Please try again.</source>
-        <translation>La recherche a échoué pour toutes les sources disponibles. Veuillez réessayer.</translation>
-    </message>
-    <message>
         <source>Search has failed for &apos;%1&apos;. Error: %2</source>
         <translation>La recherche de &apos;%1&apos; a échoué. Erreur : %2</translation>
     </message>
     <message>
         <source>Search has failed for &apos;%2&apos;.</source>
         <translation>La recherche de &apos;%2&apos; a échoué.</translation>
-    </message>
-    <message>
-        <source>Search is unavailable while this account is offline.</source>
-        <translation>La recherche n&apos;est pas disponible tant que ce compte est déconnecté.</translation>
-    </message>
-    <message>
-        <source>Searching</source>
-        <translation>Recherche en cours</translation>
-    </message>
-    <message>
-        <source>This year</source>
-        <translation>Cette année</translation>
-    </message>
-    <message>
-        <source>Today</source>
-        <translation>Aujourd&apos;hui</translation>
     </message>
 </context>
 <context>
@@ -6084,18 +4948,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <translation>Le certificat de bout en bout doit être migré vers une nouvelle clé</translation>
     </message>
     <message>
-        <source>Insufficient storage on the server.</source>
-        <translation>Espace de stockage insuffisant sur le serveur.</translation>
-    </message>
-    <message>
-        <source>Insufficient storage on the server. The file requires %1 but only %2 are available.</source>
-        <translation>Espace de stockage insuffisant sur le serveur. Le fichier nécessite %1 mais seulement %2 sont disponibles.</translation>
-    </message>
-    <message>
-        <source>Insufficient storage on the server. The file requires %1.</source>
-        <translation>Espace de stockage insuffisant sur le serveur. Le fichier nécessite %1.</translation>
-    </message>
-    <message>
         <source>No response yet. Please try again later.</source>
         <translation>Aucune réponse pour le moment. Veuillez réessayer plus tard.</translation>
     </message>
@@ -6133,20 +4985,8 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <translation>Réessayer tous les téléversements</translation>
     </message>
     <message>
-        <source>Sending your request …</source>
-        <translation>Envoi de votre demande…</translation>
-    </message>
-    <message>
         <source>Sending your request…</source>
         <translation>Envoi de votre requête…</translation>
-    </message>
-    <message>
-        <source>Sync conflicts</source>
-        <translation>Conflits de synchronisation</translation>
-    </message>
-    <message>
-        <source>There is insufficient space available on the server for some uploads.</source>
-        <translation>L’espace disponible sur le serveur est insuffisant pour certains téléversements.</translation>
     </message>
     <message>
         <source>Trigger the migration</source>
@@ -6155,10 +4995,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     <message>
         <source>Waiting for the assistant response…</source>
         <translation>En attente de la réponse de l’assistant…</translation>
-    </message>
-    <message>
-        <source>“%1” was not synchronized</source>
-        <translation>« %1 » n’a pas été synchronisé</translation>
     </message>
 </context>
 <context>
@@ -6341,17 +5177,9 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>&lt;b&gt;You have been logged out of your account %1 at %2. Please login again.&lt;/b&gt;</source>
         <translation type="unfinished" />
     </message>
-<message>
-        <source>You have been logged out of your account %1 at %2. Please login again.</source>
-        <translation>Vous avez été déconnecté de votre compte %1 à %2. Merci de vous reconnecter.</translation>
-    </message>
-    </context>
+</context>
 <context>
     <name>OCC::WelcomePage</name>
-    <message>
-        <source>Easy-to-use web mail, calendaring &amp; contacts</source>
-        <translation>E-mail, agenda et contacts en ligne faciles à utiliser</translation>
-    </message>
     <message>
         <source>Form</source>
         <translation>Formulaire</translation>
@@ -6367,14 +5195,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     <message>
         <source>Log in</source>
         <translation>Se connecter</translation>
-    </message>
-    <message>
-        <source>Screensharing, online meetings &amp; web conferences</source>
-        <translation>Partage d&apos;écran, réunions en ligne et conférences Web</translation>
-    </message>
-    <message>
-        <source>Secure collaboration &amp; file exchange</source>
-        <translation>Collaboration et échange de fichiers sécurisés</translation>
     </message>
     <message>
         <source>Sign up with provider</source>
@@ -6418,10 +5238,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Si cette case est cochée, le contenu existant du dossier local sera supprimé pour démarrer une synchronisation propre depuis le serveur.&lt;/p&gt;&lt;p&gt;Ne pas cocher si le contenu local doit être téléversé vers le serveur.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Ask before syncing external storages</source>
-        <translation>Demander confirmation avant de synchroniser des stockages externes </translation>
     </message>
     <message>
         <source>Ask before syncing folders larger than</source>
@@ -6482,10 +5298,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
 </context>
 <context>
     <name>OwncloudSetupPage</name>
-    <message>
-        <source>Logo</source>
-        <translation>Logo</translation>
-    </message>
     <message>
         <source>Server address</source>
         <translation>Adresse du serveur</translation>
@@ -6626,69 +5438,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     </message>
 </context>
 <context>
-    <name>ProxySettingsDialog</name>
-    <message>
-        <source>Cancel</source>
-        <translation>Annuler</translation>
-    </message>
-    <message>
-        <source>Done</source>
-        <translation>Terminé</translation>
-    </message>
-    <message>
-        <source>HTTP(S) proxy</source>
-        <translation>Proxy HTTP(S)</translation>
-    </message>
-    <message>
-        <source>Hostname of proxy server</source>
-        <translation>Nom d&apos;hôte du serveur proxy</translation>
-    </message>
-    <message>
-        <source>Manually specify proxy</source>
-        <translation>Configurer le proxy manuellement</translation>
-    </message>
-    <message>
-        <source>No proxy</source>
-        <translation>Aucun proxy</translation>
-    </message>
-    <message>
-        <source>Note: proxy settings have no effects for accounts on localhost</source>
-        <translation>Remarque : les paramètres du proxy n&apos;ont aucun effet pour les comptes sur localhost</translation>
-    </message>
-    <message>
-        <source>Password for proxy server</source>
-        <translation>Mot de passe du serveur proxy</translation>
-    </message>
-    <message>
-        <source>Proxy port</source>
-        <translation>Port du proxy</translation>
-    </message>
-    <message>
-        <source>Proxy server requires authentication</source>
-        <translation>Le serveur proxy nécessite une authentification</translation>
-    </message>
-    <message>
-        <source>Proxy settings</source>
-        <translation>Paramètres du proxy</translation>
-    </message>
-    <message>
-        <source>Proxy type</source>
-        <translation>Type de proxy</translation>
-    </message>
-    <message>
-        <source>SOCKS5 proxy</source>
-        <translation>Proxy SOCKS5</translation>
-    </message>
-    <message>
-        <source>Use system proxy</source>
-        <translation>Utiliser le proxy du système</translation>
-    </message>
-    <message>
-        <source>Username for proxy server</source>
-        <translation>Nom d’utilisateur du serveur proxy</translation>
-    </message>
-</context>
-<context>
     <name>QObject</name>
     <message>
         <source>%1: %2</source>
@@ -6727,10 +5476,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     <message>
         <source>An unexpected error occurred. Please try syncing again or contact your server administrator if the issue continues.</source>
         <translation>Une erreur inattendue est survenue. Veuillez réessayer la synchronisation ou contacter l&apos;administrateur de votre serveur si le problème persiste.</translation>
-    </message>
-    <message>
-        <source>Answer</source>
-        <translation>Répondre</translation>
     </message>
     <message>
         <source>Could not create debug archive in selected location!</source>
@@ -6796,7 +5541,7 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>The directory %1 cannot be part of your sync directory. Please choose another folder.</source>
         <translation type="unfinished" />
     </message>
-<message>
+    <message>
         <source>The file is too big to upload. You might need to choose a smaller file or contact your server administrator for assistance.</source>
         <translation>Le fichier est trop volumineux pour être téléchargé. Vous devrez peut-être choisir un fichier plus petit ou contacter l&apos;administrateur de votre serveur pour obtenir de l&apos;aide.</translation>
     </message>
@@ -6900,7 +5645,7 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>now</source>
         <translation>A l&apos;instant</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>ResolveConflictsDialog</name>
     <message numerus="yes">
@@ -6937,52 +5682,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     </message>
 </context>
 <context>
-    <name>SearchWindow</name>
-    <message>
-        <source>Retry</source>
-        <translation>Réessayer</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation>Rechercher</translation>
-    </message>
-    <message>
-        <source>Search files, messages, events …</source>
-        <translation>Rechercher des fichiers, des messages, des événements…</translation>
-    </message>
-    <message>
-        <source>Search is available when this account is connected</source>
-        <translation>La recherche est disponible lorsque ce compte est connecté</translation>
-    </message>
-    <message>
-        <source>Search results</source>
-        <translation>Résultats de la recherche</translation>
-    </message>
-    <message>
-        <source>Search results list</source>
-        <translation>Liste des résultats de recherche</translation>
-    </message>
-</context>
-<context>
-    <name>ServerPage</name>
-    <message>
-        <source>Enter the link to your %1 web interface from the browser or the link to a folder shared with you.</source>
-        <translation>Saisissez le lien vers l’interface web %1 depuis votre navigateur web ou le lien vers un dossier partagé avec vous.</translation>
-    </message>
-    <message>
-        <source>Log in</source>
-        <translation>Se connecter</translation>
-    </message>
-    <message>
-        <source>Log in to %1</source>
-        <translation>Se connecter à %1</translation>
-    </message>
-    <message>
-        <source>Server address</source>
-        <translation>Adresse du serveur</translation>
-    </message>
-</context>
-<context>
     <name>SesErrorBox</name>
     <message>
         <source>Error</source>
@@ -6999,11 +5698,11 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>Open local or team folders</source>
         <translation type="unfinished">Ouvrir les dossiers locaux ou d’équipe</translation>
     </message>
-<message>
+    <message>
         <source>Website</source>
         <translation type="unfinished" />
     </message>
-    </context>
+</context>
 <context>
     <name>ShareDelegate</name>
     <message>
@@ -7042,10 +5741,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Edit share</source>
-        <translation>Modifier le partage</translation>
-    </message>
-    <message>
         <source>Enter a note for the recipient</source>
         <translation>Saisir une note pour le destinataire</translation>
     </message>
@@ -7068,10 +5763,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     <message>
         <source>Set expiration date</source>
         <translation>Définir une date d&apos;expiration</translation>
-    </message>
-    <message>
-        <source>Share label</source>
-        <translation>Libellé du partage</translation>
     </message>
     <message>
         <source>Share link copied!</source>
@@ -7133,37 +5824,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     <message>
         <source>Failed to connect database.</source>
         <translation>Impossible de connecter la base de données.</translation>
-    </message>
-</context>
-<context>
-    <name>SyncOptionsPage</name>
-    <message>
-        <source>Choose</source>
-        <translation>Choisir</translation>
-    </message>
-    <message>
-        <source>Choose what to sync</source>
-        <translation>Choisir les éléments à synchroniser</translation>
-    </message>
-    <message>
-        <source>Download files on-demand</source>
-        <translation>Télécharger les fichiers à la demande</translation>
-    </message>
-    <message>
-        <source>File Provider</source>
-        <translation>Fournisseur de fichiers</translation>
-    </message>
-    <message>
-        <source>Local sync folder</source>
-        <translation>Dossier local de synchronisation</translation>
-    </message>
-    <message>
-        <source>Synchronize everything</source>
-        <translation>Synchroniser tout</translation>
-    </message>
-    <message>
-        <source>Virtual files</source>
-        <translation>Fichiers virtuels</translation>
     </message>
 </context>
 <context>
@@ -7255,53 +5915,10 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     </message>
 </context>
 <context>
-    <name>TrayAccountPopup</name>
-    <message>
-        <source>More activity…</source>
-        <translation>Plus d’activité…</translation>
-    </message>
-    <message>
-        <source>No apps available</source>
-        <translation>Aucune application disponible</translation>
-    </message>
-    <message>
-        <source>No recent activity</source>
-        <translation>Aucune activité récente</translation>
-    </message>
-    <message>
-        <source>Notifications</source>
-        <translation>Notifications</translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation>Ouvrir</translation>
-    </message>
-    <message>
-        <source>Recent activity</source>
-        <translation>Activité récente</translation>
-    </message>
-    <message>
-        <source>Resolve: %1</source>
-        <translation>Résoudre : %1</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation>Rechercher</translation>
-    </message>
-    <message>
-        <source>User status</source>
-        <translation>Statut utilisateur</translation>
-    </message>
-</context>
-<context>
     <name>TrayFoldersMenuButton</name>
     <message>
         <source>Files</source>
         <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Local folder</source>
-        <translation>Dossier local</translation>
     </message>
     <message>
         <source>Open %1 in file explorer</source>
@@ -7334,7 +5951,7 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>Account switcher and settings menu</source>
         <translation type="unfinished">Sélecteur de compte et menu de paramètres</translation>
     </message>
-<message>
+    <message>
         <source>Add account</source>
         <translation type="unfinished">Ajouter un compte</translation>
     </message>
@@ -7370,13 +5987,9 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <source>Settings</source>
         <translation type="unfinished">Paramètres</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>TrayWindowHeader</name>
-    <message>
-        <source>Apps</source>
-        <translation>Applications</translation>
-    </message>
     <message>
         <source>More apps</source>
         <translation>Plus d&apos;applis</translation>
@@ -7391,126 +6004,10 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     </message>
 </context>
 <context>
-    <name>UnifiedSearchCustomDateRangeDialog</name>
-    <message>
-        <source>Apply</source>
-        <translation>Appliquer</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>Annuler</translation>
-    </message>
-    <message>
-        <source>Custom date range</source>
-        <translation>Plage de dates personnalisée</translation>
-    </message>
-    <message>
-        <source>End date (YYYY-MM-DD)</source>
-        <translation>Date de fin (AAAA-MM-JJ)</translation>
-    </message>
-    <message>
-        <source>Enter valid dates with the start date before the end date.</source>
-        <translation>Entrez des dates valides avec celle de début antérieure à celle de fin.</translation>
-    </message>
-    <message>
-        <source>Start date (YYYY-MM-DD)</source>
-        <translation>Date de début (AAAA-MM-JJ)</translation>
-    </message>
-    <message>
-        <source>YYYY-MM-DD</source>
-        <translation>AAAA-MM-JJ</translation>
-    </message>
-</context>
-<context>
-    <name>UnifiedSearchDetailHeader</name>
-    <message>
-        <source>Back</source>
-        <translation>Retour</translation>
-    </message>
-    <message>
-        <source>Back to all search results</source>
-        <translation>Revenir à tous les résultats de recherche</translation>
-    </message>
-</context>
-<context>
-    <name>UnifiedSearchFilterBar</name>
-    <message>
-        <source>Clear date</source>
-        <translation>Effacer la date</translation>
-    </message>
-    <message>
-        <source>Custom range …</source>
-        <translation>Plage personnalisée…</translation>
-    </message>
-    <message>
-        <source>Date</source>
-        <translation>Date</translation>
-    </message>
-    <message>
-        <source>Filter by date</source>
-        <translation>Filtrer par date</translation>
-    </message>
-    <message>
-        <source>Filter by person</source>
-        <translation>Filtrer par personne</translation>
-    </message>
-    <message>
-        <source>Filter by type</source>
-        <translation>Filtrer par type</translation>
-    </message>
-    <message>
-        <source>Last 30 days</source>
-        <translation>30 derniers jours</translation>
-    </message>
-    <message>
-        <source>Last 7 days</source>
-        <translation>7 derniers jours</translation>
-    </message>
-    <message>
-        <source>No search source supports date filtering</source>
-        <translation>Aucune source de recherche ne prend en charge le filtrage sur les dates</translation>
-    </message>
-    <message>
-        <source>No search source supports people filtering</source>
-        <translation>Aucune source de recherche ne prend en charge le filtrage sur les personnes</translation>
-    </message>
-    <message>
-        <source>People</source>
-        <translation>Personnes</translation>
-    </message>
-    <message>
-        <source>This year</source>
-        <translation>Cette année</translation>
-    </message>
-    <message>
-        <source>Today</source>
-        <translation>Aujourd&apos;hui</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Type</translation>
-    </message>
-</context>
-<context>
     <name>UnifiedSearchInputContainer</name>
-    <message>
-        <source>Clear search</source>
-        <translation>Effacer la recherche</translation>
-    </message>
-    <message>
-        <source>Keeps the active filters</source>
-        <translation>Garde les filtres actifs</translation>
-    </message>
     <message>
         <source>Search files, messages, events …</source>
         <translation>Rechercher des fichiers, des messages, des événements …</translation>
-    </message>
-</context>
-<context>
-    <name>UnifiedSearchPeoplePopup</name>
-    <message>
-        <source>Search people</source>
-        <translation>Rechercher des personnes</translation>
     </message>
 </context>
 <context>
@@ -7518,17 +6015,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     <message>
         <source>Start typing to search</source>
         <translation>Commencez à écrire pour rechercher</translation>
-    </message>
-</context>
-<context>
-    <name>UnifiedSearchResultDelegate</name>
-    <message>
-        <source>Load more results</source>
-        <translation>Charger plus de résultats</translation>
-    </message>
-    <message>
-        <source>Loading more results …</source>
-        <translation>Chargement de plus de résultats…</translation>
     </message>
 </context>
 <context>
@@ -7567,17 +6053,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     </message>
 </context>
 <context>
-    <name>UriSchemeHandler</name>
-    <message>
-        <source>Adding another account is not allowed in this client.</source>
-        <translation>L’ajout d’un autre compte n’est pas autorisé dans ce client.</translation>
-    </message>
-    <message>
-        <source>Could not handle link</source>
-        <translation>Impossible de traiter le lien</translation>
-    </message>
-</context>
-<context>
     <name>UserLine</name>
     <message>
         <source>Account actions</source>
@@ -7586,14 +6061,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     <message>
         <source>Account sync status requires attention</source>
         <translation>L’état de synchronisation du compte requiert votre attention</translation>
-    </message>
-    <message>
-        <source>Current account status is do not disturb</source>
-        <translation>Le statut actuel du compte est &quot;ne pas déranger&quot;</translation>
-    </message>
-    <message>
-        <source>Current account status is online</source>
-        <translation>Le statut actuel du compte est &quot;en ligne&quot;</translation>
     </message>
     <message>
         <source>Log in</source>
@@ -7606,14 +6073,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     <message>
         <source>Remove account</source>
         <translation type="unfinished">Retirer le compte</translation>
-    </message>
-    <message>
-        <source>Set status</source>
-        <translation>Définir le statut</translation>
-    </message>
-    <message>
-        <source>Status message</source>
-        <translation>Message de statut</translation>
     </message>
     <message>
         <source>Switch to account</source>
@@ -7684,73 +6143,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
     <message>
         <source>Status message</source>
         <translation>Message de statut</translation>
-    </message>
-</context>
-<context>
-    <name>UserStatusWindow</name>
-    <message>
-        <source>Appear offline</source>
-        <translation>Apparaître hors ligne</translation>
-    </message>
-    <message>
-        <source>Away</source>
-        <translation>Absent</translation>
-    </message>
-    <message>
-        <source>Busy</source>
-        <translation>Occupé</translation>
-    </message>
-    <message>
-        <source>Choose emoji</source>
-        <translation>Choisir un emoji</translation>
-    </message>
-    <message>
-        <source>Clear status after</source>
-        <translation>Effacer le statut après</translation>
-    </message>
-    <message>
-        <source>Clear status message</source>
-        <translation>Effacer le message de statut</translation>
-    </message>
-    <message>
-        <source>Do not disturb</source>
-        <translation>Ne pas déranger</translation>
-    </message>
-    <message>
-        <source>Invisible</source>
-        <translation>Invisible</translation>
-    </message>
-    <message>
-        <source>Mute all notifications</source>
-        <translation>Couper toutes les notifications</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>En ligne</translation>
-    </message>
-    <message>
-        <source>Online status</source>
-        <translation>Statut en ligne</translation>
-    </message>
-    <message>
-        <source>Set status message</source>
-        <translation>Définir le message de statut</translation>
-    </message>
-    <message>
-        <source>Status message</source>
-        <translation>Message de statut</translation>
-    </message>
-    <message>
-        <source>What is your status?</source>
-        <translation>Quel est votre statut ?</translation>
-    </message>
-</context>
-<context>
-    <name>UserStatusWindowPredefinedStatusRow</name>
-    <message>
-        <source>%1, resets after %2</source>
-        <extracomment>%1 is the status text and %2 is a time string.</extracomment>
-        <translation>%1, réinitialisé après %2</translation>
     </message>
 </context>
 <context>
@@ -7841,14 +6233,6 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <translation>Actuellement disponible en local</translation>
     </message>
     <message>
-        <source>Enable experimental feature?</source>
-        <translation>Activer la fonctionnalité expérimentale ?</translation>
-    </message>
-    <message>
-        <source>Enable experimental placeholder mode</source>
-        <translation>Activer le mode expérimental de fichiers virtuels</translation>
-    </message>
-    <message>
         <source>Free up local space</source>
         <translation>Libérer de l&apos;espace local</translation>
     </message>
@@ -7861,32 +6245,12 @@ Le serveur a répondu avec l&apos;erreur : %2</translation>
         <translation>Certains sont disponibles en ligne seulement</translation>
     </message>
     <message>
-        <source>Stay safe</source>
-        <translation>Restez prudent</translation>
-    </message>
-    <message>
         <source>There was an error when launching the browser to go to URL %1. Maybe no default browser is configured?</source>
         <translation>Une erreur est survenue au lancement du navigateur pour visiter l&apos;adresse %1. Il est possible qu&apos;aucun navigateur par défaut ne soit configuré.</translation>
     </message>
     <message>
         <source>There was an error when launching the email client to create a new message. Maybe no default email client is configured?</source>
         <translation>Il y a eu une erreur lors du lancement du client de messagerie pour créer un nouveau message. Peut-être qu&apos;aucun client de messagerie n&apos;est configuré ?</translation>
-    </message>
-    <message>
-        <source>When the &quot;virtual files&quot; mode is enabled no files will be downloaded initially. Instead, a tiny &quot;%1&quot; file will be created for each file that exists on the server. The contents can be downloaded by running these files or by using their context menu.
-
-The virtual files mode is mutually exclusive with selective sync. Currently unselected folders will be translated to online-only folders and your selective sync settings will be reset.
-
-Switching to this mode will abort any currently running synchronization.
-
-This is a new, experimental mode. If you decide to use it, please report any issues that come up.</source>
-        <translation>Lorsque le mode « fichiers virtuels » est activé, aucun fichier n’est téléchargé initialement. À la place, un petit fichier « %1 » est créé pour chaque fichier présent sur le serveur. Son contenu peut être téléchargé en ouvrant ce fichier ou via son menu contextuel.
-
-Le mode Fichiers virtuels est incompatible avec la synchronisation sélective. Les dossiers actuellement désélectionnés deviendront des dossiers en ligne uniquement et vos paramètres de synchronisation sélective seront réinitialisés.
-
-Le passage à ce mode interrompra toute synchronisation en cours.
-
-Il s’agit d’une nouvelle fonctionnalité expérimentale. Si vous l’utilisez, merci de signaler tout problème rencontré.</translation>
     </message>
 </context>
 <context>
@@ -7902,13 +6266,6 @@ Il s’agit d’une nouvelle fonctionnalité expérimentale. Si vous l’utilise
     <message>
         <source>The downloaded file does not match the checksum, it will be resumed. &quot;%1&quot; != &quot;%2&quot;</source>
         <translation>Le fichier téléchargé ne correspond pas à la somme de contrôle, il sera repris. &quot;%1&quot; != &quot;%2&quot;</translation>
-    </message>
-</context>
-<context>
-    <name>WindowAccountHeader</name>
-    <message>
-        <source>Account avatar</source>
-        <translation>Avatar du compte</translation>
     </message>
 </context>
 </TS>
