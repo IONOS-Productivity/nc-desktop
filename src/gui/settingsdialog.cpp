@@ -6,51 +6,54 @@
 
 #include "settingsdialog.h"
 
-#include "folderman.h"
-#include "theme.h"
-#include "generalsettings.h"
-#include "networksettings.h"
+#include "accountmanager.h"
 #include "accountsettings.h"
 #include "configfile.h"
-#include "progressdispatcher.h"
+#include "folderman.h"
+#include "generalsettings.h"
+#include "iconutils.h"
+#include "networksettings.h"
 #include "owncloudgui.h"
-#include "accountmanager.h"
+#include "progressdispatcher.h"
+#include "theme.h"
+#include "whitelabeltheme.h"
 
-#include <QLabel>
-#include <QStandardItemModel>
-#include <QStackedWidget>
-#include <QPushButton>
-#include <QSettings>
-#include <QToolBar>
-#include <QToolButton>
-#include <QLayout>
-#include <QVBoxLayout>
-#include <QPixmap>
+#include <QActionGroup>
 #include <QImage>
-#include <QWidgetAction>
+#include <QLabel>
+#include <QLayout>
+#include <QMouseEvent>
 #include <QPainter>
 #include <QPainterPath>
+#include <QPixmap>
+#include <QPushButton>
 #include <QQuickView>
-#include <QActionGroup>
 #include <QScopedValueRollback>
 #include <QScrollArea>
+#include <QSettings>
 #include <QSizePolicy>
+#include <QStackedWidget>
+#include <QStandardItemModel>
 #include <QTimer>
-#include <QMouseEvent>
+#include <QToolBar>
+#include <QToolButton>
+#include <QVBoxLayout>
+#include <QWidgetAction>
 #include <QWindow>
 #include <QtGlobal>
 
 using namespace Qt::StringLiterals;
 
 #ifdef Q_OS_WIN
-    // "light" looks too bright on dark mode on Windows only
-    #define BACKGROUND_PALETTE "alternate-base"
+// "light" looks too bright on dark mode on Windows only
+#define BACKGROUND_PALETTE "alternate-base"
 #else
-    // ...and "alternate-base" looks too bright on macOS only.  On Linux/Plasma either one looked fine ...
-    #define BACKGROUND_PALETTE "light"
+// ...and "alternate-base" looks too bright on macOS only.  On Linux/Plasma either one looked fine ...
+#define BACKGROUND_PALETTE "light"
 #endif
 
-namespace {
+namespace
+{
 class CurrentPageSizeStackedWidget : public QStackedWidget
 {
 public:
@@ -87,17 +90,27 @@ public:
         }
         return QStackedWidget::heightForWidth(width);
     }
-
 };
 
 constexpr auto TOOLBAR_CSS = QLatin1String(
-    "QToolBar { background: transparent; margin: 0; padding: 0; border: none; spacing: 0; } "
-    "QToolBar QToolButton { background: transparent; border: none; margin: 0; padding: 8px 12px; font-size: 14px; border-radius: 8px; } "
-    "QToolBar QToolBarExtension { padding: 0; } "
-    "QToolBar QToolButton:checked { background: palette(highlight); color: palette(highlighted-text); }"
-);
+    // No border-bottom here: the toolbar's height tracks its content (see setSizePolicy()
+    // in setupUi()), so a bottom border would sit right under the last account button,
+    // reading as a spurious extra separator. The one intentional divider (below "General")
+    // is the explicit addSeparator(), styled via QToolBar::separator below.
+    "QToolBar { background: %1; border: none; } "
+    "QToolBar QToolButton { background: %1; border: none; margin: 2px 0px 7px 12px; padding: 10px 4px 4px 4px; border-radius: %5; %8; } "
+    "QToolBar QToolButton:checked { background: %7; color: %4; }"
+    "QToolBar QToolButton:hover { background: %3; }"
+    "QToolBar QToolButton:pressed { background: %6; color: %4; }"
+    "QToolBar::separator { width: 100%; height: 1px; background: %2; margin-left: 12px; } " // Style for the separator
+    "QToolBarExtension#qt_toolbar_ext_button {margin: 0 0 7px 0; padding: 0;}" // Style overflow button
+    "QMenu { background: %1; color: %4; }" // Style overflow menu
+    "QMenu::item::checked { background: %7; color: %4; }"
+    "QMenu::item::selected { background: %3; color: %4; }"
+    "QMenu::item::pressed { background: %6; color: %4; }"
+    "QToolTip { color: %4; background-color: %1; border: 1px solid %2; }");
 
-const float buttonSizeRatio = 1.618f; // golden ratio
+    const float buttonSizeRatio = 1.618f; // golden ratio
 constexpr auto settingsDialogDefaultWidth = 950;
 constexpr auto settingsDialogDefaultHeight = 500;
 
@@ -117,14 +130,14 @@ QString shortDisplayNameForSettings(OCC::Account *account, int width)
         QFont f;
         QFontMetrics fm(f);
         host = fm.elidedText(host, Qt::ElideMiddle, width);
-        user = fm.elidedText(user, Qt::ElideRight, width);
+        user = fm.elidedText(user, Qt::ElideMiddle, width);
     }
     return QStringLiteral("%1\n%2").arg(user, host);
 }
 }
 
-
-namespace OCC {
+namespace OCC
+{
 
 class WindowDragHandle : public QWidget
 {
@@ -170,17 +183,22 @@ SettingsDialog::SettingsDialog(ownCloudGui *gui, QWidget *parent)
     //: This name refers to the application name e.g Nextcloud
     setWindowTitle(tr("%1 Settings").arg(Theme::instance()->appNameGUI()));
 
-    connect(AccountManager::instance(), &AccountManager::accountAdded,
-        this, &SettingsDialog::accountAdded);
-    connect(AccountManager::instance(), &AccountManager::accountRemoved,
-        this, &SettingsDialog::accountRemoved);
-
+    connect(AccountManager::instance(), &AccountManager::accountAdded, this, &SettingsDialog::accountAdded);
+    connect(AccountManager::instance(), &AccountManager::accountRemoved, this, &SettingsDialog::accountRemoved);
 
     _actionGroup = new QActionGroup(this);
     _actionGroup->setExclusive(true);
     connect(_actionGroup, &QActionGroup::triggered, this, &SettingsDialog::slotSwitchPage);
 
-    QAction *generalAction = createColorAwareAction(QLatin1String(":/client/theme/settings.svg"), tr("General"));
+#ifndef IONOS_BUILD
+    // Adds space between users + activities and general + network actions
+    auto *spacer = new QWidget();
+    spacer->setMinimumWidth(10);
+    spacer->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
+    _toolBar->addWidget(spacer);
+#endif
+
+    QAction *generalAction = createColorAwareAction(WLTheme.settingsIcon("qtwidget"), tr("General"));
     _actionGroup->addAction(generalAction);
     _toolBar->addAction(generalAction);
     auto *accountSpacer = new QWidget(this);
@@ -223,16 +241,33 @@ SettingsDialog::SettingsDialog(ownCloudGui *gui, QWidget *parent)
 
     customizeStyle();
 
+    // Qt::Dialog already includes the Qt::Window bit (Dialog = 0x2 | Window), so
+    // setWindowFlag(Qt::Window, true) alone is a no-op and the dialog type never
+    // changes - it keeps QDialog's default hints (title/sysmenu/close), which lack
+    // minimize/maximize. Request them explicitly instead of relying on that trick.
     setWindowFlag(Qt::WindowContextHelpButtonHint, false);
+    setWindowFlag(Qt::WindowMinMaxButtonsHint, true);
     setWindowFlag(Qt::Window, true);
     cfg.restoreGeometry(this);
+
+    // Base the minimum height on the tallest page (not just GeneralSettings), otherwise
+    // shrinking the window to its minimum can make a taller page (e.g. AccountSettings)
+    // grow a scrollbar instead of just being fully visible.
+    int tallestPageHeight = generalSettings->sizeHint().height();
+    for (int i = 0; i < _stack->count(); ++i) {
+        tallestPageHeight = qMax(tallestPageHeight, _stack->widget(i)->sizeHint().height());
+    }
+
+    resize(width() > WLTheme.minimalSettingsDialogWidth() + 50 ? width() : WLTheme.minimalSettingsDialogWidth() + 50,
+           (height() > tallestPageHeight + 100 ? height() : tallestPageHeight) + 100);
+    setMinimumSize(WLTheme.minimalSettingsDialogWidth() + 50, tallestPageHeight + 100);
 }
 
 SettingsDialog::~SettingsDialog()
 {
 }
 
-QWidget* SettingsDialog::currentPage()
+QWidget *SettingsDialog::currentPage()
 {
     return _stack->currentWidget();
 }
@@ -276,7 +311,7 @@ void SettingsDialog::changeEvent(QEvent *e)
         emit styleChanged();
         break;
     case QEvent::ActivationChange:
-        if(isActiveWindow())
+        if (isActiveWindow())
             emit onActivate();
         break;
     default:
@@ -335,9 +370,10 @@ void SettingsDialog::accountAdded(AccountState *s)
     bool brandingSingleAccount = !Theme::instance()->multiAccount();
 
     const auto actionText = brandingSingleAccount ? tr("Account") : s->account()->displayName();
-    const auto accountAction = createColorAwareAction(QLatin1String(":/client/theme/account.svg"), actionText);
+    const auto avatarIconPath = WLTheme.avatarIcon("qtwidget");
+    const auto accountAction = createActionWithIcon(createContrastAwareAvatarIcon(avatarIconPath), actionText, avatarIconPath);
     updateAccountAvatar(s->account().data());
-    
+
     if (!brandingSingleAccount) {
         accountAction->setToolTip(s->account()->displayName());
         accountAction->setIconText(shortDisplayNameForSettings(s->account().data(), static_cast<int>(height * buttonSizeRatio)));
@@ -348,7 +384,7 @@ void SettingsDialog::accountAdded(AccountState *s)
     QString objectName = QLatin1String("accountSettings_");
     objectName += s->account()->displayName();
     accountSettings->setObjectName(objectName);
-    _stack->insertWidget(0 , accountSettings);
+    _stack->insertWidget(0, accountSettings);
 
     _actionGroup->addAction(accountAction);
     _actionGroupWidgets.insert(accountAction, accountSettings);
@@ -356,8 +392,7 @@ void SettingsDialog::accountAdded(AccountState *s)
     accountAction->trigger();
 
     connect(accountSettings, &AccountSettings::folderChanged, _gui, &ownCloudGui::slotComputeOverallSyncStatus);
-    connect(accountSettings, &AccountSettings::openFolderAlias,
-        _gui, &ownCloudGui::slotFolderOpenAction);
+    connect(accountSettings, &AccountSettings::openFolderAlias, _gui, &ownCloudGui::slotFolderOpenAction);
     connect(accountSettings, &AccountSettings::showIssuesList, this, &SettingsDialog::showIssuesList);
     connect(s->account().data(), &Account::accountChangedAvatar, this, &SettingsDialog::slotAccountAvatarChanged);
     connect(s->account().data(), &Account::accountChangedDisplayName, this, &SettingsDialog::slotAccountDisplayNameChanged);
@@ -397,8 +432,41 @@ void SettingsDialog::updateAccountAvatar(const Account *account)
 
     const QImage pix = account->avatar();
     if (!pix.isNull()) {
-        action->setIcon(QPixmap::fromImage(AvatarJob::makeCircularAvatar(pix)));
+        const auto circularAvatar = AvatarJob::makeCircularAvatar(pix);
+
+        // Normal state gets the contrast border; while selected, palette(highlight) already sets
+        // the button apart from its neighbors, so show the plain avatar there instead.
+        QIcon icon(QPixmap::fromImage(addAvatarContrastBorder(circularAvatar)));
+        icon.addPixmap(QPixmap::fromImage(circularAvatar), QIcon::Normal, QIcon::On);
+        action->setIcon(icon);
     }
+}
+
+QImage SettingsDialog::addAvatarContrastBorder(const QImage &circularAvatar) const
+{
+    // The avatar the server returns (real photo or a generated initials placeholder) can be any
+    // color, so wrap it in a ring using the palette's text color to guarantee contrast against the
+    // toolbar background, the same way the fallback glyph icon is backed by a disc in
+    // createContrastAwareAvatarIcon.
+    if (circularAvatar.isNull()) {
+        return circularAvatar;
+    }
+
+    constexpr int borderWidth = 3;
+    const auto outerDim = circularAvatar.width() + borderWidth * 2;
+
+    QImage bordered(outerDim, outerDim, QImage::Format_ARGB32);
+    bordered.fill(Qt::transparent);
+
+    QPainter painter(&bordered);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setPen(Qt::NoPen);
+    painter.setBrush(palette().color(QPalette::WindowText));
+    painter.drawEllipse(bordered.rect());
+    painter.drawImage(borderWidth, borderWidth, circularAvatar);
+    painter.end();
+
+    return bordered;
 }
 
 void SettingsDialog::slotAccountDisplayNameChanged()
@@ -453,40 +521,48 @@ void SettingsDialog::customizeStyle()
     if (_updatingStyle) {
         return;
     }
-
     const QScopedValueRollback<bool> updatingStyle(_updatingStyle, true);
-    _toolBar->setStyleSheet(TOOLBAR_CSS);
 
-    setStyleSheet(QStringLiteral(
-        "#Settings { background: palette(window); border-radius: 0; }"
+    QString white(WLTheme.dialogBackgroundColor());
+    QString hoverColor(WLTheme.toolButtonHoveredColor());
+    QString pressedColor(WLTheme.toolButtonPressedColor());
+    QString selectedColor(WLTheme.menuSelectedItemColor());
 
-        /* Navigation */
-        "#settings_navigation_scroll { background: palette(" BACKGROUND_PALETTE "); border-radius: 12px; padding: 4px; }"
-        "#settings_navigation { background: transparent; border: none; padding: 0px; }"
+    // Matches the light value previously hardcoded in the now-removed IONOSPalette (#D1D1D1).
+    QString borderColor(WLTheme.buttonSecondaryBorderColor());
+    QString highlightTextColor(WLTheme.titleColor());
 
-        /* Content area */
-        "#settings_content, #settings_content_scroll { background: palette(window); border-radius: 12px; }"
+    QString toolbarActionBorderRadius(WLTheme.toolbarActionBorderRadius());
+    QString toolbarSideMargin(WLTheme.toolbarSideMargin());
+    QString toolButtonFont(
+        WLTheme.fontConfigurationCss(WLTheme.settingsFont(), WLTheme.settingsTextSize(), WLTheme.settingsTextWeight(), WLTheme.menuTextColor()));
 
-        /* Panels */
-        "#generalGroupBox, #advancedGroupBox, #aboutAndUpdatesGroupBox,"
-        "#accountStatusPanel, #connectionSettingsPanel, #fileProviderPanel, #syncFoldersPanel {"
-        " background: palette(" BACKGROUND_PALETTE ");"
-        " border-radius: 10px;"
-        " margin: 0px;"
-        " padding: 6px;"
-        " }"
-        "#generalGroupBoxTitle, #advancedGroupBoxTitle, #aboutAndUpdatesGroupBoxTitle {"
-        " margin-bottom: 6px;"
-        " }"
-    ));
+    _toolBar->setStyleSheet(
+        QString(TOOLBAR_CSS).arg(white, borderColor, hoverColor, highlightTextColor, toolbarActionBorderRadius, pressedColor, selectedColor, toolButtonFont));
 
-    const auto &allActions = _actionGroup->actions();
-    for (const auto a : allActions) {
-        QIcon icon = Theme::createColorAwareIcon(a->property("iconPath").toString(), palette());
+    // The toolbar itself only covers its buttons' rect, not the stretch area below them
+    // (see navigationLayout->addStretch() in setupUi()) nor the dialog's own background -
+    // style those explicitly here (rebuilt on every call, e.g. dark mode toggling) rather
+    // than relying on ownCloudGui's one-shot, non-reactive setStyleSheet() after construction.
+    setStyleSheet(QStringLiteral("#Settings { background: %1; } "
+                                  "#settings_navigation { background: %1; border: none; } "
+                                  "#settings_navigation_scroll { background: %1; border: none; border-right: 1px solid %2; }")
+                      .arg(white, WLTheme.menuBorderColor()));
+
+    const auto accountActions = _actionForAccount.values();
+    for (const auto a : _actionGroup->actions()) {
+        const auto iconPath = a->property("iconPath").toString();
+        const QIcon icon = accountActions.contains(a) ? createContrastAwareAvatarIcon(iconPath) : brandColoredIcon(iconPath);
         a->setIcon(icon);
         auto *btn = qobject_cast<QToolButton *>(_toolBar->widgetForAction(a));
-        if (btn)
+        if (btn) {
             btn->setIcon(icon);
+        }
+    }
+
+    // Re-apply account avatars via the shared helper, since the loop above just reset them to the generic icon
+    for (auto it = _actionForAccount.constBegin(); it != _actionForAccount.constEnd(); ++it) {
+        updateAccountAvatar(it.key());
     }
 }
 
@@ -500,7 +576,6 @@ public:
         setIcon(icon);
     }
 
-
     QWidget *createWidget(QWidget *parent) override
     {
         auto toolbar = qobject_cast<QToolBar *>(parent);
@@ -513,7 +588,7 @@ public:
         QString objectName = QLatin1String("settingsdialog_toolbutton_");
         objectName += text();
         btn->setObjectName(objectName);
-
+        btn->setFixedHeight(94);
         btn->setDefaultAction(this);
         btn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         btn->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
@@ -534,8 +609,51 @@ QAction *SettingsDialog::createActionWithIcon(const QIcon &icon, const QString &
 QAction *SettingsDialog::createColorAwareAction(const QString &iconPath, const QString &text)
 {
     // all buttons must have the same size in order to keep a good layout
-    QIcon coloredIcon = Theme::createColorAwareIcon(iconPath, palette());
-    return createActionWithIcon(coloredIcon, text, iconPath);
+    return createActionWithIcon(brandColoredIcon(iconPath), text, iconPath);
+}
+
+QIcon SettingsDialog::brandColoredIcon(const QString &iconPath) const
+{
+    // Theme::createColorAwareIcon() just inverts the SVG's RGB values for dark mode, which
+    // turns this brand-navy glyph into a mismatched yellow/tan rather than a themed color.
+    // Explicitly filling it with the brand icon color (already light/dark-mode aware) instead
+    // keeps it on-brand in both modes.
+    const auto diameter = _toolBar->iconSize().height() > 0 ? _toolBar->iconSize().height() : 32;
+    const auto glyphImage = Ui::IconUtils::drawSvgWithCustomFillColor(iconPath, QColor(WLTheme.buttonIconColor()), nullptr, QSize(diameter, diameter));
+    return QIcon(QPixmap::fromImage(glyphImage));
+}
+
+QIcon SettingsDialog::createContrastAwareAvatarIcon(const QString &iconPath) const
+{
+    // Backs the fallback avatar glyph with a disc in the palette's text color so it stays legible
+    // against both the normal toolbar background and the :checked palette(highlight) background,
+    // instead of relying on the fixed brand color contrasting with whatever is behind it.
+    // The glyph itself is recolored to the palette's window color, since the brand navy would
+    // otherwise disappear against the now text-colored disc.
+    const auto diameter = _toolBar->iconSize().height() > 0 ? _toolBar->iconSize().height() : 32;
+    QImage composed(diameter, diameter, QImage::Format_ARGB32);
+    composed.fill(Qt::transparent);
+
+    QPainter painter(&composed);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setPen(Qt::NoPen);
+    painter.setBrush(palette().color(QPalette::WindowText));
+    painter.drawEllipse(composed.rect());
+
+    const auto glyphDiameter = qRound(diameter * 0.55);
+    const auto glyphImage = Ui::IconUtils::drawSvgWithCustomFillColor(iconPath, palette().color(QPalette::Window), nullptr, QSize(glyphDiameter, glyphDiameter));
+    const auto glyphOrigin = (diameter - glyphDiameter) / 2;
+    painter.drawImage(glyphOrigin, glyphOrigin, glyphImage);
+    painter.end();
+
+    QIcon icon(QPixmap::fromImage(composed));
+
+    // While the button is selected, palette(highlight) already sets it apart from its neighbors,
+    // so the extra contrast disc is unnecessary there - fall back to the plain brand-colored glyph.
+    const auto plainGlyph = Theme::createColorAwareIcon(iconPath, palette(), QSize(diameter, diameter)).pixmap(diameter, diameter);
+    icon.addPixmap(plainGlyph, QIcon::Normal, QIcon::On);
+
+    return icon;
 }
 
 void SettingsDialog::setupUi()

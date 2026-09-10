@@ -11,23 +11,29 @@
 #include <QStorageInfo>
 #include <QMessageBox>
 #include <QJsonObject>
+#include <QPainter>
+#include <QPixmap>
+#include <QSvgRenderer>
 
 #include "QProgressIndicator.h"
 
-#include "wizard/owncloudwizard.h"
-#include "wizard/owncloudwizardcommon.h"
-#include "wizard/owncloudadvancedsetuppage.h"
+ #include "buttonstyle.h"
 #include "account.h"
 #ifdef Q_OS_MACOS
 #include "common/utility_mac_sandbox.h"
 #endif
 #include "theme.h"
 #include "configfile.h"
-#include "selectivesyncdialog.h"
-#include <folderman.h>
 #include "creds/abstractcredentials.h"
+#include "whitelabeltheme.h"
 #include "networkjobs.h"
+#include "selectivesyncdialog.h"
+#include "theme.h"
+#include "wizard/owncloudadvancedsetuppage.h"
 #include "wizard/owncloudwizard.h"
+#include "wizard/owncloudwizardcommon.h"
+#include "SesComponents/syncdirvalidation.h"
+#include <folderman.h>
 
 #ifdef BUILD_FILE_PROVIDER_MODULE
 #include "gui/macOS/fileprovider.h"
@@ -35,6 +41,38 @@
 
 namespace OCC
 {
+
+namespace {
+// Theme::createColorAwareIcon() just inverts the source SVG's raw RGB values for dark mode
+// (see its definition), which for these ses-*.svg icons - all filled with the same
+// #2F2F70 - produces an undesigned, washed-out khaki/beige instead of an actual dark-mode
+// color. Render the icon once and re-tint it with a real themed color instead, the same
+// SourceIn-compositing approach MoreOptionsButtonStyleHelper::tintPixmap() already uses.
+QIcon tintedThemeIcon(const QString &path, const QColor &color, const QSize &size)
+{
+    // Render via QSvgRenderer straight into an image of the target size - same approach
+    // Theme::createColorAwareIcon() uses - rather than QIcon(path).pixmap(size), which for
+    // these non-square source SVGs (e.g. ses-folderIcon.svg is 58x52) picks/scales an
+    // already-rasterized pixmap and comes out the wrong size.
+    QSvgRenderer renderer(path);
+    QImage img(size, QImage::Format_ARGB32);
+    img.fill(Qt::transparent);
+    QPainter svgPainter(&img);
+    renderer.render(&svgPainter);
+    svgPainter.end();
+
+    QPixmap tinted(size);
+    tinted.fill(Qt::transparent);
+    QPainter painter(&tinted);
+    painter.setCompositionMode(QPainter::CompositionMode_Source);
+    painter.drawImage(0, 0, img);
+    painter.setCompositionMode(QPainter::CompositionMode_SourceIn);
+    painter.fillRect(tinted.rect(), color);
+    painter.end();
+
+    return QIcon(tinted);
+}
+}
 
 OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage(OwncloudWizard *wizard)
     : QWizardPage()
@@ -45,15 +83,22 @@ OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage(OwncloudWizard *wizard)
     setupResoultionWidget();
 
     _filePathLabel.reset(new ElidedLabel);
+    _filePathLabel->setObjectName("filePathLabel");
+    _filePathLabel->setWordWrap(true);
     _filePathLabel->setElideMode(Qt::ElideMiddle);
     _filePathLabel->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     _filePathLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    _ui.locationsGridLayout->addWidget(_filePathLabel.data(), 3, 3);
+    _ui.locationsVBox->insertWidget(3, _filePathLabel.data());
 
     _filePathLabel->setTextFormat(Qt::PlainText);
     _ui.userNameLabel->setTextFormat(Qt::PlainText);
     _ui.serverAddressLabel->setTextFormat(Qt::PlainText);
     _ui.localFolderDescriptionLabel->setTextFormat(Qt::PlainText);
+    _ui.confCheckBoxSize->hide();
+    _ui.confSpinBox->hide();
+    _ui.confTraillingSizeLabel->hide();
+    _ui.wSyncStrategy->removeItem(_ui.horizontalLayout_6);
+
 
     registerField(QLatin1String("OCSyncFromScratch"), _ui.cbSyncFromScratch);
 
@@ -66,12 +111,12 @@ OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage(OwncloudWizard *wizard)
     setupCustomization();
 
     connect(_ui.pbSelectLocalFolder, &QAbstractButton::clicked, this, &OwncloudAdvancedSetupPage::slotSelectFolder);
+    _ui.pbSelectLocalFolder->setProperty("buttonStyle", QVariant::fromValue(OCC::ButtonStyleName::Secondary));
     setButtonText(QWizard::FinishButton, tr("Connect"));
 
     if (Theme::instance()->enforceVirtualFilesSyncFolder()) {
         _ui.rSyncEverything->setDisabled(true);
         _ui.rSelectiveSync->setDisabled(true);
-        _ui.bSelectiveSync->setDisabled(true);
     }
 
     connect(_ui.rSyncEverything, &QAbstractButton::clicked, this, &OwncloudAdvancedSetupPage::slotSyncEverythingClicked);
@@ -86,7 +131,6 @@ OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage(OwncloudWizard *wizard)
         updateMacOsFileProviderRelatedViews();
 #endif
     });
-    connect(_ui.bSelectiveSync, &QAbstractButton::clicked, this, &OwncloudAdvancedSetupPage::slotSelectiveSyncClicked);
 
     const auto theme = Theme::instance();
     const auto appIcon = theme->applicationIcon();
@@ -95,7 +139,7 @@ OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage(OwncloudWizard *wizard)
     _ui.lServerIcon->setPixmap(appIcon.pixmap(appIconSize));
 
     if (theme->wizardHideExternalStorageConfirmationCheckbox()) {
-        _ui.confCheckBoxExternal->hide();
+        //_ui.confCheckBoxExternal->hide(); // commented out for https://bmjira.atlassian.net/browse/SES-282
     }
     if (theme->wizardHideFolderSizeLimitCheckbox()) {
         _ui.confCheckBoxSize->hide();
@@ -206,9 +250,9 @@ void OwncloudAdvancedSetupPage::initializePage()
     auto newFolderLimit = cfgFile.newBigFolderSizeLimit();
     _ui.confCheckBoxSize->setChecked(newFolderLimit.first);
     _ui.confSpinBox->setValue(newFolderLimit.second);
-    _ui.confCheckBoxExternal->setChecked(cfgFile.confirmExternalStorage());
+    //_ui.confCheckBoxExternal->setChecked(cfgFile.confirmExternalStorage()); // commented out for https://bmjira.atlassian.net/browse/SES-282
 
-    fetchUserAvatar();
+    SetAvatarIcon();
     setUserInformation();
 
     customizeStyle();
@@ -229,6 +273,12 @@ void OwncloudAdvancedSetupPage::initializePage()
             }
         });
     }
+}
+
+void OwncloudAdvancedSetupPage::SetAvatarIcon()
+{
+    const auto icon = tintedThemeIcon(WLTheme.roundAvatarIcon(), QColor(WLTheme.iconDarkColor()), QSize(64, 64));
+     _ui.lServerIcon->setPixmap(icon.pixmap(32));
 }
 
 void OwncloudAdvancedSetupPage::fetchUserAvatar()
@@ -343,7 +393,6 @@ void OwncloudAdvancedSetupPage::updateStatus()
 #endif
 
     _ui.syncModeLabel->setText(t);
-    _ui.syncModeLabel->setFixedHeight(_ui.syncModeLabel->sizeHint().height());
 
     qint64 rSpace = _ui.rSyncEverything->isChecked() ? _rSize : _rSelectedSize;
 
@@ -361,6 +410,7 @@ void OwncloudAdvancedSetupPage::setResolutionGuiVisible(bool value)
     _ui.syncModeLabel->setVisible(value);
     _ui.rKeepLocal->setVisible(value);
     _ui.cbSyncFromScratch->setVisible(value);
+    _ocWizard->adjustSize();
 }
 
 /* obsolete */
@@ -395,7 +445,6 @@ QUrl OwncloudAdvancedSetupPage::serverUrl() const
 
 int OwncloudAdvancedSetupPage::nextId() const
 {
-    // tells the caller that this is the last dialog page
     return -1;
 }
 
@@ -442,12 +491,17 @@ bool OwncloudAdvancedSetupPage::validatePage()
         _checking = true;
         startSpinner();
         emit completeChanged();
-
+        ConfigFile cfgFile;
         if (_ui.rSyncEverything->isChecked()) {
             ConfigFile cfgFile;
             cfgFile.setNewBigFolderSizeLimit(_ui.confCheckBoxSize->isChecked(),
-                _ui.confSpinBox->value());
-            cfgFile.setConfirmExternalStorage(_ui.confCheckBoxExternal->isChecked());
+                _ui.confCheckBoxSize->isChecked() ? _ui.confSpinBox->value() : -1);
+            //cfgFile.setConfirmExternalStorage(_ui.confCheckBoxExternal->isChecked()); // commented out for https://bmjira.atlassian.net/browse/SES-282
+        }
+        else
+        {
+            cfgFile.setNewBigFolderSizeLimit(false, -1);
+            cfgFile.setConfirmExternalStorage(false);
         }
 
         emit createLocalAndRemoteFolders(localFolder(), _remoteFolder);
@@ -469,6 +523,7 @@ void OwncloudAdvancedSetupPage::setErrorString(const QString &err)
         _ui.errorLabel->setVisible(true);
         _ui.errorLabel->setText(err);
     }
+    _ocWizard->adjustSize();
     _checking = false;
     emit completeChanged();
 }
@@ -496,7 +551,12 @@ void OwncloudAdvancedSetupPage::slotSelectFolder()
 #else
         QDir::homePath();
 #endif
-    QString dir = QFileDialog::getExistingDirectory(nullptr, tr("Local Sync Folder"), homeDirectory);
+    QString dir = QFileDialog::getExistingDirectory(nullptr, tr("Local Sync Folder"), QDir::homePath());
+        SyncDirValidator syncDirValidator(dir);
+    if (!syncDirValidator.isValidDir()) {
+        setErrorString(syncDirValidator.message());
+        return;
+    }
     if (!dir.isEmpty()) {
         // TODO: remove when UX decision is made
         refreshVirtualFilesAvailibility(dir);
@@ -516,6 +576,9 @@ void OwncloudAdvancedSetupPage::slotSelectiveSyncClicked()
     auto *dlg = new SelectiveSyncDialog(acc, _remoteFolder, _selectiveSyncBlacklist, this);
     dlg->setAttribute(Qt::WA_DeleteOnClose);
 
+    dlg->setStyleSheet(QStringLiteral("QDialog { background-color: %1; } QWidget { background-color: %1; }").arg(
+        WLTheme.dialogBackgroundColor()));
+
     connect(dlg, &SelectiveSyncDialog::finished, this, [this, dlg]{
         const int result = dlg->result();
         bool updateBlacklist = false;
@@ -527,6 +590,15 @@ void OwncloudAdvancedSetupPage::slotSelectiveSyncClicked()
         if (result == QDialog::Accepted) {
             _selectiveSyncBlacklist = dlg->createBlackList();
             updateBlacklist = true;
+            // commented out for https://bmjira.atlassian.net/browse/SES-282
+            // _ui.confCheckBoxExternal->setStyleSheet(WLTheme.fontConfigurationCss(
+            //     WLTheme.settingsFont(),
+            //     WLTheme.settingsTextSize(),
+            //     WLTheme.settingsTextWeight(),
+            //     WLTheme.loginWizardFontLightGrey()
+            // ));
+
+            _ui.confCheckBoxSize->setDisabled(true);
         } else if (result == QDialog::Rejected && _selectiveSyncBlacklist == QStringList("/")) {
             _selectiveSyncBlacklist = dlg->oldBlackList();
             updateBlacklist = true;
@@ -554,6 +626,8 @@ void OwncloudAdvancedSetupPage::slotSelectiveSyncClicked()
 
     });
     dlg->open();
+
+
 }
 
 void OwncloudAdvancedSetupPage::slotVirtualFileSyncClicked()
@@ -565,6 +639,15 @@ void OwncloudAdvancedSetupPage::slotVirtualFileSyncClicked()
             setRadioChecked(_ui.rVirtualFileSync);
         });
     }
+// commented out for https://bmjira.atlassian.net/browse/SES-282
+    // _ui.confCheckBoxExternal->setStyleSheet(WLTheme.fontConfigurationCss(
+    //             WLTheme.settingsFont(),
+    //             WLTheme.settingsTextSize(),
+    //             WLTheme.settingsTextWeight(),
+    //             WLTheme.loginWizardFontLightGrey()
+    //         ));
+
+    _ui.confCheckBoxSize->setDisabled(true);
 }
 
 void OwncloudAdvancedSetupPage::slotSyncEverythingClicked()
@@ -575,7 +658,16 @@ void OwncloudAdvancedSetupPage::slotSyncEverythingClicked()
 
     QString errorStr = checkLocalSpace(_rSize);
     setErrorString(errorStr);
+
+// commented out for https://bmjira.atlassian.net/browse/SES-282
+    // _ui.confCheckBoxExternal->setStyleSheet(WLTheme.fontConfigurationCss(
+    //     WLTheme.settingsFont(),
+    //     WLTheme.settingsTextSize(),
+    //     WLTheme.settingsTextWeight(),
+    //     WLTheme.titleColor()
+    // ));
 }
+
 
 void OwncloudAdvancedSetupPage::slotQuotaRetrieved(const QVariantMap &result)
 {
@@ -630,16 +722,103 @@ void OwncloudAdvancedSetupPage::customizeStyle()
         }
     }
 
+    _ocWizard->setMinimumSize(QSize(680, 515));
+    _ocWizard->setMaximumSize(QSize(680, 600));
+
+    _ui.mainHBox->setContentsMargins(0, 0, 0, 0);
+    _ui.wSyncStrategySynchronizeEverything->setContentsMargins(0, 0, 0, 0);
+    _ui.lVirtualFileSync->setContentsMargins(0, 0, 0, 0);
+    //_ui.horizontalLayout_8->setContentsMargins(32, 0, 0, 0); // commented out for https://bmjira.atlassian.net/browse/SES-282
+    _ui.horizontalLayout_10->setContentsMargins(0, 8, 0, 0);
+
+    _ui.wSyncStrategy->setSpacing(16);
+    _ui.wSyncStrategy->setContentsMargins(0, 0, 0, 0);
+    _ui.verticalLayout->setSpacing(0);
+    _ui.pbSelectLocalFolder->setMinimumSize(0, 40);
+
+    _ui.serverVBox->setAlignment(Qt::AlignTop);
+    _ui.serverVBox->setSpacing(5);
+    _ui.serverVBox->setContentsMargins(0, 0, 0, 0);
+
+    _ui.arrowVBox->setSpacing(0);
+    _ui.arrowVBox->setContentsMargins(0, 0, 0, 0);
+    _ui.arrowVBox->setAlignment(Qt::AlignTop);
+
+    _ui.locationsVBox->setAlignment(Qt::AlignTop);
+    _ui.locationsVBox->setContentsMargins(0, 0, 0, 0);
+    _ui.locationsVBox->setSpacing(5);
+
+    _ui.resolutionWidgetLayout->setContentsMargins(0, 0, 0, 0);
+
     styleSyncLogo();
     styleLocalFolderLabel();
+
+    setStyleSheet(
+        "QRadioButton {" +
+            WLTheme.fontConfigurationCss(
+                WLTheme.settingsFont(),
+                WLTheme.settingsTextSize(),
+                WLTheme.settingsTextWeight(),
+                WLTheme.titleColor()
+            ) + "} QCheckBox {" +
+            WLTheme.fontConfigurationCss(
+                WLTheme.settingsFont(),
+                WLTheme.settingsTextSize(),
+                WLTheme.settingsTextWeight(),
+                WLTheme.titleColor()
+            ) + "}"
+    );
+
+    _ui.userNameLabel->setStyleSheet(WLTheme.fontConfigurationCss(
+        WLTheme.settingsFont(),
+        WLTheme.settingsTextSize(),
+        WLTheme.settingsTextWeight(),
+        WLTheme.titleColor()
+    ));
+
+    _ui.serverAddressLabel->setStyleSheet(WLTheme.fontConfigurationCss(
+        WLTheme.settingsFont(),
+        WLTheme.settingsTextSize(),
+        WLTheme.settingsTextWeight(),
+        WLTheme.loginWizardFontGrey()
+    ));
+
+    _ui.localFolderDescriptionLabel->setStyleSheet(WLTheme.fontConfigurationCss(
+        WLTheme.settingsFont(),
+        WLTheme.settingsTextSize(),
+        WLTheme.settingsTextWeight(),
+        WLTheme.titleColor()
+    ));
+
+    _filePathLabel->setStyleSheet(WLTheme.fontConfigurationCss(
+        WLTheme.settingsFont(),
+        WLTheme.settingsTextSize(),
+        WLTheme.settingsTextWeight(),
+        WLTheme.loginWizardFontGrey()
+    ));
+
+    _ui.lFreeSpace->setStyleSheet(WLTheme.fontConfigurationCss(
+        WLTheme.settingsFont(),
+        WLTheme.settingsTextSize(),
+        WLTheme.settingsTextWeight(),
+        WLTheme.loginWizardFontGrey()
+    ));
+
+    _ui.syncModeLabel->setStyleSheet(
+                        WLTheme.fontConfigurationCss(
+                        WLTheme.settingsFont(),
+                        WLTheme.settingsTextSize(),
+                        WLTheme.settingsTitleWeight600(),
+                        WLTheme.titleColor()
+                        )
+                );
+
 }
 
 void OwncloudAdvancedSetupPage::styleLocalFolderLabel()
 {
-    const auto backgroundColor = palette().window().color();
-    const auto folderIconFileName = Theme::instance()->isBranded() ? Theme::hidpiFileName("folder.png", backgroundColor)
-                                                                   : Theme::hidpiFileName(":/client/theme/colored/folder.png");
-    _ui.lLocal->setPixmap(folderIconFileName);
+    const auto icon = tintedThemeIcon(WLTheme.folderIcon("qtwidget"), QColor(WLTheme.iconDarkColor()), QSize(64, 64));
+     _ui.lLocal->setPixmap(icon.pixmap(32));
 }
 
 void OwncloudAdvancedSetupPage::setRadioChecked(QRadioButton *radio)
@@ -676,8 +855,9 @@ void OwncloudAdvancedSetupPage::updateMacOsFileProviderRelatedViews()
 
 void OwncloudAdvancedSetupPage::styleSyncLogo()
 {
-    const auto syncArrowIcon = Theme::createColorAwareIcon(QLatin1String(":/client/theme/sync-arrow.svg"), palette());
-    _ui.syncLogoLabel->setPixmap(syncArrowIcon.pixmap(QSize(50, 50)));
+    const auto syncArrowIcon = tintedThemeIcon(WLTheme.syncArrows(), QColor(WLTheme.iconDarkColor()), QSize(32, 32));
+    _ui.syncLogoLabel->setPixmap(syncArrowIcon.pixmap(QSize(32,32)));
+    _ui.syncLogoLabel->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
 }
 
 void OwncloudAdvancedSetupPage::setupResoultionWidget()
