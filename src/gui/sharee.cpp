@@ -6,7 +6,6 @@
 
 #include "sharee.h"
 #include "ocsshareejob.h"
-#include "theme.h"
 
 #include <QJsonObject>
 #include <QJsonDocument>
@@ -26,7 +25,7 @@ Sharee::Sharee(const QString &shareWith, const QString &displayName, const Type 
         // make sure no color path is contained in the url
         _iconUrl.replace(QStringLiteral("/black"), "");
         _iconUrl.replace(QStringLiteral("/white"), "");
-        _iconColor = Theme::instance()->darkMode() ? QStringLiteral("white") : QStringLiteral("black");
+        _iconColor = QStringLiteral("black");
     }
     updateIconUrl();
 }
@@ -94,11 +93,11 @@ bool Sharee::updateIconUrl()
     if (_iconUrl.isEmpty() || !_isIconColourful) {
         return false;
     }
-
+ 
     const auto iconUrlColoured = _iconUrlColoured;
-    _iconColor = (!_isIconColourful || !Theme::instance()->darkMode()) ? QStringLiteral("black") : QStringLiteral("white");
+    _iconColor = QStringLiteral("black");
     _iconUrlColoured = QStringLiteral("image://svgimage-custom-color/") + _iconUrl + QStringLiteral("/") + _iconColor;
-
+ 
     return iconUrlColoured != _iconUrlColoured;
 }
 

@@ -12,12 +12,14 @@ import Qt5Compat.GraphicalEffects
 import Qt.labs.platform as NativeDialogs
 
 import "../"
+import "../tray"
 import "../filedetails/"
+import "../SesComponents/"
 
 // Custom qml modules are in /theme (and included by resources.qrc)
 import Style
 
-import com.nextcloud.desktopclient
+import com.strato.hidrivenext.desktopclient
 
 ApplicationWindow {
     id:         trayWindow
@@ -27,10 +29,36 @@ ApplicationWindow {
 
     title:      Systray.windowTitle
     // If the main dialog is displayed as a regular window we want it to be quadratic
-    width:      Systray.useNormalWindow ? Style.trayWindowHeight : Style.trayWindowWidth
+    width:      Systray.useNormalWindow ? Style.trayWindowHeight : Style.sesTrayWindowWidth
     height:     Style.trayWindowHeight
+    color:      "transparent"
     flags:      Systray.useNormalWindow ? Qt.Window : Qt.Dialog | Qt.FramelessWindowHint
-    color: "transparent"
+
+    font.family: Style.sesOpenSansRegular 
+    font.pixelSize: Style.sesFontPixelSize 
+    font.weight: Style.sesFontBoldWeight
+    palette.base: Style.sesBackgroundColor
+    palette.windowText: Style.sesTrayFontColor
+ 
+    // TODO: Rather than setting all these palette colours manually, 
+    // create a custom style and do it for all components globally 
+    // palette { 
+    //     text: Style.ncTextColor 
+    //     windowText: Style.ncTextColor 
+    //     buttonText: Style.ncTextColor 
+    //     brightText: Style.ncTextBrightColor 
+    //     highlight: Style.lightHover 
+    //     highlightedText: Style.ncTextColor 
+    //     light: Style.lightHover 
+    //     midlight: Style.ncSecondaryTextColor 
+    //     mid: Style.darkerHover 
+    //     dark: Style.menuBorder 
+    //     button: Style.buttonBackgroundColor 
+    //     window: Style.backgroundColor 
+    //     base: Style.backgroundColor 
+    //     toolTipBase: Style.backgroundColor 
+    //     toolTipText: Style.ncTextColor 
+    // } 
 
     readonly property int maxMenuHeight: Style.trayWindowHeight - Style.trayWindowHeaderHeight - 2 * Style.trayWindowBorderWidth
 
@@ -46,25 +74,19 @@ ApplicationWindow {
 
     onClosing: Systray.isOpen = false
 
-    onVisibleChanged: {
-        // HACK: reload account Instantiator immediately by restting it - could be done better I guess
-        // see also id:trayWindowHeader.currentAccountHeaderButton.accountMenu below
-        trayWindowHeader.currentAccountHeaderButton.userLineInstantiator.active = false;
-        trayWindowHeader.currentAccountHeaderButton.userLineInstantiator.active = true;
-        syncStatus.model.load();
-    }
+    onVisibleChanged: syncStatus.model.load()
 
     background: Rectangle {
-        radius: Systray.useNormalWindow ? 0.0 : Style.trayWindowRadius
+        radius: 0.0
         border.width: Style.trayWindowBorderWidth
         border.color: palette.dark
-        color: palette.window
+        color: Style.sesBackgroundColor
     }
 
     Connections {
         target: UserModel
         function onCurrentUserChanged() {
-            trayWindowHeader.currentAccountHeaderButton.accountMenu.close();
+            trayWindowHeaderBackground.currentAccountHeaderButton.accountMenu.close();
             syncStatus.model.load();
         }
     }
@@ -90,9 +112,9 @@ ApplicationWindow {
             fileDetailsDrawer.close();
 
             if (Systray.isOpen) {
-                trayWindowHeader.currentAccountHeaderButton.accountMenu.close();
-                trayWindowHeader.appsMenu.close();
-                trayWindowHeader.openLocalFolderButton.closeMenu()
+                trayWindowHeaderBackground?.currentAccountHeaderButton?.accountMenu?.close()
+                trayWindowHeaderBackground?.appsMenu?.close();
+                trayWindowHeaderBackground?.openLocalFolderButton?.closeMenu()
                 UserModel.refreshSyncErrorUsers()
             }
         }
@@ -118,7 +140,7 @@ ApplicationWindow {
         maskSource: Rectangle {
             width: trayWindow.width
             height: trayWindow.height
-            radius: Systray.useNormalWindow ? 0.0 : Style.trayWindowRadius
+            radius: 0.0
         }
     }
 
@@ -181,7 +203,7 @@ ApplicationWindow {
             radius: Systray.useNormalWindow ? 0.0 : Style.trayWindowRadius
             border.width: Style.trayWindowBorderWidth
             border.color: palette.dark
-            color: Style.colorWithoutTransparency(palette.base)
+            color: palette.base
         }
 
         property var folderAccountState: ({})
@@ -216,7 +238,7 @@ ApplicationWindow {
                 height: parent.height
 
                 backgroundsVisible: false
-                accentColor: Style.accentColor
+                accentColor: Style.currentUserHeaderColor
                 accountState: fileDetailsDrawer.folderAccountState
                 localPath: fileDetailsDrawer.fileLocalPath
                 showCloseButton: true
@@ -242,7 +264,8 @@ ApplicationWindow {
         clip: true
 
         radius: Systray.useNormalWindow ? 0.0 : Style.trayWindowRadius
-        color: Style.colorWithoutTransparency(palette.base)
+        palette: trayWindow.palette
+        color: palette.base
 
         Accessible.role: Accessible.Grouping
         Accessible.name: qsTr("Main content")
@@ -251,14 +274,18 @@ ApplicationWindow {
             anchors.fill: parent
             onClicked: forceActiveFocus()
         }
-
-        TrayWindowHeader {
-            id: trayWindowHeader
-
-            anchors.top: parent.top
-            anchors.left: parent.left
-            anchors.right: parent.right
-            height: Style.trayWindowHeaderHeight
+        
+        HeaderLogo {
+            id: trayWindowLogoHeaderBackground
+            height: Style.sesHeaderLogoHeigth
+            width: parent.width
+        }
+        
+        SesTrayHeader {
+            id: trayWindowHeaderBackground
+            anchors.left:   trayWindowLogoHeaderBackground.left
+            anchors.right:  trayWindowLogoHeaderBackground.right
+            anchors.top:    trayWindowLogoHeaderBackground.bottom
 
             onFeaturedAppButtonClicked: {
                 if (UserModel.currentUser.isAssistantEnabled) {
@@ -277,7 +304,7 @@ ApplicationWindow {
 
             readonly property color warningIconColor: Style.errorBoxBackgroundColor
 
-            anchors.top: trayWindowHeader.bottom
+            anchors.top: trayWindowHeaderBackground.bottom
             anchors.left: trayWindowMainItem.left
             anchors.right: trayWindowMainItem.right
             anchors.topMargin: Style.trayHorizontalMargin
@@ -350,7 +377,7 @@ ApplicationWindow {
 
             anchors.top: trayWindowSyncWarning.visible
                          ? trayWindowSyncWarning.bottom
-                         : trayWindowHeader.bottom
+                         : trayWindowHeaderBackground.bottom
             anchors.left: trayWindowMainItem.left
             anchors.right: trayWindowMainItem.right
             anchors.topMargin: Style.trayHorizontalMargin
@@ -569,7 +596,7 @@ ApplicationWindow {
             active: UserModel.currentUser.isAssistantEnabled
                     && trayWindowMainItem.showAssistantPanel
             visible: trayWindowMainItem.showAssistantPanel
-            anchors.top: trayWindowHeader.bottom
+            anchors.top: trayWindowHeaderBackground.bottom
             anchors.bottom: assistantInputContainer.top
             anchors.left: trayWindowMainItem.left
             anchors.right: trayWindowMainItem.right
@@ -712,7 +739,7 @@ ApplicationWindow {
         UnifiedSearchResultNothingFound {
             id: unifiedSearchResultNothingFound
 
-            anchors.top: bottomUnifiedSearchInputSeparator.bottom
+            anchors.top: trayWindowUnifiedSearchInputContainer.bottom
             anchors.left: trayWindowMainItem.left
             anchors.right: trayWindowMainItem.right
             anchors.topMargin: Style.trayHorizontalMargin
@@ -730,7 +757,7 @@ ApplicationWindow {
         Loader {
             id: unifiedSearchResultsListViewSkeletonLoader
 
-            anchors.top: bottomUnifiedSearchInputSeparator.bottom
+            anchors.top: trayWindowUnifiedSearchInputContainer.bottom
             anchors.left: trayWindowMainItem.left
             anchors.right: trayWindowMainItem.right
             anchors.bottom: trayWindowMainItem.bottom
@@ -759,7 +786,7 @@ ApplicationWindow {
             }
             visible: unifiedSearchResultsListView.count > 0
 
-            anchors.top: bottomUnifiedSearchInputSeparator.bottom
+            anchors.top: trayWindowUnifiedSearchInputContainer.bottom
             anchors.left: trayWindowMainItem.left
             anchors.right: trayWindowMainItem.right
             anchors.bottom: trayWindowMainItem.bottom
@@ -836,6 +863,13 @@ ApplicationWindow {
                 hoverEnabled: true
                 padding: Style.smallSpacing
 
+                // textColor: Style.currentUserHeaderTextColor 
+                // textColorHovered: Style.currentUserHeaderTextColor 
+                // bgNormalColor: Qt.lighter(bgHoverColor, 1.25) 
+                // bgHoverColor: Style.currentUserHeaderColor 
+                // bgNormalOpacity: Style.newActivitiesBgNormalOpacity 
+                // bgHoverOpacity: Style.newActivitiesBgHoverOpacity 
+
                 anchors.fill: parent
 
                 text: qsTr("New activities")
@@ -880,7 +914,7 @@ ApplicationWindow {
 
             activeFocusOnTab: true
             model: activityModel
-            onOpenFile: Qt.openUrlExternally(filePath);
+            onOpenFile: Systray.openUrlInBrowser(filePath);
             onActivityItemClicked: {
                 model.slotTriggerDefaultAction(index)
             }
