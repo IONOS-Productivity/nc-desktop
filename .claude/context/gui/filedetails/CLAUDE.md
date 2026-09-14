@@ -67,5 +67,11 @@ instance, parameterized by `accountState`/`localPath`.
 - Styling throughout (`Style.ses*` properties, `SesErrorBox`, `../SesComponents`) is
   fork-specific "SES" theming layered over otherwise-generic upstream Nextcloud sharing
   logic (`ShareModel`, `ShareeModel`, `ShareManager` itself live in `src/gui` more broadly).
+- `ShareDetailsPage.qml` used to inline a local `SesCheckBox` component block and repeat an
+  identical bordered-input-field `Rectangle` three times (password/expiry/note fields); both
+  were extracted into standalone `../SesComponents/SesCheckBox.qml` and
+  `../SesComponents/SesInputBackground.qml` (SES-597) specifically to shrink this page's drift
+  from upstream `stable-33.0` and ease future merges — the page's actual sharing logic
+  (signals, `shareModelData` bindings, `resetXField()`) was deliberately left untouched.
 
-*Quelle: src/gui/filedetails — Stand 2026-08-20, automatisch erstellt, bitte gegenlesen.*
+*Quelle: src/gui/filedetails — Stand 2026-09-10, automatisch erstellt, bitte gegenlesen.*

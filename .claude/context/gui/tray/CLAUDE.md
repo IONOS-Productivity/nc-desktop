@@ -10,7 +10,7 @@ This folder implements the Nextcloud Desktop **system tray popup**: the tray ico
 - **`SyncStatusSummary`** — aggregates folder sync progress/state across the current account; drives `SyncStatus.qml`.
 - **`UnifiedSearchResultsListModel`** + `UnifiedSearchResult` — server-wide search results; backs `UnifiedSearchInputContainer.qml`/`UnifiedSearchResult*.qml` (re-enabled and restyled for the whitelabel design as of SES-579, after being hidden since SES-589).
 - **`TalkReply`** — sends Talk chat replies from notification/activity items; used with `TalkReplyTextField.qml`.
-- **`ImageProvider`/`AsyncImageResponse`, `TrayImageProvider`, `SvgImageProvider`** — async QML image providers for avatars, server icons, and recolored SVGs.
+- **`ImageProvider`/`AsyncImageResponse`, `TrayImageProvider`, `SvgImageProvider`** — async QML image providers for avatars, server icons, and recolored SVGs. Since SES-578, recoloring goes through `BaseTheme::coloredIcon(fileName, color)` (`image://svgimage-custom-color/...`) instead of per-icon static getters, so callers (e.g. `ActivityListModel::data()`) can pick a dark-mode-aware color at read time; `SvgImageProvider` was adjusted to treat everything but the last `/`-segment of the image id as a (possibly nested, e.g. `ses/ses-darkPlus.svg`) file name and only the last segment as the color.
 
 ## Key QML components (MainWindow tree)
 - **`MainWindow.qml`** — the tray popup `ApplicationWindow`; hosts header, sync-status warning banner, activity list, unified search, user-status/file-details drawers, and the AI assistant panel. Reacts to `UserModel`/`Systray` signals.
@@ -35,8 +35,9 @@ This folder implements the Nextcloud Desktop **system tray popup**: the tray ico
 - Some upstream features are explicitly disabled in this fork via `visible: false // SES-4 removed` (e.g. the "Sync now" button in `SyncStatus.qml`). Unified Search was previously in this category (hidden since SES-589) but was re-enabled and restyled for the whitelabel design in SES-579 — its C++ backing models (`UnifiedSearchResultsListModel`, etc.) are active again, not unused.
 - `BaseTheme`'s colors are now dark-mode-reactive (`themeColorsChanged` signal, `themedColor(light, dark)` helper, see `../CLAUDE.md`/`COMPONENTS.md` root docs); the tray (`SES-578`) was the reference implementation other dialogs' dark-mode support was modeled on.
 - Generic/unmodified upstream Nextcloud logic: `ActivityListModel`/`activitydata`, `ServerNotificationHandler`, `SyncStatusSummary`, `UserModel`/`User` core account logic, `TalkReply`, and the various list-model/image-provider plumbing.
+- SES-596 fixed an app-wide font-fallback bug: `BaseTheme::settingsFont()`/`contextMenuFont()` hardcoded "Segoe UI" (Windows-only) instead of falling back to the bundled Open Sans on Linux/macOS, and several tray QML controls (`IconButton.qml`, `SecondaryPillButton.qml`, `TrayFolderListItem.qml`, `TrayFoldersMenuButton.qml`, `ActivityItem.qml`, `ActivityItemContent.qml`, `CurrentAccountHeaderButton.qml`, `UnifiedSearchResultListItem.qml`) were missing explicit `font.family` bindings on tooltip/menu `contentItem` overrides and silently lost font inheritance from their parent controls.
 
 ## Merge-Risiko-Hinweis
 Dieser Ordner enthält mehrere der historisch häufigsten Merge-Konflikt-Stellen des Forks (`MainWindow.qml`, `TrayWindowAccountMenu.qml`, `UserLine.qml`) — bei Änderungen hier den [stable-merge-check-Skill](../../../skills/stable-merge-check/SKILL.md) nutzen.
 
-*Quelle: src/gui/tray — Stand 2026-08-19, automatisch erstellt, bitte gegenlesen.*
+*Quelle: src/gui/tray — Stand 2026-09-10, automatisch erstellt, bitte gegenlesen.*
