@@ -400,6 +400,7 @@ void FolderStatusDelegate::drawSyncProgressBar(QPainter *painter, const QStyleOp
 
     const auto fileNameTextHeight = subFm.boundingRect(tr("File")).height();
     constexpr auto barHeight = 7; // same height as quota bar
+    constexpr auto barHeight = 12;
     const auto overallWidth = option.rect.right() - aliasMargin - optionsButtonVisualRect.width() - nextToIcon;
 
     QFont progressFont(option.font);

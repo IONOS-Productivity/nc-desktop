@@ -30,6 +30,9 @@ public:
     QString buttonIconColor() const override {
         return themedColor("#003D8F", "#5FA8E0");
     }
+    QString syncProgressColor() const override {
+        return "#009850";
+    }
 
     // The logo (ses-IONOS-logo.svg) is a fixed brand blue, #003D8F, never recolored - any
     // banner background close to that hue/brightness fights it for contrast (tried #0B2A63
