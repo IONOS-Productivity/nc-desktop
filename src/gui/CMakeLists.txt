@@ -590,6 +590,9 @@ endif()
 if(WIN32)
   # DwmSetWindowAttribute(), used to give native window title bars a dark mode.
   target_link_libraries(nextcloudCore PUBLIC dwmapi)
+  # SHCreateItemFromParsingName()/IShellItemImageFactory (SesFileIconProvider), used to fetch a
+  # sharp, overlay-free file icon instead of QFileIconProvider's shell-overlay-composited one.
+  target_link_libraries(nextcloudCore PUBLIC Shell32 Ole32)
 endif()
 
 add_subdirectory(socketapi)
