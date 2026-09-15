@@ -4,19 +4,28 @@ pragma Singleton
 
 import QtQuick
 
-import com.nextcloud.desktopclient
+import com.strato.hidrivenext.desktopclient
 
 QtObject {
     readonly property int pixelSize: fontMetrics.font.pixelSize
     readonly property bool darkMode: Theme.darkMode
 
     // Colors
-    readonly property color ncBlue: Theme.wizardHeaderBackgroundColor
-    readonly property color ncHeaderTextColor: Theme.wizardHeaderTitleColor
+    readonly property color ncBlue:      Theme.wizardHeaderBackgroundColor
+    readonly property color ncHeaderTextColor: sesTrayFontColor
+    readonly property color ncTextColor: sesTrayFontColor
+    readonly property color ncTextBrightColor: "white"
+    readonly property color ncSecondaryTextColor: sesTrayFontColor//"#808080"
+    readonly property color lightHover: Theme.darkMode ? Qt.lighter(backgroundColor, 2) : Qt.darker(backgroundColor, 1.05)
+    readonly property color darkerHover: Theme.darkMode ? Qt.lighter(backgroundColor, 2.35) : Qt.darker(backgroundColor, 1.25)
+    readonly property color menuBorder: Theme.darkMode ? Qt.lighter(backgroundColor, 2.5) : Qt.darker(backgroundColor, 1.5)
+    readonly property color backgroundColor: Theme.darkMode ? "#1E2126" : "#FFFFFF"
+    readonly property color buttonBackgroundColor: WLTheme.pillButtonSecondaryColor
+    readonly property color positiveColor: Qt.rgba(0.38, 0.74, 0.38, 1)
     readonly property color accentColor: UserModel.currentUser ? UserModel.currentUser.accentColor : ncBlue
 
     readonly property color currentUserHeaderColor: UserModel.currentUser ? UserModel.currentUser.headerColor : ncBlue
-    readonly property color currentUserHeaderTextColor: UserModel.currentUser ? UserModel.currentUser.headerTextColor : ncHeaderTextColor
+    readonly property color currentUserHeaderTextColor: sesTrayFontColor
     readonly property color adjustedCurrentUserHeaderColor: Theme.darkMode ? Qt.lighter(currentUserHeaderColor, 2)
                                                                            : Qt.darker(currentUserHeaderColor, 1.5)
 
@@ -100,10 +109,13 @@ QtObject {
     property double trayFoldersMenuButtonDropDownCaretIconSizeFraction: 0.3
     property double trayFoldersMenuButtonMainIconSizeFraction: 1.0 - trayFoldersMenuButtonDropDownCaretIconSizeFraction
 
-    property int activityListButtonWidth: 42
+    property int addAccountButtonHeight: 50
+
+    property int headerButtonIconSize: sesIconSize
+    property int dismissButtonSize: 26
+    property int activityListButtonWidth: 32
     property int activityListButtonHeight: 32
     property int activityListButtonIconSize: 18
-    property int headerButtonIconSize: 48
     property int minimumActivityItemHeight: 24
 
     property int accountIconsMenuMargin: 7
@@ -161,8 +173,8 @@ QtObject {
 
     readonly property int bigFontPixelSizeResolveConflictsDialog: 20
     readonly property int fontPixelSizeResolveConflictsDialog: 15
-    readonly property int minimumWidthResolveConflictsDialog: 600
-    readonly property int minimumHeightResolveConflictsDialog: 300
+    readonly property int minimumWidthResolveConflictsDialog: 615
+    readonly property int minimumHeightResolveConflictsDialog: 350
 
     readonly property double smallIconScaleFactor: 0.6
 
@@ -213,4 +225,115 @@ QtObject {
     function colorWithoutTransparency(color) {
         return Qt.rgba(color.r, color.g, color.b, 1)
     }
+
+    // tints an already theme-aware border color into a translucent fill, instead of
+    // inventing a separate opaque pastel per dark/light variant
+    function tintedFill(color, alpha) {
+        return Qt.rgba(color.r, color.g, color.b, alpha)
+    }
+
+    // SES
+    // These three go through coloredIcon() (instead of the plain WLTheme getter) because
+    // they're rendered via a raw QML Image that ignores icon.color tinting - baking the
+    // theme-aware color into the source pixels is the only thing that reliably recolors them.
+    readonly property string sesWebsiteIcon: WLTheme.coloredIcon("ses-website.svg", WLTheme.buttonIconColor)
+    readonly property string sesFolderIcon: WLTheme.coloredIcon("ses-folderIcon.svg", WLTheme.buttonIconColor)
+    readonly property string sesHeaderLogoIcon: WLTheme.sesHeaderLogoIcon
+ 
+    readonly property string sesAvatar: WLTheme.avatarIcon
+ 
+    readonly property string sesAccountQuit: WLTheme.quitIcon
+    readonly property string sesAccountPause: WLTheme.pauseIcon
+    readonly property string sesDarkPlus: WLTheme.plusIcon
+    readonly property string sesLightPlus: WLTheme.lightPlusIcon
+    readonly property string sesAccountSettings: WLTheme.settingsIcon
+    readonly property string sesAccountResume: WLTheme.resumeIcon
+    readonly property string sesLogout: WLTheme.logoutIcon
+    readonly property string sesDelete: WLTheme.deleteIcon
+    readonly property string sesClipboard: WLTheme.clipboardIcon
+    readonly property string sesLightClipboard: WLTheme.lightClipboardIcon
+    readonly property string sesSyncErrorIcon: WLTheme.syncErrorIcon
+    readonly property string sesErrorBoxIcon: WLTheme.snackbarErrorIcon
+    readonly property string sesSyncSuccessIcon: WLTheme.syncSuccessIcon
+    readonly property string sesOfflineIcon: WLTheme.syncOfflineIcon
+    readonly property string sesChevron: WLTheme.chevronIcon
+    readonly property string sesMore: WLTheme.moreIcon 
+    readonly property string sesMoreHover: WLTheme.moreHoverIcon
+    readonly property string sesActivity: WLTheme.coloredIcon("ses-activity.svg", WLTheme.iconDarkColor)
+
+    readonly property color sesIconDarkColor: WLTheme.iconDarkColor
+    readonly property color sesIconColor: WLTheme.buttonIconColor
+
+    readonly property color sesBackgroundColor: WLTheme.trayBackgroundColor
+    readonly property color sesBorderColor: WLTheme.trayBorderColor
+    readonly property color sesWhite: Theme.darkMode ? sesBackgroundColor : "#FFFFFF"
+    readonly property color sesGray: "#465A75"
+    readonly property color sesTrayInputField: WLTheme.trayInputFieldBorderColor
+    readonly property color sesHover: Theme.darkMode ? "#2D3138" : "#F2F5F8"
+    readonly property color sesActionHover: WLTheme.buttonHoveredColor
+    readonly property color sesActionPressed: WLTheme.buttonPressedColor
+    readonly property color sesSelectedColor: Theme.darkMode ? "#333844" : "#F4F7FA"
+    readonly property color sesHeaderBannerColor: WLTheme.headerBannerColor
+    readonly property color sesButtonPressed: WLTheme.toolButtonPressedColor
+    readonly property color sesAccountMenuHover: WLTheme.toolButtonHoveredColor
+    readonly property color sesDarkGreen: "#096B35"
+    readonly property color sesTrayFontColor: WLTheme.trayFontColor
+    readonly property color sesErrorBoxBorder: WLTheme.trayErrorBorderColor
+    readonly property color sesErrorBoxText: WLTheme.trayErrorTextColor
+    readonly property color sesMenuBorder: Theme.darkMode ? "#5B7699" : "#2E4360"
+    readonly property color sesSearchFieldContent: Theme.darkMode ? "#B7C1CE" : "#97A3B4"
+    // ncBlue has no dark-mode counterpart (fixed wizard header color). Dark value here is
+    // IONOS Figma token Color/Blue Ionos/B4 (STRUXD-157); light stays ncBlue unchanged.
+    readonly property color sesCheckboxAccentColor: Theme.darkMode ? "#1474C4" : ncBlue
+
+    // 40 was too tight for the two text rows in UserLine.qml (name + server) plus the
+    // extra bottomMargin reserved there - the label block overflowed the row's bottom edge.
+    property int sesAccountMenuHeight: variableSize(52)
+    property int sesHeaderLogoHeigth: variableSize(40)
+    property int sesHeaderLogoTopMargin: variableSize(12)
+    property int sesHeaderLogoLeftMargin: variableSize(24)
+    property int sesCornerRadius: 8
+    property int sesHeaderTopMargin: variableSize(10)
+    property int sesSmallMargin: 8
+    property int sesAccountMenuItemPadding: 12
+    property int sesMediumMargin: 16
+
+    readonly property string sesOpenSansRegular: "Open Sans"
+    property int sesFontPointSize: 9
+    property int sesFontPixelSizeTitle: 20
+    property int sesFontPixelSize: 16
+    property int sesFontErrortextPixelSize: 14
+    property int sesFontHintPixelSize: 12
+    property int sesFontBoldWeight: 400
+    property int sesFontNormalWeight: sesFontBoldWeight
+
+    property int sesIconSize: 24
+    property int sesActivityItemDistanceToFrame: 24
+    property int sesActivityItemWidthModifier: 26
+    property int sesFileDetailsIconSize: 58
+    property int sesFileDetailsHeaderModifier: 100
+    property int sesSearchFieldHeight: 40
+
+    //Tray Account Menu Values
+    property int sesAccountButtonWidth: 256
+    property int sesAccountButtonHeight: 68
+    property int sesAccountButtonRightMargin: 33
+    property int sesAccountButtonLeftMargin: 19
+    property int sesHeaderButtonWidth: 84
+    property int sesHeaderButtonHeight: 68
+    property int sesTrayHeaderHeight: 68
+
+    property int sesAccountMenuWidth: sesAccountButtonWidth - 8
+    property int sesAccountLabelWidth: 157
+    property int sesTrayHeaderMargin: 11
+    property int sesTrayWindowWidth: 464
+
+    property color sesPillButtonPrimaryBackgroundColor: WLTheme.pillButtonPrimaryColor
+    property color sesPillButtonSecondaryBackgroundColor: WLTheme.pillButtonSecondaryColor
+    property color sesPillButtonBorderColor: WLTheme.pillButtonBorderColor
+    property color clipboardBackgroundColor: WLTheme.clipboardBackgroundColor
+    property real sesPillIconSize: 16
+    property int sesPillButtonVerticalPadding: 4
+    property int sesPillButtonHorizontalPadding: 10
+    property real sesPillButtonHoverOpacity: 0.7
 }
