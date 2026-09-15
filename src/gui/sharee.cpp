@@ -6,6 +6,7 @@
 
 #include "sharee.h"
 #include "ocsshareejob.h"
+#include "whitelabeltheme.h"
 
 #include <QJsonObject>
 #include <QJsonDocument>
@@ -95,7 +96,7 @@ bool Sharee::updateIconUrl()
     }
  
     const auto iconUrlColoured = _iconUrlColoured;
-    _iconColor = QStringLiteral("black");
+    _iconColor = WLTheme.titleColor();
     _iconUrlColoured = QStringLiteral("image://svgimage-custom-color/") + _iconUrl + QStringLiteral("/") + _iconColor;
  
     return iconUrlColoured != _iconUrlColoured;
