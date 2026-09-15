@@ -671,6 +671,11 @@ else()
     install(FILES ${qtbase_I18N} DESTINATION ${QM_DIR})
     file(GLOB qtkeychain_I18N ${QT_TRANSLATIONS_DIR}/qtkeychain*.qm)
     install(FILES ${qtkeychain_I18N} DESTINATION ${QM_DIR})
+
+    # BRICKMAKERS/IONOS-fork only, see IONOS.cmake. No-op if that function isn't defined.
+    if(COMMAND ionos_bundle_translations_for_local_builds)
+        ionos_bundle_translations_for_local_builds(nextcloud ${client_I18N} ${qt_I18N} ${qtbase_I18N} ${qtkeychain_I18N})
+    endif()
 endif()
 
 IF(BUILD_UPDATER)

@@ -42,7 +42,7 @@
       <translation>Recopilamos datos de carácter anónimo para la optimización de nuestra aplicación.
 Para ello, utilizamos soluciones de software de distintos socios. Deseamos transmitirte total transparencia y libertad de decisión acerca de la recopilación y el tratamiento de tu uso anónimo. Puedes modificar tu configuración en la opción del menú «Protección de datos» en cualquier momento.</translation>
     </message>
-  </context>  
+  </context>
   <context>
     <name>BasicComboBox</name>
     <message>
@@ -183,16 +183,16 @@ Should the accounts be imported?</source>
       <translation>Ampliar la memoria</translation>
     </message>
     <message>
-      <source>Force sync now</source>
-      <translation>Forzar la sincronización ahora</translation>
-    </message>
-    <message>
       <source>ExpandMemory-Link</source>
       <translation>https://wl.hidrive.com/easy/0067</translation>
     </message>
     <message>
       <source>ExpandMemory-Link_STRATO</source>
       <translation>https://static.hidrive.com/next/1043</translation>
+    </message>
+    <message>
+      <source>Force sync now</source>
+      <translation>Forzar la sincronización ahora</translation>
     </message>
     <message>
       <source>Storage space %1% occupied</source>
@@ -236,18 +236,18 @@ Should the accounts be imported?</source>
     <name>OCC::DataProtectionPage</name>
     <message>
       <source>Settings</source>
-      <translation>Ajustes</translation>
+      <translation>Configuración</translation>
     </message>
   </context>
   <context>
     <name>OCC::DiscoverySingleDirectoryJob</name>
     <message>
-      <source>Encrypted metadata setup error: initial signature from server is empty.</source>
-      <translation>Error de configuración de metadatos encriptados: la firma inicial del servidor está vacía.</translation>
-    </message>
-    <message>
       <source>Encrypted metadata setup error!</source>
       <translation>¡Hubo un error al configurar los metadatos cifrados!</translation>
+    </message>
+    <message>
+      <source>Encrypted metadata setup error: initial signature from server is empty.</source>
+      <translation>Error de configuración de metadatos encriptados: la firma inicial del servidor está vacía.</translation>
     </message>
   </context>
   <context>
@@ -441,6 +441,13 @@ Los objetos cuyo borrado esté permitido se eliminarán si impiden que se borre 
     </message>
   </context>
   <context>
+    <name>OCC::sesSnackBar</name>
+    <message>
+      <source>Success</source>
+      <translation>Éxito</translation>
+    </message>
+  </context>
+  <context>
     <name>OCC::SettingsDialog</name>
     <message>
       <source>New account</source>
@@ -450,12 +457,12 @@ Los objetos cuyo borrado esté permitido se eliminarán si impiden que se borre 
   <context>
     <name>OCC::SslButton</name>
     <message>
-      <source>This connection is encrypted using %1 bit %2.</source>
-      <translation>Esta conexión está cifrada con %1 bit %2.</translation>
-    </message>
-    <message>
       <source>This connection is NOT secure as it is not encrypted.</source>
       <translation>Esta conexión NO ES SEGURA, pues no está cifrada.</translation>
+    </message>
+    <message>
+      <source>This connection is encrypted using %1 bit %2.</source>
+      <translation>Esta conexión está cifrada con %1 bit %2.</translation>
     </message>
   </context>
   <context>
@@ -469,22 +476,6 @@ Los objetos cuyo borrado esté permitido se eliminarán si impiden que se borre 
       <translation>https://static.hidrive.com/next/1013</translation>
     </message>
     <message>
-      <source>Login_URL</source>
-      <translation>https://storage.ionos.es</translation>
-    </message>
-    <message>
-      <source>Login_URL_STRATO</source>
-      <translation>https://storage.ionos.es</translation>
-    </message>
-    <message>
-      <source>Privacy-Link</source>
-      <translation>https://wl.hidrive.com/easy/0015</translation>
-    </message>
-    <message>
-      <source>Privacy-Link_STRATO</source>
-      <translation>https://static.hidrive.com/next/1003</translation>
-    </message>
-    <message>
       <source>LegalNotice-Link</source>
       <translation>https://wl.hidrive.com/easy/0014</translation>
     </message>
@@ -493,12 +484,12 @@ Los objetos cuyo borrado esté permitido se eliminarán si impiden que se borre 
       <translation>https://static.hidrive.com/next/1023</translation>
     </message>
     <message>
-      <source>OpenSource-Link</source>
-      <translation>https://wl.hidrive.com/easy/0016</translation>
+      <source>Login_URL</source>
+      <translation>https://storage.ionos.es</translation>
     </message>
     <message>
-      <source>OpenSource-Link_STRATO</source>
-      <translation> https://static.hidrive.com/next/1031</translation>
+      <source>Login_URL_STRATO</source>
+      <translation>https://storage.ionos.es</translation>
     </message>
     <message>
       <source>MoreInformation-Link</source>
@@ -507,6 +498,22 @@ Los objetos cuyo borrado esté permitido se eliminarán si impiden que se borre 
     <message>
       <source>MoreInformation-Link_STRATO</source>
       <translation>https://static.hidrive.com/next/1013</translation>
+    </message>
+    <message>
+      <source>OpenSource-Link</source>
+      <translation>https://wl.hidrive.com/easy/0016</translation>
+    </message>
+    <message>
+      <source>OpenSource-Link_STRATO</source>
+      <translation>https://static.hidrive.com/next/1031</translation>
+    </message>
+    <message>
+      <source>Privacy-Link</source>
+      <translation>https://wl.hidrive.com/easy/0015</translation>
+    </message>
+    <message>
+      <source>Privacy-Link_STRATO</source>
+      <translation>https://static.hidrive.com/next/1003</translation>
     </message>
   </context>
   <context>
@@ -542,17 +549,21 @@ Los objetos cuyo borrado esté permitido se eliminarán si impiden que se borre 
     </message>
   </context>
   <context>
-    <name>OCC::sesSnackBar</name>
-    <message>
-      <source>Success</source>
-      <translation>Éxito</translation>
-    </message>
-  </context>
-  <context>
     <name>OwncloudAdvancedSetupPage</name>
     <message>
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this box is checked, existing content in the local folder will be erased to start a clean sync from the server.&lt;/p&gt;&lt;p&gt;Do not check this if the local content should be uploaded to the servers folder.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
       <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Si esta casilla está marcada, el contenido existente en la carpeta local se borrará para iniciar una sincronización limpia desde el servidor.&lt;/p&gt;&lt;p&gt;No marque esta casilla si el contenido local debe cargarse en la carpeta de los servidores.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;.</translation>
+    </message>
+  </context>
+  <context>
+    <name>progress</name>
+    <message>
+      <source>Updated local virtual files metadata</source>
+      <translation>Actualizados los metadatos de los archivos virtuales locales</translation>
+    </message>
+    <message>
+      <source>updating local virtual files metadata</source>
+      <translation>Actualización de los metadatos de los archivos virtuales locales</translation>
     </message>
   </context>
   <context>
@@ -610,31 +621,16 @@ Los objetos cuyo borrado esté permitido se eliminarán si impiden que se borre 
   <context>
     <name>TrayWindowAccountMenu</name>
     <message>
-        <source>Add account</source>
-        <translation>Añadir cuenta</translation>
+      <source>Add account</source>
+      <translation>Añadir cuenta</translation>
     </message>
     <message>
-        <source>Pause sync for all</source>
-        <translation>Pausar sincronización para todos</translation>
+      <source>Pause sync for all</source>
+      <translation>Pausar sincronización para todos</translation>
     </message>
     <message>
-        <source>Resume sync for all</source>
-        <translation>Reanudar sincronización para todos</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Configuración</translation>
-    </message>
-  </context>
-  <context>
-    <name>progress</name>
-    <message>
-      <source>Updated local virtual files metadata</source>
-      <translation>Actualizados los metadatos de los archivos virtuales locales</translation>
-    </message>
-    <message>
-      <source>updating local virtual files metadata</source>
-      <translation>Actualización de los metadatos de los archivos virtuales locales</translation>
+      <source>Resume sync for all</source>
+      <translation>Reanudar sincronización para todos</translation>
     </message>
   </context>
 </TS>

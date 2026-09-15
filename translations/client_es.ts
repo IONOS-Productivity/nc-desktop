@@ -580,7 +580,7 @@ Should the account be imported?</source>
 <context>
     <name>OCC::AccountSettings</name>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1531" />
+        <location filename="../src/gui/accountsettings.cpp" line="1529" />
         <source>%1 as %2</source>
         <translation>%1 como %2</translation>
     </message>
@@ -637,17 +637,17 @@ Should the account be imported?</source>
         <translation>Confirme la sincronización para la eliminación de la carpeta conectada</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1542" />
+        <location filename="../src/gui/accountsettings.cpp" line="1540" />
         <source>Connected to %1 (%2).</source>
         <translation>Conectado a %1 ( %2 ).</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1540" />
+        <location filename="../src/gui/accountsettings.cpp" line="1538" />
         <source>Connected to %1.</source>
         <translation>Conectado a %1.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1560" />
+        <location filename="../src/gui/accountsettings.cpp" line="1558" />
         <source>Connecting to %1 …</source>
         <translation>Conectando a %1 ...</translation>
     </message>
@@ -751,7 +751,7 @@ Should the account be imported?</source>
         <translation>Cifrado de extremo a extremo con Archivos Virtuales</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1965" />
+        <location filename="../src/gui/accountsettings.cpp" line="1963" />
         <source>End-to-end encryption has been initialized on this account with another device.&lt;br&gt;Enter the unique mnemonic to have the encrypted folders synchronize on this device as well.</source>
         <translation>El cifrado de extremo a extremo ha sido inicializado en esta cuenta con otro dispositivo. &lt;br&gt; Ingrese el mnemonico para que las carpetas cifradas se sincronicen en este dispositivo también.</translation>
     </message>
@@ -796,12 +796,12 @@ Should the account be imported?</source>
         <translation>Conceder acceso a la carpeta de sincronización</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1771" />
+        <location filename="../src/gui/accountsettings.cpp" line="1769" />
         <source>Migrate certificate to a new one</source>
         <translation>Migrar certificado a uno nuevo</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1580" />
+        <location filename="../src/gui/accountsettings.cpp" line="1578" />
         <source>No %1 connection configured.</source>
         <translation>No hay ninguna conexión de %1 configurada.</translation>
     </message>
@@ -852,32 +852,32 @@ Should the account be imported?</source>
         <translation>Continuar sincronización</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1554" />
+        <location filename="../src/gui/accountsettings.cpp" line="1552" />
         <source>Server %1 is currently being redirected, or your connection is behind a captive portal.</source>
         <translation>El servidor %1 está siendo redirigido actualmente, ó, su conexión está detrás de un portal cautivo.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1551" />
+        <location filename="../src/gui/accountsettings.cpp" line="1549" />
         <source>Server %1 is currently in maintenance mode.</source>
         <translation>El servidor %1 se encuentra en modo mantenimiento.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1548" />
+        <location filename="../src/gui/accountsettings.cpp" line="1546" />
         <source>Server %1 is temporarily unavailable.</source>
         <translation>Servidor %1 no está disponible temporalmente.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1567" />
+        <location filename="../src/gui/accountsettings.cpp" line="1565" />
         <source>Server configuration error: %1 at %2.</source>
         <translation>Error de configuración del servidor: %1 en %2,</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="2036" />
+        <location filename="../src/gui/accountsettings.cpp" line="2034" />
         <source>Set up encryption</source>
         <translation>Configurar cifrado</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1557" />
+        <location filename="../src/gui/accountsettings.cpp" line="1555" />
         <source>Signed out from %1.</source>
         <translation>Cerró sesión desde %1.</translation>
     </message>
@@ -897,7 +897,7 @@ Should the account be imported?</source>
         <translation>La carpeta tiene un problema de sincronización. El cifrado de esta carpeta será posible cuando se haya sincronizado correctamente.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1538" />
+        <location filename="../src/gui/accountsettings.cpp" line="1536" />
         <source>The server version %1 is unsupported! Proceed at your own risk.</source>
         <translation>¡La versión %1 del servidor no está soportada! Si continúas, lo haces bajo tu propio riesgo.</translation>
     </message>
@@ -907,33 +907,33 @@ Should the account be imported?</source>
         <translation>La sincronización está en curso.&lt;br/&gt;¿Desea interrumpirla?</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="2028" />
+        <location filename="../src/gui/accountsettings.cpp" line="2026" />
         <source>The virtual files integration does not support end-to-end encryption yet.</source>
         <translation>La integración de archivos virtuales aún no admite el cifrado de extremo a extremo.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1881" />
+        <location filename="../src/gui/accountsettings.cpp" line="1879" />
         <source>There are folders that have grown in size beyond %1MB: %2</source>
         <translation>Existen carpetas que han aumentado de tamaño más allá de %1MB: %2</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1869" />
+        <location filename="../src/gui/accountsettings.cpp" line="1867" />
         <source>There are folders that were not synchronized because they are external storages:</source>
         <translation>Hay carpetas que no se han sincronizado porque están en el almacenamiento externo:</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1870" />
+        <location filename="../src/gui/accountsettings.cpp" line="1868" />
         <source>There are folders that were not synchronized because they are too big or external storages:</source>
         <translation>Hay carpetas que no se han sincronizado porque son demasiado grandes o están en el almacenamiento externo:</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1868" />
+        <location filename="../src/gui/accountsettings.cpp" line="1866" />
         <source>There are folders that were not synchronized because they are too big:</source>
         <translation>Hay carpetas que no se han sincronizado porque son demasiado grandes:</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="2027" />
-        <location filename="../src/gui/accountsettings.cpp" line="2030" />
+        <location filename="../src/gui/accountsettings.cpp" line="2025" />
+        <location filename="../src/gui/accountsettings.cpp" line="2028" />
         <source>This account supports end-to-end encryption, but it needs to be set up first.</source>
         <translation>Esta cuenta soporta cifrado de extremo a extremo, pero debe ser configurado primero.</translation>
     </message>
@@ -963,7 +963,7 @@ Además, esta acción interrumpirá cualquier sincronización en curso.</transla
         <translation>Para proteger su Identidad Criptográfica, ciframos la misma con un mnemonico de 12 palabras de diccionario. Por favor, anótelo y consérvelo a salvo. Lo necesitará para configurar la sincronización de carpetas cifradas en sus otros dispositivos.</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1564" />
+        <location filename="../src/gui/accountsettings.cpp" line="1562" />
         <source>Unable to connect to %1.</source>
         <translation>No es posible conectarse con %1.</translation>
     </message>
@@ -992,7 +992,7 @@ Would you like to do this now?</source>
 ¿Desea hacerlo ahora mismo?</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1575" />
+        <location filename="../src/gui/accountsettings.cpp" line="1573" />
         <source>You need to accept the terms of service at %1.</source>
         <translation>Debe aceptar los términos de servicio en %1.</translation>
     </message>
@@ -1199,24 +1199,24 @@ Would you like to do this now?</source>
 <context>
     <name>OCC::Application</name>
     <message>
-        <location filename="../src/gui/application.cpp" line="647" />
+        <location filename="../src/gui/application.cpp" line="657" />
         <source>%1 accounts</source>
         <comment>number of accounts imported</comment>
         <translation>%1 cuentas</translation>
     </message>
     <message>
-        <location filename="../src/gui/application.cpp" line="649" />
+        <location filename="../src/gui/application.cpp" line="659" />
         <source>%1 folders</source>
         <comment>number of folders imported</comment>
         <translation>%1 carpetas</translation>
     </message>
     <message>
-        <location filename="../src/gui/application.cpp" line="647" />
+        <location filename="../src/gui/application.cpp" line="657" />
         <source>1 account</source>
         <translation>1 cuenta</translation>
     </message>
     <message>
-        <location filename="../src/gui/application.cpp" line="649" />
+        <location filename="../src/gui/application.cpp" line="659" />
         <source>1 folder</source>
         <translation>1 carpeta</translation>
     </message>
@@ -1226,12 +1226,12 @@ Would you like to do this now?</source>
         <translation>Continuar</translation>
     </message>
     <message>
-        <location filename="../src/gui/application.cpp" line="729" />
+        <location filename="../src/gui/application.cpp" line="739" />
         <source>Error accessing the configuration file</source>
         <translation>Error al acceder al archivo de configuración</translation>
     </message>
     <message>
-        <location filename="../src/gui/application.cpp" line="653" />
+        <location filename="../src/gui/application.cpp" line="663" />
         <source>Imported %1 and %2 from a legacy desktop client.
 %3</source>
         <comment>number of accounts and folders imported. list of users.</comment>
@@ -1239,7 +1239,7 @@ Would you like to do this now?</source>
 %3</translation>
     </message>
     <message>
-        <location filename="../src/gui/application.cpp" line="652" />
+        <location filename="../src/gui/application.cpp" line="662" />
         <source>Legacy import</source>
         <translation>Importación heredada</translation>
     </message>
@@ -1254,7 +1254,7 @@ Would you like to do this now?</source>
         <translation>Algunos ajustes fueron configurados en %1 versiones de este cliente y utilizan características que no están disponibles en esta versión.&lt;br&gt;&lt;br&gt;Continuar implica &lt;b&gt;%2 estos ajustes&lt;/b&gt;.&lt;br&gt;&lt;br&gt;El archivo de configuración actual ya se respaldó en &lt;i&gt;%3&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../src/gui/application.cpp" line="730" />
+        <location filename="../src/gui/application.cpp" line="740" />
         <source>There was an error while accessing the configuration file at %1. Please make sure the file can be accessed by your system account.</source>
         <translation>Se ha producido un error al acceder al archivo de configuración en %1. Por favor, asegúrese de que su cuenta del sistema puede acceder al archivo.</translation>
     </message>
@@ -1768,7 +1768,7 @@ Would you like to do this now?</source>
     <message>
         <location filename="../src/gui/wizard/dataprotectionpage.ui" line="38" />
         <source>Settings</source>
-        <translation>Ajustes</translation>
+        <translation>Configuración</translation>
     </message>
     </context>
 <context>
@@ -4011,72 +4011,72 @@ Nótese que usar cualquier opción de recolección de registros a través de lí
 <context>
     <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="336" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="371" />
         <source>%1 folder &quot;%2&quot; is synced to local folder &quot;%3&quot;</source>
         <translation>%1 carpeta &quot;%2&quot; está sincronizada con la carpeta local &quot;%3&quot;</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="357" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="811" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="392" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="846" />
         <source>%1 free space</source>
         <comment>%1 gets replaced with the size and a matching unit. Example: 3 MB or 5 GB</comment>
         <translation>%1 espacio libre</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="579" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="640" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="614" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="675" />
         <source>(%1)</source>
         <translation>(%1)</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="115" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="301" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="150" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="336" />
         <source>(experimental)</source>
         <translation>(experimental)</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="80" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="115" />
         <source>Connect</source>
         <translation>Conectar</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="809" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="844" />
         <source>In Finder&apos;s &quot;Locations&quot; sidebar section</source>
         <translation>En la sección &quot;Ubicaciones&quot; de la barra lateral del Finder</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="519" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="554" />
         <source>Local Sync Folder</source>
         <translation>Carpeta local de sincronización</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="339" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="374" />
         <source>Sync the folder &quot;%1&quot;</source>
         <translation>Sincronizar la carpeta &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="671" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="706" />
         <source>There isn&apos;t enough free space in the local folder!</source>
         <translation>¡No hay suficiente espacio libre en la carpeta local!</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="130" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="303" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="165" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="338" />
         <source>Use &amp;virtual files instead of downloading content immediately %1</source>
         <translation>Usa &amp;archivos virtuales en vez de descargar el contenido inmediatamente %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="444" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="479" />
         <source>Virtual files are not supported at the selected location</source>
         <translation>Los archivos virtuales no están soportados en la ubicación seleccionada</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="295" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="330" />
         <source>Virtual files are not supported for Windows partition roots as local folder. Please choose a valid subfolder under drive letter.</source>
         <translation>Los archivos virtuales no son compatibles con la carpeta raíz de la partición de Windows como carpeta local. Por favor, elija una subcarpeta válida bajo la letra de la unidad.</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="344" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="379" />
         <source>Warning: The local folder is not empty. Pick a resolution!</source>
         <translation>Advertencia: La carpeta local no está vacía. ¡Elija una solución!</translation>
     </message>
@@ -5987,22 +5987,22 @@ El servidor respondió con el error: %2</translation>
 <context>
     <name>OCC::Theme</name>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1677" />
+        <location filename="../src/gui/accountsettings.cpp" line="1675" />
         <source>ExpandMemory-Link</source>
         <translation type="unfinished">https://wl.hidrive.com/easy/0067</translation>
     </message>
     <message>
-        <location filename="../src/gui/accountsettings.cpp" line="1675" />
+        <location filename="../src/gui/accountsettings.cpp" line="1673" />
         <source>ExpandMemory-Link_STRATO</source>
         <translation type="unfinished">https://static.hidrive.com/next/1043</translation>
     </message>
     <message>
-        <location filename="../src/gui/application.cpp" line="379" />
+        <location filename="../src/gui/application.cpp" line="384" />
         <source>Login_URL</source>
         <translation>https://storage.ionos.es</translation>
     </message>
     <message>
-        <location filename="../src/gui/application.cpp" line="377" />
+        <location filename="../src/gui/application.cpp" line="381" />
         <source>Login_URL_STRATO</source>
         <translation>https://storage.ionos.es</translation>
     </message>
@@ -6034,7 +6034,7 @@ El servidor respondió con el error: %2</translation>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="407" />
         <source>OpenSource-Link_STRATO</source>
-        <translation> https://static.hidrive.com/next/1031</translation>
+        <translation>https://static.hidrive.com/next/1031</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="418" />
@@ -7464,7 +7464,7 @@ El servidor respondió con el error: %2</translation>
     <message>
         <location filename="../src/gui/tray/TrayWindowAccountMenu.qml" line="151" />
         <source>Settings</source>
-        <translation>Configuración</translation>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>

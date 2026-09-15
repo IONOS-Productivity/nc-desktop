@@ -73,4 +73,4 @@ wizard (`basicSetupFinished`).
 - Everything else (welcome/setup/creds/webview/advanced-setup/proxy pages, slideshow, linklabel)
   is generic upstream Nextcloud wizard code shared by all brand variants.
 
-*Quelle: src/gui/wizard — Stand 2026-08-20, automatisch erstellt, bitte gegenlesen.*
+*Quelle: src/gui/wizard — Stand 2026-09-10, automatisch erstellt, bitte gegenlesen.*

@@ -45,6 +45,34 @@ if(LOCALBUILD)
 
 endif()
 
+# On macOS, Contents/Resources/Translations inside the .app bundle is only populated by
+# `cmake --install` (see src/gui/CMakeLists.txt's QM_DIR install() rules). A plain local build run
+# straight from the build tree therefore ships a bundle without that folder.
+# Application::setupTranslations() (src/gui/application.cpp) silently gives up when it is missing,
+# so no QTranslator ever gets installed. That is invisible for regular UI strings (Qt just falls
+# back to the English source text) but breaks our IONOS_BUILD-only "Login_URL" data lookup, which
+# then resolves to its own translation key instead of a URL (see application.cpp, "Login_URL").
+# This copies the same catalogs `install()` would place, straight into the freshly built bundle,
+# so a local dev build behaves like an installed one. BRICKMAKERS/IONOS-fork only, called from
+# src/gui/CMakeLists.txt right after the QM_DIR install() rules.
+function(ionos_bundle_translations_for_local_builds target)
+    if(NOT (APPLE AND BUILD_OWNCLOUD_OSX_BUNDLE))
+        return()
+    endif()
+    set(catalogs ${ARGN})
+    if(NOT catalogs)
+        return()
+    endif()
+    add_custom_command(TARGET ${target} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E make_directory
+                "$<TARGET_BUNDLE_CONTENT_DIR:${target}>/Resources/Translations"
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${catalogs}
+                "$<TARGET_BUNDLE_CONTENT_DIR:${target}>/Resources/Translations"
+        COMMENT "[IONOS] Copying translation catalogs into the app bundle for local dev builds"
+        VERBATIM
+    )
+endfunction()
+
 string(TOLOWER "${APPLICATION_NAME}" app_name_lower)
 if(APPLE AND app_name_lower MATCHES "hidrive")
     set(APPLICATION_ICON_NAME "${APPLICATION_EXECUTABLE}-macOS")
