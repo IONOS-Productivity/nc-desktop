@@ -483,7 +483,7 @@ QString Theme::helpUrl() const
 #ifdef APPLICATION_HELP_URL
     return QString::fromLatin1(APPLICATION_HELP_URL);
 #else
-#ifdef WL_STRATO_BUILD
+#ifdef STRATO_WL_BUILD
     return QCoreApplication::translate("OCC::Theme", "Help-Link_STRATO");
 #else
     return QCoreApplication::translate("OCC::Theme", "Help-Link");
