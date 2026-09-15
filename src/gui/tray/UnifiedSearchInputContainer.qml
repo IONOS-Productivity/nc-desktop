@@ -32,7 +32,7 @@ TextField {
     rightPadding: iconInset + trailingControlWidth + Style.smallSpacing
     verticalAlignment: Qt.AlignVCenter
 
-    placeholderText: qsTr("Search files, messages, events …")
+    placeholderText: qsTr("Search files …")
     placeholderTextColor: Style.sesSearchFieldContent
     color: Style.sesTrayFontColor
     Component.onCompleted: contentItem.cursorColor = Qt.binding(function() { return Style.sesTrayFontColor })
