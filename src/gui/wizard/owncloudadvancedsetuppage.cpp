@@ -80,6 +80,8 @@ OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage(OwncloudWizard *wizard)
     , _ocWizard(wizard)
 {
     _ui.setupUi(this);
+    setRadioChecked(_ui.rSyncEverything);
+
     setupResoultionWidget();
 
     _filePathLabel.reset(new ElidedLabel);
