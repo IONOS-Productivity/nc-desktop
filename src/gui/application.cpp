@@ -1179,11 +1179,12 @@ void Application::setupTranslations()
         // Some translatable "keys" are not real sentences but data lookups (e.g. locale-specific
         // links such as "ExpandMemory-Link"). If a language's .ts file has no entry at all for such
         // a key, Qt returns the raw source string (the key itself) instead of a sensible value.
-        // Loading English as a fallback catalog - installed before (and therefore checked after,
+        // Loading English (GB) as a fallback catalog - installed before (and therefore checked after,
         // QTranslator lookups are LIFO) the language-specific one - lets every language fall back
         // to the English value for keys it doesn't translate, without duplicating English content
-        // into every translation file.
-        if (!choosenLanguage.startsWith(QLatin1String("en")) && fallbackTranslator->load(QLatin1String("client_en"), trPath)
+        // into every translation file. client_en_GB is used rather than client_en because it is the
+        // catalog that is actually kept complete/up to date.
+        if (choosenLanguage != QLatin1String("en_GB") && fallbackTranslator->load(QLatin1String("client_en_GB"), trPath)
             && !fallbackTranslator->isEmpty()) {
             installTranslator(fallbackTranslator.release());
         }
