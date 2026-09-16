@@ -580,7 +580,7 @@ Application::Application(int &argc, char **argv)
     }
 #endif
 
-#if defined(BUILD_FILE_PROVIDER_MODULE)
+#if defined(BUILD_FILE_PROVIDER_MODULE) && defined(Q_OS_MACOS)
     Mac::FileProvider::instance();
 #endif
 }

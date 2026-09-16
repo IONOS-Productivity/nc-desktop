@@ -33,5 +33,14 @@ option( DISABLE_VIRTUAL_FILES_SYNC_FOLDER "Disable use of virtual files sync fol
 set( APPLICATION_DISPLAY_LEGACY_IMPORT_DIALOG OFF )
 option(ENFORCE_SINGLE_ACCOUNT "Enforce use of a single account in desktop client" OFF)
 set( DEVELOPMENT_TEAM "NKUJUXUJ3B" CACHE STRING "Apple Development Team ID" )
-option( BUILD_FILE_PROVIDER_MODULE "Build the macOS file provider module" ON )
+# Only ever meaningful on macOS (it gates macOS-only sources under IF(APPLE) in
+# src/gui/CMakeLists.txt) - defaulting it ON unconditionally on every platform used to leave
+# BUILD_FILE_PROVIDER_MODULE defined (via config.h.in) on Windows/Linux too, where every
+# unguarded `#ifdef BUILD_FILE_PROVIDER_MODULE` site referencing Mac::FileProvider etc. then
+# fails to compile, since those classes are never declared/compiled there.
+if(APPLE)
+    option( BUILD_FILE_PROVIDER_MODULE "Build the macOS file provider module" ON )
+else()
+    set( BUILD_FILE_PROVIDER_MODULE OFF CACHE BOOL "Build the macOS file provider module" FORCE )
+endif()
 set(CMAKE_OSX_DEPLOYMENT_TARGET "12.0" CACHE STRING "Minimum OS X deployment version")
