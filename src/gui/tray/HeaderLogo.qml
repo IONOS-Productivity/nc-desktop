@@ -14,7 +14,7 @@ Rectangle {
     Image{
             id: trayWindowLogo
             cache: false
-            source: Style.sesHeaderLogoIcon
+            source: Style.sesHeaderLogoIconThemed
             sourceSize: Qt.size(width, height)
             fillMode: Image.PreserveAspectFit
             anchors{

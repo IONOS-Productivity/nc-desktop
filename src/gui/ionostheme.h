@@ -42,6 +42,10 @@ public:
     QString headerBannerColor() const override {
         return trayBackgroundColor();
     }
+
+    QString sesHeaderLogoIconThemed() const override {
+        return themedColor(sesHeaderLogoIcon(), QStringLiteral("qrc:///client/theme/ses/ses-IONOS-logo-dark.svg"));
+    }
 };
 }
 #endif // _IONOSTHEME_H

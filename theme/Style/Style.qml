@@ -239,6 +239,7 @@ QtObject {
     readonly property string sesWebsiteIcon: WLTheme.coloredIcon("ses-website.svg", WLTheme.buttonIconColor)
     readonly property string sesFolderIcon: WLTheme.coloredIcon("ses-folderIcon.svg", WLTheme.buttonIconColor)
     readonly property string sesHeaderLogoIcon: WLTheme.sesHeaderLogoIcon
+    readonly property string sesHeaderLogoIconThemed: WLTheme.sesHeaderLogoIconThemed
  
     readonly property string sesAvatar: WLTheme.avatarIcon
  

@@ -31,6 +31,7 @@ class BaseTheme : public QObject{
     Q_PROPERTY(QString trayErrorBorderColor READ trayErrorBorderColor NOTIFY themeColorsChanged)
     Q_PROPERTY(QString trayErrorTextColor READ trayErrorTextColor NOTIFY themeColorsChanged)
     Q_PROPERTY(QString sesHeaderLogoIcon READ sesHeaderLogoIcon CONSTANT)
+    Q_PROPERTY(QString sesHeaderLogoIconThemed READ sesHeaderLogoIconThemed NOTIFY themeColorsChanged)
     Q_PROPERTY(QString websiteIcon READ websiteIcon CONSTANT)
     Q_PROPERTY(QString folderIcon READ folderIcon CONSTANT)
     Q_PROPERTY(QString moreIcon READ moreIcon CONSTANT)
@@ -144,6 +145,11 @@ public:
     }
     
     virtual QString sesHeaderLogoIcon() const = 0;
+
+    // Theme-aware variant of sesHeaderLogoIcon() for the tray header logo (HeaderLogo.qml).
+    // Default: identical in both light and dark mode - i.e. no change - for any brand that
+    // hasn't defined a dedicated dark-mode variant (see IonosTheme override, SES-619).
+    virtual QString sesHeaderLogoIconThemed() const { return sesHeaderLogoIcon(); }
 
     virtual QString deleteIcon() const {
         return themePrefix() + _sesFolder + additionalThemePrefix() + QStringLiteral("ses-accountDelete.svg");
