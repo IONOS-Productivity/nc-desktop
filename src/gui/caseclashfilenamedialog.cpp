@@ -308,7 +308,7 @@ void CaseClashFilenameDialog::customizeStyle()
         QStringLiteral(
             "color: %1; font-family: %2; font-size: %3; font-weight: %4; border-radius: %5; border: 1px "
             "solid %6; padding: 0px 12px; text-align: left; vertical-align: middle; height: 40px; background: %7; ").arg(
-                WLTheme.folderWizardPathColor(),
+                WLTheme.titleColor(),
                 WLTheme.settingsFont(),
                 WLTheme.settingsTextSize(),
                 WLTheme.settingsTextWeight(),
