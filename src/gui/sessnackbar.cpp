@@ -165,11 +165,13 @@ namespace OCC {
 
         // successColor()/warningColor()/errorColor() and the black() text on top of them were fixed,
         // opaque pastels with no dark variant. Same fix as FolderStatusDelegate: tint the frame with
-        // the (already theme-aware) border color at low alpha instead of an opaque fill, and take the
-        // text from the widget's own palette instead of a hardcoded black - mirrors the translucent-
-        // overlay technique the tray uses for its alert boxes (ErrorBox.qml, trayWindowSyncWarning).
+        // the (already theme-aware) border color at low alpha instead of an opaque fill. The widget's
+        // own QPalette isn't theme-aware here - this app hand-rolls dark mode via WLTheme rather than
+        // QPalette, so QPalette::WindowText stayed a fixed OS default (effectively black) regardless of
+        // dark mode, making the text unreadable on the dark tinted background - so take the text color
+        // from WLTheme instead, mirroring how every other themed widget in this codebase gets its color.
         auto frameBackgroundColor = BaseTheme::tintedFillFromBorder(frameBorderColor);
-        const auto textColor = palette().color(QPalette::WindowText);
+        const auto textColor = QColor(WLTheme.titleColor());
 
         QString style = QString::fromLatin1("QFrame {border: 1px solid %1; border-radius: 4px;"
                                 "background-color: rgba(%2, %3, %4, %5); color: %6;}"
