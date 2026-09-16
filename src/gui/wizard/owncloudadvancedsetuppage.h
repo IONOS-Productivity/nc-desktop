@@ -89,6 +89,10 @@ private:
     bool _checking = false;
     bool _created = false;
     bool _localFolderValid = false;
+    // SES-621: true on macOS when File Provider is available - the sync-strategy choice is
+    // hidden entirely and this page auto-advances instead of waiting for user interaction.
+    // See initializePage()/directoriesCreated().
+    bool _useFileProviderVfs = false;
     QProgressIndicator *_progressIndi;
     QString _remoteFolder;
     QString _localPath;
