@@ -4011,72 +4011,72 @@ Nótese que usar cualquier opción de recolección de registros a través de lí
 <context>
     <name>OCC::OwncloudAdvancedSetupPage</name>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="371" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="373" />
         <source>%1 folder &quot;%2&quot; is synced to local folder &quot;%3&quot;</source>
         <translation>%1 carpeta &quot;%2&quot; está sincronizada con la carpeta local &quot;%3&quot;</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="392" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="846" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="394" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="848" />
         <source>%1 free space</source>
         <comment>%1 gets replaced with the size and a matching unit. Example: 3 MB or 5 GB</comment>
         <translation>%1 espacio libre</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="614" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="675" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="616" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="677" />
         <source>(%1)</source>
         <translation>(%1)</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="150" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="336" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="152" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="338" />
         <source>(experimental)</source>
         <translation>(experimental)</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="115" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="117" />
         <source>Connect</source>
         <translation>Conectar</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="844" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="846" />
         <source>In Finder&apos;s &quot;Locations&quot; sidebar section</source>
         <translation>En la sección &quot;Ubicaciones&quot; de la barra lateral del Finder</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="554" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="556" />
         <source>Local Sync Folder</source>
         <translation>Carpeta local de sincronización</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="374" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="376" />
         <source>Sync the folder &quot;%1&quot;</source>
         <translation>Sincronizar la carpeta &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="706" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="708" />
         <source>There isn&apos;t enough free space in the local folder!</source>
         <translation>¡No hay suficiente espacio libre en la carpeta local!</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="165" />
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="338" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="167" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="340" />
         <source>Use &amp;virtual files instead of downloading content immediately %1</source>
         <translation>Usa &amp;archivos virtuales en vez de descargar el contenido inmediatamente %1</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="479" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="481" />
         <source>Virtual files are not supported at the selected location</source>
         <translation>Los archivos virtuales no están soportados en la ubicación seleccionada</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="330" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="332" />
         <source>Virtual files are not supported for Windows partition roots as local folder. Please choose a valid subfolder under drive letter.</source>
         <translation>Los archivos virtuales no son compatibles con la carpeta raíz de la partición de Windows como carpeta local. Por favor, elija una subcarpeta válida bajo la letra de la unidad.</translation>
     </message>
     <message>
-        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="379" />
+        <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="381" />
         <source>Warning: The local folder is not empty. Pick a resolution!</source>
         <translation>Advertencia: La carpeta local no está vacía. ¡Elija una solución!</translation>
     </message>
@@ -7489,8 +7489,8 @@ El servidor respondió con el error: %2</translation>
     <name>UnifiedSearchInputContainer</name>
     <message>
         <location filename="../src/gui/tray/UnifiedSearchInputContainer.qml" line="35" />
-        <source>Search files, messages, events …</source>
-        <translation>Buscando archivos, mensajes, eventos …</translation>
+        <source>Search files …</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
