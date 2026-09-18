@@ -9,7 +9,7 @@ import QtQuick.Controls
 import Qt5Compat.GraphicalEffects
 import Style
 
-import com.nextcloud.desktopclient
+import com.strato.hidrivenext.desktopclient
 
 TextField {
     id: root
@@ -18,13 +18,14 @@ TextField {
 
     property bool isSearchInProgress: false
 
-    readonly property color textFieldIconsColor: palette.placeholderText
+    readonly property color textFieldIconsColor: Style.sesSearchFieldContent
 
     readonly property int iconInset: Style.smallSpacing
 
     readonly property real leadingControlWidth: root.isSearchInProgress ? busyIndicator.width : searchIconImage.width
     readonly property real trailingControlWidth: clearTextButton.visible ? clearTextButton.width : 0
 
+    implicitHeight: Math.max(Style.talkReplyTextFieldPreferredHeight, contentHeight)
     topPadding: topInset
     bottomPadding: bottomInset
     leftPadding: iconInset + leadingControlWidth + Style.smallSpacing
@@ -32,8 +33,18 @@ TextField {
     verticalAlignment: Qt.AlignVCenter
 
     placeholderText: qsTr("Search files, messages, events …")
+    placeholderTextColor: Style.sesSearchFieldContent
+    color: Style.sesTrayFontColor
+    Component.onCompleted: contentItem.cursorColor = Qt.binding(function() { return Style.sesTrayFontColor })
 
     selectByMouse: true
+
+    background: Rectangle {
+        radius: 5
+        color: Style.sesBackgroundColor
+        border.color: Style.sesMenuBorder
+        border.width: 1
+    }
 
     Image {
         id: searchIconImage

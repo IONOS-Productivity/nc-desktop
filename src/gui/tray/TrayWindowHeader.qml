@@ -11,7 +11,7 @@ import "../"
 import "../filedetails/"
 
 import Style
-import com.nextcloud.desktopclient
+import com.strato.hidrivenext.desktopclient
 
 Rectangle {
     id: root
