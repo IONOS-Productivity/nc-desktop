@@ -33,5 +33,7 @@ option( DISABLE_VIRTUAL_FILES_SYNC_FOLDER "Disable use of virtual files sync fol
 set( APPLICATION_DISPLAY_LEGACY_IMPORT_DIALOG OFF )
 option(ENFORCE_SINGLE_ACCOUNT "Enforce use of a single account in desktop client" OFF)
 set( DEVELOPMENT_TEAM "NKUJUXUJ3B" CACHE STRING "Apple Development Team ID" )
-option( BUILD_FILE_PROVIDER_MODULE "Build the macOS file provider module" ON )
+if (APPLE AND CMAKE_OSX_DEPLOYMENT_TARGET VERSION_GREATER_EQUAL 11.0)
+    option( BUILD_FILE_PROVIDER_MODULE "Build the macOS file provider module" ON )
+endif()
 set(CMAKE_OSX_DEPLOYMENT_TARGET "12.0" CACHE STRING "Minimum OS X deployment version")
