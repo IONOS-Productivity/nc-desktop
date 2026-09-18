@@ -205,7 +205,27 @@ void OwncloudAdvancedSetupPage::initializePage()
         || !(Theme::instance()->showVirtualFilesOption() && bestAvailableVfsMode() != Vfs::Off);
 #endif
 
-    if (hideVfsOption) {
+#ifdef BUILD_FILE_PROVIDER_MODULE
+    _useFileProviderVfs = Mac::FileProvider::available();
+#endif
+
+    if (_useFileProviderVfs) {
+        // SES-621: native Nextcloud v33 doesn't offer a sync-strategy choice on macOS at all
+        // when File Provider is available - it's always used, set up automatically with no
+        // visible choice screen. Hide the whole strategy section (not just add VFS as a third
+        // option like the hideVfsOption branch below does for the opposite case) and drive
+        // the page to completion automatically at the end of this function/in
+        // directoriesCreated() below, instead of waiting for the user to click "Connect".
+        _ui.rSyncEverything->hide();
+        _ui.lSyncEverythingSizeLabel->hide();
+        _ui.rSelectiveSync->hide();
+        _ui.lSelectiveSyncSizeLabel->hide();
+        _ui.rVirtualFileSync->hide();
+        _ui.confCheckBoxSize->hide();
+        _ui.confSpinBox->hide();
+        _ui.confTraillingSizeLabel->hide();
+        setRadioChecked(_ui.rVirtualFileSync);
+    } else if (hideVfsOption) {
         // If the layout were wrapped in a widget, the auto-grouping of the
         // radio buttons no longer works and there are surprising margins.
         // Just manually hide the button and remove the layout.
@@ -274,6 +294,13 @@ void OwncloudAdvancedSetupPage::initializePage()
                 _ocWizard->accept();
             }
         });
+    }
+
+    if (_useFileProviderVfs) {
+        // Kick off the same thing clicking "Connect" would (validatePage() starts the async
+        // local+remote folder creation on the first call) - the second, completing call
+        // happens in directoriesCreated() below once that finishes.
+        QTimer::singleShot(0, this, [this]() { wizard()->next(); });
     }
 }
 
@@ -536,6 +563,13 @@ void OwncloudAdvancedSetupPage::directoriesCreated()
     _created = true;
     stopSpinner();
     emit completeChanged();
+
+    if (_useFileProviderVfs) {
+        // Second call: validatePage() now takes the "!_created" branch's else path and
+        // actually advances/finishes the wizard, same as a user clicking "Connect" again
+        // once it re-enables after the first click.
+        QTimer::singleShot(0, this, [this]() { wizard()->next(); });
+    }
 }
 
 void OwncloudAdvancedSetupPage::setRemoteFolder(const QString &remoteFolder)
