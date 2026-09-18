@@ -45,6 +45,7 @@ if(APPLE)
             "OC_APPLICATION_VENDOR=${APPLICATION_VENDOR}"
             "OC_APPLICATION_NAME=${APPLICATION_NAME}"
             "OC_APPLICATION_REV_DOMAIN=${APPLICATION_REV_DOMAIN}"
+            "USER_HEADER_SEARCH_PATHS=${CMAKE_BINARY_DIR}"
             COMMENT building macOS File Provider extension
             VERBATIM)
 
@@ -62,6 +63,7 @@ if(APPLE)
             "OC_APPLICATION_VENDOR=${APPLICATION_VENDOR}"
             "OC_APPLICATION_NAME=${APPLICATION_NAME}"
             "OC_APPLICATION_REV_DOMAIN=${APPLICATION_REV_DOMAIN}"
+            "USER_HEADER_SEARCH_PATHS=${CMAKE_BINARY_DIR}"
             DEPENDS mac_fileproviderplugin
             COMMENT building macOS File Provider UI extension
             VERBATIM)

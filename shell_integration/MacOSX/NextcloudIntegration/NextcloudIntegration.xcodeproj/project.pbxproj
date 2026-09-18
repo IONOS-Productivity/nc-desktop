@@ -232,6 +232,10 @@
 		C2B573F11B1DAD6400303B36 /* warning.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; name = warning.iconset; path = ../../icons/nopadding/warning.iconset; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		AAFDB1862ECB63AD00C26AE7 /* src */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); name = src; path = /Users/iva/Projekte/nextcloud/desktop/src; sourceTree = "<absolute>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		538E396427F4765000FA63D5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
