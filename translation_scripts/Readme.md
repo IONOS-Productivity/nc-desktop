@@ -44,9 +44,19 @@ Der Eintrag steht bewusst **am Anfang** von `.gitattributes` und sollte dort ble
 ### 2. `post-merge`/`post-commit` Hook
 
 - Läuft automatisch nach jedem lokalen `git merge`/`git pull` (`post-merge`) bzw. nach einem Merge-Commit, der Konflikte manuell aufgelöst hat (`post-commit`).
-- Erkennt anhand der Merge-Commit-Message, ob ein `stable-x.y`-Branch gemerged wurde (z.B. `Merge branch 'stable-33.0' into ...`).
-- Führt in diesem Fall automatisch `merge_translation.py auto --auto-commit` aus (**ohne** Branch-Argument).
-- Da mit `--auto-commit` gelaufen wird, liegen die Änderungen an `translations/client_*.ts` danach **nicht** ungestaged im Working Directory, sondern bereits als eigene Commits pro Schritt (`Step 0` … `Step 5`) auf dem Branch. Sie sind vor dem Push zu prüfen; Schritte ohne Änderung erzeugen keinen Commit.
+- Erkennt anhand der Merge-Commit-Message, ob ein `stable-x.y`-Branch gemerged wurde (z.B. `Merge branch 'stable-33.0' into ...`). Das greift auch bei `develop_stable-x.y`, weil dieser Name `stable-x.y` enthält.
+- Führt in diesem Fall automatisch `merge_translation.py auto` aus (**ohne** Branch-Argument).
+- Ob dabei `--auto-commit` gesetzt wird, hängt von der **Merge-Richtung** ab – Quelle aus der Merge-Message, Ziel ist der aktuelle Branch:
+
+  | Merge | Aufruf | Ergebnis |
+  | --- | --- | --- |
+  | `stable-x.y` → `develop_stable-x.y` | `auto --auto-commit` | Änderungen an `translations/client_*.ts` liegen danach **nicht** ungestaged im Working Directory, sondern bereits als eigene Commits pro Schritt (`Step 0` … `Step 5`) auf dem Branch |
+  | `develop_stable-x.y` → Feature-Branch | `auto` | Änderungen werden nur gestaged, die Commit-Message wird vorgeschlagen (siehe unten) |
+  | Feature-Branch → `develop_stable-x.y` | — | Hook läuft gar nicht, die Message nennt keinen `stable-x.y`-Branch als Quelle |
+
+  Hintergrund: Die Übernahme einer neuen NC-Basis ist genau der Fall, für den der Re-Merge existiert – dort sollen die Commits ohne weiteres Zutun auf dem Branch landen. Was dagegen in die History eines Feature-Branches wandert, entscheiden die Entwickelnden selbst.
+- Sicherung: Ist beim Merge nach `develop_stable-x.y` bereits etwas anderes gestaged, läuft der Hook trotzdem **ohne** `--auto-commit` – das `git commit` des Skripts würde diese fremden Änderungen sonst in einen `Step`-Commit mit einsammeln.
+- In beiden Fällen gilt: vor dem Push prüfen; Schritte ohne Änderung erzeugen keinen Commit.
 - Die komplette Hook-Ausgabe wird zusätzlich nach `.githooks/post-merge.log` (lokal, nicht versioniert) gespiegelt – erste Anlaufstelle bei Problemen, weil GUI-Clients wie GitKraken die Hook-Ausgabe oft nirgends sichtbar anzeigen.
 - Squash-Merges werden übersprungen (kein Merge-Commit, dessen Message sich auswerten ließe).
 
