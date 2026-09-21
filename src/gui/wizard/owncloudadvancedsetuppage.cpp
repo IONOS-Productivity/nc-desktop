@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
+#include <QButtonGroup>
 #include <QDir>
 #include <QFileDialog>
 #include <QUrl>
@@ -80,7 +81,26 @@ OwncloudAdvancedSetupPage::OwncloudAdvancedSetupPage(OwncloudWizard *wizard)
     , _ocWizard(wizard)
 {
     _ui.setupUi(this);
-    setRadioChecked(_ui.rSyncEverything);
+
+    // uic constructs every QRadioButton on this page with the same parent (the page widget
+    // itself), so Qt's implicit auto-exclusive-by-parent grouping treats all five radios
+    // (the three sync-strategy ones AND rKeepLocal/cbSyncFromScratch) as one single group,
+    // even though they're meant to be two independent groups. rKeepLocal->setChecked(true)
+    // running after rSyncEverything->setChecked(true) in setupUi() silently steals the
+    // "checked" state - and since rKeepLocal is hidden for a fresh account (no existing local
+    // data), the result is that none of the *visible* sync-strategy radios appears selected.
+    // Explicit QButtonGroups make each set exclusive only within itself.
+    auto *syncStrategyGroup = new QButtonGroup(this);
+    syncStrategyGroup->addButton(_ui.rSyncEverything);
+    syncStrategyGroup->addButton(_ui.rSelectiveSync);
+    syncStrategyGroup->addButton(_ui.rVirtualFileSync);
+
+    auto *keepLocalGroup = new QButtonGroup(this);
+    keepLocalGroup->addButton(_ui.rKeepLocal);
+    keepLocalGroup->addButton(_ui.cbSyncFromScratch);
+
+    // Restore the .ui-intended default now that it can no longer be clobbered by rKeepLocal.
+    _ui.rSyncEverything->setChecked(true);
 
     setupResoultionWidget();
 
