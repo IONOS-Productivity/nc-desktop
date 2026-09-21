@@ -38,11 +38,9 @@ set( DEVELOPMENT_TEAM "NKUJUXUJ3B" CACHE STRING "Apple Development Team ID" )
 # BUILD_FILE_PROVIDER_MODULE defined (via config.h.in) on Windows/Linux too, where every
 # unguarded `#ifdef BUILD_FILE_PROVIDER_MODULE` site referencing Mac::FileProvider etc. then
 # fails to compile, since those classes are never declared/compiled there.
-if(APPLE)
+if (APPLE AND CMAKE_OSX_DEPLOYMENT_TARGET VERSION_GREATER_EQUAL 11.0)
     option( BUILD_FILE_PROVIDER_MODULE "Build the macOS file provider module" ON )
 else()
     set( BUILD_FILE_PROVIDER_MODULE OFF CACHE BOOL "Build the macOS file provider module" FORCE )
-if (APPLE AND CMAKE_OSX_DEPLOYMENT_TARGET VERSION_GREATER_EQUAL 11.0)
-    option( BUILD_FILE_PROVIDER_MODULE "Build the macOS file provider module" ON )
 endif()
 set(CMAKE_OSX_DEPLOYMENT_TARGET "12.0" CACHE STRING "Minimum OS X deployment version")
