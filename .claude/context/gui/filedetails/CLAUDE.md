@@ -74,4 +74,4 @@ instance, parameterized by `accountState`/`localPath`.
   from upstream `stable-33.0` and ease future merges — the page's actual sharing logic
   (signals, `shareModelData` bindings, `resetXField()`) was deliberately left untouched.
 
-*Quelle: src/gui/filedetails — Stand 2026-09-10, automatisch erstellt, bitte gegenlesen.*
+*Quelle: src/gui/filedetails — Stand 2026-09-22, automatisch erstellt, bitte gegenlesen.*

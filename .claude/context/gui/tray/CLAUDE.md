@@ -40,4 +40,4 @@ This folder implements the Nextcloud Desktop **system tray popup**: the tray ico
 ## Merge-Risiko-Hinweis
 Dieser Ordner enthält mehrere der historisch häufigsten Merge-Konflikt-Stellen des Forks (`MainWindow.qml`, `TrayWindowAccountMenu.qml`, `UserLine.qml`) — bei Änderungen hier den [stable-merge-check-Skill](../../../skills/stable-merge-check/SKILL.md) nutzen.
 
-*Quelle: src/gui/tray — Stand 2026-09-10, automatisch erstellt, bitte gegenlesen.*
+*Quelle: src/gui/tray — Stand 2026-09-22, automatisch erstellt, bitte gegenlesen.*

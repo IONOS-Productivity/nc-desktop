@@ -40,7 +40,17 @@ account. Pages are plain `QWizardPage` subclasses registered by page ID (see
   cookie/tracking preference toggles shown only if the user opens "settings" from the consent page.
 - **owncloudadvancedsetuppage.h/.cpp/.ui** — `OwncloudAdvancedSetupPage`: final page; local
   folder picker, sync-everything/selective-sync/virtual-files radio choice, quota lookup, avatar
-  fetch; terminal page (`nextId()` returns -1).
+  fetch; terminal page (`nextId()` returns -1). SES-613 fixed the sync-strategy radios sharing
+  an implicit Qt auto-exclusive group (all constructed with the same parent) with the hidden
+  `rKeepLocal`/`cbSyncFromScratch` radios by splitting them into two explicit `QButtonGroup`s.
+  SES-621: on macOS with File Provider available, `_useFileProviderVfs` hides the whole
+  strategy section, forces virtual-files mode, and auto-advances the wizard via
+  `wizard()->next()` (once from `initializePage()`, once from `directoriesCreated()`) instead
+  of waiting for the user to click "Connect" — mirroring how native File Provider setup skips
+  this choice entirely. Icon coloring (`SetAvatarIcon()`, `styleLocalFolderLabel()`,
+  `styleSyncLogo()`) switched from `Theme::createColorAwareIcon()` (RGB-inversion, washed out
+  for `ses-*.svg`'s `#2F2F70` fill in dark mode) to a local `tintedThemeIcon()` helper doing
+  real `SourceIn`-tinting via `WLTheme.iconDarkColor()`.
 - **wizardproxysettingsdialog.h/.cpp** + **proxysettings.ui** — `WizardProxySettingsDialog`:
   modal for manual proxy host/port/credentials, reachable from the server-setup page.
 - **slideshow.h/.cpp** — `SlideShow`: generic animated image/label carousel widget used on the
@@ -73,4 +83,4 @@ wizard (`basicSetupFinished`).
 - Everything else (welcome/setup/creds/webview/advanced-setup/proxy pages, slideshow, linklabel)
   is generic upstream Nextcloud wizard code shared by all brand variants.
 
-*Quelle: src/gui/wizard — Stand 2026-09-10, automatisch erstellt, bitte gegenlesen.*
+*Quelle: src/gui/wizard — Stand 2026-09-22, automatisch erstellt, bitte gegenlesen.*
