@@ -244,6 +244,7 @@ QtObject {
     readonly property string sesAvatar: WLTheme.avatarIcon
  
     readonly property string sesAccountQuit: WLTheme.quitIcon
+    readonly property string sesAccountQuitColored: WLTheme.coloredIcon("ses-accountQuit.svg", WLTheme.trayFontColor)
     readonly property string sesAccountPause: WLTheme.pauseIcon
     readonly property string sesDarkPlus: WLTheme.plusIcon
     readonly property string sesLightPlus: WLTheme.lightPlusIcon
