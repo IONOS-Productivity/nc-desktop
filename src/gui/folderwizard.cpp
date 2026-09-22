@@ -179,9 +179,20 @@ void FolderWizardLocalPath::changeStyle()
 {
     // QWizard::ModernStyle paints this page's own background natively on Windows and ignores
     // the wizard-level QPalette set in FolderWizard::customizeStyle() - same class of issue as
-    // QTBUG-123853, but for the page body rather than the banner. Paint it explicitly instead.
-    setAutoFillBackground(true);
-    setPalette(QPalette(QPalette::Window, WLTheme.dialogBackgroundColor()));
+    // QTBUG-123853, but for the page body rather than the banner. setAutoFillBackground()'s
+    // palette-based painting isn't reliable for this either (see FolderWizardRemotePath -
+    // SES-626), so use an explicit stylesheet instead, scoped to this widget's own object name
+    // so it doesn't cascade into children that already set their own styling.
+    //
+    // Unlike setPalette() - which Qt no-ops when the palette is already identical -
+    // setStyleSheet() unconditionally posts a QEvent::StyleChange, even for an unchanged string.
+    // Since changeEvent() below reacts to StyleChange by calling changeStyle() again, an
+    // unguarded call here recurses infinitely and crashes with a stack overflow. Only actually
+    // set it when the content changed, so the recursion is a harmless single bounce.
+    const auto pageStyleSheet = QStringLiteral("QWidget#%1 { background-color: %2; }").arg(objectName(), WLTheme.dialogBackgroundColor());
+    if (styleSheet() != pageStyleSheet) {
+        setStyleSheet(pageStyleSheet);
+    }
 
     _ui.title->setStyleSheet(
         WLTheme.fontConfigurationCss(WLTheme.settingsFont(), WLTheme.settingsBigTitleSize(), WLTheme.settingsTitleWeight600(), WLTheme.titleColor()));
@@ -655,10 +666,21 @@ void FolderWizardRemotePath::changeEvent(QEvent *e)
 
 void FolderWizardRemotePath::changeStyle()
 {
-    // See FolderWizardLocalPath::changeStyle() - ModernStyle paints the page body natively
-    // and ignores the wizard-level palette, so it needs to be set explicitly here too.
-    setAutoFillBackground(true);
-    setPalette(QPalette(QPalette::Window, WLTheme.dialogBackgroundColor()));
+    // setAutoFillBackground()/setPalette() (see FolderWizardLocalPath::changeStyle()) is not
+    // reliable for this page on macOS - the native style doesn't always paint the page body from
+    // its palette, unlike the folderTreeWidget's background below, which is set via an explicit
+    // stylesheet and always renders correctly. Use a stylesheet here too, scoped to this widget's
+    // own object name so it doesn't cascade into children that already set their own styling.
+    //
+    // Unlike setPalette() - which Qt no-ops when the palette is already identical -
+    // setStyleSheet() unconditionally posts a QEvent::StyleChange, even for an unchanged string.
+    // Since changeEvent() below reacts to StyleChange by calling changeStyle() again, an
+    // unguarded call here recurses infinitely and crashes with a stack overflow. Only actually
+    // set it when the content changed, so the recursion is a harmless single bounce.
+    const auto pageStyleSheet = QStringLiteral("QWidget#%1 { background-color: %2; }").arg(objectName(), WLTheme.dialogBackgroundColor());
+    if (styleSheet() != pageStyleSheet) {
+        setStyleSheet(pageStyleSheet);
+    }
 
     _ui.title->setStyleSheet(
         WLTheme.fontConfigurationCss(WLTheme.settingsFont(), WLTheme.settingsBigTitleSize(), WLTheme.settingsTitleWeight600(), WLTheme.titleColor()));
