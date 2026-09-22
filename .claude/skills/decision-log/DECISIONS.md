@@ -119,3 +119,15 @@ Chronologisches Protokoll: Komponenten-Ausblenden/-Entfernen-Entscheidungen und 
 **Verworfene Alternative:** Nur Kontrastrichtung/-stärke des Panel-Getters reparieren (Light heller, Dark massiv dunkler als die Seite — inkonsistent zwischen den Modi) statt die Panels komplett zu entfernen. Verworfen, da der Referenzscreenshot gar keine abgesetzten Panels zeigt; die stable-33.0-Analogie aus `b9e530504` traf also nicht zu.
 
 **Status:** aktiv
+
+## 2026-09-22 — Fusion-Style für Sync-Progressbar auf allen Plattformen statt nur macOS (SES-606)
+
+**Kontext:** `FolderStatusDelegate::drawSyncProgressBar` (`folderstatusdelegate.cpp`) zeichnete die Progressbar in der AccountSettings-Ordnerliste bisher nur unter `Q_OS_MACOS` mit einem statischen `backupStyle` (`QStyleFactory::create("Fusion")`), sonst mit `QApplication::style()`. Dieser Guard stammt aus Upstream (Nextcloud-Commits `ac0d39e21`/`d31a9ec9c`, 2023) und ist ausschließlich ein Workaround für einen Rendering-Bug in `QMacStyle` — `origin/stable-33.0` führt ihn unverändert genauso. Windows zeigte durch den Guard weiterhin den nativen Windows-Style, was auf diesem Branch (SES-606, Windows-Design-Bugfixes) als visuell abweichend/unstimmig auffiel.
+
+**Entscheidung:** Guard entfernt, `backupStyle` (Fusion) wird jetzt plattformunabhängig für Windows, Linux und macOS verwendet, um ein einheitliches Whitelabel-Erscheinungsbild der Progressbar über alle Plattformen sicherzustellen — bewusste Abweichung von stable-33.0s Motivation (dort reiner macOS-Bugfix, kein Design-Statement für die anderen Plattformen).
+
+**Verworfene Alternative:** Guard beibehalten (stable-33.0-Struktur 1:1 übernehmen, nur macOS-Bugfix). Verworfen, weil der native Windows-Style hier als das eigentliche visuelle Problem identifiziert wurde und der Fork ohnehin durchgängig eigenes Theming (`WLTheme`) über den nativen Style legt.
+
+**Hinweis für künftige Merges:** `stable-33.0` ändert diese Stelle erfahrungsgemäß öfter (mehrere Upstream-Commits historisch an genau diesem Guard) — bei einem Merge-Konflikt hier bewusst die plattformunabhängige Fusion-Variante beibehalten, nicht versehentlich den `Q_OS_MACOS`-Guard aus stable wiederherstellen.
+
+**Status:** aktiv

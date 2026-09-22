@@ -24,9 +24,7 @@
 #include <iostream>
 
 namespace {
-#ifdef Q_OS_MACOS
     const auto backupStyle = QStyleFactory::create("Fusion");
-#endif
 }
 
 namespace OCC {
@@ -426,11 +424,7 @@ void FolderStatusDelegate::drawSyncProgressBar(QPainter *painter, const QStyleOp
     paletteTmp.setColor(QPalette::Highlight, WLTheme.syncProgressColor());
     progressBarOpt.palette = paletteTmp;
 
-#ifdef Q_OS_MACOS
     backupStyle->drawControl(QStyle::CE_ProgressBar, &progressBarOpt, painter, option.widget);
-#else
-    QApplication::style()->drawControl(QStyle::CE_ProgressBar, &progressBarOpt, painter, option.widget);
-#endif
 
 // Overall Progress Text
     QRect overallProgressRect;
