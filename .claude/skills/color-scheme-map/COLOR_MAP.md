@@ -206,19 +206,33 @@ Reine Weiterleitung an `WLTheme`-Getter (`PrimaryButtonStyle`/`SecondaryButtonSt
 
 ## FolderStatusDelegate (`src/gui/folderstatusdelegate.cpp`)
 
-*Zuletzt geprüfter Commit: `2f77361ec` (2026-08-20)*
+*Zuletzt geprüfter Commit: `83c171240` (2026-09-22)*
 
 | Property | Fundstelle | Light-Wert | Dark-Wert | Quelle | Status |
 |---|---|---|---|---|---|
 | `option.palette` (Zeilentext) | 285,287,334 | OS-Theme | OS-Theme | Qt liefert `option.palette` pro Paint-Aufruf neu | ℹ️ ambient (zwangsläufig aktuell) |
-| `WLTheme.warningBorderColor()` | 355 | `#F4BFAB` | `#C98F5E` | basetheme.h:521-522 | ✅ theme-aware |
-| `WLTheme.errorBorderColor()` | 358 | `#FF004C` | `#FF6688` | stratotheme.h:152-153 | ✅ theme-aware |
-| `WLTheme.infoBorderColor()` | 384 | `#11C7E6` | `#4DD9F0` | basetheme.h:529-530 | ✅ theme-aware |
-| `WLTheme.dialogBackgroundColor()` (Fortschrittsleisten-Base) | 425 | `#F7F7F9` | `#1F2024` | stratotheme.h:17-18 | ✅ theme-aware |
-| `WLTheme.syncProgressColor()` (Fortschrittsleisten-Highlight) | 426 | `#009850` | identisch | `StratoTheme::syncProgressColor()`, stratotheme.h:45-47 — fixer Rückgabewert, überschreibt `basetheme.h:368-369` (`themedColor("#359ada","#4FB6F0")`) | ⚠️ Bruch: Getter selbst hat keinen Dark-Wert |
+| `WLTheme.warningBorderColor()` | 353 | `#F4BFAB` | `#C98F5E` | basetheme.h:521-522 | ✅ theme-aware |
+| `WLTheme.errorBorderColor()` | 356 | `#FF004C` | `#FF6688` | stratotheme.h:152-153 | ✅ theme-aware |
+| `WLTheme.infoBorderColor()` | 382 | `#11C7E6` | `#4DD9F0` | basetheme.h:529-530 | ✅ theme-aware |
+| `WLTheme.dialogBackgroundColor()` (Fortschrittsleisten-Base) | 423 | `#F7F7F9` | `#1F2024` | stratotheme.h:17-18 | ✅ theme-aware |
+| `WLTheme.syncProgressColor()` (Fortschrittsleisten-Highlight) | 424 | `#009850` | identisch | `StratoTheme::syncProgressColor()`, stratotheme.h:45-47 — fixer Rückgabewert, überschreibt `basetheme.h:368-369` (`themedColor("#359ada","#4FB6F0")`) | ⚠️ Bruch: Getter selbst hat keinen Dark-Wert |
 | `BaseTheme::tintedFillFromBorder(borderColor)` (Fehler/Warn/Info-Box-Füllung) | 330 | abgeleitet | abgeleitet | Formel auf o.g. Border-Farben, Kommentar 326-329 begründet bewusste Ableitung statt fixer Pastelltöne | ✅ theme-aware |
 
 **Brüche:** `StratoTheme::syncProgressColor()` (stratotheme.h:45-47) fest `#009850` — betrifft die Sync-Fortschrittsleiste; Grün bleibt im Dark Mode vermutlich noch kontrastreich genug, aber nicht bewusst dokumentiert.
+
+**Update 2026-09-22 (SES-606, Commit `83c171240`):** `backupStyle` (`QStyleFactory::create("Fusion")`, Zeile 27-28) wird jetzt zum Zeichnen der Progressbar (`drawControl(CE_ProgressBar, ...)`, Zeile 429) auf allen Plattformen verwendet statt nur unter `Q_OS_MACOS`. Praktische Auswirkung auf diese Karte: die beiden Palette-Werte `dialogBackgroundColor()`/`syncProgressColor()` oben wurden zuvor auf Windows/Linux an `QApplication::style()->drawControl()` übergeben — der native Windows-Style respektiert eine per `QPalette::Highlight`/`QPalette::Base` gesetzte Custom-Farbe beim Zeichnen einer `QStyleOptionProgressBar` erfahrungsgemäß nicht zuverlässig, d. h. `syncProgressColor()` kam auf Windows vermutlich gar nicht sichtbar an. Mit Fusion als Zeichenstil auf allen Plattformen greifen beide Properties jetzt tatsächlich überall — kein neuer Bruch, aber der bestehende `syncProgressColor()`-Bruch (kein Dark-Wert) ist dadurch jetzt auch auf Windows/Linux sichtbar, nicht mehr nur auf macOS. Siehe `DECISIONS.md`-Eintrag vom 2026-09-22 für die Abwägung ggü. stable-33.0.
+
+## FileDetailsPage.qml — Close-Button (`src/gui/filedetails/FileDetailsPage.qml`)
+
+*Zuletzt geprüfter Commit: `60ad73c1e` (2026-09-22)*
+
+| Property | Fundstelle | Light-Wert | Dark-Wert | Quelle | Status |
+|---|---|---|---|---|---|
+| `iconSource` des Close-`IconButton` | FileDetailsPage.qml:141 | `#2F2F70` | `#C9CBEF` | `Style.sesAccountQuitColored` → `WLTheme.coloredIcon("ses-accountQuit.svg", WLTheme.trayFontColor)`, Style.qml:247, `trayFontColor()` stratotheme.h:21-22 | ✅ theme-aware (vorher ⚠️ Bruch) |
+
+**Brüche:** keine mehr — siehe Fix-Historie unten.
+
+**Fund/Fix-Historie:** `IconButton.qml` rendert `iconSource` über eine rohe `Image`, die `icon.color`-Tinting ignoriert (Kommentar in `Style.qml:236-238` beschreibt genau dieses Problem für `sesWebsiteIcon`/`sesFolderIcon`). `FileDetailsPage.qml`s Close-Button nutzte bis `c7b3e84d7` den statischen Getter `Style.sesAccountQuit`, dessen SVG (`ses-accountQuit.svg`) eine feste dunkle Füllfarbe (`#001B41`) bakt — im Dark Mode praktisch unsichtbar/schlecht lesbar vor dunklem Hintergrund. Erster Fix (`c7b3e84d7`) hatte inline auf `"image://svgimage-custom-color/clear.svg/" + Style.sesTrayFontColor` umgestellt (analog zu `ShareDetailsPage.qml:244`); Folgecommit `60ad73c1e` ("NO-ISSUE fix x in share dialog", Felix Jünger) ersetzte das durch die sauberere, eigene Property `Style.sesAccountQuitColored` (`WLTheme.coloredIcon("ses-accountQuit.svg", WLTheme.trayFontColor)`) — behält die ursprüngliche `ses-accountQuit.svg`-Iconform statt auf das generische `clear.svg` umzusteigen, gleiches theme-aware Prinzip. Beim ursprünglichen Fix reposweit geprüft (kein systematischer COLOR_MAP-Scan, sondern gezielte Suche nach demselben Bug-Muster): alle übrigen Close-/Dismiss-Icons (`ErrorBox.qml:64`, `ActivityItemContent.qml:303`, `ShareeSearchField.qml:154`, `FileActionsWindow.qml:100`, `UnifiedSearchInputContainer.qml:101`) folgen bereits korrekt einem der drei etablierten Muster (custom-color-Provider mit themed Farbe, `WLTheme.coloredIcon()`, oder Controls-`icon.color`) — kein weiterer Fund dieser Bug-Klasse.
 
 ## FolderWizard (`src/gui/folderwizard.cpp`)
 
