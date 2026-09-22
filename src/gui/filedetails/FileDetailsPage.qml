@@ -138,7 +138,7 @@ Page {
                 Layout.preferredHeight: width
                 Layout.rightMargin: headerGridLayout.textRightMargin
 
-                iconSource: Style.sesAccountQuit
+                iconSource: "image://svgimage-custom-color/clear.svg/" + Style.sesTrayFontColor
                 toolTipText: qsTr("Dismiss")
 
                 font.pixelSize: Style.sesFontPixelSize
