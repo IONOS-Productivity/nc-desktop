@@ -736,12 +736,14 @@ void FolderWizardRemotePath::changeStyle()
 
 FolderWizardSelectiveSync::FolderWizardSelectiveSync(const AccountPtr &account)
 {
-    // See FolderWizardLocalPath::changeStyle() - ModernStyle paints the page body natively
-    // and ignores the wizard-level palette, so it needs to be set explicitly here too.
-    setAutoFillBackground(true);
-    setPalette(QPalette(QPalette::Window, WLTheme.dialogBackgroundColor()));
-
     _uiSelectiveSync.setupUi(this);
+
+    // See FolderWizardRemotePath::changeStyle() (SES-626) - setAutoFillBackground()'s
+    // palette-based painting of the page body isn't reliable on macOS, so use an explicit
+    // stylesheet instead, scoped to this widget's own object name (set by setupUi() above,
+    // so this must run after it) so it doesn't cascade into children that set their own styling.
+    setStyleSheet(QStringLiteral("QWidget#%1 { background-color: %2; }").arg(objectName(), WLTheme.dialogBackgroundColor()));
+
     auto *layout = _uiSelectiveSync.verticalLayout;
     _selectiveSync = new SelectiveSyncWidget(account, this);
     layout->addWidget(_selectiveSync);
