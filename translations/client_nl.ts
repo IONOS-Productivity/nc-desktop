@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TS version="2.1" language="nl">
-<context>
+<context><name /><message><source>Agree</source><translation>Akkoord</translation></message><message><source>Back</source><translation>Terug</translation></message><message><source>Necessary data</source><translation>Noodzakelijke gegevens</translation></message><message><source>Required to ensure that the software can be used as expected</source><translation>Vereist om ervoor te zorgen dat de software kan worden gebruikt zoals verwacht</translation></message><message><source>Save Settings</source><translation>Instellingen opslaan</translation></message><message><source>Send anonymous use</source><translation>Anoniem gebruik verzenden</translation></message><message><source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;.</source><translation>Deze applicatie maakt gebruik van traceertechnologieën. Door op Akkoord te klikken, accepteert u de verwerking van uw geanonimiseerde gegevens. U kunt uw keuzes op elk gewenst moment aanpassen via de instellingen. &lt;br/&gt; &lt;br/&gt;Informatie over gegevensverwerking en meer kunt u vinden in ons &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacybeleid&lt;/a&gt;.</translation></message><message><source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;._STRATO</source><translation>Deze applicatie maakt gebruik van traceertechnologieën. Door op Akkoord te klikken, accepteert u de verwerking van uw geanonimiseerde gegevens. U kunt uw keuzes op elk gewenst moment aanpassen via de instellingen. &lt;br/&gt; &lt;br/&gt;Informatie over gegevensverwerking en meer kunt u vinden in ons &lt;a href=&apos;https://static.hidrive.com/next/1005&apos;&gt;privacybeleid&lt;/a&gt;.</translation></message><message><source>This helps us to optimize the software and to better identify system crashes and unexpected errors.</source><translation>Dit helpt ons om de software te optimaliseren en om systeemcrashes en onverwachte fouten beter te identificeren.</translation></message><message><source>We collect anonymized data to optimize our app. We use software solutions from various partners for this purpose. We want to give you full transparency and freedom of choice regarding the collection and processing of your anonymized usage. You can change your settings at any time under the menu item Data Protection.</source><translation>We verzamelen geanonimiseerde gegevens om onze app te optimaliseren. Hiervoor gebruiken we softwareoplossingen van verschillende partners. We willen je volledige transparantie en keuzevrijheid geven met betrekking tot het verzamelen en verwerken van je geanonimiseerde gebruik. Je kunt je instellingen op elk gewenst moment wijzigen onder het menu-item Gegevensbescherming.</translation></message></context><context>
     <name>ActivityItem</name>
     <message>
         <source>In %1</source>
@@ -45,7 +45,7 @@
         <translation>Naar boven schuiven</translation>
     </message>
 </context>
-<context>
+<context><name>BasicComboBox</name><message><source>Clear status message menu</source><translation>Statusbericht wissen</translation></message></context><context>
     <name>CallNotificationDialog</name>
     <message>
         <source>Answer Talk call notification</source>
@@ -243,7 +243,7 @@
         <translation>Bestandseigenschappen van %1 · %2</translation>
     </message>
 </context>
-<context>
+<context><name>FileProviderFastEnumerationSettings</name><message><source>Fast sync will only sync changes in files and folders within folders that have been explored. This can significantly increase responsiveness on initial configuration of virtual files. However, it will cause redundant downloads of files moved to an unexplored folder.</source><translation>Fast sync will only sync changes in files and folders within folders that have been explored. This can significantly increase responsiveness on initial configuration of virtual files. However, it will cause redundant downloads of files moved to an unexplored folder.</translation></message></context><context>
     <name>FileProviderFileDelegate</name>
     <message>
         <source>Delete</source>
@@ -252,7 +252,7 @@
 </context>
 <context>
     <name>FileProviderSettings</name>
-    <message>
+    <message><source>Signal file provider domain</source><translation>Signal file provider domain</translation></message><message>
         <source>Virtual files appear like regular files, but they do not use local storage space. The content downloads automatically when you open the file. Virtual files and classic sync can not be used at the same time.</source>
         <translation type="unfinished" />
     </message>
@@ -261,7 +261,7 @@
         <translation>Virtuele bestandsinstellingen</translation>
     </message>
 </context>
-<context>
+<context><name>FileProviderStorageInfo</name><message><source>Evict local copies...</source><translation>Lokale kopieën verwijderen...</translation></message></context><context><name>FileProviderSyncStatus</name><message><source>All synced!</source><translation>Alles gesynchroniseerd!</translation></message></context><context>
     <name>FileSystem</name>
     <message>
         <source>Could not remove folder &quot;%1&quot;</source>
@@ -450,7 +450,9 @@
 </context>
 <context>
     <name>OCC::AccountManager</name>
-    <message>
+    <message><source>%1 accounts were detected from a legacy desktop client.
+Should the accounts be imported?</source><translation>Er zijn %1 accounts gedetecteerd van een oudere desktopclient.
+Moeten de accounts worden geïmporteerd?</translation></message><message>
         <source>An account was detected from a legacy desktop client.
 Should the account be imported?</source>
         <translation type="unfinished" />
@@ -474,7 +476,7 @@ Should the account be imported?</source>
 </context>
 <context>
     <name>OCC::AccountSettings</name>
-    <message>
+    <message><source>%1 (%3%) of %2 in use. Some folders, including network mounted or shared folders, might have different limits.</source><translation>%1 (%3%) van %2 in gebruik. Sommige mappen, inclusief netwerkmappen en gedeelde mappen, kunnen andere limieten hebben.</translation></message><message>
         <source>%1 as %2</source>
         <translation>%1 als %2</translation>
     </message>
@@ -642,7 +644,7 @@ Should the account be imported?</source>
         <source>End-to-end encryption mnemonic</source>
         <translation>Geheugensteun voor begin-tot-eind versleuteling</translation>
     </message>
-    <message>
+    <message><source>Expand Memory</source><translation>Geheugen uitbreiden</translation></message><message><source>ExpandMemory-Link</source><translation>https://wl.hidrive.com/easy/0097</translation></message><message><source>ExpandMemory-Link_STRATO</source><translation>https://static.hidrive.com/next/1045</translation></message><message>
         <source>Folder creation failed</source>
         <translation>Map maken mislukt</translation>
     </message>
@@ -734,7 +736,7 @@ Should the account be imported?</source>
         <source>Signed out from %1.</source>
         <translation>Uitgelogd van %1.</translation>
     </message>
-    <message>
+    <message><source>Storage space %1% occupied</source><translation>Opslagruimte %1% bezet</translation></message><message>
         <source>Sync Running</source>
         <translation>Bezig met synchroniseren</translation>
     </message>
@@ -808,7 +810,7 @@ Dit zal alle synchronisaties, die op dit moment bezig zijn, afbreken.</translati
         <source>To protect your Cryptographic Identity, we encrypt it with a mnemonic of 12 dictionary words. Please note it down and keep it safe. You will need it to set-up the synchronization of encrypted folders on your other devices.</source>
         <translation type="unfinished" />
     </message>
-    <message>
+    <message><source>To protect your Cryptographic Identity, we encrypt it with a mnemonic of 12 dictionary words. Please note these down and keep them safe. They will be needed to add other devices to your account (like your mobile phone or laptop).</source><translation>To protect your Cryptographic Identity, we encrypt it with a mnemonic of 12 dictionary words. Please note these down and keep them safe. They will be needed to add other devices to your account (like your mobile phone or laptop).</translation></message><message>
         <source>Unable to connect to %1.</source>
         <translation>Kan niet verbinden met %1.</translation>
     </message>
@@ -2457,7 +2459,7 @@ For advanced users: this issue might be related to multiple sync database files 
 </context>
 <context>
     <name>OCC::GeneralSettings</name>
-    <message>
+    <message><source>&amp;Analysis data collection for needs-based design</source><translation>&amp;Analyse van gegevensverzameling voor een op behoeften gebaseerd ontwerp</translation></message><message>
         <source>&amp;Automatically check for updates</source>
         <translation>&amp;Controleer automatisch op updates</translation>
     </message>
@@ -4223,7 +4225,7 @@ Dit is een nieuwe, experimentele modus. Als je besluit het te gebruiken, vragen 
         <source>General</source>
         <translation>Algemeen</translation>
     </message>
-    <message>
+    <message><source>New account</source><translation>Nieuw account</translation></message><message>
         <source>Settings</source>
         <translation>Instellingen</translation>
     </message>
@@ -4916,7 +4918,7 @@ Server antwoordde met fout: %2</translation>
 </context>
 <context>
     <name>OCC::User</name>
-    <message numerus="yes">
+    <message><source>%1 notifications</source><translation>%1 kennisgevingen</translation></message><message numerus="yes">
         <source>%n notification(s)</source>
         <translation>
             <numerusform>%n melding</numerusform>
@@ -5393,7 +5395,7 @@ Server antwoordde met fout: %2</translation>
         <source>Virtual file created</source>
         <translation>Virtueel bestand gecreëerd</translation>
     </message>
-</context>
+<message><source>updating local virtual files metadata</source><translation>Metagegevens van lokale virtuele bestanden bijwerken</translation></message></context>
 <context>
     <name>ProxySettings</name>
     <message>
@@ -5736,7 +5738,7 @@ Server antwoordde met fout: %2</translation>
         <source>Enter a note for the recipient</source>
         <translation type="unfinished" />
     </message>
-    <message>
+    <message><source>Enter the note to recipient</source><translation>Voer de notitie aan de ontvanger in</translation></message><message>
         <source>File drop (upload only)</source>
         <translation>Bestands-drop (alleen uploaden)</translation>
     </message>
