@@ -633,4 +633,11 @@ Los objetos cuyo borrado esté permitido se eliminarán si impiden que se borre 
       <translation>Reanudar sincronización para todos</translation>
     </message>
   </context>
+  <context>
+    <name>UnifiedSearchInputContainer</name>
+    <message>
+      <source>Search files …</source>
+      <translation>Buscar archivos …</translation>
+    </message>
+  </context>
 </TS>

@@ -632,4 +632,11 @@ Items where deletion is allowed will be deleted if they prevent a directory from
       <translation>Riprendi la sincronizzazione per tutti</translation>
     </message>
   </context>
+  <context>
+    <name>UnifiedSearchInputContainer</name>
+    <message>
+      <source>Search files …</source>
+      <translation>Cerca file …</translation>
+    </message>
+  </context>
 </TS>

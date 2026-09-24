@@ -632,4 +632,11 @@ Objecten die verwijderd mogen worden, worden verwijderd als ze zouden verhindere
       <translation>Synchronisatie hervatten voor alles</translation>
     </message>
   </context>
+  <context>
+    <name>UnifiedSearchInputContainer</name>
+    <message>
+      <source>Search files …</source>
+      <translation>Zoek in bestanden …</translation>
+    </message>
+  </context>
 </TS>

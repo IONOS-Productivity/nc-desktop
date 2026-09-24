@@ -632,4 +632,11 @@ Objekt där radering är tillåten raderas om de förhindrar att en katalog tas 
       <translation>Synkronisering av CV för alla</translation>
     </message>
   </context>
+  <context>
+    <name>UnifiedSearchInputContainer</name>
+    <message>
+      <source>Search files …</source>
+      <translation>Sök efter filer …</translation>
+    </message>
+  </context>
 </TS>

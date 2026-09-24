@@ -632,4 +632,11 @@ Items where deletion is allowed will be deleted if they prevent a directory from
       <translation>Resume sync for all</translation>
     </message>
   </context>
+  <context>
+    <name>UnifiedSearchInputContainer</name>
+    <message>
+      <source>Search files …</source>
+      <translation>Search files …</translation>
+    </message>
+  </context>
 </TS>

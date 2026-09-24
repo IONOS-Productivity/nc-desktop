@@ -639,4 +639,11 @@ Les objets autorisés à être supprimés le seront s'ils empêchent la suppress
       <translation>Reprendre la synchronisation pour tous</translation>
     </message>
   </context>
+  <context>
+    <name>UnifiedSearchInputContainer</name>
+    <message>
+      <source>Search files …</source>
+      <translation>Rechercher des fichiers …</translation>
+    </message>
+  </context>
 </TS>

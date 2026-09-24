@@ -632,4 +632,11 @@ Objekte, die gelöscht werden dürfen, werden gelöscht, wenn sie das Löschen e
       <translation>Synchronisierung für alle fortsetzen</translation>
     </message>
   </context>
+  <context>
+    <name>UnifiedSearchInputContainer</name>
+    <message>
+      <source>Search files …</source>
+      <translation>Suche Dateien …</translation>
+    </message>
+  </context>
 </TS>
