@@ -19,6 +19,13 @@ if(LOCALBUILD)
         set( WIN_SHELLEXT_OVERLAY_GUID_WARNING   "{7F256BB6-29D2-4E40-A6C4-E5E756E64C82}" )
     endif()
 
+    # Brander builds get these from the NEXTCLOUD.cmake the brander generates. NEXTCLOUD.cmake
+    # itself must stay identical to stable-x.y, otherwise every brander merge of develop conflicts.
+    set( DO_NOT_USE_PROXY ON )
+    set( DISABLE_ACCOUNT_MIGRATION ON )
+    set( WITH_PROVIDERS OFF )
+    set( APPLICATION_DISPLAY_LEGACY_IMPORT_DIALOG OFF )
+
     if("${WHITELABEL_NAME}" STREQUAL "strato")
         set( APPLICATION_REV_DOMAIN "com.strato.hidrivenext.desktopclient" )
         set( APPLICATION_NAME       "STRATO HiDrive Next" )
@@ -41,23 +48,13 @@ if(LOCALBUILD)
         set( APPLICATION_UPDATE_URL "https://customerupdates.nextcloud.com/client/" CACHE STRING "URL for updater" FORCE)
         set( APPLICATION_HELP_URL   "" CACHE STRING "URL for the help menu" FORCE)
         set( APPLICATION_SERVER_URL "https://storage.ionos.fr" CACHE STRING "URL for the server to use. If entered, the UI field will be pre-filled with it" FORCE)
+        set( LINUX_PACKAGE_SHORTNAME "ionos-hidrive-next" )
+        set( LINUX_APPLICATION_ID "com.ionos.ionos-hidrive-next" )
+        set( NEXTCLOUD_BACKGROUND_COLOR "#0077c2" CACHE STRING "Hex color of the wizard header background" FORCE)
+        set( APPLICATION_WIZARD_HEADER_BACKGROUND_COLOR "#0077c2" CACHE STRING "Hex color of the wizard header background" FORCE)
+        set( APPLICATION_WIZARD_HEADER_TITLE_COLOR "#001b41" CACHE STRING "Hex color of the text in the wizard header" FORCE)
     endif()
 
-endif()
-
-# macOS settings that used to live in NEXTCLOUD.cmake. The brander regenerates NEXTCLOUD.cmake
-# per platform and merges develop on top, so any line there that the Windows brander does not
-# produce causes a merge conflict. IONOS.cmake is never touched by the brander.
-set( DEVELOPMENT_TEAM "NKUJUXUJ3B" CACHE STRING "Apple Development Team ID" )
-# Only ever meaningful on macOS (it gates macOS-only sources under IF(APPLE) in
-# src/gui/CMakeLists.txt) - defaulting it ON unconditionally on every platform used to leave
-# BUILD_FILE_PROVIDER_MODULE defined (via config.h.in) on Windows/Linux too, where every
-# unguarded `#ifdef BUILD_FILE_PROVIDER_MODULE` site referencing Mac::FileProvider etc. then
-# fails to compile, since those classes are never declared/compiled there.
-if (APPLE AND CMAKE_OSX_DEPLOYMENT_TARGET VERSION_GREATER_EQUAL 11.0)
-    option( BUILD_FILE_PROVIDER_MODULE "Build the macOS file provider module" ON )
-else()
-    set( BUILD_FILE_PROVIDER_MODULE OFF CACHE BOOL "Build the macOS file provider module" FORCE )
 endif()
 
 # On macOS, Contents/Resources/Translations inside the .app bundle is only populated by
