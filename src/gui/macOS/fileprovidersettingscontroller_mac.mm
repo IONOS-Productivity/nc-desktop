@@ -12,6 +12,7 @@
 #include <QUrl>
 #include <QMessageBox>
 
+#include "configfile.h"
 #include "gui/accountmanager.h"
 #include "gui/systray.h"
 #include "gui/userinfo.h"
@@ -41,7 +42,7 @@ namespace OCC {
 
 namespace Mac {
 
-Q_LOGGING_CATEGORY(lcFileProviderSettingsController, "nextcloud.gui.mac.fileprovider.settingscontroller")
+Q_LOGGING_CATEGORY(lcFileProviderSettingsController, "hidrivenext.gui.mac.fileprovider.settingscontroller")
 
 class FileProviderSettingsController::MacImplementation : public QObject
 {
