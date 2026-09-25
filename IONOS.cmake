@@ -45,6 +45,21 @@ if(LOCALBUILD)
 
 endif()
 
+# macOS settings that used to live in NEXTCLOUD.cmake. The brander regenerates NEXTCLOUD.cmake
+# per platform and merges develop on top, so any line there that the Windows brander does not
+# produce causes a merge conflict. IONOS.cmake is never touched by the brander.
+set( DEVELOPMENT_TEAM "NKUJUXUJ3B" CACHE STRING "Apple Development Team ID" )
+# Only ever meaningful on macOS (it gates macOS-only sources under IF(APPLE) in
+# src/gui/CMakeLists.txt) - defaulting it ON unconditionally on every platform used to leave
+# BUILD_FILE_PROVIDER_MODULE defined (via config.h.in) on Windows/Linux too, where every
+# unguarded `#ifdef BUILD_FILE_PROVIDER_MODULE` site referencing Mac::FileProvider etc. then
+# fails to compile, since those classes are never declared/compiled there.
+if (APPLE AND CMAKE_OSX_DEPLOYMENT_TARGET VERSION_GREATER_EQUAL 11.0)
+    option( BUILD_FILE_PROVIDER_MODULE "Build the macOS file provider module" ON )
+else()
+    set( BUILD_FILE_PROVIDER_MODULE OFF CACHE BOOL "Build the macOS file provider module" FORCE )
+endif()
+
 # On macOS, Contents/Resources/Translations inside the .app bundle is only populated by
 # `cmake --install` (see src/gui/CMakeLists.txt's QM_DIR install() rules). A plain local build run
 # straight from the build tree therefore ships a bundle without that folder.
