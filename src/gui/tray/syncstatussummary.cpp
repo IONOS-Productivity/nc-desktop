@@ -154,7 +154,7 @@ void SyncStatusSummary::setSyncStateForFolder(const Folder *folder)
         if (_accountState->state() == AccountState::NeedToSignTermsOfService) {
             setSyncStatusDetailString(tr("You need to accept the terms of service"));
         }
-        setSyncIcon(Theme::instance()->folderOffline());
+        setSyncIcon(WLTheme.syncOfflineIcon());
         return;
     }
 
@@ -447,7 +447,7 @@ void SyncStatusSummary::setSyncStateToConnectedState()
     setSyncStatusDetailString("");
     if (_accountState && !_accountState->isConnected()) {
         setSyncStatusString(tr("Offline"));
-        setSyncIcon(Theme::instance()->folderOffline());
+        setSyncIcon(WLTheme.syncOfflineIcon());
     } else if (!hasConfiguredSyncSource(_accountState)) {
         setSyncStatusString(tr("No synchronisation configured"));
         setSyncIcon(Theme::instance()->pause());
