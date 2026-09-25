@@ -15,7 +15,7 @@ QUrl socketApiSocketUrl()
 {
     NSString *appGroupId = [NSString stringWithFormat:@"%@.%@", @DEVELOPMENT_TEAM, @APPLICATION_REV_DOMAIN];
     NSURL *container = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:appGroupId];
-    NSURL *socket = [container URLByAppendingPathComponent:@"s" isDirectory:NO];
+    NSURL *socket = [container URLByAppendingPathComponent:@"s" isDirectory:false];
 
     return QUrl::fromNSURL(socket);
 }

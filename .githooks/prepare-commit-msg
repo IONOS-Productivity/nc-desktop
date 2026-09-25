@@ -1,0 +1,32 @@
+#!/bin/sh
+# Pre-fills the commit message after post-merge/post-commit staged a
+# STRATO/IONOS translation re-merge (see .githooks/lib-translation-merge.sh).
+#
+# Only kicks in for a plain `git commit` (no -m/-c/-C, and not a merge or
+# squash commit - those already carry their own message source) and only
+# once: the marker dropped by lib-translation-merge.sh is consumed here.
+#
+# Enable once per clone with:
+#   git config core.hooksPath .githooks
+
+commit_msg_file="$1"
+commit_source="$2"
+
+repo_root=$(git rev-parse --show-toplevel)
+marker="$repo_root/.git/TRANSLATION_MERGE_SUGGESTED_MSG"
+
+[ -f "$marker" ] || exit 0
+
+if [ -n "$commit_source" ]; then
+    exit 0
+fi
+
+suggested=$(cat "$marker")
+rm -f "$marker"
+
+tmp_file="$commit_msg_file.translation-merge-tmp"
+printf '%s\n' "$suggested" > "$tmp_file"
+cat "$commit_msg_file" >> "$tmp_file"
+mv "$tmp_file" "$commit_msg_file"
+
+exit 0
