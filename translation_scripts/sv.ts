@@ -27,7 +27,7 @@
     </message>
     <message>
       <source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href='https://wl.hidrive.com/easy/0005'&gt;privacy policy&lt;/a&gt;.</source>
-      <translation>Denna applikation använder spårningsteknik. Genom att klicka på Godkänn accepterar du behandlingen av dina anonymiserade data. Du kan när som helst justera dina val via inställningarna. &lt;br/&gt; &lt;br/&gt;Information om databehandling och mer finns i vår &lt;a href='https://wl.hidrive.com/easy/1004'&gt;integritetspolicy&lt;/a&gt;.</translation>
+      <translation>Denna applikation använder spårningsteknik. Genom att klicka på Godkänn accepterar du behandlingen av dina anonymiserade data. Du kan när som helst justera dina val via inställningarna. &lt;br/&gt; &lt;br/&gt;Information om databehandling och mer finns i vår &lt;a href='https://wl.hidrive.com/easy/0005'&gt;integritetspolicy&lt;/a&gt;.</translation>
     </message>
     <message>
       <source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href='https://wl.hidrive.com/easy/0005'&gt;privacy policy&lt;/a&gt;._STRATO</source>
@@ -183,7 +183,7 @@ Bör kontona importeras?</translation>
     </message>
     <message>
       <source>ExpandMemory-Link</source>
-      <translation>https://static.hidrive.com/next/1045</translation>
+      <translation>https://wl.hidrive.com/easy/0057</translation>
     </message>
     <message>
       <source>ExpandMemory-Link_STRATO</source>
@@ -468,7 +468,7 @@ Objekt där radering är tillåten raderas om de förhindrar att en katalog tas 
     <name>OCC::Theme</name>
     <message>
       <source>Help-Link</source>
-      <translation>https://static.hidrive.com/next/1014</translation>
+      <translation>https://wl.hidrive.com/easy/0108</translation>
     </message>
     <message>
       <source>Help-Link_STRATO</source>
@@ -476,7 +476,7 @@ Objekt där radering är tillåten raderas om de förhindrar att en katalog tas 
     </message>
     <message>
       <source>LegalNotice-Link</source>
-      <translation>https://static.hidrive.com/next/1024</translation>
+      <translation>https://wl.hidrive.com/easy/0004</translation>
     </message>
     <message>
       <source>LegalNotice-Link_STRATO</source>
@@ -492,7 +492,7 @@ Objekt där radering är tillåten raderas om de förhindrar att en katalog tas 
     </message>
     <message>
       <source>MoreInformation-Link</source>
-      <translation>https://strato.se</translation>
+      <translation>https://wl.hidrive.com/easy/0007</translation>
     </message>
     <message>
       <source>MoreInformation-Link_STRATO</source>
@@ -500,7 +500,7 @@ Objekt där radering är tillåten raderas om de förhindrar att en katalog tas 
     </message>
     <message>
       <source>OpenSource-Link</source>
-      <translation>https://static.hidrive.com/next/1031</translation>
+      <translation>https://wl.hidrive.com/easy/0006</translation>
     </message>
     <message>
       <source>OpenSource-Link_STRATO</source>
@@ -508,7 +508,7 @@ Objekt där radering är tillåten raderas om de förhindrar att en katalog tas 
     </message>
     <message>
       <source>Privacy-Link</source>
-      <translation>https://static.hidrive.com/next/1004</translation>
+      <translation>https://wl.hidrive.com/easy/0005</translation>
     </message>
     <message>
       <source>Privacy-Link_STRATO</source>
