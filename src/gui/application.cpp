@@ -1135,6 +1135,19 @@ QString enforcedLanguage()
     return Theme::instance()->enforcedLocale();
 }
 
+// Nextcloud ships catalogs for many languages the white-label product does not offer. Such a
+// language must not be used as UI language, so that the English (UK) fallback below applies instead.
+static bool isUnsupportedUiLanguage(const QString &language)
+{
+#ifdef IONOS_WL_BUILD
+    // Swedish is only offered by STRATO, its catalog carries no IONOS links.
+    return QLocale(language).language() == QLocale::Swedish;
+#else
+    Q_UNUSED(language)
+    return false;
+#endif
+}
+
 void Application::setupTranslations()
 {
     auto translator = std::make_unique<QTranslator>();
@@ -1151,8 +1164,16 @@ void Application::setupTranslations()
 
     qCInfo(lcApplication) << "System UI languages are:" << QLocale::system().uiLanguages();
     auto choosenLanguage = enforcedLanguage();
+    if (isUnsupportedUiLanguage(choosenLanguage)) {
+        qCInfo(lcApplication) << "ignoring unsupported enforced language" << choosenLanguage;
+        choosenLanguage.clear();
+    }
     if (choosenLanguage.isEmpty()) {
         for (const auto &localeToTest : QLocale::system().uiLanguages(QLocale::TagSeparator::Underscore)) {
+            if (isUnsupportedUiLanguage(localeToTest)) {
+                qCDebug(lcApplication()) << "skipping unsupported language" << localeToTest;
+                continue;
+            }
             const auto trFile = QString{QLatin1String{"client_"} + localeToTest};
             qCDebug(lcApplication()) << "trying to load" << localeToTest << "in" << trFile << "from" << trPath;
             if (translator->load(trFile, trPath)) {
@@ -1165,6 +1186,16 @@ void Application::setupTranslations()
         qCDebug(lcApplication()) << "trying to load" << choosenLanguage << "in" << trFile << "from" << trPath;
         static_cast<void>(translator->load(trFile, trPath));
     }
+
+#ifdef IONOS_BUILD
+    // Without any catalog, data lookups such as "Login_URL" resolve to nothing (see the server URL
+    // override in the constructor), so fall back to English (UK) when no supported language matched.
+    if (translator->isEmpty()) {
+        qCInfo(lcApplication) << "no supported translation catalog matched, falling back to en_GB";
+        choosenLanguage = QStringLiteral("en_GB");
+        static_cast<void>(translator->load(QLatin1String("client_en_GB"), trPath));
+    }
+#endif
 
     qCInfo(lcApplication) << "selected application language:" << choosenLanguage;
     if (!translator->isEmpty() || choosenLanguage.startsWith(QLatin1String("en"))) {
