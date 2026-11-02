@@ -1746,7 +1746,7 @@ Would you like to do this now?</source>
     <message>
         <location filename="../src/gui/wizard/dataprotectionpage.cpp" line="56" />
         <source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href=&apos;https://wl.hidrive.com/easy/0005&apos;&gt;privacy policy&lt;/a&gt;.</source>
-        <translation type="unfinished">Esta aplicación utiliza tecnologías de seguimiento. Al hacer clic en Aceptar, usted acepta el tratamiento de sus datos anónimos. Puede ajustar sus opciones en cualquier momento a través de la configuración. &lt;br/&gt; &lt;br/&gt;Puede encontrar información sobre el procesamiento de datos y más en nuestra &lt;a href=&apos;https://wl.hidrive.com/easy/0015&apos;&gt;política de privacidad&lt;/a&gt;.</translation>
+        <translation type="unfinished">Esta aplicación utiliza tecnologías de seguimiento. Al hacer clic en Aceptar, usted acepta el tratamiento de sus datos anónimos. Puede ajustar sus opciones en cualquier momento a través de la configuración. &lt;br/&gt; &lt;br/&gt;Puede encontrar información sobre el procesamiento de datos y más en nuestra &lt;a href=&apos;https://wl.hidrive.com/easy/datemx&apos;&gt;política de privacidad&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../src/gui/wizard/dataprotectionpage.cpp" line="54" />
@@ -5987,7 +5987,7 @@ El servidor respondió con el error: %2</translation>
     <message>
         <location filename="../src/gui/application.cpp" line="384" />
         <source>Login_URL</source>
-        <translation>https://storage.ionos.es</translation>
+        <translation>https://storage.ionos.mx</translation>
     </message>
     <message>
         <location filename="../src/gui/application.cpp" line="381" />
@@ -5997,7 +5997,7 @@ El servidor respondió con el error: %2</translation>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="400" />
         <source>LegalNotice-Link</source>
-        <translation>https://wl.hidrive.com/easy/0014</translation>
+        <translation>https://wl.hidrive.com/easy/01114</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="398" />
@@ -6007,7 +6007,7 @@ El servidor respondió con el error: %2</translation>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="391" />
         <source>MoreInformation-Link</source>
-        <translation>https://wl.hidrive.com/easy/0017</translation>
+        <translation>https://wl.hidrive.com/easy/0100</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="389" />
@@ -6027,7 +6027,7 @@ El servidor respondió con el error: %2</translation>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="418" />
         <source>Privacy-Link</source>
-        <translation>https://wl.hidrive.com/easy/0015</translation>
+        <translation>https://wl.hidrive.com/easy/datemx</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="416" />
@@ -6055,7 +6055,7 @@ El servidor respondió con el error: %2</translation>
         <location filename="../src/gui/generalsettings.cpp" line="284" />
         <location filename="../src/gui/owncloudgui.cpp" line="761" />
         <source>Help-Link</source>
-        <translation>https://wl.hidrive.com/easy/0118</translation>
+        <translation>https://wl.hidrive.com/easy/helpmx</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="487" />

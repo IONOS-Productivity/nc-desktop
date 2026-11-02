@@ -5,7 +5,7 @@ description: Sortiert und vergleicht eine oder mehrere Kandidaten-Übersetzungsd
 
 # Translation-Diff-Merge
 
-Automatisiert den Review-Workflow für die hand-gepflegten Diff-Dateien unter `translation_scripts/<lang>.ts` (de_DE.ts, en.ts, en_GB.ts, es.ts, es_MX.ts, fr.ts, it.ts, nl.ts, sv.ts). Diese Dateien sind die Basis, die in Schritt 3 von `merge_translation.py` in die eigentlichen `translations/client_*.ts` gemergt wird (siehe [Readme.md](../../../translation_scripts/Readme.md)) — Fehler oder unbeabsichtigte Löschungen hier pflanzen sich dorthin fort.
+Automatisiert den Review-Workflow für die hand-gepflegten Diff-Dateien unter `translation_scripts/<lang>.ts` (de_DE.ts, en.ts, en_GB.ts, en_US.ts, en_CA.ts, es.ts, es_MX.ts, fr.ts, fr_CA.ts, it.ts, nl.ts, sv.ts). Diese Dateien sind die Basis, die in Schritt 3 von `merge_translation.py` in die eigentlichen `translations/client_*.ts` gemergt wird (siehe [Readme.md](../../../translation_scripts/Readme.md)) — Fehler oder unbeabsichtigte Löschungen hier pflanzen sich dorthin fort.
 
 Werkzeug ist ausschließlich [translation_scripts/diff_tools.py](../../../translation_scripts/diff_tools.py) (`sort` / `compare` / `merge`) — **nicht** `sort.py` direkt. `sort.py`s `repair_file()`-Schritt schreibt rohe `"`/`'` in `&quot;`/`&apos;` um (Stil von `lupdate`-Output); bei diesen handgepflegten Diff-Dateien erzeugt das nur unnötiges Escaping-Rauschen im Vergleich, siehe Docstring in `diff_tools.py`.
 
@@ -50,4 +50,4 @@ Gilt pro Kandidaten-Datei; bei mehreren vom Nutzer übergebenen Dateien alle Dat
 
 ## Bekannte Sprachcodes
 
-`de_DE`, `en`, `en_GB`, `es`, `es_MX`, `fr`, `it`, `nl`, `sv` — bei einer neuen Sprache, die es unter `translation_scripts/` noch nicht gibt, den Nutzer fragen, ob eine neue Basis-Datei angelegt werden soll, statt das stillschweigend zu tun.
+`de_DE`, `en`, `en_GB`, `en_US`, `en_CA`, `es`, `es_MX`, `fr`, `fr_CA`, `it`, `nl`, `sv` — bei einer neuen Sprache, die es unter `translation_scripts/` noch nicht gibt, den Nutzer fragen, ob eine neue Basis-Datei angelegt werden soll, statt das stillschweigend zu tun.

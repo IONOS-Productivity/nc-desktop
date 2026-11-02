@@ -27,7 +27,7 @@
     </message>
     <message>
       <source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href='https://wl.hidrive.com/easy/0005'&gt;privacy policy&lt;/a&gt;.</source>
-      <translation>Esta aplicación utiliza tecnologías de seguimiento. Al hacer clic en Aceptar, usted acepta el tratamiento de sus datos anónimos. Puede ajustar sus opciones en cualquier momento a través de la configuración. &lt;br/&gt; &lt;br/&gt;Puede encontrar información sobre el procesamiento de datos y más en nuestra &lt;a href='https://wl.hidrive.com/easy/0015'&gt;política de privacidad&lt;/a&gt;.</translation>
+      <translation>Esta aplicación utiliza tecnologías de seguimiento. Al hacer clic en Aceptar, usted acepta el tratamiento de sus datos anónimos. Puede ajustar sus opciones en cualquier momento a través de la configuración. &lt;br/&gt; &lt;br/&gt;Puede encontrar información sobre el procesamiento de datos y más en nuestra &lt;a href='https://wl.hidrive.com/easy/datemx'&gt;política de privacidad&lt;/a&gt;.</translation>
     </message>
     <message>
       <source>This application uses tracking technologies. By clicking on Agree, you accept the processing of your anonymized data. You can adjust your choices at any time via the settings. &lt;br/&gt; &lt;br/&gt;Information on data processing and more can be found in our &lt;a href='https://wl.hidrive.com/easy/0005'&gt;privacy policy&lt;/a&gt;._STRATO</source>
@@ -469,7 +469,7 @@ Los objetos cuyo borrado esté permitido se eliminarán si impiden que se borre 
     <name>OCC::Theme</name>
     <message>
       <source>Help-Link</source>
-      <translation>https://wl.hidrive.com/easy/0118</translation>
+      <translation>https://wl.hidrive.com/easy/helpmx</translation>
     </message>
     <message>
       <source>Help-Link_STRATO</source>
@@ -477,7 +477,7 @@ Los objetos cuyo borrado esté permitido se eliminarán si impiden que se borre 
     </message>
     <message>
       <source>LegalNotice-Link</source>
-      <translation>https://wl.hidrive.com/easy/0014</translation>
+      <translation>https://wl.hidrive.com/easy/01114</translation>
     </message>
     <message>
       <source>LegalNotice-Link_STRATO</source>
@@ -485,7 +485,7 @@ Los objetos cuyo borrado esté permitido se eliminarán si impiden que se borre 
     </message>
     <message>
       <source>Login_URL</source>
-      <translation>https://storage.ionos.es</translation>
+      <translation>https://storage.ionos.mx</translation>
     </message>
     <message>
       <source>Login_URL_STRATO</source>
@@ -493,7 +493,7 @@ Los objetos cuyo borrado esté permitido se eliminarán si impiden que se borre 
     </message>
     <message>
       <source>MoreInformation-Link</source>
-      <translation>https://wl.hidrive.com/easy/0017</translation>
+      <translation>https://wl.hidrive.com/easy/0100</translation>
     </message>
     <message>
       <source>MoreInformation-Link_STRATO</source>
@@ -509,7 +509,7 @@ Los objetos cuyo borrado esté permitido se eliminarán si impiden que se borre 
     </message>
     <message>
       <source>Privacy-Link</source>
-      <translation>https://wl.hidrive.com/easy/0015</translation>
+      <translation>https://wl.hidrive.com/easy/datemx</translation>
     </message>
     <message>
       <source>Privacy-Link_STRATO</source>

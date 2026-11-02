@@ -264,7 +264,7 @@ def validate_untranslated(ts_files, keys_after_step0, keys_after_step1):
     print("\n  Final validation: checking for untranslated keys...")
     
     # EN files always have empty NC base translations — skip those
-    en_files = {"client_en.ts", "client_en_GB.ts"}
+    en_files = {"client_en.ts", "client_en_GB.ts", "client_en_US.ts", "client_en_CA.ts"}
     
     for ts_file in ts_files:
         basename = os.path.basename(ts_file)
@@ -489,22 +489,28 @@ if __name__ == "__main__":
                 , r"..\translations\client_es.ts"
                 , r"..\translations\client_es_MX.ts"
                 , r"..\translations\client_fr.ts"
+                , r"..\translations\client_fr_CA.ts"
                 , r"..\translations\client_it.ts"
                 , r"..\translations\client_nl.ts"
                 , r"..\translations\client_sv.ts"
                 , r"..\translations\client_en.ts"
                 , r"..\translations\client_en_GB.ts"
+                , r"..\translations\client_en_US.ts"
+                , r"..\translations\client_en_CA.ts"
                 ]
     
     diff_files = [r".\de_DE.ts"
                   , r".\es.ts"
                   , r".\es_MX.ts"
                   , r".\fr.ts"
+                  , r".\fr_CA.ts"
                   , r".\it.ts"
                   , r".\nl.ts"
                   , r".\sv.ts"
                   , r".\en.ts"
                   , r".\en_GB.ts"
+                  , r".\en_US.ts"
+                  , r".\en_CA.ts"
                   ]
 
     # Parse --auto-commit flag

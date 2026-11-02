@@ -70,7 +70,7 @@ git config core.hooksPath .githooks
 
 ## Diff-Dateien aus PhraseApp aktualisieren (`diff_tools.py`)
 
-Die Dateien `translation_scripts/<lang>.ts` (`de_DE.ts`, `en.ts`, `en_GB.ts`, `es.ts`, `es_MX.ts`, `fr.ts`, `it.ts`, `nl.ts`, `sv.ts`) sind die hand-gepflegte Quelle unserer eigenen Keys und Übersetzungen – sie werden in Schritt 3 der Pipeline in die eigentlichen `translations/client_*.ts` gemergt. Ihre Ursprungsquelle ist PhraseApp: dort werden die Übersetzungen beauftragt und anschließend als `.ts`-Datei exportiert (Windows hängt beim Download häufig `(1)`, `(2)` … an den Dateinamen an, z.B. `de_DE(3).ts`).
+Die Dateien `translation_scripts/<lang>.ts` (`de_DE.ts`, `en.ts`, `en_GB.ts`, `en_US.ts`, `en_CA.ts`, `es.ts`, `es_MX.ts`, `fr.ts`, `fr_CA.ts`, `it.ts`, `nl.ts`, `sv.ts`) sind die hand-gepflegte Quelle unserer eigenen Keys und Übersetzungen – sie werden in Schritt 3 der Pipeline in die eigentlichen `translations/client_*.ts` gemergt. Ihre Ursprungsquelle ist PhraseApp: dort werden die Übersetzungen beauftragt und anschließend als `.ts`-Datei exportiert (Windows hängt beim Download häufig `(1)`, `(2)` … an den Dateinamen an, z.B. `de_DE(3).ts`).
 
 Ein solcher Export darf nicht einfach über die Basis-Datei kopiert werden: er ist anders sortiert und kann – etwa bei einem unvollständigen Export – Keys nicht mehr enthalten, die bei uns noch gebraucht werden. Für das Prüfen und Übernehmen gibt es deshalb `diff_tools.py`:
 
