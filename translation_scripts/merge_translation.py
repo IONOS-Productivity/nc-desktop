@@ -1,5 +1,6 @@
 import sys
 import os
+import shutil
 import subprocess
 import xml.etree.ElementTree as ET
 
@@ -424,19 +425,43 @@ def run_script(script_name, input_file, output_file):
     except subprocess.CalledProcessError as e:
         print(f"An error occurred while running {script_name} with input '{input_file}' and output '{output_file}': {e}")
 
+def find_lupdate():
+    """Locate the lupdate binary: $LUPDATE, then the Craft root, then PATH."""
+    if os.environ.get("LUPDATE"):
+        return os.environ["LUPDATE"]
+
+    if sys.platform == "win32":
+        craft_roots = [r"C:\CraftRoot", r"C:\Craft64"]
+        binary = "lupdate.exe"
+    else:
+        home = os.path.expanduser("~")
+        craft_roots = [os.path.join(home, "CraftRoot"), os.path.join(home, "Craft64")]
+        binary = "lupdate"
+
+    for craft_root in craft_roots:
+        candidate = os.path.join(craft_root, "bin", binary)
+        if os.path.isfile(candidate):
+            return candidate
+
+    on_path = shutil.which("lupdate")
+    if on_path:
+        return on_path
+
+    print("Error: lupdate not found. Install it via Craft or set the LUPDATE environment variable.")
+    sys.exit(1)
+
 def run_lupdate(ts_files, mode="default"):
-    craft_root = r"C:\CraftRoot" if os.path.isdir(r"C:\CraftRoot") else r"C:\Craft64"
-    lupdate = os.path.join(craft_root, "bin", "lupdate.exe")
+    lupdate = find_lupdate()
     command = [
         lupdate,
         "-locations", "none",
         "-no-ui-lines",
         "-no-sort",
-        r"..\src\libsync",
-        r"..\src\gui",
-        r"..\src\csync",
-        r"..\src\common",
-        r"..\src\cmd",
+        os.path.join("..", "src", "libsync"),
+        os.path.join("..", "src", "gui"),
+        os.path.join("..", "src", "csync"),
+        os.path.join("..", "src", "common"),
+        os.path.join("..", "src", "cmd"),
         "-ts"
     ]
 
@@ -446,11 +471,11 @@ def run_lupdate(ts_files, mode="default"):
         "-no-ui-lines",
         "-no-sort",
         "-no-obsolete",
-        r"..\src\libsync",
-        r"..\src\gui",
-        r"..\src\csync",
-        r"..\src\common",
-        r"..\src\cmd",
+        os.path.join("..", "src", "libsync"),
+        os.path.join("..", "src", "gui"),
+        os.path.join("..", "src", "csync"),
+        os.path.join("..", "src", "common"),
+        os.path.join("..", "src", "cmd"),
         "-ts"
     ]
 
@@ -459,11 +484,11 @@ def run_lupdate(ts_files, mode="default"):
         "-locations", "absolute",
         "-no-sort",
         "-no-obsolete",
-        r"..\src\libsync",
-        r"..\src\gui",
-        r"..\src\csync",
-        r"..\src\common",
-        r"..\src\cmd",
+        os.path.join("..", "src", "libsync"),
+        os.path.join("..", "src", "gui"),
+        os.path.join("..", "src", "csync"),
+        os.path.join("..", "src", "common"),
+        os.path.join("..", "src", "cmd"),
         "-ts"
     ]
 
@@ -485,32 +510,32 @@ def run_lupdate(ts_files, mode="default"):
 
 
 if __name__ == "__main__":
-    ts_files = [r"..\translations\client_de.ts"
-                , r"..\translations\client_es.ts"
-                , r"..\translations\client_es_MX.ts"
-                , r"..\translations\client_fr.ts"
-                , r"..\translations\client_fr_CA.ts"
-                , r"..\translations\client_it.ts"
-                , r"..\translations\client_nl.ts"
-                , r"..\translations\client_sv.ts"
-                , r"..\translations\client_en.ts"
-                , r"..\translations\client_en_GB.ts"
-                , r"..\translations\client_en_US.ts"
-                , r"..\translations\client_en_CA.ts"
+    ts_files = [os.path.join("..", "translations", "client_de.ts")
+                , os.path.join("..", "translations", "client_es.ts")
+                , os.path.join("..", "translations", "client_es_MX.ts")
+                , os.path.join("..", "translations", "client_fr.ts")
+                , os.path.join("..", "translations", "client_fr_CA.ts")
+                , os.path.join("..", "translations", "client_it.ts")
+                , os.path.join("..", "translations", "client_nl.ts")
+                , os.path.join("..", "translations", "client_sv.ts")
+                , os.path.join("..", "translations", "client_en.ts")
+                , os.path.join("..", "translations", "client_en_GB.ts")
+                , os.path.join("..", "translations", "client_en_US.ts")
+                , os.path.join("..", "translations", "client_en_CA.ts")
                 ]
     
-    diff_files = [r".\de_DE.ts"
-                  , r".\es.ts"
-                  , r".\es_MX.ts"
-                  , r".\fr.ts"
-                  , r".\fr_CA.ts"
-                  , r".\it.ts"
-                  , r".\nl.ts"
-                  , r".\sv.ts"
-                  , r".\en.ts"
-                  , r".\en_GB.ts"
-                  , r".\en_US.ts"
-                  , r".\en_CA.ts"
+    diff_files = [os.path.join(".", "de_DE.ts")
+                  , os.path.join(".", "es.ts")
+                  , os.path.join(".", "es_MX.ts")
+                  , os.path.join(".", "fr.ts")
+                  , os.path.join(".", "fr_CA.ts")
+                  , os.path.join(".", "it.ts")
+                  , os.path.join(".", "nl.ts")
+                  , os.path.join(".", "sv.ts")
+                  , os.path.join(".", "en.ts")
+                  , os.path.join(".", "en_GB.ts")
+                  , os.path.join(".", "en_US.ts")
+                  , os.path.join(".", "en_CA.ts")
                   ]
 
     # Parse --auto-commit flag

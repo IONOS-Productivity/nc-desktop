@@ -7,7 +7,7 @@ Diese Anleitung beschreibt den Prozess zur Lokalisierung des HiDrive Next Client
 - Nextcloud Stable Client Quellcode
 - Python 3
 - Python-Skripte `merge_translation.py` (die eigentliche Pipeline) und `diff_tools.py` (Pflege der sprachabhängigen Diff-Dateien)
-- Qt Linguist Tools (insbesondere `lupdate`)
+- Qt Linguist Tools (insbesondere `lupdate`). `merge_translation.py` läuft unter Windows, macOS und Linux und sucht `lupdate` in dieser Reihenfolge: Umgebungsvariable `LUPDATE`, Craft-Root (`C:\CraftRoot` bzw. `C:\Craft64` unter Windows, `~/CraftRoot` bzw. `~/Craft64` unter macOS/Linux), dann `PATH`.
 
 # Vorgehen bei Release (obsolet)
 
