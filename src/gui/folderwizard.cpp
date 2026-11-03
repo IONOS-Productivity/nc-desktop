@@ -189,6 +189,13 @@ void FolderWizardLocalPath::changeStyle()
     // Since changeEvent() below reacts to StyleChange by calling changeStyle() again, an
     // unguarded call here recurses infinitely and crashes with a stack overflow. Only actually
     // set it when the content changed, so the recursion is a harmless single bounce.
+    //
+    // Qt only paints a stylesheet background for plain QWidget, QFrame, QDialog and a few other
+    // classes, not for a QWizardPage subclass like this one. Without WA_StyledBackground the
+    // background-color is ignored and whatever QWizard paints behind the page shows through:
+    // dark on macOS, but white on Linux, where the dark-mode text colors then end up unreadable
+    // (SES-616).
+    setAttribute(Qt::WA_StyledBackground, true);
     const auto pageStyleSheet = QStringLiteral("QWidget#%1 { background-color: %2; }").arg(objectName(), WLTheme.dialogBackgroundColor());
     if (styleSheet() != pageStyleSheet) {
         setStyleSheet(pageStyleSheet);
@@ -677,6 +684,9 @@ void FolderWizardRemotePath::changeStyle()
     // Since changeEvent() below reacts to StyleChange by calling changeStyle() again, an
     // unguarded call here recurses infinitely and crashes with a stack overflow. Only actually
     // set it when the content changed, so the recursion is a harmless single bounce.
+    //
+    // WA_StyledBackground: see FolderWizardLocalPath::changeStyle() (SES-616).
+    setAttribute(Qt::WA_StyledBackground, true);
     const auto pageStyleSheet = QStringLiteral("QWidget#%1 { background-color: %2; }").arg(objectName(), WLTheme.dialogBackgroundColor());
     if (styleSheet() != pageStyleSheet) {
         setStyleSheet(pageStyleSheet);
@@ -742,6 +752,8 @@ FolderWizardSelectiveSync::FolderWizardSelectiveSync(const AccountPtr &account)
     // palette-based painting of the page body isn't reliable on macOS, so use an explicit
     // stylesheet instead, scoped to this widget's own object name (set by setupUi() above,
     // so this must run after it) so it doesn't cascade into children that set their own styling.
+    // WA_StyledBackground: see FolderWizardLocalPath::changeStyle() (SES-616).
+    setAttribute(Qt::WA_StyledBackground, true);
     setStyleSheet(QStringLiteral("QWidget#%1 { background-color: %2; }").arg(objectName(), WLTheme.dialogBackgroundColor()));
 
     auto *layout = _uiSelectiveSync.verticalLayout;
