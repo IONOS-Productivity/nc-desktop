@@ -111,7 +111,8 @@ QSize FolderStatusDelegate::sizeHint(const QStyleOptionViewItem &option,
         btnOpt.text = tr("Grant access");
         const auto btnSize = QApplication::style()->sizeFromContents(
             QStyle::CT_PushButton, &btnOpt, buttonFm.size(Qt::TextSingleLine, btnOpt.text));
-        h += margin + btnSize.height();
+        // Must match the spacing above the button in paint().
+        h += 3 * margin + btnSize.height();
     }
 
     return {0, h};
@@ -367,7 +368,10 @@ void FolderStatusDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
         const auto btnSize = QApplication::style()->sizeFromContents(
             QStyle::CT_PushButton, &btnOpt, buttonFm.size(Qt::TextSingleLine, btnOpt.text));
 
-        QRect btnRect(iconRect.left(), textBoxTop, btnSize.width(), btnSize.height());
+        // textBoxTop already leaves the small gap meant between two message boxes. A button
+        // directly below a box needs more room, otherwise it looks attached to it. Must match
+        // the height reserved in sizeHint().
+        QRect btnRect(iconRect.left(), textBoxTop + 2 * margin, btnSize.width(), btnSize.height());
 
         btnOpt.rect = QStyle::visualRect(option.direction, option.rect, btnRect);
         painter->save();
