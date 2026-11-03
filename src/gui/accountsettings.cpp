@@ -63,6 +63,9 @@ using namespace Qt::StringLiterals;
 
 #ifdef BUILD_FILE_PROVIDER_MODULE
 #include "macOS/fileprovider.h"
+
+#include <QQuickItem>
+#include <QtMath>
 #endif
 
 #ifdef Q_OS_MACOS
@@ -225,6 +228,17 @@ AccountSettings::AccountSettings(AccountState *accountState, QWidget *parent)
         }
         fpSettingsLayout->addWidget(fpSettingsWidget, 1);
         fileProviderPanelContents->setLayout(fpSettingsLayout);
+
+        // QQuickWidget only picks up the QML page's height when it loads. Once the description
+        // wraps to more lines at the actual panel width, the widget stays too low and cuts off
+        // the last line, so keep its height in sync with the page's implicitHeight.
+        if (const auto fpSettingsRoot = fpSettingsWidget->rootObject()) {
+            const auto syncHeight = [fpSettingsWidget, fpSettingsRoot] {
+                fpSettingsWidget->setFixedHeight(qCeil(fpSettingsRoot->implicitHeight()));
+            };
+            connect(fpSettingsRoot, &QQuickItem::implicitHeightChanged, fpSettingsWidget, syncHeight);
+            syncHeight();
+        }
     } else {
         // macOS 13 Ventura: the file provider feature is unsupported there.
         // This branch can be removed once Ventura is no longer supported.
