@@ -1135,18 +1135,54 @@ QString enforcedLanguage()
     return Theme::instance()->enforcedLocale();
 }
 
-// Nextcloud ships catalogs for many languages the white-label product does not offer. Such a
-// language must not be used as UI language, so that the English (UK) fallback below applies instead.
-static bool isUnsupportedUiLanguage(const QString &language)
-{
 #ifdef IONOS_WL_BUILD
-    // Swedish is only offered by STRATO, its catalog carries no IONOS links.
-    return QLocale(language).language() == QLocale::Swedish;
-#else
-    Q_UNUSED(language)
-    return false;
-#endif
+// IONOS HiDrive Next is only offered in these markets. Nextcloud ships catalogs for many more
+// languages, but they carry no IONOS links, so every other language - including regional variants
+// such as de_CH - gets the English (UK) catalog. Returns the catalog name, e.g. "de" for client_de.
+static QString ionosUiLanguage(const QStringList &candidates)
+{
+    struct Market {
+        QLocale::Language language;
+        QLocale::Territory territory;
+        const char *catalog;
+    };
+    static constexpr Market markets[] = {
+        {QLocale::German, QLocale::Germany, "de"},
+        {QLocale::English, QLocale::UnitedKingdom, "en_GB"},
+        {QLocale::English, QLocale::UnitedStates, "en_US"},
+        {QLocale::English, QLocale::Canada, "en_CA"},
+        {QLocale::French, QLocale::France, "fr"},
+        {QLocale::French, QLocale::Canada, "fr_CA"},
+        {QLocale::Spanish, QLocale::Spain, "es"},
+        {QLocale::Spanish, QLocale::Mexico, "es_MX"},
+        {QLocale::Italian, QLocale::Italy, "it"},
+    };
+
+    QList<QLocale::Language> languagesWithTerritory;
+    for (const auto &candidate : candidates) {
+        const QLocale locale(candidate);
+        // uiLanguages() follows a regional entry such as "de_CH" with the bare "de". QLocale would
+        // resolve that to the default territory (Germany), so skip it to keep de_CH unsupported.
+        const auto hasTerritory = candidate.contains(QLatin1Char('_'));
+        if (!hasTerritory && languagesWithTerritory.contains(locale.language())) {
+            continue;
+        }
+        if (hasTerritory) {
+            languagesWithTerritory.append(locale.language());
+        }
+
+        for (const auto &market : markets) {
+            if (locale.language() == market.language && locale.territory() == market.territory) {
+                return QString::fromLatin1(market.catalog);
+            }
+        }
+        qCDebug(lcApplication) << "skipping unsupported language" << candidate;
+    }
+
+    qCInfo(lcApplication) << "no supported language in" << candidates << "- falling back to en_GB";
+    return QStringLiteral("en_GB");
 }
+#endif
 
 void Application::setupTranslations()
 {
@@ -1164,16 +1200,13 @@ void Application::setupTranslations()
 
     qCInfo(lcApplication) << "System UI languages are:" << QLocale::system().uiLanguages();
     auto choosenLanguage = enforcedLanguage();
-    if (isUnsupportedUiLanguage(choosenLanguage)) {
-        qCInfo(lcApplication) << "ignoring unsupported enforced language" << choosenLanguage;
-        choosenLanguage.clear();
-    }
+#ifdef IONOS_WL_BUILD
+    // Always resolves to a supported catalog, so the generic lookup below takes the "enforced" branch.
+    choosenLanguage = ionosUiLanguage(choosenLanguage.isEmpty() ? QLocale::system().uiLanguages(QLocale::TagSeparator::Underscore)
+                                                                : QStringList{choosenLanguage});
+#endif
     if (choosenLanguage.isEmpty()) {
         for (const auto &localeToTest : QLocale::system().uiLanguages(QLocale::TagSeparator::Underscore)) {
-            if (isUnsupportedUiLanguage(localeToTest)) {
-                qCDebug(lcApplication()) << "skipping unsupported language" << localeToTest;
-                continue;
-            }
             const auto trFile = QString{QLatin1String{"client_"} + localeToTest};
             qCDebug(lcApplication()) << "trying to load" << localeToTest << "in" << trFile << "from" << trPath;
             if (translator->load(trFile, trPath)) {
