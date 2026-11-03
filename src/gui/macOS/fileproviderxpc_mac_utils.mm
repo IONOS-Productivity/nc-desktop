@@ -13,7 +13,7 @@
 #include "gui/accountmanager.h"
 
 namespace {
-const char *const clientCommunicationServiceName = "com.ionos.hidrivenext.desktopclient.ClientCommunicationService";
+const char *const clientCommunicationServiceName = "com.nextcloud.desktopclient.ClientCommunicationService";
 NSString *const nsClientCommunicationServiceName = [NSString stringWithUTF8String:clientCommunicationServiceName];
 }
 
