@@ -64,13 +64,13 @@ class DocumentActionViewController: FPUIActionExtensionViewController {
         logger?.info("Preparing action: \(actionIdentifier)")
 
         switch (actionIdentifier) {
-        case "com.ionos.hidrivenext.desktopclient.FileProviderUIExt.ShareAction":
+        case "com.nextcloud.desktopclient.FileProviderUIExt.ShareAction":
                 prepare(childViewController: ShareViewController(itemIdentifiers, serviceResolver: serviceResolver, log: log))
-        case "com.ionos.hidrivenext.desktopclient.FileProviderUIExt.LockFileAction":
+        case "com.nextcloud.desktopclient.FileProviderUIExt.LockFileAction":
                 prepare(childViewController: LockViewController(itemIdentifiers, locking: true, serviceResolver: serviceResolver, log: log))
-        case "com.ionos.hidrivenext.desktopclient.FileProviderUIExt.UnlockFileAction":
+        case "com.nextcloud.desktopclient.FileProviderUIExt.UnlockFileAction":
                 prepare(childViewController: LockViewController(itemIdentifiers, locking: false, serviceResolver: serviceResolver, log: log))
-        case "com.ionos.hidrive.desktopclient.FileProviderUIExt.EvictAction":
+        case "com.nextcloud.desktopclient.FileProviderUIExt.EvictAction":
                 evict(itemsWithIdentifiers: itemIdentifiers, inDomain: domain);
                 extensionContext.completeRequest();
             default:

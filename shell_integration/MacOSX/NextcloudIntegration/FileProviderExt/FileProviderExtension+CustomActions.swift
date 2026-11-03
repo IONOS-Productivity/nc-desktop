@@ -12,7 +12,7 @@ extension FileProviderExtension: NSFileProviderCustomAction {
         completionHandler: @escaping ((any Error)?) -> Void
     ) -> Progress {
         switch actionIdentifier.rawValue {
-        case "com.ionos.hidrive.desktopclient.FileProviderExt.FileActionsAction":
+        case "com.nextcloud.desktopclient.FileProviderExt.FileActionsAction":
             guard let itemIdentifier = itemIdentifiers.first else {
                 logger.error("Failed to get first item identifier for file actions action.")
                 completionHandler(NSFileProviderError(.noSuchItem))
@@ -46,13 +46,13 @@ extension FileProviderExtension: NSFileProviderCustomAction {
             }
 
             return Progress()
-        case "com.ionos.hidrive.desktopclient.FileProviderExt.KeepDownloadedAction":
+        case "com.nextcloud.desktopclient.FileProviderExt.KeepDownloadedAction":
             return performKeepDownloadedAction(
                 keepDownloaded: true,
                 onItemsWithIdentifiers: itemIdentifiers,
                 completionHandler: completionHandler
             )
-        case "com.ionos.hidrive.desktopclient.FileProviderExt.AutoEvictAction":
+        case "com.nextcloud.desktopclient.FileProviderExt.AutoEvictAction":
             return performKeepDownloadedAction(
                 keepDownloaded: false,
                 onItemsWithIdentifiers: itemIdentifiers,
