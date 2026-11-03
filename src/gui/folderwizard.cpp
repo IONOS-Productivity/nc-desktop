@@ -30,7 +30,10 @@
 #include <QFileDialog>
 #include <QFileIconProvider>
 #include <QFileInfo>
+#include <QGuiApplication>
 #include <QHBoxLayout>
+#include <QImage>
+#include <QStyleHints>
 #include <QInputDialog>
 #include <QMessageBox>
 #include <QStandardPaths>
@@ -963,6 +966,46 @@ FolderWizard::FolderWizard(AccountPtr account, QWidget *parent)
 
     // Close the wizard if initial folder selection is canceled
     connect(_folderWizardSourcePage, &FolderWizardLocalPath::initialFolderSelectionCanceled, this, &FolderWizard::reject);
+
+    // SES-616 DIAGNOSTICS ONLY - not meant to be merged. Logs the values that decide how the page
+    // background ends up on Linux, once after the wizard is shown and again on every page change.
+    const auto logDiagnostics = [this](const char *trigger) {
+        const auto describe = [](const QPalette &palette) {
+            return QStringLiteral("Window=%1 Base=%2 WindowText=%3 Text=%4")
+                .arg(palette.color(QPalette::Window).name(), palette.color(QPalette::Base).name(),
+                     palette.color(QPalette::WindowText).name(), palette.color(QPalette::Text).name());
+        };
+        qCInfo(lcWizard) << "SES-616" << trigger << "env:"
+                         << "QT_QPA_PLATFORMTHEME=" << qEnvironmentVariable("QT_QPA_PLATFORMTHEME")
+                         << "XDG_CURRENT_DESKTOP=" << qEnvironmentVariable("XDG_CURRENT_DESKTOP")
+                         << "XDG_SESSION_TYPE=" << qEnvironmentVariable("XDG_SESSION_TYPE")
+                         << "platform=" << QGuiApplication::platformName() << "style=" << style()->name();
+        qCInfo(lcWizard) << "SES-616" << trigger << "darkMode=" << Theme::instance()->darkMode()
+                         << "colorScheme=" << QGuiApplication::styleHints()->colorScheme()
+                         << "dialogBackgroundColor=" << WLTheme.dialogBackgroundColor() << "titleColor=" << WLTheme.titleColor();
+        qCInfo(lcWizard) << "SES-616" << trigger << "app palette:" << describe(QGuiApplication::palette());
+        qCInfo(lcWizard) << "SES-616" << trigger << "wizard palette:" << describe(palette());
+
+        const auto *page = currentPage();
+        if (!page) {
+            return;
+        }
+        // What actually got painted near the bottom right corner of the page, read back from the window.
+        const auto image = grab().toImage();
+        const auto probePoint = page->mapTo(this, QPoint(page->width() - 10, page->height() - 10));
+        qCInfo(lcWizard) << "SES-616" << trigger << "page" << page->objectName() << "class=" << page->metaObject()->className()
+                         << "autoFillBackground=" << page->autoFillBackground()
+                         << "WA_StyledBackground=" << page->testAttribute(Qt::WA_StyledBackground)
+                         << "styleSheet=" << page->styleSheet() << "palette:" << describe(page->palette())
+                         << "painted=" << image.pixelColor(probePoint * image.devicePixelRatio()).name();
+    };
+    QTimer::singleShot(500, this, [logDiagnostics] { logDiagnostics("shown"); });
+    connect(this, &QWizard::currentIdChanged, this, [this, logDiagnostics] {
+        QTimer::singleShot(200, this, [logDiagnostics] { logDiagnostics("page changed"); });
+    });
+    connect(Theme::instance(), &Theme::darkModeChanged, this, [this, logDiagnostics] {
+        QTimer::singleShot(200, this, [logDiagnostics] { logDiagnostics("dark mode changed"); });
+    });
 }
 
 FolderWizard::~FolderWizard() = default;
