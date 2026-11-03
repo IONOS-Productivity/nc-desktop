@@ -33,6 +33,7 @@
 #include <QGuiApplication>
 #include <QHBoxLayout>
 #include <QImage>
+#include <QProxyStyle>
 #include <QStyleHints>
 #include <QInputDialog>
 #include <QMessageBox>
@@ -979,7 +980,10 @@ FolderWizard::FolderWizard(AccountPtr account, QWidget *parent)
                          << "QT_QPA_PLATFORMTHEME=" << qEnvironmentVariable("QT_QPA_PLATFORMTHEME")
                          << "XDG_CURRENT_DESKTOP=" << qEnvironmentVariable("XDG_CURRENT_DESKTOP")
                          << "XDG_SESSION_TYPE=" << qEnvironmentVariable("XDG_SESSION_TYPE")
-                         << "platform=" << QGuiApplication::platformName() << "style=" << style()->name();
+                         << "platform=" << QGuiApplication::platformName() << "style=" << style()->metaObject()->className()
+                         << "baseStyle=" << (qobject_cast<QProxyStyle *>(style()) && qobject_cast<QProxyStyle *>(style())->baseStyle()
+                                                 ? qobject_cast<QProxyStyle *>(style())->baseStyle()->name()
+                                                 : style()->name());
         qCInfo(lcWizard) << "SES-616" << trigger << "darkMode=" << Theme::instance()->darkMode()
                          << "colorScheme=" << QGuiApplication::styleHints()->colorScheme()
                          << "dialogBackgroundColor=" << WLTheme.dialogBackgroundColor() << "titleColor=" << WLTheme.titleColor();
@@ -992,14 +996,19 @@ FolderWizard::FolderWizard(AccountPtr account, QWidget *parent)
         }
         // What actually got painted near the bottom right corner of the page, read back from the window.
         const auto image = grab().toImage();
-        const auto probePoint = page->mapTo(this, QPoint(page->width() - 10, page->height() - 10));
+        const auto probePoint = page->mapTo(this, QPoint(page->width() - 10, page->height() - 10)) * image.devicePixelRatio();
+        const auto painted = image.rect().contains(probePoint)
+            ? image.pixelColor(probePoint).name()
+            : QStringLiteral("n/a (probe %1,%2 outside image %3x%4)").arg(probePoint.x()).arg(probePoint.y()).arg(image.width()).arg(image.height());
+        qCInfo(lcWizard) << "SES-616" << trigger << "geometry: wizard visible=" << isVisible() << "size=" << size()
+                         << "page geometry=" << page->geometry() << "devicePixelRatio=" << image.devicePixelRatio();
         qCInfo(lcWizard) << "SES-616" << trigger << "page" << page->objectName() << "class=" << page->metaObject()->className()
                          << "autoFillBackground=" << page->autoFillBackground()
                          << "WA_StyledBackground=" << page->testAttribute(Qt::WA_StyledBackground)
                          << "styleSheet=" << page->styleSheet() << "palette:" << describe(page->palette())
-                         << "painted=" << image.pixelColor(probePoint * image.devicePixelRatio()).name();
+                         << "painted=" << painted;
     };
-    QTimer::singleShot(500, this, [logDiagnostics] { logDiagnostics("shown"); });
+    QTimer::singleShot(2000, this, [logDiagnostics] { logDiagnostics("shown"); });
     connect(this, &QWizard::currentIdChanged, this, [this, logDiagnostics] {
         QTimer::singleShot(200, this, [logDiagnostics] { logDiagnostics("page changed"); });
     });
