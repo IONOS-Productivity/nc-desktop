@@ -1010,6 +1010,35 @@ void FolderWizard::customizeStyle()
     wizardPalette.setColor(QPalette::Mid, backgroundColor);
 
     setPalette(wizardPalette);
+
+    // QWizard places every page inside an internal QFrame that fills its background from its own
+    // palette's Base role, which doesn't follow the wizard palette above: black on macOS, white on
+    // Linux (SES-616). It shows around the pages and wherever a page doesn't paint itself, so give
+    // it the same background as the pages. It has no object name of its own, hence the one set here
+    // to scope the stylesheet to this frame instead of every QFrame (e.g. QLabel) inside it.
+    if (auto *pageFrame = qobject_cast<QFrame *>(_folderWizardSourcePage->parentWidget())) {
+        pageFrame->setObjectName(QStringLiteral("FolderWizardPageFrame"));
+        const auto pageFrameStyleSheet = QStringLiteral("QFrame#%1 { background-color: %2; }").arg(pageFrame->objectName(), backgroundColor.name());
+        if (pageFrame->styleSheet() != pageFrameStyleSheet) {
+            pageFrame->setStyleSheet(pageFrameStyleSheet);
+        }
+    }
+}
+
+void FolderWizard::changeEvent(QEvent *event)
+{
+    switch (event->type()) {
+    case QEvent::PaletteChange:
+    case QEvent::ThemeChange:
+        // Dark-/Light-Mode switching. setPalette() in customizeStyle() is a no-op for an unchanged
+        // palette, so this doesn't loop.
+        customizeStyle();
+        break;
+    default:
+        break;
+    }
+
+    QWizard::changeEvent(event);
 }
 
 void FolderWizard::adjustWizardSize()
