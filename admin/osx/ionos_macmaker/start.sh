@@ -144,6 +144,7 @@ fi
         -DCMAKE_PREFIX_PATH=$CRAFT_DIR \
         -DSPARKLE_LIBRARY=$SPARKLE_DIR/Sparkle.framework \
         -DSOCKETAPI_TEAM_IDENTIFIER_PREFIX="$TEAM_IDENTIFIER." \
+        -DDEVELOPMENT_TEAM="$TEAM_IDENTIFIER" \
         -DARG_SIDEBAR_ICONS=ON \
         -DLOCALBUILD=ON \
       -DSKIP_MACDEPLOYQT=$(if [ $SKIP_MACDEPLOY == true ]; then echo "ON"; else echo "OFF"; fi) \
@@ -181,6 +182,19 @@ codesign -s "$CODE_SIGN_IDENTITY" --force --preserve-metadata=entitlements --ver
 
 # Sign the client
 find "$CLIENT_CONTENTS_DIR/MacOS" -mindepth 1 -print0 | xargs -0 -I {} bash -c 'sign_folder_content "$@" "$CODE_SIGN_IDENTITY" "$entitlements" ' _ {} "$CODE_SIGN_IDENTITY" "--preserve-metadata=entitlements"
+
+# The extensions come out of xcodebuild unsigned, so --preserve-metadata=entitlements above has
+# nothing to keep: without this step they end up without sandbox and app group, and the file
+# provider extension can't reach the app. Sign them and the app itself with the entitlements
+# CMake generated for this build (the app's include the sandbox, like release builds).
+for EXTENSION in FinderSyncExt FileProviderExt FileProviderUIExt; do
+  EXTENSION_PATH="$CLIENT_PLUGINS_DIR/$EXTENSION.appex"
+  EXTENSION_ENTITLEMENTS="$BUILD_DIR/shell_integration/MacOSX/$EXTENSION.entitlements"
+  if [ -d "$EXTENSION_PATH" ] && [ -f "$EXTENSION_ENTITLEMENTS" ]; then
+    codesign -s "$CODE_SIGN_IDENTITY" --force --options=runtime --timestamp --entitlements "$EXTENSION_ENTITLEMENTS" "$EXTENSION_PATH"
+  fi
+done
+codesign -s "$CODE_SIGN_IDENTITY" --force --options=runtime --timestamp --entitlements "$BUILD_DIR/admin/osx/macosx.entitlements" "$PRODUCT_PATH"
 
 # Validate that the key used for signing the binary matches the expected TeamIdentifier
 # needed to pass the SocketApi through the sandbox for communication with virtual file system
