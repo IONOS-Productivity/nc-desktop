@@ -7,7 +7,7 @@ import QtQml
 import QtQuick
 import QtQuick.Controls
 import Style
-import com.nextcloud.desktopclient
+import com.strato.hidrivenext.desktopclient
 
 MouseArea {
     id: unifiedSearchResultMouseArea
@@ -32,13 +32,23 @@ MouseArea {
     ToolTip {
         popupType: Qt.platform.os === "windows" ? Popup.Item : Popup.Native
         visible: unifiedSearchResultMouseArea.containsMouse
-        text: isFetchMoreTrigger ? qsTr("Load more results") : model.resultTitle + "\n\n" + model.subline
+        background: Rectangle {
+            color: Style.sesBackgroundColor
+            border.color: Style.sesBorderColor
+            border.width: 1
+            radius: 4
+        }
+        contentItem: Text {
+            text: isFetchMoreTrigger ? qsTr("Load more results") : model.resultTitle + "\n\n" + model.subline
+            color: Style.sesTrayFontColor
+            font.family: Style.sesOpenSansRegular
+        } 
     }
 
     Rectangle {
         id: unifiedSearchResultHoverBackground
         anchors.fill: parent
-        color: parent.containsMouse ? palette.highlight : "transparent"
+        color: parent.containsMouse ? Style.sesHover : "transparent"
     }
 
     Loader {

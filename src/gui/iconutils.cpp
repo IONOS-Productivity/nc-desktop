@@ -111,7 +111,6 @@ QImage createSvgImageWithCustomColor(const QString &fileName,
     
     // find the first matching svg file
     const auto sourceSvg = findSvgFilePath(fileName, iconBaseColors);
-    Q_ASSERT(!sourceSvg.isEmpty());
 
     if (sourceSvg.isEmpty()) {
         qWarning(lcIconUtils) << "Failed to find base SVG file for" << fileName;
@@ -164,8 +163,8 @@ QImage drawSvgWithCustomFillColor(const QString &sourceSvgPath,
         return {};
     }
 
-    const auto reqSize = (requestedSize.isValid() && requestedSize.height() && requestedSize.height()) ? requestedSize : svgRenderer.defaultSize();
-    if (!reqSize.isValid() || !reqSize.height() || !reqSize.height()) {
+    const auto reqSize = (requestedSize.isValid() && requestedSize.width() && requestedSize.height()) ? requestedSize : svgRenderer.defaultSize();
+    if (!reqSize.isValid() || !reqSize.width() || !reqSize.height()) {
         return {};
     }
 

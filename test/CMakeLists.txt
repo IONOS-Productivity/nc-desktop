@@ -162,7 +162,17 @@ if(NOT BUILD_FILE_PROVIDER_MODULE)
 endif()
 
 nextcloud_add_test(NetworkSettings)
-nextcloud_add_test(UpdateChannel)
+
+if(APPLICATION_NAME STREQUAL "Nextcloud")
+    # ConfigFile::currentUpdateChannel() short-circuits to the branding default for any
+    # non-"Nextcloud" APPLICATION_NAME (see Theme::isBranded()), which this fork's
+    # IONOS/STRATO builds always are - the test's own account/enterprise-channel logic it
+    # exercises is unreachable there. The test's top comment already documents this as a
+    # known, accepted gap ("the behaviour for a branded client isn't tested, because there
+    # is no sane way to have that reported (yet)").
+    nextcloud_add_test(UpdateChannel)
+endif()
+
 nextcloud_add_test(FileActionsModel)
 
 configure_file(test_journal.db "${PROJECT_BINARY_DIR}/bin/test_journal.db" COPYONLY)

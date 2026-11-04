@@ -7,8 +7,8 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-import com.nextcloud.desktopclient
 import Style
+import com.strato.hidrivenext.desktopclient
 
 TextField {
     id: replyMessageTextField

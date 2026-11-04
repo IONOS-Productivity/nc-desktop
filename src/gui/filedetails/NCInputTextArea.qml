@@ -7,7 +7,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-import com.nextcloud.desktopclient
+import com.strato.hidrivenext.desktopclient
 import Style
 
 TextArea {
@@ -34,6 +34,8 @@ TextArea {
 
         width: height
         height: parent.height
+
+        background: null
 
         flat: true
         icon.source: "image://svgimage-custom-color/confirm.svg" + "/" + root.secondaryColor

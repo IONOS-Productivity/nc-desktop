@@ -49,7 +49,7 @@ struct Build: AsyncParsableCommand {
     var buildType = "RelWithDebInfo"
     
     @Option(name: [.long], help: "The application's branded name.")
-    var appName = "Nextcloud"
+    var appName = "IONOS HiDrive Next"
 
     @Option(name: [.long], help: "Sparkle release.")
     var sparkleRelease = SparkleRepository.defaultRelease

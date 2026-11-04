@@ -20,6 +20,7 @@ AddCertificateDialog::AddCertificateDialog(QWidget *parent)
 {
     ui->setupUi(this);
     ui->labelErrorCertif->setText("");
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 }
 
 AddCertificateDialog::~AddCertificateDialog()

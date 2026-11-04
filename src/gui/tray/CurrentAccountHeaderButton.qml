@@ -11,8 +11,9 @@ import "../"
 import "../filedetails/"
 
 import Style
-import com.nextcloud.desktopclient
-import com.nextcloud.desktopclient as NC
+import com.strato.hidrivenext.desktopclient
+import com.strato.hidrivenext.desktopclient as NC
+// TODO SES-459 
 
 Button {
     id: root
@@ -164,6 +165,7 @@ Button {
 
             contentItem: Text {
                 text: parent.text
+                font: parent.font
                 horizontalAlignment: Text.AlignLeft
                 verticalAlignment: Text.AlignVCenter
                 leftPadding: Style.userLineSpacing
@@ -188,6 +190,7 @@ Button {
 
             contentItem: Text {
                 text: parent.text
+                font: parent.font
                 horizontalAlignment: Text.AlignLeft
                 verticalAlignment: Text.AlignVCenter
                 leftPadding: Style.userLineSpacing
@@ -212,6 +215,7 @@ Button {
 
             contentItem: Text {
                 text: parent.text
+                font: parent.font
                 horizontalAlignment: Text.AlignLeft
                 verticalAlignment: Text.AlignVCenter
                 leftPadding: Style.userLineSpacing

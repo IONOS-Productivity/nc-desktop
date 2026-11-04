@@ -1,0 +1,79 @@
+import QtQuick
+import QtQuick.Controls
+import com.strato.hidrivenext.desktopclient 
+
+import Style
+
+Button{
+  id: root
+  hoverEnabled: false // turn off default button hover
+
+  property string iconSource
+  property string toolTipText
+
+  property bool isMouseOver: false
+  property bool removeBorder: false
+  property color textColor: Style.sesTrayFontColor
+  property color backgroundColor: Style.sesPillButtonSecondaryBackgroundColor
+
+  contentItem: Row {
+    id: contentRow
+    spacing: Style.sesPillButtonVerticalPadding
+    padding: Style.sesPillButtonVerticalPadding
+    leftPadding: Style.sesPillButtonHorizontalPadding
+    rightPadding: Style.sesPillButtonHorizontalPadding
+    anchors.centerIn: parent
+    Text {
+        text: root.text
+        color: textColor
+        font.weight: Style.sesFontNormalWeight
+        font.pixelSize: Style.sesFontHintPixelSize
+        maximumLineCount: 2
+        elide: Text.ElideRight
+        wrapMode: Text.WordWrap
+        width: Math.min(implicitWidth, root.width - contentRow.leftPadding - contentRow.rightPadding - (root.iconSource ? Style.sesPillIconSize + contentRow.spacing : 0))
+        anchors.verticalCenter: parent.verticalCenter
+    }
+    Image {
+      visible: root.iconSource
+      source: root.iconSource
+      width: Style.sesPillIconSize
+      height: Style.sesPillIconSize
+      anchors.verticalCenter: parent.verticalCenter
+    }
+  }
+
+  background: Rectangle {
+    color: backgroundColor
+    opacity: root.isMouseOver ? Style.sesPillButtonHoverOpacity : 1.0
+    border.width: root.removeBorder ? 0 : 2
+    border.color: Style.sesPillButtonBorderColor
+    radius: height / 2
+
+    Behavior on opacity {
+        NumberAnimation { duration: Style.shortAnimationDuration }
+    }
+
+    MouseArea {
+        anchors.fill: parent
+        hoverEnabled: true
+        onExited: root.isMouseOver = false
+        onEntered: root.isMouseOver = true
+    }
+  }
+
+  ToolTip {
+      visible: root.toolTipText && root.isMouseOver
+      background: Rectangle {
+        color: Style.sesBackgroundColor
+        border.color: Style.sesBorderColor
+        border.width: 1
+        radius: 4
+      }
+      contentItem: Text {
+        text: root.toolTipText
+        color: Style.sesTrayFontColor
+        font.family: Style.sesOpenSansRegular
+      }
+  }
+}
