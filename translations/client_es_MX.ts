@@ -5977,7 +5977,7 @@ El servidor respondió con el error: %2</translation>
     <message>
         <location filename="../src/gui/accountsettings.cpp" line="1675" />
         <source>ExpandMemory-Link</source>
-        <translation type="unfinished">https://wl.hidrive.com/easy/0067</translation>
+        <translation type="unfinished">https://wl.hidrive.strato.com/easy/0100</translation>
     </message>
     <message>
         <location filename="../src/gui/accountsettings.cpp" line="1673" />
@@ -6017,7 +6017,7 @@ El servidor respondió con el error: %2</translation>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="409" />
         <source>OpenSource-Link</source>
-        <translation>https://wl.hidrive.com/easy/0016</translation>
+        <translation>https://wl.hidrive.com/easy/windows/thx3.html</translation>
     </message>
     <message>
         <location filename="../src/gui/generalsettings.cpp" line="407" />

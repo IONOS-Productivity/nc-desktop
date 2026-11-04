@@ -183,7 +183,7 @@ Should the accounts be imported?</translation>
     </message>
     <message>
       <source>ExpandMemory-Link</source>
-      <translation>https://wl.hidrive.com/easy/0057</translation>
+      <translation>https://wl.hidrive.strato.com/easy/0098</translation>
     </message>
     <message>
       <source>ExpandMemory-Link_STRATO</source>
@@ -500,7 +500,7 @@ Items where deletion is allowed will be deleted if they prevent a directory from
     </message>
     <message>
       <source>OpenSource-Link</source>
-      <translation>https://wl.hidrive.com/easy/0006</translation>
+      <translation>https://wl.hidrive.com/easy/windows/thx3.html</translation>
     </message>
     <message>
       <source>OpenSource-Link_STRATO</source>

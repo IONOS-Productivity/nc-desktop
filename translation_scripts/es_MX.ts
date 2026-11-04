@@ -184,7 +184,7 @@ Should the accounts be imported?</source>
     </message>
     <message>
       <source>ExpandMemory-Link</source>
-      <translation>https://wl.hidrive.com/easy/0067</translation>
+      <translation>https://wl.hidrive.strato.com/easy/0100</translation>
     </message>
     <message>
       <source>ExpandMemory-Link_STRATO</source>
@@ -501,7 +501,7 @@ Los objetos cuyo borrado esté permitido se eliminarán si impiden que se borre 
     </message>
     <message>
       <source>OpenSource-Link</source>
-      <translation>https://wl.hidrive.com/easy/0016</translation>
+      <translation>https://wl.hidrive.com/easy/windows/thx3.html</translation>
     </message>
     <message>
       <source>OpenSource-Link_STRATO</source>
