@@ -22,20 +22,20 @@
 		<key>NSExtensionFileProviderActions</key>
 		<array>
 			<dict>
-				<key>NSExtensionFileProviderActionActivationRule</key>
-				<string>SUBQUERY ( fileproviderItems, $fileproviderItem, $fileproviderItem.userInfo.locked != nil &amp;&amp; !($fileproviderItem.contentType.identifier UTI-CONFORMS-TO "public.folder") ).@count &gt; 0</string>
 				<key>NSExtensionFileProviderActionIdentifier</key>
 				<string>com.nextcloud.desktopclient.FileProviderUIExt.UnlockFileAction</string>
 				<key>NSExtensionFileProviderActionName</key>
 				<string>Unlock file</string>
+				<key>NSExtensionFileProviderActionActivationRule</key>
+				<string>SUBQUERY ( fileproviderItems, $fileproviderItem, $fileproviderItem.userInfo.locked != nil &amp;&amp; !($fileproviderItem.contentType.identifier UTI-CONFORMS-TO &quot;public.folder&quot;) ).@count &gt; 0</string>
 			</dict>
 			<dict>
 				<key>NSExtensionFileProviderActionActivationRule</key>
-				<string>SUBQUERY ( fileproviderItems, $fileproviderItem, $fileproviderItem.userInfo.locked == nil &amp;&amp; !($fileproviderItem.contentType.identifier UTI-CONFORMS-TO "public.folder") ).@count &gt; 0</string>
-				<key>NSExtensionFileProviderActionIdentifier</key>
-				<string>com.nextcloud.desktopclient.FileProviderUIExt.LockFileAction</string>
+				<string>SUBQUERY ( fileproviderItems, $fileproviderItem, $fileproviderItem.userInfo.locked == nil &amp;&amp; !($fileproviderItem.contentType.identifier UTI-CONFORMS-TO &quot;public.folder&quot;) ).@count &gt; 0</string>
 				<key>NSExtensionFileProviderActionName</key>
 				<string>Lock file</string>
+				<key>NSExtensionFileProviderActionIdentifier</key>
+				<string>com.nextcloud.desktopclient.FileProviderUIExt.LockFileAction</string>
 			</dict>
 			<dict>
 				<key>NSExtensionFileProviderActionActivationRule</key>

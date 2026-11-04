@@ -7,6 +7,7 @@
 #include "accountmanager.h"
 #include "systray.h"
 #include "theme.h"
+#include "whitelabeltheme.h"
 #include "config.h"
 #include "common/utility.h"
 #include "tray/svgimageprovider.h"
@@ -38,9 +39,48 @@
 #define NOTIFICATIONS_IFACE "org.freedesktop.Notifications"
 #endif
 
+#if defined(Q_OS_WIN)
+#include <windows.h>
+#include <dwmapi.h>
+#endif
+
 namespace OCC {
 
 Q_LOGGING_CATEGORY(lcSystray, "nextcloud.gui.systray")
+
+namespace {
+#if defined(Q_OS_WIN)
+// ResolveConflictsDialog.qml and FileDetailsWindow.qml are the only dialogs
+// created here that are genuine native-chrome top-level ApplicationWindows -
+// MainWindow.qml and the file actions window go frameless via
+// Systray::useNormalWindow() on a normal desktop. Applied explicitly per
+// dialog here rather than via a global QApplication event filter (see
+// Application::eventFilter in application.cpp): a global filter also catches
+// the many transient QWindow popups QtQuick Controls creates internally,
+// which previously caused a serious startup hang (SES-578 postmortem).
+void applyWindowChrome(QQuickWindow *window, bool dark)
+{
+    if (!window) {
+        return;
+    }
+    const auto hwnd = reinterpret_cast<HWND>(window->winId());
+    if (!hwnd) {
+        return;
+    }
+    const BOOL enabled = dark ? TRUE : FALSE;
+    // 20 = DWMWA_USE_IMMERSIVE_DARK_MODE on Windows 10 20H1+ and Windows 11; older
+    // insider builds (10 build 18985-18999) used 19 instead - try both.
+    if (DwmSetWindowAttribute(hwnd, 20, &enabled, sizeof(enabled)) != S_OK) {
+        DwmSetWindowAttribute(hwnd, 19, &enabled, sizeof(enabled));
+    }
+    // 33 = DWMWA_WINDOW_CORNER_PREFERENCE, 1 = DWMWCP_DONOTROUND (Windows 11 only;
+    // no-op and harmless on Windows 10), to match the square corners the
+    // QWidget-backed dialogs get via Application::eventFilter.
+    const DWORD doNotRound = 1;
+    DwmSetWindowAttribute(hwnd, 33, &doNotRound, sizeof(doNotRound));
+}
+#endif
+}
 
 Systray *Systray::_instance = nullptr;
 
@@ -86,6 +126,8 @@ Systray::Systray()
     connect(AccountManager::instance(), &AccountManager::accountAdded,
         this, &Systray::setupContextMenu);
     connect(AccountManager::instance(), &AccountManager::accountRemoved,
+        this, &Systray::setupContextMenu);
+    connect(Theme::instance(), &Theme::darkModeChanged,
         this, &Systray::setupContextMenu);
     setupContextMenu();
 #endif
@@ -208,6 +250,38 @@ void Systray::setupContextMenu()
         resumeAction->setVisible(anyPaused);
         resumeAction->setEnabled(anyPaused);
     });
+
+    _contextMenu->setStyleSheet(QStringLiteral(
+        "QMenu {"
+        "background-color: %1;"
+        "border: 1px solid %2;"
+        "padding: 6px;"
+        "font-family: %3;"
+        "font-size: %4;"
+        "font-weight: %5;"
+        "}"
+        "QMenu::item {"
+        "background-color: transparent;"
+        "padding: 8px 16px;"
+        "color: %6;"
+        "}"
+        "QMenu::item:selected {"
+        "background-color: %7;"
+        "color: %6;"
+        "}"
+        "QMenu::item:pressed {"
+        "background-color: %8;"
+        "color: %9;"
+        "}")
+        .arg(WLTheme.trayBackgroundColor(),
+             WLTheme.menuBorderColor(),
+             WLTheme.settingsFont(),
+             WLTheme.settingsTextSize(),
+             WLTheme.settingsTextWeight(),
+             WLTheme.menuTextColor(),
+             WLTheme.menuSelectedItemColor(),
+             WLTheme.menuPressedItemColor(),
+             WLTheme.menuPressedTextColor()));
 }
 
 void Systray::destroyDialog(QQuickWindow *dialog) const
@@ -317,6 +391,9 @@ void Systray::createResolveConflictsDialog(const OCC::ActivityList &allConflicts
     dialogWindow->show();
     dialogWindow->raise();
     dialogWindow->requestActivate();
+#if defined(Q_OS_WIN)
+    applyWindowChrome(dialogWindow, Theme::instance()->darkMode());
+#endif
 }
 
 void Systray::createEncryptionTokenDiscoveryDialog()
@@ -426,6 +503,9 @@ void Systray::createFileDetailsDialog(const QString &localPath)
         dialog->show();
         dialog->raise();
         dialog->requestActivate();
+#if defined(Q_OS_WIN)
+        applyWindowChrome(dialog, Theme::instance()->darkMode());
+#endif
 
     } else {
         qCWarning(lcSystray) << fileDetailsDialog.errorString();
@@ -537,6 +617,10 @@ void Systray::createFileActionsDialogWithAccountState(const QString &localPath, 
 
 void Systray::presentShareViewInTray(const QString &localPath)
 {
+    if (localPath.isEmpty()) {
+        return;
+    }
+
     const auto folder = FolderMan::instance()->folderForPath(localPath);
     if (!folder) {
         qCWarning(lcSystray) << "Could not open file details view in tray for" << localPath << "no responsible folder found";

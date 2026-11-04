@@ -6804,7 +6804,7 @@ Server replied with error: %2</source>
     </message>
 </context>
 <context>
-    <name>TrayFoldersMenuButton</name>
+    <name>TrayAccountPopup</name>
     <message>
         <location filename="../src/gui/tray/TrayFoldersMenuButton.qml" line="58"/>
         <source>Open local folder</source>
@@ -6815,6 +6815,9 @@ Server replied with error: %2</source>
         <source>Open local or team folders</source>
         <translation type="unfinished"/>
     </message>
+</context>
+<context>
+    <name>TrayFoldersMenuButton</name>
     <message>
         <location filename="../src/gui/tray/TrayFoldersMenuButton.qml" line="172"/>
         <source>Open local folder &quot;%1&quot;</source>
@@ -7420,6 +7423,9 @@ This is a new, experimental mode. If you decide to use it, please report any iss
         <source>Certificate password:</source>
         <translation type="unfinished"/>
     </message>
+</context>
+<context>
+    <name>FileProviderStorageInfo</name>
     <message>
         <location filename="../src/gui/addcertificatedialog.ui" line="79"/>
         <source>An encrypted pkcs12 bundle is strongly recommended as a copy will be stored in the configuration file.</source>
@@ -7448,6 +7454,9 @@ This is a new, experimental mode. If you decide to use it, please report any iss
         <source>Connect</source>
         <translation type="unfinished"/>
     </message>
+</context>
+<context>
+    <name>FileProviderSyncStatus</name>
     <message>
         <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="103"/>
         <location filename="../src/gui/wizard/owncloudadvancedsetuppage.cpp" line="283"/>

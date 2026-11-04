@@ -5,6 +5,7 @@
  */
 
 #include "folderstatusmodel.h"
+#include "whitelabeltheme.h"
 #include "accountstate.h"
 #include "common/asserts.h"
 #include "common/utility.h"
@@ -288,6 +289,29 @@ QVariant FolderStatusModel::data(const QModelIndex &index, int role) const
         return toolTip;
     }
     case FolderStatusDelegate::FolderStatusIconRole: {
+#ifdef IONOS_BUILD
+        if (!accountConnected)
+            return QIcon(WLTheme.syncOfflineIcon("cpp"));
+        {
+            const auto result = folder->syncResult();
+            const auto status = result.status();
+            if (folder->syncPaused())
+                return QIcon(WLTheme.syncPausedIcon("cpp"));
+            switch (status) {
+            case SyncResult::NotYetStarted:
+            case SyncResult::SyncPrepare:
+            case SyncResult::SyncRunning:
+            case SyncResult::SyncAbortRequested:
+            case SyncResult::Undefined:
+                return QIcon(WLTheme.syncSyncingIcon("cpp"));
+            case SyncResult::Success:
+            case SyncResult::Problem:
+                return QIcon(result.hasUnresolvedConflicts() ? WLTheme.syncWarningIcon("cpp") : WLTheme.syncSuccessIcon("cpp"));
+            default:
+                return QIcon(WLTheme.syncErrorIcon("cpp"));
+            }
+        }
+#endif
         if (!accountConnected) {
             return Theme::instance()->folderStateIcon(SyncResult::SetupError);
         }

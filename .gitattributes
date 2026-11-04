@@ -1,5 +1,24 @@
 # SPDX-FileCopyrightText: 2012 ownCloud GmbH
 # SPDX-License-Identifier: GPL-2.0-or-later
+
+# Generated Qt Linguist translation files: never let Git attempt a
+# content-level 3-way merge on these. They are heavily reordered/reformatted
+# machine-generated XML, so a line-based diff3 merge can misalign <message>
+# blocks and silently corrupt translations without producing a detectable
+# error. Instead, always take whichever side is being merged in - the
+# translation_scripts/merge_translation.py pipeline (run automatically via
+# .githooks/post-merge + post-commit for stable-x.y merges) then reconciles
+# that against the current source tree.
+# One-time setup per clone: git config merge.nc-take-incoming.driver "cp -- '%B' '%A'"
+# NOTE: kept at the top of this file, not appended at the end - the IONOS
+# branding pipeline (Brander) always appends its own line right after the
+# last line of the unmodified upstream file when it brands a stable-x.y
+# build, and a same-position append on both sides of that automated merge
+# is a known conflict trap in some Git versions (see job 41825). Placing
+# this block first keeps it on a different anchor line so it never competes
+# with that append.
+translations/client_*.ts merge=nc-take-incoming
+
 .tag                    export-subst
 .gitignore              export-ignore
 .gitattributes          export-ignore
