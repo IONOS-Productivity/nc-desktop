@@ -112,7 +112,13 @@ int main(int argc, char **argv)
 
 #ifdef IONOS_BUILD
     QQuickStyle::setStyle(qmlStyle);
+#ifndef Q_OS_MACOS
+    // Upstream removed this call (929c142a76): since Qt 6.9.2 an explicit fallback is imported
+    // before the selected style, so its controls win over the selected style's own ones. On macOS
+    // that replaced the native macOS controls with Fusion ones; the macOS style already falls back
+    // to Fusion by itself. Kept on the other platforms until their look is checked without it.
     QQuickStyle::setFallbackStyle(QStringLiteral("Fusion"));
+#endif
 
     OCC::Application app(argc, argv);
 #elif
