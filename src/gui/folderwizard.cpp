@@ -189,6 +189,13 @@ void FolderWizardLocalPath::changeStyle()
     // Since changeEvent() below reacts to StyleChange by calling changeStyle() again, an
     // unguarded call here recurses infinitely and crashes with a stack overflow. Only actually
     // set it when the content changed, so the recursion is a harmless single bounce.
+    //
+    // Qt only paints a stylesheet background for plain QWidget, QFrame, QDialog and a few other
+    // classes, not for a QWizardPage subclass like this one. Without WA_StyledBackground the
+    // background-color is ignored and whatever QWizard paints behind the page shows through:
+    // dark on macOS, but white on Linux, where the dark-mode text colors then end up unreadable
+    // (SES-616).
+    setAttribute(Qt::WA_StyledBackground, true);
     const auto pageStyleSheet = QStringLiteral("QWidget#%1 { background-color: %2; }").arg(objectName(), WLTheme.dialogBackgroundColor());
     if (styleSheet() != pageStyleSheet) {
         setStyleSheet(pageStyleSheet);
@@ -677,6 +684,9 @@ void FolderWizardRemotePath::changeStyle()
     // Since changeEvent() below reacts to StyleChange by calling changeStyle() again, an
     // unguarded call here recurses infinitely and crashes with a stack overflow. Only actually
     // set it when the content changed, so the recursion is a harmless single bounce.
+    //
+    // WA_StyledBackground: see FolderWizardLocalPath::changeStyle() (SES-616).
+    setAttribute(Qt::WA_StyledBackground, true);
     const auto pageStyleSheet = QStringLiteral("QWidget#%1 { background-color: %2; }").arg(objectName(), WLTheme.dialogBackgroundColor());
     if (styleSheet() != pageStyleSheet) {
         setStyleSheet(pageStyleSheet);
@@ -742,6 +752,8 @@ FolderWizardSelectiveSync::FolderWizardSelectiveSync(const AccountPtr &account)
     // palette-based painting of the page body isn't reliable on macOS, so use an explicit
     // stylesheet instead, scoped to this widget's own object name (set by setupUi() above,
     // so this must run after it) so it doesn't cascade into children that set their own styling.
+    // WA_StyledBackground: see FolderWizardLocalPath::changeStyle() (SES-616).
+    setAttribute(Qt::WA_StyledBackground, true);
     setStyleSheet(QStringLiteral("QWidget#%1 { background-color: %2; }").arg(objectName(), WLTheme.dialogBackgroundColor()));
 
     auto *layout = _uiSelectiveSync.verticalLayout;
@@ -998,6 +1010,35 @@ void FolderWizard::customizeStyle()
     wizardPalette.setColor(QPalette::Mid, backgroundColor);
 
     setPalette(wizardPalette);
+
+    // QWizard places every page inside an internal QFrame that fills its background from its own
+    // palette's Base role, which doesn't follow the wizard palette above: black on macOS, white on
+    // Linux (SES-616). It shows around the pages and wherever a page doesn't paint itself, so give
+    // it the same background as the pages. It has no object name of its own, hence the one set here
+    // to scope the stylesheet to this frame instead of every QFrame (e.g. QLabel) inside it.
+    if (auto *pageFrame = qobject_cast<QFrame *>(_folderWizardSourcePage->parentWidget())) {
+        pageFrame->setObjectName(QStringLiteral("FolderWizardPageFrame"));
+        const auto pageFrameStyleSheet = QStringLiteral("QFrame#%1 { background-color: %2; }").arg(pageFrame->objectName(), backgroundColor.name());
+        if (pageFrame->styleSheet() != pageFrameStyleSheet) {
+            pageFrame->setStyleSheet(pageFrameStyleSheet);
+        }
+    }
+}
+
+void FolderWizard::changeEvent(QEvent *event)
+{
+    switch (event->type()) {
+    case QEvent::PaletteChange:
+    case QEvent::ThemeChange:
+        // Dark-/Light-Mode switching. setPalette() in customizeStyle() is a no-op for an unchanged
+        // palette, so this doesn't loop.
+        customizeStyle();
+        break;
+    default:
+        break;
+    }
+
+    QWizard::changeEvent(event);
 }
 
 void FolderWizard::adjustWizardSize()
