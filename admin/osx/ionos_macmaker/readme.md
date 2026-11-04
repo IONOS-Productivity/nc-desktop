@@ -20,7 +20,7 @@
 |------|----------|-------------|
 | `-a` | `<ARCHITECTURE>` | Target CPU architecture — `arm64` or `x86_64` (required) |
 | `-b` | `<BUILD_DIR>` | Build output directory (required) |
-| `-s` | `<CODE_SIGN_IDENTITY>` | Local signing identity — use your personal **Apple Development** cert. If omitted, signing is skipped |
+| `-s` | `<CODE_SIGN_IDENTITY>` | Signing identity — the IONOS **Developer ID Application** certificate (team `5TDLCVD243`), see [Testing virtual files](#testing-virtual-files-file-provider). If omitted, signing is skipped |
 | `-c` | | Clean rebuild — wipe the build directory before building |
 | `-f` | | Build the FileProvider extension |
 | `-o` | | Build as an OSX bundle (`.app`) instead of a standalone binary |
@@ -68,13 +68,34 @@ export QML2_IMPORT_PATH="$CRAFT/qml"
 "$HOME/repos/build/desktop/bin/IONOS HiDrive Next.app/Contents/MacOS/IONOS HiDrive Next"
 ```
 
+### Testing virtual files (File Provider)
+
+Virtual files only work in a signed build: macOS loads the File Provider extension only if the app and its extensions are signed by the same team and share the app group `5TDLCVD243.com.ionos.hidrivenext.desktopclient`. An unsigned build or a build with `-m` can't be used for this.
+
+```bash
+./start.sh -a arm64 -b ~/build/vfs -o -f -c -s "Developer ID Application: IONOS SE (5TDLCVD243)"
+```
+
+* `-s` needs the IONOS Developer ID certificate in the keychain (`security find-identity -v -p codesigning`). With any other team, the TeamIdentifier check at the end fails and the extensions couldn't reach the app.
+* Don't combine it with `-m`: the signed app uses the hardened runtime, which ignores the `DYLD_*` paths to Craft, so Qt has to be bundled.
+* The script signs the extensions and the app with the entitlements CMake generates for the build. Like release builds, the app then runs in the app sandbox: on first start it moves its configuration into `~/Library/Containers/com.ionos.hidrivenext.desktopclient/`, and its logs are in `Data/Library/Preferences/IONOS HiDrive Next/logs` there.
+* Copy the app from `<BUILD_DIR>/product` to `/Applications` and quit any running instance first. A second start only hands its arguments to the running app.
+
+To check the signature, both commands must print the app group and `app-sandbox` respectively:
+
+```bash
+A="<BUILD_DIR>/product/IONOS HiDrive Next.app"
+codesign -d --entitlements - "$A/Contents/PlugIns/FileProviderExt.appex" 2>&1 | grep -A3 "application-groups"
+codesign -d --entitlements - "$A" 2>&1 | grep -A1 "app-sandbox"
+```
+
 ## What it does
 
 1. Kills any running instance of the client
 2. Runs `cmake` to configure the build (always reconfigures)
 3. Runs `ninja install` to build and deploy into `<BUILD_DIR>/product`
 4. If `-s` is omitted — opens the product directory in Finder; launches the app if `-r` is set
-5. If `-s` is provided — signs frameworks, plugins, and the `.app` bundle with the given identity, then verifies the TeamIdentifier
+5. If `-s` is provided — signs frameworks, plugins, the extensions and the `.app` bundle with the given identity (extensions and app with their generated entitlements), then verifies the TeamIdentifier
 
 ## What it does NOT do (use mac_craft.sh instead)
 
@@ -91,7 +112,7 @@ For anything that produces a deliverable — signing a release build, building a
 * macOS with Xcode tools installed
 * Craft64 installed at `~/Craft64`
 * `cmake`, `ninja`, `ccache`
-* Optionally: a personal **Apple Development** certificate for local signing
+* Optionally, for signed builds: the IONOS **Developer ID Application** certificate (team `5TDLCVD243`)
 
 ---
 
