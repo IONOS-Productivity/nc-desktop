@@ -3246,6 +3246,10 @@ Nótese que usar cualquier opción de recolección de registros a través de lí
         <translation>(experimental)</translation>
     </message>
     <message>
+        <source>Choose where to sync your files</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <source>Connect</source>
         <translation>Conectar</translation>
     </message>
@@ -3256,6 +3260,10 @@ Nótese que usar cualquier opción de recolección de registros a través de lí
     <message>
         <source>Local Sync Folder</source>
         <translation>Carpeta local de sincronización</translation>
+    </message>
+    <message>
+        <source>Please choose a folder to sync your files.</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Sync the folder &quot;%1&quot;</source>

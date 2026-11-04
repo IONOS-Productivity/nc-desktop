@@ -3244,6 +3244,10 @@ Beachten Sie, dass die Verwendung von Befehlszeilenoptionen für die Protokollie
         <translation>(experimentell)</translation>
     </message>
     <message>
+        <source>Choose where to sync your files</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <source>Connect</source>
         <translation>Verbinden</translation>
     </message>
@@ -3254,6 +3258,10 @@ Beachten Sie, dass die Verwendung von Befehlszeilenoptionen für die Protokollie
     <message>
         <source>Local Sync Folder</source>
         <translation>Lokaler Ordner für die Synchronisierung</translation>
+    </message>
+    <message>
+        <source>Please choose a folder to sync your files.</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Sync the folder &quot;%1&quot;</source>

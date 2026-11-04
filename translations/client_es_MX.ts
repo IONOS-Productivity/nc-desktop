@@ -3234,6 +3234,10 @@ Tenga en cuenta que usar la línea de comandos para el registro anulará esta co
         <translation>(experimental)</translation>
     </message>
     <message>
+        <source>Choose where to sync your files</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <source>Connect</source>
         <translation>Conectar</translation>
     </message>
@@ -3244,6 +3248,10 @@ Tenga en cuenta que usar la línea de comandos para el registro anulará esta co
     <message>
         <source>Local Sync Folder</source>
         <translation>Carpeta de Sincronización Local</translation>
+    </message>
+    <message>
+        <source>Please choose a folder to sync your files.</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Sync the folder &quot;%1&quot;</source>

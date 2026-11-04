@@ -3233,6 +3233,10 @@ Merk op dat het gebruik van logging-opdrachtregel opties deze instelling zal ove
         <translation>(experimenteel)</translation>
     </message>
     <message>
+        <source>Choose where to sync your files</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <source>Connect</source>
         <translation>Verbinden</translation>
     </message>
@@ -3243,6 +3247,10 @@ Merk op dat het gebruik van logging-opdrachtregel opties deze instelling zal ove
     <message>
         <source>Local Sync Folder</source>
         <translation>Lokale synchronisatiemap</translation>
+    </message>
+    <message>
+        <source>Please choose a folder to sync your files.</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Sync the folder &quot;%1&quot;</source>

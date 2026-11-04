@@ -3245,6 +3245,10 @@ Notez que l&apos;utilisation de toute option de ligne de commande de journalisat
         <translation>(expérimental)</translation>
     </message>
     <message>
+        <source>Choose where to sync your files</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <source>Connect</source>
         <translation>Se connecter</translation>
     </message>
@@ -3255,6 +3259,10 @@ Notez que l&apos;utilisation de toute option de ligne de commande de journalisat
     <message>
         <source>Local Sync Folder</source>
         <translation>Dossier de synchronisation local</translation>
+    </message>
+    <message>
+        <source>Please choose a folder to sync your files.</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Sync the folder &quot;%1&quot;</source>

@@ -3245,6 +3245,10 @@ Observera att om du använder kommandoradsalternativ för loggning kommer den h�
         <translation>(experimentell)</translation>
     </message>
     <message>
+        <source>Choose where to sync your files</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <source>Connect</source>
         <translation>Anslut</translation>
     </message>
@@ -3255,6 +3259,10 @@ Observera att om du använder kommandoradsalternativ för loggning kommer den h�
     <message>
         <source>Local Sync Folder</source>
         <translation>Lokal mapp för synkronisering</translation>
+    </message>
+    <message>
+        <source>Please choose a folder to sync your files.</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Sync the folder &quot;%1&quot;</source>

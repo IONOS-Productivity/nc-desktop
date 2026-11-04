@@ -3244,6 +3244,10 @@ Nota che l&apos;utilizzo di qualsiasi opzione della riga di comando di registraz
         <translation>(sperimentale)</translation>
     </message>
     <message>
+        <source>Choose where to sync your files</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <source>Connect</source>
         <translation>Connetti</translation>
     </message>
@@ -3254,6 +3258,10 @@ Nota che l&apos;utilizzo di qualsiasi opzione della riga di comando di registraz
     <message>
         <source>Local Sync Folder</source>
         <translation>Cartella locale di sincronizzazione</translation>
+    </message>
+    <message>
+        <source>Please choose a folder to sync your files.</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Sync the folder &quot;%1&quot;</source>

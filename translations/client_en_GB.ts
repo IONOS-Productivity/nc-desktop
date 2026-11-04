@@ -3245,6 +3245,10 @@ Note that using any logging command line options will override this setting.</tr
         <translation>(experimental)</translation>
     </message>
     <message>
+        <source>Choose where to sync your files</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <source>Connect</source>
         <translation>Connect</translation>
     </message>
@@ -3255,6 +3259,10 @@ Note that using any logging command line options will override this setting.</tr
     <message>
         <source>Local Sync Folder</source>
         <translation>Local Sync Folder</translation>
+    </message>
+    <message>
+        <source>Please choose a folder to sync your files.</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Sync the folder &quot;%1&quot;</source>
